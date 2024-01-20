@@ -27,5 +27,6 @@ a:link, a:visited, a:hover, a:active {
   color: inherit;
   font-size: 2em;
   font-weight: normal;
+  text-align: right;
   text-decoration: wavy underline;
 }
