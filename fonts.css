@@ -1,0 +1,36 @@
+@font-face {
+    font-family: Pentameter Regular;
+    src: url(fonts/Pentameter-Wide-Regular-Trial.woff);
+}
+
+@font-face {
+    font-family: Pentameter Italic;
+    src: url(fonts/Pentameter-Wide-ThinItalic-Trial.woff);
+}
+
+@font-face {
+    font-family: Pentameter Light;
+    src: url(fonts/Pentameter-Wide-Light-Trial.woff);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    src: url(fonts/HelveticaNeue-Light.woff);
+    src: url(fonts/HelveticaNeue-Light.woff2);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Bold';
+    src: url(fonts/HelveticaNeue-Bold.woff);
+    src: url(fonts/HelveticaNeue-Bold.woff2);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Medium';
+    src: url(fonts/HelveticaNeue-Medium.woff);
+    src: url(fonts/HelveticaNeue-Medium.woff2);
+}
+
+.everything{
+    text-align: left;
+}
