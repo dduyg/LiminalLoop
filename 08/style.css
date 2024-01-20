@@ -23,11 +23,11 @@ h5 {
 a:link, a:visited, a:hover, a:active {
   color: inherit;
   font-size: 2em;
+  font-weight: normal;
   text-decoration: wavy underline;
   font-family: 'Space Grotesk', sans-serif;
 }
 
-nav {
-  font-weight: normal;
+p {
   text-align: right;
 }
