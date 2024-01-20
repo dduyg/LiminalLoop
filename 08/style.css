@@ -24,7 +24,6 @@ h5 {
 
 a:link, a:visited, a:hover, a:active {
   color: inherit;
-  font-weight: normal;
   text-decoration: wavy underline;
 }
 
