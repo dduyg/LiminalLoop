@@ -22,3 +22,10 @@ h5 {
   font-weight: normal;
   font-family: 'Space Grotesk', sans-serif;
 }
+
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+  font-size: 2em;
+  font-weight: normal;
+  text-decoration: wavy underline;
+}
