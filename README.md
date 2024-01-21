@@ -2,7 +2,7 @@
 
 _The rest is up to you and your imagination. 🦄_
 
-← `README.md`: That's this file, where you can tell people what your cool website does and how you built it.
+> ← `README.md`: That's this file, where you can tell people what your cool website does and how you built it.
 
 ## Try this next 🏗️
 
