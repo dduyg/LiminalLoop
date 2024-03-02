@@ -13,8 +13,8 @@ body {
   padding: 3em;
   margin: auto;
   font-family: 'Kalnia', serif;
-  background-color: #D8E7C8;
-  color: #922A4B;
+  background-image: linear-gradient(to right, #97abaa, #889da0, #7c8e96, #71808b, #69717f, #626778, #5b5e70, #555468, #4c4d65, #434761, #38405e, #2d3a5b);
+  color: black;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -30,7 +30,6 @@ h1 {
   font-weight: normal;
 }
 #title {
-  color: #D8E7C8;
   margin: 0;
   padding: 0;
 }
