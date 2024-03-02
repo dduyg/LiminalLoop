@@ -63,3 +63,10 @@ button:hover {
     background-color: #88c0d0;
     color: #1a1a2e;
 }
+
+#outputText {
+    margin: 25px 10px;
+    background-color: #4a4e69;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
