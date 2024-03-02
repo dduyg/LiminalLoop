@@ -69,7 +69,5 @@ button:hover {
 
 #outputText {
     margin: 25px auto;
-    padding: 10px;
-    background-color: #4a4e69;
-    border-radius: 5px;
+    color: #4a4e69;
 }
