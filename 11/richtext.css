@@ -7,18 +7,21 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 2rem;
     margin-bottom: 20px;
-    color: #88c0d0;
+}
+
+a {
+  text-decoration: none;
 }
 
 textarea {
-    width: 100%;
+    width: 90%;
     height: 150px;
     padding: 10px;
     margin-bottom: 20px;
