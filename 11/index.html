@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseSynapse</title>
+    <link rel="stylesheet" href="synapse.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CaseSynapse</h1>
+        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        <div class="buttons">
+            <button onclick="convertText('uppercase')">UPPER CASE</button>
+            <button onclick="convertText('lowercase')">lower case</button>
+            <button onclick="convertText('titlecase')">Title Case</button>
+            <button onclick="convertText('sentencecase')">Sentence case</button>
+            <button onclick="convertText('spacetohyphen')">Space ➝ Hyphen</button>
+            <button onclick="convertText('hyphentospace')">Hyphen ➝ Space</button>
+        </div>
+        <button id="copyButton" onclick="copyToClipboard()">Copy to Clipboard</button>
+        <div id="outputText"></div>
+    </div>
+    <script src="synapse.js"></script>
+</body>
+</html>
