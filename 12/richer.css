@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #191970;
+  background-color: #C8C0CD;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -17,6 +17,18 @@ body {
 h1 {
   font-size: 2em;
   margin-bottom: 20px;
+  color: #7C7072;
+}
+
+sup {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: normal;
+    color: #C8C0CD;
+    background-color: #E1FF77;
+    border: none;
+    border-radius: 8px;
+    padding-left: 2px;
+    padding-right: 2px;    
 }
 
 a {
@@ -30,8 +42,8 @@ textarea {
   margin-bottom: 20px;
   font-size: 16px;
   border-radius: 5px;
-  border: 2px solid white;
-  background-color: #8a2be2;
+  border: 1px solid black;
+  background-color: #fdf9ff;
   color: white;
   resize: none;
 }
