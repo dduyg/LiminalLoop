@@ -13,8 +13,8 @@ body {
   padding: 3em;
   margin: auto;
   font-family: 'Kalnia', serif;
-  background-image: linear-gradient(to right, #97abaa, #889da0, #7c8e96, #71808b, #69717f, #626778, #5b5e70, #555468, #4c4d65, #434761, #38405e, #2d3a5b);
-  color: black;
+  background-color: #535629;
+  color: #8CC3FB;
   -webkit-font-smoothing: antialiased;
 }
 
