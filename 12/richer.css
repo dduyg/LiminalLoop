@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #191970;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 80%;
+  min-height: 150px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: #8a2be2;
+  color: white;
+  resize: none;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #8a2be2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5f9ea0;
+}
+
+#copyButton {
+  background-color: #00ced1;
+}
+
+#copyButton:hover {
+  background-color: #20b2aa;
+}
+
+#outputText {
+  margin: 20px auto;
+}
