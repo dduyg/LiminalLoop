@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rich Text Format</title>
+  <link rel="stylesheet" href="richer.css">
+</head>
+<body>
+  <div class="container">
+    <h1>RichTextFormat 2</h1>
+    <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+    <div class="buttons">
+      <button onclick="convertCase('uppercase')">UPPERCASE</button>
+      <button onclick="convertCase('lowercase')">lowercase</button>
+      <button onclick="convertCase('titlecase')">Title Case</button>
+      <button onclick="convertCase('capitalizedcase')">Capitalized Case</button>
+      <button onclick="convertCase('sentencecase')">Sentence case</button>
+      <button onclick="convertCase('spacehyphen')">Space -&gt; Hyphen</button>
+      <button onclick="convertCase('hyphenspace')">Hyphen -&gt; Space</button>
+      <button onclick="convertCase('spaceunderscore')">Space -&gt; Underscore</button>
+      <button onclick="convertCase('underscorespace')">Underscore -&gt; Space</button>
+      <button onclick="convertCase('camelcase')">CamelCase</button>
+    </div>
+    <button id="copyButton" onclick="copyText()">Copy to Clipboard</button>
+    <div id="outputText"></div>
+  </div>
+  <script src="richer.js"></script>
+</body>
+</html>
