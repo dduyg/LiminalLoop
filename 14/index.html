@@ -21,45 +21,35 @@
             text-align: center;
         }
         .story-container {
-            max-height: 400px;
+            max-height: 70%;
             overflow-y: auto;
             margin-top: 20px;
             padding: 10px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
         }
-        .story {
-            text-align: justify;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Between uppercase</h1>
+        <h1>Naming conventions</h1>
         <div class="story-container">
-            <p class="story">
-                In the neon-lit streets of Seoul, amidst the bustling crowds and the whispers of the past, 
-                lies a tale of love, sacrifice, and redemption. The city, adorned with the remnants of a 
-                bygone era, tells the story of Yuna, a young woman torn between tradition and modernity. <br><br>
-
-                Raised in the shadows of the Han River, Yuna finds solace in the melodies of her grandmother's 
-                ancient shamisen. Yet, as the cityscape evolves, so does Yuna's destiny. Encircled by the neon 
-                glow of Apgujeong, she embarks on a journey to uncover the truth behind her family's legacy. <br><br>
-
-                Alongside her childhood friend, Joon-ho, Yuna delves into the secrets buried within the labyrinthine 
-                streets of Insadong. Together, they confront the specters of the past, weaving through the tapestry of 
-                memories and forgotten dreams. <br><br>
-
-                As the cherry blossoms bloom, so too does the truth emerge. Beneath the glossy facade of Gangnam lies 
-                a world shrouded in darkness—a world where the echoes of history resonate with the beats of a new era. 
-                With each step, Yuna unravels the threads of her lineage, discovering the resilience that binds her to 
-                her ancestors. <br><br>
-
-                In the final crescendo, amidst the pulsating lights of Hongdae, Yuna confronts the shadows of her past, 
-                embracing the harmony of tradition and innovation. With the city as her witness, she embraces the 
-                ephemeral beauty of the present, carrying the legacy of her forebears into the boundless expanse of 
-                tomorrow.
-            </p>
+            <p>Naming conventions are guidelines for choosing meaningful and consistent names for variables, functions, classes, and other elements in your code. These conventions help improve code readability and maintainability. Here are some common naming conventions for programming:</p>
+            <ul>
+                <li><strong>Descriptive and Meaningful Names:</strong> Choose names that accurately describe the purpose and functionality of the variable, function, or class. Avoid abbreviations or overly cryptic names.</li>
+                <li><strong>Use CamelCase or snake_case:</strong> For multi-word names, choose between CamelCase (capitalizing the first letter of each word except the first one) or snake_case (using underscores to separate words). Be consistent within your codebase.</li>
+                <li><strong>UPPER_CASE:</strong> Use all uppercase letters and underscores to separate words. Often used for naming constants. For example: <code>MAX_LENGTH</code>, <code>DEFAULT_TIMEOUT</code>.</li>
+                <li><strong>Use nouns for variables and classes:</strong> Variables and class names should typically represent nouns or noun phrases that describe the entity they represent.</li>
+                <li><strong>Use verbs for function and method names:</strong> Function and method names should represent actions or operations. They should typically start with a verb or verb phrase that describes what the function does.</li>
+                <li><strong>Avoid single-letter names:</strong> Unless it's a common convention like using <code>i</code> for loop counters, avoid single-letter variable names. Instead, opt for names that convey meaning and purpose.</li>
+                <li><strong>Be Consistent:</strong> Follow a consistent naming style throughout your codebase. This makes it easier for other developers to understand your code.</li>
+                <li><strong>Avoid Naming Conflicts:</strong> Ensure that your names don't conflict with keywords or reserved words in your programming language.</li>
+                <li><strong>Use meaningful prefixes or suffixes:</strong> Sometimes, adding prefixes like <code>is_</code> or <code>has_</code> can make boolean variables clearer. Similarly, suffixes like <code>List</code>, <code>Map</code>, or <code>Collection</code> can clarify the type of a variable.</li>
+                <li><strong>Use domain-specific terminology:</strong> If you're working within a specific domain or framework, use terminology consistent with that domain. It makes your code more understandable to domain experts.</li>
+                <li><strong>Consider readability over brevity:</strong> While shorter names might seem more concise, prioritize readability over brevity. A slightly longer, descriptive name is preferable if it makes the code more understandable.</li>
+                <li><strong>Avoid Hungarian Notation:</strong> Hungarian notation, where variable names include type information (e.g., <code>strName</code>, <code>intCount</code>), is generally discouraged in modern programming languages. With strongly typed languages and modern IDEs, this practice is unnecessary and can make code harder to read.</li>
+                <li><strong>Be mindful of scope:</strong> Use names that reflect the scope of the variable or function. For example, use descriptive names for global variables and more concise names for local variables.</li>
+            </ul>
         </div>
     </div>
 </body>
