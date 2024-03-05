@@ -1,54 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azra's Personal Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .left-corner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 999;
-            max-width: 150px;
-        }
-        .content {
-            margin-top: 50px; /* Adjust according to your image height */
-        }
-        .about-me {
-            text-align: justify;
-        }
-        /* Vaporwave Cyberspace Aesthetics */
-        .vaporwave {
-            color: #ff77ff;
-            text-shadow: 0 0 5px #ff77ff, 0 0 10px #ff77ff, 0 0 20px #ff77ff, 0 0 30px #ff77ff, 0 0 40px #ff77ff, 0 0 55px #ff77ff, 0 0 75px #ff77ff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azra's Personal Webpage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      padding-top: 100px; /* Adjust as needed based on the height of your top image */
+    }
+    #top-left-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 25%;
+      max-width: 25vw;
+      z-index: -1;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .about-me {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <img src="https://raw.githubusercontent.com/dduyg/testframe/7ebf8fd98e2af23bf91ecdbaf53d6546c29489af/left-corner.jpg" alt="Left Corner Image" class="left-corner">
-
-    <div class="container">
-        <h1 class="vaporwave">Azra</h1>
-        <div class="content">
-            <h2 class="vaporwave">About Me</h2>
-            <p class="about-me">
-                My love for thinking in systems fuels my curiosity and drives my passion for understanding complex interconnections in the world around us.
-            </p>
-        </div>
+  <img id="top-left-image" src="https://raw.githubusercontent.com/dduyg/testframe/7ebf8fd98e2af23bf91ecdbaf53d6546c29489af/left-corner.jpg" alt="Top Left Image">
+  <div class="container">
+    <h1>Hello, I'm Azra</h1>
+    <div class="about-me">
+      <h2>About Me</h2>
+      <p>I love thinking in systems. Understanding how things interact and influence each other fascinates me.</p>
     </div>
+  </div>
 </body>
 </html>
