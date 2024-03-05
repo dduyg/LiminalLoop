@@ -1,4 +1,4 @@
-# <code>Liminal Loop</code>
+## Liminal Loop
 
 | <a href= "https://dduyg.github.io/LiminalLoop/" target="_blank"><img width="24" height="24" src="https://img.icons8.com/material-two-tone/24/start.png" alt="start"/></a>                                         | [02.md](./02/README.md)                                            | [`03`](https://dduyg.github.io/LiminalLoop/03/)              |
 |-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|
