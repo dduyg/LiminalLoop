@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ersonal Branding</title>
+    <title>Your Personal Branding</title>
     <style>
         body {
             margin: 0;
@@ -12,31 +12,42 @@
             background-color: #000000;
             color: #ffffff;
         }
-        #left-corner {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: -1;
-        }
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            padding-top: 80px; /* Adjust this according to your image height */
+            padding-top: 120px; /* Add padding top for the fixed image */
+            box-sizing: border-box;
         }
-        h1, h2, h3 {
-            margin-bottom: 20px;
+        .content {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            margin-top: 20px;
         }
-        p {
-            margin-bottom: 10px;
+        .fixed-image {
+            position: fixed;
+            width: 150px;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Stacking the image behind other content */
         }
     </style>
 </head>
 <body>
-    <img src="https://raw.githubusercontent.com/dduyg/testframe/7ebf8fd98e2af23bf91ecdbaf53d6546c29489af/left-corner.jpg" alt="Left Corner Image" id="left-corner">
+    <img class="fixed-image" src="https://raw.githubusercontent.com/dduyg/testframe/7ebf8fd98e2af23bf91ecdbaf53d6546c29489af/left-corner.jpg" alt="Left Corner Image">
     <div class="container">
-        <h1>Your Name</h1>
-        <h2>Personal Branding</h2>
-        <p>Welcome to my personal webpage!</p>
-        <!-- Add more content here -->
+        <h1>Your Personal Branding</h1>
+        <div class="content">
+            <h2>Welcome to Your Retro Space!</h2>
+            <p>This is your personal branding space where you can showcase your identity and creativity with vaporwave diskette retro aesthetics.</p>
+            <h3>About Me</h3>
+            <p>Insert your captivating story and purpose here.</p>
+            <h3>Portfolio</h3>
+            <p>Showcase your projects, artwork, or achievements.</p>
+            <h3>Contact Me</h3>
+            <p>Let's connect! Provide your contact information or social media links here.</p>
+        </div>
     </div>
 </body>
 </html>
