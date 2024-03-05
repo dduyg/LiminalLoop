@@ -2,7 +2,7 @@
 
 <div align="center">
   
-<a href= "https://dduyg.github.io/LiminalLoop/" target="_blank"><img width="96" height="96" src="https://img.icons8.com/material-two-tone/96/start.png"/>
+<a href= "https://dduyg.github.io/LiminalLoop/" target="_blank"><img width="48" height="48" src="https://img.icons8.com/material-two-tone/48/start.png" alt="start"/></a>
 
 </div>
 
