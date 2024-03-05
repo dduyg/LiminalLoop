@@ -2,10 +2,9 @@
 
 <div align="center">
   
-<a href= "https://dduyg.github.io/LiminalLoop/" target="_blank"><img width="48" height="48" src="https://img.icons8.com/material-two-tone/48/start.png" alt="start"/></a>
+<a href= "https://dduyg.github.io/LiminalLoop/" target="_blank"><img width="24" height="24" src="https://img.icons8.com/material-two-tone/24/start.png" alt="start"/></a>
 
 </div>
-
 
 
 | Liminal                                         | Loop                                            | [`02.md`](./02/README.md)              |
