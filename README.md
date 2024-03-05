@@ -1,4 +1,4 @@
-# _Liminal Loop_ 🦄
+# `Liminal Loop`
 
 
 
