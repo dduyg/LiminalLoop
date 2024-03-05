@@ -5,7 +5,10 @@ _The rest is up to you and your imagination. 🦄_
 > ← `README.md`: That's this file, where you can tell people what your cool website does and how you built it.
 
 ### Try this next 🏗️
-Add these meta tags for SEO and social sharing between your page `<head></head>` tags, changing the values for your site:
+
+- [x] README.md
+- [ ] Add these meta tags for SEO and social sharing between your page `<head></head>` tags, changing the values for your site:
+
 ```
 <link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
 <meta name="description" content="A simple website, built with Glitch. Remix it to get your own."/>
