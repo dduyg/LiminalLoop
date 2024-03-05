@@ -3,50 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Personal Branding</title>
+    <title>Azra's Personal Webpage</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
             background-color: #000000;
             color: #ffffff;
+            line-height: 1.6;
         }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            padding-top: 120px; /* Add padding top for the fixed image */
-            box-sizing: border-box;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
         }
-        .content {
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .fixed-image {
+        .left-corner {
             position: fixed;
-            width: 150px;
             top: 0;
             left: 0;
-            z-index: -1; /* Stacking the image behind other content */
+            z-index: 999;
+            max-width: 150px;
+        }
+        .content {
+            margin-top: 50px; /* Adjust according to your image height */
+        }
+        .about-me {
+            text-align: justify;
+        }
+        /* Vaporwave Cyberspace Aesthetics */
+        .vaporwave {
+            color: #ff77ff;
+            text-shadow: 0 0 5px #ff77ff, 0 0 10px #ff77ff, 0 0 20px #ff77ff, 0 0 30px #ff77ff, 0 0 40px #ff77ff, 0 0 55px #ff77ff, 0 0 75px #ff77ff;
         }
     </style>
 </head>
 <body>
-    <img class="fixed-image" src="https://raw.githubusercontent.com/dduyg/testframe/7ebf8fd98e2af23bf91ecdbaf53d6546c29489af/left-corner.jpg" alt="Left Corner Image">
+    <img src="https://raw.githubusercontent.com/dduyg/testframe/7ebf8fd98e2af23bf91ecdbaf53d6546c29489af/left-corner.jpg" alt="Left Corner Image" class="left-corner">
+
     <div class="container">
-        <h1>Your Personal Branding</h1>
+        <h1 class="vaporwave">Azra</h1>
         <div class="content">
-            <h2>Welcome to Your Retro Space!</h2>
-            <p>This is your personal branding space where you can showcase your identity and creativity with vaporwave diskette retro aesthetics.</p>
-            <h3>About Me</h3>
-            <p>Insert your captivating story and purpose here.</p>
-            <h3>Portfolio</h3>
-            <p>Showcase your projects, artwork, or achievements.</p>
-            <h3>Contact Me</h3>
-            <p>Let's connect! Provide your contact information or social media links here.</p>
+            <h2 class="vaporwave">About Me</h2>
+            <p class="about-me">
+                My love for thinking in systems fuels my curiosity and drives my passion for understanding complex interconnections in the world around us.
+            </p>
         </div>
     </div>
 </body>
