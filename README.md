@@ -1,4 +1,4 @@
-## `Liminal Loop`
+## <samp>Liminal Loop</samp>
 
 - [x] [`04`](https://dduyg.github.io/LiminalLoop/04/)
 - [ ] [`10`](https://dduyg.github.io/LiminalLoop/10/)
