@@ -1,22 +1,3 @@
-/* 
- * SHADER SESSION WITH OPHELIAGAME
- * AUG 2022
- *
- * opheliagame: 
- * https://opheliagame.github.io/
- * https://www.instagram.com/ophelia.game/
- *
- * We're curiouslyminded:
- * https://www.curiouslyminded.xyz
- * https://www.twitch.tv/curiouslyminded
- * https://www.youtube.com/curiouslyminded
- *
- *
- * GLSL Debugger in JS by Sean Zellmer:
- * https://twitter.com/lejeunerenard
- *
- */
-
 let camera, scene, renderer, clock;
 let uniforms;
 
