@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Stairway</title>
@@ -8,49 +8,47 @@
   <link rel="stylesheet" href="../next-link.css">
 </head>
 <body>
-<div id="shadercollab"></div>
+<div class="container">
+ <svg viewBox="0 0 200 200">
+  <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="noise2" x="-100" y="-100" width="400" height="400">
+   <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+   <feDisplacementMap in="SourceGraphic" scale="100" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+  <circle cx="100" cy="100" r="50" fill="#7B68EE" />
+  <circle cx="100" cy="100" r="25" fill="white" filter="url(#noise2)" />
+
+ </svg>
+
+ <svg viewBox="0 0 200 200">
+  <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="noise" x="-100" y="-100" width="400" height="400">
+   <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+   <feDisplacementMap in="SourceGraphic" scale="200" />
+  </filter>
+  <polygon points="100,190 30,40 140,60" fill="black" />
+  <circle cx="100" cy="100" r="40" fill="#7B68EE" filter="url(#noise)" />
+ </svg>
+
+ <svg viewBox="0 0 200 200">
+  <defs>
+   <linearGradient id="lineargrad">
+    <stop offset="0" stop-color="#7B68EE" />
+    <stop offset="1" stop-color="#000" />
+   </linearGradient>
+   <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="noiseHeavy" x="-100" y="-100" width="400" height="400">
+    <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="8" stitchTiles="stitch" />
+    <feDisplacementMap in="SourceGraphic" scale="300" xChannelSelector="G" yChannelSelector="G" />
+   </filter>
+   <mask id="maskedHeavyNoise">
+    <rect cx="0" cy="0" width="200" height="200" fill="white" filter="url(#noiseHeavy)"></rect>
+   </mask>
+  </defs>
+
+  <circle mask="url(#maskedHeavyNoise)" cx="100" cy="100" r="50" fill="url(#lineargrad)" />
+
+ </svg>	
+</div>
+
 <!-- remove link line --> <a href="../14/">nxt</a> <!-- when using -->
 	
-<script id="vertex" type="x-shader/x-vertex">
-	void main() { gl_Position = vec4(position, 1.0); }
-</script>
-
-<script id="fragment" type="x-shader/x-fragment">
-precision highp float;
-
-uniform vec2 u_resolution;
-uniform float u_time;
-
-float rand(vec2 n) { 
-	return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
-}
-
-void main() {
-	vec2 uv = (gl_FragCoord.xy - (u_resolution.xy * .5)) / u_resolution.yy;
-
-	float t = u_time;		
-	
-	uv.x /= uv.y * 2.0 - 2.0;
-	
-	vec2 res = vec2(10.0);
-	vec2 grid = fract(uv * res);
-	// vec2 grid = mod(uv * res, 1.0);
-	float circle = length(grid - 0.5);
-	float rect = max(
-		abs(grid.x-0.5),
-		abs(grid.y-0.5)
-	);
-	
-	float r1 = rand(floor(uv*res)/res);
-	float col1 = r1 >= 0.5 ? circle : rect;
-	
-	vec3 color = vec3(0.0);
-	color = vec3(col1);
-	
-	gl_FragColor = vec4(color, 1.0);
-}
-</script>	
-   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js'></script>
-   <script src="./script.js"></script>
 </body>
 </html>
