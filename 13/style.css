@@ -1,0 +1,39 @@
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+body.is-debugging {
+  overflow: scroll;
+}
+
+.debug-drawer {
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 4px solid gray;
+}
+.debug-drawer pre {
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  margin: 0;
+}
+.debug-drawer pre .error-line {
+  background: #811121;
+}
+.debug-drawer pre .error {
+  color: yellow;
+  font-style: italic;
+}

@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - #curiouslyminded with opheliagame</title>
+  <link rel="stylesheet" href="./style.css">
 
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Shader Session with opheliagame | 2022
+ *
+ * opheliagame: 
+ * https://opheliagame.github.io/
+ * https://www.instagram.com/ophelia.game/
+ *
+ * We're curiouslyminded:
+ * https://www.curiouslyminded.xyz
+ * https://www.twitch.tv/curiouslyminded
+ * https://www.youtube.com/curiouslyminded -->
+<div id="shadercollab"></div>
+
+<script id="vertex" type="x-shader/x-vertex">
+	void main() { gl_Position = vec4(position, 1.0); }
+</script>
+
+<script id="fragment" type="x-shader/x-fragment">
+precision highp float;
+
+uniform vec2 u_resolution;
+uniform float u_time;
+
+float rand(vec2 n) { 
+	return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+}
+
+void main() {
+	vec2 uv = (gl_FragCoord.xy - (u_resolution.xy * .5)) / u_resolution.yy;
+
+	float t = u_time;		
+	
+	uv.x /= uv.y * 2.0 - 2.0;
+	
+	vec2 res = vec2(10.0);
+	vec2 grid = fract(uv * res);
+	// vec2 grid = mod(uv * res, 1.0);
+	float circle = length(grid - 0.5);
+	float rect = max(
+		abs(grid.x-0.5),
+		abs(grid.y-0.5)
+	);
+	
+	float r1 = rand(floor(uv*res)/res);
+	float col1 = r1 >= 0.5 ? circle : rect;
+	
+	vec3 color = vec3(0.0);
+	color = vec3(col1);
+	
+	gl_FragColor = vec4(color, 1.0);
+}
+</script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
