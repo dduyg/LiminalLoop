@@ -1,79 +1,120 @@
-body {
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background-color: #0a0a23;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
 }
 
-nav {
-    background-color: #000000;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.logo {
-    font-size: 1.5rem;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
+.container {
+    max-width: 960px;
+    margin: auto;
     padding: 0 20px;
 }
 
-.nav-links a {
+header {
+    background-color: #ff6ec7;
+    padding: 20px 0;
+}
+
+header h1 {
+    float: left;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: white;
-    transition: all 0.3s ease;
+    color: #fff;
 }
 
-.nav-links a:hover {
-    color: #e0e0e0;
+section {
+    padding: 100px 0;
+    text-align: center;
 }
 
-.burger {
+section h2 {
+    margin-bottom: 20px;
+}
+
+#home {
+    background-image: url('vaporwave_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+#about {
+    background-color: #ff6ec7;
+}
+
+#portfolio {
+    background-color: #4a148c;
+}
+
+#contact {
+    background-color: #6200ea;
+}
+
+/* Mobile Menu */
+.menu-toggle {
     display: none;
-    flex-direction: column;
     cursor: pointer;
 }
 
-.line1, .line2, .line3 {
+.bar {
+    display: block;
     width: 25px;
     height: 3px;
-    background-color: white;
-    margin: 5px;
+    background-color: #fff;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
 }
 
-header {
-    text-align: center;
-    color: white;
-    padding: 100px 0;
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-    .nav-links {
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
         display: none;
     }
-    .burger {
-        display: flex;
-    }
-    .nav-active {
+
+    .nav-list.active {
         display: flex;
         flex-direction: column;
-        width: 100%;
         position: absolute;
         top: 70px;
-        background-color: #000000;
-        transition: all 0.3s ease;
-        z-index: 1;
+        left: 0;
+        width: 100%;
+        background-color: #ff6ec7;
     }
-    .nav-active li {
+
+    .nav-list.active li {
         text-align: center;
+        margin: 10px 0;
     }
 }
