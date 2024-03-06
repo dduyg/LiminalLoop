@@ -3,60 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Bits Showcase</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #622e8a;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            padding: 20px;
-            background-color: #ff6bcb;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        main {
-            padding: 20px;
-        }
-        .coding-bit {
-            margin-bottom: 40px;
-        }
-        .coding-bit h2 {
-            font-size: 1.5em;
-        }
-        .coding-bit p {
-            font-size: 1.2em;
-        }
-        footer {
-            padding: 20px;
-            background-color: #ff6bcb;
-        }
-    </style>
+    <title>Personal Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p>Coding Bits Showcase</p>
+        <div class="container">
+            <h1>My Vaporwave Nostalgia</h1>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <div class="coding-bit">
-            <h2>Project 1: Example Project</h2>
-            <p>This is a brief description of your first coding project. You can write about what inspired you, the technologies you used, and any challenges you faced.</p>
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to My World</h2>
+            <p>Explore the nostalgic vaporwave vibes.</p>
         </div>
-        <div class="coding-bit">
-            <h2>Project 2: Another Example Project</h2>
-            <p>Describe your second coding project here. Highlight the features you implemented and any unique solutions you came up with.</p>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Insert your personal information here.</p>
         </div>
-        <!-- Add more coding bits as needed -->
-    </main>
-    <footer>
-        <p>Follow me on <a href="https://github.com/yourusername">GitHub</a> for more coding inspiration!</p>
-    </footer>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <p>Showcase your work here.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Get in touch with me.</p>
+        </div>
+    </section>
 </body>
 </html>
