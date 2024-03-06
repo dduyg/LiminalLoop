@@ -7,36 +7,39 @@
     <style>
         body {
             font-family: "Lucida Console", Monaco, monospace;
-            background-color: #1a1a2e; /* Dark purple background */
-            color: #c7c7e2; /* Light purple text */
-            margin: 0;
+            background-color: #800080; /* Dark Purple */
+            color: #ff00ff; /* Magenta */
+            margin: 0;      
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding-top: 40px; /* Adjusted padding */
+            padding-top: 20%; /* Adjusted padding */
             padding: 20px;
         }
         h1, h2 {
             text-align: center;
-            color: #bb86fc; /* Light purple headings */
+            color: #ff00ff; /* Magenta */
         }
         .story-container {
             max-height: 400px;
             overflow-y: auto;
             margin-top: 20px;
             padding: 10px;
-            background-color: rgba(27, 20, 41, 0.5); /* Semi-transparent dark background */
+            background-color: rgba(128, 0, 128, 0.5); /* Semi-transparent Dark Purple */
             border-radius: 10px;
-        }
-        p, li {
-            color: #c7c7e2; /* Light purple text */
-        }
-        code {
-            color: #ff79c6; /* Pinkish code */
+            color: #ff00ff; /* Magenta */
         }
         ul {
-            list-style-type: square;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li:before {
+            content: "▹"; /* Custom bullet */
+            margin-right: 10px;
         }
     </style>
 </head>
