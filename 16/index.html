@@ -1,26 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Converter</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Converter</title>
+  <style>
+    body {
+      background-color: #282828;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    #container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Case Converter</h1>
-        <textarea id="inputText" placeholder="Enter text..."></textarea>
-        <div class="options">
-            <button onclick="convertText('upper')">Upper Case</button>
-            <button onclick="convertText('lower')">Lower Case</button>
-            <button onclick="convertText('proper')">Proper Case</button>
-            <button onclick="convertText('sentence')">Sentence Case</button>
-            <button onclick="convertText('camel')">Camel Case</button>
-            <button onclick="convertText('snake')">Snake Case</button>
-        </div>
-        <textarea id="outputText" placeholder="Converted text..."></textarea>
-    </div>
+  <div id="container">
+    <h2>Case Converter</h2>
+    <input type="text" id="inputText" placeholder="Enter text...">
+    <br>
+    <button onclick="convertToUpperCase()">Upper Case</button>
+    <button onclick="convertToLowerCase()">Lower Case</button>
+    <button onclick="convertToProperCase()">Proper Case</button>
+    <button onclick="convertToSentenceCase()">Sentence Case</button>
+    <button onclick="convertToCamelCase()">Camel Case</button>
+    <button onclick="convertToSnakeCase()">Snake Case</button>
+    <br><br>
+    <textarea id="outputText" rows="6" readonly></textarea>
+  </div>
 
-    <script src="script.js"></script>
+  <script>
+    function convertToUpperCase() {
+      var text = document.getElementById('inputText').value;
+      document.getElementById('outputText').value = text.toUpperCase();
+    }
+
+    function convertToLowerCase() {
+      var text = document.getElementById('inputText').value;
+      document.getElementById('outputText').value = text.toLowerCase();
+    }
+
+    function convertToProperCase() {
+      var text = document.getElementById('inputText').value;
+      var words = text.split(' ');
+      for (var i = 0; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+      }
+      document.getElementById('outputText').value = words.join(' ');
+    }
+
+    function convertToSentenceCase() {
+      var text = document.getElementById('inputText').value;
+      var sentences = text.split('. ');
+      for (var i = 0; i < sentences.length; i++) {
+        sentences[i] = sentences[i].charAt(0).toUpperCase() + sentences[i].slice(1).toLowerCase();
+      }
+      document.getElementById('outputText').value = sentences.join('. ');
+    }
+
+    function convertToCamelCase() {
+      var text = document.getElementById('inputText').value;
+      var words = text.toLowerCase().split(' ');
+      for (var i = 1; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+      }
+      document.getElementById('outputText').value = words.join('');
+    }
+
+    function convertToSnakeCase() {
+      var text = document.getElementById('inputText').value;
+      var snakeCase = text.toLowerCase().replace(/\s+/g, '_');
+      document.getElementById('outputText').value = snakeCase;
+    }
+  </script>
 </body>
 </html>
