@@ -3,68 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Personal Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000033;
-            color: #ffcc00;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #ffcc00;
-            color: #000033;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .section h2 {
-            color: #ffcc00;
-        }
-        .python-r-comparison {
-            text-align: left;
-        }
-    </style>
+    <title>Vaporwave Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Your Personal Webpage</h1>
+        <div class="container">
+            <h1>Vaporwave Portfolio</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
     </header>
-    <div class="container">
-        <div class="section">
-            <h2>Welcome to My Showcase</h2>
-            <p>This webpage is a showcase of my interests and projects.</p>
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to my Vaporwave Portfolio</h2>
+            <p>Experience the nostalgia of the vaporwave era.</p>
         </div>
-        <div class="section">
-            <h2>Vaporwave Seapunk Aesthetics</h2>
-            <p>I've incorporated vaporwave seapunk aesthetics into this webpage design to reflect my unique style.</p>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Insert your personal information here.</p>
         </div>
-        <div class="section">
-            <h2>Comparison: Python vs R Naming Standards</h2>
-            <div class="python-r-comparison">
-                <h3>Python Naming Conventions</h3>
-                <p>- snake_case for variable names</p>
-                <p>- PascalCase for class names</p>
-                <p>- UPPER_CASE for constants</p>
-                <h3>R Naming Conventions</h3>
-                <p>- camelCase for variable names</p>
-                <p>- PascalCase for function names</p>
-                <p>- snake_case for file names</p>
-            </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <p>Showcase your projects here.</p>
         </div>
-        <div class="section">
+    </section>
+
+    <section id="contact">
+        <div class="container">
             <h2>Contact Me</h2>
-            <p>Feel free to reach out to me via email at your@email.com</p>
+            <p>Insert contact form or details here.</p>
         </div>
-    </div>
+    </section>
+
+    <script src="app.js"></script>
 </body>
 </html>
