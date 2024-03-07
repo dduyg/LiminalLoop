@@ -3,96 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case Converter</title>
-  <style>
-    body {
-      background-color: #282828;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-    #container {
-      width: 80%;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="container">
-    <h2>Case Converter</h2>
-    <input type="text" id="inputText" placeholder="Enter text...">
-    <br>
-    <button onclick="convertToUpperCase()">Upper Case</button>
-    <button onclick="convertToLowerCase()">Lower Case</button>
-    <button onclick="convertToProperCase()">Proper Case</button>
-    <button onclick="convertToSentenceCase()">Sentence Case</button>
-    <button onclick="convertToCamelCase()">Camel Case</button>
-    <button onclick="convertToSnakeCase()">Snake Case</button>
-    <br><br>
-    <textarea id="outputText" rows="6" readonly></textarea>
+  <div class="container">
+    <header>
+      <h1>Welcome to My Portfolio</h1>
+      <button id="menuButton">Menu</button>
+      <nav id="floatingMenu" class="hidden">
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Add your content here...</p>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <p>Add your projects here...</p>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Add your contact information here...</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 My Portfolio</p>
+    </footer>
   </div>
 
-  <script>
-    function convertToUpperCase() {
-      var text = document.getElementById('inputText').value;
-      document.getElementById('outputText').value = text.toUpperCase();
-    }
-
-    function convertToLowerCase() {
-      var text = document.getElementById('inputText').value;
-      document.getElementById('outputText').value = text.toLowerCase();
-    }
-
-    function convertToProperCase() {
-      var text = document.getElementById('inputText').value;
-      var words = text.split(' ');
-      for (var i = 0; i < words.length; i++) {
-        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
-      }
-      document.getElementById('outputText').value = words.join(' ');
-    }
-
-    function convertToSentenceCase() {
-      var text = document.getElementById('inputText').value;
-      var sentences = text.split('. ');
-      for (var i = 0; i < sentences.length; i++) {
-        sentences[i] = sentences[i].charAt(0).toUpperCase() + sentences[i].slice(1).toLowerCase();
-      }
-      document.getElementById('outputText').value = sentences.join('. ');
-    }
-
-    function convertToCamelCase() {
-      var text = document.getElementById('inputText').value;
-      var words = text.toLowerCase().split(' ');
-      for (var i = 1; i < words.length; i++) {
-        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
-      }
-      document.getElementById('outputText').value = words.join('');
-    }
-
-    function convertToSnakeCase() {
-      var text = document.getElementById('inputText').value;
-      var snakeCase = text.toLowerCase().replace(/\s+/g, '_');
-      document.getElementById('outputText').value = snakeCase;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
