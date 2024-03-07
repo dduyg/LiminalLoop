@@ -9,12 +9,38 @@
             font-family: "Lucida Console", Monaco, monospace;
             background-color: #0a0a0a; /* Dark background */
             color: #f0e68c; /* Light text color */
-            margin: 0;      
+            margin: 0;
+            padding-top: 60px; /* Adjusting for the fixed top navigation */
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #4a148c; /* Dark purple for the navigation */
+            z-index: 1000; /* Ensuring it's above other content */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        nav li {
+            float: left;
+        }
+        nav li a {
+            display: block;
+            color: #f0e68c; /* Light text color */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            background-color: #6600cc; /* Dark purple on hover */
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding-top: 40%;
             padding: 20px;
         }
         h1, h2 {
@@ -42,6 +68,15 @@
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <h1>Naming conventions</h1>
         <div class="story-container">
