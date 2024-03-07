@@ -1,35 +1,34 @@
 function convertText(type) {
-    let inputText = document.getElementById('inputText').value;
-    let outputText = '';
-
+    let inputText = document.getElementById("inputText").value;
+    let outputText = document.getElementById("outputText");
     switch (type) {
-        case 'uppercase':
-            outputText = inputText.toUpperCase();
+        case 'upper':
+            outputText.value = inputText.toUpperCase();
             break;
-        case 'lowercase':
-            outputText = inputText.toLowerCase();
+        case 'lower':
+            outputText.value = inputText.toLowerCase();
             break;
-        case 'propercase':
-            outputText = inputText.toLowerCase().replace(/(^|\s)\S/g, function (char) {
+        case 'proper':
+            outputText.value = inputText.toLowerCase().replace(/(^|\s)\S/g, function (char) {
                 return char.toUpperCase();
             });
             break;
-        case 'sentencecase':
-            outputText = inputText.replace(/(^\w{1}|\.\s*\w{1})/gi, function (char) {
+        case 'sentence':
+            outputText.value = inputText.replace(/(^\w{1}|\.\s+\w{1})/g, function(char) {
                 return char.toUpperCase();
             });
             break;
-        case 'camelcase':
-            outputText = inputText.replace(/(?:^\w|[A-Z]|\b\w)/g, function (char, index) {
-                return index === 0 ? char.toLowerCase() : char.toUpperCase();
-            }).replace(/\s+/g, '');
+        case 'camel':
+            outputText.value = inputText.replace(/\W+(.)/g, function(match, chr) {
+                return chr.toUpperCase();
+            });
+            outputText.value = outputText.value.charAt(0).toLowerCase() + outputText.value.slice(1);
             break;
-        case 'snakecase':
-            outputText = inputText.replace(/\s+/g, '_').toLowerCase();
+        case 'snake':
+            outputText.value = inputText.toLowerCase().replace(/\s/g, '_');
             break;
         default:
-            outputText = inputText;
+            outputText.value = inputText;
+            break;
     }
-
-    document.getElementById('outputText').value = outputText;
 }
