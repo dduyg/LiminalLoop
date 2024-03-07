@@ -22,7 +22,7 @@ a {
 
 textarea {
     width: 90%;
-    height: 150px;
+    min-height: 150px;
     padding: 10px;
     margin-bottom: 20px;
     background-color: #4a4e69;
