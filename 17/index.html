@@ -1,99 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #292c34;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #2a4e78;
-            border: 20px solid #222;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
-            margin-top: 50px;
-        }
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: #ff6ac1;
-        }
-        .content {
-            line-height: 1.6;
-            font-size: 18px;
-            text-align: center;
-        }
-        .comparison {
-            margin-top: 50px;
-        }
-        .comparison h2 {
-            font-size: 24px;
-            text-align: center;
-            color: #ff6ac1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .comparison table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .comparison th, .comparison td {
-            border: 1px solid #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #ff6ac1;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Personal Webpage</h1>
-        <div class="content">
-            <p>Welcome to my personal webpage where I showcase my interests!</p>
-            <p>I'm deeply inspired by vaporwave windows aesthetics, and you'll notice this reflected in the design and content of my page.</p>
-            <p>One interesting topic I'd like to discuss is the comparison between naming standards/conventions in Python and R.</p>
-        </div>
-        
-        <div class="comparison">
-            <h2>Python vs R: Naming Standards/Conventions</h2>
-            <table>
-                <tr>
-                    <th>Python</th>
-                    <th>R</th>
-                </tr>
-                <tr>
-                    <td>snake_case</td>
-                    <td>snake_case</td>
-                </tr>
-                <tr>
-                    <td>ClassNames</td>
-                    <td>classNames</td>
-                </tr>
-                <tr>
-                    <td>CONSTANTS</td>
-                    <td>CONSTANTS</td>
-                </tr>
-                <tr>
-                    <td>function_names()</td>
-                    <td>functionNames()</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+
+<div class="container">
+  <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+  <nav class="menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <h1>Welcome to My Portfolio</h1>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ipsum euismod, consequat turpis in, porta tellus.</p>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <p>Check out some of my works!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me at example@example.com</p>
+  </section>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
