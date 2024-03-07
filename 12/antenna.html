@@ -9,17 +9,53 @@
             font-family: "Lucida Console", Monaco, monospace;
             background-color: #800080; /* Dark Purple */
             color: #ff00ff; /* Magenta */
-            margin: 0;      
+            margin: 0;
+            padding-top: 60px; /* Adjusting for the fixed top navigation */
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensuring it's above other content */
+            display: flex;
+            justify-content: space-between; /* Align items to the left and right */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-size: 20px; /* To make symbol ❍ bigger */
+        }
+        nav li {
+            float: right; /* Align items to the right */
+        }
+        nav li a {
+            display: block;
+            color: #ff6ac1;
+            font-weight: bold;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            color: #d0d0d0;
+        }
+        .badge {
+            padding: 0 20px; /* Adjust spacing around the logo */
+        }
+        .badge img {
+            height: 40px; /* Adjust the height of the logo */
+            vertical-align: middle; /* Align the logo vertically */
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding-top: 20%; /* Adjusted padding */
             padding: 20px;
         }
         h1, h2 {
             text-align: center;
-            color: #ff00ff; /* Magenta */
+            color: #ff00ff;
         }
         .story-container {
             max-height: 400px;
@@ -31,19 +67,27 @@
             color: #ff00ff; /* Magenta */
         }
         ul {
-            list-style-type: none;
-            padding-left: 0;
+            list-style-type: disc;
         }
         li {
             margin-bottom: 10px;
-        }
-        li:before {
-            content: "▹"; /* Custom bullet */
-            margin-right: 10px;
-        }
+        }        
     </style>
 </head>
 <body>
+    <nav>
+        <div class="badge">
+            <a href="../12/"><img src="badge.gif" alt="■"></a>
+        </div>
+        <ul>
+            <li><a href="../13/">■</a></li>
+            <li><a href="antenna">❍</a></li>
+            <li><a href="webscapes">❍</a></li>
+            <li><a href="cityscape">❍</a></li>
+            <li><a href="cyberpunk">❍</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <h1>Naming conventions</h1>
         <div class="story-container">
