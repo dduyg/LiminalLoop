@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Webpage</title>
-    <style>
-        body {
-            background-color: #0F3057;
-            color: #FFD700;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1, h2, h3 {
-            color: #FFD700;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .comparison {
-            margin-top: 50px;
-            padding: 20px;
-            background-color: #1C2541;
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Personal Webpage</title>
+  <style>
+    body {
+      background-color: #0f0c29;
+      color: #bb86fc;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 50px 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      font-size: 2rem;
+      border-bottom: 1px solid #bb86fc;
+      padding-bottom: 10px;
+    }
+    .comparison {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .comparison img {
+      max-width: 45%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Personal Webpage</h1>
-        <p>This webpage showcases my interests and projects while incorporating vaporwave seapunk aesthetics.</p>
-        <h2>About Me</h2>
-        <p>I am passionate about technology and data science. Python and R are two languages I use frequently for analysis and visualization.</p>
-        <div class="comparison">
-            <h3>Naming Standards/Conventions: Python vs R</h3>
-            <p>In my upcoming post, I'll share a comparison between the naming standards and conventions used in Python and R programming languages.</p>
+  <header>
+    <h1>Welcome to Your Personal Webpage</h1>
+    <p>Showcasing your interests and comparisons between Python and R</p>
+  </header>
+  <div class="content">
+    <section class="section">
+      <h2>Showcase</h2>
+      <p>This webpage is designed to showcase your interests and projects.</p>
+      <p>Feel free to explore and reach out for more information!</p>
+    </section>
+    <section class="section">
+      <h2>Comparison: Naming Standards in Python vs R</h2>
+      <div class="comparison">
+        <div class="python">
+          <h3>Python</h3>
+          <p>Python follows PEP 8 for naming conventions.</p>
+          <img src="python_logo.png" alt="Python Logo">
         </div>
-        <h2>Projects</h2>
-        <p>Stay tuned for updates on my latest projects!</p>
-        <h2>Contact Me</h2>
-        <p>You can reach me at myemail@example.com</p>
-    </div>
+        <div class="r">
+          <h3>R</h3>
+          <p>R follows a more varied convention but generally uses snake_case.</p>
+          <img src="r_logo.png" alt="R Logo">
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
