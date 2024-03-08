@@ -51,11 +51,3 @@ body {
 header, section {
   margin-top: 40px;
 }
-
-header h1, section h2 {
-  color: #ff6ec7;
-}
-
-section p {
-  color: #666;
-}
