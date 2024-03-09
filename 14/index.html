@@ -56,37 +56,27 @@
     a:hover {
       background-color: #5f6d7d;
     }
-    /* /////ction */
-    #versus {
-      width: 100%;
-      overflow-x: auto;
-    }
-    .comparison {
+    table {
       width: 100%;
       border-collapse: collapse;
-      border: 2px solid #454545;
-      border-radius: 10px;
       margin-top: 30px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    .comparison th, .comparison td {
+    th, td {
       padding: 8px;
-      border-bottom: 1px solid #ff6ac1; 
-      text-align: left; 
+      border-bottom: 1px solid #ddd;
+      text-align: left;
     }
-    .comparison th {
-      background-color: #ff6ac1;
-      color: #000000; 
+    th {
+      background-color: #00ff00;
+      color: #000;
     }
     @media screen and (max-width: 600px) {
-      .comparison {
-        font-size: 0.85em;
+      table {
+        overflow-x: auto;
+        display: block;
       }
-      .comparison th, .comparison td {
-        padding: 8px;
-      }
-    }  
-  </style>
+    }
+  </style> 
 </head>
 <body>
   <header>
@@ -102,7 +92,7 @@
     </section>
     <section id="versus">
       <h2>Python vs R</h2>
-      <table class="comparison">
+      <table>
         <tr>
           <th></th>
           <th>Python&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-python"></i></th>
