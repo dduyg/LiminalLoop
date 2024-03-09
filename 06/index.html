@@ -1,75 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>Your Personal Webpage</title>
     <style>
-        /* 
-        font-family: 'Hanken Grotesk', sans-serif;
-        font-family: 'Kalnia', serif;
-        */
-        @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Kalnia&display=swap');
-        
         body {
-            font-family: 'Kalnia', serif;
-            background-color: #535629;
-            color: #8CC3FB;    
+            font-family: Arial, sans-serif;
+            background-color: #2a2a2a;
+            color: #ffffff;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
-
-        header {
-            background-color: #8CC3FB;
-            color: #535629;
-            padding: 20px 0;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        h1, h2, h3 {
+            color: #ff6ec7;
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
-        }
-        
-        a:hover { 
-            color: black;
-            transform: scale(1.1);
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        footer {
-            padding: 20px 0;
-            position: fixed;
+        table {
             width: 100%;
-            bottom: 0;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ff6ec7;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #ff6ec7;
+            color: #ffffff;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>WHICHEVER</h1>
-    </header>
-    <main>
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p>Personal Branding | Vaporwave Nostalgia Aesthetics</p>
+        </header>
         <section>
-            <p>In information theory, entropy is a measure of uncertainty or randomness in a set of data. It quantifies the average amount of information needed to describe an event or the uncertainty associated with a random variable. Higher entropy implies greater disorder and unpredictability, while lower entropy indicates a more ordered and predictable system.</p>
+            <h2>About Me</h2>
+            <p>Add your bio here.</p>
         </section>
-    </main>
-    <footer>
-        <p>&copy; Shaped with <3  <a href="../07/">▶</a></p>
-    </footer>
+        <section>
+            <h2>Projects</h2>
+            <p>Add information about your projects here.</p>
+        </section>
+        <section>
+            <h2>Contact Information</h2>
+            <p>Add your contact information here.</p>
+        </section>
+        <section>
+            <h2>Naming Conventions: Python vs R</h2>
+            <p>Here's a comprehensive comparison table:</p>
+            <table>
+                <tr>
+                    <th>Python</th>
+                    <th>R</th>
+                </tr>
+                <tr>
+                    <td>Snake case (variable_name)</td>
+                    <td>Snake case (variable_name)</td>
+                </tr>
+                <tr>
+                    <td>Function names: snake_case()</td>
+                    <td>Function names: snake_case()</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </section>
+        <footer>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
-
 </html>
