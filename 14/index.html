@@ -42,13 +42,6 @@
     section h3 {
       color: #5f6d7d;
     }
-    .comparison {
-      max-width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin-top: 30px;
-    }
     a {
       display: inline-block;
       padding: 5px;
@@ -62,6 +55,35 @@
     }
     a:hover {
       background-color: #5f6d7d;
+    }
+    /* /////ction */
+    #versus {
+      width: 100%;
+      overflow-x: auto;
+    }
+    .comparison {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid #7289da;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    .comparison th, .comparison td {
+      padding: 12px;
+      border: 1px solid #7289da;
+    }
+    .comparison th {
+      background-color: #7289da;
+      color: #fff;
+      text-align: left;
+    }
+    .comparison td {
+      background-color: #f0f0f0;
+    }
+    @media screen and (max-width: 600px) {
+      .comparison th, .comparison td {
+        padding: 8px;
+      }
     }  
   </style>
 </head>
