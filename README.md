@@ -6,7 +6,7 @@
 | [`12`](https://dduyg.github.io/LiminalLoop/12/) | [`14`](https://dduyg.github.io/LiminalLoop/14/) | [`17`](https://dduyg.github.io/LiminalLoop/17/) |
 
 ```html
-<a href="../14/">next</a>
+<a href="../14/">➾</a>
 ```
 
 ```html
