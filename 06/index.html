@@ -3,93 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Personal Webpage</title>
+    <title>Your Portfolio</title>
     <style>
         body {
+            background-color: #7B919C;
+            color: #000;
             font-family: Arial, sans-serif;
-            background-color: #000000;
-            color: #ffffff;
             margin: 0;
             padding: 0;
         }
-        header {
-            text-align: center;
-            padding: 50px 0;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #ff6ac1;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        h1, h2, h3, h4, h5, h6 {
+            color: #00ff00;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
+            margin-top: 20px;
         }
         th, td {
             padding: 8px;
-            border-bottom: 1px solid #ff6ac1;
+            border-bottom: 1px solid #ddd;
             text-align: left;
         }
         th {
-            background-color: #ff6ac1;
-            color: #000000;
+            background-color: #00ff00;
+            color: #000;
+        }
+        @media screen and (max-width: 600px) {
+            table {
+                overflow-x: auto;
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Your Personal Branding</h1>
-        <p>Welcome to your unique online space!</p>
-    </header>
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>Introduce yourself here with some catchy lines about your passions and aspirations, blending with the nostalgic vaporwave aesthetics.</p>
-        </section>
-        <section>
-            <h2>Python vs R: Naming Conventions Comparison</h2>
-            <p>Here's a comprehensive comparison table between Python and R naming conventions:</p>
-            <table>
-                <tr>
-                    <th>Language</th>
-                    <th>Variable Naming</th>
-                    <th>Function Naming</th>
-                    <th>Package Naming</th>
-                </tr>
-                <tr>
-                    <td>Python</td>
-                    <td>snake_case</td>
-                    <td>snake_case</td>
-                    <td>snake_case</td>
-                </tr>
-                <tr>
-                    <td>R</td>
-                    <td>camelCase</td>
-                    <td>camelCase</td>
-                    <td>camelCase</td>
-                </tr>
-            </table>
-        </section>
-        <section>
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to me through the following channels:</p>
-            <ul>
-                <li>Email: your.email@example.com</li>
-                <li>Twitter: @yourtwitterhandle</li>
-                <!-- Add more contact details as needed -->
-            </ul>
-        </section>
-    </div>
+
+<div class="container">
+    <h1>Your Name</h1>
+    <h2>Portfolio</h2>
+    <h3>About Me</h3>
+    <p>Add your bio here.</p>
+    
+    <h3>Python vs R Naming Conventions Comparison</h3>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Python</th>
+            <th>R</th>
+        </tr>
+        <tr>
+            <td>Function Naming</td>
+            <td>snake_case</td>
+            <td>camelCase</td>
+        </tr>
+        <tr>
+            <td>Variable Naming</td>
+            <td>lowercase (`x`, `var`), snake_case</td>
+            <td>camelCase, snake_case</td>
+        </tr>
+        <tr>
+            <td>Classes</td>
+            <td>PascalCase</td>
+            <td>PascalCase</td>
+        </tr>
+        <tr>
+            <td>Methods</td>
+            <td>snake_case, lowercase</td>
+            <td>camelCase</td>
+        </tr>
+        <tr>
+            <td>Constants</td>
+            <td>UPPERCASE, UPPERCASE_SNAKE_CASE</td>
+            <td>UPPERCASE, UPPERCASE_SNAKE_CASE</td>
+        </tr>
+        <tr>
+            <td>Packages</td>
+            <td>lowercase, flatcase (`pythonpackage`)</td>
+            <td>lowercase, flatcase</td>
+        </tr>
+        <tr>
+            <td>File Names</td>
+            <td>lowercase.py, snake_case.py</td>
+            <td>snake_case.R</td>
+        </tr>
+        <tr>
+            <td>Comments</td>
+            <td># Single line</td>
+            <td># Single line, # Multi-line</td>
+        </tr>
+    </table>
+</div>
+
 </body>
 </html>
