@@ -1,86 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            background-color: #7B919C;
-            color: #000;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: #00ff00;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            flex: 1;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #00ff00;
-            color: #000;
-            position: relative;
-        }
-        .icon {
-            position: absolute;
-            right: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            bottom: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liminal Loop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Kalnia&display=swap');
+    /* 
+     font-family: 'Hanken Grotesk', sans-serif;
+     font-family: 'Kalnia', serif;
+    */   
+    body {
+      font-family: 'Kalnia', serif;
+      background-color: #535629;
+      color: #8CC3FB;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 50px 0;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ff00;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    section h2 {
+      font-size: 2rem;
+      padding-bottom: 10px;
+      color: #00ff00;
+    }
+    header h3 {
+      color: #5f6d7d;
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+    section h3 {
+      color: #5f6d7d;
+    }
+    code {
+      color: #00ff00;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #5f6d7d;
+      text-align: left;
+    }
+    th {
+      background-color: #5f6d7d;
+      color: #ddd;
+      position: relative;
+    }
+    .icon {
+      color: #00ff00;
+      position: absolute;
+      right: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media screen and (max-width: 600px) {
+      table {
+        overflow-x: auto;
+        display: block;
+      }
+    }
+  </style> 
 </head>
 <body>
-
-<div class="container">
-    <h1>Your Name</h1>
-    <h2>Portfolio</h2>
-    <h3>About Me</h3>
-    <p>Add your bio here.</p>
-    
-    <h3>Python vs R Naming Conventions Comparison</h3>
-    <table>
+  <header>
+    <h1>Syntax Serenity</h1>
+    <h3>The Beauty of Naming in Programming</h3>
+    <p>Writing elegant, efficient, and well-structured code can be like crafting a piece of art. Beauty in coding often comes from simplicity, readability, and the ability to solve complex problems in an elegant manner. Many programmers find joy in writing code that not only works but is also elegant and easy to understand.</p>
+  </header>
+  <div class="content">
+    <section id="conventions">
+      <h2>Naming Conventions</h2>
+      <p>Code is read more often than it is written. Clear naming conventions make it easier to maintain and modify code. Naming conventions play a crucial role in writing clean and understandable code. They help programmers understand the purpose and functionality of variables, functions, classes, and other elements within a program. When names accurately describe what the code does, it becomes simpler to make changes without introducing errors.</p>
+      <p>Whether you are programming in Python or R, adhering to the respective naming conventions will help you write more efficient and organized code.</p>
+    </section>
+    <section id="versus">
+      <h2>Python vs R</h2>
+      <table>
         <tr>
-            <th>Python <i class="fab fa-python icon"></i></th>
-            <th>R <i class="fab fa-r-project icon"></i></th>
+          <th></th>
+          <th>Python <i class="fab fa-python icon"></i></th>
+          <th>R <i class="fab fa-r-project icon"></i></th>
         </tr>
         <tr>
-            <td>snake_case</td>
-            <td>camelCase</td>
+          <td>Function Naming</td>
+          <td>snake_case</td>
+          <td>camelCase, snake_case</td>
         </tr>
-        <!-- Add more rows as needed -->
-    </table>
-</div>
-
-<footer>
-    Your sticky footer content goes here.
-</footer>
-
+        <tr>
+          <td>Variable Naming</td>
+          <td>lowercase e.g. <code>x</code> or <code>var</code>, snake_case</td>
+          <td>camelCase, snake_case</td>
+        </tr>
+        <tr>
+          <td>Classes</td>
+          <td>PascalCase</td>
+          <td>camelCase, snake_case</td>
+        </tr>
+        <tr>
+          <td>Methods</td>
+          <td>snake_case, lowercase</td>
+          <td>camelCase</td>
+        </tr>
+        <tr>
+          <td>Constants</td>
+          <td>UPPERCASE, SCREAMING_SNAKE_CASE</td>
+          <td>UPPERCASE, SCREAMING_SNAKE_CASE</td>
+        </tr>
+        <tr>
+          <td>Packages</td>
+          <td>lowercase, flatcase e.g. <code>pythonpackage</code></td>
+          <td>lowercase, flatcase</td>
+        </tr>
+        <tr>
+          <td>File Names</td>
+          <td>lowercase.py, snake_case.py</td>
+          <td>snake_case.R</td>
+        </tr>
+        <tr>
+          <td>Comments</td>
+          <td># Single line</td>
+          <td># Single line</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>""" Multi-line """ or ''' Multi-line  '''</td>
+          <td># Multi-line</td>
+        </tr>
+      </table>
+    </section>
+    <section id="python">
+      <h2>Python Naming Conventions</h2>
+      <p>Python follows the PEP 8 style guide for naming conventions. Here are some key points:</p>
+      <h3>Variables and Functions</h3>
+      <ul>
+        <li>Use lowercase letters for variable names.</li>
+        <li>Separate words with underscores to improve readability.</li>
+        <li>Variable names should be descriptive and meaningful.</li>
+        <li>Functions should have descriptive names that indicate their purpose.</li>
+        <li>Avoid using single character names except for loop counters or temporary variables.</li>
+      </ul>
+      <h3>Constants</h3>
+      <ul>
+        <li>Use uppercase letters for constants.</li>
+        <li>Separate words with underscores.</li>
+        <li>Constants should represent fixed values that do not change during the execution of the program.</li>
+      </ul>
+      <h3>Classes</h3>
+      <ul>
+        <li>Use PascalCase for class names.</li>
+        <li>Class names should be nouns and start with a capital letter.</li>
+        <li>Use descriptive names that indicate the purpose of the class.</li>
+      </ul>
+      <h3>Modules and Packages</h3>
+      <ul>
+        <li>Use lowercase names for modules and packages.</li>
+        <li>Separate words with underscores if needed.</li>
+        <li>Module names should be short and descriptive.</li>
+        <li>Avoid using names that conflict with standard Python modules or built-in functions.</li>
+      </ul>
+    </section>
+    <section id="R">
+      <h2>R Naming Conventions</h2>
+      <p>R programming language follows its own set of naming conventions. Here are the key points:</p>
+      <h3>Variables and Functions</h3>
+      <ul>
+        <li>Use lowercase letters for variable names.</li>
+        <li>Separate words with underscores or use camelCase.</li>
+        <li>Variable names should be descriptive and meaningful.</li>
+        <li>Functions should have descriptive names that indicate their purpose.</li>
+        <li>Avoid using reserved words as variable names.</li>
+      </ul>
+      <h3>Constants</h3>
+      <ul>
+        <li>Constants are not explicitly defined in R, but conventionally use uppercase letters for variables that are not intended to be modified.</li>
+      </ul>
+      <h3>Classes</h3>
+      <ul>
+        <li>R uses S3 and S4 class systems for object-oriented programming.</li>
+        <li>Class names should be meaningful and follow the same conventions as variable names.</li>
+      </ul>
+      <h3>Packages</h3>
+      <ul>
+        <li>Package names should be descriptive and lowercase.</li>
+        <li>Avoid using names that conflict with existing R packages.</li>
+      </ul>
+    </section>
+  </div>
 </body>
 </html>
