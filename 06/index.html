@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             background-color: #7B919C;
@@ -11,6 +12,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            height: 100%;
+            position: relative;
         }
         h1, h2, h3, h4, h5, h6 {
             color: #00ff00;
@@ -19,6 +22,8 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            padding-bottom: 60px; /* Adjust as per your footer height */
+            min-height: 100%;
         }
         table {
             width: 100%;
@@ -33,12 +38,23 @@
         th {
             background-color: #00ff00;
             color: #000;
+            position: relative;
         }
-        @media screen and (max-width: 600px) {
-            table {
-                overflow-x: auto;
-                display: block;
-            }
+        .icon {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px; /* Set your footer height */
+            line-height: 60px;
         }
     </style>
 </head>
@@ -53,52 +69,20 @@
     <h3>Python vs R Naming Conventions Comparison</h3>
     <table>
         <tr>
-            <th>Feature</th>
-            <th>Python</th>
-            <th>R</th>
+            <th>Python <i class="fab fa-python icon"></i></th>
+            <th>R <i class="fab fa-r-project icon"></i></th>
         </tr>
         <tr>
-            <td>Function Naming</td>
             <td>snake_case</td>
             <td>camelCase</td>
         </tr>
-        <tr>
-            <td>Variable Naming</td>
-            <td>lowercase (`x`, `var`), snake_case</td>
-            <td>camelCase, snake_case</td>
-        </tr>
-        <tr>
-            <td>Classes</td>
-            <td>PascalCase</td>
-            <td>PascalCase</td>
-        </tr>
-        <tr>
-            <td>Methods</td>
-            <td>snake_case, lowercase</td>
-            <td>camelCase</td>
-        </tr>
-        <tr>
-            <td>Constants</td>
-            <td>UPPERCASE, UPPERCASE_SNAKE_CASE</td>
-            <td>UPPERCASE, UPPERCASE_SNAKE_CASE</td>
-        </tr>
-        <tr>
-            <td>Packages</td>
-            <td>lowercase, flatcase (`pythonpackage`)</td>
-            <td>lowercase, flatcase</td>
-        </tr>
-        <tr>
-            <td>File Names</td>
-            <td>lowercase.py, snake_case.py</td>
-            <td>snake_case.R</td>
-        </tr>
-        <tr>
-            <td>Comments</td>
-            <td># Single line</td>
-            <td># Single line, # Multi-line</td>
-        </tr>
+        <!-- Add more rows as needed -->
     </table>
 </div>
+
+<footer>
+    Your footer content goes here.
+</footer>
 
 </body>
 </html>
