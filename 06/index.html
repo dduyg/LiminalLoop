@@ -40,12 +40,31 @@
       font-size: 2rem;
       padding-bottom: 10px;
     }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: transparent;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid #8CC3FB;
+      border-bottom-width: 4px;
+      border-radius: 10px;
+      color: #8CC3FB;
+      font-size: 1.7em;
+      cursor: pointer;
+      transition: border-bottom-width 0.3s ease;
+    }
+    .btn:hover {
+      border-bottom-width: 6px;
+      font-weight: bold;
+    }
   </style> 
 </head>
 <body>
   <header>
     <h1>Change Data Capture (CDC)</h1>
     <p>Change Data Capture (CDC) is a technique used in databases to track and capture changes made to data. It enables the identification and extraction of changes (inserts, updates, and deletes) that occur in the database, allowing applications to react to those changes in real-time or near-real-time.</p>
+    <a href="../07/">▶</a>
   </header>
   <div class="content">
     <section id="how">
