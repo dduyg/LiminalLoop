@@ -6,8 +6,69 @@
     <title>Liminal Loop</title>
     <style>
         body {
-            max-width: 800px;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #b1acb9;
         }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6ec7;
+            text-decoration: none;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .menu li a:hover {
+            color: #ff6ec7;
+        }
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .section h1, .section h2 {
+    color: #ff6ec7;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            .menu {
+                display: none;
+            }
+            .menu.active {
+                display: block;
+            }
+            .menu li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+            
         h1, h2, h3 {
             color: #00BFFF; /* Deep Sky Blue */
         }
