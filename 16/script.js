@@ -1,29 +1,15 @@
-function convertToUpperCase() {
-  const inputText = document.getElementById('inputText').value;
-  const outputText = inputText.toUpperCase();
-  document.getElementById('outputText').value = outputText;
-}
+const menuBtn = document.querySelector('.logo');
+const menu = document.querySelector('.menu');
+const menuItems = document.querySelectorAll('.menu li a');
 
-function convertToLowerCase() {
-  const inputText = document.getElementById('inputText').value;
-  const outputText = inputText.toLowerCase();
-  document.getElementById('outputText').value = outputText;
-}
+// Toggle menu active class
+menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
 
-function convertToCamelCase() {
-  const inputText = document.getElementById('inputText').value;
-  const words = inputText.split(' ');
-  const camelCaseText = words.map((word, index) => {
-    if (index === 0) {
-      return word.toLowerCase();
-    }
-    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-  }).join('');
-  document.getElementById('outputText').value = camelCaseText;
-}
-
-function convertToSnakeCase() {
-  const inputText = document.getElementById('inputText').value;
-  const snakeCaseText = inputText.toLowerCase().replace(/\s+/g, '_');
-  document.getElementById('outputText').value = snakeCaseText;
-}
+// Close menu when a menu item is clicked
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
+});
