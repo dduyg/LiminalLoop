@@ -23,9 +23,6 @@
         h1 {
             font-family: 'Pentameter Light';
         }
-        a {
-            text-decoration: none;
-        }
         button {
             background-color: #8a2be2;
             color: #fff;
@@ -38,10 +35,43 @@
         }
         button:hover {
             background-color: #5f9ea0;
+        }
+        #credits {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0.75em 1em;
+            text-align: center;
+            color: black;
+            opacity: 0;
+            font-size: 1.1em;
+        }
+        a {
+            color: black;
+            font-family: "Arial", sans-serif;
+            text-decoration: none;
+        }
+        #credits a::before {
+            content: '';
+            display: inline-block;
+            position: relative;
+            transform-origin: center center;
+            top: -0.0325em;
+            height: 0.65em;
+            width: 0.65em;
+            background-color: black;
+            color: black;
+            border-radius: 100%;
+            margin-right: 0.35em;
+        }
+        #credits a:hover::before {
+            animation: 1.5s rotate ease-in-out infinite;
         }  
     </style>
 </head>
 <body>
+   <div id="credits"><a href="#" target="_blank">See More</a></div>
    <main>
      <h1>Data-focused machine learning is the way</h1>
      <p> ➝ Data-focused machine learning refers to an approach where emphasis is placed on the quality, quantity, and relevance of the data used to train and improve machine learning models. This approach recognizes that the performance of machine learning algorithms is heavily dependent on the characteristics of the data they are trained on. Therefore, efforts are directed towards collecting, preparing, and utilizing high-quality data to enhance the accuracy and generalization capabilities of the models.</p>
