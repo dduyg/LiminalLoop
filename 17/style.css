@@ -145,11 +145,11 @@ article {
 footer {
 	padding: 40px;
         position: fixed;
-        bottom: 5%;
+        bottom: 0;
         text-align: center;
 }
 a {
-	color: oklch(25% 0.104 146.51);
+	color: oklch(99.75% 0.03 146.51);
 	font-weight: bold;
 	background-color: black;
 	padding: 2px;
