@@ -6,62 +6,80 @@
     <title>Liminal Loop</title>
     <style>
         body {
-            background-color: #0f0f0f;
+            font-family: Arial, sans-serif;
+            background-color: #101010;
             color: #fff;
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
         }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
+        header {
             text-align: center;
+            padding: 20px;
         }
         h1 {
             font-size: 36px;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ff1493;
         }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .creations {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            grid-gap: 20px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            margin-top: 40px;
+            padding: 20px;
         }
         .creation {
-            background-color: #3d3d3d;
-            padding: 20px;
+            width: 300px;
+            margin: 20px;
+            border: 2px solid #ff1493;
             border-radius: 10px;
+            overflow: hidden;
             transition: transform 0.3s ease;
         }
         .creation:hover {
             transform: translateY(-5px);
         }
         .creation img {
-            max-width: 100%;
-            border-radius: 5px;
+            width: 100%;
+            height: auto;
+        }
+        .creation .description {
+            padding: 10px;
+            background-color: #ff1493;
+        }
+        .creation .description h2 {
+            font-size: 24px;
+            margin: 0;
+            color: #101010;
+        }
+        .creation .description p {
+            margin: 5px 0;
+            color: #101010;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Cyber Creations</h1>
+        <p>Exploring the intersection of coding and creativity with a cyberpunk webscape theme and vaporwave aesthetics</p>
+    </header>
     <div class="container">
-        <h1>Welcome to Your Creations</h1>
-        <p>Explore my creations where coding meets creativity in the vaporwave cyberspace.</p>
-        <div class="creations">
-            <div class="creation">
-                <img src="your_image_1.jpg" alt="Creation 1">
-                <p>Description of Creation 1</p>
+        <div class="creation">
+            <img src="your_image_1.jpg" alt="Creation 1">
+            <div class="description">
+                <h2>Creation Title 1</h2>
+                <p>Description of your creation goes here.</p>
             </div>
-            <div class="creation">
-                <img src="your_image_2.jpg" alt="Creation 2">
-                <p>Description of Creation 2</p>
-            </div>
-            <!-- Add more creations as needed -->
         </div>
+        <div class="creation">
+            <img src="your_image_2.jpg" alt="Creation 2">
+            <div class="description">
+                <h2>Creation Title 2</h2>
+                <p>Description of your creation goes here.</p>
+            </div>
+        </div>
+        <!-- Add more creations as needed -->
     </div>
 </body>
 </html>
