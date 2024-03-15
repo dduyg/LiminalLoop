@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f0332;
+      color: #ff00ff;
+    }
+    header {
+      background-color: #2200ff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      margin-bottom: 10px;
+    }
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .section:nth-child(even) {
+      background-color: #4400ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Personal Webpage</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#documentation">Documentation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div id="about" class="section">
+    <h2>About Me</h2>
+    <p>Add your information about yourself here.</p>
+  </div>
+  <div id="documentation" class="section">
+    <h2>Documentation</h2>
+    <p>Add your script documentation here.</p>
+    <p>Example:</p>
+    <pre>
+      <!-- Your script documentation goes here -->
+    </pre>
+  </div>
+  <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Add your contact information here.</p>
+  </div>
+</body>
+</html>
