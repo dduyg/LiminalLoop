@@ -30,3 +30,16 @@
     src: url(fonts/HelveticaNeue-Medium.woff);
     src: url(fonts/HelveticaNeue-Medium.woff2);
 }
+
+
+
+
+@font-face {
+    font-family: 'standard';
+    src: url(fonts/Standard-Book.woff2);
+}
+
+@font-face {
+    font-family: 'times now';
+    src: url(fonts/TimesNow-Light.woff2);
+}
