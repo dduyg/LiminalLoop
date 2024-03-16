@@ -1,76 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Webpage</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #0f0332;
-      color: #ff00ff;
-    }
-    header {
-      background-color: #2200ff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.5rem;
-    }
-    nav {
-      position: fixed;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li {
-      margin-bottom: 10px;
-    }
-    .section {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .section:nth-child(even) {
-      background-color: #4400ff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #0e5d6f;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        pre {
+            background-color: #001e27;
+            color: #7df;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1>Personal Webpage</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#documentation">Documentation</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <div id="about" class="section">
-    <h2>About Me</h2>
-    <p>Add your information about yourself here.</p>
-  </div>
-  <div id="documentation" class="section">
-    <h2>Documentation</h2>
-    <p>Add your script documentation here.</p>
-    <p>Example:</p>
-    <pre>
-      <!-- Your script documentation goes here -->
-    </pre>
-  </div>
-  <div id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Add your contact information here.</p>
-  </div>
+    <div class="container">
+        <h1>Compressed Bytes</h1>
+        <h2>Introduction:</h2>
+        <p>This Python script provides a convenient way to compress data files using gzip compression, aiming to optimize storage and transmission costs. By compressing data files, users can reduce file sizes, making them more efficient for storage and transmission over networks.</p>
+
+        <h2>Features:</h2>
+        <ul>
+            <li>Compresses data files using gzip compression.</li>
+            <li>Calculates compression ratio to assess the effectiveness of compression.</li>
+            <li>Provides informative output about the compression process.</li>
+        </ul>
+
+        <h2>Requirements:</h2>
+        <ul>
+            <li>Python 3.x</li>
+            <li>Operating system that supports gzip compression (e.g., Unix-based systems, Windows)</li>
+        </ul>
+
+        <h2>Usage:</h2>
+        <p>Ensure that you have Python 3.x installed on your system. Customize the <code>input_file</code> variable in the script to specify the path to your data file. Run the script using the command <code>python compress_data.py</code>. After execution, the script will generate a compressed file with a <code>.gz</code> extension in the same directory as the input file.</p>
+
+        <h2>Example Output:</h2>
+        <pre>
+            Compression complete:
+            Original file size: 1048576 bytes
+            Compressed file size: 524288 bytes
+            Compression ratio: 2.00
+        </pre>
+
+        <h2>Note:</h2>
+        <ul>
+            <li>The script assumes that the input file is in a format compatible with gzip compression.</li>
+            <li>Ensure that you have necessary permissions to read and write files in the specified directories.</li>
+            <li>For large files, the compression process may take some time depending on the system resources available.</li>
+        </ul>
+
+        <h2>Author:</h2>
+        <p>@dduyg</p>
+
+        <h2>Date:</h2>
+        <p>@16 Mar, 2024</p>
+    </div>
 </body>
+
 </html>
