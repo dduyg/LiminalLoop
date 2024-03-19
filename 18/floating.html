@@ -13,14 +13,6 @@
             color: #1a1a1a;
             line-height: 1.5;
         }
-        section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center;
-            box-sizing: border-box;
-        }      
         nav {
             position: fixed;
             top: 50vh;
@@ -40,10 +32,32 @@
         nav a:hover {
             transform: translateY(-5px);
         }
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;
+            box-sizing: border-box;
+        }
         .content {
             max-width: 800px;
             padding: 20px;
         }
+        @media screen and (max-width: 768px) {
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start; /* Align content to the left on small screens */
+            }
+        }
+        @media screen and (min-width: 769px) {
+            .content {
+                max-width: 60%; /* Set a maximum width for the content on larger screens */
+                margin-left: auto; /* Push content to the left on larger screens */
+                padding-right: 20px; /* Add additional padding to the right */
+            }
+        }       
         h1 {
             font-family: "Roboto Mono", monospace;
         }
