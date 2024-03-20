@@ -3,147 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap" rel="stylesheet">
-    <title>Liminal Loop</title>
+    <title>2 cool ways to use :has()</title>
     <style>
-        body {
-            font-family: "Alegreya Sans", sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #1a1a1a;
-            line-height: 1.5;
-        }
-        nav {
-            position: fixed;
-            top: 50vh;
-            right: 2rem;
-            transform: translateY(-50%);
-            z-index: 999;
-        }
-        nav a {
+        /*
+         * Use :has() to filter items by category using
+         * checkboxes. No JS required!
+         */
+        section:has([name="snacks"]:checked) article:has([data-category="snacks"]) {
             display: block;
-            margin: 10px 0;
-            color: #1a1a1a;
-            text-decoration: none;
-            font-size: 2em;
-            transition: transform 0.3s ease;
         }
-        nav a:active {
-            transform: translateY(5px);
+
+        section:has([name="naps"]:checked) article:has([data-category="naps"]) {
+            display: block;
         }
-        .marked {
-            cursor: pointer;
-            font-weight: bold;
-            border-bottom: 3px solid #B413EC;
+
+        section:has([name="computers"]:checked)
+            article:has([data-category="computers"]) {
+            display: block;
         }
-        section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center;
+
+        article {
+            /* color code by category */
+            --hue: 0;
+
+            &:has([data-category="snacks"]) {
+                --hue: 233.35;
+            }
+
+            &:has([data-category="computers"]) {
+                --hue: 91.24;
+            }
+
+            &:has([data-category="naps"]) {
+                --hue: 334.61;
+            }
+
+            & img {
+                border: 1px solid oklch(93% 0.1 var(--hue));
+            }
+
+            & .categories {
+                background: oklch(96% 0.05 var(--hue));
+                border: 1px solid oklch(93% 0.1 var(--hue));
+                color: oklch(35% 0.104 var(--hue));
+            }
+        }
+
+        /*
+         * general layout stuff that’s not the cool thing I
+         * wanted to show off
+         */
+
+        :root {
+            background: oklch(99.75% 0.03 146.51);
+            font-family: system-ui;
+            line-height: 1.45;
+        }
+
+        * {
             box-sizing: border-box;
         }
-        .content {
-            max-width: 800px;
-            padding: 3rem;
+
+        section {
+            block-size: 90cqw;
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(3, min(200px, 33% - 1.5rem));
+            margin: 2rem auto 5rem;
+            place-content: start center;
         }
-        @media screen and (min-width: 769px) {
-            .content {
-                max-width: 70%; /* Set a maximum width for the content on larger screens */
+
+        form {
+            align-items: baseline;
+            background: oklch(99.62% 0.01 146.51);
+            border: 1px solid oklch(99.62% 0.2 146.51);
+            border-radius: 0.25rem;
+            color: oklch(30% 0.3 146.51);
+            display: flex;
+            gap: 1rem;
+            grid-column: 1 / span 3;
+            margin-block-end: 1rem;
+            justify-content: center;
+            padding: 1rem;
+
+            & p {
+                line-height: 1;
+                margin: 0;
             }
-        }       
-        h1 {
-            font-family: "Roboto Mono", monospace;
         }
-        #first {
-            background: radial-gradient(circle, rgb(230, 146, 146) 0%, rgb(184, 189, 189) 100%);
+
+        label,
+        input {
+            color: inherit;
+            font-size: 1rem;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            block-size: 1rem;
+            inline-size: 1rem;
+            position: relative;
+            inset-block-start: 0.125rem;
+        }
+
+        article {
+            container-type: inline-size;
+            display: none;
+            margin: 0;
+
+            & img {
+                aspect-ratio: 16 / 9;
+                border-radius: 0.25rem;
+                display: block;
+                inline-size: 100%;
+                object-fit: cover;
+            }
+
+            & h2 {
+                color: oklch(25% 0.104 146.51);
+                font-size: clamp(0.75rem, 9cqw, 1rem);
+                font-weight: 300;
+                letter-spacing: 0.1em;
+                line-height: 1.1;
+                margin: clamp(0.125rem, 2cqw, 0.375rem) 0;
+            }
+
+            & .categories {
+                border-radius: 0.25rem;
+                display: inline-block;
+                font-size: clamp(0.4rem, 5.5cqw, 0.625rem);
+                letter-spacing: 0.15em;
+                line-height: 1;
+                margin: 0;
+                padding: clamp(0.125rem, 2cqw, 0.25rem);
+                font-variant: small-caps;
+            }
+
+            & .categories::after {
+                content: attr(data-category);
+            }
+        }
+
+        footer {
+            padding: 40px;
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+        }
+
+        a {
+            color: oklch(99.75% 0.03 146.51);
+            font-weight: bold;
+            background-color: black;
+            padding: 2px;
+            border-radius: 7px;
+            text-decoration: none;
         }
     </style>
-</head>
+</head>	
 <body>
-    <nav>
-        <a href="#first">⚀</a>
-        <a href="#second">⚁</a>
-        <a href="#third">⚂</a>
-        <a href="#fourth">⚃</a>
-        <a href="#fifth">⚄</a>
-        <a href="#sixth">⚅</a>
-    </nav>
+ <section>
+	<form>
+		<p>Filter by category:</p>
+		<label>
+			<input type="checkbox" name="snacks" checked />
+			snacks
+		</label>
 
-    <section id="first">
-        <div class="content">
-            <h1>ByteStairway💗🐙</h1>
-            <p>
-                In lines of code, we dance and sway,<br>
-                A melody of ones and zeros we play.<br>
-                With keystrokes soft, we paint the <span class="marked">scene</span>,<br>
-                In the digital world, where bytes convene.
-            </p>
-        </div>
-    </section>
-    <section id="second" style="background-color: darkgray; color: #f8f5da;">
-        <div class="content">
-            <h1>optimizeLegibility📿💤</h1>
-            <p>
-                Compile the rhythms, let algorithms flow,<br>
-                A symphony of data, let the music grow.<br>
-                From if-else branches to loops that spin,<br>
-                In every loop, a new beginning.
-            </p>
-        </div>
-    </section>
-    <section id="third" style="background-color: floralwhite; color: aquamarine;">
-        <div class="content">
-            <h1>Wavelength👊🐳</h1>
-            <p>
-                Through loops and functions, we find our way,<br>
-                In the binary night, where dreams hold sway.<br>
-                Errors are like dissonant chords we mend,<br>
-                With debugging hands, we make amends.
-            </p>
-        </div>
-    </section>
-    <section id="fourth" style="background-color: beige;">
-        <div class="content">
-            <h1>geometricPrecision💣🐨</h1>
-            <p>
-                Strings of text become lyrical lines,<br>
-                As we craft our song in digital shrines.<br>
-                Variables dance, their values collide,<br>
-                In this symphony of code, we take pride.
-            </p>
-        </div>
-    </section>
-    <section id="fifth" style="background-color: #F5EDEA;">
-        <div class="content">
-            <h1>Feature selection💥🐚</h1>
-            <p>
-                So let the compilers sing, let the processors hum,<br>
-                In the realm of code, our song is never done.<br>
-                For in every line, in every function call,<br>
-                We find the music of the digital sprawl.
-            </p>
-        </div>
-    </section>
-    <section id="sixth" style="background-color: #CD9489;">
-        <div class="content">
-            <h1>Shape Recognition😈🍓</h1>
-            <p>This is the note section.</p>
-        </div>
-    </section>
+		<label>
+			<input type="checkbox" name="naps" checked />
+			naps
+		</label>
 
-<!-- JavaScript for smooth scrolling -->
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+		<label>
+			<input type="checkbox" name="computers" checked />
+			computers
+		</label>
+	</form>
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
+	<article>
+		<img src="https://images.unsplash.com/photo-1708724195876-1156245fce21?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>Afternoon Hammock</h2>
+		<p class="categories" data-category="naps"></p>
+	</article>
+
+	<article>
+		<img src="https://images.unsplash.com/photo-1709625862284-b8a82d339b99?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>Tomagotchi</h2>
+		<p class="categories" data-category="computers"></p>
+	</article>
+
+	<article>
+		<img src="https://images.unsplash.com/photo-1643916861364-02e63ce3e52f?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>Strawberry Ice Cream</h2>
+		<p class="categories" data-category="snacks"></p>
+	</article>
+
+	<article>
+		<img src="https://images.unsplash.com/photo-1672217617440-1dd3e9417ce1?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>Tortilla Chips</h2>
+		<p class="categories" data-category="snacks"></p>
+	</article>
+
+	<article>
+		<img src="https://images.unsplash.com/photo-1699462515761-90db271d77c8?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>Comfy Chair</h2>
+		<p class="categories" data-category="naps"></p>
+	</article>
+
+	<article>
+		<img src="https://images.unsplash.com/photo-1709625862266-014ef072fd93?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>Game Boy Advance</h2>
+		<p class="categories" data-category="computers"></p>
+	</article>
+
+	<article>
+		<img src="https://images.unsplash.com/photo-1695278255455-9afc87008775?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>TI-83</h2>
+		<p class="categories" data-category="computers"></p>
+	</article>
+
+	<article>
+		<img src="https://images.unsplash.com/photo-1637611331620-51149c7ceb94?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>Hummus</h2>
+		<p class="categories" data-category="snacks"></p>
+	</article>
+
+	<article>
+		<img src="https://images.unsplash.com/photo-1688748807457-d8926e351596?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=400" alt="abstract color pattern" />
+		<h2>Sneaky Desk</h2>
+		<p class="categories" data-category="naps"></p>
+	</article>
+
+</section>
+
+ <!-- Remove when using -->
+     <footer><a href="../18/">➾</a></footer>
+ <!----------------------->
+  
 </body>
 </html>
