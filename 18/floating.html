@@ -29,8 +29,13 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        nav a:hover {
-            transform: translateY(-5px);
+        nav a:active {
+            transform: translateY(5px);
+        }
+        .marked {
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 3px solid #B413EC;
         }
         section {
             height: 100vh;
@@ -73,7 +78,7 @@
             <p>
                 In lines of code, we dance and sway,<br>
                 A melody of ones and zeros we play.<br>
-                With keystrokes soft, we paint the scene,<br>
+                With keystrokes soft, we paint the <span class="marked">scene</span>,<br>
                 In the digital world, where bytes convene.
             </p>
         </div>
