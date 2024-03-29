@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #2a0000;
+            color: #ffc0cb;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 5em;
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 192, 203, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(255, 192, 203, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 192, 203, 0);
+            }
+        }
+
+        .glitch {
+            animation: pulse 1s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Cybernetic Abyss</h1>
+        <p>Whoa! You've entered the vaporwave abyss...</p>
+        <p>It seems like this cyber data lover is lost in the digital waves.</p>
+        <p>But don't worry, let's groove back to reality together!</p>
+        <img class="glitch" src="https://i.pinimg.com/736x/73/c2/65/73c2652283393133e82b9bddac6f548a.jpg" alt="Vaporwave Cyber Data">
+    </div>
+</body>
+</html>
