@@ -78,6 +78,17 @@
             border-bottom: 3px solid #FE1483;
             text-decoration: none;
         }
+        .wave {
+            animation: wave 2s infinite alternate;
+        }
+        @keyframes wave {
+            0% {
+                transform: rotate(-5deg);
+            }
+            100% {
+                transform: rotate(5deg);
+            }
+        }
     </style>
 </head>
 <body>
