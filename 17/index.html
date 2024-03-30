@@ -170,6 +170,27 @@
                 clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
             }
         }
+
+        .echo {
+            animation: glitch-effect 1s linear infinite alternate-reverse;
+        }
+        @keyframes glitch-effect {
+            0% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(-2px, 2px);
+            }
+            50% {
+                transform: translate(2px, -2px);
+            }
+            75% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(-2px, -2px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -247,7 +268,7 @@
     </section>
     <section id="sixth" style="background-color: #CD9489; color: #1912FE;">
         <div class="content">
-            <h1>Shape Recognition😈🍓</h1>
+            <h1 class="echo">Shape Recognition😈🍓</h1>
             <p>In this cyberpunk dystopia we roam, Searching for a place to call our own. Through the chaos, we'll find our way, In the neon-lit night, we'll stay.</p>
         </div>
     </section>
