@@ -71,26 +71,45 @@
         #tenth {
             background: rgb(238, 174, 202);
             background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-            }
+        }
         .marked {
             font-weight: bold;
             color: inherit;
             border-bottom: 3px solid #FE1483;
             text-decoration: none;
-        } 
+        }
+      
+        .glitch {
+            width: 40%;
+            animation: glitch-effect 1s linear infinite alternate-reverse;
+        }
+        @keyframes glitch-effect {
+            0% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(-2px, 2px);
+            }
+            50% {
+                transform: translate(2px, -2px);
+            }
+            75% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(-2px, -2px);
+            }
+        }
     </style>
 </head>
 <body>
     <nav>
         <a href="#first">❍</a>
         <a href="#second">❍</a>
-        <a href="#third">❍</a>
-        <a href="#fourth">❍</a>
         <a href="#fifth">❍</a>
         <a href="#sixth">❍</a>
         <a href="#seventh">❍</a>
         <a href="#eight">❍</a>
-        <a href="#ninth">❍</a>
         <a href="#tenth">❍</a>
     </nav>
     
@@ -191,6 +210,12 @@
         <div class="content">
             <h1>Cybernetic Abyss</h1>
             <p>Whoa! You've entered the vaporwave abyss... It seems like this cyber data lover is lost in the digital waves. But don't worry, let's groove back to reality together!</p>
+        </div>
+    </section>
+    <section id="twelfth" style="background-color: #f0f0f0; color: #666;">
+        <div class="content">
+            <p>Whoa! You've entered the vaporwave abyss...</p>
+            <img class="glitch" src="https://via.placeholder.com/800x400">
         </div>
     </section>
    
