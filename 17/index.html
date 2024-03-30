@@ -91,6 +91,27 @@
                 transform: rotate(5deg);
             }
         }
+
+        .title {
+            animation: glitch-animation 2s infinite;
+        }
+        @keyframes glitch-animation {
+            0% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(2px, -2px);
+            }
+            50% {
+                transform: translate(-2px, 2px);
+            }
+            75% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -193,7 +214,7 @@
     </section>
     <section id="tenth">
         <div class="content">
-            <h1>Sea of Recursion</h1>
+            <h1 class="title">Sea of Recursion</h1>
             <p>Recursion is a programming concept where a function calls itself in order to solve a problem. It's like a function that contains a smaller version of itself within it. This process continues until a base case is reached, which is a condition where the function stops calling itself and returns a value. Recursion is commonly used to solve problems that can be broken down into smaller, similar sub-problems, such as traversing tree structures or searching through lists. It's a powerful technique but requires careful consideration of base cases and termination conditions to avoid infinite loops.</p>
         </div>
     </section>
