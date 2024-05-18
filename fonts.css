@@ -62,43 +62,4 @@
     /* Add additional font formats here for better compatibility */
     font-weight: normal; /* Adjust font weight if necessary */
     font-style: normal; /* Adjust font style if necessary */
-}    
-
-
-
-
-@font-face {
-    font-family: 'Fira Code';
-    src: url('fonts/FiraCode-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Fira Code';
-    src: url('fonts/FiraCode-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Fira Code';
-    src: url('fonts/FiraCode-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Fira Code';
-    src: url('fonts/FiraCode-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Fira Code';
-    src: url('fonts/FiraCode-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
 }
