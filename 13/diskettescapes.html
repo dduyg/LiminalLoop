@@ -5,49 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liminal Loop</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    *,
+    *:after,
+    *:before {
+      box-sizing: border-box;
+    }
+
+    :root {
+      font-size: 16px;
+    }
+
     body {
-      font-family: 'Geist Sans', sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #000000;
-      color: #ffffff;
+      font-family: "Inter", sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+      font-size: 1.25rem;
     }
 
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
+    *:focus {
+      outline: none;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 100px;
-      letter-spacing: 2px;
+    body > div {
+      width: 90%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
     }
-    p {
-      font-size: 1.2rem;
-      margin-top: 30px;
+
+    details div {
+      border-left: 2px solid #000;
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+      padding: 1.5em;
     }
-    .vaporwave {
-      color: #ff69b4;
-      text-transform: uppercase;
-      font-size: 1.8em;
+
+    details div > *+* {
+      margin-top: 1.5em;
     }
-    .circuitry {
-      color: #00ffff;
-      font-size: 1.8em;
-      text-transform: uppercase;
+
+    details+details {
+      margin-top: 0.5rem;
     }
-    </style>
+
+    summary {
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary {
+      border: 2px solid #000;
+      padding: 0.75em 1em;
+      cursor: pointer;
+      position: relative;
+      padding-left: calc(1.75rem + 0.75rem + 0.75rem);
+    }
+
+    summary:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0.75rem;
+      content: "↓";
+      width: 1.75rem;
+      height: 1.75rem;
+      background-color: #000;
+      color: #FFF;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    details[open] summary {
+      background-color: #eee;
+    }
+
+    details[open] summary:before {
+      content: "↑";
+    }
+
+    summary:hover {
+      background-color: #eee;
+    }
+
+    a {
+      color: inherit;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 1px 0 0;
+    }
+
+    a:hover {
+      box-shadow: 0 3px 0 0;
+    }
+
+    code {
+      font-family: monospace;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
-<main>
-    <h1>Diskettescapes</h1>
-    <p class="vaporwave">CYBER DATA MATRIX</p>
-    <p class="circuitry">Seems like you've ventured into the abyss of cyberspace.</p>
-    <p>Glitchy memories, faded and worn In the realm where the cyber meets the dawn Retro echoes of a forgotten time In the rhythm of the digital sublime.</p>
-    <p>Lost in a digital dream, Where neon lights softly gleam. Through the circuits, I flow, In this world, I'll never know.</p>
-    <p>Synth data stream, Lost within the machine. Digits dance in the night, In a sea of pure delight.</p>
-</main>
+  <div>
+    <details open>
+      <summary>How do you create an accordion?</summary>
+      <div>
+        <a href="../12/">Easy!</a> As long as you don't have to support IE11 or older browsers you could use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> natively.
+      </div>
+    </details>
+    <details>
+      <summary>What if I have to support IE11 or older browsers?</summary>
+      <div>
+        No worries. The fallback for these elements is quite good. They will display as open. You won't get the open/close mechanism, but you won't lose any content either.
+      </div>
+    </details>
+    <details>
+      <summary>What type of content can I have inside one of these?</summary>
+      <div>
+        Almost anything you'd like. The <code>&lt;details&gt;</code> element allows all <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" target="_blank">flow content</a>, which is basically everything.
+      </div>
+    </details>
+    <details>
+      <summary>How does it work?</summary>
+      <div>
+        The <code>&lt;details&gt;</code> element encapsulates the <code>&lt;summary&gt;</code> element. The <code>&lt;summary&gt;</code> becomes the 'label' for the <code>&lt;details&gt;</code> and acts like a button. When clicked, the attribute <code>open</code> is added to the <code>&lt;details&gt;</code> element, making it display. You can therefore style the open and closed states separately if you'd like.
+      </div>
+    </details>
+  </div>
 </body>
 </html>
