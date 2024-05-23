@@ -93,8 +93,16 @@
 }
 @font-face {
     font-family: 'Lucida Console';
-    src: url('../fonts/Lucida-Console-Regular.woff2') format('woff2'),
-         url('../fonts/Lucida-Console-Regular.woff') format('woff');
+    src: url('fonts/Lucida-Console-Regular.woff2') format('woff2'),
+         url('fonts/Lucida-Console-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Consolas';
+    src: url('fonts/Consolas.woff2') format('woff2'),
+         url('fonts/Consolas.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
