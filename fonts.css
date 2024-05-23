@@ -93,8 +93,8 @@
 }
 @font-face {
     font-family: 'Lucida Console';
-    src: url('../fonts/Lucida-Console.woff2') format('woff2'),
-         url('../fonts/Lucida-Console.woff') format('woff');
+    src: url('../fonts/Lucida-Console-Regular.woff2') format('woff2'),
+         url('../fonts/Lucida-Console-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
