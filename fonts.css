@@ -106,3 +106,13 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
+
+@font-face {
+    font-family: 'Droid Sans Mono';
+    src: url('fonts/droid-sans-mono.woff2') format('woff2'),
+         url('fonts/droid-sans-mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
