@@ -117,8 +117,8 @@
 
 @font-face {
     font-family: 'Helvetica Neue';
-    src: url('/assets/fonts/HelveticaNeue.woff2') format('woff2'),
-         url('/assets/fonts/HelveticaNeue.woff') format('woff');
+    src: url('fonts/HelveticaNeue.woff2') format('woff2'),
+         url('fonts/HelveticaNeue.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -126,8 +126,47 @@
 
 @font-face {
     font-family: 'Fantasque Sans Mono';
-    src: url('../fonts/FantasqueSansMono-Regular.woff2') format('woff2'),
-         url('../fonts/FantasqueSansMono-Regular.woff') format('woff');
+    src: url('fonts/FantasqueSansMono-Regular.woff2') format('woff2'),
+         url('fonts/FantasqueSansMono-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Sporting Grotesque';
+    font-weight: bold;
+    font-style: normal;
+    src: url('fonts/Sporting_Grotesque-Bold_web.woff') format('woff');
+}
+@font-face {
+    font-family: 'Sporting Grotesque';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/Sporting_Grotesque-Regular_web.woff') format('woff');
+}
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: bold;
+    font-style: normal;
+    src: url('fonts/NeueMachina-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/NeueMachina-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'GT Super';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/GT-Super-Display-Light-Italic.woff') format('woff'),
+         url('fonts/GT-Super-Display-Light-Italic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Stravinsky';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://files.cargocollective.com/c597238/Sporting_Grotesque-Bold_web.woff') format('woff');
 }
