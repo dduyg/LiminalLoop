@@ -46,12 +46,26 @@
       background-color: #AC4E5E;
       font-weight: bold;
     }
+
+    u {
+      text-decoration: none;
+      position: relative;
+    }
+    u::before {
+      content: '';
+      position: absolute;
+      top: -0.33em;
+      left: 0;
+      right: 0;
+      height: 1.1px; /* Intermediate thickness */
+      background-color: currentColor;
+    }
   </style>
 </head>
 <body>
   <img id="fixed-corner" src="liminal.png">
   <div class="container">
-    <h1>Convolutional Neural Networks</h1>
+    <h1>Convolu<u>tional&nbsp;</u> Neural Networks</h1>
     <section>
       <p>
         CNNs are a type of deep learning technique commonly used for image recognition tasks. They work by learning patterns and features from images through layers of filters. 
