@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff6f61;
+            text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61;
+        }
+        .glitch {
+            position: relative;
+            display: inline-block;
+            color: #fff;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #ff6f61;
+            background: #1a1a2e;
+            overflow: hidden;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff6f61;
+            animation: glitch1 0.3s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #ff6f61;
+            animation: glitch2 0.3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch1 {
+            0% { clip: rect(0, 9999px, 0, 0); }
+            10% { clip: rect(44px, 9999px, 56px, 0); }
+            20% { clip: rect(76px, 9999px, 86px, 0); }
+            30% { clip: rect(48px, 9999px, 70px, 0); }
+            40% { clip: rect(35px, 9999px, 55px, 0); }
+            50% { clip: rect(12px, 9999px, 22px, 0); }
+            60% { clip: rect(65px, 9999px, 76px, 0); }
+            70% { clip: rect(22px, 9999px, 42px, 0); }
+            80% { clip: rect(40px, 9999px, 50px, 0); }
+            90% { clip: rect(28px, 9999px, 58px, 0); }
+            100% { clip: rect(12px, 9999px, 22px, 0); }
+        }
+        @keyframes glitch2 {
+            0% { clip: rect(0, 9999px, 0, 0); }
+            10% { clip: rect(56px, 9999px, 66px, 0); }
+            20% { clip: rect(10px, 9999px, 20px, 0); }
+            30% { clip: rect(60px, 9999px, 70px, 0); }
+            40% { clip: rect(30px, 9999px, 40px, 0); }
+            50% { clip: rect(80px, 9999px, 90px, 0); }
+            60% { clip: rect(40px, 9999px, 50px, 0); }
+            70% { clip: rect(15px, 9999px, 25px, 0); }
+            80% { clip: rect(70px, 9999px, 80px, 0); }
+            90% { clip: rect(45px, 9999px, 55px, 0); }
+            100% { clip: rect(10px, 9999px, 20px, 0); }
+        }
+        .code {
+            background-color: #0f0f2f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+            width: 80%;
+            max-width: 800px;
+        }
+        pre {
+            overflow: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="glitch" data-text="Glitched Corridors">Glitched Corridors</h1>
+    <div class="code">
+        <h2>Code Showcase</h2>
+        <pre>
+// Add your code here
+const greet = (name) => {
+    return `Hello, ${name}! Welcome to Glitched Corridors.`;
+};
+
+console.log(greet('Visitor'));
+        </pre>
+    </div>
+</body>
+</html>
