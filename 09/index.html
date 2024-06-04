@@ -130,11 +130,24 @@
         clip: rect(79px, auto, 85px, 0);
       }
     }
+
+    .glitched {
+        margin-top: 0;
+        animation: glitched 1s infinite;
+    }
+    @keyframes glitched {
+        0% { transform: none; }
+        25% { transform: skewX(10deg) scaleY(1.1); }
+        50% { transform: skewX(-5deg) scaleY(0.9); }
+        75% { transform: skewX(5deg) scaleY(1.1); }
+        100% { transform: skewX(0deg) scaleY(1.0); }
+    }
   </style>
 </head>
 <body>
 <main>
   <h1 class="glitch" data-text="ERROR 404">ERROR 404</h1>
+  <h3 class="glitched">Not Found - The Matrix Has Glitched</h3>
   <p>The page you're looking for doesn't exist in our digital realm. Maybe it's been vaporized in a glitch storm. Try navigating through our cyber corridors again.</p>
   <nav>
     <a href="#">🌳</a>
