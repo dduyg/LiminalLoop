@@ -55,7 +55,7 @@ font-family: "Menlo", monospace;
 font-family: "Liberation Mono", monospace;
 font-family: "Andale Mono", monospace;
 font-family: "PT Mono", monospace;
-/* ⭐️ */ font-family: "Roboto Mono", monospace;
+/* ★★ */ font-family: "Roboto Mono", monospace;
 font-family: "Source Code Pro", monospace;
 font-family: "Inconsolata", monospace;
 font-family: "IBM Plex Mono", monospace;
