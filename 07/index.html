@@ -4,49 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
-    <meta name="mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../fonts.css">
     <style>
         body {
             font-family: 'Lucida Console', monospace;
             background-color: #1a1a2e;
-            color: #ffffff;
+            color: #ddd;
+            line-height: 1.4;
             margin: 0;
             padding: 0;
-        }
-        main {
             display: flex;
+            justify-content: center;
             align-items: center;
             height: 100vh;
-            padding: 20px;       
         }
-        section {
-            height: 50%;
-            overflow-y: auto;   
-            background-color: #27293d;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 10px;
+        main {
+            padding: 1.25em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
+            max-width: 600px;
         }
-        section h2 {
+        header, h1 {
+            text-align: center;
             color: #ff0;
         }
-        section p {
-            color: #ddd;
+        section {
+            overflow-y: auto;
+            background-color: #27293d;
+            margin-bottom: 1.25em;
+            padding: 1.25em;
+            border-radius: 0.625em;
+            max-height: 35vh;
+            box-sizing: border-box;
+        }
+        section h3 {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        nav a {
+            display: inline-block;
+            margin: 0.4em;
+            padding: 1em;
+            background-color: #ddd;
+            color: #27293d;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 100%;   
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #ff0;
+            color: #1a1a2e;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);       
+        }
+        footer {
+            margin-top: 1em;
+            padding: 0.625em;
+            text-align: center;
+            color: #ff0;
+            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
     <main>
+        <header>
+            <h1>Echoes of Nara</h1>
+        </header>
         <section>
-            <h2>Echoes</h2>
-            <p>In the mystical realm of Nara, where ancient spirits and mythical creatures coexist, a forbidden love blossoms between Sae-ri, a talented young sorceress with a mysterious past, and Han-gyeol, a guardian spirit tasked with maintaining the balance between the human and spirit worlds. As they navigate the challenges of their star-crossed romance, a dark force emerges, threatening to shatter the fragile harmony between the realms. Sae-ri must unlock her hidden powers and confront her destiny, while Han-gyeol grapples with the sacrifices required to protect the ones he loves. Together, they embark on a perilous journey, guided by the whispers of the moon, to save their world from impending doom and discover the true meaning of sacrifice, love, and destiny.</p>
+            <p>In the mystical realm of Nara, where ancient spirits and mythical creatures coexist, a forbidden love blossoms between Sae-ri, a talented young sorceress with a mysterious past, and Han-gyeol, a guardian spirit tasked with maintaining the balance between the human and spirit worlds. As they navigate the challenges of their star-crossed romance, a dark force emerges, threatening to shatter the fragile harmony between the realms. Sae-ri must unlock her hidden powers and confront her destiny, while Han-gyeol grapples with the sacrifices required to protect the ones he loves. Together, they embark on a perilous journey, guided by the whispers of the moon, to save their world from impending doom and discover the true meaning of sacrifice, love, and destiny.</p>
         </section>
         <section>
-            <h2>Descriptive</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra purus vitae porttitor euismod. Ut vitae mi vel ante consectetur placerat sit amet eu ex. Donec lectus risus, mollis at magna eget, scelerisque finibus felis. Cras fringilla quam ut libero placerat sodales. Curabitur nec velit neque. Donec est justo, tincidunt eu odio a, aliquet egestas ex. Vestibulum elementum faucibus iaculis. In mattis ultricies augue, in pretium justo lobortis eget. In viverra lacus orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc consequat vehicula elit et dapibus. Proin dapibus dolor a lorem suscipit, a faucibus felis cursus. Maecenas euismod ac mi vel sollicitudin. Vestibulum ornare faucibus urna, vel sagittis nulla scelerisque in. Etiam leo lacus, dignissim ullamcorper sem at, vulputate commodo tortor.</p>
+            <h3>/cherry blossoms</h3>
+            <nav>
+                <a href="#">dq5</a>
+                <a href="#">4sW</a>
+                <a href="#">fg1</a>
+                <a href="#">o67</a>
+                <a href="#">n8r</a>
+                <a href="#">6ej</a>
+                <a href="#">p0w</a>
+                <a href="#">ye5</a>
+            </nav>
         </section>
+        <footer>
+            <p>—A deserted work that does rogue things, xo, <i>Duygu</i></p>
+        </footer>
     </main>
 </body>
 </html>
