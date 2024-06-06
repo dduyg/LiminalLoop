@@ -94,29 +94,25 @@
         </div>
         <ul>
             <li><a href="../04/">■</a></li>
+            <li><a href="#">❍</a></li>
+            <li><a href="#">❍</a></li>
             <li><a href="webscapes">❍</a></li>
-            <li><a href="cyberpunk">❍</a></li>
         </ul>
     </nav>
 
     <main>
-        <h1>Tachyon</h1>
+        <h1>PCA</h1>
         <section>
-            <p>A tachyon (from the Greek: ταχύς (tachús), 'fast') is a hypothetical particle that travels faster than the speed of light. In theoretical physics, tachyons have been proposed, but there is currently no experimental evidence for their existence. According to special relativity, objects with mass cannot reach or exceed the speed of light, but tachyons, if they exist, would violate this principle. They are primarily discussed in the context of theoretical physics and speculative theories.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Tachyon06d.gif" alt="⎄" style="width: 100%; max-width: 600px;">
-            <p>Because a tachyon moves faster than light, we would not be able to see it approaching. After it has passed us, we would see two images of it: one in the direction it is flying (left) and the other in the direction from which it came (right). Both images would move away from us. The image of the receding particle (left) would exhibit a redshift due to the Doppler effect, while the image of the approaching particle would show a blueshift. The black line is a snapshot of the shockwave of Cherenkov radiation.</p>
-            <h3>Related Concepts:</h3>
-            <ul>
-                <li>Particle Physics: The branch of physics that studies the fundamental particles and forces that make up the universe.</li>
-                <li>Special Relativity: Einstein's theory describing the relationship between space and time for objects moving at constant speeds in a straight line.</li>
-                <li>Quantum Field Theory: A theoretical framework that combines quantum mechanics with special relativity to describe the behavior of subatomic particles.</li>
-                <li>Exotic Particles: Particles that do not fit into the standard model of particle physics, such as tachyons or hypothetical particles like magnetic monopoles.</li>
-                <li>Speed of Light: The speed at which light travels in a vacuum, approximately 299,792,458 meters per second (or about 186,282 miles per second).</li>
-                <li>Hypothetical Particles: Particles that are predicted by theoretical models but have not yet been observed experimentally.</li>
-                <li>Doppler Effect: The change in frequency or wavelength of a wave in relation to an observer who is moving relative to the wave source.</li>
-                <li>Redshift and Blueshift: Redshift occurs when light or other electromagnetic radiation from an object is shifted towards longer wavelengths, indicating that the object is moving away from the observer. Blueshift occurs when the wavelengths are shifted towards shorter wavelengths, indicating that the object is moving towards the observer.</li>
-                <li>Cherenkov Radiation: A type of electromagnetic radiation emitted when a charged particle moves through a dielectric medium (such as water) at a speed greater than the speed of light in that medium.</li>
-            </ul>
+            <p>Principal Component Analysis (PCA) is a statistical method used to simplify and summarize the variation in a dataset. It transforms the original data into a new coordinate system, where the axes represent the principal components (PCs) of variation in the data.</p>
+            <h3>How <code>PCA</code> Works:</h3>
+            <ol>
+                <li><strong>Data Centering:</strong> PCA begins by centering the data by subtracting the mean from each feature. This ensures that the data is centered around the origin.</li>
+                <li><strong>Covariance Matrix:</strong> PCA then calculates the covariance matrix of the centered data. The covariance matrix describes the relationships between the different features in the dataset.</li>
+                <li><strong>Eigenvalue Decomposition:</strong> Next, PCA performs eigenvalue decomposition on the covariance matrix to find its eigenvectors and eigenvalues. Eigenvectors represent the directions of maximum variance in the data, while eigenvalues indicate the magnitude of variance along those directions.</li>
+                <li><strong>Selecting Principal Components:</strong> PCA sorts the eigenvectors based on their corresponding eigenvalues in descending order. The eigenvectors with the highest eigenvalues are chosen as the principal components. These principal components capture the most significant sources of variation in the data.</li>
+                <li><strong>Dimensionality Reduction:</strong> Finally, PCA projects the original data onto the subspace spanned by the selected principal components. This reduces the dimensionality of the data while retaining as much variance as possible. The number of principal components retained is typically chosen based on the amount of variance explained or a predetermined threshold.</li>
+            </ol>
+            <p>Overall, PCA is a powerful tool for exploring and understanding the underlying structure of complex datasets.</p>
         </section>
     </main>
 </body>
