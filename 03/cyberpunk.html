@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
+    <link rel="stylesheet" href="../fonts.css">
     <style>
         body {
-            font-family: "Lucida Console", Monaco, monospace;
+            font-family: 'Lucida Console', monospace;
             background-color: #1a1a2e;  /* Dark purple background */
             color: #c7c7e2; /* Light purple text */
             margin: 0;
-            padding-top: 60px; /* Adjusting for the fixed top navigation */
+            padding: 0;
+            line-height: 1.4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         nav {
             position: fixed;
@@ -48,23 +54,30 @@
             height: 40px; /* Adjust the height of the logo */
             vertical-align: middle; /* Align the logo vertically */
         }
-        .container {
+        main {
+            padding: 1.25em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
         }
         h1, h2 {
             text-align: center;
             color: #bb86fc; /* Light purple headings */
         }
-        .story-container {
+        section {
             max-height: 400px;
             overflow-y: auto;
             margin-top: 20px;
-            padding: 10px;
+            padding: 0.625em;
             background-color: rgba(27, 20, 41, 0.5); /* Semi-transparent dark background */
-            border-radius: 10px;
+            border-radius: 0.625em;
             color: #c7c7e2; /* Light purple text */
+            max-height: 55vh;
+            box-sizing: border-box;
         }
         ul {
             list-style-type: square;
@@ -89,21 +102,20 @@
             <li><a href="cyberpunk">❍</a></li>
         </ul>
     </nav>
-
-    <div class="container">
+    <main>
         <h1>PCA</h1>
-        <div class="story-container">
+        <section>
             <p>Principal Component Analysis (PCA) is a statistical method used to simplify and summarize the variation in a dataset. It transforms the original data into a new coordinate system, where the axes represent the principal components (PCs) of variation in the data.</p>
-            <h3>How PCA Works:</h3>
-    <ol>
-        <li><strong>Data Centering:</strong> PCA begins by centering the data by subtracting the mean from each feature. This ensures that the data is centered around the origin.</li>
-        <li><strong>Covariance Matrix:</strong> PCA then calculates the covariance matrix of the centered data. The covariance matrix describes the relationships between the different features in the dataset.</li>
-        <li><strong>Eigenvalue Decomposition:</strong> Next, PCA performs eigenvalue decomposition on the covariance matrix to find its eigenvectors and eigenvalues. Eigenvectors represent the directions of maximum variance in the data, while eigenvalues indicate the magnitude of variance along those directions.</li>
-        <li><strong>Selecting Principal Components:</strong> PCA sorts the eigenvectors based on their corresponding eigenvalues in descending order. The eigenvectors with the highest eigenvalues are chosen as the principal components. These principal components capture the most significant sources of variation in the data.</li>
-        <li><strong>Dimensionality Reduction:</strong> Finally, PCA projects the original data onto the subspace spanned by the selected principal components. This reduces the dimensionality of the data while retaining as much variance as possible. The number of principal components retained is typically chosen based on the amount of variance explained or a predetermined threshold.</li>
-    </ol>
-    <p>Overall, PCA is a powerful tool for exploring and understanding the underlying structure of complex datasets.</p>
-        </div>
-    </div>
+            <h3>How <code>PCA</code> Works:</h3>
+            <ol>
+                <li><strong>Data Centering:</strong> PCA begins by centering the data by subtracting the mean from each feature. This ensures that the data is centered around the origin.</li>
+                <li><strong>Covariance Matrix:</strong> PCA then calculates the covariance matrix of the centered data. The covariance matrix describes the relationships between the different features in the dataset.</li>
+                <li><strong>Eigenvalue Decomposition:</strong> Next, PCA performs eigenvalue decomposition on the covariance matrix to find its eigenvectors and eigenvalues. Eigenvectors represent the directions of maximum variance in the data, while eigenvalues indicate the magnitude of variance along those directions.</li>
+                <li><strong>Selecting Principal Components:</strong> PCA sorts the eigenvectors based on their corresponding eigenvalues in descending order. The eigenvectors with the highest eigenvalues are chosen as the principal components. These principal components capture the most significant sources of variation in the data.</li>
+                <li><strong>Dimensionality Reduction:</strong> Finally, PCA projects the original data onto the subspace spanned by the selected principal components. This reduces the dimensionality of the data while retaining as much variance as possible. The number of principal components retained is typically chosen based on the amount of variance explained or a predetermined threshold.</li>
+            </ol>
+            <p>Overall, PCA is a powerful tool for exploring and understanding the underlying structure of complex datasets.</p>
+        </section>
+    </main>
 </body>
 </html>
