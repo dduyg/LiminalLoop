@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
+    <link rel="stylesheet" href="../fonts.css">
     <style>
         body {
-            font-family: "Lucida Console", Monaco, monospace;
+            font-family: 'Lucida Console', monospace;
             background-color: #6f05a5; /* Vaporwave purple */
             color: #ffcc00; /* Neon yellow */         
             margin: 0;
-            padding-top: 60px; /* Adjusting for the fixed top navigation */
+            padding: 0;
+            line-height: 1.4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         nav {
             position: fixed;
@@ -48,23 +54,30 @@
             height: 40px; /* Adjust the height of the logo */
             vertical-align: middle; /* Align the logo vertically */
         }
-        .container {
+        main {
+            padding: 1.25em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
         }
         h1, h2 {
             text-align: center;
             color: #ffcc00; /* Neon yellow */  
         }
-        .story-container {
+        section {
             max-height: 400px;
             overflow-y: auto;
             margin-top: 20px;
-            padding: 10px;
+            padding: 0.625em;
             background-color: rgba(0, 0, 0, 0.4); /* Transparent black */
-            border-radius: 10px;
+            border-radius: 0.625em;
             color: #ffcc00; /* Neon yellow */
+            max-height: 55vh;
+            box-sizing: border-box;
         }
         ul {
             list-style-type: "➽ ";
@@ -81,15 +94,14 @@
         </div>
         <ul>
             <li><a href="../04/">■</a></li>
+            <li><a href="#">❍</a></li>
+            <li><a href="#">❍</a></li>
             <li><a href="webscapes">❍</a></li>
-            <li><a href="cityscape">❍</a></li>
-            <li><a href="cyberpunk">❍</a></li>
         </ul>
     </nav>
-
-    <div class="container">
+    <main>
         <h1>Tachyon</h1>
-        <div class="story-container">
+        <section>
             <p>A tachyon (from the Greek: ταχύς (tachús), 'fast') is a hypothetical particle that travels faster than the speed of light. In theoretical physics, tachyons have been proposed, but there is currently no experimental evidence for their existence. According to special relativity, objects with mass cannot reach or exceed the speed of light, but tachyons, if they exist, would violate this principle. They are primarily discussed in the context of theoretical physics and speculative theories.</p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Tachyon04s.gif" alt="⎄" style="width: 100%; max-width: 600px;">
             <p>Because a tachyon moves faster than light, we would not be able to see it approaching. After it has passed us, we would see two images of it: one in the direction it is flying (left) and the other in the direction from which it came (right). Both images would move away from us. The image of the receding particle (left) would exhibit a redshift due to the Doppler effect, while the image of the approaching particle would show a blueshift. The black line is a snapshot of the shockwave of Cherenkov radiation.</p>
@@ -105,7 +117,7 @@
                 <li>Redshift and Blueshift: Redshift occurs when light or other electromagnetic radiation from an object is shifted towards longer wavelengths, indicating that the object is moving away from the observer. Blueshift occurs when the wavelengths are shifted towards shorter wavelengths, indicating that the object is moving towards the observer.</li>
                 <li>Cherenkov Radiation: A type of electromagnetic radiation emitted when a charged particle moves through a dielectric medium (such as water) at a speed greater than the speed of light in that medium.</li>
             </ul>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>
