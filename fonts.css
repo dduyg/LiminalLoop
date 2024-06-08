@@ -158,12 +158,18 @@
     src: url('fonts/NeueMachina-Medium.woff') format('woff');
 }
 @font-face {
-    font-family: 'GT Super';
+    font-family: 'GT Super Display';
     font-weight: normal;
     font-style: normal;
-    src: url('fonts/GT-Super-Display-Light-Italic.woff') format('woff'),
-         url('fonts/GT-Super-Display-Light-Italic.woff2') format('woff2');
+    src: url('fonts/GT-Super-Display-Light.woff2') format('woff2'),
+         url('fonts/GT-Super-Display-Light.woff') format('woff');
 }
+@font-face {
+    font-family: 'GT Super Display Italic';
+    src: url('fonts/GT-Super-Display-Light-Italic.woff2') format('woff2'),
+         url('fonts/GT-Super-Display-Light-Italic.woff') format('woff');
+}
+
 @font-face {
     font-family: 'Stravinsky';
     font-weight: normal;
