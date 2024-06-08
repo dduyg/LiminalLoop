@@ -133,17 +133,16 @@
 }
 
 
+
 @font-face {
     font-family: 'Sporting Grotesque';
-    font-weight: bold;
-    font-style: normal;
-    src: url('fonts/Sporting_Grotesque-Bold_web.woff') format('woff');
+    src: url('fonts/Sporting_Grotesque-Regular.woff2') format('woff2'),
+         url('fonts/Sporting_Grotesque-Regular.woff') format('woff');
 }
 @font-face {
-    font-family: 'Sporting Grotesque';
-    font-weight: normal;
-    font-style: normal;
-    src: url('fonts/Sporting_Grotesque-Regular_web.woff') format('woff');
+    font-family: 'Sporting Grotesque Bold';
+    src: url('fonts/Sporting_Grotesque-Bold.woff2') format('woff2'),
+         url('fonts/Sporting_Grotesque-Bold.woff') format('woff');
 }
 @font-face {
     font-family: 'Neue Machina';
