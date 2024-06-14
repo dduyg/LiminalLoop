@@ -27,6 +27,16 @@
             right: 1rem;
             transform: translateY(-50%);
             z-index: 999;
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+        }
+        nav:focus, nav:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;        
         }
         nav a {
             cursor: pointer;
