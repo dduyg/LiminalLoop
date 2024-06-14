@@ -43,6 +43,16 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+        }
+        nav li a:focus, nav li a:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;        
         }
         nav li a:hover {
             color: #ddd;
