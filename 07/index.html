@@ -60,6 +60,16 @@
             font-weight: bold;
             transition: background-color 0.3s, color 0.3s;
             cursor: pointer;
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+        }
+        nav a:focus, nav a:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
         nav a:hover {
             background-color: #ffa500;
