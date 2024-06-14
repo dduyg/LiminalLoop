@@ -42,13 +42,19 @@
       text-align: center;
       transition: background-color 0.3s ease;
       outline: none; /* Remove default outline */
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
     }
     a:hover {
       background-color: #AC4E5E;
       font-weight: bold;
     }
-    a:focus {
-      outline: none; /* Remove focus outline */
+    a:focus, a:active {
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
     }
     u {
       text-decoration: none;
