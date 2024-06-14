@@ -44,7 +44,17 @@
             cursor: pointer;
             font-size: 1.1em;
             transition-duration: 0.4s;
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
         }
+        nav a:focus, nav a:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }   
         nav a:hover {
             background-color: #AD3510;
             color: #FBF5DF;
