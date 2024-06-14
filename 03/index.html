@@ -50,19 +50,25 @@
                 -ms-user-select: none;
                     user-select: none;
         }
-        nav li a:focus, nav li a:active {
-            outline: none;
-            -webkit-tap-highlight-color: transparent;        
-        }
         nav li a:hover {
             color: #ddd;
         }
         .badge {
             padding: 0 20px; /* Adjust spacing around the logo */
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
         }
         .badge img {
             height: 40px; /* Adjust the height of the logo */
             vertical-align: middle; /* Align the logo vertically */
+        }
+        nav li a:focus, nav li a:active, .badge a:focus, .badge a:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;        
         }
         main {
             padding: 1.25em;
