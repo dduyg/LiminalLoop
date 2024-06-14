@@ -5,4 +5,16 @@ a:link, a:visited, a:hover, a:active {
   color: inherit;
   font-size: 2em;
   text-decoration: wavy underline;
+
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+a:focus, a:active {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
