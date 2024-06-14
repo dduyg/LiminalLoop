@@ -39,10 +39,6 @@
                 -ms-user-select: none;
                     user-select: none;
         }
-        button:focus, button:active {
-            outline: none;
-            -webkit-tap-highlight-color: transparent;
-        }
         button:hover {
             background-color: #5f9ea0;
         }
@@ -50,6 +46,16 @@
             color: black;
             font-family: "Arial", sans-serif;
             text-decoration: none;
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;          
+        }
+        button:focus, button:active, a:focus, a:active {  
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
         #credits {
             position: absolute;
