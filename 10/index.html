@@ -6,8 +6,8 @@
     <title>Duygs Coding Projects</title>
     <style>
         body {
-            background-color: #4b0082;
-            color: #e0c7ff;
+            background-color: #2b193d;
+            color: #e0c3fc;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -22,57 +22,52 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #ff69b4;
-            border-radius: 10px;
             background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
         }
 
         h1 {
-            color: #ff69b4;
+            color: #a36ee5;
             margin-bottom: 20px;
         }
 
         details {
             margin-bottom: 10px;
-            background: rgba(255, 105, 180, 0.2);
-            border: 1px solid #ff69b4;
-            border-radius: 5px;
+            background: rgba(163, 110, 229, 0.3);
+            border: none;
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         summary {
             cursor: pointer;
-            padding: 10px 20px;
+            padding: 15px 20px;
             font-size: 1.2em;
-            background-color: rgba(255, 105, 180, 0.4);
             position: relative;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #e0c3fc;
+            border-radius: 10px;
         }
 
-        summary::before {
-            content: "\25B6"; /* Unicode character for right arrow */
-            font-size: 1.2em;
+        summary::after {
+            content: '\25BE';
+            font-size: 1.5em;
             position: absolute;
+            top: 50%;
             right: 20px;
-            transition: transform 0.3s ease;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease-in-out;
         }
 
-        details[open] summary::before {
-            transform: rotate(90deg);
+        details[open] summary::after {
+            transform: translateY(-50%) rotate(180deg);
         }
 
-        details > * {
-            padding: 10px 20px;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        details > *:not(summary) {
+            padding: 0 20px 15px 20px;
         }
     </style>
 </head>
