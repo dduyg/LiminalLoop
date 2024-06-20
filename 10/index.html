@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duygs Coding Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #1a1a1a;
-            color: #f0f0f0;
-            font-family: 'Roboto Mono', monospace;
+            background-color: #0b0033;
+            color: #ffc0cb;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -23,59 +22,54 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #ff77ff;
+            border: 2px solid #ff69b4;
             border-radius: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 10px #ff77ff;
+            background: rgba(0, 0, 0, 0.7);
         }
 
         h1 {
-            color: #ff77ff;
-            text-shadow: 2px 2px #00ffcc;
-            font-size: 2em;
-            margin-bottom: 20px;
+            color: #ff69b4;
         }
 
         details {
             margin-bottom: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #ff77ff;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ff69b4;
             border-radius: 5px;
-            box-shadow: 0 0 5px #00ffcc;
         }
 
         summary {
             cursor: pointer;
             padding: 10px;
             font-size: 1.2em;
-            color: #00ffcc;
-            position: relative;
-            user-select: none;
+            background-color: #ff69b4;
+            color: #0b0033;
+            border-radius: 5px;
         }
 
-        summary::after {
-            content: '▼';
-            color: #00ffcc;
-            font-size: 1.5em;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: transform 0.3s ease;
-        }
-
-        details[open] summary::after {
-            content: '▲';
-            transform: translateY(-50%) rotate(180deg);
+        summary:hover {
+            background-color: #ffc0cb;
+            color: #0b0033;
         }
 
         details[open] summary {
-            background: rgba(255, 255, 255, 0.2);
+            background-color: #ffc0cb;
+            color: #0b0033;
         }
 
-        p {
-            color: #f0f0f0;
-            padding: 10px;
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -98,6 +92,7 @@
             <p>Tools Used: Unity, C#</p>
         </details>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const detailsElements = document.querySelectorAll("details");
