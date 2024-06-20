@@ -36,7 +36,6 @@
             background: rgba(182, 134, 255, 0.2);
             border: 1px solid #b686ff;
             border-radius: 5px;
-            overflow: hidden;
         }
 
         summary {
@@ -44,31 +43,55 @@
             padding: 10px;
             position: relative;
             user-select: none;
+            outline: none;
+            font-size: 1.2em;
+            background-color: rgba(182, 134, 255, 0.2);
+            border: 1px solid #b686ff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         summary::after {
-            content: '▶';
+            content: "\25BC"; /* Unicode character for down arrow */
             position: absolute;
             right: 10px;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s;
         }
 
         details[open] summary::after {
-            transform: rotate(90deg);
+            content: "\25B2"; /* Unicode character for up arrow */
+            transform: rotate(180deg);
         }
 
         details[open] {
-            background: rgba(182, 134, 255, 0.5);
+            background: rgba(182, 134, 255, 0.4);
         }
 
-        details > * {
-            transition: max-height 0.3s ease-in-out;
-            max-height: 0;
-            overflow: hidden;
+        details[open] summary {
+            background-color: rgba(182, 134, 255, 0.4);
         }
 
-        details[open] > * {
-            max-height: 1000px; /* Adjust based on your content */
+        details[open] summary:hover {
+            background-color: rgba(182, 134, 255, 0.5);
+        }
+
+        details p {
+            padding: 10px;
+        }
+
+        details[open] p {
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -77,24 +100,18 @@
         <h1>Duygs Coding Projects</h1>
         <details>
             <summary>Project 1: Awesome Web App</summary>
-            <div>
-                <p>Description: This is a web application that helps users track their daily tasks.</p>
-                <p>Tools Used: HTML, CSS, JavaScript, React</p>
-            </div>
+            <p>Description: This is a web application that helps users track their daily tasks.</p>
+            <p>Tools Used: HTML, CSS, JavaScript, React</p>
         </details>
         <details>
             <summary>Project 2: Machine Learning Model</summary>
-            <div>
-                <p>Description: A machine learning model that predicts house prices based on various features.</p>
-                <p>Tools Used: Python, scikit-learn, Pandas</p>
-            </div>
+            <p>Description: A machine learning model that predicts house prices based on various features.</p>
+            <p>Tools Used: Python, scikit-learn, Pandas</p>
         </details>
         <details>
             <summary>Project 3: Mobile Game</summary>
-            <div>
-                <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
-                <p>Tools Used: Unity, C#</p>
-            </div>
+            <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
+            <p>Tools Used: Unity, C#</p>
         </details>
     </div>
 
