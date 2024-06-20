@@ -6,8 +6,8 @@
     <title>Duygs Coding Projects</title>
     <style>
         body {
-            background-color: #6c005c;
-            color: #f8c0ff;
+            background-color: #4b0082;
+            color: #e0c7ff;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -22,60 +22,57 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff69b4;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
         }
 
         h1 {
-            color: #f8c0ff;
-            font-size: 2em;
+            color: #ff69b4;
             margin-bottom: 20px;
         }
 
         details {
-            margin-bottom: 20px;
-            border: 1px solid #ff77ff;
+            margin-bottom: 10px;
+            background: rgba(255, 105, 180, 0.2);
+            border: 1px solid #ff69b4;
             border-radius: 5px;
-            background-color: rgba(255, 119, 255, 0.2);
-            box-shadow: 0 0 10px rgba(255, 119, 255, 0.3);
+            overflow: hidden;
         }
 
         summary {
             cursor: pointer;
-            padding: 15px;
+            padding: 10px 20px;
             font-size: 1.2em;
+            background-color: rgba(255, 105, 180, 0.4);
             position: relative;
-            user-select: none;
         }
 
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        summary::after {
-            content: '\25bc';
+        summary::before {
+            content: "\25B6"; /* Unicode character for right arrow */
             font-size: 1.2em;
-            color: #ff77ff;
             position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
+            right: 20px;
             transition: transform 0.3s ease;
         }
 
-        details[open] summary::after {
-            content: '\25b2';
-            transform: translateY(-50%) rotate(180deg);
+        details[open] summary::before {
+            transform: rotate(90deg);
         }
 
-        details[open] {
-            background-color: rgba(255, 119, 255, 0.4);
+        details > * {
+            padding: 10px 20px;
         }
 
-        p {
-            padding: 15px;
-            margin: 0;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
