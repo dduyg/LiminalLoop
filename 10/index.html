@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duygs Coding Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #0f0f0f;
+            background-color: #2b2b2b;
             color: #f5f5f5;
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'IBM Plex Mono', monospace;
             margin: 0;
             padding: 0;
             display: flex;
@@ -32,53 +32,45 @@
         h1 {
             color: #ff77ff;
             text-shadow: 2px 2px #00ffcc;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
         .project {
-            margin-bottom: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
             border: 1px solid #ff77ff;
             border-radius: 5px;
             box-shadow: 0 0 5px #00ffcc;
-            padding: 10px;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .project:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            overflow: hidden;
         }
 
         .project-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .project-title {
-            font-size: 1.2em;
+            font-size: 1.5em;
             color: #00ffcc;
             text-shadow: 1px 1px #ff77ff;
-            margin: 0;
-            padding-right: 20px;
         }
 
-        .arrow {
-            color: #ff77ff;
-            font-size: 1.2em;
-            transition: transform 0.3s ease;
-        }
-
-        .arrow:hover {
-            color: #00ffcc;
-        }
-
-        .content {
+        .project-details {
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
             display: none;
-            padding-left: 20px;
         }
 
-        .expanded .content {
+        .project-details p {
+            color: #f5f5f5;
+            margin-bottom: 10px;
+        }
+
+        .project[open] .project-details {
             display: block;
         }
     </style>
@@ -86,48 +78,45 @@
 <body>
     <div class="container">
         <h1>Duygs Coding Projects</h1>
+        
         <div class="project">
-            <div class="project-header" onclick="toggleContent(this)">
-                <h2 class="project-title">Project 1: Awesome Web App</h2>
-                <span class="arrow">&#x25BC;</span>
+            <div class="project-header" onclick="toggleProject(this.parentNode)">
+                <div class="project-title">Project 1: Awesome Web App</div>
+                <img src="arrow-down.png" alt="Arrow" class="arrow-icon">
             </div>
-            <div class="content">
+            <div class="project-details">
                 <p>Description: This is a web application that helps users track their daily tasks.</p>
                 <p>Tools Used: HTML, CSS, JavaScript, React</p>
             </div>
         </div>
+        
         <div class="project">
-            <div class="project-header" onclick="toggleContent(this)">
-                <h2 class="project-title">Project 2: Machine Learning Model</h2>
-                <span class="arrow">&#x25BC;</span>
+            <div class="project-header" onclick="toggleProject(this.parentNode)">
+                <div class="project-title">Project 2: Machine Learning Model</div>
+                <img src="arrow-down.png" alt="Arrow" class="arrow-icon">
             </div>
-            <div class="content">
+            <div class="project-details">
                 <p>Description: A machine learning model that predicts house prices based on various features.</p>
                 <p>Tools Used: Python, scikit-learn, Pandas</p>
             </div>
         </div>
+        
         <div class="project">
-            <div class="project-header" onclick="toggleContent(this)">
-                <h2 class="project-title">Project 3: Mobile Game</h2>
-                <span class="arrow">&#x25BC;</span>
+            <div class="project-header" onclick="toggleProject(this.parentNode)">
+                <div class="project-title">Project 3: Mobile Game</div>
+                <img src="arrow-down.png" alt="Arrow" class="arrow-icon">
             </div>
-            <div class="content">
+            <div class="project-details">
                 <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
                 <p>Tools Used: Unity, C#</p>
             </div>
         </div>
+        
     </div>
+
     <script>
-        function toggleContent(element) {
-            const content = element.nextElementSibling;
-            element.classList.toggle("expanded");
-            content.classList.toggle("expanded");
-            const arrow = element.querySelector(".arrow");
-            if (arrow.textContent === "▼") {
-                arrow.textContent = "▲";
-            } else {
-                arrow.textContent = "▼";
-            }
+        function toggleProject(project) {
+            project.classList.toggle('open');
         }
     </script>
 </body>
