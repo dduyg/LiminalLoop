@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duygs Coding Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #311b92;
-            color: #e1bee7;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
             font-family: 'Roboto Mono', monospace;
             margin: 0;
             padding: 0;
@@ -23,61 +23,59 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #7c4dff;
+            border: 2px solid #ff77ff;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 10px rgba(124, 77, 255, 0.5);
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px #ff77ff;
         }
 
         h1 {
-            color: #7c4dff;
-            text-shadow: 2px 2px 2px rgba(124, 77, 255, 0.5);
+            color: #ff77ff;
+            text-shadow: 2px 2px #00ffcc;
             font-size: 2em;
             margin-bottom: 20px;
         }
 
         details {
-            margin-bottom: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid #7c4dff;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ff77ff;
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(124, 77, 255, 0.5);
+            box-shadow: 0 0 5px #00ffcc;
         }
 
         summary {
             cursor: pointer;
-            padding: 10px 20px;
+            padding: 10px;
             font-size: 1.2em;
-            color: #e1bee7;
-            background: rgba(124, 77, 255, 0.8);
-            border-bottom: 1px solid #7c4dff;
-            border-radius: 5px 5px 0 0;
+            color: #00ffcc;
             position: relative;
+            user-select: none;
         }
 
-        summary::before {
-            content: '▶';
-            color: #e1bee7;
-            font-size: 1.2em;
+        summary::after {
+            content: '▼';
+            color: #00ffcc;
+            font-size: 1.5em;
             position: absolute;
-            left: 10px;
+            right: 10px;
             top: 50%;
             transform: translateY(-50%);
             transition: transform 0.3s ease;
         }
 
-        details[open] summary::before {
-            transform: translateY(-50%) rotate(90deg);
+        details[open] summary::after {
+            content: '▲';
+            transform: translateY(-50%) rotate(180deg);
         }
 
-        details[open] {
-            background: rgba(0, 0, 0, 0.9);
+        details[open] summary {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         p {
-            color: #e1bee7;
-            padding: 10px 20px;
-            margin: 0;
+            color: #f0f0f0;
+            padding: 10px;
         }
     </style>
 </head>
@@ -100,5 +98,21 @@
             <p>Tools Used: Unity, C#</p>
         </details>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const detailsElements = document.querySelectorAll("details");
+            detailsElements.forEach(details => {
+                details.addEventListener("toggle", function() {
+                    if (details.open) {
+                        detailsElements.forEach(otherDetails => {
+                            if (otherDetails !== details) {
+                                otherDetails.removeAttribute("open");
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
