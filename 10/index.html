@@ -6,8 +6,8 @@
     <title>Duygs Coding Projects</title>
     <style>
         body {
-            background-color: #2b193d;
-            color: #e0c3fc;
+            background-color: #0b0033;
+            color: #ffc0cb;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -22,52 +22,54 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #ff69b4;
             border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
         }
 
         h1 {
-            color: #a36ee5;
-            margin-bottom: 20px;
+            color: #ff69b4;
         }
 
         details {
             margin-bottom: 10px;
-            background: rgba(163, 110, 229, 0.3);
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ff69b4;
+            border-radius: 5px;
         }
 
         summary {
             cursor: pointer;
-            padding: 15px 20px;
+            padding: 10px;
             font-size: 1.2em;
-            position: relative;
-            outline: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: #e0c3fc;
-            border-radius: 10px;
+            background-color: #ff69b4;
+            color: #0b0033;
+            border-radius: 5px;
         }
 
-        summary::after {
-            content: '\25BE';
-            font-size: 1.5em;
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            transition: transform 0.3s ease-in-out;
+        summary:hover {
+            background-color: #ffc0cb;
+            color: #0b0033;
         }
 
-        details[open] summary::after {
-            transform: translateY(-50%) rotate(180deg);
+        details[open] summary {
+            background-color: #ffc0cb;
+            color: #0b0033;
         }
 
-        details > *:not(summary) {
-            padding: 0 20px 15px 20px;
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
