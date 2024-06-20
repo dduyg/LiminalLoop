@@ -6,8 +6,8 @@
     <title>Duygs Coding Projects</title>
     <style>
         body {
-            background-color: #0b0033;
-            color: #ffc0cb;
+            background-color: #141b41;
+            color: #e0c7ff;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -22,65 +22,29 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #ff69b4;
+            border: 2px solid #b686ff;
             border-radius: 10px;
             background: rgba(0, 0, 0, 0.7);
         }
 
         h1 {
-            color: #ff69b4;
+            color: #b686ff;
         }
 
         details {
             margin-bottom: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid #ff69b4;
+            background: rgba(182, 134, 255, 0.2);
+            border: 1px solid #b686ff;
             border-radius: 5px;
-            overflow: hidden;
         }
 
         summary {
             cursor: pointer;
             padding: 10px;
             font-size: 1.2em;
-            background-color: #ff69b4;
-            color: #0b0033;
-            border-radius: 5px;
-            position: relative;
-            user-select: none;
         }
 
-        summary::after {
-            content: "\25BC"; /* Down arrow */
-            font-size: 0.8em;
-            color: #0b0033;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: transform 0.3s ease;
-        }
-
-        details[open] summary::after {
-            content: "\25B2"; /* Up arrow */
-            transform: translateY(-50%) rotate(180deg);
-        }
-
-        summary:hover {
-            background-color: #ffc0cb;
-            color: #0b0033;
-        }
-
-        details[open] summary {
-            background-color: #ffc0cb;
-            color: #0b0033;
-        }
-
-        details[open] summary:hover {
-            background-color: #ffc0cb;
-        }
-
-        details > * {
+        details[open] summary ~ * {
             animation: slideDown 0.3s ease-in-out;
         }
 
