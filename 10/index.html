@@ -3,47 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../fonts.css">
+    <title>Duygs Coding Projects</title>
     <style>
         body {
-            font-family: 'Pentameter Regular';
-            color: white;
-            background-color: #4C212A;
-            max-width: 800px;
-            margin: 3em;
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2e2e2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
         }
-        a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
         }
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: rgb(235,255,160);
-            color: #4C212A;
+        h1 {
+            font-size: 2.5em;
+            color: #ff00ff;
+        }
+        .accordion {
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ff00ff;
+            border-radius: 10px;
+        }
+        .accordion summary {
+            background-color: #2e2e2e;
+            color: #ff00ff;
+            padding: 10px;
             cursor: pointer;
-            font-weight: bold;
+            font-size: 1.2em;
         }
-        button:hover {
-            background-color: white;
+        .accordion summary:hover {
+            background-color: #ff00ff;
+            color: #2e2e2e;
         }
-        button:focus {
-            outline: none;
+        .accordion summary::marker {
+            color: #ff00ff;
         }
-        button:active {
-            transform: translateY(2px);
-        }     
+        .accordion div {
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
     </style>
 </head>
 <body>
-    <p>"AlgorithmAesthetics" conveys the concept of appreciating the beauty and elegance in algorithms, which are step-by-step procedures or sets of rules for solving computational problems. The term suggests a fusion of the structured, logical nature of algorithms with an artistic or aesthetic appreciation. It emphasizes the elegance and efficiency of well-crafted algorithms, akin to an aesthetic experience. In this context, the name reflects a creative approach to programming logic and problem-solving, merging the precision of algorithms with an artistic sensibility.</p>
-    <button>#10</button>
-    <a href="../11/"><button>#11</button></a>
+    <header>
+        <h1>Duygs Coding Projects</h1>
+    </header>
+    <section class="accordion">
+        <details>
+            <summary>Project 1: Awesome Web App</summary>
+            <div>
+                <p>This project is a web application that allows users to track their tasks and manage their time effectively.</p>
+                <p><strong>Tools Used:</strong> HTML, CSS, JavaScript, React</p>
+            </div>
+        </details>
+        <details>
+            <summary>Project 2: Machine Learning Model</summary>
+            <div>
+                <p>This project involves creating a machine learning model to predict housing prices based on various factors.</p>
+                <p><strong>Tools Used:</strong> Python, Pandas, Scikit-learn</p>
+            </div>
+        </details>
+        <details>
+            <summary>Project 3: Mobile App</summary>
+            <div>
+                <p>This project is a mobile application designed to help users find the best local restaurants based on their preferences.</p>
+                <p><strong>Tools Used:</strong> Flutter, Dart, Firebase</p>
+            </div>
+        </details>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const details = document.querySelectorAll('details');
+            details.forEach((detail) => {
+                detail.addEventListener('toggle', function() {
+                    if (this.open) {
+                        details.forEach((detail) => {
+                            if (detail !== this) {
+                                detail.removeAttribute('open');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
