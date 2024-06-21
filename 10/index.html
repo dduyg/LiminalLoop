@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duygs Coding Projects</title>
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #0b0033;
-            color: #ffc0cb;
-            font-family: 'Arial', sans-serif;
+            background-color: #1d1e33;
+            color: #e0c7ff;
+            font-family: "Sora", sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,44 +18,50 @@
             min-height: 100vh;
             text-align: center;
         }
-
-        .container {
+        
+        main {
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #ff69b4;
+            border: 2px solid #ff77ff;
             border-radius: 10px;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
         }
 
         h1 {
-            color: #ff69b4;
+            color: #ff77ff;
+            text-shadow: 2px 2px #00f;
         }
 
         details {
             margin-bottom: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid #ff69b4;
-            border-radius: 5px;
+            border: 2px solid #ff77ff;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            position: relative;
         }
 
         summary {
             cursor: pointer;
             padding: 10px;
             font-size: 1.2em;
-            background-color: #ff69b4;
-            color: #0b0033;
-            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
         }
 
-        summary:hover {
-            background-color: #ffc0cb;
-            color: #0b0033;
+        summary::-webkit-details-marker {
+            display: none;
         }
 
-        details[open] summary {
-            background-color: #ffc0cb;
-            color: #0b0033;
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        details[open] .arrow {
+            transform: rotate(180deg);
         }
 
         details[open] summary ~ * {
@@ -71,27 +78,41 @@
                 transform: translateY(0);
             }
         }
+
+        p {
+            margin: 0;
+            padding: 10px 0;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <main>
         <h1>Duygs Coding Projects</h1>
         <details>
-            <summary>Project 1: Awesome Web App</summary>
+            <summary>
+                Project 1: Awesome Web App
+                <span class="arrow">▼</span>
+            </summary>
             <p>Description: This is a web application that helps users track their daily tasks.</p>
             <p>Tools Used: HTML, CSS, JavaScript, React</p>
         </details>
         <details>
-            <summary>Project 2: Machine Learning Model</summary>
+            <summary>
+                Project 2: Machine Learning Model
+                <span class="arrow">▼</span>
+            </summary>
             <p>Description: A machine learning model that predicts house prices based on various features.</p>
             <p>Tools Used: Python, scikit-learn, Pandas</p>
         </details>
         <details>
-            <summary>Project 3: Mobile Game</summary>
+            <summary>
+                Project 3: Mobile Game
+                <span class="arrow">▼</span>
+            </summary>
             <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
             <p>Tools Used: Unity, C#</p>
         </details>
-    </div>
+    </main>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
