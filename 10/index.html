@@ -58,6 +58,13 @@
 
         .arrow {
             transition: transform 0.3s ease;
+            display: inline-block;
+            margin-left: 10px;
+            width: 24px;
+            height: 24px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"/><path d="M12 12.586 8.707 9.293l-1.414 1.414L12 15.414l4.707-4.707-1.414-1.414L12 12.586z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         details[open] .arrow {
@@ -91,7 +98,7 @@
         <details>
             <summary>
                 Awesome Web App
-                <span class="arrow">▼</span>
+                <span class="arrow"></span>
             </summary>
             <p>Description: This is a web application that helps users track their daily tasks.</p>
             <p>Tools Used: HTML, CSS, JavaScript, React</p>
@@ -99,7 +106,7 @@
         <details>
             <summary>
                 Machine Learning Model
-                <span class="arrow">▼</span>
+                <span class="arrow"></span>
             </summary>
             <p>Description: A machine learning model that predicts house prices based on various features.</p>
             <p>Tools Used: Python, scikit-learn, Pandas</p>
@@ -107,7 +114,7 @@
         <details>
             <summary>
                 Mobile Game
-                <span class="arrow">▼</span>
+                <span class="arrow"></span>
             </summary>
             <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
             <p>Tools Used: Unity, C#</p>
