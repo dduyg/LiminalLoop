@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duygs Coding Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #2b2b2b;
-            color: #f5f5f5;
-            font-family: 'Press Start 2P', cursive;
+            background-color: #311b92;
+            color: #e1bee7;
+            font-family: 'Roboto Mono', monospace;
             margin: 0;
             padding: 0;
             display: flex;
@@ -23,50 +23,61 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #ff77ff;
+            border: 2px solid #7c4dff;
             border-radius: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 10px #ff77ff;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(124, 77, 255, 0.5);
         }
 
         h1 {
-            color: #ff77ff;
-            text-shadow: 2px 2px #00ffcc;
+            color: #7c4dff;
+            text-shadow: 2px 2px 2px rgba(124, 77, 255, 0.5);
+            font-size: 2em;
+            margin-bottom: 20px;
         }
 
         details {
-            margin-bottom: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #ff77ff;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #7c4dff;
             border-radius: 5px;
-            box-shadow: 0 0 5px #00ffcc;
+            box-shadow: 0 0 5px rgba(124, 77, 255, 0.5);
         }
 
         summary {
             cursor: pointer;
-            padding: 10px;
+            padding: 10px 20px;
             font-size: 1.2em;
-            color: #00ffcc;
-            text-shadow: 1px 1px #ff77ff;
+            color: #e1bee7;
+            background: rgba(124, 77, 255, 0.8);
+            border-bottom: 1px solid #7c4dff;
+            border-radius: 5px 5px 0 0;
+            position: relative;
         }
 
-        details[open] summary ~ * {
-            animation: slideDown 0.3s ease-in-out;
+        summary::before {
+            content: '▶';
+            color: #e1bee7;
+            font-size: 1.2em;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
         }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        details[open] summary::before {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        details[open] {
+            background: rgba(0, 0, 0, 0.9);
         }
 
         p {
-            color: #f5f5f5;
+            color: #e1bee7;
+            padding: 10px 20px;
+            margin: 0;
         }
     </style>
 </head>
@@ -89,21 +100,5 @@
             <p>Tools Used: Unity, C#</p>
         </details>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const detailsElements = document.querySelectorAll("details");
-            detailsElements.forEach(details => {
-                details.addEventListener("toggle", function() {
-                    if (details.open) {
-                        detailsElements.forEach(otherDetails => {
-                            if (otherDetails !== details) {
-                                otherDetails.removeAttribute("open");
-                            }
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
