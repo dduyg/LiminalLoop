@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duygs Coding Projects</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
         body {
-            background-color: #1a1a1a;
-            color: #dcdcdc;
-            font-family: 'Lucida Console', Monaco, monospace;
+            background-color: #1d1e33;
+            color: #e0c7ff;
+            font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
             display: flex;
@@ -22,37 +24,33 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #a349a4;
+            border: 2px solid #ff77ff;
             border-radius: 10px;
             background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 10px #a349a4;
         }
 
         h1 {
-            color: #a349a4;
-            font-size: 2em;
-            margin-bottom: 20px;
+            color: #ff77ff;
+            text-shadow: 2px 2px #00f;
         }
 
         details {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            border: 2px solid #ff77ff;
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #a349a4;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 5px #a349a4;
+            padding: 10px;
+            position: relative;
         }
 
         summary {
             cursor: pointer;
-            padding: 15px;
+            padding: 10px;
             font-size: 1.2em;
-            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 0, 0, 0.6);
-            border-bottom: 1px solid #a349a4;
+            list-style: none;
         }
 
         summary::-webkit-details-marker {
@@ -64,13 +62,11 @@
         }
 
         details[open] .arrow {
-            transform: rotate(-180deg);
+            transform: rotate(180deg);
         }
 
-        details p {
-            padding: 15px;
-            margin: 0;
-            text-align: left;
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
         }
 
         @keyframes slideDown {
@@ -84,8 +80,9 @@
             }
         }
 
-        details[open] summary ~ * {
-            animation: slideDown 0.3s ease-in-out;
+        p {
+            margin: 0;
+            padding: 10px 0;
         }
     </style>
 </head>
@@ -93,17 +90,26 @@
     <div class="container">
         <h1>Duygs Coding Projects</h1>
         <details>
-            <summary>Project 1: Awesome Web App <span class="arrow">&#9650;</span></summary>
+            <summary>
+                Project 1: Awesome Web App
+                <span class="arrow">▼</span>
+            </summary>
             <p>Description: This is a web application that helps users track their daily tasks.</p>
             <p>Tools Used: HTML, CSS, JavaScript, React</p>
         </details>
         <details>
-            <summary>Project 2: Machine Learning Model <span class="arrow">&#9650;</span></summary>
+            <summary>
+                Project 2: Machine Learning Model
+                <span class="arrow">▼</span>
+            </summary>
             <p>Description: A machine learning model that predicts house prices based on various features.</p>
             <p>Tools Used: Python, scikit-learn, Pandas</p>
         </details>
         <details>
-            <summary>Project 3: Mobile Game <span class="arrow">&#9650;</span></summary>
+            <summary>
+                Project 3: Mobile Game
+                <span class="arrow">▼</span>
+            </summary>
             <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
             <p>Tools Used: Unity, C#</p>
         </details>
