@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duygs Coding Projects</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #311b92;
-            color: #e1bee7;
-            font-family: 'Roboto Mono', monospace;
+            background-color: #0f1021;
+            color: #ffffff;
+            font-family: 'Verdana', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -23,61 +22,69 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #7c4dff;
+            border: 2px solid #ff6ff5;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 10px rgba(124, 77, 255, 0.5);
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px rgba(255, 111, 245, 0.5);
         }
 
         h1 {
-            color: #7c4dff;
-            text-shadow: 2px 2px 2px rgba(124, 77, 255, 0.5);
-            font-size: 2em;
+            color: #ff6ff5;
             margin-bottom: 20px;
         }
 
         details {
-            margin-bottom: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid #7c4dff;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(124, 77, 255, 0.5);
+            margin-bottom: 15px;
+            background: #2b2b2b;
+            border: 1px solid #ff6ff5;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(255, 111, 245, 0.5);
         }
 
         summary {
             cursor: pointer;
-            padding: 10px 20px;
+            padding: 15px;
             font-size: 1.2em;
-            color: #e1bee7;
-            background: rgba(124, 77, 255, 0.8);
-            border-bottom: 1px solid #7c4dff;
-            border-radius: 5px 5px 0 0;
             position: relative;
+            list-style: none;
         }
 
-        summary::before {
-            content: '▶';
-            color: #e1bee7;
+        summary::marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "▼";
             font-size: 1.2em;
             position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
+            right: 15px;
             transition: transform 0.3s ease;
         }
 
-        details[open] summary::before {
-            transform: translateY(-50%) rotate(90deg);
+        details[open] summary::after {
+            transform: rotate(180deg);
         }
 
-        details[open] {
-            background: rgba(0, 0, 0, 0.9);
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
         }
 
-        p {
-            color: #e1bee7;
-            padding: 10px 20px;
-            margin: 0;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-description {
+            padding: 15px;
+            background: rgba(255, 111, 245, 0.1);
+            border-top: 1px solid #ff6ff5;
         }
     </style>
 </head>
@@ -86,19 +93,42 @@
         <h1>Duygs Coding Projects</h1>
         <details>
             <summary>Project 1: Awesome Web App</summary>
-            <p>Description: This is a web application that helps users track their daily tasks.</p>
-            <p>Tools Used: HTML, CSS, JavaScript, React</p>
+            <div class="project-description">
+                <p>Description: This is a web application that helps users track their daily tasks.</p>
+                <p>Tools Used: HTML, CSS, JavaScript, React</p>
+            </div>
         </details>
         <details>
             <summary>Project 2: Machine Learning Model</summary>
-            <p>Description: A machine learning model that predicts house prices based on various features.</p>
-            <p>Tools Used: Python, scikit-learn, Pandas</p>
+            <div class="project-description">
+                <p>Description: A machine learning model that predicts house prices based on various features.</p>
+                <p>Tools Used: Python, scikit-learn, Pandas</p>
+            </div>
         </details>
         <details>
             <summary>Project 3: Mobile Game</summary>
-            <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
-            <p>Tools Used: Unity, C#</p>
+            <div class="project-description">
+                <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
+                <p>Tools Used: Unity, C#</p>
+            </div>
         </details>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const detailsElements = document.querySelectorAll("details");
+            detailsElements.forEach(details => {
+                details.addEventListener("toggle", function() {
+                    if (details.open) {
+                        detailsElements.forEach(otherDetails => {
+                            if (otherDetails !== details) {
+                                otherDetails.removeAttribute("open");
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
