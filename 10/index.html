@@ -8,8 +8,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
         body {
-            background-color: #141b41;
-            color: #e0c7ff;
+            background: linear-gradient(to right, #3f0d12, #a71d31);
+            color: #ffffff;
             font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
@@ -24,45 +24,52 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #b686ff;
+            border: 2px solid #00ffea;
             border-radius: 10px;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px #00ffea;
         }
 
         h1 {
-            color: #b686ff;
+            color: #00ffea;
+            text-shadow: 2px 2px #ff77ff;
         }
 
         details {
             margin-bottom: 20px;
-            background: rgba(182, 134, 255, 0.2);
-            border: 2px solid #b686ff;
-            border-radius: 5px;
-            padding: 10px;
-            position: relative;
+            background: #1a1a1d;
+            border: 2px solid #ff77ff;
+            border-radius: 8px;
             overflow: hidden;
+            position: relative;
         }
 
         summary {
             cursor: pointer;
-            padding: 10px;
-            font-size: 1.2em;
+            padding: 15px;
+            font-size: 1em;
+            background: #1a1a1d;
+            color: #00ffea;
+            outline: none;
             list-style: none;
+            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        summary::-webkit-details-marker {
+        summary::marker {
             display: none;
         }
 
-        .arrow {
-            transition: transform 0.3s ease;
+        summary::after {
+            content: '▼';
+            font-size: 1.2em;
+            transition: transform 0.3s;
         }
 
-        details[open] .arrow {
-            transform: rotate(180deg);
+        details[open] summary::after {
+            transform: rotate(-180deg);
         }
 
         details[open] summary ~ * {
@@ -79,23 +86,28 @@
                 transform: translateY(0);
             }
         }
+
+        details p {
+            padding: 10px 15px;
+            color: #00ffea;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Duygs Coding Projects</h1>
         <details>
-            <summary>Project 1: Awesome Web App <span class="arrow">&#9662;</span></summary>
+            <summary>Project 1: Awesome Web App</summary>
             <p>Description: This is a web application that helps users track their daily tasks.</p>
             <p>Tools Used: HTML, CSS, JavaScript, React</p>
         </details>
         <details>
-            <summary>Project 2: Machine Learning Model <span class="arrow">&#9662;</span></summary>
+            <summary>Project 2: Machine Learning Model</summary>
             <p>Description: A machine learning model that predicts house prices based on various features.</p>
             <p>Tools Used: Python, scikit-learn, Pandas</p>
         </details>
         <details>
-            <summary>Project 3: Mobile Game <span class="arrow">&#9662;</span></summary>
+            <summary>Project 3: Mobile Game</summary>
             <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
             <p>Tools Used: Unity, C#</p>
         </details>
