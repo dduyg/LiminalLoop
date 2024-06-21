@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
         body {
-            background-color: #1d1e33;
+            background-color: #141b41;
             color: #e0c7ff;
             font-family: 'Press Start 2P', cursive;
             margin: 0;
@@ -24,33 +24,33 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #ff77ff;
+            border: 2px solid #b686ff;
             border-radius: 10px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.7);
         }
 
         h1 {
-            color: #ff77ff;
-            text-shadow: 2px 2px #00f;
+            color: #b686ff;
         }
 
         details {
-            margin-bottom: 10px;
-            border: 2px solid #ff77ff;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+            background: rgba(182, 134, 255, 0.2);
+            border: 2px solid #b686ff;
+            border-radius: 5px;
             padding: 10px;
             position: relative;
+            overflow: hidden;
         }
 
         summary {
             cursor: pointer;
             padding: 10px;
             font-size: 1.2em;
+            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            list-style: none;
         }
 
         summary::-webkit-details-marker {
@@ -79,37 +79,23 @@
                 transform: translateY(0);
             }
         }
-
-        p {
-            margin: 0;
-            padding: 10px 0;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Duygs Coding Projects</h1>
         <details>
-            <summary>
-                Project 1: Awesome Web App
-                <span class="arrow">▼</span>
-            </summary>
+            <summary>Project 1: Awesome Web App <span class="arrow">&#9662;</span></summary>
             <p>Description: This is a web application that helps users track their daily tasks.</p>
             <p>Tools Used: HTML, CSS, JavaScript, React</p>
         </details>
         <details>
-            <summary>
-                Project 2: Machine Learning Model
-                <span class="arrow">▼</span>
-            </summary>
+            <summary>Project 2: Machine Learning Model <span class="arrow">&#9662;</span></summary>
             <p>Description: A machine learning model that predicts house prices based on various features.</p>
             <p>Tools Used: Python, scikit-learn, Pandas</p>
         </details>
         <details>
-            <summary>
-                Project 3: Mobile Game
-                <span class="arrow">▼</span>
-            </summary>
+            <summary>Project 3: Mobile Game <span class="arrow">&#9662;</span></summary>
             <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
             <p>Tools Used: Unity, C#</p>
         </details>
