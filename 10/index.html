@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap" rel="stylesheet">
+    <title>Duygs Coding Projects</title>
     <style>
         body {
-            background-color: #311b92;
-            color: #e1bee7;
-            font-family: "Azeret Mono", monospace;
+            background-color: #0b0033;
+            color: #ffc0cb;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,63 +18,48 @@
             text-align: center;
         }
 
-        main {
+        .container {
             max-width: 800px;
-            margin: 1.25em;
-            padding: 1.25em;
-            border: 2px solid #7c4dff;
-            border-radius: 0.625em;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 10px rgba(124, 77, 255, 0.5);
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
         }
 
         h1 {
-            color: #7c4dff;
-            text-shadow: 2px 2px 2px rgba(124, 77, 255, 0.5);
-            font-size: 2em;
-            margin-bottom: 1.25em;
+            color: #ff69b4;
         }
 
         details {
-            margin-bottom: 1.25em;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid #7c4dff;
-            border-radius: 0.3125em;
-            box-shadow: 0 0 5px rgba(124, 77, 255, 0.5);
-            position: relative;      
+            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #ff69b4;
+            border-radius: 5px;
+        }
+
+        summary {
+            cursor: pointer;
+            padding: 10px;
+            font-size: 1.2em;
+            background-color: #ff69b4;
+            color: #0b0033;
+            border-radius: 5px;
+        }
+
+        summary:hover {
+            background-color: #ffc0cb;
+            color: #0b0033;
+        }
+
+        details[open] summary {
+            background-color: #ffc0cb;
+            color: #0b0033;
         }
 
         details[open] summary ~ * {
             animation: slideDown 0.3s ease-in-out;
         }
-
-        summary {
-            list-style: none;
-            cursor: pointer;
-            font-size: 1em;
-            padding: 0.625em 1.25em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(124, 77, 255, 0.8);
-            border-bottom: 1px solid #7c4dff;
-        }
-
-        summary::after {
-            content: "▼";
-            font-size: 1.2em;
-            margin-left: 0.5em;
-            transform: rotate(0);
-            transition: transform 0.3s;
-        }
-
-        details[open] summary::after {
-            transform: rotate(180deg);
-        }
-
-        details[open] {
-            background: rgba(0, 0, 0, 0.9);
-        }        
 
         @keyframes slideDown {
             from {
@@ -87,33 +71,27 @@
                 transform: translateY(0);
             }
         }
-
-        p {
-            margin: 0;
-            padding: 0.625em 1.25em;
-            text-align: left;
-        }      
     </style>
 </head>
 <body>
-    <main>
-        <h1>Latest</h1>
+    <div class="container">
+        <h1>Duygs Coding Projects</h1>
         <details>
-            <summary>Work 1: Awesome Web App</summary>
+            <summary>Project 1: Awesome Web App</summary>
             <p>Description: This is a web application that helps users track their daily tasks.</p>
             <p>Tools Used: HTML, CSS, JavaScript, React</p>
         </details>
         <details>
-            <summary>Work 2: Machine Learning Model</summary>
+            <summary>Project 2: Machine Learning Model</summary>
             <p>Description: A machine learning model that predicts house prices based on various features.</p>
             <p>Tools Used: Python, scikit-learn, Pandas</p>
         </details>
         <details>
-            <summary>Work 3: Mobile Game</summary>
+            <summary>Project 3: Mobile Game</summary>
             <p>Description: An addictive mobile game that challenges users to solve puzzles.</p>
             <p>Tools Used: Unity, C#</p>
         </details>
-    </main>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
