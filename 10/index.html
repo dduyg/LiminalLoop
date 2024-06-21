@@ -8,8 +8,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
         body {
-            background: linear-gradient(to right, #3f0d12, #a71d31);
-            color: #ffffff;
+            background-color: #1a1a2e;
+            color: #e0c7ff;
             font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
@@ -24,52 +24,46 @@
             max-width: 800px;
             margin: 20px;
             padding: 20px;
-            border: 2px solid #00ffea;
+            border: 2px solid #ff6ec7;
             border-radius: 10px;
             background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 15px #00ffea;
         }
 
         h1 {
-            color: #00ffea;
-            text-shadow: 2px 2px #ff77ff;
+            color: #ff6ec7;
+            margin-bottom: 20px;
         }
 
         details {
-            margin-bottom: 20px;
-            background: #1a1a1d;
-            border: 2px solid #ff77ff;
-            border-radius: 8px;
-            overflow: hidden;
+            margin-bottom: 10px;
+            background: rgba(255, 110, 199, 0.2);
+            border: 1px solid #ff6ec7;
+            border-radius: 5px;
+            padding: 10px;
             position: relative;
         }
 
         summary {
             cursor: pointer;
-            padding: 15px;
-            font-size: 1em;
-            background: #1a1a1d;
-            color: #00ffea;
-            outline: none;
+            padding: 10px;
+            font-size: 1.1em;
             list-style: none;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        summary::marker {
+        summary::-webkit-details-marker {
             display: none;
         }
 
         summary::after {
             content: '▼';
-            font-size: 1.2em;
-            transition: transform 0.3s;
+            font-size: 1.1em;
+            position: absolute;
+            right: 20px;
+            transition: transform 0.3s ease;
         }
 
         details[open] summary::after {
-            transform: rotate(-180deg);
+            transform: rotate(180deg);
         }
 
         details[open] summary ~ * {
@@ -85,11 +79,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        details p {
-            padding: 10px 15px;
-            color: #00ffea;
         }
     </style>
 </head>
