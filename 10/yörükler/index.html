@@ -6,63 +6,86 @@
     <title>Vaporwave Data Scientist</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
+            background-color: #2a2a2a;
+            background-image: url('detail-4.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #1a1a2e;
-            background-image: linear-gradient(315deg, #1a1a2e 0%, #16213e 74%);
-            color: #ffffff;
+            margin: 0;
             font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
         }
-
         .card {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #ff77ff;
             padding: 20px;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            max-width: 400px;
+            border-radius: 10px;
             width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 20px #ff77ff;
+            text-align: center;
         }
-
         .card h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            color: #f0a500;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
         }
-
         .card p {
-            font-size: 1em;
+            font-size: 1.2em;
             line-height: 1.5;
-            color: #eeeeee;
         }
-
-        .card a {
-            color: #f0a500;
-            text-decoration: none;
-            font-weight: bold;
+        .card .footer {
+            margin-top: 2em;
+            font-size: 0.9em;
         }
-
-        .card a:hover {
-            text-decoration: underline;
+        .glitch {
+            color: #ff77ff;
+            position: relative;
+            display: inline-block;
+        }
+        .glitch:before,
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            animation: glitch 2.5s infinite linear;
+        }
+        .glitch:before {
+            left: 2px;
+            text-shadow: -2px 0 #00ff00;
+            clip: rect(24px, 550px, 90px, 0);
+        }
+        .glitch:after {
+            left: -2px;
+            text-shadow: -2px 0 #ff77ff;
+            clip: rect(85px, 550px, 140px, 0);
+        }
+        @keyframes glitch {
+            0% {
+                clip: rect(24px, 9999px, 85px, 0);
+            }
+            50% {
+                clip: rect(0, 9999px, 40px, 0);
+            }
+            100% {
+                clip: rect(24px, 9999px, 85px, 0);
+            }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Vaporwave Data Scientist</h1>
-        <p>
-            Welcome to the world of a data scientist with a passion for vaporwave aesthetics. 
-            Here, retro meets technology in a blend of neon dreams and cutting-edge data analysis. 
-            Dive into the nostalgia of the 80s while exploring the future of data science.
-        </p>
-        <p>
-            Connect with me on <a href="https://linkedin.com" target="_blank">LinkedIn</a> or 
-            check out my <a href="https://github.com" target="_blank">GitHub</a> for the latest projects.
-        </p>
+        <h1 class="glitch" data-text="Vaporwave Enthusiast">Vaporwave Enthusiast</h1>
+        <p>Hello! I'm a data scientist with a passion for all things vaporwave. I love blending the retro aesthetics of the 80s and 90s with modern technology. My work involves analyzing complex data sets and creating visualizations that not only inform but also delight with a touch of nostalgia.</p>
+        <p>Welcome to my personal page where you can learn more about my projects, interests, and get in touch with me. Let's dive into the future with a retro twist!</p>
+        <div class="footer">
+            <p>© 2024 Vaporwave Data Scientist</p>
+        </div>
     </div>
 </body>
 </html>
