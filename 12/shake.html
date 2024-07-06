@@ -3,75 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
-    <link rel="stylesheet" href="../fonts.css">
-    <style>   
+    <title>404 Not Found</title>
+    <style>
         body {
-            font-family: 'Geist Mono', monospace;
-            background-color: #000000;
-            color: #ffffff;
             margin: 0;
             padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+            background: linear-gradient(135deg, #20002c 0%, #cbb4d4 100%);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
             text-align: center;
-            margin-bottom: 20px;
         }
-        .blog-card {
-            background-color: #5f73f8;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+        h1 {
+            font-size: 10vw;
+            margin: 0;
+            animation: glow 1.5s infinite alternate;
         }
-        .blog-card h2 {
-            margin-top: 0;
+        h2 {
+            font-size: 2vw;
+            margin: 20px 0;
         }
-        .blog-card p {
-            margin-bottom: 0;
+        p {
+            font-size: 1.5vw;
         }
-        .footer {
-            text-align: center;
-            margin-top: 50px;
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+            }
+        }
+        .neon-button {
+            background: none;
+            border: 2px solid #ff00ff;
+            color: #ff00ff;
+            padding: 10px 20px;
+            font-size: 1.5vw;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.2s;
+            animation: glow 1.5s infinite alternate;
+        }
+        .neon-button:hover {
+            background: #ff00ff;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
-        <h1>Shakes</h1>
-        <p>A vaporwave aesthetics diskettescapes</p>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Oops! This page is like a cassette tape in a digital world.</h2>
+        <p>The page you're looking for can't be found. Maybe it's stuck in the '80s.</p>
+        <a href="/" class="neon-button">Back to the Future</a>
     </div>
-
-    <div class="about">
-        <h2>About Me</h2>
-        <p>Add a short description about yourself here.</p>
-    </div>
-
-    <div class="latest-posts">
-        <h2>Latest Posts</h2>
-        <!-- Blog Card 1 -->
-        <div class="blog-card">
-            <h2>Post Title 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac odio ac dolor bibendum sodales.</p>
-        </div>
-        <!-- Blog Card 2 -->
-        <div class="blog-card">
-            <h2>Post Title 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac odio ac dolor bibendum sodales.</p>
-        </div>
-        <!-- Add more blog cards as needed -->
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 dduyg</p>
-    </div>
-</div>
-
 </body>
 </html>
