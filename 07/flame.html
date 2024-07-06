@@ -3,38 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>Not Found</title>
     <style>
         body {
-            background-color: #2a006e;
-            color: #ff6eff;
+            background-color: #800080; /* Purple background */
+            color: #ffffff; /* White text */
             font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
         h1 {
-            font-size: 4em;
-            margin-bottom: 20px;
+            font-size: 5em;
+            margin-bottom: 0.5em;
         }
         p {
             font-size: 1.5em;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
         }
-        .vaporwave {
-            filter: grayscale(100%) brightness(1.5) contrast(1.2);
+        /* Vaporwave style */
+        h1 {
+            color: #00ff00; /* Neon green text */
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+        }
+        p {
+            color: #00ffff; /* Cyan text */
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
         }
     </style>
 </head>
 <body>
     <div>
-        <h1>404 Not Found</h1>
-        <p>This page is lost in the virtual vibes...</p>
-        <p>But don't worry, you can still <a href="/">return to safety</a> and vibe with us!</p>
-        <img class="vaporwave" src="https://example.com/path/to/your/vaporwave/image.jpg" alt="Vaporwave Image">
+        <h1>404</h1>
+        <p>Oops! It seems you've ventured into the unknown...</p>
+    </div>
+    <div class="footer">
+        <p>This page is lost in the digital vaporwave abyss.</p>
     </div>
 </body>
 </html>
