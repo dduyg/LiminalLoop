@@ -68,8 +68,8 @@
 
 @font-face {
   font-family: 'LabMono';
-  src: url('fonts/labmono-regular-web.woff2') format('woff2'),
-       url('fonts/labmono-regular-web.woff') format('woff');
+  src: url('fonts/labmono-regular.woff2') format('woff2'),
+       url('fonts/labmono-regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
