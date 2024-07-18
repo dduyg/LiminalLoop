@@ -212,3 +212,13 @@
 }
 
 
+/* font-family: 'Grandslang Roman', sans-serif; */
+@font-face {
+    font-family: 'Grandslang Roman';
+    src: url('/fonts/Grandslang-roman.woff2') format('woff2'),
+         url('/fonts/Grandslang-roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
