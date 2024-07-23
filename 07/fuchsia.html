@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -14,56 +15,35 @@
             height: 100vh;
             background-color: beige;
             color: fuchsia;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
+            font-family: "Public Sans", sans-serif;
         }
         main {
             max-width: 800px;
             padding: 1.25em;
         }
         h1 {
-            font-size: 4em;
-            margin: 0.2em 0;
-        }
-        p {
-            font-size: 1.5em;
+            text-align: center;
+            margin: 0;
         }
         .logo {
-            max-width: 150px;
-            margin: 1.25em auto;
+            max-width: 40%;
+            margin: 0 auto;
         }
-        .button {
-            background: #ff79c6;
-            border: none;
-            color: #fff;
+        section {
+            border: 2px solid currentColor;
+            border-radius: .25rem;
+            color: black;
             padding: 15px 25px;
             font-size: 1em;
-            cursor: pointer;
-            border-radius: 5px;
             margin-top: 20px;
-            transition: background 0.3s ease;
-        }
-        .button:hover {
-            background: #ff92d0;
-        }
-        .neon {
-            text-shadow: 
-                0 0 5px #fff,
-                0 0 10px #fff,
-                0 0 20px #ff00ff,
-                0 0 30px #ff00ff,
-                0 0 40px #ff00ff,
-                0 0 50px #ff00ff,
-                0 0 60px #ff00ff;
         }
     </style>
 </head>
 <body>
     <main>
-        <img src="your-logo.png" alt="Logo" class="logo">
-        <h1 class="neon">404</h1>
-        <p>Oops! This page seems to have evaporated into the digital void.</p>
-        <button class="button" onclick="window.location.href='/'">Go Home</button>
+        <img src="fuchsia.gif" class="logo">
+        <h1>Paper Planes</h1>
+        <section>Oops! This page seems to have evaporated into the digital void.</section>
     </main>
 </body>
 </html>
