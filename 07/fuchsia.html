@@ -45,23 +45,23 @@
         }
 
         /* Custom scrollbar */
-        .content::-webkit-scrollbar {
+        section::-webkit-scrollbar {
             width: 1.2em;
         }
-        .content::-webkit-scrollbar-track {
+        section::-webkit-scrollbar-track {
             background: transparent;
         }
-        .content::-webkit-scrollbar-thumb,
-        .content::-webkit-scrollbar-thumb:hover {
+        section::-webkit-scrollbar-thumb,
+        section::-webkit-scrollbar-thumb:hover {
             background: url('scroll.png') no-repeat center center;
             background-size: contain;
         }
         @-moz-document url-prefix() { /* Firefox scrollbar */
-            .content {
+            section {
                 scrollbar-color: fuchsia transparent; 
                 scrollbar-width: thin;
             }
-            .content::-webkit-scrollbar-thumb {
+            section::-webkit-scrollbar-thumb {
                 background: url('scroll.png') no-repeat center center;
                 background-size: contain;
             }
