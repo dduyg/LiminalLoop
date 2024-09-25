@@ -5,20 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
     <link rel="stylesheet" href="../fonts.css">
-    <style>   
-        body {
-            font-family: 'Geist Mono', monospace;
-            background-color: #000000;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
+    <style>
+        html {
+            height: 100%;
         }
-        .container {
+        body {  
+            background: linear-gradient(to right, #D6A4A4, #DAE2F8);
+            font-family: 'Geist Mono', monospace;
+            line-height: 1.4;
+            color: #353831;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        main {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
-        .header {
+        header {
             text-align: center;
             margin-bottom: 20px;
         }
@@ -41,12 +49,11 @@
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
+<main>
+    <header>
         <h1>Shakes</h1>
         <p>A vaporwave aesthetics diskettescapes</p>
-    </div>
+    </header>
 
     <div class="about">
         <h2>About Me</h2>
@@ -71,7 +78,6 @@
     <div class="footer">
         <p>&copy; 2024 dduyg</p>
     </div>
-</div>
-
+</main>
 </body>
 </html>
