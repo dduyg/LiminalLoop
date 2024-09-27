@@ -24,6 +24,7 @@
             padding: 2em;
         }
         h1 {
+            font-size: 5em;
             margin: 0;
             animation: glitch 1.5s infinite;
         }
@@ -31,24 +32,12 @@
             font-size: 1.5em;
             margin: 20px 0;
         }
-        .button {
+        code {
             background: rgba(255, 255, 255, 0.2);
-            border: none;
-            padding: 15px 30px;
-            color: white;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-            animation: wave 1.5s infinite linear;
-        }
-        @keyframes wave {
-            0% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-            100% { transform: translateX(-50%) translateY(0); } 
-        }
-        .button:hover {
-            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid black;
+            font-weight: bold;
+            padding: 0.125em;
+            border-radius: 0.25em;
         }
         @keyframes glitch {
             0% { transform: translate(0); }
@@ -64,7 +53,7 @@
     <h1>gaussian</h1>
     <p>Oops! Looks like you're stuck in a time loop!</p>
     <p>It seems we've wandered off into the digital abyss</p>
-    <button class="button" onclick="window.location.href='/'">to the void</button>
+    <p><code>window.location.href</code></p>
 </main>
 </body>
 </html>
