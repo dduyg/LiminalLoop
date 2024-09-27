@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Data Structures</title>
+    <title>Liminal Loop</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -76,12 +76,19 @@
     <h3>Example: Using a Hash Table</h3>
     <p>Consider a scenario where you need to store and retrieve student records by their ID numbers efficiently. A hash table would be ideal for this:</p>
     <pre><code>hash_table = {}
+
 def add_student(student_id, student_record):
+
     hash_table[student_id] = student_record
+
 def get_student(student_id):
+
     return hash_table.get(student_id, "Student record not found")
+
 add_student("A001", {"name": "John Doe", "age": 20, "major": "Computer Science"})
+
 add_student("A002", {"name": "Jane Smith", "age": 22, "major": "Mathematics"})
+
 print(get_student("A001"))</code></pre>
     <h3>Conclusion</h3>
     <p>Understanding and utilizing data structures is crucial for developing high-performance applications. They enable programmers to handle data efficiently, leading to better resource management and faster execution times. Mastery of data structures also lays the groundwork for tackling more complex programming challenges.</p>
