@@ -3,115 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Liminal Loop</title>
+    <title>404 Not Found</title>
     <style>
-        /* Vaporwave color palette */
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Courier New', Courier, monospace;
-            background: linear-gradient(to bottom, #ff5cac, #7200bc, #4e00a1, #ff97b7);
-            color: #00ffcc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        
-        .container {
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 5rem;
-            margin-bottom: 0;
-            color: #ffdb1b;
-            text-shadow: 3px 3px 0 #333;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            margin-top: 0;
-            color: #ff1aff;
-        }
-        
-        p {
-            font-size: 1.2rem;
-            color: #00ffcc;
-            margin-bottom: 2rem;
-        }
-
-        .glitch {
-            position: relative;
-            color: #ffdb1b;
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .glitch::before, .glitch::after {
-            content: '404 ERROR';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            overflow: hidden;
-            color: #7200bc;
-            animation: glitch 2s infinite;
-        }
-
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 red;
-            animation: glitch 1.5s infinite;
-        }
-
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 cyan;
-            animation: glitch 3s infinite;
-        }
-
-        @keyframes glitch {
-            0% { clip: rect(44px, 9999px, 56px, 0); }
-            10% { clip: rect(88px, 9999px, 70px, 0); }
-            20% { clip: rect(18px, 9999px, 30px, 0); }
-            30% { clip: rect(64px, 9999px, 90px, 0); }
-            40% { clip: rect(120px, 9999px, 140px, 0); }
-            50% { clip: rect(44px, 9999px, 56px, 0); }
-            60% { clip: rect(88px, 9999px, 70px, 0); }
-            70% { clip: rect(18px, 9999px, 30px, 0); }
-            80% { clip: rect(64px, 9999px, 90px, 0); }
-            90% { clip: rect(120px, 9999px, 140px, 0); }
-            100% { clip: rect(44px, 9999px, 56px, 0); }
-        }
-
-        .btn {
-            background-color: #00ffcc;
-            color: #7200bc;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #ff1aff;
+            background: linear-gradient(135deg, #ff77ff, #4b0082);
             color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            animation: neon 1.5s infinite alternate;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #ffcc00;
+            background-color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+        }
+        @keyframes neon {
+            0% { text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00; }
+            100% { text-shadow: 0 0 10px #ff77ff, 0 0 20px #ff77ff; }
+        }
+        .vaporwave {
+            position: relative;
+            font-size: 0.8em;
+            margin-top: 40px;
+            color: #00ffff;
+        }
+        .vaporwave:before {
+            content: '🌴 404 - The Page is Gone, Like My Hopes and Dreams 🌴';
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="glitch">404 ERROR</div>
-        <h1>Oops!</h1>
-        <h2>Looks like you're lost in the neon void...</h2>
-        <p>You've traveled to a page that doesn't exist in this dimension.</p>
-        <a href="/" class="btn">Return to Reality</a>
-    </div>
+    <h1>404</h1>
+    <p>Oops! This page doesn't exist.</p>
+    <p class="vaporwave">But hey, you can always go back!</p>
+    <a href="/">Return to Homepage</a>
 </body>
 </html>
