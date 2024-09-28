@@ -6,89 +6,112 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Liminal Loop</title>
     <style>
-        /* Vaporwave Color Scheme */
+        /* Vaporwave color palette */
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
             font-family: 'Courier New', Courier, monospace;
-            color: #fff;
+            background: linear-gradient(to bottom, #ff5cac, #7200bc, #4e00a1, #ff97b7);
+            color: #00ffcc;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            text-align: center;
             overflow: hidden;
         }
-        h1 {
-            font-size: 6rem;
-            letter-spacing: 5px;
-            margin: 0;
-        }
-        p {
-            font-size: 1.5rem;
-            margin: 10px 0;
-        }
-        a {
-            font-size: 1.2rem;
-            color: #ffcccb;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: background-color 0.3s ease;
-        }
-        a:hover {
-            background-color: rgba(0, 0, 0, 0.6);
-        }
+        
         .container {
-            position: relative;
-            z-index: 10;
+            text-align: center;
         }
+        
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 0;
+            color: #ffdb1b;
+            text-shadow: 3px 3px 0 #333;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 0;
+            color: #ff1aff;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            color: #00ffcc;
+            margin-bottom: 2rem;
+        }
+
         .glitch {
-            font-size: 8rem;
-            font-weight: bold;
-            color: #fff;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff;
-            animation: glitch 1s infinite;
+            position: relative;
+            color: #ffdb1b;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
-        @keyframes glitch {
-            0% { transform: translate(-50%, -50%) skew(0deg); }
-            10% { transform: translate(-49%, -50%) skew(-3deg); }
-            20% { transform: translate(-50%, -49%) skew(2deg); }
-            30% { transform: translate(-50%, -50%) skew(0deg); }
-            40% { transform: translate(-51%, -50%) skew(-1deg); }
-            50% { transform: translate(-50%, -51%) skew(1deg); }
-            60% { transform: translate(-50%, -50%) skew(0deg); }
-            70% { transform: translate(-49%, -51%) skew(3deg); }
-            80% { transform: translate(-50%, -50%) skew(-2deg); }
-            90% { transform: translate(-51%, -50%) skew(2deg); }
-            100% { transform: translate(-50%, -50%) skew(0deg); }
-        }
-        .background {
+
+        .glitch::before, .glitch::after {
+            content: '404 ERROR';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://www.transparenttextures.com/patterns/dark-brick-wall.png');
-            z-index: 0;
-            opacity: 0.2;
+            background: transparent;
+            overflow: hidden;
+            color: #7200bc;
+            animation: glitch 2s infinite;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 red;
+            animation: glitch 1.5s infinite;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 cyan;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0% { clip: rect(44px, 9999px, 56px, 0); }
+            10% { clip: rect(88px, 9999px, 70px, 0); }
+            20% { clip: rect(18px, 9999px, 30px, 0); }
+            30% { clip: rect(64px, 9999px, 90px, 0); }
+            40% { clip: rect(120px, 9999px, 140px, 0); }
+            50% { clip: rect(44px, 9999px, 56px, 0); }
+            60% { clip: rect(88px, 9999px, 70px, 0); }
+            70% { clip: rect(18px, 9999px, 30px, 0); }
+            80% { clip: rect(64px, 9999px, 90px, 0); }
+            90% { clip: rect(120px, 9999px, 140px, 0); }
+            100% { clip: rect(44px, 9999px, 56px, 0); }
+        }
+
+        .btn {
+            background-color: #00ffcc;
+            color: #7200bc;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff1aff;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
     <div class="container">
-        <h1 class="glitch">404</h1>
-        <p>Oops! Looks like you're lost in the digital abyss.</p>
-        <p>Don't worry, we sent a search party... they just haven't come back yet.</p>
-        <a href="/">Take me back to reality</a>
+        <div class="glitch">404 ERROR</div>
+        <h1>Oops!</h1>
+        <h2>Looks like you're lost in the neon void...</h2>
+        <p>You've traveled to a page that doesn't exist in this dimension.</p>
+        <a href="/" class="btn">Return to Reality</a>
     </div>
 </body>
 </html>
