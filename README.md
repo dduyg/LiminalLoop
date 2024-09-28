@@ -2,7 +2,7 @@
 
 | <a href= "https://dduyg.github.io/LiminalLoop/" target="_blank"><img width="24" height="24" src="https://img.icons8.com/material-two-tone/24/start.png" alt="start"/></a>                                         | [02.md](./02/README.md)                                            | [`✰07`](https://dduyg.github.io/LiminalLoop/07/)              |
 |-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|
-| [`09`](https://dduyg.github.io/LiminalLoop/09/) | [`11`](https://dduyg.github.io/LiminalLoop/11/) | [`12`](https://dduyg.github.io/LiminalLoop/12/) |
+| [`09`](https://dduyg.github.io/LiminalLoop/09/) | [`11⌬`](https://dduyg.github.io/LiminalLoop/11/) | [`12`](https://dduyg.github.io/LiminalLoop/12/) |
 
 ```html
 <a href="../14/">➾</a>
