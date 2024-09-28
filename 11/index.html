@@ -52,6 +52,7 @@
         }
         summary {
             padding: 0;
+            font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -69,6 +70,10 @@
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23F3FEDC" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"/><path d="M12 12.586 8.707 9.293l-1.414 1.414L12 15.414l4.707-4.707-1.414-1.414L12 12.586z"/></svg>');
             background-size: contain;
             background-repeat: no-repeat;
+        }
+        details[open] summary .title {
+            color: #EDFC01;
+            text-decoration: underline;
         }
         details[open] .arrow {
             transform: rotate(180deg);
@@ -111,7 +116,8 @@
     <footer>
         <details>
             <summary>
-                Example <span class="arrow"></span>
+                <span class="title">Example</span>
+                <span class="arrow"></span>
             </summary>  
             <p>In Python, using NumPy, a simple example of vectorization is shown below:</p>
             <h3>Without Vectorization (Using Loops):</h3>
