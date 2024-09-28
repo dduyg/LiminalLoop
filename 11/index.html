@@ -3,103 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4Lost in the Vaporwave</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-        
         body {
             margin: 0;
-            height: 100vh;
-            background: linear-gradient(135deg, #ff77e9, #4f52de);
-            color: #fff;
-            font-family: 'VT323', monospace;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff8fd1, #6d0cb3);
+            color: white;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
         }
 
         h1 {
-            font-size: 6rem;
-            margin: 0;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin: 10px 0;
+            font-size: 3rem;
+            color: #00e8c6;
+            text-shadow: 2px 2px #ff6f91;
         }
 
         p {
             font-size: 1.5rem;
-            margin: 15px 0 30px;
+            margin: 20px 0;
+            color: #eee;
         }
 
-        .btn {
-            padding: 15px 30px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 2px solid #fff;
-            color: #fff;
+        .glitch {
             font-size: 1.2rem;
-            text-transform: uppercase;
+            color: #ff00d4;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: -2px 2px #ff00d4; }
+            25% { text-shadow: 2px -2px #00e8c6; }
+            50% { text-shadow: -2px 2px #ff00d4; }
+            75% { text-shadow: 2px -2px #00e8c6; }
+            100% { text-shadow: -2px 2px #ff00d4; }
+        }
+
+        button {
+            background-color: #00e8c6;
+            border: none;
+            color: black;
+            padding: 15px 30px;
+            text-align: center;
             text-decoration: none;
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        .btn:hover {
-            background-color: rgba(255, 255, 255, 0.5);
+        button:hover {
+            background-color: #ff00d4;
+            color: white;
         }
 
-        .glitch {
-            font-size: 3rem;
-            color: #fff;
-            position: relative;
-            display: inline-block;
-        }
-
-        .glitch:before, .glitch:after {
-            content: '404';
+        .vaporwave-grid {
             position: absolute;
+            top: 0;
             left: 0;
-            right: 0;
-            opacity: 0.8;
-        }
-
-        .glitch:before {
-            animation: glitch-anim 1s infinite linear alternate-reverse;
-            top: -2px;
-            left: -2px;
-            color: #ff77e9;
-        }
-
-        .glitch:after {
-            animation: glitch-anim 1s infinite linear alternate;
-            top: 2px;
-            left: 2px;
-            color: #4f52de;
-        }
-
-        @keyframes glitch-anim {
-            0% { clip: rect(24px, 9999px, 76px, 0); }
-            25% { clip: rect(45px, 9999px, 32px, 0); }
-            50% { clip: rect(10px, 9999px, 90px, 0); }
-            75% { clip: rect(74px, 9999px, 100px, 0); }
-            100% { clip: rect(36px, 9999px, 20px, 0); }
+            width: 100%;
+            height: 100%;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/4/4b/Vaporwave_Glitch_Grid.png');
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.1;
         }
     </style>
 </head>
 <body>
+    <div class="vaporwave-grid"></div>
     <div class="container">
-        <h1 class="glitch">404</h1>
-        <h2>Oops! The page you're looking for has gone... retro!</h2>
-        <p>Don't worry, it's not the end of the world. It's just the end of this page.</p>
-        <button class="btn" onclick="history.back()">Go Back</button>
+        <h1>404: Page Not Found</h1>
+        <p>Looks like you’re lost... <span class="glitch">in the vaporwave.</span></p>
+        <p>Don’t worry, this digital dream is just a glitch in the matrix.</p>
+        <button onclick="goBack()">Go Back</button>
     </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
