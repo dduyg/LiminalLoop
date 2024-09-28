@@ -18,45 +18,43 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #1e1e2f, #3e3e5c);
-            color: #d0d0d0;
+            background-color: #1e1e1e;
+            color: #00ff00;
             overflow: hidden;
         }
 
         .container {
             text-align: center;
-            animation: fadeIn 3s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
         }
 
         h1 {
             font-size: 8rem;
-            background: linear-gradient(90deg, #7f7fd5, #86a8e7, #91eae4);
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: glitch 2s infinite;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+            animation: glitch 1.5s infinite;
         }
 
         p {
             font-size: 1.5rem;
             margin-top: 20px;
             animation: floatText 4s infinite ease-in-out;
-            color: #b0b0b0;
         }
 
         .container button {
             margin-top: 30px;
             padding: 10px 20px;
-            background: #7f7fd5;
+            background: #00ff00;
             border: none;
             border-radius: 5px;
-            color: white;
+            color: black;
             cursor: pointer;
             transition: background 0.3s;
             animation: pulse 1.5s infinite;
+            font-weight: bold;
         }
 
         .container button:hover {
-            background: #86a8e7;
+            background: #00cc00;
         }
 
         .grid {
@@ -67,41 +65,43 @@
             height: 100%;
             background-image: repeating-linear-gradient(
                 to right,
-                rgba(255, 255, 255, 0.05) 1px,
+                rgba(0, 255, 0, 0.1) 1px,
                 transparent 1px
             ),
             repeating-linear-gradient(
                 to bottom,
-                rgba(255, 255, 255, 0.05) 1px,
+                rgba(0, 255, 0, 0.1) 1px,
                 transparent 1px
             );
-            background-size: 50px 50px;
+            background-size: 40px 40px;
             z-index: -1;
         }
 
         .floating-element {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(127, 127, 213, 0.3);
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 255, 0, 0.3);
             border-radius: 50%;
             animation: moveAround 10s ease-in-out infinite;
+            opacity: 0.5;
         }
 
         .floating-element2 {
             position: absolute;
-            width: 150px;
-            height: 150px;
-            background: rgba(135, 168, 231, 0.3);
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 255, 0, 0.3);
             border-radius: 50%;
             animation: moveAroundReverse 15s ease-in-out infinite;
+            opacity: 0.5;
         }
 
         @keyframes glitch {
             0% { transform: skew(0deg); }
-            25% { transform: skew(2deg, 5deg); }
+            25% { transform: skew(1deg, 3deg); }
             50% { transform: skew(0deg); }
-            75% { transform: skew(-2deg, -5deg); }
+            75% { transform: skew(-1deg, -3deg); }
             100% { transform: skew(0deg); }
         }
 
@@ -143,7 +143,7 @@
     <div class="container">
         <h1>404</h1>
         <p>Oops, it seems you're lost in cyberspace.</p>
-        <p>But hey, it's kinda cool out here, right?</p>
+        <p>But hey, it’s still a cool place to explore!</p>
         <button onclick="goHome()">Take me back</button>
     </div>
 
