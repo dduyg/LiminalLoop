@@ -18,8 +18,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
-            color: #cfcfcf;
+            background: linear-gradient(135deg, #1e1e2f, #3e3e5c);
+            color: #d0d0d0;
             overflow: hidden;
         }
 
@@ -30,7 +30,7 @@
 
         h1 {
             font-size: 8rem;
-            background: linear-gradient(90deg, #4e94f3, #89c7ff);
+            background: linear-gradient(90deg, #7f7fd5, #86a8e7, #91eae4);
             -webkit-background-clip: text;
             color: transparent;
             animation: glitch 2s infinite;
@@ -40,12 +40,13 @@
             font-size: 1.5rem;
             margin-top: 20px;
             animation: floatText 4s infinite ease-in-out;
+            color: #b0b0b0;
         }
 
         .container button {
             margin-top: 30px;
             padding: 10px 20px;
-            background: #4e94f3;
+            background: #7f7fd5;
             border: none;
             border-radius: 5px;
             color: white;
@@ -55,7 +56,7 @@
         }
 
         .container button:hover {
-            background: #89c7ff;
+            background: #86a8e7;
         }
 
         .grid {
@@ -80,22 +81,20 @@
 
         .floating-element {
             position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(78, 148, 243, 0.6);
+            width: 200px;
+            height: 200px;
+            background: rgba(127, 127, 213, 0.3);
             border-radius: 50%;
             animation: moveAround 10s ease-in-out infinite;
-            opacity: 0.3;
         }
 
         .floating-element2 {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(137, 199, 255, 0.6);
+            width: 150px;
+            height: 150px;
+            background: rgba(135, 168, 231, 0.3);
             border-radius: 50%;
             animation: moveAroundReverse 15s ease-in-out infinite;
-            opacity: 0.3;
         }
 
         @keyframes glitch {
