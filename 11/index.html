@@ -32,6 +32,30 @@
         p {
             margin: 1.25em 0;
         }
+        h2 {
+            color: #fff;
+        }
+        .scrolling-wrapper {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            height: 80px;
+            margin-bottom: 20px;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .scrolling-wrapper .card {
+            display: inline-block;
+        }
+        .card {
+            border: 2px solid #a6192d;
+            width: 150px;
+            height: 75px;
+            background: black;
+        }
         footer {
             margin: 6em auto 1.25em;
             font-size: 0.9em;
@@ -111,7 +135,17 @@
     </header>
     <p>Vectorization is the process of converting data or operations into a vector format to optimize performance and efficiency. It typically refers to using vectorized operations, where computations are applied to entire arrays or matrices simultaneously, rather than element by element. This eliminates the need for explicit loops, leveraging modern processors that can handle multiple operations in parallel. Libraries like <strong>NumPy</strong> (in Python) exploit vectorization to accelerate numerical computations by using optimized hardware instructions and parallel processing.</p>
   
-    <hr>
+    <div class="scrolling-wrapper">
+        <div class="card"><h2>Card</h2></div>
+        <div class="card"><h2>Card</h2></div>
+        <div class="card"><h2>Card</h2></div>
+        <div class="card"><h2>Card</h2></div>
+        <div class="card"><h2>Card</h2></div>
+        <div class="card"><h2>Card</h2></div>
+        <div class="card"><h2>Card</h2></div>
+        <div class="card"><h2>Card</h2></div>
+        <div class="card"><h2>Card</h2></div>
+    </div>
     
     <p>In <strong>machine learning</strong>, vectorization involves transforming data, such as text or images, into numerical vectors that algorithms can process. For instance, in <strong>natural language processing (NLP)</strong>, <strong>word embeddings</strong> represent words as vectors in a continuous vector space, capturing semantic relationships through mathematical operations.</p>
     <p>Overall, vectorization is a powerful technique that enhances performance, simplifies code, and enables more efficient data processing across various domains.</p>
