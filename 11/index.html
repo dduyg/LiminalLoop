@@ -3,58 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>404 Not Found</title>
     <style>
         body {
-            background: linear-gradient(to bottom right, #ff77e9, #00d0ff);
-            color: #fff;
+            background-color: #2a2a72;
+            background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+            color: #ffffff;
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 50px;
-            margin: 0;
         }
         h1 {
             font-size: 100px;
             margin: 0;
         }
         p {
-            font-size: 24px;
+            font-size: 20px;
             margin: 20px 0;
         }
         a {
-            background-color: #ff3d00;
-            color: white;
-            padding: 15px 25px;
             text-decoration: none;
+            color: #ffffff;
+            background-color: #ff0080;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
+            transition: background-color 0.3s ease;
         }
         a:hover {
-            background-color: #e63900;
-        }
-        .container {
-            position: relative;
-            z-index: 1;
+            background-color: #ff4f81;
         }
         .vaporwave {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            font-family: 'Courier New', Courier, monospace;
             font-size: 40px;
-            font-weight: bold;
-            filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.5));
+            text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class="vaporwave">🌴 Welcome to the Retro Zone! 🌴</div>
-    <div class="container">
-        <h1>404</h1>
-        <p>Oops! Looks like you’ve taken a wrong turn into the void.</p>
-        <p>Don't worry; it happens to the best of us!</p>
-        <a href="/">Return Home</a>
+    <h1>404</h1>
+    <p class="vaporwave">Oops! Page Not Found.</p>
+    <p>Looks like you’ve stumbled into a glitch in the matrix.</p>
+    <p>But don’t worry, the internet is a vast place!</p>
+    <a href="/">Return to Homepage</a>
+    <div class="footer">
+        <p>Or check out our <a href="/contact">Contact Page</a> if you need assistance.</p>
     </div>
 </body>
 </html>
