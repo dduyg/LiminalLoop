@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Quattrocento+Sans");
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background: #a6192d url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/747/pattern.png) fixed;
+  background-size: 300px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: "Quattrocento Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin: 1em 0 0.5em;
+  color: #fff;
+}
+
+p,
+ul,
+li {
+  text-align: left;
+  font-family: "Quattrocento Sans", sans-serif;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: #f2f2f2;
+  transition: 0.2s all;
+}
+a:hover {
+  color: #e5e5e5;
+}
+
+header p {
+  padding: 0 20px;
+}
+
+main, .container {
+  width: 100%;
+  max-width: 600px;
+  padding: 5px 10px 10px 10px;
+}
+
+.content {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 0 0px 4px rgba(0, 0, 0, 0.05);
+}
+.content a {
+  color: #a6192d;
+}
+.content a:hover {
+  color: #630e1a;
+}
+
+.codepen,
+.cp_embed_wrapper {
+  margin: 1em;
+}
+
+button {
+  background: #a6192d;
+  color: #fff;
+  text-transform: none;
+  border-radius: 2px;
+  padding: 1rem 2rem;
+  display: inline-block;
+  font-size: 20px;
+  text-decoration: none;
+  position: relative;
+  border: none;
+  border-bottom: 5px solid #630e1a;
+}
+button:hover {
+  cursor: pointer;
+}
+
+h2 {
+  color: #fff;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.scrolling-wrapper .card {
+  display: inline-block;
+}
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.scrolling-wrapper-flexbox .card {
+  flex: 0 0 auto;
+  margin-right: 3px;
+}
+
+.card {
+  border: 2px solid #a6192d;
+  width: 150px;
+  height: 75px;
+  background: black;
+}
+
+.scrolling-wrapper, .scrolling-wrapper-flexbox {
+  height: 80px;
+  margin-bottom: 20px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling-wrapper::-webkit-scrollbar, .scrolling-wrapper-flexbox::-webkit-scrollbar {
+  display: none;
+}

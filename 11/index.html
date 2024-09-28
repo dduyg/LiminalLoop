@@ -1,109 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>4Lost in the Vaporwave</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #ff8fd1, #6d0cb3);
-            color: white;
-        }
+  <meta charset="UTF-8">
+  <title>CodePen - Smooth Horizontal Scrolling</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Oswald'>
+<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto'><link rel="stylesheet" href="./style.css">
 
-        .container {
-            text-align: center;
-            max-width: 600px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #00e8c6;
-            text-shadow: 2px 2px #ff6f91;
-        }
-
-        p {
-            font-size: 1.5rem;
-            margin: 20px 0;
-            color: #eee;
-        }
-
-        .glitch {
-            font-size: 1.2rem;
-            color: #ff00d4;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-            animation: glitch 1s infinite;
-        }
-
-        @keyframes glitch {
-            0% { text-shadow: -2px 2px #ff00d4; }
-            25% { text-shadow: 2px -2px #00e8c6; }
-            50% { text-shadow: -2px 2px #ff00d4; }
-            75% { text-shadow: 2px -2px #00e8c6; }
-            100% { text-shadow: -2px 2px #ff00d4; }
-        }
-
-        button {
-            background-color: #00e8c6;
-            border: none;
-            color: black;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #ff00d4;
-            color: white;
-        }
-
-        .vaporwave-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/4/4b/Vaporwave_Glitch_Grid.png');
-            background-size: cover;
-            z-index: -1;
-            opacity: 0.1;
-        }
-    </style>
 </head>
 <body>
-    <div class="vaporwave-grid"></div>
-    <div class="container">
-        <h1>404: Page Not Found</h1>
-        <p>Looks like you’re lost... <span class="glitch">in the vaporwave.</span></p>
-        <p>Don’t worry, this digital dream is just a glitch in the matrix.</p>
-        <button onclick="goBack()">Go Back</button>
-    </div>
-
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
+<!-- partial:index.partial.html -->
+<main>
+  <header>
+    <h1>Smooth Horizontal Scrolling</h1>
+  </header>
+<section class="content">
+  
+  
+  <p>In the era of responsive design, often times we will have a series of card-like divs. While we may show them all on desktop, on mobile things tend to be different. What if we want to have an inner container where the user scrolls left and right to view each card? How do we achieve that?</p>
+  <p>Here's a demo. There are more cards to the right that can be scrolled to.</p>
+  
+  <div class="scrolling-wrapper">
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+  </div>
+  
+  <p>To make this, we need to create a container that holds our cards. Then we will enable horizontal scrolling on that container.</p>
+  
+  <p>The <code>overflow-x</code> and <code>overflow-y</code> enable the div to only scroll horizontally. The combination of <code>white-space: nowrap</code> and <code>display: inline-block</code> will neatly line up the cards.</p>
+  
+  <p>We can also use Flexbox to achieve the same result.</p>
+  
+  <p>The result is the same. We have all our cards on a single line and they are scrollalble left to right.</p>
+  
+  <div class="scrolling-wrapper-flexbox">
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+  </div>
+  
+  <p>On iOS, you want to add <code>-webkit-overflow-scrolling: touch;</code> to your scroll container. By default, Safari will not smoothly scroll these elements.</p>
+  
+  <p>I wrote a <a href="https://codepen.io/colinlord/post/horizontal-scrolling-containers" >blog post</a> on this topic if you want to learn more.</p>
+</section>
+</main>
+<!-- partial -->
+  <script src='//production-assets.codepen.io/assets/embed/ei.js'></script>
 </body>
 </html>
