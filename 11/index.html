@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Lost in Cyberspace</title>
+    <title>Liminal Loop</title>
     <style>
         * {
             margin: 0;
@@ -25,35 +25,36 @@
 
         .container {
             text-align: center;
+            max-width: 800px;
+            padding: 2em;
             animation: fadeIn 1s ease-in-out;
         }
 
         h1 {
-            font-size: 8rem;
+            font-size: 6rem;
             text-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
             animation: glitch 1.5s infinite;
         }
 
         p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-top: 20px;
             animation: floatText 4s infinite ease-in-out;
         }
 
-        .container button {
+        a {
             margin-top: 30px;
+            text-decoration: none;
             padding: 10px 20px;
             background: #00ff00;
-            border: none;
-            border-radius: 5px;
             color: black;
+            border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s;
             animation: pulse 1.5s infinite;
             font-weight: bold;
         }
-
-        .container button:hover {
+        a:hover {
             background: #00cc00;
         }
 
@@ -142,20 +143,13 @@
 <body>
     <div class="container">
         <h1>404</h1>
-        <p>Oops, it seems you're lost in cyberspace.</p>
-        <p>But hey, it’s still a cool place to explore!</p>
-        <button onclick="goHome()">Take me back</button>
+        <p>Oops, it seems you're lost in cyberspace. But hey, it’s still a cool place to explore!</p>
+        <a href="wolves-2">🐺🐺</a>
     </div>
 
     <div class="grid"></div>
 
     <div class="floating-element"></div>
     <div class="floating-element2"></div>
-
-    <script>
-        function goHome() {
-            window.location.href = '/';
-        }
-    </script>
 </body>
 </html>
