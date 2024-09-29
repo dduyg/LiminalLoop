@@ -43,9 +43,9 @@
             text-align: left;
         }
         .scrolling-wrapper {
-            overflow-x: scroll;
-            overflow-y: hidden;
-            white-space: nowrap;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
             height: 80px;
             margin-bottom: 20px;
             width: 100%;
@@ -55,8 +55,9 @@
             display: none;
         }
         .scrolling-wrapper .card {
-            display: inline-block;
-        }
+            flex: 0 0 auto;
+            margin-right: 3px;
+        }         
         .card {
             width: 150px;
             height: 75px;
