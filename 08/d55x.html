@@ -28,7 +28,7 @@ body {
 
 main {
   max-width: 1400px;
-  padding: 0.625em;
+  padding: 1.25em;
   margin: 0 auto;
 }
         
@@ -54,37 +54,16 @@ main {
   scroll-snap-align: start;
   transition: all 0.2s;
 }
-
 .latest-card:hover {
   color: var(--white);
   background: var(--orange);
 }
-
 .latest-card .card-title {
   font-size: 20px;
 }
-
 .latest-card .card-content {
   margin: 20px 0;
   max-width: 85%;
-}
-
-.latest-card .card-link-wrapper {
-  margin-top: auto;
-}
-
-.latest-card .card-link {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  background: var(--orange);
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: background 0.2s;
-}
-
-.latest-card:hover .card-link {
-  background: var(--darkorange);
 }
 
 .latest::-webkit-scrollbar {
@@ -126,37 +105,22 @@ main {
   <h2>Scrolling Card</h2>
   <ul class="latest">
     <li class="latest-card">
-      <div>
         <h3 class="card-title">Service 1</h3>
         <div class="card-content">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div>
     </li>
     <li class="latest-card">
-      <div>
         <h3 class="card-title">Service 2</h3>
         <div class="card-content">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae magnam harum natus fuga et repellat in maiores.</p>
         </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div>
     </li>
     <li class="latest-card">
-      <div>
         <h3 class="card-title">Service 3</h3>
         <div class="card-content">
           <p>Phasellus ultrices lorem vel bibendum ultricies. In hendrerit nulla a ante dapibus pulvinar eu eget quam.</p>
         </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div>
     </li>
     <li class="latest-card">
       <div>
