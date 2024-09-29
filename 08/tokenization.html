@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2B2B2B;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            border: 3px solid #FF77E9;
+            background: linear-gradient(135deg, #ff8af4, #9cf5ff);
+            box-shadow: 0px 0px 30px rgba(255, 0, 150, 0.75);
+        }
+
+        h1 {
+            font-size: 5rem;
+            color: #ff77e9;
+            text-shadow: 2px 2px 10px #ff77e9;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #9cf5ff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff77e9;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #9cf5ff;
+        }
+
+        .glitch-effect {
+            position: relative;
+            color: #ffffff;
+        }
+
+        .glitch-effect:before, .glitch-effect:after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.8;
+            color: #ff77e9;
+            z-index: -1;
+            animation: glitch 2s infinite;
+        }
+
+        .glitch-effect:after {
+            color: #9cf5ff;
+            z-index: -2;
+            animation: glitch 2s infinite reverse;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, -2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, 2px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch-effect" data-text="404">404</h1>
+        <h2 class="glitch-effect" data-text="Oops! You’re in the void...">Oops! You’re in the void...</h2>
+        <p class="glitch-effect" data-text="Looks like you wandered off into the vaporwave dimension. This page doesn’t exist, but dduyg still does.">Looks like you wandered off into the vaporwave dimension. This page doesn’t exist, but dduyg still does.</p>
+        <p><a href="/">Go Back to Reality (Home)</a></p>
+        <div class="footer">
+            <p>&copy; 2024 dduyg | Powered by neon vibes and glitchy dreams.</p>
+        </div>
+    </div>
+</body>
+</html>
