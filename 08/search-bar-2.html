@@ -17,6 +17,11 @@
             align-items: center;
             flex-direction: column;
         }
+        main {
+            max-width: 600px;
+            padding: 1em;
+            margin: 0 auto;
+        }
         h1 {
             font-size: 6rem;
             margin: 0;
@@ -52,13 +57,15 @@
                 transform: translate(0);
             }
         }
-        .search-box {     
+        .search-box {
+            display: flex;
+            justify-content: center;
             margin-top: 30px;
-        }
+        }     
         input[type="text"] {
-            width: 400px;
+            width: 70%;
             padding: 10px;
-            font-size: 1.2rem;
+            font-size: 1.2em;
             border: none;
             outline: none;
             border-radius: 25px;
@@ -100,7 +107,7 @@
     </style>
 </head>
 <body>
-    <div>
+    <main>
         <h1 class="glitch">404</h1>
         <h2>Oops! Page Not Found</h2>
 
@@ -115,6 +122,6 @@
         <a href="./" class="home-link">Take me back</a>
 
         <footer>@dduyg | Stay Rad.</footer>
-    </div>
+    </main>
 </body>
 </html>
