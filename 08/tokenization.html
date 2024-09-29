@@ -3,116 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found</title>
+    <title>dduyg</title>
     <style>
         body {
             margin: 0;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
             height: 100vh;
-            background: linear-gradient(135deg, #ff94c2, #8ec5fc);
-            color: #ffffff;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff00cc, #3333ff);
+            color: #fff;
         }
 
         .container {
             text-align: center;
-            animation: fadeIn 3s ease;
+            max-width: 600px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
         }
 
         h1 {
-            font-size: 10vw;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-size: 4em;
+            font-family: 'Courier New', Courier, monospace;
+            background: -webkit-linear-gradient(45deg, #00ffcc, #ff99cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
 
         p {
-            font-size: 2vw;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            font-size: 1.5em;
+            margin-bottom: 30px;
         }
 
-        .funny-message {
+        .search-bar {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
-            font-size: 1.5vw;
-            color: #00ffd9;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .home-button {
-            margin-top: 40px;
-            padding: 15px 30px;
-            font-size: 1.2vw;
-            background-color: rgba(0, 0, 0, 0.5);
-            border: 2px solid #00ffd9;
-            color: #00ffd9;
-            text-transform: uppercase;
-            text-decoration: none;
+        .search-bar input {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1.2em;
+            outline: none;
+        }
+
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1.2em;
             cursor: pointer;
-            transition: all 0.3s ease;
+            margin-left: 10px;
         }
 
-        .home-button:hover {
-            background-color: #00ffd9;
-            color: #000000;
+        .search-bar button:hover {
+            background-color: #ff66b2;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .back-link {
+            display: block;
+            margin-top: 40px;
+            color: #ff99cc;
+            font-size: 1.2em;
+            text-decoration: none;
         }
 
-        .glitch {
-            font-size: 3vw;
-            color: #ff00ff;
-            position: relative;
+        .back-link:hover {
+            text-decoration: underline;
         }
 
-        .glitch::before, .glitch::after {
-            content: '404';
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: #00ffff;
-            background: none;
-            clip-path: inset(0 1px);
-            animation: glitch 2s infinite;
-        }
-
-        .glitch::after {
-            left: 2px;
-            color: #ff00ff;
-            clip-path: inset(0 2px);
-            animation: glitch2 2s infinite;
-        }
-
-        @keyframes glitch {
-            0%, 20%, 40%, 60%, 100% {
-                clip-path: inset(0 0 0 0);
-            }
-            10%, 30%, 50%, 70% {
-                clip-path: inset(10% 0 0 0);
-            }
-        }
-
-        @keyframes glitch2 {
-            0%, 20%, 40%, 60%, 100% {
-                clip-path: inset(0 0 0 0);
-            }
-            10%, 30%, 50%, 70% {
-                clip-path: inset(0 0 10% 0);
-            }
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1 class="glitch">404</h1>
-        <p>Oops, it looks like you've taken a wrong turn in the matrix!</p>
-        <p class="funny-message">The page you're looking for has transcended dimensions. Maybe it’s chillin' in a parallel universe?</p>
-        <a href="/" class="home-button">Return to dduyg HQ</a>
-    </div>
+        <h1>404</h1>
+        <p>Oops! The page you're looking for is lost in cyberspace.</p>
+        
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Go</button>
+        </div>
+        
+        <!-- Back link -->
+        <a href="/" class="back-link">Return to Homepage</a>
 
+        <footer>
+            © 2024 dduyg
+        </footer>
+    </div>
 </body>
 </html>
