@@ -25,14 +25,13 @@ body {
   background: var(--platinum);
   margin: 50px 0;
 }
-
 main {
   max-width: 1400px;
   padding: 1.25em;
   margin: 0 auto;
 }
-        
-.latest {
+
+.cards {
   display: grid;
   grid-auto-columns: 100%;
   grid-column-gap: 10px;
@@ -43,8 +42,7 @@ main {
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
 }
-
-.latest-card {
+.card {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -54,46 +52,46 @@ main {
   scroll-snap-align: start;
   transition: all 0.2s;
 }
-.latest-card:hover {
+.card:hover {
   color: var(--white);
   background: var(--orange);
 }
-.latest-card .card-title {
+.card .card-title {
   font-size: 20px;
 }
-.latest-card .card-content {
+.card .card-content {
   margin: 20px 0;
   max-width: 85%;
 }
 
-.latest::-webkit-scrollbar {
+.cards::-webkit-scrollbar {
   height: 12px;
 }
-.latest::-webkit-scrollbar-thumb,
-.latest::-webkit-scrollbar-track {
+.cards::-webkit-scrollbar-thumb,
+.cards::-webkit-scrollbar-track {
   border-radius: 92px;
 }
-.latest::-webkit-scrollbar-thumb {
+.cards::-webkit-scrollbar-thumb {
   background: var(--darkorange);
 }
-.latest::-webkit-scrollbar-track {
+.cards::-webkit-scrollbar-track {
   background: var(--thumb);
 }
 
 @media (min-width: 500px) {
-  .latest {
+  .cards {
     grid-auto-columns: calc(50% - 10px);
     grid-column-gap: 20px;
   }
 }
 @media (min-width: 700px) {
-  .latest {
+  .cards {
     grid-auto-columns: calc(calc(100% / 3) - 20px);
     grid-column-gap: 30px;
   }
 }
 @media (min-width: 1100px) {
-  .latest {
+  .cards {
     grid-auto-columns: calc(25% - 30px);
     grid-column-gap: 40px;
   }
@@ -102,82 +100,57 @@ main {
 </head>
 <body>
 <main>
-  <h2>Scrolling Card</h2>
-  <ul class="latest">
-    <li class="latest-card">
+  <h2>With CSS Grid</h2>
+  <ul class="cards">
+    <li class="card">
         <h3 class="card-title">Service 1</h3>
         <div class="card-content">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
     </li>
-    <li class="latest-card">
+    <li class="card">
         <h3 class="card-title">Service 2</h3>
         <div class="card-content">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae magnam harum natus fuga et repellat in maiores.</p>
         </div>
     </li>
-    <li class="latest-card">
+    <li class="card">
         <h3 class="card-title">Service 3</h3>
         <div class="card-content">
           <p>Phasellus ultrices lorem vel bibendum ultricies. In hendrerit nulla a ante dapibus pulvinar eu eget quam.</p>
         </div>
     </li>
-    <li class="latest-card">
-      <div>
+    <li class="card">
         <h3 class="card-title">Service 4</h3>
         <div class="card-content">
           <p>Aenean posuere mauris quam, pellentesque auctor mi bibendum nec. Sed scelerisque lacus nisi, quis auctor lorem ornare vel.</p>
         </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div>
     </li>
-    <li class="latest-card">
-      <div>
+    <li class="card">
         <h3 class="card-title">Service 5</h3>
         <div class="card-content">
           <p>Vestibulum pharetra fringilla felis sit amet tempor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras et arcu sit amet est consequat feugiat. Nam ut sapien pulvinar.</p>
         </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div>
     </li>
-    <li class="latest-card">
-      <div>
+    <li class="card">
         <h3 class="card-title">Service 6</h3>
         <div class="card-content">
           <p>Donec ut tincidunt nisl. Vivamus eget eros id elit feugiat mollis. Nam sed sem quis libero finibus tempor.</p>
         </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div>
     </li>
-    <li class="latest-card">
-      <div>
+    <li class="card">
         <h3 class="card-title">Service 7</h3>
         <div class="card-content">
           <p>Aliquam eget nisl auctor, sollicitudin ipsum at, dignissim ligula. Donec tincidunt in elit et pellentesque. Integer posuere metus ac massa mollis euismod.</p>
         </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div>
     </li>
-    <li class="latest-card">
-      <div>
+    <li class="card">
         <h3 class="card-title">Service 8</h3>
         <div class="card-content">
           <p> Vivamus eget eros id elit feugiat mollis. Nam sed sem quis libero finibus tempor.</p>
         </div>
-      </div>
-      <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div>
     </li>
-  </ul>      
+  </ul>
 </main>
 </body>
 </html>
