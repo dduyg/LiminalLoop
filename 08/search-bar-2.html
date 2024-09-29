@@ -17,25 +17,21 @@
             align-items: center;
             flex-direction: column;
         }
-
         h1 {
             font-size: 6rem;
             margin: 0;
             text-shadow: 2px 2px #000;
         }
-
         h2 {
             font-size: 2rem;
             text-shadow: 1px 1px #000;
         }
-
         .glitch {
             position: relative;
             font-size: 4rem;
             color: #ff00ff;
             animation: glitch 1s infinite;
         }
-
         @keyframes glitch {
             0% {
                 transform: translate(0);
@@ -56,16 +52,12 @@
                 transform: translate(0);
             }
         }
-
-        .search-box {
-            display: flex;
-            justify-content: center;     
+        .search-box {     
             margin-top: 30px;
         }
-
         input[type="text"] {
-            width: 70%;
-            max-width: 300px;
+            width: 80%;
+            max-width: 350px;
             padding: 10px;
             font-size: 1.2rem;
             border: none;
@@ -75,14 +67,13 @@
             color: white;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
-
         input[type="text"]::placeholder {
             color: #fff;
             opacity: 0.7;
         }
-
         input[type="submit"] {
             margin-left: 10px;
+            margin-top: 20px;
             padding: 10px 20px;
             font-size: 1.2rem;
             border: none;
@@ -92,18 +83,15 @@
             cursor: pointer;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
-
         .home-link {
-            margin-top: 30px;
+            margin-top: 50px;
             font-size: 1.5rem;
             color: #00ffff;
             text-decoration: none;
         }
-
         .home-link:hover {
             color: #ff00ff;
         }
-
         footer {
             margin-top: 50px;
             font-size: 1rem;
@@ -112,7 +100,6 @@
     </style>
 </head>
 <body>
-
     <div>
         <h1 class="glitch">404</h1>
         <h2>Oops! Page Not Found</h2>
@@ -127,10 +114,7 @@
 
         <a href="../" class="home-link">Take me back</a>
 
-        <footer>
-            @dduyg | Stay Rad.
-        </footer>
+        <footer>@dduyg | Stay Rad.</footer>
     </div>
-
 </body>
 </html>
