@@ -3,93 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Not Found</title>
     <style>
+        /* Vaporwave Colors */
         body {
-            margin: 0;
-            padding: 0;
+            background: linear-gradient(135deg, #ffb6c1, #add8e6, #9370db);
+            color: #fff;
             font-family: 'Courier New', Courier, monospace;
-            background-color: #0d0221;
-            color: #e0e0e0;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            flex-direction: column;
         }
-        .container {
-            text-align: center;
-            animation: glitch 1.5s infinite;
-        }
+
         h1 {
-            font-size: 8rem;
-            color: #ff66c4;
-            text-shadow: 0 0 5px #ff66c4, 0 0 10px #ff66c4, 0 0 15px #ff66c4;
+            font-size: 6rem;
+            margin: 0;
+            text-shadow: 2px 2px #000;
         }
-        p {
+
+        h2 {
+            font-size: 2rem;
+            text-shadow: 1px 1px #000;
+        }
+
+        .logo {
             font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #00d9ff;
-            text-shadow: 0 0 5px #00d9ff, 0 0 10px #00d9ff;
-        }
-        .search-box {
             margin-top: 20px;
+            color: #00ffff;
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8);
         }
+
+        .glitch {
+            position: relative;
+            font-size: 4rem;
+            color: #ff00ff;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(2px, -2px);
+            }
+            60% {
+                transform: translate(-2px, -2px);
+            }
+            80% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        .search-box {
+            margin-top: 30px;
+        }
+
         input[type="text"] {
+            width: 300px;
             padding: 10px;
             font-size: 1.2rem;
             border: none;
             outline: none;
-            width: 300px;
-            border-radius: 5px;
-            background-color: #202040;
-            color: #fff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
+
+        input[type="text"]::placeholder {
+            color: #fff;
+            opacity: 0.7;
+        }
+
         input[type="submit"] {
+            margin-left: 10px;
             padding: 10px 20px;
             font-size: 1.2rem;
-            margin-left: 10px;
-            background-color: #ff66c4;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
+            background-color: #9370db;
             color: white;
             cursor: pointer;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
-        input[type="submit"]:hover {
-            background-color: #ff1493;
+
+        .home-link {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #00ffff;
+            text-decoration: none;
         }
-        @keyframes glitch {
-            0% { transform: skew(0.5deg, 0.5deg); }
-            20% { transform: skew(-1deg, -1deg); }
-            40% { transform: skew(0.5deg, 0.5deg); }
-            60% { transform: skew(-0.5deg, -0.5deg); }
-            100% { transform: skew(0deg, 0deg); }
+
+        .home-link:hover {
+            color: #ff00ff;
         }
-        .logo {
-            font-size: 2rem;
-            color: #00ffcc;
-            text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-            margin-bottom: 40px;
-        }
-        .search-box input::placeholder {
-            color: #aaa;
+
+        footer {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <div>
+        <h1 class="glitch">404</h1>
+        <h2>Oops! Page Not Found</h2>
         <div class="logo">dduyg</div>
-        <h1>404</h1>
-        <p>Oops! The page you're looking for has vanished into the neon void.</p>
+
+        <!-- Search Bar -->
         <div class="search-box">
-            <form action="#">
-                <input type="text" placeholder="Search the site...">
+            <form action="/search" method="get">
+                <input type="text" name="query" placeholder="Search for something else...">
                 <input type="submit" value="Search">
             </form>
         </div>
+
+        <a href="/" class="home-link">Take me back home</a>
+
+        <footer>
+            ©2024 dduyg | Stay Rad.
+        </footer>
     </div>
+
 </body>
 </html>
