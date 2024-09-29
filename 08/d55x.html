@@ -37,10 +37,9 @@ main {
   grid-column-gap: 10px;
   grid-auto-flow: column;
   padding: 25px 0px;
-  list-style: none;
   overflow-x: scroll;
   -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
 }
 .card {
   display: flex;
@@ -90,38 +89,38 @@ main {
 <body>
 <main>
   <h2>With CSS Grid</h2>
-  <ul class="cards">
-    <li class="card">
+  <div class="cards">
+    <div class="card">
         <h3 class="card-title">Service 1</h3>
         <div class="card-content">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
-    </li>
-    <li class="card">
+    </div>
+    <div class="card">
         <h3 class="card-title">Service 2</h3>
         <div class="card-content">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae magnam harum natus fuga et repellat in maiores.</p>
         </div>
-    </li>
-    <li class="card">
+    </div>
+    <div class="card">
         <h3 class="card-title">Service 3</h3>
         <div class="card-content">
           <p>Phasellus ultrices lorem vel bibendum ultricies. In hendrerit nulla a ante dapibus pulvinar eu eget quam.</p>
         </div>
-    </li>
-    <li class="card">
+    </div>
+    <div class="card">
         <h3 class="card-title">Service 4</h3>
         <div class="card-content">
           <p>Aenean posuere mauris quam, pellentesque auctor mi bibendum nec. Sed scelerisque lacus nisi, quis auctor lorem ornare vel.</p>
         </div>
-    </li>
-    <li class="card">
+    </div>
+    <div class="card">
         <h3 class="card-title">Service 5</h3>
         <div class="card-content">
           <p>Vestibulum pharetra fringilla felis sit amet tempor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras et arcu sit amet est consequat feugiat. Nam ut sapien pulvinar.</p>
         </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </main>
 </body>
 </html>
