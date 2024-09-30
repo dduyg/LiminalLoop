@@ -45,39 +45,41 @@
             display: none;
         }
         .latest .card {
-            flex: 0 0 auto;
+            flex: 0 0 200px; /* Fixed width for all cards */
             margin-right: 0.5em;
         }
         .card {
             width: 200px;
-            height: 95%;
+            height: 100%; /* Ensures all cards have equal height */
             background: rgba(255, 255, 255, 0.1);
             padding: 1.25em 0.625em;
             border: 1px solid black;
             border-radius: 1rem;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             flex-direction: column;
             text-decoration: none;
             cursor: pointer;
             transition-duration: 0.4s;
             box-sizing: border-box;
+            overflow: hidden; /* Prevents overflow of content */
         } 
         .card:hover {
             background: rgba(255, 255, 255, 0.2);
-            font-style: italic;
+            font-style: italic;
             transform: scale(1.05);
         }
         .card-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             font-family: "Share Tech", sans-serif;
         }
         .card-content {
             margin: 0;
             padding: 0;
+            font-size: 0.9rem;
         } 
     </style>
 </head>
@@ -99,19 +101,19 @@
             <a href="#" class="card">
                <div class="card-title">Task Specific</div>
                 <div class="card-content">
-                    Transfer learning works best when tasks are similar, as it allows for a smoother knowledge transfe
+                    Transfer learning works best when tasks are similar, as it allows for a smoother knowledge transfer.
                 </div> 
             </a>
             <a href="#" class="card">
                <div class="card-title">Task Specific The algorithm supports</div>
                 <div class="card-content">
-                    Transfer learning works best when tasks are similar, as it allows for a smoother knowledge transfe
+                    Transfer learning works best when tasks are similar, as it allows for a smoother knowledge transfer.
                 </div> 
             </a>
             <a href="#" class="card">
                <div class="card-title">Lost in the spherical surfaces</div>
                 <div class="card-content">
-                    Transfer learning works best when tasks are similar, as it allows for a smoother knowledge transfe
+                    Transfer learning works best when tasks are similar, as it allows for a smoother knowledge transfer.
                 </div> 
             </a>
         </div>      
