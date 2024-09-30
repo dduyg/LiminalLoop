@@ -7,10 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --card-w: 200px;
-            --card-h: calc(var(--card-w) * 1.25);      
-        }
         html, body {
             height: 100%;
             margin: 0;
@@ -40,7 +36,7 @@
             display: flex;
             flex-wrap: nowrap;
             overflow-x: auto;
-            height: var(--size-h);
+            height: 50%;
             margin: 2em auto;
             width: 100%;
             -webkit-overflow-scrolling: touch;
@@ -53,7 +49,7 @@
             margin-right: 0.4375em;
         }
         .card {
-            width: var(--card-w);
+            width: 200px;
             height: 95%;
             background: rgba(255, 255, 255, 0.1);
             padding: 1.25em 0.625em;
@@ -81,7 +77,6 @@
         }
         .card-content {
             margin: 0;
-            max-width: 85%;
         } 
     </style>
 </head>
