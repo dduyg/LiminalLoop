@@ -34,13 +34,13 @@
         }
 
         h1 {
-            font-size: 6rem;
+            font-size: 4rem;
             color: #ff6f61; /* Soft coral color */
             text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
         }
 
         p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-top: 20px;
             color: #4a4a4a; /* Darker gray for text */
             animation: floatText 4s infinite ease-in-out;
@@ -139,20 +139,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>404</h1>
-        <p>Oops! You’ve wandered off the beaten path. Looks like this page is a relic of the past.</p>
-        <button onclick="goHome()">take me back</button>
+        <h1>Parametric Surface</h1
+        <p>Find the formulas referenced from "<i>Parametrische Flächen und Körper</i>":</p>
+        <button onclick="goHome()">go there</button>
     </div>
 
     <div class="grid"></div>
 
     <div class="floating-element"></div>
     <div class="floating-element2"></div>
-
     <script>
         function goHome() {
-            window.location.href = '/';
+            window.open('http://www.3d-meier.de/tut3/Seite0.html', '_blank');
         }
-    </script>
+    </script>  
 </body>
 </html>
