@@ -7,54 +7,94 @@
     <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: "Asap", sans-serif;
             background-color: #777;
             margin: 0;
-            padding: 0;        
+            padding: 0;
         }
-        .container {
+        main {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header h1 {
-            font-family: 'StudioFeixenSans', sans-serif;
-        }
-        h1, h2, h3 {
-            color: #ffffff;
-        }
-        p {
-            font-size: 18px;
+            margin: 6em auto 0;
+            padding: 2em;
             line-height: 1.6;
         }
-        a {
-            color: inherit;
-            font-size: 1.4em;
-            text-decoration: wavy underline;
+        header {
+            padding: 100px 0;
+            font-size: 1.2rem;
+        }
+        section h2 {
+            font-size: 2rem;
+            padding-bottom: 10px;
+        }
+        .latest {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            height: 40%;
+            margin: 2em auto;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        .latest::-webkit-scrollbar {
+            display: none;
+        }
+        .latest .card {
+            flex: 0 0 auto;
+            margin-right: 0.4375em;
+        }
+        .card {
+            width: 150px;
+            height: 95%;
+            min-height: 75px;
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 1.25em 2.5em;
+            border: 0.125em solid #00ff00;
+            border-radius: 10%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            box-sizing: border-box;
+        }
+        .card:hover {
+            background-color: #00ff00;
+            color: #2E2E2E;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Retro Arcade</h1>
-            <p>Retro arcade, where memories fade, In a maze of dreams, where we once played. Pixelated skies, and endless quests, In the heart of the arcade, we found our rest.</p>
-        </header>
-        <section id="portal">
-            <h2>Portal</h2>
-            <p>In the neon glow of the midnight hour, Lost in the echoes of an old power, Tokens jingling, joystick in hand, In a world of pixels, where we used to stand.</p>
-        </section
-        <section id="console">
-            <h2>Console</h2>
-            <ul>
-                <li><a href="covered">#08</a></li>
-                <li><a href="../12/"><b>#09</b></a></li>
-            </ul>
-        </section>
-        <footer>
-            <p>Shaped with love for retrowave.</p>
-        </footer>
-    </div>
+<main>
+    <header>
+        <h1>Retro Arcade</h1>
+        <p>Retro arcade, where memories fade, In a maze of dreams, where we once played. Pixelated skies, and endless quests, In the heart of the arcade, we found our rest. In the neon glow of the midnight hour, Lost in the echoes of an old power, Tokens jingling, joystick in hand, In a world of pixels, where we used to stand.</p>
+    </header>
+    <section id="latest-posts">
+        <h2>Latest</h2>
+        <div class="latest">
+            <a href="#" class="card">●●●</a>
+            <a href="#" class="card">●●●</a>
+            <a href="#" class="card">●●●</a>
+            <a href="#" class="card">●●●</a>
+            <a href="#" class="card">●●●</a>
+            <a href="#" class="card">●●●</a>
+            <a href="#" class="card">●●●</a>
+            <a href="#" class="card">●●●</a>
+            <a href="#" class="card">●●●</a>
+        </div>      
+    </section>
+</main>
 </body>
 </html>
