@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -17,7 +17,7 @@
             padding: 0;
         }
         body {
-            font-family: "Asap", sans-serif;
+            font-family: "Exo 2", sans-serif;
             background-color: #777;
             margin: 0;
             padding: 0;
@@ -40,7 +40,7 @@
             display: flex;
             flex-wrap: nowrap;
             overflow-x: auto;
-            height: 40%;
+            height: var(--size-h);
             margin: 2em auto;
             width: 100%;
             -webkit-overflow-scrolling: touch;
@@ -55,7 +55,6 @@
         .card {
             width: var(--card-w);
             height: 95%;
-            min-height: var(--size-h);
             background: rgba(255, 255, 255, 0.1);
             padding: 1.25em 0.625em;
             border: 1px solid black;
@@ -64,23 +63,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             text-decoration: none;
             cursor: pointer;
             transition-duration: 0.4s;
             box-sizing: border-box;
-        }
+        } 
         .card:hover {
             background: rgba(255, 255, 255, 0.2);
             font-style: italic;
+            transform: scale(1.05);
         }
         .card-title {
             font-size: 1.5em;
             font-weight: bold;
+            font-family: "Share Tech", sans-serif;
         }
         .card-content {
             margin: 0;
             max-width: 85%;
-        }
+        } 
     </style>
 </head>
 <body>
