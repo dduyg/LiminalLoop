@@ -20,9 +20,8 @@
 
 <details>
 <summary>&nbsp; <code>Common System Fonts</code> </summary>
-
-Here's the list of common fonts formatted in CSS style:
-
+<br>
+  
 ```css
 /* Sans-serif fonts */
 font-family: "Arial", "Helvetica", sans-serif;
