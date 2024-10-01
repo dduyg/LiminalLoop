@@ -55,7 +55,7 @@
             margin-right: 1rem;
             width: 1em;
             height: 1em;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="%23454545"><path d="M0 1v14h17v-14h-17zM16 14h-15v-12h15v12zM4.646 10.354l-2.353-2.354 2.354-2.354 0.707 0.707-1.647 1.647 1.646 1.646-0.707 0.708zM11.646 9.646l1.647-1.646-1.646-1.646 0.707-0.707 2.353 2.353-2.354 2.354-0.707-0.708z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="%230A0A0A"><path d="M0 1v14h17v-14h-17zM16 14h-15v-12h15v12zM4.646 10.354l-2.353-2.354 2.354-2.354 0.707 0.707-1.647 1.647 1.646 1.646-0.707 0.708zM11.646 9.646l1.647-1.646-1.646-1.646 0.707-0.707 2.353 2.353-2.354 2.354-0.707-0.708z"/></svg>');
 	    background-size: contain;
             background-repeat: no-repeat;
 	}
@@ -114,14 +114,23 @@
             font-weight: bold;
 	    color: #333;
         }
-        .card-content { 
+        .card-meta { 
             margin: 30px 0 0;
             padding: 0;
-	    color: #515151;
             text-align: right;
-            font-size: 0.7rem;
             font-family: "Fira Code", monospace;   
         }
+	.card-meta .date {
+	    margin: 0;
+	    padding: 0;
+	    color: #515151;
+	    font-size: 0.8rem;
+	}
+	.card-meta .category {
+	    margin: 0;
+	    padding: 0;
+	    font-size: 0.7rem;
+	}
     </style>
 </head>
 <body>
@@ -139,26 +148,30 @@
             <a href="#" class="card">
                 <div class="card-title">Using Attractors to Understand</div>
                 <span class="shape"></span>
-		<div class="card-content">
-                    Complex Systems, Time Series, Data Visualization
+		<div class="card-meta">
+		       <div class="date">[05 Aug 2024]</div>
+		       <div class="category">Complex Systems, Time Series, Data Visualization</div>
                 </div>
             </a>
             <a href="#" class="card">
                <div class="card-title">A Visual Exploration into the Disparities in Human Influence on Earth's Surface</div>
-                <div class="card-content">
-                    Our World in Data, Data Visualization, Datawrapper
+                <div class="card-meta">
+			<div class="date">[17 Jul 2024]</div>
+			<div class="category">Our World in Data, Data Visualization, Datawrapper</div>
                 </div> 
             </a>
             <a href="#" class="card">
                <div class="card-title">Extracting Valuable Messages from 'Alchemy of Souls</div>
-                <div class="card-content">
-                    Data Extraction, NLP, Web Application, Python, Project, Javascript, HTML-CSS
+                <div class="card-meta">
+			<div class="date">[28 Jun 2024]</div>
+			<div class="category">Data Extraction, NLP, Web Application, Python, Project, Javascript, HTML-CSS</div>
                 </div> 
             </a>
             <a href="#" class="card">
                <div class="card-title">Lost in the spherical surfaces</div>
-                <div class="card-content">
-                    Digital, Love, Languages
+                <div class="card-meta">
+			<div class="date">[19 May 2024]</div>
+			<div class="category">Digital, Love, Languages</div>
                 </div> 
             </a>
         </div>      
