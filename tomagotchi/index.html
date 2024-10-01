@@ -80,12 +80,22 @@
             scroll-snap-align: start;
             transition: all 0.4s;
             text-decoration: none;
-            cursor: pointer;  
+            cursor: pointer;
+            position: relative;
         }
         .card:hover {
             font-style: italic;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
+        .card::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: black;
+			width: 1em;
+            height: 1em;
+            border-radius: 100%;
+        }  
         .card-title {
             font-size: 1.25rem;
             font-weight: bold;
