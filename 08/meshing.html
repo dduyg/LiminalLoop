@@ -19,19 +19,16 @@
             line-height: 1.5;
         }
         header {
-            padding: 100px 4rem;
-            font-size: 1.1rem;
+            padding: 100px 0;
+            font-size: 1.1em;
         }
         header h1 {
             margin: 0;
             padding: 0;
         }
         @media screen and (max-width: 30em) {
-            header {
-                padding: 100px 1rem;
-            }
             header p {
-                max-width: 20em;
+                max-width: 75%;
             }
         }      
         aside h2 {
@@ -55,6 +52,7 @@
         .card {
             display: flex;
             flex-direction: column;
+            position: relative;
             flex: 0 0 150px;
             padding: 1.25em;
             background: rgba(0, 0, 0, 0.1);
@@ -64,10 +62,11 @@
             transition: all 0.4s;
             text-decoration: none;
             cursor: pointer;  
-        }   
+        }
         .card:hover {
             font-weight: bold;
             color: #333;
+            background: rgba(255, 255, 255, 0.8);
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
         .card-title {
@@ -76,6 +75,9 @@
             font-family: "Share Tech", sans-serif;
         }
         .card-content {
+            position: absolute;
+            bottom: 0;
+            right: 0; 
             margin: 0;
             padding: 0;
             max-width: 85%;
