@@ -34,6 +34,8 @@
             overflow-x: scroll;
             -ms-scroll-snap-type: x mandatory;
             scroll-snap-type: x mandatory;
+            scroll-behavior: smooth; /* For smoother scrolling */
+            gap: 1em;
         }
         .latest::-webkit-scrollbar {
             display: none;
@@ -41,7 +43,7 @@
         .card {
             display: flex;
             flex-direction: column;
-            flex: 0 0 65%;
+            flex: 0 0 30%;
             padding: 1.25em;
             background: #969696;
             border-radius: 12px;
@@ -50,10 +52,7 @@
             transition: all 0.4s;
             text-decoration: none;
             cursor: pointer;  
-        }
-        .card:not(:last-child) {
-            margin-right: 10px;
-        }
+        }   
         .card:hover {
             font-weight: bold;
             background: #898989;
