@@ -17,7 +17,6 @@
 <a href="../14/">➾</a>
 <a href="../">▶</a>
 ```
----
 
 <details>
 <summary>&nbsp; <code>Common System Fonts</code> </summary>
