@@ -19,9 +19,17 @@
             line-height: 1.5;
         }
         header {
-            padding: 100px 0;
-            font-size: 1.2rem;
+            padding: 100px 4rem;
+            font-size: 1.1rem;
         }
+        @media screen and (max-width: 30em) {
+            header {
+                padding: 100px 1rem;
+            }
+            header p {
+                max-width: 20em;
+            }
+        }      
         section h2 {
             margin: 0;
             padding: 10px 0 0;
