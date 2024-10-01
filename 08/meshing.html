@@ -20,6 +20,9 @@
             padding: 1.25em;
             line-height: 1.5;
         }
+        h1, h2 {
+            font-family: 'Pentameter Regular', sans-serif;
+        }
         header {
             padding: 100px 0;
             font-size: 1.1em;
@@ -54,7 +57,7 @@
         .card {
             display: flex;
             flex-direction: column;
-            position: relative;
+            justify-content: space-between;
             flex: 0 0 250px;
             padding: 1.25em;
             background: darkgray;
@@ -67,20 +70,16 @@
         }
         .card:hover {
             font-weight: bold;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.1);
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
         .card-title {
-            font-size: 1.4rem;
+            font-size: 1.4em;
             font-weight: bold;
-            font-family: 'Pentameter Regular', sans-serif;
         }
-        .card-content {
-            position: absolute;
-            bottom: 0;
-            right: 0; 
+        .card-content { 
             margin: 0;
-            padding: 1.25em;
+            padding: 0;
             max-width: 85%;
             font-size: 0.9rem;
             font-family: "Fira Code", monospace;   
