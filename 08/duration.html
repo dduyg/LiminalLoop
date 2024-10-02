@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Schibsted Grotesk", sans-serif;
+            background: linear-gradient(to bottom, #ffb6c1, #ff69b4, #6a0dad, #001f3f);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 6rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 1.25rem;
+            padding: 10px 20px;
+            border: 2px solid #ff69b4;
+            border-radius: 5px;
+            color: #ff69b4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #ff69b4;
+            color: #fff;
+        }
+
+        /* Vaporwave-themed effects */
+        .glitch {
+            position: relative;
+            display: inline-block;
+            font-size: 6rem;
+            color: #fff;
+        }
+
+        .glitch:before,
+        .glitch:after {
+            content: "404";
+            position: absolute;
+            left: 0;
+            color: #ff69b4;
+            background: none;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+
+        .glitch:after {
+            left: 2px;
+            text-shadow: -2px 0 #00fffb;
+            animation-delay: 1s;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+            }
+            5% {
+                clip: rect(12px, 9999px, 60px, 0);
+            }
+            10% {
+                clip: rect(85px, 9999px, 90px, 0);
+            }
+            15% {
+                clip: rect(30px, 9999px, 100px, 0);
+            }
+            20% {
+                clip: rect(70px, 9999px, 50px, 0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            a {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+
+            .glitch {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .glitch {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="glitch">404</h1>
+        <p>Oops! The page you're looking for has <strong>gone retro.</strong></p>
+        <p>Maybe it's chilling in the '90s, vibing to synthwave.</p>
+        <a href="./">Take me back to reality</a>
+    </main>
+</body>
+</html>
