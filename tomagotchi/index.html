@@ -3,171 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Liminal Loop</title>
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../fonts.css">
     <style>
         body {
-            font-family: "Fira Sans", sans-serif;
-            background-color: #9D9D9D;
             margin: 0;
-            padding: 0;
-        }
-        main {
-            max-width: 800px;
-            margin: 6em auto 0;
-            padding: 1.25em;
-            line-height: 1.5;
-        }
-        h1, h2 {
-            font-family: 'Pentameter Light', sans-serif;
-        }
-	a {
-	    text-decoration: none;
-	    color: inherit;
-	}
-        header {
-            padding: 100px 0;
-            font-size: 1.1em;
-        }
-        header h1, header p {
-            margin: 0;
-            padding: 0;
-        }
-        @media screen and (max-width: 30em) {
-            header {
-                max-width: 75%;
-            }
-        }      
-        aside h2 {
-            margin: 80px 0 0;
-            padding: 10px 0 0;
-            border-top: 1px solid;
+            font-family: "Schibsted Grotesk", sans-serif;
+            background: linear-gradient(to bottom, #ffb6c1, #ff69b4, #6a0dad, #001f3f);
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            max-width: 100%;
+            color: #fff;
+            text-align: center;
         }
-        .scroll {
-            display: inline-block;
-            margin-right: 1rem;
-            width: 1em;
-            height: 1em;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="%230A0A0A"><path d="M0 1v14h17v-14h-17zM16 14h-15v-12h15v12zM4.646 10.354l-2.353-2.354 2.354-2.354 0.707 0.707-1.647 1.647 1.646 1.646-0.707 0.708zM11.646 9.646l1.647-1.646-1.646-1.646 0.707-0.707 2.353 2.353-2.354 2.354-0.707-0.708z"/></svg>');
-	    background-size: contain;
-            background-repeat: no-repeat;
-	}
-        .latest {
-            display: flex;
-            flex-direction: row;
-            align-items: stretch;
-            padding: 1.25em 0;
-            overflow-x: scroll;
-            -ms-scroll-snap-type: x mandatory;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth; /* For smoother scrolling */
-            gap: 1em;
+
+        h1 {
+            font-size: 6rem;
+            margin-bottom: 10px;
         }
-        .latest::-webkit-scrollbar {
-            display: none;
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
         }
-        .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: 0 0 260px;
-            padding: 0.625em 1em;
-            border: 1px solid #333;
-            border-radius: 12px;
-            scroll-snap-align: start;
-            transition: all 0.4s;
+
+        a {
             text-decoration: none;
-            cursor: pointer;
+            font-size: 1.25rem;
+            padding: 10px 20px;
+            border: 2px solid #ff69b4;
+            border-radius: 5px;
+            color: #ff69b4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #ff69b4;
+            color: #fff;
+        }
+
+        /* Vaporwave-themed effects */
+        .glitch {
             position: relative;
-	    overflow: hidden;
+            display: inline-block;
+            font-size: 6rem;
+            color: #fff;
         }
-        .card:hover {
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+        .glitch:before,
+        .glitch:after {
+            content: "404";
+            position: absolute;
+            left: 0;
+            color: #ff69b4;
+            background: none;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
         }
-        .shape {
-	    position: absolute;
-	    bottom: -3px;
-	    left: -3px;
-	    background: #7B7B7B;
-	    width: 1.7em;
-	    height: 1.7em;
-	    border-radius: 100%;
-	    border: 1px solid #333;
+
+        .glitch:after {
+            left: 2px;
+            text-shadow: -2px 0 #00fffb;
+            animation-delay: 1s;
         }
-	.card:hover .shape {
-	    background: #5a5a5a;
+
+        @keyframes glitch {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+            }
+            5% {
+                clip: rect(12px, 9999px, 60px, 0);
+            }
+            10% {
+                clip: rect(85px, 9999px, 90px, 0);
+            }
+            15% {
+                clip: rect(30px, 9999px, 100px, 0);
+            }
+            20% {
+                clip: rect(70px, 9999px, 50px, 0);
+            }
         }
-        .card-title {
-            font-size: 1.28571429em;
-            font-weight: bold;
-	    color: #333;
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            a {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+
+            .glitch {
+                font-size: 4rem;
+            }
         }
-        .card-meta { 
-            margin: 30px 0 0;
-            padding: 0 0 0 12px;
-            text-align: right;
-	    font-family: "Fira Code", monospace;
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .glitch {
+                font-size: 3rem;
+            }
         }
-	.card-meta .date {
-	    color: #585858;
-	    font-size: 0.75rem;
-	}
-	.card-meta .category {
-	    margin-top: 0.1rem;
-	    font-size: 0.7rem;
-	}
     </style>
 </head>
 <body>
-<main>
-    <header>
-        <h1>Retro Arcade</h1>
-        <p>Retro arcade, where memories fade, In a maze of dreams, where we once played. Pixelated skies, and endless quests, In the heart of the arcade, we found our rest. In the neon glow of the midnight hour, Lost in the echoes of an old power, Tokens jingling, joystick in hand, In a world of pixels, where we used to stand.</p>
-    </header>
-    <aside id="latest-posts">
-        <h2>
-            <span>Latest</span>
-            <span class="scroll"></span>
-        </h2>
-        <div class="latest">
-            <a href="#" class="card">
-                <div class="card-title">Using Attractors to Understand</div>
-                <span class="shape"></span>
-		<div class="card-meta">
-		       <div class="date">05 Aug 2024————</div>
-		       <div class="category">Complex Systems, Time Series, Data Visualization</div>
-                </div>
-            </a>
-            <a href="#" class="card">
-               <div class="card-title">A Visual Exploration into the Disparities in Human Influence on Earth's Surface</div>
-                <div class="card-meta">
-			<div class="date">[17 Jul 2024]</div>
-			<div class="category">Our World in Data, Data Visualization, Datawrapper</div>
-                </div> 
-            </a>
-            <a href="#" class="card">
-               <div class="card-title">Extracting Valuable Messages from 'Alchemy of Souls</div>
-                <div class="card-meta">
-			<div class="date">[28 Jun 2024]</div>
-			<div class="category">Data Extraction, NLP, Web Application, Python, Project, Javascript, HTML-CSS</div>
-                </div> 
-            </a>
-            <a href="#" class="card">
-               <div class="card-title">Lost in the spherical surfaces</div>
-                <div class="card-meta">
-			<div class="date">[19 May 2024]</div>
-			<div class="category">Digital, Love, Languages</div>
-                </div> 
-            </a>
-        </div>      
-    </aside>
-</main>
+    <main>
+        <h1 class="glitch">404</h1>
+        <p>Oops! The page you're looking for has <strong>gone retro.</strong></p>
+        <p>Maybe it's chilling in the '90s, vibing to synthwave.</p>
+        <a href="./">Take me back to reality</a>
+    </main>
 </body>
 </html>
