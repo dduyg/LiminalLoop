@@ -3,110 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Liminal Loop</title>
+    <title>Not Found</title>
     <style>
         body {
             margin: 0;
-            font-family: 'Courier New', Courier, monospace;
-            background: linear-gradient(to bottom, #ffb6c1, #ff69b4, #6a0dad, #001f3f);
-            height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(135deg, #ff6ec7, #ab47bc);
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            height: 100vh;
             text-align: center;
+            overflow: hidden;
         }
-        
+
         h1 {
-            font-size: 6rem;
-            margin-bottom: 10px;
+            font-size: 4rem;
+            margin: 0;
         }
 
         p {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            line-height: 1.5;
         }
 
-        a {
-            text-decoration: none;
-            font-size: 1.25rem;
-            padding: 10px 20px;
-            border: 2px solid #ff69b4;
-            border-radius: 5px;
-            color: #ff69b4;
-            transition: background-color 0.3s, color 0.3s;
+        .container {
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
-        a:hover {
-            background-color: #ff69b4;
-            color: #fff;
-        }
-
-        /* Vaporwave-themed effects */
         .glitch {
             position: relative;
-            display: inline-block;
-            font-size: 6rem;
             color: #fff;
+            font-size: 4rem;
+            font-weight: 700;
         }
 
-        .glitch:before,
-        .glitch:after {
-            content: "404";
+        .glitch:before, .glitch:after {
+            content: '404';
             position: absolute;
             left: 0;
-            color: #ff69b4;
-            background: none;
-            clip: rect(0, 900px, 0, 0);
-            animation: glitch 2s infinite linear alternate-reverse;
+            right: 0;
+            animation: glitch 1s infinite;
+        }
+
+        .glitch:before {
+            top: -2px;
+            left: -2px;
+            color: #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
         }
 
         .glitch:after {
+            top: 2px;
             left: 2px;
-            text-shadow: -2px 0 #00fffb;
-            animation-delay: 1s;
+            color: #00fff9;
+            clip: rect(24px, 450px, 60px, 0);
         }
 
         @keyframes glitch {
             0% {
-                clip: rect(42px, 9999px, 44px, 0);
-            }
-            5% {
-                clip: rect(12px, 9999px, 60px, 0);
-            }
-            10% {
-                clip: rect(85px, 9999px, 90px, 0);
-            }
-            15% {
-                clip: rect(30px, 9999px, 100px, 0);
+                clip: rect(44px, 9999px, 56px, 0);
             }
             20% {
-                clip: rect(70px, 9999px, 50px, 0);
+                clip: rect(15px, 9999px, 50px, 0);
+            }
+            40% {
+                clip: rect(10px, 9999px, 50px, 0);
+            }
+            60% {
+                clip: rect(25px, 9999px, 70px, 0);
+            }
+            80% {
+                clip: rect(20px, 9999px, 60px, 0);
+            }
+            100% {
+                clip: rect(44px, 9999px, 56px, 0);
             }
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 4rem;
-            }
-
-            p {
-                font-size: 1.2rem;
-            }
-
-            a {
-                font-size: 1rem;
-                padding: 8px 16px;
-            }
-
-            .glitch {
-                font-size: 4rem;
-            }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: white;
+            background-color: #ff00c1;
+            border: 2px solid white;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        @media (max-width: 480px) {
+        .btn:hover {
+            background-color: #00fff9;
+            transform: translateY(-3px);
+            box-shadow: 0px 0px 15px 0px rgba(255, 0, 193, 0.5);
+        }
+
+        /* Media Query for Mobile */
+        @media only screen and (max-width: 600px) {
             h1 {
                 font-size: 3rem;
             }
@@ -115,18 +120,17 @@
                 font-size: 1rem;
             }
 
-            .glitch {
-                font-size: 3rem;
+            .btn {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1 class="glitch">404</h1>
-        <p>Oops! The page you're looking for has <strong>gone retro.</strong></p>
-        <p>Maybe it's chilling in the '90s, vibing to synthwave.</p>
-        <a href="/">Take me back to reality</a>
+        <p>Oops! Looks like you've wandered into the digital abyss...<br>Don't worry, we won't tell anyone.</p>
+        <a href="/" class="btn">Beam me up, Scotty!</a>
     </div>
 </body>
 </html>
