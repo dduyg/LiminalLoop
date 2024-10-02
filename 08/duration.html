@@ -10,54 +10,34 @@
         body {
             margin: 0;
             font-family: "Schibsted Grotesk", sans-serif;
-            background: linear-gradient(to bottom, #ffb6c1, #ff69b4, #6a0dad, #001f3f);
+            background: #949EA7;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            color: #C4C8CB;
             text-align: center;
-        }
-        
+        }  
         h1 {
-            font-size: 6rem;
+            font-size: 4rem;
             margin-bottom: 10px;
         }
-
         p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
         }
-
-        a {
-            text-decoration: none;
-            font-size: 1.25rem;
-            padding: 10px 20px;
-            border: 2px solid #ff69b4;
-            border-radius: 5px;
-            color: #ff69b4;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        a:hover {
-            background-color: #ff69b4;
-            color: #fff;
-        }
-
-        /* Vaporwave-themed effects */
         .glitch {
             position: relative;
             display: inline-block;
-            font-size: 6rem;
+            font-size: 4rem;
             color: #fff;
         }
-
         .glitch:before,
         .glitch:after {
-            content: "404";
+            content: "■■□";
             position: absolute;
             left: 0;
-            color: #ff69b4;
+            color: #C0736B;
             background: none;
             clip: rect(0, 900px, 0, 0);
             animation: glitch 2s infinite linear alternate-reverse;
@@ -68,7 +48,6 @@
             text-shadow: -2px 0 #00fffb;
             animation-delay: 1s;
         }
-
         @keyframes glitch {
             0% {
                 clip: rect(42px, 9999px, 44px, 0);
@@ -86,48 +65,12 @@
                 clip: rect(70px, 9999px, 50px, 0);
             }
         }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 4rem;
-            }
-
-            p {
-                font-size: 1.2rem;
-            }
-
-            a {
-                font-size: 1rem;
-                padding: 8px 16px;
-            }
-
-            .glitch {
-                font-size: 4rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .glitch {
-                font-size: 3rem;
-            }
-        }
     </style>
 </head>
 <body>
     <main>
-        <h1 class="glitch">404</h1>
-        <p>Oops! The page you're looking for has <strong>gone retro.</strong></p>
-        <p>Maybe it's chilling in the '90s, vibing to synthwave.</p>
-        <a href="./">Take me back to reality</a>
+        <h1 class="glitch">■■□</h1>
+        <p>Gradient Boosting is an advanced machine learning technique that builds an ensemble of weak learners, usually decision trees, sequentially. Each tree corrects the errors of the previous one by minimizing a loss function, resulting in a highly accurate predictive model. While powerful, it can be prone to overfitting if not properly regularized.</p>
     </main>
 </body>
 </html>
