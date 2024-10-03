@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An in-depth article on Gradient Boosting algorithms.">
     <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: "Lexend Deca", sans-serif;
             background-color: #2D2A32;
             color: #FFFFFF;
             line-height: 1.6;
@@ -60,50 +60,46 @@
             font-family: 'Courier New', Courier, monospace;
             font-size: 1.1em;
         }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #333;
-            color: #fff;
-        }
     </style>
 </head>
 <body>
-
 <header>
-    <h1>Understanding Gradient Boosting</h1>
+    <h1>Understanding Neural Networks</h1>
     <div class="breadcrumb">
         <a href="#">Home</a> &gt; 
         <a href="#">Machine Learning</a> &gt; 
-        <a href="#">Gradient Boosting</a>
+        <a href="#">Neural Networks</a>
     </div>
 </header>
 
 <main>
-    <p>Gradient Boosting is a powerful machine learning technique used for both regression and classification problems. It builds models sequentially, where each new model attempts to correct the errors made by the previous ones. This method, often used in ensemble learning, helps improve accuracy by focusing on the mistakes made in prior iterations.</p>
+    <p>Neural Networks are a cornerstone of modern deep learning, inspired by the structure and functioning of the human brain. They are composed of layers of interconnected nodes (neurons), each designed to extract complex patterns from data through a series of transformations.</p>
 
-    <h2>How Gradient Boosting Works</h2>
-    <p>The core idea of gradient boosting is to combine weak learners into a strong learner in a gradual, additive, and sequential manner. Here’s how it works in three key steps:</p>
+    <h2>How Neural Networks Work</h2>
+    <p>The core idea of neural networks is to approximate functions that map inputs (such as images, text, or numerical data) to desired outputs (like classification labels or predictions). The main components include:</p>
     <ol>
-        <li>A model is trained on the data.</li>
-        <li>Each subsequent model is built on the errors of the previous one by fitting to the residuals of the loss function.</li>
-        <li>All models are combined for final predictions by summing their contributions.</li>
+        <li><strong>Input Layer</strong>: Accepts raw data.</li>
+        <li><strong>Hidden Layers</strong>: Process data through weighted connections and activation functions.</li>
+        <li><strong>Output Layer</strong>: Provides the final prediction or classification.</li>
     </ol>
 
-    <h2>Key Algorithms in Gradient Boosting</h2>
-    <p>Two of the most popular gradient boosting algorithms are:</p>
+    <h2>Key Types of Neural Networks</h2>
+    <p>There are various types of neural networks, each suited for different tasks:</p>
     <ul>
-        <li><strong>XGBoost</strong>: An efficient, scalable implementation of gradient boosting that has gained popularity for its performance in Kaggle competitions.</li>
-        <li><strong>LightGBM</strong>: A gradient boosting framework designed for speed and efficiency, particularly useful for large datasets.</li>
+        <li><strong>Convolutional Neural Networks (CNNs)</strong>: Primarily used in image processing tasks, CNNs are adept at recognizing patterns in visual data.</li>
+        <li><strong>Recurrent Neural Networks (RNNs)</strong>: These are designed to handle sequential data, making them useful for tasks like time series forecasting or natural language processing.</li>
+        <li><strong>Feedforward Neural Networks</strong>: The most basic form of neural networks, often used for structured data tasks like classification and regression.</li>
     </ul>
 
     <h2>Advantages and Disadvantages</h2>
-    <p>Gradient Boosting has several advantages, including high predictive accuracy and flexibility. However, it can be computationally expensive and prone to overfitting if not tuned properly.</p>
+    <p>Neural Networks offer powerful modeling capabilities, especially in areas like image recognition and natural language processing. However, they require large datasets, extensive computational resources, and careful tuning to avoid overfitting.</p>
 
     <h2>Example Code</h2>
-    <p>Here is an example of how to implement Gradient Boosting using Python and the <code>sklearn</code> library:</p>
+    <p>Here is an example of how to implement a simple feedforward neural network using Python and the <code>keras</code> library:</p>
     <pre><code class="python">
-from sklearn.ensemble import GradientBoostingClassifier
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
@@ -114,14 +110,20 @@ X, y = make_classification(n_samples=1000, n_features=20, random_state=42)
 # Split the dataset into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Initialize the Gradient Boosting classifier
-gb_clf = GradientBoostingClassifier()
+# Initialize a simple feedforward neural network
+model = Sequential()
+model.add(Dense(64, input_dim=20, activation='relu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
 
-# Fit the model on the training data
-gb_clf.fit(X_train, y_train)
+# Compile the model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Train the model
+model.fit(X_train, y_train, epochs=10, batch_size=32, verbose=1)
 
 # Predict on the test data
-y_pred = gb_clf.predict(X_test)
+y_pred = (model.predict(X_test) > 0.5).astype("int32")
 
 # Evaluate the accuracy
 accuracy = accuracy_score(y_test, y_pred)
@@ -129,12 +131,7 @@ print(f'Accuracy: {accuracy:.2f}')
     </code></pre>
 
     <h2>Conclusion</h2>
-    <p>Gradient Boosting is a robust and flexible algorithm that offers great predictive power. By understanding its mechanics and trade-offs, data scientists can leverage this technique for a wide range of tasks, from fraud detection to forecasting.</p>
+    <p>Neural Networks represent a powerful class of models capable of solving a variety of tasks, from image classification to language modeling. With advances in computation, their application in real-world problems continues to expand across many industries.</p>
 </main>
-
-<footer>
-    <p>&copy; 2024 Gradient Boosting Guide</p>
-</footer>
-
 </body>
 </html>
