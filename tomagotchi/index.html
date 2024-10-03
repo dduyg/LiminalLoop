@@ -5,68 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
     <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-}
-
-header {
-    max-width: 1200px; /* Limit the header width */
-    margin: 0 auto; /* Center the header */
-    padding: 20px; /* Add padding for spacing */
-    background-color: #fff; /* Header background color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.breadcrumb {
-    display: flex; /* Use flexbox for alignment */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    font-size: 16px; /* Base font size */
-    color: #555; /* Text color */
-}
-
-.breadcrumb a {
-    text-decoration: none; /* Remove underline from links */
-    color: #007bff; /* Link color */
-    position: relative; /* Needed for the pseudo-element */
-}
-
-.breadcrumb a::after {
-    content: ""; /* Create a separator */
-    display: inline-block; /* Allow spacing */
-    margin: 0 8px; /* Margin around separator */
-    width: 8px; /* Width of the separator */
-    height: 2px; /* Height of the separator */
-    background-color: #ddd; /* Color of the separator */
-    vertical-align: middle; /* Align with text */
-}
-
-.breadcrumb a:last-child::after {
-    content: none; /* Remove separator after the last item */
-}
-
-.current-page {
-    font-size: 32px; /* Increase font size for the current page */
-    margin-top: 10px; /* Space between breadcrumb and title */
-    color: #333; /* Color for current page title */
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .breadcrumb {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-
-    .current-page {
-        font-size: 24px; /* Smaller font size for smaller screens */
-    }
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            max-width: 1200px; /* Limit the header width */
+            margin: 0 auto; /* Center the header */
+            padding: 20px; /* Add padding for spacing */
+            background-color: #fff; /* Header background color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        
+        .breadcrumb {
+            display: flex; /* Use flexbox for alignment */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            font-size: 16px; /* Base font size */
+            color: #555; /* Text color */
+        }
+        
+        .breadcrumb a {
+            text-decoration: none; /* Remove underline from links */
+            color: #007bff; /* Link color */
+        }
+        
+        .breadcrumb a::after {
+            content: "/"; /* Use a slash as the separator */
+            margin: 0 8px; /* Margin around separator */
+            color: #ddd; /* Color of the separator */
+        }
+        .breadcrumb a:last-child::after {
+            content: none; /* Remove separator after the last item */
+        }
+        
+        .current-page {
+            font-size: 32px; /* Increase font size for the current page */
+            margin-top: 10px; /* Space between breadcrumb and title */
+            color: #333; /* Color for current page title */
+        }
     </style>
 </head>
 <body>
