@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Breadcrumb Example</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.breadcrumb {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #0056b3;
+}
+
+.separator {
+    color: #6c757d;
+}
+
+.current-page {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="breadcrumb">
+            <a href="#">Home</a>
+            <span class="separator">/</span>
+            <a href="#">Category</a>
+            <span class="separator">/</span>
+            <a href="#">Subcategory</a>
+        </div>
+        <h1 class="current-page">Current Page</h1>
+    </header>
+</body>
+</html>
