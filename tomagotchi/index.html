@@ -24,39 +24,37 @@
         a:hover {
             color: #333;
         }
-        .breadcrumb-list {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 1rem 0 0 0;
-  list-style: none;
-}
-.breadcrumb-list li {
-  font-size: 0.85rem;
-  letter-spacing: 0.125rem;
-  text-transform: uppercase;
-}
-
-.breadcrumb-item.active {
-  color: #333;
-}
-.breadcrumb-item + .breadcrumb-item::before {
-  content: "/";
-  display: inline-block;
-  padding: 0 0.5rem;
-  color: #d5d5d5;
-}
+        .breadcrumb-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1rem 0 0 0;
+        }
+        .breadcrumb-item {
+            font-size: 0.85rem;
+            letter-spacing: 0.125rem;
+            text-transform: uppercase;
+            position: relative; /* Allow for the pseudo-element */
+        }
+        .breadcrumb-item.active {
+            color: #333;
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "/";
+            display: inline-block;
+            padding: 0 0.5rem;
+            color: #d5d5d5;
+            position: absolute; /* Position it relative to the item */
+            left: -0.5rem; /* Adjust as needed */
+        }
     </style>
 </head>
 <body>
 <main>
-    <nav>
-        <ol class="breadcrumb-list">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Household Plants</a></li>
-            <li class="breadcrumb-item active">Bonsai</li>
-        </ol>
-    </nav>
+    <div class="breadcrumb-container">
+        <div class="breadcrumb-item"><a href="#">Home</a></div>
+        <div class="breadcrumb-item"><a href="#">Household Plants</a></div>
+        <div class="breadcrumb-item active">Bonsai</div>
+    </div>
 </main>
 </body>
 </html>
