@@ -3,40 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Breadcrumb Example</title>
+    <title>Liminal Loop</title>
     <style>
-      body {
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+header {
+    max-width: 1200px; /* Limit the header width */
+    margin: 0 auto; /* Center the header */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #fff; /* Header background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .breadcrumb {
-    background-color: #f8f9fa;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
+    display: flex; /* Use flexbox for alignment */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    font-size: 16px; /* Base font size */
+    color: #555; /* Text color */
 }
 
 .breadcrumb a {
-    text-decoration: none;
-    color: #007bff;
-    margin: 0 5px;
-    transition: color 0.3s;
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Link color */
+    position: relative; /* Needed for the pseudo-element */
 }
 
-.breadcrumb a:hover {
-    color: #0056b3;
+.breadcrumb a::after {
+    content: ""; /* Create a separator */
+    display: inline-block; /* Allow spacing */
+    margin: 0 8px; /* Margin around separator */
+    width: 8px; /* Width of the separator */
+    height: 2px; /* Height of the separator */
+    background-color: #ddd; /* Color of the separator */
+    vertical-align: middle; /* Align with text */
 }
 
-.separator {
-    color: #6c757d;
+.breadcrumb a:last-child::after {
+    content: none; /* Remove separator after the last item */
 }
 
 .current-page {
-    margin-top: 10px;
-    font-size: 24px;
-    color: #333;
+    font-size: 32px; /* Increase font size for the current page */
+    margin-top: 10px; /* Space between breadcrumb and title */
+    color: #333; /* Color for current page title */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .breadcrumb {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .current-page {
+        font-size: 24px; /* Smaller font size for smaller screens */
+    }
 }
     </style>
 </head>
@@ -44,9 +73,7 @@
     <header>
         <div class="breadcrumb">
             <a href="#">Home</a>
-            <span class="separator">/</span>
             <a href="#">Category</a>
-            <span class="separator">/</span>
             <a href="#">Subcategory</a>
         </div>
         <h1 class="current-page">Current Page</h1>
