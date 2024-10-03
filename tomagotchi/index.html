@@ -34,7 +34,12 @@
             color: #333;
         }
         .breadcrumb-item.active {
-            color: #333;
+            font-size: 2em;          /* Updated font size for active item */
+            font-weight: bold;       /* Set font weight to bold */
+            text-transform: none;    /* Remove uppercase transformation */
+            display: block;          /* Make the active item appear on the next line */
+            margin-top: 0.5rem;     /* Add some space above the active item */
+            color: #333;             /* Keep the color for active item */
         }
         .breadcrumb-item + .breadcrumb-item::before {
             content: "/";
