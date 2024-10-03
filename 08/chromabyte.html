@@ -17,16 +17,10 @@
             background-color: #202020;
             padding: 10px;
         }
-        header nav {
-            display: flex;
+        .breadcrumb {
+            display: inline-flex;
             align-items: center;
             gap: 10px;
-        }
-        header nav a {
-            text-decoration: none;
-            color: #1db954;
-        }
-        .breadcrumb {
             background-color: #333;
             padding: 15px;
             border-radius: 5px;
@@ -79,18 +73,14 @@
 <body>
 
 <header>
-    <nav class="breadcrumb">
+    <div class="breadcrumb">
         <a href="#">Home</a> &gt; 
         <a href="#">Articles</a> &gt; 
-        <a href="#">Machine Learning</a> &gt; 
-        <span>Gradient Boosting</span>
-    </nav>
+    </div>
+    <h1>Gradient Boosting</h1>
 </header>
 
 <main>
-    <h1>Gradient Boosting: A Deep Dive</h1>
-
-    <h2>Introduction</h2>
     <p>Gradient Boosting is one of the most powerful machine learning algorithms, widely used for both regression and classification problems. It builds models in a sequential manner and combines weak learners to form a strong learner.</p>
 
     <h2>How Gradient Boosting Works</h2>
