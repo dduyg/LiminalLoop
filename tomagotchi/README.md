@@ -35,3 +35,10 @@ _The rest is up to you and your imagination. 🦄_
 - Roboto Mono
 - Hachi Maru Pop
 - Neon
+- Unica One
+- Oxanium
+- Changa
+- Quantico
+- Zilla Slab Highlight
+- Amatic SC
+- Old Standard TT
