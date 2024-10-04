@@ -16,16 +16,15 @@
         main {
             width: 90%;
             margin: 0 auto;
-            padding-top: 80px;
+            padding: 80px 0 50px;
         }
-
-        .selection {
+        nav {
             display: flex;
             justify-content: flex-end;
             margin-bottom: 20px;
             font-size: 14px;
         }
-        .selection label {
+        nav label {
             margin-right: 0.3rem;
         }
 
@@ -58,24 +57,24 @@
             float: right;
         }
 
-        section h3 {
+        footer {
             margin-top: 40px;
             margin-bottom: 10px;
+        }
+        footer h2 {
+            padding-bottom: 0;
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
 <main>
-    <header>
-        <h1>Our Process</h1>
-            <div class="selection">
-                <label>I'm looking for:</label>
-                <label><input type="radio" name="service" value="Design"> Design</label>
-                <label><input type="radio" name="service" value="Development"> Development</label>
-                <label><input type="radio" name="service" value="Both" checked> Both</label>
-            </div>
-    </header>
-
+    <h1>Our Process</h1>
+    <nav>
+        <label>▉</label>
+        <label><input type="radio" name="service" value="Development" checked>scalable, data-driven product</label>
+    </nav>
+    
         <details>
             <summary>1. Discovery</summary>
             <p>In this phase, we focus on understanding your business goals and defining the problem that the data-driven product will solve. This includes identifying key metrics for success, understanding your target audience, and exploring the available data. We also assess data quality and determine what additional data sources may be needed. By the end of this step, we have a clear project roadmap and a solid understanding of the data landscape.</p>
@@ -92,10 +91,10 @@
             <p><strong>Outcome:</strong> A deployed, data-driven product with ongoing monitoring, along with training and documentation for your team.</p>
         </details>
 
-    <section>
-        <h3>Pricing</h3>
+    <footer>
+        <h2>Result</h2>
         <p>We charge a flat project fee after agreeing on a detailed scope and timeline. Engagements typically cost between $40,000 to $175,000 and can take anywhere from 6 to 25 weeks depending on the complexity of the project.</p>
-    </section>
+    </footer>
 </main>
 </body>
 </html>
