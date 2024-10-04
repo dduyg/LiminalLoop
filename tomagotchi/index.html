@@ -11,49 +11,34 @@
             color: #c2513c;
             margin: 0;
             padding: 0;
+            line-height: 1.5;
+            font-size: 1.2rem;
         }
-
-        h1, h2, h3, p {
-            margin: 0;
-            padding: 0;
-        }
-
         main {
             width: 80%;
             margin: 0 auto;
-            padding-top: 20px;
-        }
-
-        .process {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .process label {
-            font-size: 16px;
-            font-weight: bold;
+            padding-top: 80px;
         }
 
         .selection {
             display: flex;
             justify-content: flex-end;
             margin-bottom: 20px;
-        }
-
-        .selection label {
-            margin-right: 5px;
             font-size: 14px;
+        }
+        .selection label {
+            margin-right: 0.5em;
         }
 
         details {
             background: #fdf6eb;
             border: 2px solid #c2513c;
-            margin: 0;
-            padding: 2.5rem 1.25rem;
-            font-size: 22px;
+            margin: 0 0 1px;
+            padding: 1.5em;
+            font-size: 1.2em;
         }
         details[open] {
-            border-radius: 15%;
+            border-radius: 25px;
         }
 
         summary {
@@ -77,28 +62,23 @@
             float: right;
         }
 
-        .pricing {
+        section h3 {
             margin-top: 40px;
-            font-size: 18px;
-        }
-
-        .pricing h3 {
-            font-size: 22px;
             margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 <main>
-        <div class="process">
-            <label>Our Process</label>
+    <header>
+        <h1>Our Process</h1>
             <div class="selection">
                 <label>I'm looking for:</label>
                 <label><input type="radio" name="service" value="Design"> Design</label>
                 <label><input type="radio" name="service" value="Development"> Development</label>
                 <label><input type="radio" name="service" value="Both" checked> Both</label>
             </div>
-        </div>
+    </header>
 
         <details>
             <summary>1. Discovery</summary>
@@ -113,10 +93,10 @@
             <p>Once the design is complete, we move into the handoff stage. Here, all design assets and documentation are handed over to the development team, ensuring a seamless transition into the build phase.</p>
         </details>
 
-        <div class="pricing">
-            <h3>Pricing</h3>
-            <p>We charge a flat project fee after agreeing on a detailed scope and timeline. Engagements typically cost between $40,000 to $175,000 and can take anywhere from 6 to 25 weeks depending on the complexity of the project.</p>
-        </div>
+    <section>
+        <h3>Pricing</h3>
+        <p>We charge a flat project fee after agreeing on a detailed scope and timeline. Engagements typically cost between $40,000 to $175,000 and can take anywhere from 6 to 25 weeks depending on the complexity of the project.</p>
+    </section>
 </main>
 </body>
 </html>
