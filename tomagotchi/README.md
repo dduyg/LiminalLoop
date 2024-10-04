@@ -34,5 +34,4 @@ _The rest is up to you and your imagination. 🦄_
 - Tilt Prism
 - Roboto Mono
 - Hachi Maru Pop
-- Fjalla One
 - Neon
