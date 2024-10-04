@@ -45,24 +45,10 @@
         }
         a {
             color: inherit;
-            text-decoration: none;
-            position: relative;
-            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-decoration-color: #FE1483;
         }
-        a::after {
-            content: ' ';
-            position: absolute;
-            top: 100%;
-            left: 25%;
-            width: 50%;
-            height: 1px;
-            border-bottom: 3px solid #FE1483;
-            transition: 0.4s;
-        }
-        a:hover::after {
-            width: 100%;
-            left: 0;
-        }  
         article {
             background: rgba(0, 0, 0, 0.2);
             border: 1px solid black;
@@ -86,7 +72,7 @@
 <body>
 <main>
     <header>
-        <h1>D<a href="../06/">iskette</a>scapes</h1>
+        <h1>Diske<a href="../06/">tte</a>scapes</h1>
         <p>We’re diving into oceans of ones and zeros, in the world of data, we shine.</p>
     </header>
 
