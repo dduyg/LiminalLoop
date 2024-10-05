@@ -43,9 +43,8 @@
             position: relative; /* For positioning */
         }
 
-        /* Apply bottom border to all details except the last one */
         details:not(:last-of-type) {
-            border-bottom: 2px solid #c2513c; /* Add bottom border */
+            border-bottom: 0; /* Remove bottom border from all but the last item */
         }
 
         details[open] {
@@ -133,5 +132,26 @@
         <p>This comprehensive approach to developing a successful data-driven product results in a robust solution that aligns with business objectives and meets user needs. Engaging thoroughly in the Discovery phase ensures clarity in goals and metrics, leading to a targeted Development phase where insights are refined and models are accurately built. The final Launch phase focuses on user-centric enhancements and effective deployment, creating a reliable product that evolves through ongoing monitoring and updates. Completing these three phases will yield tangible results that enhance your business operations and empower your team to leverage data effectively.</p>
     </footer>
 </main>
+
+<script>
+    // Select all details elements
+    const detailsElements = document.querySelectorAll('details');
+
+    detailsElements.forEach(details => {
+        details.addEventListener('click', () => {
+            // Check if the details are already open
+            if (details.open) {
+                // If open, do nothing
+                return;
+            }
+            // Close all other details elements
+            detailsElements.forEach(otherDetails => {
+                if (otherDetails !== details) {
+                    otherDetails.removeAttribute('open');
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
