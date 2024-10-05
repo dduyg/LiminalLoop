@@ -16,24 +16,20 @@
             outline: none;
             -webkit-tap-highlight-color: transparent;
         }
-
         main {
             width: 90%;
             margin: 0 auto;
             padding: 80px 0 50px;
         }
-
         nav {
             display: flex;
             justify-content: flex-end;
             margin-bottom: 20px;
             font-size: 14px;
         }
-
         nav label {
             margin-right: 0.3rem;
         }
-
         h1, h2, details p {
             font-family: "Noto Sans", sans-serif;
         }
@@ -47,9 +43,9 @@
             position: relative; /* For positioning */
         }
 
-        /* Apply border bottom for closed details that are followed by an open details */
+        /* Apply bottom border to all details except the last one */
         details:not(:last-of-type) {
-            border-bottom: 0; /* Remove bottom border from all but the last item */
+            border-bottom: 2px solid #c2513c; /* Add bottom border */
         }
 
         details[open] {
@@ -59,10 +55,6 @@
 
         details[open] ~ details {
             border-top: 2px solid #c2513c; /* Keep the top border for the next detail */
-        }
-
-        details:not([open]):not(:last-of-type) {
-            border-bottom: 2px solid #c2513c; /* Add bottom border for closed details */
         }
 
         summary {
@@ -106,7 +98,6 @@
             margin-top: 40px;
             margin-bottom: 10px;
         }
-
         footer h2, footer p {
             padding: 0;
             margin: 0;
@@ -126,13 +117,11 @@
         <p>In this phase, we focus on understanding your business goals and defining the problem that the data-driven product will solve. This includes identifying key metrics for success, understanding your target audience, and exploring the available data. We also assess data quality and determine what additional data sources may be needed. By the end of this step, we have a clear project roadmap and a solid understanding of the data landscape.</p>
         <p><strong>Outcome:</strong> A well-defined problem statement, data acquisition strategy, and project roadmap.</p>
     </details>
-    
     <details>
         <summary>2. Design</summary>
         <p>In this phase we will design the entire website in high-fidelity. By incorporating the colors, fonts, imagery, and other visual elements of your brand, we will create a world-class digital experience that delights your users and supports their goals. Any interaction or animation concepts will be thoroughly documented in order to effectively communicate our vision.</p>
         <p><strong>Outcome:</strong> A comprehensive design plan ready for implementation.</p>
     </details>
-    
     <details>
         <summary>3. Handoff</summary>
         <p>The final phase includes rigorous testing and refinement of the product based on user feedback. We test the performance, user interface, and data accuracy, making final adjustments as needed. Once ready, the product is deployed into production, and we provide your team with full documentation and training. We also set up automated monitoring to ensure continuous performance and handle any model updates post-launch.</p>
