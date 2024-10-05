@@ -22,6 +22,9 @@
             margin: 0 auto;
             padding: 80px 0 50px;
         }
+        header h1 {
+            margin-bottom: 45px;
+        }
         nav {
             display: flex;
             justify-content: flex-end;
@@ -59,9 +62,6 @@
         }
         nav input[type="checkbox"]:hover {
             background-color: #fdf6eb;
-        }
-        nav h1 {
-            margin-bottom: 45px;
         }
         h1 {
             font-size: 3rem;
@@ -129,8 +129,10 @@
 </head>
 <body>
 <main>
-    <nav>
+    <header>
         <h1>Our Process</h1>
+    </header>
+    <nav>
         <label><input type="checkbox" name="service" value="Design" checked>scalable</label>  
         <label><input type="checkbox" name="service" value="Development" checked>data-driven product</label>
     </nav>
