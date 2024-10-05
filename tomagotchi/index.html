@@ -44,6 +44,9 @@
             border-radius: 25px;
         }
         summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-weight: bold;
             font-size: 1.4em;
             cursor: pointer;
@@ -58,13 +61,19 @@
         summary::-webkit-details-marker {
             display: none;
         }
-        details[open] summary::after {
-            content: '▲';
-            float: right;
+
+        .triangle {
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve"><polygon points="0.233,106.52 60,3 119.768,106.52"></polygon></svg>') no-repeat center center;
+            background-size: contain;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
         }
-        summary::after {
-            content: '▼';
-            float: right;
+
+        details[open] .triangle {
+            transform: rotate(180deg); /* Flip the triangle when details is open */
         }
 
         footer {
@@ -84,22 +93,33 @@
         <label><input type="radio" name="service" value="Development" checked>scalable, data-driven product</label>
         <label>▉</label>
     </nav>
-    
-        <details>
-            <summary>1. Discovery</summary>
-            <p>In this phase, we focus on understanding your business goals and defining the problem that the data-driven product will solve. This includes identifying key metrics for success, understanding your target audience, and exploring the available data. We also assess data quality and determine what additional data sources may be needed. By the end of this step, we have a clear project roadmap and a solid understanding of the data landscape.</p>
-            <p><strong>Outcome:</strong> A well-defined problem statement, data acquisition strategy, and project roadmap.</p>
-        </details>
-        <details>
-            <summary>2. Development</summary>
-            <p>This phase involves building the core of the data-driven product. We clean and process the data, perform exploratory data analysis (EDA), and build models or algorithms that deliver insights. Throughout this process, we experiment with different approaches, optimize the model, and integrate it into your product architecture. We also establish data pipelines for real-time or batch processing, ensuring the product is scalable and reliable.</p>
-            <p><strong>Outcome:</strong> A fully developed, validated model integrated into a scalable product, with performance tracking systems in place.</p>
-        </details>
-        <details>
-            <summary>3. Launch</summary>
-            <p>The final phase includes rigorous testing and refinement of the product based on user feedback. We test the performance, user interface, and data accuracy, making final adjustments as needed. Once ready, the product is deployed into production, and we provide your team with full documentation and training. We also set up automated monitoring to ensure continuous performance and handle any model updates post-launch.</p>
-            <p><strong>Outcome:</strong> A deployed, data-driven product with ongoing monitoring, along with training and documentation for your team.</p>
-        </details>
+
+    <details>
+        <summary>
+            1. Discovery
+            <span class="triangle"></span>
+        </summary>
+        <p>In this phase, we focus on understanding your business goals and defining the problem that the data-driven product will solve. This includes identifying key metrics for success, understanding your target audience, and exploring the available data. We also assess data quality and determine what additional data sources may be needed. By the end of this step, we have a clear project roadmap and a solid understanding of the data landscape.</p>
+        <p><strong>Outcome:</strong> A well-defined problem statement, data acquisition strategy, and project roadmap.</p>
+    </details>
+
+    <details>
+        <summary>
+            2. Development
+            <span class="triangle"></span>
+        </summary>
+        <p>This phase involves building the core of the data-driven product. We clean and process the data, perform exploratory data analysis (EDA), and build models or algorithms that deliver insights. Throughout this process, we experiment with different approaches, optimize the model, and integrate it into your product architecture. We also establish data pipelines for real-time or batch processing, ensuring the product is scalable and reliable.</p>
+        <p><strong>Outcome:</strong> A fully developed, validated model integrated into a scalable product, with performance tracking systems in place.</p>
+    </details>
+
+    <details>
+        <summary>
+            3. Launch
+            <span class="triangle"></span>
+        </summary>
+        <p>The final phase includes rigorous testing and refinement of the product based on user feedback. We test the performance, user interface, and data accuracy, making final adjustments as needed. Once ready, the product is deployed into production, and we provide your team with full documentation and training. We also set up automated monitoring to ensure continuous performance and handle any model updates post-launch.</p>
+        <p><strong>Outcome:</strong> A deployed, data-driven product with ongoing monitoring, along with training and documentation for your team.</p>
+    </details>
 
     <footer>
         <h2>Results</h2>
