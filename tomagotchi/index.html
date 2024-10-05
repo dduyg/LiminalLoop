@@ -49,6 +49,7 @@
 
         details[open] {
             border-radius: 25px; /* Rounded corners for opened details */
+            border-bottom: 2px solid #c2513c; /* Ensure open details have bottom border */
         }
 
         details p {
@@ -128,15 +129,6 @@
 
     detailsElements.forEach(details => {
         details.addEventListener('toggle', () => {
-            // Check if the details are open
-            if (details.open) {
-                // Close all other details elements
-                detailsElements.forEach(otherDetails => {
-                    if (otherDetails !== details) {
-                        otherDetails.removeAttribute('open');
-                    }
-                });
-            }
             updateBorders();
         });
     });
@@ -156,6 +148,9 @@
             }
         });
     }
+
+    // Initialize borders on page load
+    updateBorders();
 </script>
 </body>
 </html>
