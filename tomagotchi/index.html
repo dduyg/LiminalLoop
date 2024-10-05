@@ -56,10 +56,6 @@
             border-top: 2px solid #c2513c; /* Keep the top border for the next detail */
         }
 
-        details:not(:first-of-type):not([open]) ~ details {
-            border-top: 2px solid #c2513c; /* Add top border for any closed details above an open detail */
-        }
-
         summary {
             display: flex;
             justify-content: space-between;
@@ -142,20 +138,33 @@
     const detailsElements = document.querySelectorAll('details');
 
     detailsElements.forEach(details => {
-        details.addEventListener('click', () => {
-            // Check if the details are already open
+        details.addEventListener('toggle', () => {
+            // Close all other details elements if the current one is open
             if (details.open) {
-                // If open, do nothing
-                return;
+                detailsElements.forEach(otherDetails => {
+                    if (otherDetails !== details) {
+                        otherDetails.removeAttribute('open');
+                    }
+                });
             }
-            // Close all other details elements
-            detailsElements.forEach(otherDetails => {
-                if (otherDetails !== details) {
-                    otherDetails.removeAttribute('open');
-                }
-            });
+            updateBorders();
         });
     });
+
+    function updateBorders() {
+        detailsElements.forEach((details, index) => {
+            // If this details element is open
+            if (details.open) {
+                // The previous details should have a bottom border
+                if (index > 0) {
+                    detailsElements[index - 1].style.borderBottom = '2px solid #c2513c';
+                }
+            } else {
+                // If this details is closed, remove the border
+                details.style.borderBottom = index < detailsElements.length - 1 ? 'none' : '2px solid #c2513c';
+            }
+        });
+    }
 </script>
 </body>
 </html>
