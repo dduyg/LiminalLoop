@@ -156,7 +156,12 @@
                 }
             }
         });
+        // Always ensure the last details element has a bottom border
+        detailsElements[detailsElements.length - 1].style.borderBottom = '2px solid #c2513c';
     }
+
+    // Initial call to set the borders correctly
+    updateBorders();
 </script>
 </body>
 </html>
