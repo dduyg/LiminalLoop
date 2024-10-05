@@ -42,3 +42,4 @@ _The rest is up to you and your imagination. 🦄_
 - Zilla Slab Highlight
 - Amatic SC
 - Old Standard TT
+- Cabin
