@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiminalLoop</title>
+    <title>Liminal Loop</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans&display=swap" rel="stylesheet">
     <style>
         body {
@@ -43,6 +43,12 @@
         details[open] {
             border-radius: 25px;
         }
+
+        /* Adjust padding and margins */
+        details p {
+            padding-left: 1.1rem; /* Same padding as summary for alignment */
+        }
+
         summary {
             display: flex;
             justify-content: space-between;
@@ -51,17 +57,19 @@
             font-size: 1.4em;
             cursor: pointer;
             margin: 0;
-            padding: 0 1.1rem;
+            padding-left: 1.1rem; /* Aligns summary text with details p */
+            padding-right: 1.1rem; /* Adds space between text and icon */
             list-style: none;
             -webkit-user-select: none;
                -moz-user-select: none;
                 -ms-user-select: none;
                     user-select: none;
         }
+
         summary::-webkit-details-marker {
             display: none;
         }
-        
+
         /* Arrow icons with SVG */
         summary::after {
             content: '';
