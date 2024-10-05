@@ -16,20 +16,24 @@
             outline: none;
             -webkit-tap-highlight-color: transparent;
         }
+
         main {
             width: 90%;
             margin: 0 auto;
             padding: 80px 0 50px;
         }
+
         nav {
             display: flex;
             justify-content: flex-end;
             margin-bottom: 20px;
             font-size: 14px;
         }
+
         nav label {
             margin-right: 0.3rem;
         }
+
         h1, h2, details p {
             font-family: "Noto Sans", sans-serif;
         }
@@ -40,9 +44,11 @@
             margin: 0 0 0.05em;
             padding: 1.1rem;
         }
+
         details[open] {
             border-radius: 25px;
         }
+
         summary {
             font-weight: bold;
             font-size: 1.4em;
@@ -51,26 +57,40 @@
             padding: 0 1.1rem;
             list-style: none;
             -webkit-user-select: none;
-               -moz-user-select: none;
-                -ms-user-select: none;
-                    user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
         summary::-webkit-details-marker {
             display: none;
         }
-        details[open] summary::after {
-            content: '▲';
-            float: right;
-        }
+
+        /* Arrow down (default state) */
         summary::after {
-            content: '▼';
-            float: right;
+            content: '';
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.293 5.293a1 1 0 011.414 0L8 10.586l5.293-5.293a1 1 0 111.414 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414z"/></svg>');
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Arrow up (when open) */
+        details[open] summary::after {
+            content: '';
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.293 10.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L8 5.414 2.707 10.707a1 1 0 01-1.414 0z"/></svg>');
         }
 
         footer {
             margin-top: 40px;
             margin-bottom: 10px;
         }
+
         footer h2, footer p {
             padding: 0;
             margin: 0;
