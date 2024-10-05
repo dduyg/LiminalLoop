@@ -61,6 +61,12 @@
         <header>
             <h1>The OBLIVION of the past,</h1>
         </header>
+
+        <div class="contactForm_btnWrap">
+            <button class="contactForm_btn" type="submit" value="check" x-show="step === 0">確認</button>
+            <button class="contactForm_btn contactForm_btn-back" type="button" value="edit" x-show="step === 1" @click="back">修正</button>
+            <button class="contactForm_btn" type="submit" value="submit" x-show="step === 1">送信</button>
+        </div>
     </main>
 </body>
 </html>
