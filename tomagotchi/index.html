@@ -43,10 +43,9 @@
         details[open] {
             border-radius: 25px;
         }
-
-        /* Adjust padding and margins */
         details p {
-            padding-left: 1.1rem; /* Same padding as summary for alignment */
+            margin: 0;
+            padding-left: 1.1rem; /* Adjust the details p to match the summary padding */
         }
 
         summary {
@@ -57,20 +56,19 @@
             font-size: 1.4em;
             cursor: pointer;
             margin: 0;
-            padding-left: 1.1rem; /* Aligns summary text with details p */
-            padding-right: 1.1rem; /* Adds space between text and icon */
+            padding: 0; /* Remove any default padding */
+            padding-left: 1.1rem; /* Match padding with details */
             list-style: none;
             -webkit-user-select: none;
                -moz-user-select: none;
                 -ms-user-select: none;
                     user-select: none;
         }
-
         summary::-webkit-details-marker {
             display: none;
         }
 
-        /* Arrow icons with SVG */
+        /* Triangle icons with SVG */
         summary::after {
             content: '';
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6h10l-5 9-5-9z"></path></svg>') no-repeat center center;
@@ -78,7 +76,6 @@
             height: 1.8em;
             display: inline-block;
         }
-
         details[open] summary::after {
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 14H5l5-9 5 9z"></path></svg>') no-repeat center center;
             width: 1.8em; /* Keep the icon size consistent */
@@ -86,12 +83,7 @@
         }
 
         footer {
-            margin-top: 40px;
-            margin-bottom: 10px;
-        }
-        footer h2, footer p {
-            padding: 0;
-            margin: 0;
+            margin: 80px 0 50px;
         }
     </style>
 </head>
