@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>LiminalLoop</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans&display=swap" rel="stylesheet">
     <style>
         body {
@@ -34,29 +34,19 @@
             font-family: "Noto Sans", sans-serif;
         }
 
-        /* Details Styling */
+        /* Adjustments to details */
         details {
             background: #fdf6eb;
             border: 2px solid #c2513c;
-            margin: 0;  /* Remove margin */
-            padding: 1.1rem;
-            border-bottom: none; /* Remove bottom border to prevent double border */
+            margin: 0; /* Remove margin to connect elements */
+            padding: 0; /* Remove default padding */
+            border-radius: 0; /* Remove border-radius for consistency */
+            position: relative; /* For positioning */
         }
 
-        /* Add border only to the last details element */
-        details:last-of-type {
-            border-bottom: 2px solid #c2513c;
-        }
-
-        /* When open, restore the bottom border */
         details[open] {
-            border-bottom: 2px solid #c2513c;
-            border-radius: 25px 25px 0 0;
-        }
-
-        /* Prevent bottom border from showing on open details */
-        details[open] summary {
-            border-bottom: none;
+            border-radius: 25px; /* Rounded corners when open */
+            border-bottom: 2px solid #c2513c; /* Keep the bottom border when open */
         }
 
         summary {
@@ -66,35 +56,34 @@
             font-weight: bold;
             font-size: 1.4em;
             cursor: pointer;
-            margin: 0;
-            padding: 1.1rem;
+            padding: 1.1rem; /* Apply padding for alignment */
             list-style: none;
+            margin: 0; /* Remove margin to align with text */
             -webkit-user-select: none;
-               -moz-user-select: none;
-                -ms-user-select: none;
-                    user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
+
+        details p {
+            padding: 1.1rem; /* Match padding of summary for consistent alignment */
+            margin: 0; /* Remove margin for better alignment */
+        }
+
         summary::-webkit-details-marker {
             display: none;
         }
 
-        /* SVG Arrows */
         summary::after {
             content: '';
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6h10l-5 9-5-9z"></path></svg>') no-repeat center center;
-            width: 1.8em;
+            width: 1.8em; /* Make the icon larger */
             height: 1.8em;
             display: inline-block;
         }
+
         details[open] summary::after {
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 14H5l5-9 5 9z"></path></svg>') no-repeat center center;
-            width: 1.8em;
-            height: 1.8em;
-        }
-
-        details p {
-            padding: 1.1rem;
-            margin: 0;
         }
 
         footer {
@@ -114,21 +103,19 @@
         <label><input type="radio" name="service" value="Development" checked>scalable, data-driven product</label>
         <label>▉</label>
     </nav>
-
+    
     <details>
         <summary>1. Discovery</summary>
         <p>In this phase, we focus on understanding your business goals and defining the problem that the data-driven product will solve. This includes identifying key metrics for success, understanding your target audience, and exploring the available data. We also assess data quality and determine what additional data sources may be needed. By the end of this step, we have a clear project roadmap and a solid understanding of the data landscape.</p>
         <p><strong>Outcome:</strong> A well-defined problem statement, data acquisition strategy, and project roadmap.</p>
     </details>
-
     <details>
-        <summary>2. Development</summary>
-        <p>This phase involves building the core of the data-driven product. We clean and process the data, perform exploratory data analysis (EDA), and build models or algorithms that deliver insights. Throughout this process, we experiment with different approaches, optimize the model, and integrate it into your product architecture. We also establish data pipelines for real-time or batch processing, ensuring the product is scalable and reliable.</p>
-        <p><strong>Outcome:</strong> A fully developed, validated model integrated into a scalable product, with performance tracking systems in place.</p>
+        <summary>2. Design</summary>
+        <p>In this phase we will design the entire website in high-fidelity. By incorporating the colors, fonts, imagery, and other visual elements of your brand, we will create a world-class digital experience that delights your users and supports their goals. Any interaction or animation concepts will be thoroughly documented in order to effectively communicate our vision.</p>
+        <p><strong>Outcome:</strong> A comprehensive design plan ready for implementation.</p>
     </details>
-
     <details>
-        <summary>3. Launch</summary>
+        <summary>3. Handoff</summary>
         <p>The final phase includes rigorous testing and refinement of the product based on user feedback. We test the performance, user interface, and data accuracy, making final adjustments as needed. Once ready, the product is deployed into production, and we provide your team with full documentation and training. We also set up automated monitoring to ensure continuous performance and handle any model updates post-launch.</p>
         <p><strong>Outcome:</strong> A deployed, data-driven product with ongoing monitoring, along with training and documentation for your team.</p>
     </details>
