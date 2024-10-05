@@ -66,13 +66,15 @@
         summary::after {
             content: '';
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6h10l-5 9-5-9z"></path></svg>') no-repeat center center;
-            width: 1.4em;
-            height: 1.4em;
+            width: 1.8em; /* Make the icon larger */
+            height: 1.8em;
             display: inline-block;
         }
 
         details[open] summary::after {
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 14H5l5-9 5 9z"></path></svg>') no-repeat center center;
+            width: 1.8em; /* Keep the icon size consistent */
+            height: 1.8em;
         }
 
         footer {
