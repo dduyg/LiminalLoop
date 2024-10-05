@@ -39,6 +39,7 @@
             border: 2px solid #c2513c;
             margin: 0; /* Remove margin to connect elements */
             padding: 0; /* Remove default padding */
+            border-radius: 0; /* Remove border-radius for consistency */
             position: relative; /* For positioning */
             transition: border-color 0.3s ease; /* Add transition for smoother effect */
         }
@@ -48,15 +49,13 @@
         }
 
         details[open] {
-            border-radius: 25px; /* Rounded corners for opened details */
-            border-bottom: 2px solid #c2513c; /* Ensure open details have bottom border */  
+            border-bottom: 2px solid #c2513c; /* Keep the bottom border when open */
         }
 
-        details p {
-            padding: 1.1rem; /* Match padding of summary for consistent alignment */
-            margin: 0; /* Remove margin for better alignment */
+        details[open] ~ details {
+            border-top: 2px solid #c2513c; /* Keep the top border for the next detail */
         }
-        
+
         summary {
             display: flex;
             justify-content: space-between;
@@ -64,32 +63,43 @@
             font-weight: bold;
             font-size: 1.4em;
             cursor: pointer;
-            margin: 0;
-            padding: 1.1rem;
-            list-style: none; 
+            padding: 1.1rem; /* Apply padding for alignment */
+            list-style: none;
+            margin: 0; /* Remove margin to align with text */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
-        
+
+        details p {
+            padding: 1.1rem; /* Match padding of summary for consistent alignment */
+            margin: 0; /* Remove margin for better alignment */
+        }
+
         summary::-webkit-details-marker {
             display: none;
         }
-        
+
         summary::after {
             content: '';
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6h10l-5 9-5-9z"></path></svg>') no-repeat center center;
-            width: 1.8em;
+            width: 1.8em; /* Make the icon larger */
             height: 1.8em;
             display: inline-block;
         }
+
         details[open] summary::after {
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 14H5l5-9 5 9z"></path></svg>') no-repeat center center;
         }
 
         footer {
-            margin: 90px 0 50px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        footer h2, footer p {
+            padding: 0;
+            margin: 0;
         }
     </style>
 </head>
@@ -145,14 +155,15 @@
     // Function to update borders based on open/closed state
     function updateBorders() {
         detailsElements.forEach((details, index) => {
-            // Always ensure the last details has a border-bottom
-            if (index === detailsElements.length - 1) {
-                details.style.borderBottom = '2px solid #c2513c'; // Last detail always has border-bottom
+            if (details.open) {
+                // If the current details is open, add the bottom border
+                details.style.borderBottom = '2px solid #c2513c';
             } else {
-                if (details.open) {
-                    details.style.borderBottom = '2px solid #c2513c'; // Open detail gets border-bottom
-                } else {
-                    details.style.borderBottom = 'none'; // Closed detail does not have bottom border
+                // If it's closed, remove the bottom border
+                details.style.borderBottom = 'none';
+                // If there is an open details below it, add border
+                if (index < detailsElements.length - 1 && detailsElements[index + 1].open) {
+                    details.style.borderBottom = '2px solid #c2513c';
                 }
             }
         });
