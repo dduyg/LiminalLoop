@@ -29,16 +29,18 @@
             font-size: 0.7rem;
         }
         nav label {
-            margin-right: 1rem;
             font-family: "Roboto Mono", monospace;
             font-size: 0.7rem;
             display: flex;
             align-items: center;
             cursor: pointer;
-            padding: 0.3rem 0.2rem;
+            padding: 0.3rem 0.5rem;
             border: 1px solid #c2513c;
             border-radius: 25px;
             transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        nav label:not(:last-child) {
+            margin-right: 1rem;
         }
         nav label:hover {
             background-color: #c2513c;
