@@ -56,6 +56,10 @@
             border-top: 2px solid #c2513c; /* Keep the top border for the next detail */
         }
 
+        details:not(:first-of-type):not([open]) ~ details {
+            border-top: 2px solid #c2513c; /* Add top border for any closed details above an open detail */
+        }
+
         summary {
             display: flex;
             justify-content: space-between;
