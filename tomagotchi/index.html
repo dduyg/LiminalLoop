@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>LiminalLoop</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans&display=swap" rel="stylesheet">
     <style>
         body {
@@ -34,20 +34,18 @@
             font-family: "Noto Sans", sans-serif;
         }
 
+        /* Ensure even padding for both summary and details text */
         details {
             background: #fdf6eb;
             border: 2px solid #c2513c;
             margin: 0 0 0.05em;
-            padding: 1.1rem;
+            padding: 0; /* Remove default padding */
         }
+        
         details[open] {
             border-radius: 25px;
         }
-        details p {
-            margin: 0;
-            padding-left: 1.1rem; /* Adjust the details p to match the summary padding */
-        }
-
+        
         summary {
             display: flex;
             justify-content: space-between;
@@ -55,20 +53,26 @@
             font-weight: bold;
             font-size: 1.4em;
             cursor: pointer;
-            margin: 0;
-            padding: 0; /* Remove any default padding */
-            padding-left: 1.1rem; /* Match padding with details */
+            padding: 1.1rem; /* Apply padding for alignment */
             list-style: none;
+            margin: 0; /* Remove margin to align with text */
             -webkit-user-select: none;
-               -moz-user-select: none;
-                -ms-user-select: none;
-                    user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
+
+        /* Text inside details */
+        details p {
+            padding: 1.1rem; /* Match padding of summary for consistent alignment */
+            margin: 0; /* Remove margin for better alignment */
+        }
+
         summary::-webkit-details-marker {
             display: none;
         }
-
-        /* Triangle icons with SVG */
+        
+        /* Arrow icons with SVG */
         summary::after {
             content: '';
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6h10l-5 9-5-9z"></path></svg>') no-repeat center center;
@@ -76,6 +80,7 @@
             height: 1.8em;
             display: inline-block;
         }
+
         details[open] summary::after {
             background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 14H5l5-9 5 9z"></path></svg>') no-repeat center center;
             width: 1.8em; /* Keep the icon size consistent */
@@ -83,7 +88,12 @@
         }
 
         footer {
-            margin: 80px 0 50px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        footer h2, footer p {
+            padding: 0;
+            margin: 0;
         }
     </style>
 </head>
