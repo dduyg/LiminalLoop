@@ -37,17 +37,20 @@
         details {
             background: #fdf6eb;
             border: 2px solid #c2513c;
-            margin: 0;
-            padding: 0;
-            position: relative;
+            margin: 0; /* Remove margin to connect elements */
+            padding: 0; /* Remove default padding */
+            position: relative; /* For positioning */
             transition: border-color 0.3s ease; /* Add transition for smoother effect */
         }
+
         details:not(:last-of-type) {
             border-bottom: 0; /* Remove bottom border from all but the last item */
         }
+
         details[open] {
-            border-radius: 25px;
+            border-radius: 25px; /* Rounded corners for opened details */
         }
+
         details p {
             padding: 1.1rem; /* Match padding of summary for consistent alignment */
             margin: 0; /* Remove margin for better alignment */
@@ -68,6 +71,7 @@
             -ms-user-select: none;
             user-select: none;
         }
+        
         summary::-webkit-details-marker {
             display: none;
         }
@@ -140,15 +144,14 @@
     // Function to update borders based on open/closed state
     function updateBorders() {
         detailsElements.forEach((details, index) => {
-            if (details.open) {
-                // If the current details is open, add the bottom border
-                details.style.borderBottom = '2px solid #c2513c';
+            // Always ensure the last details has a border-bottom
+            if (index === detailsElements.length - 1) {
+                details.style.borderBottom = '2px solid #c2513c'; // Last detail always has border-bottom
             } else {
-                // If it's closed, remove the bottom border
-                details.style.borderBottom = 'none';
-                // If there is an open details below it, add border
-                if (index < detailsElements.length - 1 && detailsElements[index + 1].open) {
-                    details.style.borderBottom = '2px solid #c2513c';
+                if (details.open) {
+                    details.style.borderBottom = '2px solid #c2513c'; // Open detail gets border-bottom
+                } else {
+                    details.style.borderBottom = 'none'; // Closed detail does not have bottom border
                 }
             }
         });
