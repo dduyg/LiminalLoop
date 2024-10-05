@@ -13,6 +13,13 @@
             font-weight: normal;
             font-style: normal;
         }
+
+        @font-face {
+            font-family: 'Pentameter Thin';
+            src: url('https://raw.githubusercontent.com/dduyg/LiminalLoop/main/fonts/Pentameter-Wide-Thin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
         
         body {
             margin: 0;
@@ -23,13 +30,24 @@
             justify-content: center;
             align-items: center;
             color: #A8D3DA;
-        }    
+        }
+
+        header h1 {
+            font-family: 'Pentameter Light', 'Fira Sans', sans-serif;
+        }
+        nav h1 {
+            font-family: 'Pentameter Thin', 'Fira Sans', sans-serif;
+        }
     </style>
 </head>
 <body>
     <main>
-        <h1>The OBLIVION of the past,</h1>
-        <p>are RECORDED here.</p>
+        <header>
+            <h1>The OBLIVION of the past,</h1>
+        </header>
+        <nav>
+            <h1>Are RECORDED here.</h1>
+        </nav>
     </main>
 </body>
 </html>
