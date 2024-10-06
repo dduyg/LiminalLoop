@@ -66,15 +66,19 @@
             line-height:1;
             padding-top: 2rem;
             padding-bottom:2rem; 
-            
+            margin-bottom:3.5rem;
+            border-width:2px;
+            border-color: red;
+            background-color: red;
+            color: black;
+            font-size:100%;       
         }
         @media(min-width: 960px) {
             .btn2 {
                 padding-top:3rem;
-                ;
+                padding-bottom:3.2rem;
             }
-        }
-        
+        }   
     </style>
 </head>
 <body>
@@ -87,7 +91,7 @@
             <button class="contactForm_btn" type="submit" value="check" x-show="step === 0">確認</button>
         </div>
 
-        <button class="l:pb-32 mb-35 border-2 border-pink bg-pink text-black hover:text-pink hover:bg-black js-submitButton"type="submit"data-default-message="Submit"data-loading-message="Submitting…">Submit</button>
+        <button class="btn2"type="submit"data-default-message="Submit"data-loading-message="Submitting…">Submit</button>
     </main>
 </body>
 </html>
