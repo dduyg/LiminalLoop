@@ -12,7 +12,7 @@
             --base_fsize: clamp(1.125rem,4vw,1.4375rem);
             --small_fsize: clamp(1rem,3.25vw,1.125rem);
             --base_lheight: 1.4736842105;
-        }   
+        }
         html, body {
             height: 100%;
             margin: 0;
@@ -27,7 +27,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            line-height: 1.5;
+            font-size: var(--base_fsize);
+            line-height: var(--base_lheight);
         }
         main {
             background-color: rgba(0, 0, 0, 0.1);
@@ -60,7 +61,7 @@
             left: 0;
             margin: 0;
             padding: 0.75em 1em;
-            font-size: 0.9rem;        
+            font-size: var(--small_fsize);        
         }
 
         /* Custom scrollbar */
