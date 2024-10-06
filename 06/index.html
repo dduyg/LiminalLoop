@@ -43,11 +43,20 @@
             border: 1px solid black;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
-        main h1, h3 {
+
+        header {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0.75em 1em;        
+        }
+        header h1, main h3 {
             margin: 0;
             padding: 0;
         }
         main h3 {
+            margin-top: 30px;
             text-transform: uppercase;
         }
         pre {
@@ -56,6 +65,7 @@
             border-left: 4px solid #FFFFEA;
             overflow-x: auto;
             color: #b7b7b7;
+            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
             font-family: 'Courier New', Courier, monospace;
         }
@@ -98,9 +108,12 @@
     </style>
 </head>
 <body>
-    <main>
+    <header>
         <h1>カプセル化</h1>
-    <p style="margin-top: 0; padding-top: 0;">
+    </header>
+    
+    <main>       
+    <p>
         Encapsulation is one of the four programming principles of <i>Object-Oriented Programming</i> (OOP), alongside inheritance, polymorphism, and abstraction.
         Encapsulation is the practice of bundling the data (attributes) and methods (functions) that operate on the data into a single unit, or class, and restricting access to some of the object's components.
         This restriction is done using access modifiers like private, protected, and public.
