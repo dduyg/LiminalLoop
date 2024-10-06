@@ -39,8 +39,6 @@ _The rest is up to you and your imagination. 🦄_
 - Oxanium
 - Changa
 - Quantico
-- Zilla Slab Highlight
 - Amatic SC
-- Old Standard TT
 - Cabin
 - Cardo
