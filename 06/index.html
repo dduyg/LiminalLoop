@@ -41,16 +41,19 @@
             border: 1px solid black;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
-        main h1 {
+        main h1, h3 {
             margin: 0;
             padding: 0;
         }
+        main h3 {
+            text-transform: uppercase;
+        }
         pre {
             background: rgba(255, 255, 255, 0.1);
-            padding: 0.625em;
+            padding: 0 0.625em;
             border-left: 4px solid #FFFFEA;
             overflow-x: auto;
-            color: #fff;
+            color: #b7b7b7;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
             font-family: 'Courier New', Courier, monospace;
         }
@@ -109,16 +112,7 @@
         At its core, encapsulation separates the "what" from the "how," making it easier to manage complexity, isolate functionality, and ensure that changes in one part of a system don’t inadvertently affect others.
     </p>
 
-    <h2>Key Benefits of Encapsulation</h2>
-    <ul>
-        <li><strong>Data Hiding</strong>: Encapsulation allows the internal state of an object to be hidden from external access. Only specific methods are exposed to interact with the data. This prevents unauthorized access or unintended changes to the object’s internal state.</li>
-        <li><strong>Modularity</strong>: Since encapsulated classes bundle data and methods together, it becomes easier to manage the different parts of an application. Each class can be treated as a standalone entity, making large software systems easier to maintain and extend.</li>
-        <li><strong>Code Reusability</strong>: Encapsulated classes can be reused in different parts of a program, or even in different programs. This promotes code reuse and avoids duplication.</li>
-        <li><strong>Flexibility</strong>: Encapsulation allows for internal changes to the class without affecting the rest of the program. If the internal logic of a class changes, its public interface can remain the same, reducing the impact of changes in the codebase.</li>
-        <li><strong>Maintainability</strong>: Encapsulated classes allow for cleaner code, as changes are localized to specific classes. It becomes easier to debug, maintain, and extend the codebase over time.</li>
-    </ul>
-
-    <h2>Access Modifiers</h2>
+    <h3>▉ Access Modifiers</h3>
     <p>
         Encapsulation is enforced using access modifiers. Different programming languages provide different levels of access control. The three most common access modifiers are:
     </p>
@@ -128,7 +122,7 @@
         <li><strong>Protected</strong>: The member can be accessed from within the class and its subclasses but not from outside these classes.</li>
     </ul>
 
-    <h2>Encapsulation Example in Python</h2>
+    <h3>▉ Encapsulation Example in Python</h3>
     <pre>
 <code>
 class Employee:
@@ -171,7 +165,7 @@ emp.set_salary(-1000)  # Output: Invalid salary!
 </code>
     </pre>
 
-    <h2>Conclusion</h2>
+    <h3>▉ Conclusion</h3>
     <p>
         Encapsulation is a critical principle in Object-Oriented Programming that ensures better control, security, and integrity of data by restricting direct access to an object's internal state.
         It bundles data and the methods that operate on it into a single unit, the class, allowing for a well-structured and modular codebase.
