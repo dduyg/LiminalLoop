@@ -44,9 +44,99 @@
 <body>
     <main>
         <h1>カプセル化</h1>
-        <p>Encapsulation is a programming principle that bundles data and methods operating on that data within a single unit, typically a class. It restricts direct access to some of an object's components, which promotes modularity and protects the internal state of the object. Encapsulation is fundamental to maintaining code integrity and reducing complexity.</p>
+    <p>
+        Encapsulation is one of the four programming principles of <i>Object-Oriented Programming</i> (OOP), alongside inheritance, polymorphism, and abstraction.
+        Encapsulation is the practice of bundling the data (attributes) and methods (functions) that operate on the data into a single unit, or class, and restricting access to some of the object's components.
+        This restriction is done using access modifiers like private, protected, and public.
+    </p>
+    <p>
+        Encapsulation ensures that an object’s internal representation (its data) is hidden from the outside world and can only be accessed or modified through a well-defined interface.
+        This is crucial for maintaining control over how the internal state of an object is accessed or changed, promoting data integrity, security, and modularity in the software design process.
+    </p>
+    <p>
+        By controlling the visibility and access to an object’s data, encapsulation allows a programmer to define how data should be used and prevent unintended interactions.
+        At its core, encapsulation separates the "what" from the "how," making it easier to manage complexity, isolate functionality, and ensure that changes in one part of a system don’t inadvertently affect others.
+    </p>
+
+    <h2>Key Benefits of Encapsulation</h2>
+    <ul>
+        <li><strong>Data Hiding</strong>: Encapsulation allows the internal state of an object to be hidden from external access. Only specific methods are exposed to interact with the data. This prevents unauthorized access or unintended changes to the object’s internal state.</li>
+        <li><strong>Modularity</strong>: Since encapsulated classes bundle data and methods together, it becomes easier to manage the different parts of an application. Each class can be treated as a standalone entity, making large software systems easier to maintain and extend.</li>
+        <li><strong>Code Reusability</strong>: Encapsulated classes can be reused in different parts of a program, or even in different programs. This promotes code reuse and avoids duplication.</li>
+        <li><strong>Flexibility</strong>: Encapsulation allows for internal changes to the class without affecting the rest of the program. If the internal logic of a class changes, its public interface can remain the same, reducing the impact of changes in the codebase.</li>
+        <li><strong>Maintainability</strong>: Encapsulated classes allow for cleaner code, as changes are localized to specific classes. It becomes easier to debug, maintain, and extend the codebase over time.</li>
+    </ul>
+
+    <h2>Access Modifiers</h2>
+    <p>
+        Encapsulation is enforced using access modifiers. Different programming languages provide different levels of access control. The three most common access modifiers are:
+    </p>
+    <ul>
+        <li><strong>Public</strong>: The member can be accessed from outside the class. Any code in the program can access public members.</li>
+        <li><strong>Private</strong>: The member can only be accessed from within the class where it is declared. This is the strictest level of access control.</li>
+        <li><strong>Protected</strong>: The member can be accessed from within the class and its subclasses but not from outside these classes.</li>
+    </ul>
+
+    <h2>Encapsulation Example in Python</h2>
+    <pre>
+<code>
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name        # Public attribute
+        self.__salary = salary  # Private attribute, prefixed with __
+
+    # Public method to get the value of the salary
+    def get_salary(self):
+        return self.__salary
+
+    # Public method to set the value of the salary
+    def set_salary(self, salary):
+        if salary > 0:
+            self.__salary = salary
+        else:
+            print("Invalid salary!")
+
+# Creating an object of the Employee class
+emp = Employee("John Doe", 50000)
+
+# Accessing the public attribute
+print(emp.name)  # Output: John Doe
+
+# Trying to access the private attribute directly (will raise an AttributeError)
+try:
+    print(emp.__salary)
+except AttributeError:
+    print("Cannot access private attribute")
+
+# Accessing the private attribute using public methods
+print(emp.get_salary())  # Output: 50000
+
+# Modifying the private attribute using public methods
+emp.set_salary(60000)
+print(emp.get_salary())  # Output: 60000
+
+# Attempting to set an invalid salary
+emp.set_salary(-1000)  # Output: Invalid salary!
+</code>
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>
+        Encapsulation is a critical principle in Object-Oriented Programming that ensures better control, security, and integrity of data by restricting direct access to an object's internal state.
+        It bundles data and the methods that operate on it into a single unit, the class, allowing for a well-structured and modular codebase.
+        This promotes maintainability, flexibility, and reusability of code.
+    </p>
+    <p>
+        By utilizing encapsulation, software developers can hide the complexities of an object’s internal workings from the outside world, exposing only the necessary parts through controlled interfaces.
+        This not only reduces the likelihood of errors but also simplifies debugging and enhances security, making encapsulation an indispensable practice in software development.
+    </p>
+    <p>
+        Each programming language provides mechanisms (such as access modifiers) to enforce encapsulation, though the implementation details may vary.
+        The fundamental idea, however, remains consistent across languages: to protect an object's internal state and ensure that it is accessed and modified only in a controlled and predictable manner.
+    </p>
+
     </main>
-    
+        
     <footer>
         ● 時間が遅れるこの行列の中で
     </footer>
