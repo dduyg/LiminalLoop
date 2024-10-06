@@ -11,7 +11,6 @@
             box-sizing: border-box;
         }
         body {
-            color: #fff;
             font-family: "PP Neue Montreal Mono", sans-serif;
             font-size: 11px;
             font-feature-settings: "palt";
@@ -21,6 +20,16 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overscroll-behavior: none;
+
+            background-image: url('detail-3.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
         }
         @media (min-width: 960px) {
             body { font-size: 12px; }
@@ -33,17 +42,6 @@
             color: #fff;
         }
 
-        .hero {
-            background-image: url('detail-3.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
         .overlay {
             position: absolute;
             top: 0;
@@ -52,12 +50,6 @@
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.5);
         }
-        .text-content {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-            text-align: left;
-        }
         h1 {
             font-size: 48px;
             font-weight: bold;
@@ -65,12 +57,6 @@
         }
         p {
             margin-bottom: 15px;
-        }
-        .date-info {
-            position: absolute;
-            right: 20px;
-            bottom: 20px;
-            text-align: right;
         }
         .container {
             display: grid;
@@ -97,45 +83,11 @@
             border-left: 1px solid hsla(0deg 0% 100% / 10%);
             border-right: 1px solid hsla(0deg 0% 100% / 10%);
         }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 32px;
-            }
-            .hero {
-                height: auto;
-                padding: 40px 0;
-            }
-            .date-info {
-                position: static;
-                text-align: center;
-                margin-top: 20px;
-            }
-        }
     </style>
 </head>
 <body>
-
-    <div class="grid">
-        <div class="grid_column"></div>
-        <div class="grid_column"></div>
-        <div class="grid_column"></div>
-        <!-- More columns if needed -->
-    </div>
-
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="text-content">
-            <h1>UNDER VOYAGER</h1>
-            <p>MIKA PIKAZO SOLO EXHIBITION</p>
-            <p>PROLOGUE: The journey begins...</p>
-            <div class="date-info">
-                <p>(START)<br>05.10</p>
-                <p>(END)<br>06.01</p>
-            </div>
-        </div>
-    </section>
-
+    <div class="overlay"></div>
+        
     <section class="container">
         <div class="item">
             <h2>Concept</h2>
