@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2-Column Grid Layout</title>
+    <title>2-Column Grid Layout with Overlay</title>
     <style>
         * {
             margin: 0;
@@ -18,13 +18,31 @@
         }
         main {
             display: grid;
-            grid-template-columns: 85% 15%; /* 85% for first column, 15% for second */
+            grid-template-columns: 85% 15%; /* Define 2 columns with specified widths */
             min-height: 100vh; /* Full height for the main container */
-            background-color: rgba(0, 0, 0, 0.5);
+            position: relative; /* Set position for overlay positioning */
+            z-index: 1; /* Ensure main content is above the overlay */
         }
         section {
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #ccc; /* Optional: for visual clarity */
+            z-index: 2; /* Ensure sections are above the overlay */
+        }
+        .column-1 {
+            background-color: rgba(255, 255, 255, 0.8); /* White background for readability */
+        }
+        .column-2 {
+            background-color: rgba(255, 255, 255, 0.8); /* White background for readability */
+        }
+        /* Overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: 0; /* Overlay below content */
         }
     </style>
 </head>
