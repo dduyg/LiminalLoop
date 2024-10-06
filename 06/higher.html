@@ -28,10 +28,10 @@
             z-index: 2; /* Ensure sections are above the overlay */
         }
         .column-1 {
-            flex: 7;
+            flex: 3; /* 75% of the total (3 out of 4) */
         }
         .column-2 {
-            flex: 3;
+            flex: 1; /* 25% of the total (1 out of 4) */
         }
         /* Overlay */
         .overlay {
@@ -40,7 +40,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            background-color: rgba(0, 0, 0, 0.3); /* Black overlay with 50% opacity */
             z-index: 0; /* Overlay below content */
         }
     </style>
@@ -50,13 +50,13 @@
 <main>
     <div class="overlay"></div> <!-- Overlay div -->
     <section class="column-1">
-        <h2>Column 1 (70%)</h2>
-        <p>This is the first column taking 70% of the width.</p>
+        <h2>Column 1 (75%)</h2>
+        <p>This is the first column taking 75% of the width.</p>
     </section>
 
     <section class="column-2">
-        <h2>Column 2 (30%)</h2>
-        <p>This is the second column taking 30% of the width.</p>
+        <h2>Column 2 (25%)</h2>
+        <p>This is the second column taking 25% of the width.</p>
     </section>
 </main>
 
