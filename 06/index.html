@@ -115,31 +115,19 @@
     </header>
     
     <main>       
-    <p>
-        <span style="font-family: "Zilla Slab Highlight", serif;>Encapsulation</span> is one of the four programming principles of <i>Object-Oriented Programming</i> (OOP), alongside inheritance, polymorphism, and abstraction.
-        Encapsulation is the practice of bundling the data (attributes) and methods (functions) that operate on the data into a single unit, or class, and restricting access to some of the object's components.
-        This restriction is done using access modifiers like private, protected, and public.
-    </p>
-    <p>
-        Encapsulation ensures that an object’s internal representation (its data) is hidden from the outside world and can only be accessed or modified through a well-defined interface.
-        This is crucial for maintaining control over how the internal state of an object is accessed or changed, promoting data integrity, security, and modularity in the software design process.
-    </p>
-    <p>
-        By controlling the visibility and access to an object’s data, encapsulation allows a programmer to define how data should be used and prevent unintended interactions.
-        At its core, encapsulation separates the "what" from the "how," making it easier to manage complexity, isolate functionality, and ensure that changes in one part of a system don’t inadvertently affect others.
-    </p>
-
-    <h3>▉ Access Modifiers</h3>
-    <p style="margin-top: 0; padding-top: 0;">
-        Encapsulation is enforced using access modifiers. Different programming languages provide different levels of access control. The three most common access modifiers are:
-    </p>
-    <ul>
-        <li><strong>Public</strong>: The member can be accessed from outside the class. Any code in the program can access public members.</li>
-        <li><strong>Private</strong>: The member can only be accessed from within the class where it is declared. This is the strictest level of access control.</li>
-        <li><strong>Protected</strong>: The member can be accessed from within the class and its subclasses but not from outside these classes.</li>
-    </ul>
-
-    <h3>▉ Encapsulation Example in Python</h3>
+        <p>Encapsulation is one of the fundamental concepts in object-oriented programming (OOP), improving code maintainability and ensuring data security. It refers to the bundling of data and the methods that operate on that data within a single unit or class. It also restricts direct access to some of the object's components, which helps prevent accidental interference with and misuse of data. This restriction is achieved using access modifiers such as private, protected, and public.</p>
+        <p>Encapsulation ensures that an object’s internal representation (its data) is hidden from the outside world and can only be accessed or modified through a well-defined interface. This is crucial for maintaining control over how the internal state of an object is accessed or changed, promoting data integrity, security, and modularity in the software design process.</p>
+        <p>By controlling the visibility and access to an object’s data, encapsulation allows a programmer to define how data should be used and prevent unintended interactions. At its core, encapsulation separates the "what" from the "how," making it easier to manage complexity, isolate functionality, and ensure that changes in one part of a system don’t inadvertently affect others.</p>
+        
+        <h3>▉ Access Modifiers</h3>
+        <p style="margin-top: 0; padding-top: 0;">Encapsulation is enforced using access modifiers. Different programming languages provide different levels of access control. The three most common access modifiers are:</p>
+        <ul>
+            <li><strong>Public</strong>: The member can be accessed from outside the class. Any code in the program can access public members.</li>
+            <li><strong>Private</strong>: The member can only be accessed from within the class where it is declared. This is the strictest level of access control.</li>
+            <li><strong>Protected</strong>: The member can be accessed from within the class and its subclasses but not from outside these classes.</li>
+        </ul>
+        
+        <h3>▉ Encapsulation Example in Python</h3>
     <pre>
 <code>
 class Employee:
@@ -181,22 +169,9 @@ print(emp.get_salary())  # Output: 60000
 emp.set_salary(-1000)  # Output: Invalid salary!
 </code>
     </pre>
-
-    <h3>▉ Conclusion</h3>
-    <p style="margin-top: 0; padding-top: 0;">
-        Encapsulation is a critical principle in Object-Oriented Programming that ensures better control, security, and integrity of data by restricting direct access to an object's internal state.
-        It bundles data and the methods that operate on it into a single unit, the class, allowing for a well-structured and modular codebase.
-        This promotes maintainability, flexibility, and reusability of code.
-    </p>
-    <p>
-        By utilizing encapsulation, software developers can hide the complexities of an object’s internal workings from the outside world, exposing only the necessary parts through controlled interfaces.
-        This not only reduces the likelihood of errors but also simplifies debugging and enhances security, making encapsulation an indispensable practice in software development.
-    </p>
-    <p>
-        Each programming language provides mechanisms (such as access modifiers) to enforce encapsulation, though the implementation details may vary.
-        The fundamental idea, however, remains consistent across languages: to protect an object's internal state and ensure that it is accessed and modified only in a controlled and predictable manner.
-    </p>
-
+        
+        <p>By utilizing encapsulation, we can hide the complexities of an object’s internal workings from the outside world, exposing only the necessary parts through controlled interfaces. This not only reduces the likelihood of errors but also simplifies debugging and enhances security, making encapsulation an indispensable practice.</p>
+        <p>Each programming language provides mechanisms (such as access modifiers) to enforce encapsulation, though the implementation details may vary. The fundamental idea, however, remains consistent across languages: to protect an object's internal state and ensure that it is accessed and modified only in a controlled and predictable manner.</p>
     </main>
         
     <footer>
