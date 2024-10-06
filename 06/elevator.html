@@ -12,9 +12,9 @@
         }
         html, body {
             height: 100%; /* Ensure the body takes full height of the viewport */
-            background-image: url('elevator.png'); /* Background image */
+            background-image: url('elevator.png');
             background-size: cover; /* Cover the entire viewport */
-            background-position: center; /* Center the image */
+            background-position: center;
         }
         main {
             display: grid;
@@ -24,10 +24,12 @@
         }
         section {
             padding: 20px;
-            border: 1px solid #ccc; /* Optional: for visual clarity */
+            border-right: 1px solid hsla(0deg 0% 100% / 10%);
             z-index: 2; /* Ensure sections are above the overlay */
         }
-        /* Overlay */
+        #credits {
+            border-right: none;
+        }
         .overlay {
             position: absolute;
             top: 0;
@@ -40,19 +42,17 @@
     </style>
 </head>
 <body>
-
 <main>
-    <div class="overlay"></div> <!-- Overlay div -->
-    <section class="column-1">
+    <div class="overlay"></div>
+    <section id="info">
         <h2>Column 1 (90%)</h2>
         <p>This is the first column taking 90% of the width.</p>
     </section>
 
-    <section class="column-2">
+    <section id="credits">
         <h2>Column 2 (10%)</h2>
         <p>This is the second column taking 10% of the width.</p>
     </section>
 </main>
-
 </body>
 </html>
