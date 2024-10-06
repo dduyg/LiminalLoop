@@ -20,22 +20,11 @@
             display: grid;
             grid-template-columns: 85% 15%; /* 85% for first column, 15% for second */
             min-height: 100vh; /* Full height for the main container */
-            position: relative; /* Set position for overlay positioning */
+            background-color: rgba(0, 0, 0, 0.5);
         }
         section {
             padding: 20px;
-            border: 1px solid #ccc; /* Optional: for visual clarity */
-            background-color: rgba(255, 255, 255, 0.8); /* White background for readability */
-        }
-        /* Overlay */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-            z-index: 0; /* Overlay below content */
+            border: 1px solid #ccc;
         }
     </style>
 </head>
