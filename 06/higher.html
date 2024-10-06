@@ -11,9 +11,28 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
-            color: white;
+            color: #fff;
+            font-family: "PP Neue Montreal Mono", sans-serif;
+            font-size: 11px;
+            font-feature-settings: "palt";
+            font-synthesis: none;
+            -webkit-text-size-adjust: none;
+            text-size-adjust: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overscroll-behavior: none;
         }
+        @media (min-width: 960px) {
+            body { font-size: 12px; }
+        }
+        @media (min-width: 1280px) {
+            body { font-size: 16px;}
+        }
+        ::selection {
+            background-color: #0008ff;
+            color: #fff;
+        }
+
         .hero {
             background-image: url('your-background-image.jpg');
             background-size: cover;
@@ -59,6 +78,26 @@
             gap: 20px;
             padding: 40px;
         }
+        
+        /* Grid from your additional CSS */
+        .grid {
+            position: fixed;
+            z-index: 2;
+            left: var(--margin);
+            right: var(--margin);
+            top: 0;
+            bottom: 0;
+            display: flex;
+            column-gap: var(--gutter);
+            pointer-events: none;
+        }
+        .grid_column {
+            width: var(--column);
+            height: 100%;
+            border-left: 1px solid hsla(0deg 0% 100% / 10%);
+            border-right: 1px solid hsla(0deg 0% 100% / 10%);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 32px;
@@ -76,6 +115,13 @@
     </style>
 </head>
 <body>
+
+    <div class="grid">
+        <div class="grid_column"></div>
+        <div class="grid_column"></div>
+        <div class="grid_column"></div>
+        <!-- More columns if needed -->
+    </div>
 
     <section class="hero">
         <div class="overlay"></div>
