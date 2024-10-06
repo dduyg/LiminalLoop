@@ -3,101 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNDER VOYAGER - Replica</title>
+    <title>2-Column Flexbox Layout with Overlay</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: "PP Neue Montreal Mono", sans-serif;
-            font-size: 11px;
-            font-feature-settings: "palt";
-            font-synthesis: none;
-            -webkit-text-size-adjust: none;
-            text-size-adjust: none;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overscroll-behavior: none;
-
-            background-image: url('detail-3.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            height: 100vh;
+        html, body {
+            height: 100%; /* Ensure the body takes full height of the viewport */
+            background-image: url('detail-3.jpg'); /* Background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+        }
+        main {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
+            min-height: 100vh; /* Full height for the main container */
+            position: relative; /* Set position for overlay positioning */
+            z-index: 1; /* Ensure main content is above the overlay */
         }
-        @media (min-width: 960px) {
-            body { font-size: 12px; }
+        section {
+            padding: 20px;
+            border: 1px solid #ccc; /* Optional: for visual clarity */
+            z-index: 2; /* Ensure sections are above the overlay */
         }
-        @media (min-width: 1280px) {
-            body { font-size: 16px;}
+        .column-1 {
+            flex: 7;
+            background-color: rgba(255, 255, 255, 0.8); /* White background for readability */
         }
-        ::selection {
-            background-color: #0008ff;
-            color: #fff;
+        .column-2 {
+            flex: 3;
+            background-color: rgba(255, 255, 255, 0.8); /* White background for readability */
         }
-
+        /* Overlay */
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px;
-        }
-        
-        /* Grid from your additional CSS */
-        .grid {
-            position: fixed;
-            z-index: 2;
-            left: var(--margin);
-            right: var(--margin);
-            top: 0;
-            bottom: 0;
-            display: flex;
-            column-gap: var(--gutter);
-            pointer-events: none;
-        }
-        .grid_column {
-            width: var(--column);
-            height: 100%;
-            border-left: 1px solid hsla(0deg 0% 100% / 10%);
-            border-right: 1px solid hsla(0deg 0% 100% / 10%);
+            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: 0; /* Overlay below content */
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
-        
-    <section class="container">
-        <div class="item">
-            <h2>Concept</h2>
-            <p>The gallery represents the exploration of the character's spirit...</p>
-        </div>
-        <div class="item">
-            <h2>Exhibition</h2>
-            <p>A deep dive into the world of Laika, a girl lost in space...</p>
-        </div>
+
+<main>
+    <div class="overlay"></div> <!-- Overlay div -->
+    <section class="column-1">
+        <h2>Column 1 (70%)</h2>
+        <p>This is the first column taking 70% of the width.</p>
     </section>
+
+    <section class="column-2">
+        <h2>Column 2 (30%)</h2>
+        <p>This is the second column taking 30% of the width.</p>
+    </section>
+</main>
 
 </body>
 </html>
