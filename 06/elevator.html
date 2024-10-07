@@ -25,22 +25,15 @@
             color: white;
             font-family: "Roboto Mono", monospace;
             line-height: 1.5;
-            font-size: 15px;
+            font-size: 0.9rem;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
-        @media (min-width: 960px) {
-            body { font-size: 16px; }
-        }
-        @media (min-width: 1280px) {
-            body { font-size: 17px;}
         }
         main {
             display: grid;
             grid-template-columns: 9fr 1fr; /* First column 90%, second column 10% */
             height: 100vh;
             background-color: rgba(0, 0, 0, 0.3);
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow to make text stand out */
         }
         section {
             padding: 3em 1.2rem;
@@ -53,6 +46,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             text-align: right;
             padding-left: 2rem;
             padding-right: 2rem;
@@ -61,6 +55,7 @@
             font-family: "VT323", monospace;
         }
         a {
+            color: inherit;
             text-decoration: none;
         }
         a:hover {
