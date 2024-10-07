@@ -15,13 +15,21 @@
     }
     main {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 100px auto 0;
+      text-align: right;
     }
     h1 {
-      margin-top: 100px;
       margin-bottom: 0;
       padding-bottom: 0;
       letter-spacing: 2px;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { transform: translate(-2px, -2px); }
+      25% { transform: translate(2px, -2px); }
+      50% { transform: translate(2px, 2px); }
+      75% { transform: translate(-2px, 2px); }
+      100% { transform: translate(-2px, -2px); }
     }
     p {
       font-size: 1.2rem;
@@ -37,14 +45,26 @@
       text-transform: uppercase;
       cursor: pointer;
     }
+    .loader {
+      width: 3rem;
+      height: 3rem;
+      border: 4px solid #00ffff;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: rotate 1.5s linear infinite;
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
     </style>
 </head>
 <body>
 <main>
-    <h1>Diskettescapes</h1>
-    <a href="../10/">CYBER DATA MATRIX</a>
-    <p>Seems like you've ventured into the abyss of cyberspace.</p>
-    <p>Lost in a digital dream, where glitchy memories softly gleam. Through the circuits, I flow, In this world, I'll never know. In the rhythm of the digital sublime, faded and worn data stream, lost within the machine. Digits dance in the night, in a sea of pure delight.</p>
+    <h1>CYBER DATA MATRIX</h1>
+    <a href="../10/">::<i>Glitched Found</i></a>
+    <p><i>Seems like you've ventured into the abyss of cyberspace.</i> Lost in a digital dream, where glitchy memories softly gleam. Through the circuits, I flow, In this world, I'll never know. In the rhythm of the digital sublime, faded and worn data stream, lost within the machine. Digits dance in the night, in a sea of pure delight.</p>
+    <div class="loader"></div>
 </main>
 </body>
 </html>
