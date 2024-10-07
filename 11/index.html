@@ -18,10 +18,13 @@
             align-items: center;
             color: #C4C8CB;
             text-align: center;
-        }  
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        a:hover {
+            opacity: 0.6;
         }
         p {
             font-size: 1.25rem;
@@ -32,6 +35,7 @@
             display: inline-block;
             font-size: 4rem;
             color: #fff;
+            margin-bottom: 10px;
         }
         .glitch:before,
         .glitch:after {
@@ -43,7 +47,6 @@
             clip: rect(0, 900px, 0, 0);
             animation: glitch 2s infinite linear alternate-reverse;
         }
-
         .glitch:after {
             left: 2px;
             text-shadow: -2px 0 #00fffb;
@@ -70,7 +73,7 @@
 </head>
 <body>
     <main>
-        <h1 class="glitch">■■□</h1>
+        <a href="../12/" class="glitch">■■□</a>
         <p>Autoencoders are neural networks used for unsupervised learning, mainly for dimensionality reduction and feature extraction. They consist of an encoder that compresses data into a lower-dimensional form and a decoder that reconstructs it. Autoencoders are useful for tasks like noise reduction, anomaly detection, and data compression.</p>
     </main>
 </body>
