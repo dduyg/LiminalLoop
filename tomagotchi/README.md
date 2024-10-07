@@ -34,7 +34,7 @@ _The rest is up to you and your imagination. 🦄_
 - Tilt Prism
 - Roboto Mono
 - Hachi Maru Pop
-- Neon
+- Tilt Neon
 - Unica One
 - Oxanium
 - Changa
