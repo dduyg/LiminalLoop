@@ -40,6 +40,16 @@
             padding: 3em 1.2rem;
             border-right: 1px solid hsla(0deg 0% 100% / 10%);
         }
+        #info {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        #info::-webkit-scrollbar {
+            display: none;
+        }
+        .header {
+            font-family: "VT323", monospace;
+        }
         #credits {
             border-right: none;
             font-family: "VT323", monospace;
@@ -51,9 +61,6 @@
             text-align: right;
             padding-left: 2rem;
             padding-right: 2rem;
-        }
-        #info h2 {
-            font-family: "VT323", monospace;
         }
         .wavefont {
             font-family: "Wavefont", system-ui;
