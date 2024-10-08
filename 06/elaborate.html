@@ -54,26 +54,18 @@
             color: #3C1A21;      
         }
         pre {
-            background: rgba(255, 255, 255, 0.1);
             border-left: 4px solid #FFFFEA;
             color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
             overflow-x: auto;
             margin: 0 auto;
             padding: 0;
-            max-width: 85%;
-            max-height: 90%;
+            max-width: 80%;
+            max-height: 85%;
             overflow-y: hidden;
-        }
-        /* Adding this rule to ensure <code> inherits the background */
-        pre code {
-            background: transparent; /* Ensures the background is transparent */
-            color: inherit; /* Inherit color from the parent */
         }
         /* Highlight.js Overrides */
         .hljs {
-            background: rgba(255, 255, 255, 0.1) !important; /* Force Highlight.js to use the same background */
+            background: transparent !important; /* Force Highlight.js to override background */
         }
         
         .hljs-comment {
