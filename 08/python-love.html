@@ -23,25 +23,24 @@
             overflow: hidden;
         }
         main {
-            max-width: 85%;
-            margin: 30px auto;
-            height: 100%; /* Ensure main takes the full height */
+            max-width: 650px;
+            width: 100%; /* Full width to ensure responsiveness */
+            padding: 2rem;
+            margin: 0 auto;
+            height: 100%; /* Main takes full height of viewport */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            font-size: clamp(1rem, 2vh + 1vw, 1.5rem); /* Dynamic font size, but constrained */
-        }
-        @media (max-height: 500px) {
-            main {
-                font-size: clamp(0.8rem, 1.5vh + 1vw, 1.2rem);
-            }
+            font-size: clamp(0.8rem, 2vh + 0.5vw, 1.2rem); /* Dynamically adjusted font size */
         }
         pre {
             background-color: transparent !important;
             padding: 0 !important;
             margin: 0 !important;
-            overflow-y: hidden !important;
             overflow-x: auto !important;
+            overflow-y: hidden !important;
+            max-height: 80vh; /* Ensure pre does not exceed 80% of the viewport height */
+            width: 100%; /* Ensure pre takes full width */
         }
         pre, code {
             color: #E641E6 !important;
@@ -66,6 +65,16 @@
         }
         .token.number, .token.constant, .token.boolean, .token.builtin {
             color: #E78405;
+        }
+
+        /* Further adjust for very small screens */
+        @media (max-height: 500px) {
+            main {
+                font-size: clamp(0.7rem, 1.5vh + 1vw, 1rem); /* Adjust font size further */
+            }
+            pre {
+                max-height: 70vh; /* Constrain pre even more on very small screens */
+            }
         }
     </style>
 </head>
