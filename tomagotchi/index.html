@@ -7,77 +7,108 @@
     <style>
         body {
             background-color: black;
+            color: white;
             font-family: 'Courier New', Courier, monospace;
-            color: white;
-        }
-        pre {
-            background-color: black;
+            margin: 0;
             padding: 20px;
-            border-radius: 10px;
-            color: white;
         }
-        .hljs-comment {
-            color: white;
-            font-style: italic;
+
+        .code-container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            overflow: auto;
+            white-space: pre;
         }
-        .hljs-keyword, .hljs-built_in {
-            color: #ff79c6; /* pink/red for keywords */
+
+        .token.comment {
+            color: #7c7c7c; /* Gray */
         }
-        .hljs-string {
-            color: #f1fa8c; /* yellow for strings */
+
+        .token.keyword {
+            color: #ff79c6; /* Pink */
         }
-        .hljs-number {
-            color: #ffb86c; /* orange for numbers */
+
+        .token.operator {
+            color: #50fa7b; /* Green */
         }
-        .hljs-attr, .hljs-title {
-            color: #8be9fd; /* blue for variables or object attributes */
+
+        .token.number {
+            color: #bd93f9; /* Purple */
         }
-        .hljs-function {
-            color: #50fa7b; /* green for function names */
+
+        .token.string {
+            color: #f1fa8c; /* Yellow */
         }
-        .hljs-operator {
-            color: #ff5555; /* red for operators */
+
+        .token.function {
+            color: #8be9fd; /* Light Blue */
         }
-        .hljs-title.class_ {
-            color: #bd93f9; /* purple for class names/constants */
+
+        .token.punctuation {
+            color: #ffffff; /* White */
         }
+
+        .token.constant, .token.boolean {
+            color: #ff5555; /* Red */
+        }
+
+        pre {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #7c7c7c; /* Light gray */
+            text-align: center;
+        }
+
     </style>
-    <!-- Highlight.js library -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
 </head>
 <body>
 
-<pre><code class="language-python">
-def collatz_sequence(n):
-    """Generate the Collatz sequence for a given number n."""
-    if n <= 0:
-        raise ValueError("Input must be a positive integer.")
-        
-    sequence = [n]  # Start with the initial number
-    
-    while n != 1:
-        if n % 2 == 0:
-            n //= 2  # n is even
-        else:
-            n = 3 * n + 1  # n is odd
-        sequence.append(n)
-    
-    return sequence
+    <div class="code-container">
+        <code>
+            <span class="token.keyword">import</span> pygame<br>
+            <span class="token.keyword">import</span> sys<br><br>
 
-def main():
-    try:
-        number = int(input("Enter a positive integer: "))
-        sequence = collatz_sequence(number)
-        print(f"Collatz sequence for {number}:")
-        print(" -> ".join(map(str, sequence)))
-    except ValueError as e:
-        print(e)
+            <span class="token.comment">/* INITIATE GAME */</span><br>
+            pygame.init()<br><br>
 
-if __name__ == "__main__":
-    main()
-</code></pre>
+            WIDTH, HEIGHT = 400, 400<br>
+            BACKGROUND_COLOR = (255, 255, 255)<br>
+            OBJECT_COLOR = (0, 0, 255)<br>
+            ROTATE_ANGLE = 180<br><br>
+
+            screen = pygame.display.set_mode((WIDTH, HEIGHT))<br>
+            pygame.display.set_caption(<span class="token.string">"ROTATE OBJECT 180 DEGREES"</span>)<br><br>
+
+            object_rect = pygame.Rect(100, 100, 100, 100)<br><br>
+
+            <span class="token.comment">/* RUNNING GAME */</span><br>
+            running = <span class="token.keyword">True</span><br>
+            surface = pygame++<br>
+            <span class="token.comment">WIDTH # {400}  ---> HEIGHT {400]</span><br>
+            <span class="token.keyword">while</span> running:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="token.keyword">for</span> event <span class="token.keyword">in</span> pygame.event.get():<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="token.keyword">if</span> event.type == pygame.QUIT:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;running = <span class="token.keyword">True</span><br><br>
+
+            screen.fill(BACKGROUND_COLOR)<br><br>
+
+            rotated_object = pygame.transform.rotate(<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;pygame.Surface((100, 100)), ROTATE_ANGLE)<br><br>
+
+            rotated_rect = rotated_object.get_rect(center=object_rect.center)
+        </code>
+    </div>
+
+    <div class="footer">
+        <p>TERMINAL<br>Last login: Thu Sep 7 08:39 on console</p>
+    </div>
 
 </body>
 </html>
