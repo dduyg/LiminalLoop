@@ -67,38 +67,37 @@
 
     <div class="code-container">
         <pre><code class="language-python">
-import pygame
-import sys
+import random
+import string
 
-/* INITIATE GAME */
-pygame.init()
+def generate_password(length=12):
+    # Define character sets
+    letters = string.ascii_letters  # a-z, A-Z
+    digits = string.digits  # 0-9
+    special_chars = string.punctuation  # Special characters like !, @, #, etc.
 
-WIDTH, HEIGHT = 400, 400
-BACKGROUND_COLOR = (255, 255, 255)
-OBJECT_COLOR = (0, 0, 255)
-ROTATE_ANGLE = 180
+    # Combine all character sets
+    all_chars = letters + digits + special_chars
 
-screen = pygame.display.set_mode(WIDTH, HEIGHT)
-pygame.display.set_caption("ROTATE OBJECT 180 DEGREES")
+    # Ensure the password contains at least one character from each category
+    password = [
+        random.choice(letters),
+        random.choice(digits),
+        random.choice(special_chars)
+    ]
 
-object_rect = pygame.Rect(100, 100, 100, 100)
+    # Fill the rest of the password length with random choices from all characters
+    password += random.choices(all_chars, k=length - 3)
 
-/* RUNNING GAME */
-running = True
-surface = pygame+++
-WIDTH # {400}  ---> HEIGHT {400]
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = True
+    # Shuffle the resulting password list to avoid predictable patterns
+    random.shuffle(password)
 
-    screen.fill(BACKGROUNDCOLOR)
+    # Convert the list into a string and return it
+    return ''.join(password)
 
-    rotated_object = pygame.transform.rotate(
-        pygame.Surface(100, 100), ROTATE_ANGLE
-    )
-
-    rotated_rect = rotated_object.get_rect(CENTER OBJECT-RECT.CENTER)
+# Example usage
+length = int(input("Enter the desired password length: "))
+print("Generated password:", generate_password(length))
         </code></pre>
     </div>
 
