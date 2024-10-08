@@ -42,8 +42,6 @@ _The rest is up to you and your imagination. 🦄_
 - Amatic SC
 - Cabin
 - Cardo
-- JetBrains Mono
-- Lekton
 - M PLUS 1 Code
 - Nova Mono `[☆lijkt op Pentameter]`
 - Sometype Mono
