@@ -19,7 +19,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            font-size: 16px;
+            font-size: 15px;
             height: 100vh;
             line-height: 1.4;
             outline: none;
@@ -61,11 +61,21 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
             overflow-x: auto;
             margin: 0 auto;
-            padding: 1.25rem;
+            padding: 0;
             max-width: 85%;
-            max-height: 95%;
+            max-height: 90%;
             overflow-y: hidden;
         }
+        /* Adding this rule to ensure <code> inherits the background */
+        pre code {
+            background: transparent; /* Ensures the background is transparent */
+            color: inherit; /* Inherit color from the parent */
+        }
+        /* Highlight.js Overrides */
+        .hljs {
+            background: rgba(255, 255, 255, 0.1) !important; /* Force Highlight.js to use the same background */
+        }
+        
         .hljs-comment {
             color: white;
             font-style: italic;
