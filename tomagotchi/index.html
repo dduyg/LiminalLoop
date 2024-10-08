@@ -8,18 +8,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <style>
         body {
-            background-color: black;
-            color: white;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .code-container {
-            padding: 20px;
             background-color: #000000;
-            border-radius: 8px;
-            width: 60%;
-            margin: 40px auto;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            color: white;
+            line-height: 1.4;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        main { 
+            padding: 2rem;
+            max-width: 75%;
+            margin: 7rem auto 0;
         }
 
         /* PrismJS overrides for custom colors */
@@ -47,16 +46,15 @@
         .token.constant, .token.boolean {
             color: #bd93f9; /* Purple for constants and booleans */
         }
-
-        pre {
-            font-size: 16px;
-            line-height: 1.4;
-        }
     </style>
 </head>
 <body>
-    <div class="code-container">
-        <pre><code class="language-python">
+<main>
+    <header>
+        
+    </header>
+
+    <pre><code class="language-python">
 import random
 import string
 
@@ -88,8 +86,8 @@ def generate_password(length=12):
 # Example usage
 length = int(input("Enter the desired password length: "))
 print("Generated password:", generate_password(length))
-        </code></pre>
-    </div>
+    </code></pre>
+</main>
 
     <!-- Prism.js for syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
