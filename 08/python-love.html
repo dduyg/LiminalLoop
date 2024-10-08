@@ -18,19 +18,31 @@
             padding: 0;
             height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
         main {
             max-width: 650px;
             padding: 2rem;
             margin: 0 auto;
+            height: 100%; /* Ensure main takes the full height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: clamp(1rem, 2vh + 1vw, 1.5rem); /* Dynamic font size, but constrained */
+        }
+        @media (max-height: 500px) {
+            main {
+                font-size: clamp(0.8rem, 1.5vh + 1vw, 1.2rem);
+            }
         }
         pre {
             background-color: transparent !important;
             padding: 0 !important;
             margin: 0 !important;
+            overflow-y: hidden !important;
+            overflow-x: auto !important;
         }
         pre, code {
             color: #E641E6 !important;
