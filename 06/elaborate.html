@@ -40,25 +40,6 @@
             background-color: rgba(255, 255, 255, 0.1);
             overflow: hidden;
         }
-        footer a {
-            font-family: "Wavefont", system-ui;
-            font-weight: bold;
-            font-size: 1.1em;
-            display: inline-block;
-            margin: 0 0.3em;
-            padding: 0 0.4em;
-            color: #FFFFEA;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 100%;
-            border: 2px solid #FFFFEA;
-            transition: background 0.3s, color 0.3s;
-            cursor: pointer;
-        }
-        footer a:hover {
-            background: #FFFFEA;
-            color: #3C1A21;      
-        }
         pre {
             border-left: 4px solid #FFFFEA;
             color: white;
@@ -98,6 +79,34 @@
         }
         .hljs-title.class_ {
             color: #bd93f9; /* purple for class names/constants */
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            padding: 0.75em 1em;
+            font-size: 0.85rem;        
+        }
+        footer a {
+            font-family: "Wavefont", system-ui;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin: 0 0.3em;
+            padding: 0 0.4em;
+            color: #FFFFEA;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 100%;
+            border: 2px solid #FFFFEA;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        footer a:hover {
+            background: #FFFFEA;
+            color: #3C1A21;      
         }
  
         /* Custom scrollbar */
@@ -163,6 +172,10 @@ def main():
 if __name__ == "__main__":
     main()
 </code></pre>
+
+<footer>
+    ● 時間が遅れるこの行列の<a href="#">中で</a>
+</footer>
 </main>
 </body>
 </html>
