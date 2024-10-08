@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Code Showcase</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body background and font setup */
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Container for the code */
+        .code-container {
+            padding: 20px;
+            background-color: #000000;
+            width: 90%;
+            margin: 40px auto;
+        }
+
+        /* Code block styling */
+        pre {
+            font-size: 18px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* Syntax Highlighting */
+        /* Comments */
+        .comment {
+            color: #7c7c7c; /* Gray */
+        }
+
+        /* Keywords (e.g., import, def) */
+        .keyword {
+            color: #ff79c6; /* Pink */
+        }
+
+        /* Functions and variable names */
+        .function {
+            color: #50fa7b; /* Green */
+        }
+
+        /* Constants and numbers */
+        .constant {
+            color: #ff5555; /* Red */
+        }
+
+        /* Strings */
+        .string {
+            color: #f1fa8c; /* Yellow */
+        }
+
+        /* Operators and punctuations */
+        .operator, .punctuation {
+            color: #ffffff; /* White */
+        }
+
+        /* Background and text for objects and placeholders */
+        .placeholder {
+            color: #bd93f9; /* Light Purple */
+        }
+
+        .number {
+            color: #ff5555; /* Red */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="code-container">
+        <pre>
+<span class="keyword">import</span> pygame
+<span class="keyword">import</span> sys
+
+<span class="comment">/* INITIATE GAME */</span>
+pygame.init()
+
+WIDTH, HEIGHT = <span class="number">400</span>, <span class="number">400</span>
+BACKGROUND_COLOR = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)
+OBJECT_COLOR = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)
+ROTATE_ANGLE = <span class="number">180</span>
+
+screen = pygame.display.set_mode(WIDTH, HEIGHT)
+pygame.display.set_caption(<span class="string">"ROTATE OBJECT 180 DEGREES"</span>)
+
+object_rect = pygame.Rect(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>)
+
+<span class="comment">/* RUNNING GAME */</span>
+running = <span class="constant">True</span>
+surface = pygame+++
+WIDTH <span class="constant">#</span> {<span class="number">400</span>} ---> HEIGHT {<span class="number">400</span>}
+<span class="keyword">while</span> running:
+    <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():
+        <span class="keyword">if</span> event.type == pygame.QUIT:
+            running = <span class="constant">True</span>
+
+    screen.fill(BACKGROUND_COLOR)
+
+    rotated_object = pygame.transform.rotate(
+        pygame.Surface(<span class="number">100</span>, <span class="number">100</span>), ROTATE_ANGLE
+    )
+
+    rotated_rect = rotated_object.get_rect(<span class="placeholder">CENTER OBJECT-RECT.CENTER</span>)
+        </pre>
+    </div>
+
+</body>
+</html>
