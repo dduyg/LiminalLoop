@@ -42,11 +42,10 @@
         }
         pre {
             border-left: 4px solid #FFFFEA;
-            color: white;
             overflow-x: auto;
             margin: 0 auto;
             padding: 0;
-            max-width: 80%;
+            max-width: 77%;
             max-height: 80vh;
             overflow-y: hidden;
         }
@@ -81,21 +80,20 @@
             color: #bd93f9; /* purple for class names/constants */
         }
 
-        footer {
+        header {
             position: fixed;
-            bottom: 0;
-            left: 0;
+            top: 0;
+            right: 0;
             margin: 0;
-            padding: 0.75em 1em;
-            font-size: 0.85rem;        
+            padding: 0.75em 1em;        
         }
-        footer a {
+        header a {
             font-family: "Wavefont", system-ui;
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.1em;
             display: inline-block;
             margin: 0 0.3em;
-            padding: 0 0.4em;
+            padding: 0.2em 0.5em;
             text-decoration: none;
             text-align: center;
             border-radius: 100%;
@@ -103,7 +101,7 @@
             transition: background 0.3s, color 0.3s;
             cursor: pointer;
         }
-        footer a:hover {
+        header a:hover {
             background: black;
             color: #FFFFEA;      
         }
@@ -141,6 +139,9 @@
     <script>hljs.highlightAll();</script>
 </head>
 <body>
+<header>
+    ●中で<a href="#">,Household</a>
+</header>
 <main>
 <pre><code class="language-python">
 def collatz_sequence(n):
@@ -172,8 +173,5 @@ if __name__ == "__main__":
     main()
 </code></pre>
 </main>
-<footer>
-    ●中で<a href="#">Household</a>
-</footer>
 </body>
 </html>
