@@ -3,81 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Code Display</title>
+    <title>Python Code Showcase</title>
     <style>
         body {
-            background-color: black;
-            color: white;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .code-container {
             background-color: #000000;
+            color: white;
+            font-family: "Courier New", Courier, monospace;
             padding: 20px;
-            margin: 50px;
-            border-radius: 10px;
-            border: 2px solid #333333;
         }
-        .code-line {
-            white-space: pre;
-            font-size: 18px;
+
+        .code-block {
+            background-color: #000000;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            color: white;
+            font-size: 16px;
         }
-        .comment {
-            color: #ffffff;
-            font-style: italic;
+
+        .code-block span.keyword {
+            color: #ff1493; /* Pink */
         }
-        .keyword {
-            color: #ff79c6;
+
+        .code-block span.function {
+            color: #ff6347; /* Red */
         }
-        .function {
-            color: #50fa7b;
+
+        .code-block span.variable {
+            color: #ffa500; /* Orange */
         }
-        .number {
-            color: #ffb86c;
+
+        .code-block span.number {
+            color: #ff4500; /* Dark Orange */
         }
-        .string {
-            color: #f1fa8c;
+
+        .code-block span.comment {
+            color: #9acd32; /* Yellow-Green */
         }
-        .constant {
-            color: #bd93f9;
+
+        .code-block span.string {
+            color: #ffffff; /* White */
         }
-        .operator {
-            color: #ff5555;
+
+        .code-block span.constant {
+            color: #ffff00; /* Yellow */
         }
-        .variable {
-            color: #8be9fd;
+
+        .code-block span.operator {
+            color: #00bfff; /* Blue */
         }
+
     </style>
 </head>
 <body>
-    <div class="code-container">
-        <div class="code-line"><span class="keyword">import</span> <span class="variable">pygame</span></div>
-        <div class="code-line"><span class="keyword">import</span> <span class="variable">sys</span></div>
-        <div class="code-line"><br></div>
-        <div class="code-line"><span class="comment">/* INITIATE GAME */</span></div>
-        <div class="code-line"><span class="function">pygame.init()</span></div>
-        <div class="code-line"><br></div>
-        <div class="code-line"><span class="constant">WIDTH</span>, <span class="constant">HEIGHT</span> = <span class="number">400</span>, <span class="number">400</span></div>
-        <div class="code-line"><span class="constant">BACKGROUND_COLOR</span> = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)</div>
-        <div class="code-line"><span class="constant">OBJECT_COLOR</span> = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)</div>
-        <div class="code-line"><span class="constant">ROTATE_ANGLE</span> = <span class="number">180</span></div>
-        <div class="code-line"><br></div>
-        <div class="code-line"><span class="variable">screen</span> = <span class="function">pygame.display.set_mode</span>(<span class="constant">WIDTH</span>, <span class="constant">HEIGHT</span>)</div>
-        <div class="code-line"><span class="function">pygame.display.set_caption</span>(<span class="string">"ROTATE OBJECT 180 DEGREES"</span>)</div>
-        <div class="code-line"><br></div>
-        <div class="code-line"><span class="variable">object_rect</span> = <span class="function">pygame.Rect</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>)</div>
-        <div class="code-line"><br></div>
-        <div class="code-line"><span class="comment">/* RUNNING GAME */</span></div>
-        <div class="code-line"><span class="variable">running</span> = <span class="constant">True</span></div>
-        <div class="code-line"><span class="variable">while running</span>:</div>
-        <div class="code-line">&emsp;<span class="keyword">for</span> <span class="variable">event</span> <span class="keyword">in</span> <span class="function">pygame.event.get</span>():</div>
-        <div class="code-line">&emsp;&emsp;<span class="keyword">if</span> <span class="variable">event.type</span> == <span class="function">pygame.QUIT</span>:</div>
-        <div class="code-line">&emsp;&emsp;&emsp;<span class="variable">running</span> = <span class="constant">False</span></div>
-        <div class="code-line"><br></div>
-        <div class="code-line">&emsp;<span class="function">screen.fill</span>(<span class="constant">BACKGROUND_COLOR</span>)</div>
-        <div class="code-line">&emsp;<span class="variable">rotated_object</span> = <span class="function">pygame.transform.rotate</span>(<span class="function">pygame.Surface</span>(<span class="number">100</span>, <span class="number">100</span>), <span class="constant">ROTATE_ANGLE</span>)</div>
-        <div class="code-line">&emsp;<span class="variable">rotated_rect</span> = <span class="variable">rotated_object.get_rect</span>()</div>
-        <div class="code-line">&emsp;<span class="comment">/* CENTER OBJECT */</span></div>
-        <div class="code-line">&emsp;<span class="variable">rotated_rect.center</span> = <span class="variable">object_rect.center</span></div>
+
+    <h1>Python Code Showcase</h1>
+
+    <div class="code-block">
+        <span class="keyword">import</span> <span class="variable">pygame</span><br>
+        <span class="keyword">import</span> <span class="variable">sys</span><br><br>
+
+        <span class="comment">/* INITIATE GAME */</span><br>
+        <span class="variable">pygame</span>.<span class="function">init</span>()<br><br>
+
+        <span class="variable">WIDTH</span>, <span class="variable">HEIGHT</span> = <span class="number">400</span>, <span class="number">400</span><br>
+        <span class="variable">BACKGROUND_COLOR</span> = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)<br>
+        <span class="variable">OBJECT_COLOR</span> = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)<br>
+        <span class="variable">ROTATE_ANGLE</span> = <span class="number">180</span><br><br>
+
+        <span class="variable">screen</span> = <span class="variable">pygame</span>.<span class="function">display</span>.<span class="function">set_mode</span>((<span class="variable">WIDTH</span>, <span class="variable">HEIGHT</span>))<br>
+        <span class="variable">pygame</span>.<span class="function">display</span>.<span class="function">set_caption</span>(<span class="string">"ROTATE OBJECT 180 DEGREES"</span>)<br><br>
+
+        <span class="variable">object_rect</span> = <span class="variable">pygame</span>.<span class="function">Rect</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>)<br><br>
+
+        <span class="comment">/* RUNNING GAME */</span><br>
+        <span class="variable">running</span> = <span class="constant">True</span><br>
+        <span class="variable">surface</span> & <span class="variable">pygame</span>+++<br>
+        <span class="variable">WIDTH</span> #<span class="number">400</span>} -> <span class="variable">HEIGHT</span> #<span class="number">400</span><br>
+
+        <span class="keyword">while</span> <span class="variable">running</span>:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> <span class="variable">event</span> <span class="keyword">in</span> <span class="variable">pygame</span>.<span class="function">event</span>.<span class="function">get</span>():<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> <span class="variable">event</span>.<span class="variable">type</span> == <span class="variable">pygame</span>.<span class="constant">QUIT</span>:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">running</span> != <span class="constant">True</span><br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">screen</span>.<span class="function">fill</span>(<span class="variable">BACKGROUND_COLOR</span>)<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">rotated_object</span> = <span class="variable">pygame</span>.<span class="function">transform</span>.<span class="function">rotate</span>(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">pygame</span>.<span class="function">Surface</span>((<span class="number">100</span>, <span class="number">100</span>), <span class="variable">ROTATE_ANGLE</span>))<br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">rotated_rect</span> = <span class="variable">rotated_object</span>.<span class="function">get_rect</span>()<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="constant">CENTER</span> <span class="variable">OBJECT_RECT.CENTER</span><br>
+
     </div>
+
+    <p>TERMINAL</p>
+    <p>Last login: Thu Sep 7 <br> 08:39 on console</p>
 </body>
 </html>
