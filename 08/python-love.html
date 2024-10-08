@@ -31,7 +31,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            font-size: clamp(0.8rem, calc((100vh - 110px) * 0.02), 1.5rem); /* Adjust font size dynamically */
+            font-size: clamp(0.7rem, calc((100vh - 110px) * 0.015), 1rem); /* Adjust font size dynamically */
         }
         pre {
             background-color: transparent !important;
@@ -65,16 +65,6 @@
         }
         .token.number, .token.constant, .token.boolean, .token.builtin {
             color: #E78405;
-        }
-
-        /* Further adjust for very small screens */
-        @media (max-height: 500px) {
-            main {
-                font-size: clamp(0.7rem, calc((100vh - 110px) * 0.015), 1rem); /* Adjust font size further */
-            }
-            pre {
-                max-height: calc(100% - 110px); /* Constrain pre even more on very small screens */
-            }
         }
     </style>
 </head>
