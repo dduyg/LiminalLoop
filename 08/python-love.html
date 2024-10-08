@@ -23,15 +23,15 @@
             overflow: hidden;
         }
         main {
-            max-width: 70vw; /* Changed to 70vw for wider content */
+            max-width: 70vw;
             width: 100%; /* Full width to ensure responsiveness */
-            padding: 45px 1rem;
+            padding: 50px 1rem;
             margin: 0 auto;
-            height: calc(100vh - 90px); /* Adjust height based on padding top and bottom */
+            height: calc(100vh - 100px); /* Adjust height based on padding top + bottom */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            font-size: clamp(0.8rem, calc((100vh - 90px) * 0.02), 1.5rem); /* Adjust font size dynamically */
+            font-size: clamp(0.8rem, calc((100vh - 100px) * 0.02), 1.5rem); /* Adjust font size dynamically */
         }
         pre {
             background-color: transparent !important;
@@ -39,7 +39,7 @@
             margin: 0 !important;
             overflow-x: auto !important;
             overflow-y: hidden !important;
-            max-height: calc(100% - 90px); /* Ensure pre does not exceed available height after padding */
+            max-height: calc(100% - 100px); /* Ensure pre does not exceed available height after padding */
             width: 100%; /* Ensure pre takes full width */
         }
         pre, code {
@@ -70,10 +70,10 @@
         /* Further adjust for very small screens */
         @media (max-height: 500px) {
             main {
-                font-size: clamp(0.7rem, calc((100vh - 90px) * 0.015), 1rem); /* Adjust font size further */
+                font-size: clamp(0.7rem, calc((100vh - 100px) * 0.015), 1rem); /* Adjust font size further */
             }
             pre {
-                max-height: calc(100% - 90px); /* Constrain pre even more on very small screens */
+                max-height: calc(100% - 100px); /* Constrain pre even more on very small screens */
             }
         }
     </style>
