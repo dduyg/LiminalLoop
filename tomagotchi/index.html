@@ -3,117 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Code Showcase</title>
+    <title>Code Block Showcase</title>
+    <!-- Include Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body background and font setup */
+        /* Custom styles based on your provided example */
         body {
             background-color: black;
             color: white;
             font-family: 'Courier New', Courier, monospace;
         }
 
-        /* Container for the code */
         .code-container {
             padding: 20px;
             background-color: #000000;
-            width: 90%;
+            border-radius: 8px;
+            width: 60%;
             margin: 40px auto;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
         }
 
-        /* Code block styling */
+        /* PrismJS overrides for custom colors */
+        .token.comment {
+            color: #7c7c7c; /* Light gray for comments */
+        }
+
+        .token.keyword {
+            color: #ff79c6; /* Pink for keywords */
+        }
+
+        .token.operator {
+            color: #50fa7b; /* Green for operators */
+        }
+
+        .token.number {
+            color: #ff5555; /* Red for numbers */
+        }
+
+        .token.string {
+            color: #f1fa8c; /* Yellow for strings */
+        }
+
+        .token.function {
+            color: #8be9fd; /* Light blue for functions */
+        }
+
+        .token.punctuation {
+            color: #ffffff; /* White for punctuation */
+        }
+
+        .token.constant, .token.boolean {
+            color: #bd93f9; /* Purple for constants and booleans */
+        }
+
         pre {
-            font-size: 18px;
-            line-height: 1.6;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
-        /* Syntax Highlighting */
-        /* Comments */
-        .comment {
-            color: #7c7c7c; /* Gray */
-        }
-
-        /* Keywords (e.g., import, def) */
-        .keyword {
-            color: #ff79c6; /* Pink */
-        }
-
-        /* Functions and variable names */
-        .function {
-            color: #50fa7b; /* Green */
-        }
-
-        /* Constants and numbers */
-        .constant {
-            color: #ff5555; /* Red */
-        }
-
-        /* Strings */
-        .string {
-            color: #f1fa8c; /* Yellow */
-        }
-
-        /* Operators and punctuations */
-        .operator, .punctuation {
-            color: #ffffff; /* White */
-        }
-
-        /* Background and text for objects and placeholders */
-        .placeholder {
-            color: #bd93f9; /* Light Purple */
-        }
-
-        .number {
-            color: #ff5555; /* Red */
-        }
     </style>
 </head>
 <body>
 
     <div class="code-container">
-        <pre>
-<span class="keyword">import</span> pygame
-<span class="keyword">import</span> sys
+        <pre><code class="language-python">
+import pygame
+import sys
 
-<span class="comment">/* INITIATE GAME */</span>
+/* INITIATE GAME */
 pygame.init()
 
-WIDTH, HEIGHT = <span class="number">400</span>, <span class="number">400</span>
-BACKGROUND_COLOR = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)
-OBJECT_COLOR = (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>)
-ROTATE_ANGLE = <span class="number">180</span>
+WIDTH, HEIGHT = 400, 400
+BACKGROUND_COLOR = (255, 255, 255)
+OBJECT_COLOR = (0, 0, 255)
+ROTATE_ANGLE = 180
 
 screen = pygame.display.set_mode(WIDTH, HEIGHT)
-pygame.display.set_caption(<span class="string">"ROTATE OBJECT 180 DEGREES"</span>)
+pygame.display.set_caption("ROTATE OBJECT 180 DEGREES")
 
-object_rect = pygame.Rect(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>)
+object_rect = pygame.Rect(100, 100, 100, 100)
 
-<span class="comment">/* RUNNING GAME */</span>
-running = <span class="constant">True</span>
+/* RUNNING GAME */
+running = True
 surface = pygame+++
-WIDTH <span class="constant">#</span> {<span class="number">400</span>} ---> HEIGHT {<span class="number">400</span>}
-<span class="keyword">while</span> running:
-    <span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():
-        <span class="keyword">if</span> event.type == pygame.QUIT:
-            running = <span class="constant">True</span>
+WIDTH # {400}  ---> HEIGHT {400]
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = True
 
-    screen.fill(BACKGROUND_COLOR)
+    screen.fill(BACKGROUNDCOLOR)
 
     rotated_object = pygame.transform.rotate(
-        pygame.Surface(<span class="number">100</span>, <span class="number">100</span>), ROTATE_ANGLE
+        pygame.Surface(100, 100), ROTATE_ANGLE
     )
 
-    rotated_rect = rotated_object.get_rect(<span class="placeholder">CENTER OBJECT-RECT.CENTER</span>)
-        </pre>
+    rotated_rect = rotated_object.get_rect(CENTER OBJECT-RECT.CENTER)
+        </code></pre>
     </div>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
 
 </body>
 </html>
