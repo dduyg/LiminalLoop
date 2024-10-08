@@ -50,33 +50,18 @@
 <body>
 
 <pre><code class="language-python">
-import pygame
-import sys
+def fibonacci(n):
+    fib_sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
 
-# INITIATE GAME
-pygame.init()
-
-WIDTH, HEIGHT = 400, 400
-BACKGROUND_COLOR = (255, 255, 255)
-OBJECT_COLOR = (0, 0, 255)
-ROTATE_ANGLE = 180
-
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("ROTATE OBJECT 180 DEGREES")
-
-object_rect = pygame.Rect(100, 100, 100, 100)
-
-# RUNNING GAME
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    screen.fill(BACKGROUND_COLOR)
-    rotated_object = pygame.transform.rotate(pygame.Surface((100, 100)), ROTATE_ANGLE)
-    rotated_rect = rotated_object.get_rect()
-    rotated_rect.center = object_rect.center
+# Input: number of Fibonacci numbers to generate
+n = int(input("Enter the number of Fibonacci numbers to generate: "))
+fib_numbers = fibonacci(n)
+print(f"The first {n} Fibonacci numbers are: {fib_numbers}")
 </code></pre>
 
 </body>
