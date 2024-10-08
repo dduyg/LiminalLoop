@@ -50,18 +50,33 @@
 <body>
 
 <pre><code class="language-python">
-def fibonacci(n):
-    fib_sequence = []
-    a, b = 0, 1
-    for _ in range(n):
-        fib_sequence.append(a)
-        a, b = b, a + b
-    return fib_sequence
+def collatz_sequence(n):
+    """Generate the Collatz sequence for a given number n."""
+    if n <= 0:
+        raise ValueError("Input must be a positive integer.")
+        
+    sequence = [n]  # Start with the initial number
+    
+    while n != 1:
+        if n % 2 == 0:
+            n //= 2  # n is even
+        else:
+            n = 3 * n + 1  # n is odd
+        sequence.append(n)
+    
+    return sequence
 
-# Input: number of Fibonacci numbers to generate
-n = int(input("Enter the number of Fibonacci numbers to generate: "))
-fib_numbers = fibonacci(n)
-print(f"The first {n} Fibonacci numbers are: {fib_numbers}")
+def main():
+    try:
+        number = int(input("Enter a positive integer: "))
+        sequence = collatz_sequence(number)
+        print(f"Collatz sequence for {number}:")
+        print(" -> ".join(map(str, sequence)))
+    except ValueError as e:
+        print(e)
+
+if __name__ == "__main__":
+    main()
 </code></pre>
 
 </body>
