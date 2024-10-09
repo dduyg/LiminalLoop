@@ -43,9 +43,9 @@
             margin: 2rem;
             border-radius: 0.7rem;
         }
-        main h2 {
+        .topic {
             text-align: center;
-            font-size: 2em;
+            font-size: 1.3em;
             font-style: italic;
         }
         section {
@@ -53,9 +53,17 @@
             padding: 1.25rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
-            max-height: 10vh;
+            max-height: 90px;
             overflow-y: auto;
             overflow-x: hidden;
+        }
+        section h3 {
+            margin: 0;
+            padding: 0;
+        }
+        section p {
+           padding-top: 0;
+           margin-top: 0;
         }
         footer {
             text-align: center;
@@ -72,7 +80,7 @@
         <h1>/dduyg</h1>
     </header>
     <main>
-        <h2>Federated Learning</h2>
+        <div class="topic">Federated Learning</div>
         <section>
             <h3>Decentralized Model Training</h3>
             <p>Federated Learning enables machine learning models to be trained on data that remains decentralized across devices or servers. Instead of requiring all data to be moved to a central server for training, each participating device or node trains a local model on its own dataset. The local models send only the learned parameters (such as gradients) to a central server, which aggregates them to update the global model. This approach reduces data movement and ensures that the model benefits from distributed data without violating data ownership constraints.</p>
