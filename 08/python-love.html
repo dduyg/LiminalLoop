@@ -28,7 +28,6 @@
             padding: 30px 1rem 80px;
             margin: 0 auto;
             height: calc(100vh - 110px); /* Adjust height based on padding top + bottom */
-            max-height: 80%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -40,8 +39,8 @@
             margin: 0 !important;
             overflow-x: auto !important;
             overflow-y: hidden !important;
-            max-height: calc(100% - 110px); /* Ensure pre does not exceed available height after padding */
-            width: 100%; /* Ensure pre takes full width */
+            max-height: calc(100% - 110px) !important; /* Ensure pre does not exceed available height after padding */
+            width: 100% !important;
         }
         pre, code {
             color: #E641E6 !important;
