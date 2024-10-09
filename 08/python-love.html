@@ -34,29 +34,60 @@
             overflow-x: auto !important;
             max-height: 75% !important;
             width: 100% !important;
-            scrollbar-width: thin;
-            scrollbar-color: #ffffff transparent;
         }
         pre, code {
             color: #E641E6 !important;
             font-family: "JetBrains Mono", monospace !important;
         }
-        pre::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-        }
-        pre::-webkit-scrollbar-track {
-            background: transparent;
-            border-radius: 10px;
-        }
-        pre::-webkit-scrollbar-thumb {
-            background-color: #ffffff;
-            border-radius: 10px;
-            border: 3px solid; /* Adds some space between the thumb and the track */
-        }
-        pre::-webkit-scrollbar-thumb:hover {
-            background-color: #E641E6;
-        }
+        /* Vertical scrollbar */
+pre::-webkit-scrollbar {
+    width: 1.5em;
+    height: 1.5em; /* Also ensures we control the height of the horizontal scrollbar */
+}
+
+pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Horizontal scrollbar */
+pre::-webkit-scrollbar:horizontal {
+    height: 1.5em;
+}
+
+pre::-webkit-scrollbar-thumb:horizontal {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@-moz-document url-prefix() { /* Firefox scrollbar */
+    pre {
+        scrollbar-color: #E641E6 transparent;
+        scrollbar-width: thin;
+    }
+
+    pre::-webkit-scrollbar-thumb {
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    pre::-webkit-scrollbar-thumb:horizontal {
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
  
         /* PrismJS overrides for custom colors */
         .token.comment {
