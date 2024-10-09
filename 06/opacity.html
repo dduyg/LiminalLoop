@@ -16,13 +16,31 @@
             background-image: url('backed.jpg');
             background-size: cover;
             background-attachment: fixed;
+            font-size: 16px;
+            height: 100vh;
+            line-height: 1.4;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
-        header {
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+       header {
             text-align: right;
             padding: 1.2rem;
             background: rgba(0, 0, 0, 0.4);
-        }
-        header h1 {
+            position: fixed;
+            width: 100%;
+            top: 0;
+       }
+       header .topic {
+            font-style: italic;
             font-size: 2.1rem;
             font-family: "Inconsolata", monospace;
             margin: 0;
@@ -37,82 +55,36 @@
             80% {text-shadow: 2px 2px 0 #FF00C1, -2px -2px 0 #00FF41;}
             100% {text-shadow: -2px 2px 0 #FF00C1, 2px -2px 0 #00FF41;}
         }
-        main {
+        .container {
             padding: 2rem;
-            background: rgba(0, 0, 0, 0.4);
-            margin: 2rem;
-            border-radius: 0.7rem;
-        }
-        .topic {
-            text-align: center;
-            font-size: 1.3em;
-            font-style: italic;
+            margin: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 80%;
         }
         section {
             margin: 15px 0;
             padding: 1.25rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            max-height: 90px;
-            overflow-y: auto;
-            overflow-x: hidden;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 0.7rem;
+            
         }
         section h3 {
             margin: 0;
             padding: 0;
         }
-        section p {
-           padding-top: 0;
-           margin-top: 0;
-        }
-
-/* Custom scrollbar */
-section::-webkit-scrollbar {
-    width: 1.5em;
-}
-
-section::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-section::-webkit-scrollbar-thumb,
-section::-webkit-scrollbar-thumb:hover {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-@-moz-document url-prefix() { /* Firefox scrollbar */
-    section {
-        scrollbar-color: #E641E6 transparent; 
-        scrollbar-width: thin;
-    }
-
-    section::-webkit-scrollbar-thumb {
-        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
-}
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        section h3, section p {
+            margin: 0;
+            padding: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>/dduyg</h1>
+        <h1 class="topic">Federated Learning</h1>
     </header>
     <main>
-        <div class="topic">Federated Learning</div>
+      <div class="container">   
         <section>
             <h3>Decentralized Model Training</h3>
             <p>Federated Learning enables machine learning models to be trained on data that remains decentralized across devices or servers. Instead of requiring all data to be moved to a central server for training, each participating device or node trains a local model on its own dataset. The local models send only the learned parameters (such as gradients) to a central server, which aggregates them to update the global model. This approach reduces data movement and ensures that the model benefits from distributed data without violating data ownership constraints.</p>
@@ -136,10 +108,8 @@ section::-webkit-scrollbar-thumb:hover {
         <section>
             <h3>Applications</h3>
             <p>Federated Learning has a wide range of applications across various industries. In telecommunications, it is used to optimize network traffic by learning from user patterns on individual devices without breaching privacy. Google’s Gboard uses it to improve predictive text and keyboard suggestions by leveraging data from millions of phones without transferring user data to their servers. In the automotive industry, Federated Learning can help autonomous vehicles learn from driving data shared across different fleets of vehicles without exposing proprietary driving data from one manufacturer to another, improving safety and performance across the board.</p>
-        </section>   
+        </section>
+      </div>
     </main>
-    <footer>
-        &copy;2024 / d d u y g.
-    </footer>
 </body>
 </html>
