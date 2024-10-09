@@ -39,73 +39,50 @@
             color: #E641E6 !important;
             font-family: "JetBrains Mono", monospace !important;
         }
-
-/* Vertical scrollbar */
-pre::-webkit-scrollbar {
-    width: 1.5em; /* Total width of the vertical scrollbar */
-    height: 1.5em; /* Height for the horizontal scrollbar */
-}
-
-pre::-webkit-scrollbar-track {
-    background: transparent; /* Transparent track background */
-}
-
-/* Vertical scrollbar thumb with margin-left effect */
-pre::-webkit-scrollbar-thumb {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    
-    /* Simulating left margin for vertical scrollbar */
-    border-left: 0.4em solid transparent; /* Creates margin on the left */
-}
-
-/* Horizontal scrollbar */
-pre::-webkit-scrollbar:horizontal {
-    height: 1.5em; /* Total height of the horizontal scrollbar */
-}
-
-/* Horizontal scrollbar thumb with margin-top effect */
-pre::-webkit-scrollbar-thumb:horizontal {
-    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-
-    /* Simulating top margin for horizontal scrollbar */
-    border-top: 0.4em solid transparent; /* Creates margin on the top */
-}
-
-/* Firefox scrollbar styling */
-@-moz-document url-prefix() {
-    pre {
-        scrollbar-color: #E641E6 transparent;
-        scrollbar-width: thin;
-    }
-
-    /* Vertical scrollbar */
-    pre::-webkit-scrollbar-thumb {
-        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-
-        /* Simulating left margin for vertical scrollbar */
-        border-left: 0.4em solid transparent;
-    }
-
-    /* Horizontal scrollbar */
-    pre::-webkit-scrollbar-thumb:horizontal {
-        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-
-        /* Simulating top margin for horizontal scrollbar */
-        border-top: 0.4em solid transparent;
-    }
-}
+        pre::-webkit-scrollbar {
+            width: 1.6em; /* Width for vertical scrollbar */
+            height: 1.6em; /* Height for horizontal scrollbar */
+        }
+        pre::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        pre::-webkit-scrollbar-thumb {
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-left: 0.4em solid transparent; /* Simulating margin-left for vertical scrollbar */
+        }
+        pre::-webkit-scrollbar:horizontal {
+            height: 1.6em; /* Total height of the horizontal scrollbar */
+        }
+        pre::-webkit-scrollbar-thumb:horizontal { /* Horizontal scrollbar thumb with margin-top effect */
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-top: 0.4em solid transparent;
+        }
+        @-moz-document url-prefix() { /* Firefox scrollbar */
+            pre {
+                scrollbar-color: #E641E6 transparent;
+                scrollbar-width: thin;
+            }
+            pre::-webkit-scrollbar-thumb {
+                background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                border-left: 0.4em solid transparent;
+            }
+            pre::-webkit-scrollbar-thumb:horizontal {
+                background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                border-top: 0.4em solid transparent;
+            }
+        }
  
         /* PrismJS overrides for custom colors */
         .token.comment {
