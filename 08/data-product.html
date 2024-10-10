@@ -76,6 +76,9 @@
             transition: border-color 0.3s ease, border-radius 0.5s cubic-bezier(.23,1,.32,1);
             border-radius: 0;
         }
+        details:hover {
+            border-radius: 35px;
+        }
         details:not(:last-of-type) {
             border-bottom: 0; /* Remove bottom border from all but the last item */
         }
@@ -84,10 +87,10 @@
             border-bottom: 2px solid #c2513c; /* Keep the bottom border when open */
         }
         @media (min-width: 1000px) {
-            details[open] {
+            details[open], details:hover {
                 border-radius: clamp(40px, 6rem, 6rem); /* Larger border-radius on wider screens */
             }
-        }     
+        }
         details[open] ~ details {
             border-top: 2px solid #c2513c; /* Keep the top border for the next detail */
         }
