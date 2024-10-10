@@ -40,7 +40,6 @@ _The rest is up to you and your imagination. 🦄_
 - Changa
 - Quantico
 - Amatic SC
-- Cabin
 - Cardo
 - M PLUS 1 Code
 - Nova Mono `[☆lijkt op Pentameter]`
