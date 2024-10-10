@@ -6,22 +6,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Liminal Loop</title>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        
+    <style>     
+        button,input,optgroup,select,textarea{
+            color:inherit;
+            font-family:inherit;
+            font-size:100%;
+            font-weight:inherit;
+            line-height:inherit;
+            margin:0;
+            padding:0
+        }
+        button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{
+            -webkit-appearance:button;
+            background-color:transparent;
+            background-image:none
+        }     
+        html{
+            --tw-text-opacity:1;
+            color:rgb(0 0 0/var(--tw-text-opacity));
+            font-size:2.66667vw;
+        }
+        @media (min-width:375px){
+            html{font-size:10px}
+        }
+        @media (min-width:1000px){
+            html{font-size:.65104vw}
+        }
+
+        section {
+         border-width: 2px;
+         border-color: orange;
+         margin-top: -2px;
+         transition-duration: .15s;
+         transition-property: border-radius;
+         transition-timing-function: cubic-bezier(.23,1,.32,1);
+         transition-duration: .5s;
+         transition-timing-function: cubic-bezier(.165,.84,.44,1);
+         will-change: border-radius;
+        }
+        section:hover {
+            border-radius: 4rem;
+        }
+      @media (min-width:1000px){
+          section:hover {
+            border-radius: clamp(40px,6rem,6rem);
+          }
+      }     
     </style>
 </head>
 <body>
     <main>
-
-    <div class="js-containers"data-component="accordion"data-cx="rounded-40 l:rounded-[clamp(40px,6rem,6rem)]"data-option="Design">
-      <div class="border-2 border-fg mt-[-2px] transition-[border-radius] duration-500 ease-out-quart will-change-[border-radius] hover:rounded-40 hover:l:rounded-[clamp(40px,6rem,6rem)]">
+        
+      <section>
         <button class="w-full text-left leading-100 px-30 l:px-[clamp(30px,5.5rem,5.5rem)] py-18 l:py-[clamp(18px,2.5rem,2.5rem)] outline-none relative"data-sqzbx-button>1. Discovery <svg class="w-29 l:w-[clamp(29px,4.7rem,4.7rem)] absolute right-30 l:right-[clamp(30px,5.5rem,5.5rem)] top-1/2 -mt-12 l:mt-[clamp(-2rem,-2rem,-12px)] transition-transform duration-500 ease-out-quart will-change-transform"viewBox="0 0 27 22"fill="none"xmlns="http://www.w3.org/2000/svg"aria-hidden="true"><path d="M13.5 0L26.0574 21.75H0.942627L13.5 0Z"class="fill-fg"></path></svg></button>
-        <div class="pl-30 s:pl-71 l:pl-[clamp(71px,12.5rem,12.5rem)] pr-30 l:pr-[clamp(30px,5.5rem,5.5rem)] overflow-hidden max-h-0 transition-[max-height] duration-500 ease-out-quart will-change-[max-height]"data-sqzbx-panel>
-          <div class="max-w-[86rem] font-sneak text-20 l:text-[clamp(20px,2.6rem,2.6rem)] leading-130 pb-30 l:pb-[clamp(30px,5rem,5rem)]">
-            <p>To create a website that engages your unique audience, we must familiarize ourselves with the mission, culture, challenges, and objectives of your organization. This phase also provides an opportunity for our teams to get acquainted and set expectations around collaboration. Typically, the outcome of this phase is a Sitemap that dictates the architecture and content model of the website.</p>
-          </div>
-        </div>
-      </div>
+     
+          <div class="pl-30 s:pl-71 l:pl-[clamp(71px,12.5rem,12.5rem)] pr-30 l:pr-[clamp(30px,5.5rem,5.5rem)] overflow-hidden max-h-0 transition-[max-height] duration-500 ease-out-quart will-change-[max-height]"data-sqzbx-panel>
+            <div class="max-w-[86rem] font-sneak text-20 l:text-[clamp(20px,2.6rem,2.6rem)] leading-130 pb-30 l:pb-[clamp(30px,5rem,5rem)]">
+            <p>To create a website that engages your unique audience, we must familiarize ourselves with the mission, culture, challenges, and objectives of your organization. This phase also provides an opportunity for our teams to get acquainted and set expectations around  of this phase is a Sitemap that dictates the architecture and content model of the website.</p>
+            </div>
+          </div>   
+      </section>
       
     </main>
 </body>
