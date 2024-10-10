@@ -120,13 +120,15 @@
 
         summary::after {
             content: '';
-            background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6h10l-5 9-5-9z"></path></svg>') no-repeat center center;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2048" height="2048" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd" fill="%23c2513c"><defs><style>.fil0{fill:none}</style></defs><g id="Layer_x0020_1"><g id="_243116840"><path id="_243117488" class="fil0" d="M0 0h2048v2048H0z"/><path id="_243117512" class="fil0" d="M255.999 255.999h1536v1536h-1536z"/></g><path style="fill:%23c2513c;fill-rule:nonzero" d="m1407.99 1024.07-358.22 620.46-25.77 44.64-25.77-44.64-358.224-620.46v-.11L281.784 403.497l-25.785-44.662H1792l-25.78 44.662-358.23 620.463z"/></g></svg>') no-repeat center center;
             width: 1.8em;
             height: 1.8em;
             display: inline-block;
+            transform: rotateX(0deg);
+            transition: transform 0.5s cubic-bezier(.23,1,.32,1);
         }
         details[open] summary::after {
-            background: url('data:image/svg+xml;utf8,<svg fill="%23c2513c" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 14H5l5-9 5 9z"></path></svg>') no-repeat center center;
+            transform: rotateX(180deg);
         }
 
         footer {
