@@ -45,3 +45,6 @@ _The rest is up to you and your imagination. 🦄_
 - Nova Mono `[☆lijkt op Pentameter]`
 - Sometype Mono
 - Ubuntu Mono
+- Cousine
+- Anonymous Pro
+- Major Mono Display
