@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiminalLoop</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e1b29;
+            color: #f2f0f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffccff;
+            font-size: 3em;
+        }
+
+        /* Vaporwave Colors */
+        .neon-text {
+            color: #f0f;
+            text-shadow: 0 0 5px #ff77ff, 0 0 20px #ff44ff, 0 0 30px #ff22ff;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #282238;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 100, 200, 0.6);
+        }
+
+        .post {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff99ff;
+        }
+
+        .post h2 {
+            color: #ffd7ff;
+        }
+
+        /* Tag Styling */
+        .tags {
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px;
+            background-color: #3e3654;
+            color: #ffccff;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tag:hover, .tag.selected {
+            background-color: #ff44ff;
+        }
+
+        /* Tag Filter Box */
+        .filter-box {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-box .tag {
+            border: 2px solid #ff77ff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+            color: #ffd7ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <h1 class="neon-text">Latest Posts</h1>
+
+    <!-- Filter Section -->
+    <div class="container">
+        <div class="filter-box">
+            <div class="tag" onclick="toggleTag('tech')">Tech</div>
+            <div class="tag" onclick="toggleTag('design')">Design</div>
+            <div class="tag" onclick="toggleTag('coding')">Coding</div>
+            <div class="tag" onclick="toggleTag('vaporwave')">Vaporwave</div>
+        </div>
+
+        <!-- Blog Posts Section -->
+        <div id="posts">
+
+            <div class="post" data-tags="tech vaporwave">
+                <h2>Exploring the World of Vaporwave Tech</h2>
+                <div class="tags">Tags: Tech, Vaporwave</div>
+                <p>The intersection of Vaporwave aesthetics and technology is reshaping how we interact with digital environments...</p>
+            </div>
+
+            <div class="post" data-tags="coding tech">
+                <h2>Coding the Future with AI</h2>
+                <div class="tags">Tags: Coding, Tech</div>
+                <p>AI is changing the coding landscape, allowing developers to build smarter and faster solutions...</p>
+            </div>
+
+            <div class="post" data-tags="design vaporwave">
+                <h2>Designing with Vaporwave Inspiration</h2>
+                <div class="tags">Tags: Design, Vaporwave</div>
+                <p>Vaporwave is more than just music; it has grown into a movement that influences design...</p>
+            </div>
+
+            <div class="post" data-tags="coding design">
+                <h2>The Art of Clean Coding and UI Design</h2>
+                <div class="tags">Tags: Coding, Design</div>
+                <p>A balance between coding efficiency and intuitive design is crucial in software development...</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Soft Cyberspace by [Your Name]</p>
+    </footer>
+
+    <script>
+        // JavaScript for Filtering Posts by Tags
+        let selectedTags = [];
+
+        function toggleTag(tag) {
+            const tagIndex = selectedTags.indexOf(tag);
+            if (tagIndex > -1) {
+                selectedTags.splice(tagIndex, 1);
+            } else {
+                selectedTags.push(tag);
+            }
+            document.querySelectorAll('.tag').forEach(el => {
+                if (selectedTags.includes(el.innerText.toLowerCase())) {
+                    el.classList.add('selected');
+                } else {
+                    el.classList.remove('selected');
+                }
+            });
+            filterPosts();
+        }
+
+        function filterPosts() {
+            const posts = document.querySelectorAll('.post');
+            posts.forEach(post => {
+                const postTags = post.getAttribute('data-tags').split(' ');
+                if (selectedTags.every(tag => postTags.includes(tag))) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
