@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latest Blog Posts">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .filter-tags {
+            margin-bottom: 20px;
+        }
+        .filter-tags label {
+            font-weight: bold;
+        }
+        .filter-tags select {
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .post {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .post h2 {
+            color: #3f51b5;
+        }
+        .post p {
+            color: #555;
+        }
+        .read-more {
+            background-color: #3f51b5;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .read-more:hover {
+            background-color: #303f9f;
+        }
+        .social-share {
+            margin-top: 10px;
+        }
+        .social-share a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #3f51b5;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Latest Posts</h1>
+    </header>
+
+    <div class="container">
+        <!-- Filter by Tags -->
+        <div class="filter-tags">
+            <label for="tags">Filter by Tag:</label>
+            <select id="tags" name="tags">
+                <option value="all">All</option>
+                <option value="web-development">Web Development</option>
+                <option value="design">Design</option>
+                <option value="technology">Technology</option>
+            </select>
+        </div>
+
+        <!-- Blog Post 1 -->
+        <div class="post" data-tags="web-development technology">
+            <h2>Building Responsive Websites</h2>
+            <p>Learn how to create responsive and mobile-friendly websites using the latest CSS techniques and frameworks...</p>
+            <a href="#" class="read-more">Read More</a>
+            <div class="social-share">
+                <span>Share: </span>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="post" data-tags="design technology">
+            <h2>The Importance of Good UI/UX Design</h2>
+            <p>Discover why user experience (UX) and user interface (UI) design are crucial to any successful digital product...</p>
+            <a href="#" class="read-more">Read More</a>
+            <div class="social-share">
+                <span>Share: </span>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="post" data-tags="web-development design">
+            <h2>Top 5 Front-End Frameworks in 2024</h2>
+            <p>Explore the most popular front-end frameworks for web developers in 2024, including React, Vue.js, and more...</p>
+            <a href="#" class="read-more">Read More</a>
+            <div class="social-share">
+                <span>Share: </span>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const filter = document.getElementById('tags');
+        filter.addEventListener('change', function () {
+            const selectedTag = this.value;
+            const posts = document.querySelectorAll('.post');
+            posts.forEach(post => {
+                const postTags = post.getAttribute('data-tags').split(' ');
+                if (selectedTag === 'all' || postTags.includes(selectedTag)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
