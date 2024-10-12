@@ -3,149 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LiminalLoop</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-color: #2d2d44;
-            color: #e0ffff;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
             margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: linear-gradient(90deg, #ff0080, #ff6600);
             padding: 20px;
+        }
+        h1 {
             text-align: center;
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
+            color: #f72585;
+            font-size: 3rem;
         }
-
         .container {
-            width: 80%;
-            margin: 0 auto;
-            padding-top: 20px;
+            max-width: 900px;
+            margin: auto;
         }
-
-        .tag-filter {
+        .post {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #3a0ca3;
+            padding: 20px;
             margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .post h2 {
+            color: #7209b7;
+        }
+        .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
         }
-
         .tag {
-            background-color: #8a2be2;
-            padding: 10px 20px;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .tag.selected {
-            background-color: #00ced1;
-        }
-
-        .post {
-            background-color: #393960;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .post h2 {
-            color: #ff80df;
-        }
-
-        .post .tags {
-            color: #ffccff;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-
-        .post .tags span {
-            background-color: #ff0080;
+            background-color: #4cc9f0;
+            color: #000;
             padding: 5px 10px;
-            border-radius: 3px;
+            border-radius: 5px;
             margin-right: 5px;
+            cursor: pointer;
+        }
+        .tag:hover {
+            background-color: #4895ef;
+        }
+        .tag.active {
+            background-color: #f72585;
+            color: #fff;
+        }
+        .filter-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .filter-container .filter-tag {
+            margin: 0 10px;
+        }
+        .footer {
+            text-align: center;
+            color: #8e9aaf;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <header>Latest Posts</header>
 
     <div class="container">
-        <div class="tag-filter">
-            <div class="tag" data-tag="coding">Coding</div>
-            <div class="tag" data-tag="vaporwave">Vaporwave</div>
-            <div class="tag" data-tag="javascript">JavaScript</div>
-            <div class="tag" data-tag="web-design">Web Design</div>
-            <div class="tag" data-tag="aesthetics">Aesthetics</div>
+        <h1>Latest Posts</h1>
+
+        <div class="filter-container">
+            <span class="filter-tag tag active" data-filter="all">All</span>
+            <span class="filter-tag tag" data-filter="javascript">JavaScript</span>
+            <span class="filter-tag tag" data-filter="css">CSS</span>
+            <span class="filter-tag tag" data-filter="vaporwave">Vaporwave</span>
         </div>
 
-        <div id="posts">
-            <div class="post" data-tags="coding vaporwave">
-                <h2>Exploring Vaporwave in Coding: A New Aesthetic</h2>
-                <p>Dive into how vaporwave aesthetics are influencing the coding world with colorful, neon-soaked designs...</p>
-                <div class="tags">
-                    <span>Coding</span>
-                    <span>Vaporwave</span>
-                </div>
-            </div>
-            <div class="post" data-tags="javascript web-design">
-                <h2>Mastering JavaScript for Frontend Web Design</h2>
-                <p>A complete guide on how JavaScript can elevate your web design skills...</p>
-                <div class="tags">
-                    <span>JavaScript</span>
-                    <span>Web Design</span>
-                </div>
-            </div>
-            <div class="post" data-tags="aesthetics vaporwave">
-                <h2>Vaporwave Aesthetics in Modern Web Development</h2>
-                <p>Learn how vaporwave aesthetics have seeped into the modern web, creating a unique user experience...</p>
-                <div class="tags">
-                    <span>Aesthetics</span>
-                    <span>Vaporwave</span>
-                </div>
-            </div>
-            <div class="post" data-tags="coding javascript">
-                <h2>Best JavaScript Coding Practices for Beginners</h2>
-                <p>Get started on your JavaScript journey with these essential best practices...</p>
-                <div class="tags">
-                    <span>Coding</span>
-                    <span>JavaScript</span>
-                </div>
+        <div class="post" data-tags="javascript vaporwave">
+            <h2>Mastering JavaScript Functions</h2>
+            <p>Explore the power of functions in JavaScript, with real-world coding techniques in a Vaporwave-styled environment.</p>
+            <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Vaporwave</span>
             </div>
         </div>
+
+        <div class="post" data-tags="css vaporwave">
+            <h2>Advanced CSS Animations</h2>
+            <p>Learn how to create stunning CSS animations to enhance your website's interactivity and aesthetics with a Vaporwave touch.</p>
+            <div class="tags">
+                <span class="tag">CSS</span>
+                <span class="tag">Vaporwave</span>
+            </div>
+        </div>
+
+        <div class="post" data-tags="javascript">
+            <h2>JavaScript ES6: The New Wave</h2>
+            <p>Dive into modern JavaScript ES6 features like arrow functions, template literals, and destructuring.</p>
+            <div class="tags">
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="post" data-tags="css">
+            <h2>Designing with Flexbox</h2>
+            <p>Learn how to create flexible and responsive layouts using CSS Flexbox, ensuring seamless experiences across devices.</p>
+            <div class="tags">
+                <span class="tag">CSS</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Sophisticated Coder. Embrace the Vaporwave Aesthetic.</p>
     </div>
 
     <script>
-        const tags = document.querySelectorAll('.tag');
+        const filterTags = document.querySelectorAll('.filter-tag');
         const posts = document.querySelectorAll('.post');
 
-        tags.forEach(tag => {
-            tag.addEventListener('click', () => {
-                tag.classList.toggle('selected');
-                filterPosts();
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', function () {
+                // Remove active class from all tags
+                filterTags.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                posts.forEach(post => {
+                    const postTags = post.getAttribute('data-tags').split(' ');
+                    if (filter === 'all' || postTags.includes(filter)) {
+                        post.style.display = 'block';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
             });
         });
-
-        function filterPosts() {
-            const selectedTags = Array.from(tags)
-                .filter(tag => tag.classList.contains('selected'))
-                .map(tag => tag.getAttribute('data-tag'));
-
-            posts.forEach(post => {
-                const postTags = post.getAttribute('data-tags').split(' ');
-                const isMatch = selectedTags.every(tag => postTags.includes(tag));
-                post.style.display = isMatch || selectedTags.length === 0 ? 'block' : 'none';
-            });
-        }
     </script>
+
 </body>
 </html>
