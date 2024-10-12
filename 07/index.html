@@ -87,6 +87,33 @@
             color: #ffa500;
             font-size: 0.8em;
         }
+
+        /* Custom scrollbar */
+        section::-webkit-scrollbar {
+            width: 1.5em;
+        }
+        section::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        section::-webkit-scrollbar-thumb,
+        section::-webkit-scrollbar-thumb:hover {
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffa500" height="200px" width="200px" version="1.2" baseProfile="tiny" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-415 217 128 128" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M-352.7,219c19.8,0,35.9,16.1,35.9,35.9s-16.1,35.9-35.9,35.9c-19.8,0-35.9-16.1-35.9-35.9S-372.5,219-352.7,219z M-337.4,302.5h4.9v31h-4.9V302.5z M-375,302.5h4.9v31h-4.9V302.5z M-356.8,311.2h4.9v31h-4.9V311.2z"></path> </g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        @-moz-document url-prefix() { /* Firefox scrollbar */
+            section {
+                scrollbar-color: #ffa500 transparent; 
+                scrollbar-width: thin;
+            }
+            section::-webkit-scrollbar-thumb {
+                background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffa500" height="200px" width="200px" version="1.2" baseProfile="tiny" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-415 217 128 128" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M-352.7,219c19.8,0,35.9,16.1,35.9,35.9s-16.1,35.9-35.9,35.9c-19.8,0-35.9-16.1-35.9-35.9S-372.5,219-352.7,219z M-337.4,302.5h4.9v31h-4.9V302.5z M-375,302.5h4.9v31h-4.9V302.5z M-356.8,311.2h4.9v31h-4.9V311.2z"></path> </g></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
     </style>
 </head>
 <body>
