@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiminalLoop</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #1E1E2F;
+            color: #FFFFFF;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #FF6FCF;
+        }
+
+        /* Vaporwave Themed Colors and Fonts */
+        .vaporwave-bg {
+            background: linear-gradient(135deg, #6E6EFF, #FF6FCF, #FFC1E3);
+            padding: 50px 0;
+        }
+
+        .section {
+            padding: 50px;
+        }
+
+        .vaporwave-text {
+            color: #C8F4F9;
+            text-shadow: 2px 2px 5px #FF8EF2;
+        }
+
+        .neon-button {
+            background-color: #FF6FCF;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #1E1E2F;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px 0px #FF6FCF;
+            transition: 0.3s;
+        }
+
+        .neon-button:hover {
+            background-color: #FFC1E3;
+            box-shadow: 0px 0px 20px 0px #FFC1E3;
+        }
+
+        /* Photo Gallery Section */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            object-fit: cover;
+            border: 3px solid #FF6FCF;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            margin-top: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 80%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #333;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-bottom: 3px solid #FF6FCF;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-bottom: 3px solid #FFC1E3;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #2B2B40;
+        }
+
+        footer a {
+            color: #FF6FCF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #FFC1E3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <section class="vaporwave-bg">
+        <h1>Welcome to My Vaporwave World</h1>
+        <p class="vaporwave-text">I am a <strong>Data-Focused Developer</strong> and <strong>Data Scientist</strong> with an artistic twist. My passion lies in merging complex data with creative solutions, and yes, I do it all in a neon glow.</p>
+        <button class="neon-button">Explore My Work</button>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="section">
+        <h2>About Me</h2>
+        <p class="vaporwave-text">With years of experience in software development and data science, I love turning numbers into narratives. Whether it's building intelligent systems or diving deep into datasets, I’m all about discovering stories in the data. But outside of coding, I have a love for the retro-futuristic aesthetic of the '80s, hence this Vaporwave vibe you’re seeing.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section vaporwave-bg">
+        <h2>Skills</h2>
+        <ul class="vaporwave-text">
+            <li>Data Science: Python, R, SQL, Machine Learning</li>
+            <li>Development: Full-stack, API Design, JavaScript, Node.js</li>
+            <li>Tools: TensorFlow, Scikit-Learn, Docker, AWS</li>
+            <li>Creative Coding & Data Visualization: D3.js, Plotly</li>
+        </ul>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="section">
+        <h2>Photo Gallery</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300x300" alt="Sample Image 1">
+            <img src="https://via.placeholder.com/300x300" alt="Sample Image 2">
+            <img src="https://via.placeholder.com/300x300" alt="Sample Image 3">
+            <img src="https://via.placeholder.com/300x300" alt="Sample Image 4">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section vaporwave-bg">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button class="neon-button" type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Your Name | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+    </footer>
+
+</body>
+</html>
