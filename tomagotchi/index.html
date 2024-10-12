@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latest blog posts on a vaporwave-inspired webpage with tag filtering and social media sharing features.">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(135deg, #2B2E4A, #1C1D35);
+            color: #F3F4F6;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #80FFDB;
+            font-size: 3em;
+            text-shadow: 0px 0px 10px #80FFDB;
+        }
+
+        .post-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .post {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .post:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        h2 {
+            color: #FFC8DD;
+            text-shadow: 0px 0px 10px #FFC8DD;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #C1B3FF;
+            color: #2B2E4A;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .social-share {
+            margin-top: 10px;
+        }
+
+        .social-share a {
+            color: #FEC89A;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .social-share a:hover {
+            color: #FDCB5C;
+        }
+
+        .filter-bar {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-bar select {
+            padding: 10px;
+            border-radius: 10px;
+            background: #6246EA;
+            color: #FFF;
+            border: none;
+            font-size: 1em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Latest Posts</h1>
+    </header>
+
+    <div class="filter-bar">
+        <label for="tag-filter">Filter by tag: </label>
+        <select id="tag-filter" onchange="filterPosts()">
+            <option value="all">All</option>
+            <option value="tech">Tech</option>
+            <option value="design">Design</option>
+            <option value="coding">Coding</option>
+            <option value="vaporwave">Vaporwave</option>
+        </select>
+    </div>
+
+    <div class="post-container">
+        <!-- Post 1 -->
+        <div class="post" data-tags="tech coding">
+            <h2>Exploring the Latest in Tech Innovations</h2>
+            <p>From AI to quantum computing, here’s what’s happening in the tech world today.</p>
+            <div>
+                <span class="tag">Tech</span>
+                <span class="tag">Coding</span>
+            </div>
+            <div class="social-share">
+                <a href="#">Share on Twitter</a>
+                <a href="#">Share on Facebook</a>
+            </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post" data-tags="design vaporwave">
+            <h2>Vaporwave Aesthetics in Web Design</h2>
+            <p>How to infuse the nostalgic vaporwave vibe into your web projects.</p>
+            <div>
+                <span class="tag">Design</span>
+                <span class="tag">Vaporwave</span>
+            </div>
+            <div class="social-share">
+                <a href="#">Share on Twitter</a>
+                <a href="#">Share on Facebook</a>
+            </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post" data-tags="coding vaporwave">
+            <h2>Coding in the Vaporwave Era</h2>
+            <p>How to code while enjoying the aesthetics of the digital underground.</p>
+            <div>
+                <span class="tag">Coding</span>
+                <span class="tag">Vaporwave</span>
+            </div>
+            <div class="social-share">
+                <a href="#">Share on Twitter</a>
+                <a href="#">Share on Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Latest Posts. All rights reserved.
+    </footer>
+
+    <script>
+        function filterPosts() {
+            const filterValue = document.getElementById('tag-filter').value;
+            const posts = document.querySelectorAll('.post');
+
+            posts.forEach(post => {
+                const tags = post.getAttribute('data-tags').split(' ');
+                if (filterValue === 'all' || tags.includes(filterValue)) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
