@@ -29,12 +29,23 @@
         a:hover {
             color: #ff73fa;
         }
-        .container {
+        main {
             max-width: 1200px;
             margin: 0 auto;
         }
-        .section {
+        section {
             margin: 50px 0;
+        }
+        .gallery img {
+            width: 30%;
+            margin: 10px;
+            border: 2px solid #00eaff;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            border-color: #ff73fa;
         }
         .neon-border {
             border: 4px solid;
@@ -46,10 +57,18 @@
 </head>
 <body>
 <main>
-    <h1 class="neon-border">Welcome to My World</h1>
+    <h1 class="neon-border">In The Ether</h1>
 
-    <section class="section" id="about">
-       <p>Hey there! I'm a <span style="color:#ff73fa;">Data-Focused Developer</span> and <span style="color:#ff73fa;">Data Scientist</span> with a passion for coding, analytics, and discovering patterns in data. But I don't just live in numbers — my creative side thrives through artistic, <span style="color:#00eaff;">Vaporwave</span> design and retro aesthetics. I combine logic and art to build projects that tell stories through both <strong>data</strong> and <strong>visuals</strong>.</p>
+    <section id="about">
+       <p>Neon lights flicker in a hazy dream, <span style="color:#ff73fa;">fading</span> synths echo in endless <span style="color:#ff73fa;">loops</span>. Time drifts like pastel clouds, glitching through forgotten memories. Aesthetic sunsets stretch across the sky, pixelated and infinite. Lost in the <span style="color:#00eaff;">grid</span>, we float, searching for meaning in the soft hum of nostalgia. Everything <strong>fades</strong>, but nothing ever <strong>ends</strong>.</p>
+    </section>
+
+    <section id="gallery">
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Project 1">
+            <img src="https://via.placeholder.com/300" alt="Project 2">
+            <img src="https://via.placeholder.com/300" alt="Project 3">
+        </div>
     </section>
 </main>
 </body>
