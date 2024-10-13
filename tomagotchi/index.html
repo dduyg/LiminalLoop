@@ -15,10 +15,6 @@
             animation-direction: alternate;
             color: #1737c0;
             font-family: "Tilt Neon", sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -29,17 +25,19 @@
             100% {background-position: 0% 50%;}
         }
         main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             max-width: 85%;
             margin: 0 auto;
             padding: 1rem;
+            line-height: 1.5;
         }
         a {
-            color: #00ffff; /* Cyan link */
+            color: inherit;
             text-decoration: none;
             font-weight: bold;
-            border: 2px solid #00ffff;
-            padding: 10px 20px;
-            border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
         }
         a:hover {
