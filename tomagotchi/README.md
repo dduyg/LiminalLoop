@@ -37,7 +37,6 @@ _The rest is up to you and your imagination. 🦄_
 - Unica One
 - Oxanium
 - Changa
-- Quantico
 - Amatic SC
 - Cardo
 - M PLUS 1 Code
