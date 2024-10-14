@@ -26,7 +26,7 @@
             margin-bottom: 40px;
             line-height: 1.2;
         }
-        .services, .clients, .experience, .work-feed {
+        section {
             margin-bottom: 40px;
         }
         .info-box {
@@ -39,43 +39,34 @@
         .info-box div {
             width: 48%;
         }
-        .info-box div ul {
+        
+        ul {
             list-style: none;
             padding: 0;
         }
-        .info-box div ul li {
+        ul li {
             margin-bottom: 10px;
-        }
-        .clients ul li {
             font-size: 0.95em;
             color: #666;
         }
-        .clients ul li span {
+        ul li span {
             font-weight: bold;
             color: #000;
-        }
-
-        .timeline {
-            font-size: 0.85em;
-            margin-top: 10px;
-        }
-
-        .timeline li {
-            margin-bottom: 5px;
         }
 
         .work-feed table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 0.85em;
+            margin-top:
         }
 
-        .work-feed th, .work-feed td {
+        #work-feed th, #work-feed td {
             padding: 10px;
             border: 1px solid #000;
             font-size: 0.9em;
         }
-
-        .work-feed th {
+        #work-feed th {
             background-color: #4C96F7;
         }
 
@@ -96,52 +87,30 @@
         <h1>I help tech changemakers win hearts and minds of early adopters using the power of aesthetics and emotion-led visual experiences.</h1>
 
         <div class="info-box">
-            <div class="services">
-                <h2>Design Services</h2>
-                <ul>
-                    <li>Branding for new businesses</li>
-                    <li>Rebranding for scaling companies</li>
-                    <li>360° brand visual experience</li>
-                    <li>Creative direction for R&D projects and campaigns</li>
-                    <li>Design strategy and brand governance for DAOs and communities</li>
-                </ul>
-            </div>
+            <section id="services">
+                <h2>Services</h2>
+                <p>Branding for new businesses Rebranding for scaling companies 360° brand visual experience Creative direction for R&D projects and campaigns Design strategy and brand governance for DAOs and communities</p>
+            </section>
 
-            <div class="clients">
+            <section id="clients">
                 <h2>Clients</h2>
                 <ul>
                     <li>Protocol Labs*</li>
                     <li>Internet Archive</li>
-                    <li>DWeb Camp</li>
-                    <li>GPC</li>
+                    <li>DWeb Camp*</li>
                     <li>Hypercerts</li>
                     <li>Holochain</li>
                     <li>Mosaia</li>
                     <li>ultimate.ai*</li>
-                    <li>Jolocom*</li>
                     <li>IPDB</li>
-                    <li>Factory Berlin</li>
-                    <li>Booking.com</li>
-                    <li>DNB</li>
-                    <li>Wirecard</li>
                     <li>Deutsche Bank</li>
-                    <li>ING Bank</li>
                 </ul>
                 <p><small>* Also a past employer</small></p>
-            </div>
+            </section>
         </div>
 
-        <div class="experience">
-            <h2>Experience</h2>
-            <ul class="timeline">
-                <li>14 years in branding</li>
-                <li>12 years in branding for tech</li>
-                <li>7 years leading design in Web3</li>
-            </ul>
-        </div>
-
-        <div class="work-feed">
-            <h2>Work Feed | Most Recent First</h2>
+        <section id="work-feed">
+            <h2>Work Feed | Most Recent</h2>
             <table>
                 <tr>
                     <th>Project</th>
@@ -156,7 +125,7 @@
                     <td>In Progress</td>
                 </tr>
             </table>
-        </div>
+        </section>
     </main>
 </body>
 </html>
