@@ -214,3 +214,37 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
+
+/* Lunchtype22 Regular */
+@font-face {
+    font-family: 'Lunchtype22';
+    src: url('fonts/lunchtype22-regular.woff') format('woff');
+    font-weight: 400; /* Regular weight */
+    font-style: normal;
+}
+/* Lunchtype22 Medium */
+@font-face {
+    font-family: 'Lunchtype22';
+    src: url('fonts/lunchtype22-medium.woff') format('woff');
+    font-weight: 500; /* Medium weight */
+    font-style: normal;
+}
+
+/**********
+How use different font weights:
+body {
+    font-family: 'Lunchtype22', sans-serif;
+}
+
+Apply different font weights:
+h1 {
+    font-family: 'Lunchtype22', sans-serif;
+    font-weight: 500;
+}
+p {
+    font-family: 'Lunchtype22', sans-serif;
+    font-weight: 400;
+}
+*******/
