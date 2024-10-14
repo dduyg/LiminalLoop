@@ -56,15 +56,16 @@
 
         .work-feed table {
             width: 100%; /* Ensure the table is 100% of the container */
-            border-collapse: collapse;
+            border-collapse: collapse; /* Remove space between cells */
             font-size: 0.85em;
         }
 
         #work-feed th, #work-feed td {
             padding: 10px;
-            border: 1px solid #000;
+            border: 1px solid #000; /* Border for cells */
             font-size: 0.9em;
             text-align: left; /* Optional: align text to the left */
+            margin: 0; /* Remove any margins */
         }
         #work-feed th {
             background-color: #4C96F7;
@@ -74,6 +75,7 @@
             font-weight: normal;
         }
         
+        /* Media query for responsive design */
         @media (max-width: 768px) {
             .info-box {
                 flex-direction: column;
@@ -82,6 +84,14 @@
             .info-box div {
                 width: 100%;
                 margin-bottom: 20px;
+            }
+
+            /* Adjust table layout for smaller screens */
+            #work-feed table {
+                font-size: 0.75em; /* Reduce font size for better fit */
+            }
+            #work-feed th, #work-feed td {
+                padding: 8px; /* Reduce padding */
             }
         }
     </style>
@@ -137,6 +147,24 @@
                     <td>MetricMatrix Dashboard</td>
                     <td>Data Visualization</td>
                     <td>Full Stack Developer</td>
+                    <td>In Progress</td>
+                </tr>
+                <tr>
+                    <td>InSync API Integration</td>
+                    <td>API Development</td>
+                    <td>Backend Developer</td>
+                    <td>Completed</td>
+                </tr>
+                <tr>
+                    <td>TechLens Data Pipeline</td>
+                    <td>Data Engineering</td>
+                    <td>Data Engineer</td>
+                    <td>In Progress</td>
+                </tr>
+                <tr>
+                    <td>Altura Insights Visualization Tool</td>
+                    <td>Data Visualization</td>
+                    <td>Data Analyst</td>
                     <td>In Progress</td>
                 </tr>
             </table>
