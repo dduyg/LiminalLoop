@@ -55,13 +55,13 @@
         }
 
         .work-feed table {
-            width: 100%; /* Ensure the table is 100% of the container */
-            border-collapse: collapse; /* Remove space between cells */
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.85em;
         }
 
         #work-feed th, #work-feed td {
-            padding: 10px;
+            padding: 0;
             border: 1px solid #000; /* Border for cells */
             font-size: 0.9em;
             text-align: left; /* Optional: align text to the left */
@@ -69,13 +69,13 @@
         }
         #work-feed th {
             background-color: #4C96F7;
+            text-transform: uppercase;
         }
 
         h1, h2, #work-feed th {
             font-weight: normal;
         }
         
-        /* Media query for responsive design */
         @media (max-width: 768px) {
             .info-box {
                 flex-direction: column;
@@ -86,12 +86,12 @@
                 margin-bottom: 20px;
             }
 
-            /* Adjust table layout for smaller screens */
+            /* Adjust table for smaller screens */
             #work-feed table {
-                font-size: 0.75em; /* Reduce font size for better fit */
+                font-size: 0.75em;
             }
             #work-feed th, #work-feed td {
-                padding: 8px; /* Reduce padding */
+                padding: 8px;
             }
         }
     </style>
