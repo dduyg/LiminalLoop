@@ -3,99 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Latest Blog Posts</title>
     <style>
-        /* Main Colors */
         body {
-            background-color: #282a36; /* Dark Gray (Vaporwave theme) */
-            color: #000000; /* Black for main text */
-            font-family: 'Courier New', Courier, monospace; /* Retro coder font */
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #808080; /* Medium gray */
+            color: #000000; /* Black text */
         }
-
-        /* Accent Colors */
-        h2, .post-title {
-            color: #bbbbbb; /* Lighter gray for titles */
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #404040; /* Accent gray for titles */
         }
-
-        /* Layout Styles */
         .container {
-            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        .card {
+            background-color: #a9a9a9; /* Slightly lighter gray for cards */
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .card:hover {
+            transform: scale(1.05); /* Interactive feature: scale on hover */
+        }
+        .card h2 {
+            font-size: 1.5em;
+            color: #404040; /* Accent gray */
+        }
+        .card p {
+            font-size: 1em;
+        }
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #505050; /* Darker accent color for buttons */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        .read-more:hover {
+            background-color: #404040; /* Lighter on hover */
+        }
+        footer {
+            text-align: center;
             margin-top: 20px;
-        }
-
-        .post {
-            background-color: #44475a; /* Medium gray to contrast with background */
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .post:hover {
-            transform: scale(1.05);
-        }
-
-        .post-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .post-date {
-            font-size: 0.9rem;
-            color: #6272a4; /* Accent color for dates (light gray-blue) */
-            margin-bottom: 15px;
-        }
-
-        .post-description {
-            font-size: 1rem;
-            line-height: 1.6;
+            color: #404040; /* Accent gray */
         }
     </style>
 </head>
 <body>
+
+    <h1>Latest Blog Posts</h1>
     <div class="container">
-        <h2>Latest Blog Posts</h2>
-
-        <!-- Grid of Posts -->
-        <div class="grid">
-            <!-- Post 1 -->
-            <div class="post">
-                <div class="post-title">Post Title 1</div>
-                <div class="post-date">October 19, 2024</div>
-                <div class="post-description">
-                    This is a short description of the first blog post. It can be two or three lines long and gives a quick overview of the content.
-                </div>
-            </div>
-
-            <!-- Post 2 -->
-            <div class="post">
-                <div class="post-title">Post Title 2</div>
-                <div class="post-date">October 18, 2024</div>
-                <div class="post-description">
-                    This is a short description of the second blog post. A brief summary of the article to entice the reader to click through and read more.
-                </div>
-            </div>
-
-            <!-- Post 3 -->
-            <div class="post">
-                <div class="post-title">Post Title 3</div>
-                <div class="post-date">October 17, 2024</div>
-                <div class="post-description">
-                    Another interesting blog post goes here. Keep it concise and engaging to catch the reader's attention quickly.
-                </div>
-            </div>
+        <div class="card">
+            <h2>Blog Post Title 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Blog Post Title 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Blog Post Title 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Blog Post Title 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Blog Post Title 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Blog Post Title 6</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Blog Post Title 7</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="card">
+            <h2>Blog Post Title 8</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Your Blog Name</p>
+    </footer>
+
 </body>
 </html>
