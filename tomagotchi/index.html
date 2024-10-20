@@ -6,110 +6,77 @@
     <title>Latest Blog Posts</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #2E2E2E; /* Medium dark gray */
-            color: #1A1A1A; /* Main text color: black */
+            background-color: #2a2a2a; /* Medium dark gray */
+            color: #000000; /* Black text */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            display: flex;
-            justify-content: center;
         }
-
+        h1 {
+            text-align: center;
+            color: #4a4a4a; /* Accent color for titles */
+        }
         .container {
-            width: 80%;
-            max-width: 1200px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
-
-        .post-card {
-            background-color: #333333; /* Darker gray for cards */
-            border: 1px solid #444444; /* Border */
-            padding: 20px;
+        .post {
+            background-color: #3c3c3c; /* Darker gray for post cards */
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            padding: 15px;
+            transition: transform 0.3s;
         }
-
-        .post-card:hover {
-            transform: translateY(-5px);
+        .post:hover {
+            transform: scale(1.05);
         }
-
         .post-title {
-            color: #A9A9A9; /* Accent color for titles */
+            color: #4a4a4a; /* Accent color for post titles */
             font-size: 1.5em;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
         }
-
-        .post-date {
-            color: #777777; /* Light gray for date */
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-
-        .post-excerpt {
-            color: #D3D3D3; /* Lighter gray for excerpts */
+        .post-content {
             font-size: 1em;
+            color: #ffffff; /* Light gray for content text */
         }
-
-        .read-more {
-            color: #A9A9A9; /* Accent color */
-            text-decoration: none;
-            font-weight: bold;
+        .post-link {
             display: inline-block;
             margin-top: 10px;
-            transition: color 0.3s ease;
+            padding: 10px;
+            background-color: #4a4a4a; /* Accent button color */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
         }
-
-        .read-more:hover {
-            color: #ffffff; /* Change to white on hover */
-        }
-
-        h1 {
-            color: #A9A9A9; /* Accent color for main heading */
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
+        .post-link:hover {
+            background-color: #6a6a6a; /* Slightly lighter on hover */
         }
     </style>
 </head>
 <body>
 
-    <div>
-        <h1>Latest Blog Posts</h1>
-        <div class="container">
-            <!-- Blog Post 1 -->
-            <div class="post-card">
-                <h2 class="post-title">Understanding JavaScript Closures</h2>
-                <p class="post-date">Posted on October 15, 2024</p>
-                <p class="post-excerpt">Learn the fundamentals of JavaScript closures, a powerful concept in modern JavaScript programming that enables better control over variable scopes.</p>
-                <a href="#" class="read-more">Read more</a>
-            </div>
-            
-            <!-- Blog Post 2 -->
-            <div class="post-card">
-                <h2 class="post-title">CSS Grid vs Flexbox</h2>
-                <p class="post-date">Posted on October 10, 2024</p>
-                <p class="post-excerpt">When to use CSS Grid and when to opt for Flexbox? Discover the differences and use cases for each layout system in modern web development.</p>
-                <a href="#" class="read-more">Read more</a>
-            </div>
-
-            <!-- Blog Post 3 -->
-            <div class="post-card">
-                <h2 class="post-title">A Deep Dive into Python Generators</h2>
-                <p class="post-date">Posted on October 5, 2024</p>
-                <p class="post-excerpt">Explore the world of Python generators and how they can help optimize your code by allowing for memory-efficient looping over large data sets.</p>
-                <a href="#" class="read-more">Read more</a>
-            </div>
-
-            <!-- Blog Post 4 -->
-            <div class="post-card">
-                <h2 class="post-title">Mastering Git Rebase</h2>
-                <p class="post-date">Posted on September 30, 2024</p>
-                <p class="post-excerpt">Take control of your Git history by mastering the rebase command. Learn how to rewrite commits, squash changes, and keep your project’s history clean.</p>
-                <a href="#" class="read-more">Read more</a>
-            </div>
-
+    <h1>Latest Blog Posts</h1>
+    <div class="container">
+        <div class="post">
+            <h2 class="post-title">Blog Post Title 1</h2>
+            <p class="post-content">This is a summary of the first blog post. It includes a brief description and key points that will be covered.</p>
+            <a href="#" class="post-link">Read More</a>
+        </div>
+        <div class="post">
+            <h2 class="post-title">Blog Post Title 2</h2>
+            <p class="post-content">This is a summary of the second blog post. It includes a brief description and key points that will be covered.</p>
+            <a href="#" class="post-link">Read More</a>
+        </div>
+        <div class="post">
+            <h2 class="post-title">Blog Post Title 3</h2>
+            <p class="post-content">This is a summary of the third blog post. It includes a brief description and key points that will be covered.</p>
+            <a href="#" class="post-link">Read More</a>
+        </div>
+        <div class="post">
+            <h2 class="post-title">Blog Post Title 4</h2>
+            <p class="post-content">This is a summary of the fourth blog post. It includes a brief description and key points that will be covered.</p>
+            <a href="#" class="post-link">Read More</a>
         </div>
     </div>
 
