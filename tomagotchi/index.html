@@ -3,99 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Latest Blog Posts</title>
     <style>
-        /* Main Colors */
-        body {
-            background-color: #282a36; /* Dark Gray (Vaporwave theme) */
-            color: #000000; /* Black for main text */
-            font-family: 'Courier New', Courier, monospace; /* Retro coder font */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Accent Colors */
-        h2, .post-title {
-            color: #bbbbbb; /* Lighter gray for titles */
-        }
-
-        /* Layout Styles */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #282a36; /* Vaporwave-inspired gray */
+            color: #1c1e22; /* Dark blackish text */
             padding: 20px;
         }
 
-        .grid {
+        h1 {
+            color: #8f929d; /* Accent gray for titles */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 20px;
         }
 
-        .post {
-            background-color: #44475a; /* Medium gray to contrast with background */
+        .post-card {
+            background-color: #1c1e22; /* Dark background for posts */
+            color: #ffffff; /* White text for readability */
             padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
         }
 
-        .post:hover {
+        .post-card:hover {
             transform: scale(1.05);
         }
 
         .post-title {
+            color: #8f929d; /* Accent gray for post titles */
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
-        .post-date {
-            font-size: 0.9rem;
-            color: #6272a4; /* Accent color for dates (light gray-blue) */
+        .post-excerpt {
             margin-bottom: 15px;
+            font-size: 1rem;
+            color: #d0d0d0; /* Lighter gray for excerpts */
         }
 
-        .post-description {
-            font-size: 1rem;
-            line-height: 1.6;
+        .post-link {
+            color: #8f929d; /* Accent color for links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .post-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #8f929d;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Latest Blog Posts</h2>
 
-        <!-- Grid of Posts -->
-        <div class="grid">
-            <!-- Post 1 -->
-            <div class="post">
-                <div class="post-title">Post Title 1</div>
-                <div class="post-date">October 19, 2024</div>
-                <div class="post-description">
-                    This is a short description of the first blog post. It can be two or three lines long and gives a quick overview of the content.
-                </div>
-            </div>
+    <h1>Latest Blog Posts</h1>
 
-            <!-- Post 2 -->
-            <div class="post">
-                <div class="post-title">Post Title 2</div>
-                <div class="post-date">October 18, 2024</div>
-                <div class="post-description">
-                    This is a short description of the second blog post. A brief summary of the article to entice the reader to click through and read more.
-                </div>
-            </div>
+    <div class="grid-container">
+        <!-- Example post 1 -->
+        <div class="post-card">
+            <h2 class="post-title">Blog Post Title 1</h2>
+            <p class="post-excerpt">This is a short description of the first blog post. It gives a sneak peek into the content.</p>
+            <a href="#" class="post-link">Read More</a>
+        </div>
 
-            <!-- Post 3 -->
-            <div class="post">
-                <div class="post-title">Post Title 3</div>
-                <div class="post-date">October 17, 2024</div>
-                <div class="post-description">
-                    Another interesting blog post goes here. Keep it concise and engaging to catch the reader's attention quickly.
-                </div>
-            </div>
+        <!-- Example post 2 -->
+        <div class="post-card">
+            <h2 class="post-title">Blog Post Title 2</h2>
+            <p class="post-excerpt">Here's an overview of the second blog post. It's an engaging article on something cool.</p>
+            <a href="#" class="post-link">Read More</a>
+        </div>
+
+        <!-- Example post 3 -->
+        <div class="post-card">
+            <h2 class="post-title">Blog Post Title 3</h2>
+            <p class="post-excerpt">This blog post talks about another interesting topic. Find out more by clicking below.</p>
+            <a href="#" class="post-link">Read More</a>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Your Blog. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
