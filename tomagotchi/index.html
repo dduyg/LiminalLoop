@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Blog Posts</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2e2e3a; /* Vaporwave Retro Gray */
+            color: #000000; /* Main black text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #b3b3cc; /* Accent gray for titles */
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        /* Grid Layout for Blog Posts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .post-card {
+            background-color: #3a3a4e; /* Slightly darker gray for post cards */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .post-card:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+        .post-title {
+            color: #b3b3cc; /* Accent color for post titles */
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .post-excerpt {
+            font-size: 1rem;
+            color: #e5e5e5; /* Lighter text for the excerpts */
+            margin-bottom: 15px;
+        }
+        .read-more {
+            text-decoration: none;
+            background-color: #b3b3cc; /* Accent gray for buttons */
+            color: #2e2e3a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .read-more:hover {
+            background-color: #8c8ca5; /* Darken button on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Latest Blog Posts</h1>
+        <div class="grid">
+            <!-- Blog Post 1 -->
+            <div class="post-card">
+                <div class="post-title">Post Title 1</div>
+                <div class="post-excerpt">This is a short excerpt of the blog post. It gives a brief preview of the content.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="post-card">
+                <div class="post-title">Post Title 2</div>
+                <div class="post-excerpt">This is a short excerpt of the blog post. It gives a brief preview of the content.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="post-card">
+                <div class="post-title">Post Title 3</div>
+                <div class="post-excerpt">This is a short excerpt of the blog post. It gives a brief preview of the content.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <!-- Blog Post 4 -->
+            <div class="post-card">
+                <div class="post-title">Post Title 4</div>
+                <div class="post-excerpt">This is a short excerpt of the blog post. It gives a brief preview of the content.</div>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
