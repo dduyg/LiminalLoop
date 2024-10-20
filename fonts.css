@@ -248,3 +248,13 @@ p {
     font-weight: 400;
 }
 *******/
+
+
+/* font-family: 'Pitch Regular', monospace; */
+@font-face {  
+    font-family: 'Pitch Regular';
+    src: url('fonts/Pitch-Regular.woff2') format('woff2'),
+         url('fonts/Pitch-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
