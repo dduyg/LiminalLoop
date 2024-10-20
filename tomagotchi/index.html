@@ -5,100 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest Blog Posts</title>
     <style>
-        /* General Styles */
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #2e2e3a; /* Vaporwave Retro Gray */
-            color: #000000; /* Main black text */
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        h1 {
-            color: #b3b3cc; /* Accent gray for titles */
-            text-align: center;
-            font-size: 2.5rem;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Light Gray Background */
+            color: #000000; /* Black for Main Text */
         }
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-        /* Grid Layout for Blog Posts */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .post-card {
-            background-color: #3a3a4e; /* Slightly darker gray for post cards */
-            border-radius: 8px;
+            max-width: 800px;
+            margin: 50px auto;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .post-card:hover {
-            transform: scale(1.05); /* Zoom effect on hover */
+        h1 {
+            text-align: center;
+            color: #4f4f4f; /* Dark Gray for Title */
         }
-        .post-title {
-            color: #b3b3cc; /* Accent color for post titles */
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .post {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
         }
-        .post-excerpt {
-            font-size: 1rem;
-            color: #e5e5e5; /* Lighter text for the excerpts */
-            margin-bottom: 15px;
+        .post h2 {
+            font-size: 1.5em;
+            color: #5c5c5c; /* Gray for Post Title */
+            margin: 0;
         }
-        .read-more {
-            text-decoration: none;
-            background-color: #b3b3cc; /* Accent gray for buttons */
-            color: #2e2e3a;
-            padding: 10px 20px;
-            border-radius: 5px;
+        .post p {
+            margin: 10px 0 0;
+            color: #333333; /* Slightly lighter black for content */
+        }
+        .post .date {
+            font-size: 0.9em;
+            color: #7a7a7a; /* Lighter Gray for Dates */
+        }
+        .button {
             display: inline-block;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            padding: 10px 15px;
+            margin-top: 20px;
+            background-color: #5c5c5c; /* Button color matches post title */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
         }
-        .read-more:hover {
-            background-color: #8c8ca5; /* Darken button on hover */
+        .button:hover {
+            background-color: #4f4f4f; /* Slightly darker button on hover */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Latest Blog Posts</h1>
-        <div class="grid">
-            <!-- Blog Post 1 -->
-            <div class="post-card">
-                <div class="post-title">Post Title 1</div>
-                <div class="post-excerpt">This is a short excerpt of the blog post. It gives a brief preview of the content.</div>
-                <a href="#" class="read-more">Read More</a>
-            </div>
 
-            <!-- Blog Post 2 -->
-            <div class="post-card">
-                <div class="post-title">Post Title 2</div>
-                <div class="post-excerpt">This is a short excerpt of the blog post. It gives a brief preview of the content.</div>
-                <a href="#" class="read-more">Read More</a>
-            </div>
+        <!-- Sample Blog Post 1 -->
+        <div class="post">
+            <h2>Understanding Web Development</h2>
+            <p class="date">Published on October 18, 2024</p>
+            <p>In this post, we take a deep dive into the fundamentals of web development, covering everything from HTML to JavaScript...</p>
+            <a href="#" class="button">Read More</a>
+        </div>
 
-            <!-- Blog Post 3 -->
-            <div class="post-card">
-                <div class="post-title">Post Title 3</div>
-                <div class="post-excerpt">This is a short excerpt of the blog post. It gives a brief preview of the content.</div>
-                <a href="#" class="read-more">Read More</a>
-            </div>
+        <!-- Sample Blog Post 2 -->
+        <div class="post">
+            <h2>The Power of CSS Grids</h2>
+            <p class="date">Published on October 15, 2024</p>
+            <p>CSS Grid is a game-changer for layout design. It allows for complex responsive layouts with just a few lines of code...</p>
+            <a href="#" class="button">Read More</a>
+        </div>
 
-            <!-- Blog Post 4 -->
-            <div class="post-card">
-                <div class="post-title">Post Title 4</div>
-                <div class="post-excerpt">This is a short excerpt of the blog post. It gives a brief preview of the content.</div>
-                <a href="#" class="read-more">Read More</a>
-            </div>
+        <!-- Sample Blog Post 3 -->
+        <div class="post">
+            <h2>JavaScript: Tips and Tricks</h2>
+            <p class="date">Published on October 12, 2024</p>
+            <p>Explore some lesser-known but powerful JavaScript techniques to enhance your web projects. From async patterns to closures...</p>
+            <a href="#" class="button">Read More</a>
         </div>
     </div>
 </body>
