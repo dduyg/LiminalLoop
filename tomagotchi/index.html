@@ -8,108 +8,92 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #808080; /* Medium gray */
-            color: #000000; /* Black text */
+            background-color: #7d7d7d; /* Medium gray background */
+            color: #000; /* Main text color */
+        }
+        header {
+            text-align: center;
+            padding: 20px;
         }
         h1 {
-            text-align: center;
-            margin: 20px 0;
-            color: #404040; /* Accent gray for titles */
+            margin: 0;
+            color: #333; /* Darker gray for the main title */
         }
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-        .card {
-            background-color: #a9a9a9; /* Slightly lighter gray for cards */
+        .post-card {
+            background-color: #b0b0b0; /* Accent gray for cards */
             border-radius: 8px;
-            padding: 20px;
-            transition: transform 0.2s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
-        .card:hover {
-            transform: scale(1.05); /* Interactive feature: scale on hover */
+        .post-card:hover {
+            transform: translateY(-5px);
         }
-        .card h2 {
-            font-size: 1.5em;
-            color: #404040; /* Accent gray */
+        .post-title {
+            font-size: 1.2em;
+            color: #444; /* Another shade of gray for titles */
+            margin: 0;
         }
-        .card p {
-            font-size: 1em;
+        .post-content {
+            margin: 10px 0;
+            font-size: 0.9em;
+            color: #222; /* Slightly darker text for content */
         }
-        .read-more {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #505050; /* Darker accent color for buttons */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.2s;
-        }
-        .read-more:hover {
-            background-color: #404040; /* Lighter on hover */
+        .post-date {
+            font-size: 0.8em;
+            color: #555; /* Lighter gray for dates */
         }
         footer {
             text-align: center;
-            margin-top: 20px;
-            color: #404040; /* Accent gray */
+            padding: 20px;
+            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
-
-    <h1>Latest Blog Posts</h1>
+    <header>
+        <h1>Latest Blog Posts</h1>
+    </header>
     <div class="container">
-        <div class="card">
-            <h2>Blog Post Title 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
-            <a href="#" class="read-more">Read More</a>
+        <div class="post-card">
+            <h2 class="post-title">Post Title 1</h2>
+            <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="post-date">Published on: October 1, 2024</p>
         </div>
-        <div class="card">
-            <h2>Blog Post Title 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
-            <a href="#" class="read-more">Read More</a>
+        <div class="post-card">
+            <h2 class="post-title">Post Title 2</h2>
+            <p class="post-content">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="post-date">Published on: October 10, 2024</p>
         </div>
-        <div class="card">
-            <h2>Blog Post Title 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
-            <a href="#" class="read-more">Read More</a>
+        <div class="post-card">
+            <h2 class="post-title">Post Title 3</h2>
+            <p class="post-content">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p class="post-date">Published on: October 15, 2024</p>
         </div>
-        <div class="card">
-            <h2>Blog Post Title 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
-            <a href="#" class="read-more">Read More</a>
+        <div class="post-card">
+            <h2 class="post-title">Post Title 4</h2>
+            <p class="post-content">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="post-date">Published on: October 20, 2024</p>
         </div>
-        <div class="card">
-            <h2>Blog Post Title 5</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
-            <a href="#" class="read-more">Read More</a>
+        <div class="post-card">
+            <h2 class="post-title">Post Title 5</h2>
+            <p class="post-content">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, et facilisis urna faucibus non.</p>
+            <p class="post-date">Published on: October 18, 2024</p>
         </div>
-        <div class="card">
-            <h2>Blog Post Title 6</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-        <div class="card">
-            <h2>Blog Post Title 7</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-        <div class="card">
-            <h2>Blog Post Title 8</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu.</p>
-            <a href="#" class="read-more">Read More</a>
+        <div class="post-card">
+            <h2 class="post-title">Post Title 6</h2>
+            <p class="post-content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p class="post-date">Published on: October 19, 2024</p>
         </div>
     </div>
-
     <footer>
-        <p>&copy; 2024 Your Blog Name</p>
+        &copy; 2024 Your Blog Name. All rights reserved.
     </footer>
-
 </body>
 </html>
