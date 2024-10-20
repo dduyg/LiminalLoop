@@ -3,90 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Latest Blog Posts</title>
     <style>
         body {
-            margin: 0;
             font-family: 'Courier New', Courier, monospace;
-            background-color: #2A2A2A; /* Retro-themed dark gray background */
-            color: #0D0D0D; /* Black for main text */
-        }
-        
-        h1 {
-            text-align: center;
-            color: #D3D3D3; /* Lighter gray for the title */
+            background-color: #2E2E2E; /* Medium dark gray */
+            color: #1A1A1A; /* Main text color: black */
+            margin: 0;
             padding: 20px;
-            border-bottom: 1px solid #D3D3D3;
+            display: flex;
+            justify-content: center;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
+        .container {
+            width: 80%;
             max-width: 1200px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
         }
 
-        .post {
-            background-color: #3A3A3A; /* Slightly darker gray for posts */
+        .post-card {
+            background-color: #333333; /* Darker gray for cards */
+            border: 1px solid #444444; /* Border */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
 
-        .post h2 {
-            color: #E0E0E0; /* Another lighter gray for post titles */
-            font-size: 1.5rem;
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-title {
+            color: #A9A9A9; /* Accent color for titles */
+            font-size: 1.5em;
             margin-bottom: 10px;
         }
 
-        .post p {
-            color: #BBBBBB; /* Gray tone for post content */
-            font-size: 1rem;
+        .post-date {
+            color: #777777; /* Light gray for date */
+            font-size: 0.9em;
+            margin-bottom: 15px;
         }
 
-        .post .read-more {
-            color: #FF7F50; /* Accent color for links/buttons (optional, retro orange) */
-            font-weight: bold;
+        .post-excerpt {
+            color: #D3D3D3; /* Lighter gray for excerpts */
+            font-size: 1em;
+        }
+
+        .read-more {
+            color: #A9A9A9; /* Accent color */
             text-decoration: none;
+            font-weight: bold;
             display: inline-block;
             margin-top: 10px;
+            transition: color 0.3s ease;
         }
 
-        /* Responsive behavior */
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
+        .read-more:hover {
+            color: #ffffff; /* Change to white on hover */
+        }
+
+        h1 {
+            color: #A9A9A9; /* Accent color for main heading */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
         }
     </style>
 </head>
 <body>
 
-    <h1>Latest Blog Posts</h1>
+    <div>
+        <h1>Latest Blog Posts</h1>
+        <div class="container">
+            <!-- Blog Post 1 -->
+            <div class="post-card">
+                <h2 class="post-title">Understanding JavaScript Closures</h2>
+                <p class="post-date">Posted on October 15, 2024</p>
+                <p class="post-excerpt">Learn the fundamentals of JavaScript closures, a powerful concept in modern JavaScript programming that enables better control over variable scopes.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+            
+            <!-- Blog Post 2 -->
+            <div class="post-card">
+                <h2 class="post-title">CSS Grid vs Flexbox</h2>
+                <p class="post-date">Posted on October 10, 2024</p>
+                <p class="post-excerpt">When to use CSS Grid and when to opt for Flexbox? Discover the differences and use cases for each layout system in modern web development.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
 
-    <div class="grid-container">
-        <!-- Example blog post 1 -->
-        <div class="post">
-            <h2>Understanding Retro Themes in Web Design</h2>
-            <p>Retro themes have seen a resurgence in web design recently. This article breaks down the design principles that bring a nostalgic feel to modern websites...</p>
-            <a href="#" class="read-more">Read more</a>
-        </div>
+            <!-- Blog Post 3 -->
+            <div class="post-card">
+                <h2 class="post-title">A Deep Dive into Python Generators</h2>
+                <p class="post-date">Posted on October 5, 2024</p>
+                <p class="post-excerpt">Explore the world of Python generators and how they can help optimize your code by allowing for memory-efficient looping over large data sets.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
 
-        <!-- Example blog post 2 -->
-        <div class="post">
-            <h2>Exploring Datawave: A Deep Dive</h2>
-            <p>Datawave has become an exciting trend in digital design, combining retro aesthetics with futuristic data visualization techniques. Learn more in this post...</p>
-            <a href="#" class="read-more">Read more</a>
-        </div>
+            <!-- Blog Post 4 -->
+            <div class="post-card">
+                <h2 class="post-title">Mastering Git Rebase</h2>
+                <p class="post-date">Posted on September 30, 2024</p>
+                <p class="post-excerpt">Take control of your Git history by mastering the rebase command. Learn how to rewrite commits, squash changes, and keep your project’s history clean.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
 
-        <!-- Example blog post 3 -->
-        <div class="post">
-            <h2>How to Create a Retro Coder Theme</h2>
-            <p>Want to bring retro vibes to your code editor? This tutorial will walk you through setting up a retro-inspired coder theme...</p>
-            <a href="#" class="read-more">Read more</a>
         </div>
     </div>
 
