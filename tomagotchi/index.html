@@ -3,84 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Latest Blog Posts</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2; /* Light Gray Background */
-            color: #000000; /* Black for Main Text */
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
+            background-color: #F0F0F0;
+            color: #000000;
+            margin: 0;
             padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
+            color: #B0B0B0;
             text-align: center;
-            color: #4f4f4f; /* Dark Gray for Title */
+            margin-bottom: 40px;
         }
-        .post {
-            border-bottom: 1px solid #e0e0e0;
-            padding: 15px 0;
+        .post-list {
+            list-style: none;
+            padding: 0;
         }
-        .post h2 {
+        .post-item {
+            background-color: white;
+            border: 1px solid #B0B0B0;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .post-title {
+            color: #B0B0B0;
             font-size: 1.5em;
-            color: #5c5c5c; /* Gray for Post Title */
             margin: 0;
         }
-        .post p {
-            margin: 10px 0 0;
-            color: #333333; /* Slightly lighter black for content */
-        }
-        .post .date {
+        .post-date {
             font-size: 0.9em;
-            color: #7a7a7a; /* Lighter Gray for Dates */
+            color: #666666;
+            margin-bottom: 10px;
         }
-        .button {
+        .post-excerpt {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .read-more {
             display: inline-block;
             padding: 10px 15px;
-            margin-top: 20px;
-            background-color: #5c5c5c; /* Button color matches post title */
+            background-color: #B0B0B0;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
-        .button:hover {
-            background-color: #4f4f4f; /* Slightly darker button on hover */
+        .read-more:hover {
+            background-color: #909090;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Latest Blog Posts</h1>
 
-        <!-- Sample Blog Post 1 -->
-        <div class="post">
-            <h2>Understanding Web Development</h2>
-            <p class="date">Published on October 18, 2024</p>
-            <p>In this post, we take a deep dive into the fundamentals of web development, covering everything from HTML to JavaScript...</p>
-            <a href="#" class="button">Read More</a>
-        </div>
+    <h1>Latest Blog Posts</h1>
+    
+    <ul class="post-list">
+        <li class="post-item">
+            <h2 class="post-title">Post Title 1</h2>
+            <p class="post-date">Published on October 19, 2024</p>
+            <p class="post-excerpt">
+                This is a short excerpt from the first blog post. It gives a quick overview of the content and encourages the reader to read more.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </li>
+        <li class="post-item">
+            <h2 class="post-title">Post Title 2</h2>
+            <p class="post-date">Published on October 17, 2024</p>
+            <p class="post-excerpt">
+                This is a short excerpt from the second blog post. It gives a quick overview of the content and encourages the reader to read more.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </li>
+        <li class="post-item">
+            <h2 class="post-title">Post Title 3</h2>
+            <p class="post-date">Published on October 15, 2024</p>
+            <p class="post-excerpt">
+                This is a short excerpt from the third blog post. It gives a quick overview of the content and encourages the reader to read more.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </li>
+    </ul>
 
-        <!-- Sample Blog Post 2 -->
-        <div class="post">
-            <h2>The Power of CSS Grids</h2>
-            <p class="date">Published on October 15, 2024</p>
-            <p>CSS Grid is a game-changer for layout design. It allows for complex responsive layouts with just a few lines of code...</p>
-            <a href="#" class="button">Read More</a>
-        </div>
-
-        <!-- Sample Blog Post 3 -->
-        <div class="post">
-            <h2>JavaScript: Tips and Tricks</h2>
-            <p class="date">Published on October 12, 2024</p>
-            <p>Explore some lesser-known but powerful JavaScript techniques to enhance your web projects. From async patterns to closures...</p>
-            <a href="#" class="button">Read More</a>
-        </div>
-    </div>
 </body>
 </html>
