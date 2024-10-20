@@ -3,101 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Latest Blog Posts</title>
     <style>
-        /* Base styling */
         body {
-            background-color: #2a2b2e; /* Dark Gray Background fitting retro cyber theme */
-            color: #000000; /* Black text */
-            font-family: 'Courier New', Courier, monospace; /* Coder-like retro font */
             margin: 0;
-            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2A2A2A; /* Retro-themed dark gray background */
+            color: #0D0D0D; /* Black for main text */
         }
-
+        
         h1 {
-            color: #c0c0c0; /* Accent lighter gray for title */
             text-align: center;
+            color: #D3D3D3; /* Lighter gray for the title */
             padding: 20px;
+            border-bottom: 1px solid #D3D3D3;
         }
 
-        /* Styling for the grid layout */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .post {
-            background-color: #3b3c40; /* Slightly lighter gray for blog post cards */
-            padding: 15px;
+            background-color: #3A3A3A; /* Slightly darker gray for posts */
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .post:hover {
-            transform: translateY(-10px); /* Hover effect for interactivity */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         .post h2 {
-            color: #e0e0e0; /* Accent color for post titles */
-            font-size: 24px;
+            color: #E0E0E0; /* Another lighter gray for post titles */
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
 
         .post p {
-            font-size: 16px;
-            line-height: 1.6;
+            color: #BBBBBB; /* Gray tone for post content */
+            font-size: 1rem;
         }
 
-        .read-more {
-            color: #ff4081; /* Bright accent for important links */
+        .post .read-more {
+            color: #FF7F50; /* Accent color for links/buttons (optional, retro orange) */
             font-weight: bold;
             text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
         }
 
-        .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* Media queries for responsiveness */
+        /* Responsive behavior */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 24px;
+            .grid-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+
     <h1>Latest Blog Posts</h1>
 
     <div class="grid-container">
-        <!-- Blog post 1 -->
+        <!-- Example blog post 1 -->
         <div class="post">
-            <h2>Exploring the World of Cyber Security</h2>
-            <p>In this post, we dive deep into the latest trends in cyber security and how you can protect yourself from new-age digital threats.</p>
-            <a href="#" class="read-more">Read More</a>
+            <h2>Understanding Retro Themes in Web Design</h2>
+            <p>Retro themes have seen a resurgence in web design recently. This article breaks down the design principles that bring a nostalgic feel to modern websites...</p>
+            <a href="#" class="read-more">Read more</a>
         </div>
 
-        <!-- Blog post 2 -->
+        <!-- Example blog post 2 -->
         <div class="post">
-            <h2>Retro Coding: A Journey Through Time</h2>
-            <p>This article explores the origins of programming languages and the retro aesthetics of coding in the early days of computing.</p>
-            <a href="#" class="read-more">Read More</a>
+            <h2>Exploring Datawave: A Deep Dive</h2>
+            <p>Datawave has become an exciting trend in digital design, combining retro aesthetics with futuristic data visualization techniques. Learn more in this post...</p>
+            <a href="#" class="read-more">Read more</a>
         </div>
 
-        <!-- Blog post 3 -->
+        <!-- Example blog post 3 -->
         <div class="post">
-            <h2>AI and the Future of Programming</h2>
-            <p>Artificial intelligence is changing the way we code. We take a look at how AI is integrated into modern development tools.</p>
-            <a href="#" class="read-more">Read More</a>
-        </div>
-
-        <!-- Blog post 4 -->
-        <div class="post">
-            <h2>The Art of Debugging: A Retro Perspective</h2>
-            <p>Debugging is an essential part of coding. Here’s a throwback to old-school debugging techniques and how they still apply today.</p>
-            <a href="#" class="read-more">Read More</a>
+            <h2>How to Create a Retro Coder Theme</h2>
+            <p>Want to bring retro vibes to your code editor? This tutorial will walk you through setting up a retro-inspired coder theme...</p>
+            <a href="#" class="read-more">Read more</a>
         </div>
     </div>
 
