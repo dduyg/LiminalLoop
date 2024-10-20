@@ -3,96 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest Blog Posts</title>
+    <title>Latest Posts</title>
     <style>
         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
             background-color: #777777;
             color: black;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-
         h1 {
+            text-align: center;
             margin: 20px 0;
-            color: #c0c0c0; /* Accent color for titles */
         }
-
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
-            width: 90%;
-            max-width: 1200px;
         }
-
         .post-card {
-            background-color: #888888; /* Slightly darker for cards */
-            border-radius: 8px;
+            background-color: #555555;
+            border-radius: 10px;
             padding: 15px;
-            transition: transform 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-
         .post-card:hover {
             transform: scale(1.05);
-            background-color: #999999; /* Lighter on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-
         .post-title {
-            font-size: 1.2em;
-            margin: 10px 0;
-            color: #c0c0c0; /* Accent color for post titles */
+            font-size: 1.5em;
+            margin: 0;
+            color: white;
         }
-
-        .post-date {
-            font-size: 0.9em;
-            color: #d0d0d0; /* Light gray for dates */
-        }
-
         .post-content {
             font-size: 0.9em;
-            color: #e0e0e0; /* Even lighter for content */
+            color: lightgray;
+        }
+        @media (max-width: 600px) {
+            .post-title {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Latest Blog Posts</h1>
     <div class="container">
-        <div class="post-card" onclick="window.location.href='#'">
+        <div class="post-card">
             <h2 class="post-title">Post Title 1</h2>
-            <p class="post-date">October 20, 2024</p>
             <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
-        <div class="post-card" onclick="window.location.href='#'">
+        <div class="post-card">
             <h2 class="post-title">Post Title 2</h2>
-            <p class="post-date">October 19, 2024</p>
             <p class="post-content">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
-        <div class="post-card" onclick="window.location.href='#'">
+        <div class="post-card">
             <h2 class="post-title">Post Title 3</h2>
-            <p class="post-date">October 18, 2024</p>
             <p class="post-content">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
         </div>
-        <div class="post-card" onclick="window.location.href='#'">
+        <div class="post-card">
             <h2 class="post-title">Post Title 4</h2>
-            <p class="post-date">October 17, 2024</p>
             <p class="post-content">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <div class="post-card" onclick="window.location.href='#'">
+        <div class="post-card">
             <h2 class="post-title">Post Title 5</h2>
-            <p class="post-date">October 16, 2024</p>
-            <p class="post-content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+            <p class="post-content">Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit.</p>
         </div>
-        <div class="post-card" onclick="window.location.href='#'">
+        <div class="post-card">
             <h2 class="post-title">Post Title 6</h2>
-            <p class="post-date">October 15, 2024</p>
-            <p class="post-content">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
+            <p class="post-content">Nam at lectus urna duis convallis convallis tellus. Nulla facilisi. Morbi tempus iaculis urna id volutpat lacus laoreet non curabitur gravida arcu ac.</p>
+        </div>
+        <div class="post-card">
+            <h2 class="post-title">Post Title 7</h2>
+            <p class="post-content">Viverra maecenas accumsan lacus vel facilisis. Cursus risus at ultrices mi tempus imperdiet nulla malesuada.</p>
+        </div>
+        <div class="post-card">
+            <h2 class="post-title">Post Title 8</h2>
+            <p class="post-content">Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae.</p>
         </div>
     </div>
 </body>
