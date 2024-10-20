@@ -5,103 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest Blog Posts</title>
     <style>
-        * {
+        /* Base styling */
+        body {
+            background-color: #2a2b2e; /* Dark Gray Background fitting retro cyber theme */
+            color: #000000; /* Black text */
+            font-family: 'Courier New', Courier, monospace; /* Coder-like retro font */
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #282a36; /* Vaporwave-inspired gray */
-            color: #1c1e22; /* Dark blackish text */
-            padding: 20px;
         }
 
         h1 {
-            color: #8f929d; /* Accent gray for titles */
+            color: #c0c0c0; /* Accent lighter gray for title */
             text-align: center;
-            margin-bottom: 30px;
+            padding: 20px;
         }
 
+        /* Styling for the grid layout */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-        }
-
-        .post-card {
-            background-color: #1c1e22; /* Dark background for posts */
-            color: #ffffff; /* White text for readability */
             padding: 20px;
+        }
+
+        .post {
+            background-color: #3b3c40; /* Slightly lighter gray for blog post cards */
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
         }
 
-        .post-card:hover {
-            transform: scale(1.05);
+        .post:hover {
+            transform: translateY(-10px); /* Hover effect for interactivity */
         }
 
-        .post-title {
-            color: #8f929d; /* Accent gray for post titles */
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .post h2 {
+            color: #e0e0e0; /* Accent color for post titles */
+            font-size: 24px;
         }
 
-        .post-excerpt {
-            margin-bottom: 15px;
-            font-size: 1rem;
-            color: #d0d0d0; /* Lighter gray for excerpts */
+        .post p {
+            font-size: 16px;
+            line-height: 1.6;
         }
 
-        .post-link {
-            color: #8f929d; /* Accent color for links */
-            text-decoration: none;
+        .read-more {
+            color: #ff4081; /* Bright accent for important links */
             font-weight: bold;
+            text-decoration: none;
         }
 
-        .post-link:hover {
+        .read-more:hover {
             text-decoration: underline;
         }
 
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            color: #8f929d;
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
-
     <h1>Latest Blog Posts</h1>
 
     <div class="grid-container">
-        <!-- Example post 1 -->
-        <div class="post-card">
-            <h2 class="post-title">Blog Post Title 1</h2>
-            <p class="post-excerpt">This is a short description of the first blog post. It gives a sneak peek into the content.</p>
-            <a href="#" class="post-link">Read More</a>
+        <!-- Blog post 1 -->
+        <div class="post">
+            <h2>Exploring the World of Cyber Security</h2>
+            <p>In this post, we dive deep into the latest trends in cyber security and how you can protect yourself from new-age digital threats.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
 
-        <!-- Example post 2 -->
-        <div class="post-card">
-            <h2 class="post-title">Blog Post Title 2</h2>
-            <p class="post-excerpt">Here's an overview of the second blog post. It's an engaging article on something cool.</p>
-            <a href="#" class="post-link">Read More</a>
+        <!-- Blog post 2 -->
+        <div class="post">
+            <h2>Retro Coding: A Journey Through Time</h2>
+            <p>This article explores the origins of programming languages and the retro aesthetics of coding in the early days of computing.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
 
-        <!-- Example post 3 -->
-        <div class="post-card">
-            <h2 class="post-title">Blog Post Title 3</h2>
-            <p class="post-excerpt">This blog post talks about another interesting topic. Find out more by clicking below.</p>
-            <a href="#" class="post-link">Read More</a>
+        <!-- Blog post 3 -->
+        <div class="post">
+            <h2>AI and the Future of Programming</h2>
+            <p>Artificial intelligence is changing the way we code. We take a look at how AI is integrated into modern development tools.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+
+        <!-- Blog post 4 -->
+        <div class="post">
+            <h2>The Art of Debugging: A Retro Perspective</h2>
+            <p>Debugging is an essential part of coding. Here’s a throwback to old-school debugging techniques and how they still apply today.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Your Blog. All rights reserved.</p>
-    </footer>
 
 </body>
 </html>
