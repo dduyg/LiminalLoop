@@ -250,11 +250,28 @@ p {
 *******/
 
 
+
 /* font-family: 'Pitch Regular', monospace; */
+/* font-family: 'Pitch Medium', monospace; */
+/* font-family: 'Pitch SemiBold', monospace; */
 @font-face {  
     font-family: 'Pitch Regular';
     src: url('fonts/Pitch-Regular.woff2') format('woff2'),
          url('fonts/Pitch-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {  
+    font-family: 'Pitch Medium';
+    src: url('fonts/Pitch-Medium.woff2') format('woff2'),
+         url('fonts/Pitch-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {  
+    font-family: 'Pitch SemiBold';
+    src: url('fonts/Pitch-SemiBold.woff2') format('woff2'),
+         url('fonts/Pitch-SemiBold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
