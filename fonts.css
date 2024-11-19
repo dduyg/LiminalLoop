@@ -1,0 +1,382 @@
+@font-face {
+    font-family: Pentameter Regular;
+    src: url(fonts/Pentameter-Wide-Regular.woff);
+}
+@font-face {
+    font-family: Pentameter Italic;
+    src: url(fonts/Pentameter-Wide-ThinItalic.woff);
+}
+@font-face {
+    font-family: Pentameter Light;
+    src: url(fonts/Pentameter-Wide-Light.woff);
+}
+
+
+
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    src: url(fonts/HelveticaNeue-Light.woff);
+    src: url(fonts/HelveticaNeue-Light.woff2);
+}
+@font-face {
+    font-family: 'Helvetica Neue Bold';
+    src: url(fonts/HelveticaNeue-Bold.woff);
+    src: url(fonts/HelveticaNeue-Bold.woff2);
+}
+@font-face {
+    font-family: 'Helvetica Neue Medium';
+    src: url(fonts/HelveticaNeue-Medium.woff);
+    src: url(fonts/HelveticaNeue-Medium.woff2);
+}
+
+
+
+@font-face {
+    font-family: 'standard';
+    src: url(fonts/Standard-Book.woff2);
+}
+
+@font-face {
+    font-family: 'times now';
+    src: url(fonts/TimesNow-Light.woff2);
+}
+
+
+
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('fonts/GeistMonoVF.woff2') format('woff2'),
+         url('fonts/GeistMonoVF.woff') format('woff');
+    /* Add additional font formats here for better compatibility */
+    font-weight: normal; /* Adjust font weight if necessary */
+    font-style: normal; /* Adjust font style if necessary */
+}
+
+@font-face {
+    font-family: 'Geist Sans';
+    src: url('fonts/GeistVF.woff2') format('woff2'),
+         url('fonts/GeistVF.woff') format('woff');
+    /* Add additional font formats here for better compatibility */
+    font-weight: normal; /* Adjust font weight if necessary */
+    font-style: normal; /* Adjust font style if necessary */
+}
+
+
+
+@font-face {
+  font-family: 'LabMono';
+  src: url('fonts/labmono-regular.woff2') format('woff2'),
+       url('fonts/labmono-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Ribes Black';
+    src: url('fonts/Ribes-Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Monaco';
+    src: url('fonts/Monaco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lucida Console';
+    src: url('fonts/Lucida-Console-Regular.woff2') format('woff2'),
+         url('fonts/Lucida-Console-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Consolas';
+    src: url('fonts/Consolas.woff2') format('woff2'),
+         url('fonts/Consolas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Droid Sans Mono';
+    src: url('fonts/droid-sans-mono.woff2') format('woff2'),
+         url('fonts/droid-sans-mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue.woff2') format('woff2'),
+         url('fonts/HelveticaNeue.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Fantasque Sans Mono';
+    src: url('fonts/FantasqueSansMono-Regular.woff2') format('woff2'),
+         url('fonts/FantasqueSansMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Sporting Grotesque';
+    src: url('fonts/Sporting_Grotesque-Regular.woff2') format('woff2'),
+         url('fonts/Sporting_Grotesque-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Sporting Grotesque Bold';
+    src: url('fonts/Sporting_Grotesque-Bold.woff2') format('woff2'),
+         url('fonts/Sporting_Grotesque-Bold.woff') format('woff');
+}
+
+
+
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: bold;
+    font-style: normal;
+    src: url('fonts/NeueMachina-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Neue Machina';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/NeueMachina-Medium.woff') format('woff');
+}
+
+
+
+@font-face {
+    font-family: 'GT Super Display';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/GT-Super-Display-Light.woff2') format('woff2'),
+         url('fonts/GT-Super-Display-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'GT Super Display Italic';
+    src: url('fonts/GT-Super-Display-Light-Italic.woff2') format('woff2'),
+         url('fonts/GT-Super-Display-Light-Italic.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Stravinsky';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/Sporting_Grotesque-Bold_web.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'SF Pro Text Regular';
+    src: url('fonts/sf-pro-text-regular-webfont.woff2') format('woff2'),
+         url('fonts/sf-pro-text-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* font-family: 'HK Grotesk', sans-serif; */
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url('fonts/HKGrotesk-Regular.woff2') format('woff2'),
+         url('fonts/HKGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url('fonts/HKGrotesk-Bold.woff2') format('woff2'),
+         url('fonts/HKGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/* font-family: 'StudioFeixenSans', sans-serif; */
+@font-face {
+    font-family: 'StudioFeixenSans';
+    src: url('fonts/studio-feixen-sans-variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* Lunchtype22 Regular */
+@font-face {
+    font-family: 'Lunchtype22';
+    src: url('fonts/lunchtype22-regular.woff') format('woff');
+    font-weight: 400; /* Regular weight */
+    font-style: normal;
+}
+/* Lunchtype22 Medium */
+@font-face {
+    font-family: 'Lunchtype22';
+    src: url('fonts/lunchtype22-medium.woff') format('woff');
+    font-weight: 500; /* Medium weight */
+    font-style: normal;
+}
+
+/**********
+How use different font weights:
+body {
+    font-family: 'Lunchtype22', sans-serif;
+}
+
+Apply different font weights:
+h1 {
+    font-family: 'Lunchtype22', sans-serif;
+    font-weight: 500;
+}
+p {
+    font-family: 'Lunchtype22', sans-serif;
+    font-weight: 400;
+}
+*******/
+
+
+
+/* font-family: 'Pitch Regular', monospace; */
+/* font-family: 'Pitch Medium', monospace; */
+/* font-family: 'Pitch SemiBold', monospace; */
+@font-face {  
+    font-family: 'Pitch Regular';
+    src: url('fonts/Pitch-Regular.woff2') format('woff2'),
+         url('fonts/Pitch-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {  
+    font-family: 'Pitch Medium';
+    src: url('fonts/Pitch-Medium.woff2') format('woff2'),
+         url('fonts/Pitch-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {  
+    font-family: 'Pitch SemiBold';
+    src: url('fonts/Pitch-SemiBold.woff2') format('woff2'),
+         url('fonts/Pitch-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**
+* Array Wide 
+* Array Regular 
+* Array Semibold 
+* Array SemiboldWide 
+* Array Bold 
+* Array BoldWide 
+*
+* font-family: 'Array Wide', sans-serif;
+*/
+@font-face {
+  font-family: 'Array Wide';
+  src: url('fonts/Array-Wide.woff2') format('woff2'),
+       url('fonts/Array-Wide.woff') format('woff'),
+       url('fonts/Array-Wide.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array Regular';
+  src: url('fonts/Array-Regular.woff2') format('woff2'),
+       url('fonts/Array-Regular.woff') format('woff'),
+       url('fonts/Array-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array Semibold';
+  src: url('fonts/Array-Semibold.woff2') format('woff2'),
+       url('fonts/Array-Semibold.woff') format('woff'),
+       url('fonts/Array-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array Semibold Wide';
+  src: url('fonts/Array-SemiboldWide.woff2') format('woff2'),
+       url('fonts/Array-SemiboldWide.woff') format('woff'),
+       url('fonts/Array-SemiboldWide.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array Bold';
+  src: url('fonts/Array-Bold.woff2') format('woff2'),
+       url('fonts/Array-Bold.woff') format('woff'),
+       url('fonts/Array-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array Bold Wide';
+  src: url('fonts/Array-BoldWide.woff2') format('woff2'),
+       url('fonts/Array-BoldWide.woff') format('woff'),
+       url('fonts/Array-BoldWide.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*
+* font-family: 'Chillax', sans-serif;
+*/
+@font-face {
+  font-family: 'Chillax';
+  src: url('fonts/Chillax-Variable.woff2') format('woff2'),
+       url('fonts/Chillax-Variable.woff') format('woff'),
+       url('fonts/Chillax-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 800.0;
+*
+* available axes:
+'wght' (range from 200.0 to 800.0
+*
+* font-family: 'Panchang', sans-serif;
+*/
+@font-face {
+  font-family: 'Panchang';
+  src: url('fonts/Panchang-Variable.woff2') format('woff2'),
+       url('fonts/Panchang-Variable.woff') format('woff'),
+       url('fonts/Panchang-Variable.ttf') format('truetype');
+  font-weight: 200 800;
+  font-display: swap;
+  font-style: normal;
+}
