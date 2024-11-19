@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="@dduyg">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Wavefont:wght@4..1000&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Roboto Mono", monospace;
+            background-image: url('elaborate.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-size: 16px;
+            height: 100vh;
+            line-height: 1.4;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        @media (max-width: 768px) {
+            body {font-size: 15px;}
+        }
+        @media (max-width: 480px) { 
+            body {font-size: 14px;}
+        } 
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+        pre {
+            border-left: 5px solid #FFFFEA;
+            overflow-x: auto;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 77%;
+            max-height: 80vh;
+            overflow-y: hidden;
+            scrollbar-color: #FFFFEA transparent;
+            scrollbar-width: thin;     
+        }
+        /* Highlight.js Overrides */
+        .hljs {
+            background: transparent !important; /* Force Highlight.js to override background */
+        }
+        
+        .hljs-comment {
+            color: white;
+            font-style: italic;
+        }
+        .hljs-keyword, .hljs-built_in {
+            color: #ff79c6; /* pink/red for keywords */
+        }
+        .hljs-string {
+            color: #f1fa8c; /* yellow for strings */
+        }
+        .hljs-number {
+            color: #ffb86c; /* orange for numbers */
+        }
+        .hljs-attr, .hljs-title {
+            color: #8be9fd; /* blue for variables or object attributes */
+        }
+        .hljs-function {
+            color: #50fa7b; /* green for function names */
+        }
+        .hljs-operator {
+            color: #ff5555; /* red for operators */
+        }
+        .hljs-title.class_ {
+            color: #bd93f9; /* purple for class names/constants */
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0.75em 1em;
+            color: #FFFFEA;
+        }
+        header a {
+            font-family: "Wavefont", system-ui;
+            font-weight: bold;
+            color: inherit;
+            font-size: 1.1em;
+            display: inline-block;
+            margin: 0 0.3em;
+            padding: 0.2em 0.5em;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 100%;
+            border: 2px solid;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        header a:hover {
+            background: black;
+            color: #FFFFEA;      
+        }
+    </style>
+    <!-- Highlight.js library -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+<header>
+    ●中で<a href="#">,Household</a>
+</header>
+<main>
+<pre><code class="language-python">
+def collatz_sequence(n):
+    """Generate the Collatz sequence for a given number n."""
+    if n <= 0:
+        raise ValueError("Input must be a positive integer.")
+        
+    sequence = [n]  # Start with the initial number
+    
+    while n != 1:
+        if n % 2 == 0:
+            n //= 2  # n is even
+        else:
+            n = 3 * n + 1  # n is odd
+        sequence.append(n)
+    
+    return sequence
+
+def main():
+    try:
+        number = int(input("Enter a positive integer: "))
+        sequence = collatz_sequence(number)
+        print(f"Collatz sequence for {number}:")
+        print(" -> ".join(map(str, sequence)))
+    except ValueError as e:
+        print(e)
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+</main>
+</body>
+</html>

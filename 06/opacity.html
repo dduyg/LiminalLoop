@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Overpass Mono", monospace;
+            color: #00FF41;
+            background-image: url('backed.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            font-size: 16px;
+            height: 100vh;
+            line-height: 1.4;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+       }
+       header {
+            position: absolute;
+            top: 0;
+            right: 4%;
+            text-align: right;
+            padding: 1.25rem;
+       }
+       header .topic {
+            font-style: italic;
+            font-weight: bold;
+            font-family: "Inconsolata", monospace;
+            margin: 0;
+            padding: 0;
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% {text-shadow: 2px 2px 0 #FF00C1, -2px -2px 0 #00FF41;}
+            20% {text-shadow: -2px 2px 0 #FF00C1, 2px -2px 0 #00FF41;}
+            40% {text-shadow: 2px -2px 0 #FF00C1, -2px 2px 0 #00FF41;}
+            60% {text-shadow: -2px -2px 0 #FF00C1, 2px 2px 0 #00FF41;}
+            80% {text-shadow: 2px 2px 0 #FF00C1, -2px -2px 0 #00FF41;}
+            100% {text-shadow: -2px 2px 0 #FF00C1, 2px -2px 0 #00FF41;}
+        }
+        .container {
+            margin: 0 2rem;
+            padding: 0 0.5rem;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 80%;
+            max-width: 85%;
+        }
+        section {
+            margin: 50px 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            font-size: 0.85rem;
+        }
+        section .title {
+            font-family: "Inconsolata", monospace;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        section .title, section p {
+            margin: 0;
+            padding: 0;
+        }
+        /* Custom scrollbar for .container */
+        .container::-webkit-scrollbar {
+            width: 1.5em;
+        }
+        .container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .container::-webkit-scrollbar-thumb,
+        .container::-webkit-scrollbar-thumb:hover {
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%2300FF41" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20,16a3,3,0,0,0-1.73.56l-2.45-1.45A3.74,3.74,0,0,0,16,14a4,4,0,0,0-3-3.86V7.82a3,3,0,1,0-2,0v2.32A4,4,0,0,0,8,14a3.74,3.74,0,0,0,.18,1.11L5.73,16.56A3,3,0,0,0,4,16a3,3,0,1,0,3,3,3,3,0,0,0-.12-.8l2.3-1.37a4,4,0,0,0,5.64,0l2.3,1.37A3,3,0,1,0,20,16ZM4,20a1,1,0,1,1,1-1A1,1,0,0,1,4,20ZM12,4a1,1,0,1,1-1,1A1,1,0,0,1,12,4Zm0,12a2,2,0,1,1,2-2A2,2,0,0,1,12,16Zm8,4a1,1,0,1,1,1-1A1,1,0,0,1,20,20Z"></path></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        @-moz-document url-prefix() { /* Firefox scrollbar */
+            .container {
+                scrollbar-color: #00FF41 transparent;
+                scrollbar-width: thin;
+            }
+            .container::-webkit-scrollbar-thumb {
+                background-image: url('data:image/svg+xml;utf8,<svg fill="%2300FF41" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20,16a3,3,0,0,0-1.73.56l-2.45-1.45A3.74,3.74,0,0,0,16,14a4,4,0,0,0-3-3.86V7.82a3,3,0,1,0-2,0v2.32A4,4,0,0,0,8,14a3.74,3.74,0,0,0,.18,1.11L5.73,16.56A3,3,0,0,0,4,16a3,3,0,1,0,3,3,3,3,0,0,0-.12-.8l2.3-1.37a4,4,0,0,0,5.64,0l2.3,1.37A3,3,0,1,0,20,16ZM4,20a1,1,0,1,1,1-1A1,1,0,0,1,4,20ZM12,4a1,1,0,1,1-1,1A1,1,0,0,1,12,4Zm0,12a2,2,0,1,1,2-2A2,2,0,0,1,12,16Zm8,4a1,1,0,1,1,1-1A1,1,0,0,1,20,20Z"></path></g></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topic">Federated Learning</div>
+    </header>
+    <main>
+      <div class="container">   
+        <section>
+            <div class="title">Decentralized Model Training</div>
+            <p>Federated Learning enables machine learning models to be trained on data that remains decentralized across devices or servers. Instead of requiring all data to be moved to a central server for training, each participating device or node trains a local model on its own dataset. The local models send only the learned parameters (such as gradients) to a central server, which aggregates them to update the global model. This approach reduces data movement and ensures that the model benefits from distributed data without violating data ownership constraints.</p>
+        </section>
+        <section>
+            <div class="title">Privacy Preservation</div>
+            <p>A major advantage of Federated Learning is its privacy-preserving mechanism. Since raw data never leaves the local devices, sensitive information remains protected, significantly reducing the risk of exposure to privacy breaches. Only model updates, not the data itself, are shared with the central server. This makes it particularly useful in domains where data privacy is crucial, such as finance, telecommunications, and consumer devices. Additional security techniques, like secure aggregation or encryption, can further protect the updates, ensuring that no individual device’s information can be reconstructed.</p>
+        </section>
+        <section>
+            <div class="title">Efficiency in Data Use</div>
+            <p>Federated Learning makes it possible to harness the power of vast amounts of decentralized data without the costs and complexity associated with moving data to a central location. For example, instead of relying on a limited, centralized dataset, Federated Learning can tap into data generated by millions of mobile devices, IoT sensors, or edge servers. This not only increases the diversity of the data used for model training but also improves the overall performance of the model, as it is continuously learning from real-world, up-to-date data distributed across a wide range of environments.</p>
+        </section>
+        <section>
+            <div class="title">Collaborative Learning</div>
+            <p>The core concept behind Federated Learning is collaborative model building. It allows different institutions, companies, or devices to collectively train a global model without exposing their local data. In fields like telecommunications, various service providers can collaboratively build predictive models for network optimization without sharing proprietary or competitive data. Similarly, in consumer tech, manufacturers of IoT devices can collaboratively improve their devices’ performance across different environments and user bases, enhancing the shared model while keeping their own data private.</p>
+        </section>
+        <section>
+            <div class="title">Communication Challenges</div>
+            <p>Federated Learning faces several challenges in terms of communication, especially when involving a vast number of devices, each with different computational and connectivity capabilities. The process of aggregating model updates from potentially millions of devices can be inefficient if not optimized. This includes managing the bandwidth usage, ensuring low latency, and dealing with asynchronous updates from devices that might have intermittent network access. Advanced algorithms are necessary to reduce communication overhead and ensure that the model can still converge efficiently even with limited participation from devices at any given time.</p>
+        </section>
+        <section>
+            <div class="title">Applications</div>
+            <p>Federated Learning has a wide range of applications across various industries. In telecommunications, it is used to optimize network traffic by learning from user patterns on individual devices without breaching privacy. Google’s Gboard uses it to improve predictive text and keyboard suggestions by leveraging data from millions of phones without transferring user data to their servers. In the automotive industry, Federated Learning can help autonomous vehicles learn from driving data shared across different fleets of vehicles without exposing proprietary driving data from one manufacturer to another, improving safety and performance across the board.</p>
+        </section>
+      </div>
+    </main>
+</body>
+</html>

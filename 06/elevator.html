@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap" rel="stylesheet">
+    <style>
+        ::selection {
+            background-color: black;
+            color: #fff;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('elevator.jpg');
+            background-repeat: repeat; /* Repeats both horizontally and vertically */
+            background-size: auto; /* Repeat the original size for large screens */
+            background-position: left bottom 30%; /* Starts repeating from the left-bottom corner */
+            color: white;
+            font-family: "Asap Condensed", sans-serif;
+            line-height: 1.4;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @media (max-width: 768px) {
+            body { 
+                background-repeat: no-repeat;
+                background-size: cover;  /* Cover background for small screens */
+                background-position: center;
+            }
+        }
+        main {
+            display: grid;
+            grid-template-columns: 9fr 1fr; /* First column 90%, second column 10% */
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow to make text stand out */
+        }
+        #info {
+            padding: 0 1rem;
+            border-right: 1px solid hsla(0deg 0% 100% / 10%);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        @media screen and (min-width: 30em) {
+            .container { max-width: 600px; }
+        }
+        #info h1 {
+            font-size: 1.3em;
+            letter-spacing: 3px;
+            text-transform: none !important;
+            margin: 10px auto 90px;
+        }
+        #info p:not(:last-child) {
+            margin-bottom: 100px;
+        }
+        #info::-webkit-scrollbar {
+            display: none;
+        }
+        ul {
+            margin-left: 0;
+            padding-left: 0;
+            list-style-type: square;
+        }
+        ul li {
+            list-style-position: inside;
+            margin-bottom: 15px;
+        }
+        .header {
+            font-family: "Sometype Mono", monospace;
+            font-weight: bold;
+            font-size: 1em;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        #credits {
+            font-family: "VT323", monospace;
+            font-size: 0.86rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: right;
+            padding: 0 2rem;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section id="info">
+      <div class="container">
+         <h1 class="header">—HiddenContent<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>@dduyg</i></h1>
+         <p><i>Masked Language Modeling</i> (MLM) is a technique used in natural language processing (NLP) for training models, particularly in the context of pre-trained models like BERT (Bidirectional Encoder Representations from Transformers). Unlike traditional language models, which predict the next word in a sequence from left to right (as done in models like GPT), MLM takes a different approach by randomly masking certain words in a sentence and then training the model to predict these hidden words. The idea is that by learning to predict the missing parts of the sentence based on the surrounding context, the model becomes highly adept at understanding the relationships between words in a bidirectional (both left-to-right and right-to-left) way.</p>
+         <p>Imagine a simple sentence: <i>"The cat sat on the mat."</i> In MLM, certain words in this sentence are masked, so it might look like: "The <code>[MASK]</code> sat on the <code>[MASK]</code>." The task of the model is to correctly predict the hidden words based on the surrounding context. In this case, the model would use the visible words—"The," "sat on the"—to guess that the hidden words are "cat" and "mat." By constantly being exposed to sentences like this, where random parts are concealed, the model learns to predict missing words based on the context of the entire sentence, and in doing so, it becomes highly proficient in understanding the relationships between words.</p>
+         <p>This approach stands in contrast to older models that only look at words in one direction, usually left to right. By training models to predict words based on both the words before and after them, MLM allows for a richer understanding of language. For example, in the sentence, "The quick brown fox jumps over the lazy dog," if you were to mask "brown" and "jumps," the model would need to figure out that "brown" fits well before "fox" and "jumps" fits after "fox" by considering the entire context of the sentence, including the words that come after the masked tokens.</p>
+        
+         <div class="header">Training Objective</div>
+         <p style="padding-top: 0; margin-top: 0;">During training, the model compares its predicted words with the actual words that were masked. The goal is to minimize the difference between the predicted and the true masked words. Over time, with millions of such examples, the model becomes highly proficient at understanding the relationships between words in a sentence. For instance, if the model predicted "quick" instead of "brown" for the first masked token, it would adjust its internal weights to improve future predictions. This process is repeated across vast amounts of data, enabling the model to learn a deep understanding of language.</p>
+        
+         <div class="header">Variation in Masking</div>
+         <p style="padding-top: 0; margin-top: 0; margin-bottom: 0;">To make the model more robust, MLM uses a few additional strategies during the masking process. Out of the 15% of tokens that are selected for masking:</p>
+         <ul>
+             <li>80% of the time, the token is replaced with the [MASK] token (e.g., "quick [MASK] fox").</li>
+             <li>10% of the time, the token is replaced with a random word (e.g., "quick blue fox"), which adds noise and helps the model learn better in unpredictable contexts.</li>
+             <li>10% of the time, the token remains unchanged, helping the model learn to identify when a token should or should not change.</li>
+         </ul>
+        <p>This randomness ensures that the model doesn't become overly reliant on the [MASK] token, which doesn’t appear in real-world data, and encourages it to learn more flexible word representations.</p>
+        
+        <div class="header">Why MLM is Effective</div>
+        <p style="padding-top: 0; margin-top: 0;">The strength of MLM lies in its bidirectional nature. Traditional language models like GPT process words in a single direction — typically from left to right — which limits their ability to fully grasp the meaning of words in context. For instance, predicting the word "bank" in the sentence "She went to the [MASK]" can be ambiguous if only the preceding words are considered. By using both the left and right context, MLM models can differentiate between the meanings of "bank" (financial institution or riverbank), making more accurate predictions.</p>
+        <p>In real-world applications, this bidirectional training allows models like BERT to excel at tasks such as question answering, named entity recognition, and sentiment analysis. After pretraining on vast datasets with MLM, these models can be fine-tuned on smaller, task-specific datasets to perform exceptionally well in specific tasks.</p>
+        <p>The combination of input masking, contextual prediction, and bidirectional learning is what makes MLM one of the most innovative and effective techniques in modern NLP, and the foundation for models like BERT that continue to drive advancements in natural language understanding.</p>
+      </div>
+    </section>
+
+    <section id="credits">
+        <p>I can't breath in this mess,</p>
+        <p>(START)<br>● 06.06</p>
+        <p>(END)<br>▲ 28.08</p>
+    </section>
+</main>
+</body>
+</html>
