@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: beige;
+            font-family: "Public Sans", sans-serif;
+        }
+        main {
+            max-width: 800px;
+            padding: 0 1.25em;
+            margin: 0 auto;
+        }
+        h1 {
+            color: fuchsia;
+            text-align: center;
+            margin: 0 0 3px;
+        }
+        .logo {
+            max-width: 35%;
+            display: block;
+            margin: 0 auto;
+            padding: 0;
+        }
+        section {
+            max-height: 35vh;
+            overflow-y: auto;
+            border: 2px solid currentColor;
+            border-radius: .25rem;
+            padding: 1.5625em 0.9375em;
+        }
+        .verse {
+            margin-bottom: 0.9375em;
+        }
+
+        /* Custom scrollbar */
+        section::-webkit-scrollbar {
+            width: 1.2em;
+        }
+        section::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        section::-webkit-scrollbar-thumb,
+        section::-webkit-scrollbar-thumb:hover {
+            background: url('scroll.png') no-repeat center center;
+            background-size: contain;
+        }
+        @-moz-document url-prefix() { /* Firefox scrollbar */
+            section {
+                scrollbar-color: fuchsia transparent; 
+                scrollbar-width: thin;
+            }
+            section::-webkit-scrollbar-thumb {
+                background: url('scroll.png') no-repeat center center;
+                background-size: contain;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="fuchsia.gif" class="logo">
+        <h1>Paper Planes</h1>
+        <section>
+            <div class="verse">
+                Flyin' high, catch me in the skies, no delayin',<br>
+                Chasin' dreams, got my future on these paper planes,<br>
+                From the city lights to the fields of grain,<br>
+                Ain't no stoppin' now, we gon' break these chains.
+            </div>
+            <div class="verse">
+                Flippin' through these pages, life's a book we write,<br>
+                Turnin' up the hustle, every day and night,<br>
+                Paper cuts from struggles, but we hold on tight,<br>
+                Vision in our sights, future lookin' bright.
+            </div>
+            <div class="verse">
+                Paper planes, we ain't ever comin' down,<br>
+                Soarin' high, got our feet above the ground,<br>
+                Dreams unfold, watch 'em spread all around,<br>
+                On these paper planes, yeah, we wearin' the crown.
+            </div>
+            <div class="verse">
+                Every fold, every crease, that's a story told,<br>
+                From the struggles in the streets to the pots of gold,<br>
+                We been climbin' every peak, never doin' what we’re told,<br>
+                On these paper planes, yeah, watch the journey unfold.
+            </div>
+        </section>
+    </main>
+</body>
+</html>

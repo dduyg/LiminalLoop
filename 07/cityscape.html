@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #E0A593;
+            color: #D5F31D;
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5em;
+            color: #201C21;
+            margin-top: 2em;
+        }
+
+        header .subheader {
+            margin-top: 0;
+            padding-top: 0;
+            color: #DF7739;
+            font-family: "Menlo", monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5em;
+        }
+
+        .content {
+            margin-bottom: 1.25em;
+        }
+
+        a {
+            color: #ff4500;
+            text-decoration: none;     
+        }
+
+        #fixed-img { 
+            position: fixed;
+            top: 12em;
+            left: 5%;
+            width: 5.2em; 
+            z-index: 10;
+        }
+
+        .images {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1.25em;
+            margin-top: 30px;
+        }
+
+        .images img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .progress-img { 
+            width: 60% !important;
+        }
+        
+        @media screen and (min-width: 30em) {
+            main {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .content {
+                flex: 1 1 50%;
+                margin-right: 1.25em;
+            }
+
+            .images {
+                flex: 1 1 50%;
+                margin-top: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img id="fixed-img" src="cityscape.png">
+    <header>
+        <h1>Cityscape</h1>
+        <div class="subheader">Play ● Code ● Create</div>
+    </header>
+    <main>
+        <div class="content">
+            <p>One rainy evening, as Ji-Yoon was closing up shop, a mysterious stranger entered the bookstore. He was tall and impeccably dressed, with piercing eyes that seemed to hold secrets untold. His name was Min-Joon, and he was searching for a rare ancient tome rumored to hold the key to unlocking a long-lost legacy.</p>
+            <p>As fate would have it, Ji-Yoon possessed the very book he sought. Passed down through generations in her family, the ancient tome held a powerful enchantment that only she could unlock. Intrigued by her connection to the book, Min-Joon persuaded Ji-Yoon to accompany him on a <a href="../08/">journey to uncover</a> the truth behind its mysterious origins.</p>
+        </div>
+        <div class="images">
+           <img src="progress.png" class="progress-img">
+           <img src="95_command.png">
+        </div>
+    </main>
+</body>
+</html>

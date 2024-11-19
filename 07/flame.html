@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiminalLoop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <style>	    
+        body {
+            background-color: #f0e5e5;
+            color: #2a0134;
+            line-height: 1.5;
+            font-family: "Rubik", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            max-width: 600px;
+            padding: 3em;
+            margin: 0 auto;
+        }
+        h1 {
+            margin-top: 0;
+            padding-top: 0;
+            text-align: center;
+            color: #4a154b;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+a {
+        text-decoration: none;
+	color: #18272F;
+	font-weight: 700;
+	vertical-align: top;
+}
+#link {
+	position: relative;
+	font-weight: bold;
+	
+	&::before {
+		content: '';
+		background-color: #CFB9CB;
+		position: absolute;
+		left: .5rem;
+		bottom: 5px;
+		width: 100%;
+		height: 8px;
+		z-index: -1;
+		transition: all .3s ease-in-out;
+	}
+	
+	&:hover::before {
+		left: -5px;
+		bottom: 0;
+		height: 100%;
+		width: calc(100% + 10px);
+	}	
+}
+    </style>
+</head>
+<body>
+<main>
+    <h1>༼ つ ◕_◕ ༽つ</h1>
+
+    <p>Oh Ataturk, father of the land,<br>
+    With wisdom and courage, you took a stand.<br>
+    For freedom and progress, you paved the way,<br>
+    Your <a href="https://www.add.org.tr/ataturk/genclige-hitabe/" id="link">legacy</a> shines bright, even to this day.</p>
+
+    <p>Through battles and hardship, he never lost his stride,<br>
+    A leader and a warrior, with honor as his guide.<br>
+    He taught us to be fearless, to dream and to aspire,<br>
+    To build a better future, to always reach higher.</p>
+   
+    <p>Through the storm and the struggle, he forged a path of light,<br>
+    For a nation born from shadows, emerging in the night.
+    For the father of our nation, we lift our voices high,<br>
+    Mustafa Kemal Ataturk, forever in our sky.</p>
+
+    <p>In the hearts of the people, his spirit still remains,<br>
+    Guiding us through trials, through sunshine and the rains.<br>
+    Mustafa Kemal Ataturk, your vision led the way,<br>
+    We honor you in memory, every single day.</p>
+
+    <p>From the past to the future, your light will always guide,<br>
+    In the soul of Turkey, your dreams will never die.<br>
+    Mustafa Kemal <a href="https://www.add.org.tr/ataturk/bursa-nutku/" id="link">Ataturk</a>, your name forever strong,<br>
+    In every heart that beats, you live on in our song.</p>
+</main>    
+</body>
+</html>
