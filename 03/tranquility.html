@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link rel="stylesheet" href="../fonts.css">
+    <style>
+        body {
+            font-family: 'Lucida Console', monospace;
+            background-color: #1a1a2e;
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+            line-height: 1.4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensuring it's above other content */
+            display: flex;
+            justify-content: space-between; /* Align items to the left and right */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-size: 20px; /* To make symbol ❍ bigger */
+        }
+        nav li {
+            float: right; /* Align items to the right */
+        }
+        nav li a {
+            display: block;
+            color: #ff0;
+            font-weight: bold;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+        }
+        nav li a:hover {
+            color: #ddd;
+        }
+        .badge {
+            padding: 0 20px; /* Adjust spacing around the logo */
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+        }
+        .badge img {
+            height: 40px; /* Adjust the height of the logo */
+            vertical-align: middle; /* Align the logo vertically */
+        }
+        nav li a:focus, nav li a:active, .badge a:focus, .badge a:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;        
+        }
+        main {
+            padding: 1.25em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
+            max-width: 800px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ff0;
+        }
+        section {
+            max-height: 55vh;
+            overflow-y: auto;
+            margin-top: 20px;
+            padding: 0.625em;
+            background-color: #27293d;
+            border-radius: 0.625em;
+            box-sizing: border-box;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="badge">
+            <a href="index"><img src="badge.gif" alt="■"></a>
+        </div>
+        <ul>
+            <li><a href="../04/">■</a></li>
+            <li><a href="#">❍</a></li>
+            <li><a href="webscapes">❍</a></li>
+            <li><a href="tranquility">❍</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>PCA</h1>
+        <section>
+            <p>Principal Component Analysis (PCA) is a statistical method used to simplify and summarize the variation in a dataset. It transforms the original data into a new coordinate system, where the axes represent the principal components (PCs) of variation in the data.</p>
+            <h3>How <code>PCA</code> Works:</h3>
+            <ol>
+                <li><strong>Data Centering:</strong> PCA begins by centering the data by subtracting the mean from each feature. This ensures that the data is centered around the origin.</li>
+                <li><strong>Covariance Matrix:</strong> PCA then calculates the covariance matrix of the centered data. The covariance matrix describes the relationships between the different features in the dataset.</li>
+                <li><strong>Eigenvalue Decomposition:</strong> Next, PCA performs eigenvalue decomposition on the covariance matrix to find its eigenvectors and eigenvalues. Eigenvectors represent the directions of maximum variance in the data, while eigenvalues indicate the magnitude of variance along those directions.</li>
+                <li><strong>Selecting Principal Components:</strong> PCA sorts the eigenvectors based on their corresponding eigenvalues in descending order. The eigenvectors with the highest eigenvalues are chosen as the principal components. These principal components capture the most significant sources of variation in the data.</li>
+                <li><strong>Dimensionality Reduction:</strong> Finally, PCA projects the original data onto the subspace spanned by the selected principal components. This reduces the dimensionality of the data while retaining as much variance as possible. The number of principal components retained is typically chosen based on the amount of variance explained or a predetermined threshold.</li>
+            </ol>
+            <p>Overall, PCA is a powerful tool for exploring and understanding the underlying structure of complex datasets.</p>
+        </section>
+    </main>
+</body>
+</html>
