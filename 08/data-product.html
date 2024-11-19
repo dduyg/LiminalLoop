@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Noto Sans", sans-serif; 
+            background-color: #fdf6eb;
+            color: #c2513c;
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        main {
+            width: 85%;
+            margin: 0 auto;
+            padding: 80px 0 50px;
+        }
+        header h1 {
+            margin-bottom: 60px;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+            font-size: 0.7rem;
+        }
+        nav label {
+            font-family: "Roboto Mono", monospace;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.3rem 0.5rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        nav label:not(:last-child) {
+            margin-right: 1rem;
+        }
+        nav label:hover {
+            background-color: #c2513c;
+            color: #fdf6eb;
+        }
+        nav input[type="checkbox"] {
+            margin-right: 0.5rem;
+            accent-color: #c2513c; /* Customizing the checkbox color */
+            width: 1rem;
+            height: 1rem;
+            cursor: pointer;
+        }
+        nav input[type="checkbox"]:checked + label {
+            background-color: #fdf6eb;
+            border-color: #c2513c;
+        }
+        nav input[type="checkbox"]:hover {
+            background-color: #fdf6eb;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        h1, summary {
+            font-family: "Lora", serif;
+        }
+
+        details {
+            background: #fdf6eb;
+            border: 2px solid #c2513c;
+            margin: 0;
+            padding: 0;
+            transition: border-color 0.3s ease, border-radius 0.5s cubic-bezier(.23,1,.32,1);
+            border-radius: 0;
+        }
+        details:not(:last-of-type) {
+            border-bottom: 0; /* Remove bottom border from all but the last item */
+        }
+        details[open] {
+            border-radius: 35px;
+            border-bottom: 2px solid #c2513c; /* Keep the bottom border when open */
+        }
+        @media (min-width: 1000px) {
+            details[open] {
+                border-radius: clamp(40px, 6rem, 6rem); /* Larger border-radius on wider screens */
+            }
+        }
+        details[open] ~ details {
+            border-top: 2px solid #c2513c; /* Keep the top border for the next detail */
+        }
+        details p {
+            padding: 1.25rem; /* Match padding of summary for consistent alignment */
+            margin: 0; /* Remove margin for better alignment */
+        }
+
+        summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin: 0;
+            padding: 0.6rem 1.25rem;
+            list-style: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '';
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" style="fill:%23c2513c; shape-rendering:geometricPrecision;"><path d="M1407.99 1024.07L1049.77 1644.53l-25.77 44.64-25.77-44.64L640 1024.07 281.78 403.5 256 358.84h1536l-25.78 44.66L1407.99 1024.07z"/></svg>') no-repeat center center;
+            width: 1.25em;
+            height: 1.25em;
+            display: inline-block;
+            transform: rotateX(0deg);
+            transition: transform 0.5s cubic-bezier(.23,1,.32,1);
+        }
+        details[open] summary::after {
+            transform: rotateX(180deg);
+        }
+
+        footer {
+            margin: 100px 0 60px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <h1>Our Process</h1>
+    </header>
+    <nav>
+        <label><input type="checkbox" name="service" value="Design" checked>scalable,</label>  
+        <label><input type="checkbox" name="service" value="Development" checked>data-driven product</label>
+    </nav>
+    
+    <details>
+        <summary>1. Discovery</summary>
+        <p>In this phase, we focus on understanding your business goals and defining the problem that the data-driven product will solve. This includes identifying key metrics for success, understanding your target audience, and exploring the available data. We also assess data quality and determine what additional data sources may be needed. By the end of this step, we have a clear project roadmap and a solid understanding of the data landscape.</p>
+        <p><strong>Outcome:</strong> A well-defined problem statement, data acquisition strategy, and project roadmap.</p>  
+    </details>
+    <details>
+        <summary>2. Development</summary>
+        <p>This phase involves building the core of the data-driven product. We clean and process the data, perform exploratory data analysis (EDA), and build models or algorithms that deliver insights. Throughout this process, we experiment with different approaches, optimize the model, and integrate it into your product architecture. We also establish data pipelines for real-time or batch processing, ensuring the product is scalable and reliable.</p>
+        <p><strong>Outcome:</strong> A fully developed, validated model integrated into a scalable product, with performance tracking systems in place.</p>
+    </details>
+    <details>
+        <summary>3. Launch</summary>
+        <p>The final phase includes rigorous testing and refinement of the product based on user feedback. We test the performance, user interface, and data accuracy, making final adjustments as needed. Once ready, the product is deployed into production, and we provide your team with full documentation and training. We also set up automated monitoring to ensure continuous performance and handle any model updates post-launch.</p>
+        <p><strong>Outcome:</strong> A deployed, data-driven product with ongoing monitoring, along with training and documentation for your team.</p>
+    </details>
+
+    <footer>
+        <h1>Results</h1>
+        <p>This comprehensive approach to developing a successful data-driven product results in a robust solution that aligns with business objectives and meets user needs. Engaging thoroughly in the Discovery phase ensures clarity in goals and metrics, leading to a targeted Development phase where insights are refined and models are accurately built. The final Launch phase focuses on user-centric enhancements and effective deployment, creating a reliable product that evolves through ongoing monitoring and updates. Completing these three phases will yield tangible results that enhance your business operations and empower your team to leverage data effectively.</p>
+    </footer>
+</main>
+
+<script>
+    // Select all details elements
+    const detailsElements = document.querySelectorAll('details');
+
+    detailsElements.forEach(details => {
+        details.addEventListener('toggle', () => {
+            // Check if the details are open
+            if (details.open) {
+                // Close all other details elements
+                detailsElements.forEach(otherDetails => {
+                    if (otherDetails !== details) {
+                        otherDetails.removeAttribute('open');
+                    }
+                });
+            }
+            updateBorders();
+        });
+    });
+
+    // Function to update borders based on open/closed state
+    function updateBorders() {
+        detailsElements.forEach((details, index) => {
+            if (details.open) {
+                // If the current details is open, add the bottom border
+                details.style.borderBottom = '2px solid #c2513c';
+            } else {
+                // If it's closed, remove the bottom border
+                details.style.borderBottom = 'none';
+                // If there is an open details below it, add border
+                if (index < detailsElements.length - 1 && detailsElements[index + 1].open) {
+                    details.style.borderBottom = '2px solid #c2513c';
+                }
+            }
+        });
+        // Always ensure the last details element has a bottom border
+        detailsElements[detailsElements.length - 1].style.borderBottom = '2px solid #c2513c';
+    }
+
+    // Initial call to set the borders correctly
+    updateBorders();
+</script>
+</body>
+</html>

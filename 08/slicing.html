@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Share Tech", sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2em;
+            max-width: 800px;
+            animation: fadeIn 3s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #ff6f61; /* Soft coral color */
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-top: 20px;
+            color: #4a4a4a; /* Darker gray for text */
+            animation: floatText 4s infinite ease-in-out;
+        }
+
+        .container button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #8e44ad; /* Soft purple */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+            animation: pulse 1.5s infinite;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container button:hover {
+            background: #9b59b6; /* Lighter purple */
+        }
+
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0.1) 1px,
+                transparent 1px
+            ),
+            repeating-linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.1) 1px,
+                transparent 1px
+            );
+            background-size: 50px 50px;
+            z-index: 0;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 105, 180, 0.5); /* Light pink */
+            border-radius: 50%;
+            animation: moveAround 10s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        .floating-element2 {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(52, 152, 219, 0.5); /* Light blue */
+            border-radius: 50%;
+            animation: moveAroundReverse 15s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes floatText {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes moveAround {
+            0% { top: 0; left: 0; }
+            25% { top: 10%; left: 80%; }
+            50% { top: 50%; left: 50%; }
+            75% { top: 80%; left: 20%; }
+            100% { top: 0; left: 0; }
+        }
+
+        @keyframes moveAroundReverse {
+            0% { top: 80%; left: 70%; }
+            25% { top: 30%; left: 10%; }
+            50% { top: 50%; left: 50%; }
+            75% { top: 10%; left: 90%; }
+            100% { top: 80%; left: 70%; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parametric Surface</h1
+        <p>Find the formulas referenced from "<i>Parametrische Flächen und Körper</i>":</p>
+        <button onclick="goHome()">go there</button>
+    </div>
+
+    <div class="grid"></div>
+
+    <div class="floating-element"></div>
+    <div class="floating-element2"></div>
+    <script>
+        function goHome() {
+            window.open('http://www.3d-meier.de/tut3/Seite0.html', '_blank');
+        }
+    </script>  
+</body>
+</html>

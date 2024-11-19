@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liminal Loop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #E9E3E6;
+      color: #2A1E37;
+      font-family: "Courier Prime", monospace;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Column 1 (title) */
+    #title {
+      flex: 0 0 30%; /* Fixed width of 30% */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-size: 1.7rem;
+      position: fixed;
+      height: 100vh;
+      font-family: "Unica One", sans-serif;
+    }
+    /* Column 2 (content) */
+    #content {
+      flex: 1;
+      margin-left: 30%; /* Offset to accommodate fixed title column */
+      padding: 160px 5% 5%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100vh;
+    }
+    #content h2 {   /* Titles/Labels idea w/ mono-font from [ CLIENTS ]   */
+      font-size: 1.4rem;
+      font-weight: normal;
+    }
+
+    /* Custom scrollbar for #content */
+    #content::-webkit-scrollbar {
+      width: 1.3em;
+    }
+    #content::-webkit-scrollbar-track {
+      background: transparent;
+    } 
+    #content::-webkit-scrollbar-thumb,
+    #content::-webkit-scrollbar-thumb:hover {
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 3H7v2H5v2H3v10h2v2h2v2h10v-2h2v-2h2V7h-2V5h-2V3zm0 2v2h2v10h-2v2H7v-2H5V7h2V5h10z" fill="%232A1E37"></path></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    @-moz-document url-prefix() {   /* Firefox scrollbar */
+      #content {
+        scrollbar-color: transparent transparent;
+        scrollbar-width: thin;
+      }
+      #content::-webkit-scrollbar-thumb {
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 3H7v2H5v2H3v10h2v2h2v2h10v-2h2v-2h2V7h-2V5h-2V3zm0 2v2h2v10h-2v2H7v-2H5V7h2V5h10z" fill="%232A1E37"></path></svg>');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+  </style>
+</head>
+<body>
+<main> 
+  <header id="title">Data<br>Drain</header>
+  <section id="content">
+    <h2>[ BREAKPOINT ]</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat diam vitae libero venenatis, vitae sollicitudin elit facilisis. Sed quis neque at arcu vehicula dapibus ac sed mi. Sed fringilla bibendum venenatis. Cras auctor, massa vitae scelerisque finibus, purus sapien vehicula nunc, in laoreet ligula justo a dolor. Vivamus varius, in pretium dui nulla vel ex. Nulla sagittis lorem a lectus sagittis, eu lacinia nulla auctor. Etiam dignissim massa ac ante dignissim, at luctus nisi blandit. Aenean sit amet nunc tincidunt, interdum nisi nec, fringilla felis. Nunc imperdiet enim libero, sed lacinia leo maximus nec.</p>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+    <p>Phasellus nec velit nec eros vulputate dictum. Mauris sed quam a nunc cursus gravida. Ut aliquet, nisi non gravida bibendum, nisi turpis hendrerit nunc, et sodales velit purus non sapien. Fusce ut tincidunt metus. Vestibulum eget sem in purus fringilla tincidunt. Ut dapibus magna vitae dui pharetra, nec posuere orci dictum. Integer tincidunt ex eu suscipit cursus. Vestibulum facilisis odio vel augue consectetur, vitae lacinia magna porttitor. Curabitur finibus orci ut risus ultricies, sed aliquam dui sagittis. In euismod, libero at vulputate bibendum, est sapien aliquam ligula, at fringilla nisl nulla id lacus.</p>
+  </section> 
+</main>
+</body>
+</html>
