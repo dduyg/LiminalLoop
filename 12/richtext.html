@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #88c0d0;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 10px auto;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        textarea {
+            width: 90%;
+            min-height: 150px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #4a4e69;
+            color: #88c0d0;
+            border: 2px solid #88c0d0;
+            border-radius: 5px;
+            resize: none;
+        }
+        
+        .buttons {
+            margin-bottom: 20px;
+        }
+        
+        button {
+            background-color: #4a4e69;
+            color: #88c0d0;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        button:hover {
+            background-color: #88c0d0;
+            color: #1a1a2e;
+        }
+        
+        #copyButton {
+            background-color: #4a4e69;
+            color: #88c0d0;
+            border: 2px solid #88c0d0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        #copyButton:hover {
+            background-color: #88c0d0;
+            color: #1a1a2e;
+        }
+        
+        #outputText {
+            margin: 25px auto;
+            color: #4a4e69;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rich Text Format</h1>
+        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        <div class="buttons">
+            <button onclick="convertText('uppercase')">UPPER CASE</button>
+            <button onclick="convertText('lowercase')">lower case</button>
+            <button onclick="convertText('titlecase')">Title Case</button>
+            <button onclick="convertText('sentencecase')">Sentence case</button>
+            <button onclick="convertText('spacetohyphen')">Space ➝ Hyphen</button>
+            <button onclick="convertText('hyphentospace')">Hyphen ➝ Space</button>
+        </div>
+        <button id="copyButton" onclick="copyToClipboard()">Copy to Clipboard</button>
+        <a href="../"><button>Next</button></a>
+        <div id="outputText"></div>
+    </div>
+    <script>
+        function convertText(caseType) {
+            var inputText = document.getElementById("inputText").value;
+            var outputText = document.getElementById("outputText");
+        
+            switch (caseType) {
+                case 'uppercase':
+                    outputText.textContent = inputText.toUpperCase();
+                    break;
+                case 'lowercase':
+                    outputText.textContent = inputText.toLowerCase();
+                    break;
+                case 'titlecase':
+                    outputText.textContent = inputText.toLowerCase().replace(/(?:^|\s)\S/g, function (a) { return a.toUpperCase(); });
+                    break;
+                case 'sentencecase':
+                    outputText.textContent = inputText.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function (c) { return c.toUpperCase() });
+                    break;
+                case 'spacetohyphen':
+                    outputText.textContent = inputText.replace(/\s+/g, '-');
+                    break;
+                case 'hyphentospace':
+                    outputText.textContent = inputText.replace(/-/g, ' ');
+                    break;
+            }
+        }
+        
+        function copyToClipboard() {
+            var text = document.getElementById("outputText").textContent;
+            navigator.clipboard.writeText(text).then(function () {
+                alert("Text copied to clipboard!");
+            }, function (err) {
+                console.error('Error copying text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
