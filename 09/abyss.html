@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yarndings+12&family=Yarndings+12+Charted&display=swap" rel="stylesheet">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #b7b7b7;
+            font-family: "Yarndings 12", system-ui;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h3 {
+            font-family: "Yarndings 12 Charted", system-ui;
+        }
+        a {
+            color: #ff3b3b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ff7575;
+        }
+        .glitch {
+            color: #ff3b3b;
+            font-family: "IBM Plex Mono", monospace;
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(title);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip: rect(0, 100%, 0, 0);
+        }
+        .glitch::before {
+            left: -2px;
+            text-shadow: -2px 0 #ff7575;
+            animation: glitch 0.3s linear infinite;
+        }
+        .glitch::after {
+            left: 2px;
+            text-shadow: 2px 0 #ff7575;
+            animation: glitch2 0.3s linear infinite;
+        }
+        @keyframes glitch {
+            2%, 64% {
+                transform: translateY(0);
+            }
+            4%, 60% {
+                transform: translateY(-0.5rem);
+            }
+        }
+        @keyframes glitch2 {
+            2%, 64% {
+                transform: translateY(0);
+            }
+            4%, 60% {
+                transform: translateY(0.5rem);
+            }
+        }
+      
+        .anomaly {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            font-family: "IBM Plex Mono", monospace;
+            text-transform: uppercase;
+            font-weight: bold;
+            animation: anomaly 1s infinite;
+        }
+        .anomaly::before,
+        .anomaly::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .anomaly::before {
+            left: 2px;
+            text-shadow: -2px 0 #00ff00;
+            background: #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: noise-anim-1 1s infinite linear alternate-reverse;
+        }
+        .anomaly::after {
+            left: -2px;
+            text-shadow: 2px 0 #0000ff;
+            background: #ff00ff;
+            clip: rect(86px, 450px, 98px, 0);
+            animation: noise-anim-2 1s infinite linear alternate-reverse;
+        }
+        @keyframes noise-anim-1 {
+            0% {
+                clip: rect(44px, 9999px, 56px, 0);
+            }
+            10%, 20% {
+                clip: rect(13px, 9999px, 3px, 0);
+            }
+            30% {
+                clip: rect(38px, 9999px, 67px, 0);
+            }
+            40% {
+                clip: rect(12px, 9999px, 63px, 0);
+            }
+            50%, 100% {
+                clip: rect(42px, 9999px, 33px, 0);
+            }
+        }
+        @keyframes noise-anim-2 {
+            0% {
+                clip: rect(86px, 9999px, 98px, 0);
+            }
+            10%, 20% {
+                clip: rect(42px, 9999px, 75px, 0);
+            }
+            30%, 50% {
+                clip: rect(19px, 9999px, 60px, 0);
+            }
+            40% {
+                clip: rect(61px, 9999px, 2px, 0);
+            }
+            50%, 100% {
+                clip: rect(28px, 9999px, 66px, 0);
+            }
+        }
+        @keyframes anomaly {
+            0% {
+                transform: translate(-50%, -50%) skewY(0deg);
+            }
+            5% {
+                transform: translate(-50%, -50%) skewY(5deg);
+            }
+            10% {
+                transform: translate(-50%, -50%) skewY(0deg);
+            }
+            15% {
+                transform: translate(-50%, -50%) skewY(2deg);
+            }
+            20% {
+                transform: translate(-50%, -50%) skewY(0deg);
+            }
+            25% {
+                transform: translate(-50%, -50%) skewY(3deg);
+            }
+            30% {
+                transform: translate(-50%, -50%) skewY(0deg);
+            }
+            35% {
+                transform: translate(-50%, -50%) skewY(4deg);
+            }
+            40% {
+                transform: translate(-50%, -50%) skewY(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) skewY(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1 class="glitch" title="Neural Pathways">Neural Pathways</h1>
+    <p>The matrix couldn't find what you're looking for. But don't worry, we'll get our cybernetic spiders on the case. Meanwhile, explore another dimension?</p>
+    <h3>Whereas recognition <a href="../14/">of the</a> inherent dignity</h3>
+    <p>Whereas recognition of the inherent dignity</p>
+</main>
+<footer>
+    <div class="anomaly" data-text="Sorry, seems to be lost in data realm">Sorry, seems to be lost in data realm</div>
+</footer>
+</body>
+</html>

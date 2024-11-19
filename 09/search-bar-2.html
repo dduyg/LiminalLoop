@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffb6c1, #add8e6, #9370db);
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        main {
+            max-width: 800px;
+            padding: 1em;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+            text-shadow: 2px 2px #000;
+        }
+        h2 {
+            font-size: 2rem;
+            text-shadow: 1px 1px #000;
+        }
+        .glitch {
+            position: relative;
+            font-size: 4rem;
+            color: #ff00ff;
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(2px, -2px);
+            }
+            60% {
+                transform: translate(-2px, -2px);
+            }
+            80% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }     
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            outline: none;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        input[type="text"]::placeholder {
+            color: #fff;
+            opacity: 0.7;
+        }
+        input[type="submit"] {
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            background-color: #9370db;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .home-link {
+            color: #00ffff;
+            text-decoration: none;
+        }
+        .home-link:hover {
+            color: #ff00ff;
+        }
+        footer {
+            margin-top: 60px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="glitch">404</h1>
+        <h2>Oops! Looks like you wandered off into the void...</h2>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+            <form action="/search" method="get">
+                <input type="text" name="query" placeholder="Search for something else...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+
+        <footer>@dduyg | <a href="./" class="home-link">Back to Home</a></footer>
+    </main>
+</body>
+</html>
