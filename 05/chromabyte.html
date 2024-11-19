@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiminalLoop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Work Sans", sans-serif;
+            background: #20093D;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 10px;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .breadcrumb {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 0.9em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .breadcrumb a {
+            color: #33ffcc;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 2em;
+        }
+        h1 {
+            color: #ff66cc;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #00ccff;
+            border-bottom: 2px solid #ff66cc;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        h3 {
+            color: #ff66cc;
+        }
+        pre {
+            background-color: rgba(50, 50, 100, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            color: #eaeaea;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+        code {
+            color: #00ccff;
+        }
+        ol, ul {
+            margin: 20px 0;
+        }
+        ol li, ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+        footer p {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="breadcrumb">
+        <a href="#">Home</a> &gt; 
+        <a href="./NeonLogic">ÐĘeež00</a> &gt;
+        <span>Gradient Boosting</span>
+    </nav>
+</header>
+
+<main>
+    <p>Gradient Boosting is an advanced machine learning technique that builds an ensemble of weak learners, usually decision trees, sequentially. Each tree corrects the errors of the previous one by minimizing a loss function, resulting in a highly accurate predictive model. While powerful, it can be prone to overfitting if not properly regularized.</p>
+
+    <h2>How Gradient Boosting Works</h2>
+    <p>Gradient Boosting iteratively improves models by focusing on the residual errors of the previous models. The process involves:</p>
+    <ol>
+        <li>Building an initial model, usually a decision tree.</li>
+        <li>Calculating the residuals or errors from the predictions.</li>
+        <li>Creating a new model to predict those residuals.</li>
+        <li>Repeating this cycle several times, reducing the overall error step by step.</li>
+    </ol>
+
+    <h2>Code Example</h2>
+    <p>Below is an example of how to implement Gradient Boosting using Python's <code>scikit-learn</code> library:</p>
+
+    <pre><code>from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+# Generate a synthetic dataset
+X, y = make_classification(n_samples=1000, n_features=20, random_state=42)
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Initialize the Gradient Boosting Classifier
+gb_model = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1)
+
+# Train the model
+gb_model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = gb_model.predict(X_test)
+
+# Evaluate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+    </code></pre>
+
+    <h2>Advantages and Disadvantages</h2>
+    <h3>Advantages</h3>
+    <ul>
+        <li>Provides highly accurate predictions.</li>
+        <li>Effective for both regression and classification problems.</li>
+        <li>Handles complex datasets and missing values effectively.</li>
+    </ul>
+
+    <h3>Disadvantages</h3>
+    <ul>
+        <li>Can be slow to train, especially on large datasets.</li>
+        <li>Prone to overfitting if not tuned properly.</li>
+    </ul>
+
+    <h2>Tuning Hyperparameters</h2>
+    <p>For Gradient Boosting to achieve optimal performance, tuning its hyperparameters is essential. Some important parameters include:</p>
+    <ul>
+        <li><code>n_estimators</code>: The number of trees in the ensemble. A larger number may improve performance but can increase training time.</li>
+        <li><code>learning_rate</code>: Controls how much the model learns at each iteration. Lower values slow learning but may lead to more precise models.</li>
+        <li><code>max_depth</code>: The maximum depth of the trees. Deeper trees may capture more patterns but can lead to overfitting.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Gradient Boosting is a powerful algorithm that delivers excellent performance when carefully tuned. Its ability to correct errors iteratively makes it one of the most effective tools in machine learning.</p>
+</main>
+
+<footer>
+    <p><a href="#">What is this, I don't get it?</a></p>
+</footer>
+</body>
+</html>

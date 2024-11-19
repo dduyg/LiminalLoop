@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff77ff, #3a0ca3);
+            color: #fff;
+            line-height: 1.4;
+            overflow: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+            z-index: 10;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #ffdfd6;
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        
+        .filter-container {
+            margin-top: 20px;
+        }
+        .filter {
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 30px;
+            cursor: pointer;
+            outline: none;
+        }
+        .filter-dropdown {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.9);
+            border-radius: 5px;
+            max-height: 175px;
+            overflow-y: auto;
+            padding: 0 5px;
+            top: 100%;
+            margin-top: 5px;
+            max-width: 160px;
+            width: 60%;
+            z-index: 20;
+        }
+        .filter-dropdown label {
+            display: block;
+            padding: 0.5rem;
+            font-size: 12px;
+            text-align: left;
+            cursor: pointer;
+        }
+        .filter-dropdown label:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            padding-top: 120px;
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 1rem;
+            width: 100%;
+        }    
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+            color: #ffdfd6;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .tags {
+            margin-top: 5px;
+            font-size: 0.8rem;
+        }       
+        .tag {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            padding: 2px 5px;
+            margin: 0 2px;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Chromatic Combinations</h1>
+    <p>Leverage Python's itertools module for efficient looping and combinatorial tasks, such as permutations and combinations, to enhance performance and readability.</p>
+    <div class="filter-container">
+        <button class="filter" id="filter-btn">Filter by Tags</button>
+        <div class="filter-dropdown" id="filter-dropdown">
+            <!-- Dynamic filter options will be populated here -->
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="grid" id="works-container">
+        <!-- Dynamic works will be populated here -->
+    </div>
+</main>
+
+<script>
+    const works = [
+        { title: "●●●●", url: "#", tags: ["productivity", "design"] },
+        { title: "●●●●", url: "#", tags: ["coding", "productivity"] },
+        { title: "●●●●", url: "#", tags: ["art", "vaporwave"] },
+        { title: "●●●●", url: "#", tags: ["design", "art"] },
+        { title: "●●●●", url: "#", tags: ["coding", "tutorial"] }
+    ];
+
+    const worksContainer = document.getElementById('works-container');
+    const filterDropdown = document.getElementById('filter-dropdown');
+    const filterButton = document.getElementById('filter-btn');
+    const selectedTags = new Set();
+
+    function renderWorks(filterTags = []) {
+        worksContainer.innerHTML = '';
+        const filteredWorks = works.filter(work => 
+            filterTags.length === 0 || work.tags.some(tag => filterTags.includes(tag))
+        );
+
+        filteredWorks.forEach(work => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <a href="${work.url}" target="_blank">${work.title}</a>
+                <div class="tags">${work.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+            `;
+            worksContainer.appendChild(card);
+        });
+    }
+
+    function renderFilters() {
+        const allTags = new Set();
+        works.forEach(work => work.tags.forEach(tag => allTags.add(tag)));
+        filterDropdown.innerHTML = '';
+        allTags.forEach(tag => {
+            const label = document.createElement('label');
+            label.innerHTML = `<input type="checkbox" value="${tag}"> ${tag}`;
+            label.onclick = function () {
+                const checkbox = this.querySelector('input');
+                if (checkbox.checked) {
+                    selectedTags.add(tag);
+                } else {
+                    selectedTags.delete(tag);
+                }
+                renderWorks(Array.from(selectedTags));
+            };
+            filterDropdown.appendChild(label);
+        });
+    }
+
+    filterButton.addEventListener('click', () => {
+        filterDropdown.style.display = filterDropdown.style.display === 'none' || filterDropdown.style.display === '' ? 'block' : 'none';
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!filterButton.contains(event.target) && !filterDropdown.contains(event.target)) {
+            filterDropdown.style.display = 'none';
+        }
+    });
+
+    // Initial render
+    renderWorks();
+    renderFilters();
+</script>
+</body>
+</html>
