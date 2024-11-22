@@ -32,7 +32,6 @@ _The rest is up to you and your imagination. 🦄_
 <br>
 
 - Righteous
-- Saira
 - Geostar
 - Geostar Fill
 - Georama
