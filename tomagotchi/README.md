@@ -51,7 +51,6 @@ _The rest is up to you and your imagination. 🦄_
 - Raleway ♡
 - Zen Dots ♡
 - Quicksand
-- Chivo
 - Fugaz One
 - Dosis
 
