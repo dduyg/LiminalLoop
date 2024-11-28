@@ -48,6 +48,12 @@ _The rest is up to you and your imagination. 🦄_
 - Jersey 10
 - Kode Mono
 - Danfo
+- Raleway ♡
+- Zen Dots ♡
+- Quicksand
+- Chivo
+- Fugaz One
+- Dosis
 
 <br><br>
 
