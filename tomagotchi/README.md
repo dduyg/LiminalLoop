@@ -37,8 +37,7 @@ _The rest is up to you and your imagination. 🦄_
 - Georama
 - Roboto Mono
 - Oxanium
-- Amatic SC
-- Sometype Mono   
+- Amatic SC  
 - Anonymous Pro
 - Special Elite
 - Jacquard 12
