@@ -38,8 +38,7 @@ _The rest is up to you and your imagination. 🦄_
 - Roboto Mono
 - Oxanium
 - Amatic SC
-- Sometype Mono
-- Cousine
+- Sometype Mono   
 - Anonymous Pro
 - Special Elite
 - Jacquard 12
@@ -53,6 +52,7 @@ _The rest is up to you and your imagination. 🦄_
 - Quicksand
 - Fugaz One
 - Dosis
+- Chivo
 
 <br><br>
 
