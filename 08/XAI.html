@@ -40,7 +40,6 @@
         nav a::before {
             content: "⍠";
             display: inline-block;
-            color: #ff0; 
             margin-right: 0.2em; /* Space between the character and text */
             opacity: 0; /* Initially hidden */
             transform: translateX(-5px); /* Start slightly offset */
@@ -50,6 +49,7 @@
         nav a:focus::before {
             opacity: 1;
             transform: translateX(0); /* Brings the character into view */
+            color: #ff0;
         }
         nav a:hover {
             filter: url("#outlineFilter");
