@@ -35,12 +35,12 @@
       display: inline-flex;
       align-items: center; /* Align text and arrow */
       gap: 0.2rem; /* Small gap between arrow and text */
-      transition: transform 0.3s ease, color 0.3s ease;
+      transition: all 0.5s ease;
       -webkit-text-stroke: 0px transparent; /* No stroke by default */
       text-stroke: 0px transparent; /* Fallback for non-webkit browsers */
     }
     .item:hover {
-      color: #010111; 
+      color: rgba(255, 255, 255, 0.1);
       transform: translateX(10px); /* Moves the entire link (arrow + text) */  
       -webkit-text-stroke: 1px #c5c6f9;
       text-stroke: 1px #c5c6f9; /* Fallback for non-webkit browsers */
