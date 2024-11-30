@@ -50,6 +50,11 @@ _The rest is up to you and your imagination. 🦄_
 - Fugaz One
 - Dosis
 - Chivo
+- Ruda
+- DM Sans
+- Maven Pro
+- Rubik Lines
+- Rubik Maze
 
 <br><br>
 
