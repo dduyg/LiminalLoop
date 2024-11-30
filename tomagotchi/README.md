@@ -46,7 +46,6 @@ _The rest is up to you and your imagination. 🦄_
 - Kode Mono
 - Danfo
 - Raleway ♡
-- Zen Dots ♡
 - Quicksand
 - Fugaz One
 - Dosis
