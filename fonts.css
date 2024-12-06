@@ -254,6 +254,7 @@ p {
 /* font-family: 'Pitch Regular', monospace; */
 /* font-family: 'Pitch Medium', monospace; */
 /* font-family: 'Pitch SemiBold', monospace; */
+/* font-family: 'Pitch Bold', monospace; */
 @font-face {  
     font-family: 'Pitch Regular';
     src: url('fonts/Pitch-Regular.woff2') format('woff2'),
@@ -272,6 +273,13 @@ p {
     font-family: 'Pitch SemiBold';
     src: url('fonts/Pitch-SemiBold.woff2') format('woff2'),
          url('fonts/Pitch-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {  
+    font-family: 'Pitch Bold';
+    src: url('fonts/Pitch-Bold.woff2') format('woff2'),
+         url('fonts/Pitch-Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
