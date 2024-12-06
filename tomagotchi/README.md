@@ -51,12 +51,21 @@ _The rest is up to you and your imagination. 🦄_
 - Chivo
 - Ruda
 - DM Sans
-- Maven Pro
 - Rubik Lines
 - Rubik Maze
 - Warnes
 - Hubot Sans
 - Uncial Antiqua
+- Diplomata SC
+- Fascinate Inline
+- Megrim
+- Rock Salt
+- Montserrat Alternates
+- Rubik Iso
+- Wire One
+- Offside
+- Overlock
+- Titillium Web
 
 <br><br>
 
