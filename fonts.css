@@ -11,8 +11,6 @@
     src: url(fonts/Pentameter-Wide-Light.woff);
 }
 
-
-
 @font-face {
     font-family: 'Helvetica Neue Light';
     src: url(fonts/HelveticaNeue-Light.woff);
@@ -29,8 +27,6 @@
     src: url(fonts/HelveticaNeue-Medium.woff2);
 }
 
-
-
 @font-face {
     font-family: 'standard';
     src: url(fonts/Standard-Book.woff2);
@@ -40,8 +36,6 @@
     font-family: 'times now';
     src: url(fonts/TimesNow-Light.woff2);
 }
-
-
 
 @font-face {
     font-family: 'Geist Mono';
@@ -61,8 +55,6 @@
     font-style: normal; /* Adjust font style if necessary */
 }
 
-
-
 @font-face {
   font-family: 'LabMono';
   src: url('fonts/labmono-regular.woff2') format('woff2'),
@@ -71,16 +63,12 @@
   font-style: normal;
 }
 
-
-
 @font-face {
     font-family: 'Ribes Black';
     src: url('fonts/Ribes-Black.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
-
 
 @font-face {
     font-family: 'Monaco';
@@ -130,7 +118,6 @@
 }
 
 
-
 @font-face {
     font-family: 'Sporting Grotesque';
     src: url('fonts/Sporting_Grotesque-Regular.woff2') format('woff2'),
@@ -142,6 +129,12 @@
          url('fonts/Sporting_Grotesque-Bold.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'Stravinsky';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/Sporting_Grotesque-Bold_web.woff') format('woff');
+}
 
 
 @font-face {
@@ -170,14 +163,6 @@
     font-family: 'GT Super Display Italic';
     src: url('fonts/GT-Super-Display-Light-Italic.woff2') format('woff2'),
          url('fonts/GT-Super-Display-Light-Italic.woff') format('woff');
-}
-
-
-@font-face {
-    font-family: 'Stravinsky';
-    font-weight: normal;
-    font-style: normal;
-    src: url('fonts/Sporting_Grotesque-Bold_web.woff') format('woff');
 }
 
 
@@ -231,7 +216,6 @@
     font-weight: 500; /* Medium weight */
     font-style: normal;
 }
-
 /**********
 How use different font weights:
 body {
@@ -248,7 +232,6 @@ p {
     font-weight: 400;
 }
 *******/
-
 
 
 /* font-family: 'Pitch Regular', monospace; */
@@ -385,6 +368,51 @@ p {
        url('fonts/Panchang-Variable.woff') format('woff'),
        url('fonts/Panchang-Variable.ttf') format('truetype');
   font-weight: 200 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+/**
+*
+* Font Family: Melodrama (Variable font)
+* You can control variable axes as shown below:
+* font-variation-settings: wght 300.0;
+*
+* available axes:
+'wght' (range from 300.0 to 700.0
+*/
+@font-face {
+  font-family: 'Melodrama';
+  src: url('fonts/Melodrama.woff2') format('woff2'),
+       url('fonts/Melodrama.woff') format('woff');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kola';
+  src: url('/fonts/Kola.woff2') format('woff2'),
+       url('/fonts/Kola.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+/**
+*
+* Font Family: Amulya (Variable font)
+* You can control variable axes as shown below:
+* font-variation-settings: wght 300.0;
+*
+* available axes:
+'wght' (range from 300.0 to 700.0
+*/
+@font-face {
+  font-family: 'Amulya';
+  src: url('/fonts/Amulya.woff2') format('woff2'),
+       url('/fonts/Amulya.woff') format('woff');
+  font-weight: 300 700;
   font-display: swap;
   font-style: normal;
 }
