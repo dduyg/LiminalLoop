@@ -398,21 +398,3 @@ p {
   font-display: swap;
   font-style: normal;
 }
-
-/**
-*
-* Font Family: Amulya (Variable font)
-* You can control variable axes as shown below:
-* font-variation-settings: wght 300.0;
-*
-* available axes:
-'wght' (range from 300.0 to 700.0
-*/
-@font-face {
-  font-family: 'Amulya';
-  src: url('/fonts/Amulya.woff2') format('woff2'),
-       url('/fonts/Amulya.woff') format('woff');
-  font-weight: 300 700;
-  font-display: swap;
-  font-style: normal;
-}
