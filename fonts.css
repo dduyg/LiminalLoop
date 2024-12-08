@@ -391,9 +391,9 @@ p {
 }
 
 @font-face {
-  font-family: 'Kola';
-  src: url('/fonts/Kola.woff2') format('woff2'),
-       url('/fonts/Kola.woff') format('woff');
+  font-family: 'Boxing';
+  src: url('fonts/Boxing.woff2') format('woff2'),
+       url('fonts/Boxing.woff') format('woff');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
