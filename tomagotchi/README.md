@@ -67,6 +67,7 @@ _The rest is up to you and your imagination. 🦄_
 - Overlock
 - Titillium Web
 - Nunito
+- Doto
 
 <br><br>
 
