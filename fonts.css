@@ -31,28 +31,9 @@
     font-family: 'standard';
     src: url(fonts/Standard-Book.woff2);
 }
-
 @font-face {
     font-family: 'times now';
     src: url(fonts/TimesNow-Light.woff2);
-}
-
-@font-face {
-    font-family: 'Geist Mono';
-    src: url('fonts/GeistMonoVF.woff2') format('woff2'),
-         url('fonts/GeistMonoVF.woff') format('woff');
-    /* Add additional font formats here for better compatibility */
-    font-weight: normal; /* Adjust font weight if necessary */
-    font-style: normal; /* Adjust font style if necessary */
-}
-
-@font-face {
-    font-family: 'Geist Sans';
-    src: url('fonts/GeistVF.woff2') format('woff2'),
-         url('fonts/GeistVF.woff') format('woff');
-    /* Add additional font formats here for better compatibility */
-    font-weight: normal; /* Adjust font weight if necessary */
-    font-style: normal; /* Adjust font style if necessary */
 }
 
 @font-face {
