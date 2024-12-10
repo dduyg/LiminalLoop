@@ -379,3 +379,22 @@ p {
   font-display: swap;
   font-style: normal;
 }
+
+
+/* font-family: 'Adieu', sans-serif; */
+@font-face {
+    font-family: 'Adieu';
+    src: url('fonts/Adieu.woff2') format('woff2'),
+         url('fonts/Adieu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Adieu';
+    src: url('fonts/Adieu-Bold.woff2') format('woff2'),
+         url('fonts/Adieu-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
