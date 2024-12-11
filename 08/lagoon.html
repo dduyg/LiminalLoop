@@ -6,6 +6,14 @@
     <title>Liminal Loop</title>
     <link rel="stylesheet" href="../fonts.css">
     <style>
+        @font-face {
+            font-family: 'Pitch-Sans';
+            src: url('https://raw.githubusercontent.com/dduyg/LiminalLoop/main/fonts/pitch-sans-medium.woff2') format('woff2'),
+                 url('https://raw.githubusercontent.com/dduyg/LiminalLoop/main/fonts/pitch-sans-medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
         ::-moz-selection { /* Code for Firefox */
             background: #d2fd78;
         }
@@ -15,7 +23,7 @@
         body {
             background-color: #efefef;
             color: #3a3a3a;
-            font-family: 'Pitch Regular', monospace;
+            font-family: 'Pitch-Sans', sans-serif;
             text-align: center;
             line-height: 1.5;
             margin: 0;
