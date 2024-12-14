@@ -93,7 +93,34 @@
         }
         li {
             margin-bottom: 10px;
-        }      
+        }
+
+/* Custom scrollbar */
+section::-webkit-scrollbar {
+    width: 1.3em;
+}
+section::-webkit-scrollbar-track {
+    background: transparent;
+}
+section::-webkit-scrollbar-thumb,
+section::-webkit-scrollbar-thumb:hover {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="%23FFCC00"%3E%3Cpath d="M8 20h16v4h-4v4h-8v-4h-4v-4zM20 8v-4h-8v4h-4v4h16v-4h-4z"/%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@-moz-document url-prefix() { /* Firefox scrollbar */
+    section {
+        scrollbar-color: #FFCC00 transparent; 
+        scrollbar-width: thin;
+    }
+    section::-webkit-scrollbar-thumb {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="%23FFCC00"%3E%3Cpath d="M8 20h16v4h-4v4h-8v-4h-4v-4zM20 8v-4h-8v4h-4v4h16v-4h-4z"/%3E%3C/svg%3E');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
     </style>
 </head>
 <body>
