@@ -7,6 +7,15 @@
     <title>Liminal Loop</title>
     <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet">
     <style>
+        .slide-in {
+            opacity: 0;
+            transform: translateY(-96px);
+            animation: slideIn 1s ease-out forwards;
+        }
+        @keyframes slideIn {
+            0% {opacity: 0; transform: translateY(-96px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
         body {
             margin: 0;
             padding: 1.25em;
@@ -156,8 +165,8 @@
 </head>
 <body>
     <main>
-        <header class="glitch">■■□</header>
-        <p>Autoencoders are neural networks used for unsupervised learning, mainly for dimensionality reduction and feature extraction. They consist of an <a class="squiggle" href="../12/">encoder</a> that compresses data into a lower-dimensional form and a decoder that reconstructs it. <a class="jump" href="#">Autoencoders</a> are useful for tasks like noise reduction, anomaly detection, and data compr<a class="scanline" href="#">ession</a>.</p>
+        <header class="glitch slide-in">■■□</header>
+        <p class="slide-in">Autoencoders are neural networks used for unsupervised learning, mainly for dimensionality reduction and feature extraction. They consist of an <a class="squiggle" href="../12/">encoder</a> that compresses data into a lower-dimensional form and a decoder that reconstructs it. <a class="jump" href="#">Autoencoders</a> are useful for tasks like noise reduction, anomaly detection, and data compr<a class="scanline" href="#">ession</a>.</p>
     </main>
 </body>
 </html>
