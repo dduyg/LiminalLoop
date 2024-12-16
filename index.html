@@ -50,7 +50,6 @@
       padding: 15px 25px 15px 30px;
       font-size: 2.5rem;
       font-family: 'VT323', monospace;
-      text-decoration: wavy underline;
       background-color: transparent;
       border-radius: 100%;
       border: 1px solid #f0f0f0;
@@ -59,11 +58,25 @@
       outline: none; /* Remove default outline */
       -webkit-tap-highlight-color: transparent;
       user-select: none;
+      position: relative;
     }
     a svg {
       width: 2.5rem;
       height: 2.5rem;
       display: block;
+    }
+    a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: repeating-linear-gradient(90deg, #f0f0f0, #f0f0f0 5px, transparent 5px, transparent 10px);
+      animation: wave 1s linear infinite;
+    }
+    @keyframes wave {
+      to { background-position: 10px 0;}
     }
     a:hover {
       background-color: #AC4E5E;
@@ -72,7 +85,10 @@
     }
     a:hover svg {
       fill: #3A3A3C;
-    }  
+    }
+    a:hover::after {
+      background: repeating-linear-gradient(90deg, #ac4e5e, #ac4e5e 5px, transparent 5px, transparent 10px);
+    }
     u {
       text-decoration: none;
       position: relative;
