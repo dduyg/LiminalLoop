@@ -47,9 +47,10 @@
       display: inline-block;
       margin-top: 20%;
       margin-left: 15%;
-      padding: 15px 25px 15px 30px;
+      padding: 2px 20px 10px;
       font-size: 2.5rem;
       font-family: 'VT323', monospace;
+      text-decoration: wavy underline;
       background-color: transparent;
       border-radius: 100%;
       border: 1px solid #f0f0f0;
@@ -58,36 +59,11 @@
       outline: none; /* Remove default outline */
       -webkit-tap-highlight-color: transparent;
       user-select: none;
-      position: relative;
-    }
-    a svg {
-      width: 2.5rem;
-      height: 2.5rem;
-      display: block;
-    }
-    a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 3px;
-      background: repeating-linear-gradient(90deg, #f0f0f0, #f0f0f0 5px, transparent 5px, transparent 10px);
-      animation: wave 1s linear infinite;
-    }
-    @keyframes wave {
-      to { background-position: 10px 0;}
     }
     a:hover {
       background-color: #AC4E5E;
       font-weight: bold;
       border: none;
-    }
-    a:hover svg {
-      fill: #3A3A3C;
-    }
-    a:hover::after {
-      background: repeating-linear-gradient(90deg, #ac4e5e, #ac4e5e 5px, transparent 5px, transparent 10px);
     }
     u {
       text-decoration: none;
@@ -107,13 +83,9 @@
 <body>
 <img id="fixed-corner" src="liminal.png">
 <main>
-  <h1 onclick="window.location.href='https://glitch.com/@dduyg'">⎄Limin<u>alLo</u>op():</h1>
-  <section>Loops in programming allow you to repeat a set of instructions until a certain condition is met, making it easier to perform repetitive tasks and iterate through data. They come in different forms like "for" and "while" loops.</section>
-  <a href="02/">
-    <svg fill="#f0f0f0" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M175 .024V1920l1570.845-959.927z" fill-rule="evenodd"></path></g>
-    </svg>
-  </a>
+   <h1 onclick="window.location.href='https://glitch.com/@dduyg'">⎄Limin<u>alLo</u>op():</h1>
+   <section>Loops in programming allow you to repeat a set of instructions until a certain condition is met, making it easier to perform repetitive tasks and iterate through data. They come in different forms like "for" and "while" loops.</section>
+   <a href="02/">▷</a>
 </main>
 </body>
 </html>
