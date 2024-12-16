@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
     <link rel="stylesheet" href="../fonts.css">
-    <style>
+    <style>    
+        /* Slide + Fade-In Animation */
+        .slide-and-fade {
+            opacity: 0;
+            transform: translateY(30px); /* Start below the normal position */
+            animation: slideAndFade 1s ease-in-out forwards; /* Slide and fade in */
+        }
+        @keyframes slideAndFade { 
+            0% { 
+                transform: translateY(30px); /* Start below */
+                opacity: 0; /* Fully transparent */
+            }
+            50% { 
+                transform: translateY(15px); /* Midway position */
+                opacity: 0.5; /* Semi-transparent */
+            }
+            100% { 
+                transform: translateY(0); /* Final position */
+                opacity: 1; /* Fully visible */
+            }
+        }
+        
         body {
             background-color: #2D2B40;
             color: #FDCCFE;
@@ -117,5 +138,24 @@
 
     <!-- More data rows can be added here similarly -->
 </main>
+
+    <script>
+        // Create an array with the elements to animate (header, work-item, footer, etc.)
+        const elementsToAnimate = [
+            'header',
+            '.item'
+        ];
+
+        // Get all elements based on the selectors in the array
+        const elements = elementsToAnimate.flatMap(selector => {
+            return Array.from(document.querySelectorAll(selector));
+        });
+
+        // Apply the slide-and-fade animation with staggered delays
+        elements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.15}s`; // Adjust delay (0.15s per element)
+            el.classList.add('slide-and-fade');
+        });
+    </script>
 </body>
 </html>
