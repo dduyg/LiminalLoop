@@ -403,3 +403,54 @@ p {
     font-style: normal;
     font-display: swap;
 }
+
+
+/* font-family: 'Yarikha', sans-serif; */
+@font-face {
+    font-family: 'Yarikha';
+    src: url('fonts/Yarikha.woff2') format('woff2'),
+         url('fonts/Yarikha.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+/* Bold */
+@font-face {
+    font-family: 'Yarikha';
+    src: url('fonts/YarikhaBold.woff2') format('woff2'),
+         url('fonts/YarikhaBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap
+}
+/* Semi-Bold */
+@font-face {
+    font-family: 'Yarikha';
+    src: url('fonts/YarikhaSemiBold.woff2') format('woff2'),
+         url('fonts/YarikhaSemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+/* Extra-Bold */
+@font-face {
+    font-family: 'Yarikha';
+    src: url('fonts/YarikhaExtraBold.woff2') format('woff2'),
+         url('fonts/YarikhaExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap
+}
+/* 
+Applying to a specific element: 
+h1 {
+    font-family: 'Yarikha', sans-serif;
+    font-weight: bold;
+}
+
+Applying semi-bold to another element:
+h2 {
+    font-family: 'Yarikha', sans-serif;
+    font-weight: 600;
+}
+ */
