@@ -7,15 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:wght@200..900&display=swap" rel="stylesheet">
     <style>
-        /* Hide Scrollbars */
-        html {
-            scrollbar-width: none;
+        html { /* Hide only page's main scrollbar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
         }
-        ::-webkit-scrollbar {
-            display: none;
-        }     
-        /* General Reset */
-        * {
+        html::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, and Edge */
+        }
+        * {   /* General Reset */
             margin: 0;
             padding: 0;
             box-sizing: border-box;
