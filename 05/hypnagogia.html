@@ -86,7 +86,7 @@
     }
     .split::before,
     .split::after {
-      content: 'monochrome';
+      content: attr(data-text);
       position: absolute;
       top: 0;
       left: 0;
@@ -95,12 +95,12 @@
     .split::before {
       clip-path: inset(0 0 50% 0);
       transform: translateX(-2px);
-      animation: slice 0.3s infinite;
+      animation: slice 0.9s infinite;
     }
     .split::after {
       clip-path: inset(50% 0 0 0);
       transform: translateX(2px);
-      animation: slice 0.3s infinite reverse;
+      animation: slice 0.9s infinite reverse;
     }
     @keyframes slice {
       0%, 100% { transform: translateX(0); }
@@ -209,7 +209,7 @@
       <h2 class="distort"><span>o</span><span>b</span><span>s</span><span>i</span><span>d</span><span>i</span><span>a</span><span>n</span></h2>
     </section>
     <section>
-      <h2 class="split">monochrome</h2>
+      <h2 class="split" data-text="monochrome">monochrome</h2>
     </section>
     <section>
       <h2 class="static">oscillation</h2>
