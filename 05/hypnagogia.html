@@ -53,7 +53,7 @@
       position: relative;
     }
     .scanlines::before {
-      content: 'hypnagogic';
+      content: attr(data-text);
       position: absolute;
       top: 0;
       left: 0;
@@ -159,7 +159,7 @@
       color: #DFE3DC;
     }
     .scanline-interference::after {
-      content: 'halcyon';
+      content: attr(data-text);
       position: absolute;
       top: 0;
       left: 0;
@@ -203,7 +203,7 @@
       <h2 class="wave">echochamber</h2>
     </section>
     <section>
-      <h2 class="scanlines">hypnagogic</h2>
+      <h2 class="scanlines" data-text="hypnagogic">hypnagogic</h2>
     </section>
     <section>
       <h2 class="distort"><span>o</span><span>b</span><span>s</span><span>i</span><span>d</span><span>i</span><span>a</span><span>n</span></h2>
@@ -224,7 +224,7 @@
       <h2 class="glitch-flash">kaleidoscope</h2>
     </section>
     <section>
-      <h2 class="scanline-interference">halcyon</h2>
+      <h2 class="scanline-interference" data-text="halcyon">halcyon</h2>
     </section>
     <section>
       <h2 class="vertical-distort">iridescent</h2>
