@@ -152,7 +152,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            list-style: none;
+            list-style: none; /* Remove the default arrow */
+            appearance: none; /* Ensure removing the default arrow cross browsers */
         }     
         summary::-webkit-details-marker {
             display: none;
