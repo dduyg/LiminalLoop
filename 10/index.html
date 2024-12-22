@@ -43,10 +43,6 @@
             -webkit-tap-highlight-color: transparent;
             user-select: none;
         }
-        details:focus, details:active {
-            outline: none;
-            -webkit-tap-highlight-color: transparent;
-        }     
 
         summary {
             cursor: pointer;
@@ -57,6 +53,7 @@
             align-items: center;
             list-style: none; /* Remove the default arrow */
             appearance: none; /* Ensure removing the default arrow cross browsers */
+            -webkit-appearance: none;
         }
         
         summary::-webkit-details-marker {
