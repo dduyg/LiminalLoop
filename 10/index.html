@@ -41,10 +41,7 @@
             position: relative;
             outline: none; /* Remove default outline */
             -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-               -moz-user-select: none;
-                -ms-user-select: none;
-                    user-select: none;
+            user-select: none;
         }
         details:focus, details:active {
             outline: none;
@@ -58,7 +55,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            list-style: none;
+            list-style: none; /* Remove the default arrow */
+            appearance: none; /* Ensure removing the default arrow cross browsers */
         }
         
         summary::-webkit-details-marker {
