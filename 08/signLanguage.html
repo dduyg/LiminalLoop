@@ -49,7 +49,6 @@
             position: absolute;
             top: 0;
             left: 0;
-            transform: translateX(-50%);
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, #f3f2f9 10%, #BDEED1 30%, #f3f2f9 90%);
@@ -58,7 +57,7 @@
 
         main {
             max-width: 800px;
-            margin: 200px auto 0;
+            margin: 150px auto 0;
             width: 90%;
         }
         header {
@@ -83,8 +82,35 @@
         }
         footer {
             text-align: center;
-            margin-top: 110px;
-            font-size: 0.7rem;
+            margin-top: 90px;
+            font-size: 0.75rem;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;      
+        }
+        summary {
+            list-style: none; /* Remove the default arrow */
+            appearance: none; /* Ensure removing the default arrow cross browsers */
+            -webkit-appearance: none;
+            cursor: pointer;
+            position: relative;
+        }
+        summary::before {
+            content: "";
+            display: inline-block;
+            width: 3em;
+            height: 3em;
+            background: url('https://media1.giphy.com/media/aWuJLgxx8O7QY/giphy.gif') no-repeat center;
+            background-size: contain;
+            margin-right: 10px; /* Space between image and text */
+            vertical-align: middle; /* Align the image with the text vertically */
+            transition: transform 0.3s ease;
+        }
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        details p {
+            padding: 5% 10%;
+            font-size: 32px;
         }
      
         .noise {  /* Original unchanged noise code */
@@ -165,7 +191,9 @@
         </ul>    
 
         <footer>
-            <p><b>⛜⛠&nbsp;&nbsp;</b> Oceanic Modem Waves</p>
+            <details><summary>Oceanic Modem Waves</summary>
+                <p>⛜⛠</p>
+            </details>
         </footer>
     </main>
     <div class="noise"></div>
