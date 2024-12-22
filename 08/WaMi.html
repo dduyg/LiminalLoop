@@ -5,22 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
-    <style>      
-        .slide-in { /* Slide-in animation */
-            opacity: 0;
-            transform: translateY(-30px); /* Start above the normal position */
-            animation: slideIn 1s ease-in-out forwards; /* Slide in with ease-in-out */
+    <style>
+        .hidden {
+            opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        @keyframes slideIn { 
-            from { 
-                transform: translateY(-30px); /* Start slightly above */
-                opacity: 0; /* Fully transparent */
-            }
-            to { 
-                transform: translateY(0); /* End at the normal position */
-                opacity: 1; /* Fully visible */
-            }
-        }    
+        .visible {
+            opacity: 1; transform: translateY(0);
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -30,12 +22,12 @@
             background-color: #222;
             color: #f5f5f5;
         }
-        .container {
+        main {
             display: flex;
             flex-direction: row;
             max-width: 1200px;
             margin: auto;
-            padding: 45% 20px 20px;
+            padding: 50% 20px 20px;
         }
  
         .sidebar {
@@ -99,7 +91,7 @@
         }
         
         @media (max-width: 768px) {
-            .container {
+            main {
                 flex-direction: column;
                 padding: 100px 10px 10px;
             }
@@ -121,7 +113,7 @@
     </style>
 </head>
 <body>
-  <div class="container">
+  <main>
         <aside class="sidebar">
             <ul>
                 <li>All</li>
@@ -134,7 +126,7 @@
                 <li>劇伴</li>
             </ul>
         </aside>
-        <main class="content">
+        <div class="content">
             <!-- Each entry in the list -->
             <div class="item">
                 <div class="date">2024.08</div>
@@ -153,27 +145,28 @@
             </div>
             <!-- Add additional entries as needed -->
             <!-- ... -->
-        </main>
-    </div>
-  
+        </div>
+  </main>
+
   <script>
-        // Create an array with the elements to animate
-        const elementsToAnimate = [
-            '.sidebar',
-            '.item'
-        ];
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll('main > *'); // Select all direct children of <main>
 
-        // Get all elements based on the selectors in the array
-        const elements = elementsToAnimate.flatMap(selector => {
-            return Array.from(document.querySelectorAll(selector));
-        });
+      // Add the hidden class to all elements
+      elements.forEach(element => element.classList.add('hidden'));
 
-        // Apply the slide-in animation with staggered delays
-        elements.forEach((el, index) => {
-            el.style.animationDelay = `${index * 0.1}s`; // Adjust delay between elements (0.1s)
-            el.classList.add('slide-in'); // Dynamically add the slide-in class
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
         });
-    </script>
+      }, { threshold: 0.1 });
+
+      elements.forEach(element => observer.observe(element));
+    });
+  </script>
 </body>
 </html>
 
