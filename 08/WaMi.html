@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
-    <style>
+    <style>      
+        .slide-in { /* Slide-in animation */
+            opacity: 0;
+            transform: translateY(-30px); /* Start above the normal position */
+            animation: slideIn 1s ease-in-out forwards; /* Slide in with ease-in-out */
+        }
+        @keyframes slideIn { 
+            from { 
+                transform: translateY(-30px); /* Start slightly above */
+                opacity: 0; /* Fully transparent */
+            }
+            to { 
+                transform: translateY(0); /* End at the normal position */
+                opacity: 1; /* Fully visible */
+            }
+        }    
         body {
             margin: 0;
             padding: 0;
@@ -20,7 +35,7 @@
             flex-direction: row;
             max-width: 1200px;
             margin: auto;
-            padding: 150px 20px 20px;
+            padding: 45% 20px 20px;
         }
  
         .sidebar {
@@ -40,6 +55,9 @@
         .sidebar li {
             cursor: pointer;
             opacity: 0.85;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
         .sidebar li:hover {
             font-weight: 700;
@@ -137,6 +155,25 @@
             <!-- ... -->
         </main>
     </div>
+  
+  <script>
+        // Create an array with the elements to animate
+        const elementsToAnimate = [
+            '.sidebar',
+            '.item'
+        ];
+
+        // Get all elements based on the selectors in the array
+        const elements = elementsToAnimate.flatMap(selector => {
+            return Array.from(document.querySelectorAll(selector));
+        });
+
+        // Apply the slide-in animation with staggered delays
+        elements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.1}s`; // Adjust delay between elements (0.1s)
+            el.classList.add('slide-in'); // Dynamically add the slide-in class
+        });
+    </script>
 </body>
 </html>
 
