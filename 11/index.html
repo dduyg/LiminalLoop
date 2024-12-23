@@ -161,12 +161,39 @@
             width: 0%;
             transition: all ease 0.2s;
         }
+
+        a.arrowClip {
+            color: #949EA7;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            position: relative;
+            transition: color 0.6s;
+        }
+        a.arrowClip::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #C4C8CB;
+            clip-path: polygon(0% 0%, 60% 0%, 60% 0%, 100% 0%, 100% 100%, 60% 100%, 60% 100%, 0% 100%);
+            transition: clip-path 0.6s;
+        }
+        a.arrowClip:hover::before {
+            clip-path: polygon(10% 30%, 60% 30%, 60% 5%, 90% 50%, 90% 50%, 60% 95%, 60% 70%, 10% 70%);
+        }
+        a.arrowClip:hover {
+            color: black;
+        }
     </style>
 </head>
 <body>
     <main class="slide-in">
         <header class="glitch">■■□</header>
-        <p>Autoencoders are neural networks used for unsupervised learning, mainly for dimensionality reduction and feature extraction. They consist of an <a class="squiggle" href="../12/">encoder</a> that compresses data into a lower-dimensional form and a decoder that reconstructs it. <a class="jump" href="fading">Autoencoders</a> are useful for tasks like noise reduction, anomaly detection, and data compr<a class="scanline" href="bytecodeBattles">ession</a>.</p>
+        <p>Autoencoders are neural networks used for unsupervised learning, mainly for dimensionality reduction and feature extraction. They consist of an <a class="squiggle" href="../12/">encoder</a> that compresses data into a lower-dimensional form and a decoder that reconstructs it. <a class="jump" href="fading">Autoencoders</a> are useful for tasks like noise reduction, anomaly detection, and <a class="arrowClip" href="#">data</a> compr<a class="scanline" href="bytecodeBattles">ession</a>.</p>
     </main>
 </body>
 </html>
