@@ -166,9 +166,10 @@
             color: #949EA7;
             text-decoration: none;
             font-weight: bold;
+            font-family: "Courier New", Courier, monospace;
             display: inline-block;
             position: relative;
-            transition: color 0.6s;
+            cursor: pointer;
         }
         a.arrowClip::before {
             content: "";
@@ -184,9 +185,6 @@
         }
         a.arrowClip:hover::before {
             clip-path: polygon(10% 30%, 60% 30%, 60% 5%, 90% 50%, 90% 50%, 60% 95%, 60% 70%, 10% 70%);
-        }
-        a.arrowClip:hover {
-            color: black;
         }
     </style>
 </head>
