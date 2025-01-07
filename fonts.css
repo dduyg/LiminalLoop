@@ -454,3 +454,13 @@ h2 {
     font-weight: 600;
 }
  */
+
+/* font-family: 'ObjectSans-Regular', sans-serif; */
+@font-face {
+  font-family: 'ObjectSans-Regular';
+  src: url('fonts/ObjectSans-Regular.woff2') format('woff2'),
+       url('fonts/ObjectSans-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
