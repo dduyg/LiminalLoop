@@ -207,6 +207,36 @@
       75% { transform: translateX(-5px); }
       100% { transform: translateX(0); }
     }
+
+    /* 13. Shift Glitch */
+    .shift-glitch {
+      position: relative;
+      color: #F3F7F0;
+      line-height: 1.1;
+    }
+    .shift-glitch::before,
+    .shift-glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #C78B4C;
+      color: #C78B4C;
+      z-index: -1;
+      animation: shift-glitch 1s infinite;
+    }
+    .shift-glitch::after {
+      left: 2px;
+      text-shadow: -1px 0 red, 1px 0 cyan, 0 -1px green, 0 1px blue;
+    }
+    @keyframes shift-glitch {
+      0% {transform: translateX(2px) translateY(-2px);}
+      20% {transform: translateX(-2px) translateY(2px);}
+      40% {transform: translateX(4px) translateY(-4px);}
+      60% {transform: translateX(-4px) translateY(4px);}
+      80% {transform: translateX(2px) translateY(-2px);}
+      100% {transform: translateX(0) translateY(0);}
+    }
   </style>
 </head>
 <body>
@@ -247,6 +277,9 @@
     </section>
     <section>
       <h2 class="text-break">therefore</h2>
+    </section>
+    <section>
+       <h2 class="shift-glitch" data-text="404">404</h2>
     </section>
   </main>
 </body>
