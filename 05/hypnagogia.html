@@ -237,6 +237,22 @@
       80% {transform: translateX(2px) translateY(-2px);}
       100% {transform: translateX(0) translateY(0);}
     }
+
+    /* 14. Static Noise */
+    .static-noise {
+      position: relative;
+      animation: static-noise 0.3s infinite;
+    }
+    @keyframes static-noise {
+      0%, 100% { opacity: 1; }
+      10% { opacity: 0.6; }
+      20% { opacity: 1.2; }
+      30% { opacity: 0.8; }
+      40% { opacity: 1.1; }
+      50% { opacity: 0.7; }
+      60% { opacity: 1.3; }
+      70% { opacity: 0.5; }
+    }
   </style>
 </head>
 <body>
@@ -280,6 +296,9 @@
     </section>
     <section>
        <h2 class="shift-glitch" data-text="404">404</h2>
+    </section>
+    <section>
+      <h2 class="static-noise">surge</h2>
     </section>
   </main>
 </body>
