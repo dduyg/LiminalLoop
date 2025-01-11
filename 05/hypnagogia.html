@@ -193,7 +193,20 @@
     @keyframes stretch {
       0%, 100% { transform: none; }
       50% { transform: scale(1.1) skew(5deg, 5deg); }
-    } 
+    }
+
+    /* 12. Text Break */
+    .text-break {
+      display: inline-block;
+      animation: text-break 2s infinite;
+    }     
+    @keyframes text-break {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
   </style>
 </head>
 <body>
@@ -231,6 +244,9 @@
     </section>
     <section>
       <h2 class="stretch">resonance</h2>
+    </section>
+    <section>
+      <h2 class="text-break">therefore</h2>
     </section>
   </main>
 </body>
