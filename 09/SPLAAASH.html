@@ -17,19 +17,17 @@
       color: white;
       overflow-x: hidden;
     }
-    header {
-      position: sticky;
-      top: 0;
-      left: 0;
-      padding: 10px;
-      z-index: 1000;
-    }
     nav {
+      position: fixed;
+      top: 2%;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 10px;
-      max-width: 100%;
     }
     nav a {
       color: #ff0066;
@@ -515,25 +513,23 @@
   </style>
 </head>
 <body>
-<header>
-  <nav>
-    <a href="#scanGlitch">◧</a>
-    <a href="#pixelGlitch">◳</a>
-    <a href="#flickerGlitch">▩</a>
-    <a href="#staticNoise">◩</a>
-    <a href="#shadowTrail">▦</a>
-    <a href="#doubleLayer">▣</a>
-    <a href="#RGBGlitch">▥</a>
-    <a href="#blurGlitch">▧</a>
-    <a href="#staggerGlitch">◱</a>
-    <a href="#fillGlitch">◫</a>
-    <a href="#shiftGlitch">▤</a>
-    <a href="#impulseNoise">◪</a>
-    <a href="#textWarp">▨</a>
-    <a href="#circuitBoardlines">▣</a>
-    <a href="#dataStream">▦</a>
-  </nav>
-</header>
+<nav>
+  <a href="#scanGlitch">◧</a>
+  <a href="#pixelGlitch">◳</a>
+  <a href="#flickerGlitch">▩</a>
+  <a href="#staticNoise">◩</a>
+  <a href="#shadowTrail">▦</a>
+  <a href="#doubleLayer">▣</a>  
+  <a href="#RGBGlitch">▥</a>
+  <a href="#blurGlitch">▧</a>
+  <a href="#staggerGlitch">◱</a>
+  <a href="#fillGlitch">◫</a>
+  <a href="#shiftGlitch">▤</a>
+  <a href="#impulseNoise">◪</a>
+  <a href="#textWarp">▨</a>
+  <a href="#circuitBoardlines">▣</a>
+  <a href="#dataStream">▦</a>
+</nav>
 
 <section id="scanGlitch">
   <h1 class="scan-glitch" data-text="Arrays">Arrays</h1>
