@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🏹LiminalLoop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Russo+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -603,6 +604,47 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    
+    #seahorse {
+      font-family: "Russo One", sans-serif;
+      background-color: #1A1A1D;
+      color: #FFFFFF;
+      line-height: 1.5;
+    }
+    #seahorse main {
+      max-width: 800px;
+      padding: 0 1.25em;
+    }
+    #seahorse h1 {
+      font-family: "Monoton", sans-serif;
+      color: #9cf5ff;
+    }
+    #seahorse .glitchiness {
+      position: relative;
+    }
+    #seahorse .glitchiness:before, .glitchiness:after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0.8;
+      color: #ff77e9;
+      z-index: -1;
+      animation: glitchiness 2s infinite;
+    }
+    #seahorse .glitchiness:after {        
+      color: #9cf5ff;
+      z-index: -2;
+      animation: glitchiness 2s infinite reverse;
+    }   
+    @keyframes glitchiness {
+      0% { transform: translate(0, 0); }  
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, -2px); } 
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(2px, 2px); } 
+      100% { transform: translate(0, 0); }
+    }
   </style>
 </head>
 <body>
@@ -616,7 +658,7 @@
     <a href="#searchBar">◌</a>
     <a href="#searchBar2">◐</a>
     <a href="#gradual">◎</a>
-    <a href="#sec">●</a>
+    <a href="#seahorse">●</a>
     <a href="#sec">◒</a>
     <a href="#sec">◖</a>
     <a href="#sec">○</a>
@@ -721,6 +763,15 @@
         data types, <a href="#">rivaling</a> or surpassing previous techniques like Generative Adversarial Networks (GANs).
         Beyond generation, <a href="#">diffusion</a> models are being explored for tasks such as data augmentation, anomaly detection, 
         and predictive modeling, making them versatile tools in modern data science.
+    </main>
+  </section>
+
+  <section id="seahorse">
+    <main>
+      <h1 class="glitchiness" data-text="Oops! You’re in the void...">Oops! You’re in the void...</h1>
+      <p class="glitchiness" data-text="Tokenization is the process of breaking down text or a sequence of data into smaller, manageable parts called tokens. In natural language processing (NLP), a token typically represents a word, phrase, or even a character, depending on the granularity. Tokenization helps in preparing raw text data for further analysis, such as text mining, machine learning models, or search algorithms.">  
+        Tokenization is the process of breaking down text or a sequence of data into smaller, manageable parts called tokens. In natural language processing (NLP), a token typically represents a word, phrase, or even a character, depending on the granularity. Tokenization helps in preparing raw text data for further analysis, such as text mining, machine learning models, or search algorithms. 
+      </p>
     </main>
   </section>
 </body>
