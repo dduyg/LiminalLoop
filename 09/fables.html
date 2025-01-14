@@ -617,12 +617,11 @@
     }
     #seahorse h1 {
       font-family: "Monoton", sans-serif;
-      color: #9cf5ff;
     }
-    #seahorse .glitchiness {
+    .glitchiness {
       position: relative;
     }
-    #seahorse .glitchiness:before, .glitchiness:after {
+    .glitchiness:before, .glitchiness:after {
       content: attr(data-text);
       position: absolute;
       left: 0;
@@ -632,7 +631,7 @@
       z-index: -1;
       animation: glitchiness 2s infinite;
     }
-    #seahorse .glitchiness:after {        
+    .glitchiness:after {        
       color: #9cf5ff;
       z-index: -2;
       animation: glitchiness 2s infinite reverse;
