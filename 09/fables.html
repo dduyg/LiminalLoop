@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🏹LiminalLoop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Russo+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
@@ -719,6 +720,46 @@
         white-space: pre-wrap;
         word-wrap: break-word;
       }
+
+      #sys {
+        font-family: "Funnel Display", serif;
+        color: #f1f1f1;
+        background: linear-gradient(135deg, #191970, #483D8B);
+        overflow: hidden;
+      }
+      #sys main {
+        text-align: center;
+        padding: 0 20px;
+        animation: sysFadeIn 3s ease-in-out;
+      }
+      #sys h1 {
+        font-size: 10vw;
+      }
+      #sys h1, p {
+         margin: 0;
+         padding: 0;
+      }
+      #sys a { 
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #32CD32;
+        font-size: 1.1em;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 10px 20px;
+        border: 1px solid #32CD32;
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+      }
+      #sys a:hover {
+        color: #000;
+        background-color: #32CD32;
+        text-shadow: 0 0 10px #fff;
+      }
+      @keyframes sysFadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+      }
   </style>
 </head>
 <body>
@@ -734,9 +775,9 @@
     <a href="#gradual">◎</a>
     <a href="#seahorse">●</a>
     <a href="#corridors">◒</a>
-    <a href="#sec">◖</a>
-    <a href="#sec">○</a>
-    <a href="#sec">◕</a>
+    <a href="#sys">◖</a>
+    <a href="#">○</a>
+    <a href="#">◕</a>
   </nav>
 
   <section id="void404">
@@ -862,6 +903,14 @@ const greet = (name) => {
 console.log(greet('Visitor'));
         </pre>
     </div>
+  </section>
+
+  <section id="sys">
+    <main>
+      <h1>Error Code: 404_NOT_FOUND</h1>
+      <p>Their blossoming romance is tested when Min-ho discovers a painful secret from Eun-ji's past: her family’s bankruptcy was partially caused by a deal his company made years ago. Feeling betrayed, Eun-ji pushes Min-ho away, and he begins to question everything he thought he knew about success and morality.</p>
+      <a href="#">SYS &gt; 404 ERROR</a>
+    </main>
   </section>
 </body>
 </html>
