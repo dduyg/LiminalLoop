@@ -17,17 +17,35 @@
       color: white;
       overflow-x: hidden;
     }
-    nav {
-      position: sticky;
+    #navToggle {
+      position: fixed;
       top: 5%;
-      left: 0;
-      padding: 0 20px;
+      right: 5%;
+      background-color: transparent;
+      border: 1px solid white;
+      padding: 15px;
+      cursor: pointer;
       z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+    #navToggle:hover, #navToggle:active {
+      background-color: black;
+    }
+    nav {
+      display: none; /* Hide the navigation by default */
+      position: fixed;
+      top: 50px; /* Adjust below the button */
+      left: 0;
+      max-width: 100%;
+      padding: 0 20px;
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      gap: 10px;
-      max-width: 100%;
+      gap: 10px;   
+    }
+    button, a {
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
     }
     nav a {
       color: #ff0066;
@@ -37,8 +55,6 @@
       border: 1px solid #ff0066;
       border-radius: 50%;
       transition: all 0.3s ease;
-      outline: none;
-      -webkit-tap-highlight-color: transparent;
     }
     nav a:hover {
       background: #ff0066;
@@ -513,6 +529,7 @@
   </style>
 </head>
 <body>
+<button id="navToggle">🩻</button> 
   <nav>
     <a href="#scanGlitch">◧</a>
     <a href="#pixelGlitch">◳</a>
@@ -601,5 +618,18 @@
     <h1 class="data-scan">Data Stream</h1>
     <h1 class="block-glitch" data-text="Pixelated Block">Pixelated Block</h1>
   </section>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.querySelector('nav');
+  
+    navToggle.addEventListener('click', () => {      
+      if (nav.style.display === 'block') {    
+        nav.style.display = 'none';        
+      } else {       
+        nav.style.display = 'block';       
+      } 
+    });  
+  </script>
 </body>
 </html>
