@@ -18,12 +18,12 @@
       overflow-x: hidden;
     }
     #navToggle {
-      position: sticky;    
+      position: sticky;
       top: 10px;
-      right: 10px;
+      right: 15px;
       background-color: transparent;
-      border: none;
-      padding: 10px;
+      border: 1px solid white;
+      padding: 5px;
       cursor: pointer;
       z-index: 1000;
       transition: background-color 0.3s ease;
@@ -33,11 +33,15 @@
     }
     nav {
       display: none; /* Hide the navigation by default */
-      position: sticky;
+      position: fixed;
       top: 50px; /* Adjust below the button */
       left: 0;
-      width: 100%;
+      max-width: 100%;
       padding: 0 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 10px;   
     }
     button, a {
       outline: none;
@@ -48,7 +52,6 @@
       text-decoration: none;
       font-size: 12px;
       padding: 5px 10px;
-      margin: 10px;
       border: 1px solid #ff0066;
       border-radius: 50%;
       transition: all 0.3s ease;
