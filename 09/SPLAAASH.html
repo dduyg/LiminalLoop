@@ -40,6 +40,12 @@
       width: 100%;
       padding: 0 20px;   
     }
+    .containerNav {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
     button, a {
       outline: none;
       -webkit-tap-highlight-color: transparent;
@@ -49,7 +55,6 @@
       text-decoration: none;
       font-size: 12px;
       padding: 5px 10px;
-      margin: 20px;
       border: 1px solid #ff0066;
       border-radius: 50%;
       transition: all 0.3s ease;
@@ -529,6 +534,7 @@
 <body>
 <button id="navToggle">🩻</button> 
   <nav>
+  <div class="containerNav">
     <a href="#scanGlitch">◧</a>
     <a href="#pixelGlitch">◳</a>
     <a href="#flickerGlitch">▩</a>
@@ -544,6 +550,7 @@
     <a href="#textWarp">▨</a>
     <a href="#circuitBoardlines">▣</a>
     <a href="#dataStream">▦</a>
+  </div>
   </nav>
   
   <section id="scanGlitch">
