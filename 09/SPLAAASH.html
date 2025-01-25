@@ -17,38 +17,17 @@
       color: white;
       overflow-x: hidden;
     }
-    #navToggle {
-      position: sticky;
-      top: 10px;
-      right: 10px;
-      background-color: transparent;
-      border: 1px solid white;
-      padding: 5px;
-      font-size: 20px;
-      cursor: pointer;
-      z-index: 1000;
-      transition: background-color 0.3s ease;
-    }
-    #navToggle:hover, #navToggle:active {
-      background-color: black;
-    }
     nav {
-      display: none; /* Hide the navigation by default */
       position: sticky;
-      top: 50px; /* Adjust below the button */
+      top: 5%;
       left: 0;
-      width: 100%;
-      padding: 0 20px;   
-    }
-    .containerNav {
+      padding: 0 20px;
+      z-index: 1000;
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 10px;
-    }
-    button, a {
-      outline: none;
-      -webkit-tap-highlight-color: transparent;
+      max-width: 100%;
     }
     nav a {
       color: #ff0066;
@@ -58,6 +37,8 @@
       border: 1px solid #ff0066;
       border-radius: 50%;
       transition: all 0.3s ease;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
     }
     nav a:hover {
       background: #ff0066;
@@ -532,9 +513,7 @@
   </style>
 </head>
 <body>
-<button id="navToggle">🩻</button> 
   <nav>
-  <div class="containerNav">
     <a href="#scanGlitch">◧</a>
     <a href="#pixelGlitch">◳</a>
     <a href="#flickerGlitch">▩</a>
@@ -550,7 +529,6 @@
     <a href="#textWarp">▨</a>
     <a href="#circuitBoardlines">▣</a>
     <a href="#dataStream">▦</a>
-  </div>
   </nav>
   
   <section id="scanGlitch">
@@ -623,18 +601,5 @@
     <h1 class="data-scan">Data Stream</h1>
     <h1 class="block-glitch" data-text="Pixelated Block">Pixelated Block</h1>
   </section>
-
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const nav = document.querySelector('nav');
-  
-    navToggle.addEventListener('click', () => {      
-      if (nav.style.display === 'block') {    
-        nav.style.display = 'none';        
-      } else {       
-        nav.style.display = 'block';       
-      } 
-    });  
-  </script>
 </body>
 </html>
