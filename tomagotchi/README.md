@@ -28,3 +28,7 @@ _The rest is up to you and your imagination. 🦄_
 <br>
 
 [<kbd><img width="30" src="https://img.icons8.com/?size=100&id=dGiodiqcwDyd&format=png&color=C05746"/><img width="30" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=7A0045"/><img width="30" src="https://img.icons8.com/?size=100&id=iKvs9s3u1mZS&format=png&color=7A0045"/>🏗️</kbd>](https://www.fontshare.com/) [<kbd> <br> icoconverter <br> </kbd>](https://www.icoconverter.com/) [<kbd> <br> uigradients <br> </kbd>](https://uigradients.com/#Memariani)
+
+[<kbd> <br> HTML colornames <br> </kbd>](https://colorkit.co/html-color-names/)
+
+[<kbd> <br> cropCircle <br> </kbd>](https://crop-circle.imageonline.co/)
