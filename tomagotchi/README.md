@@ -25,10 +25,6 @@ _The rest is up to you and your imagination. 🦄_
 ```
 
 
-
 <br>
-<a href="https://www.fontshare.com/"><kbd><img width="30" height="30" src="https://img.icons8.com/?size=100&id=dGiodiqcwDyd&format=png&color=C05746"/><img width="30" height="30" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=7A0045"/><img width="30" height="30" src="https://img.icons8.com/?size=100&id=iKvs9s3u1mZS&format=png&color=7A0045"/>🏗️</kbd></a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-[<kbd> <br> icoconverter <br> </kbd>](https://www.icoconverter.com/) [<kbd> <br> uigradients <br> </kbd>](https://uigradients.com/#Memariani)
+[<kbd><img width="30" src="https://img.icons8.com/?size=100&id=dGiodiqcwDyd&format=png&color=C05746"/><img width="30" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=7A0045"/><img width="30" src="https://img.icons8.com/?size=100&id=iKvs9s3u1mZS&format=png&color=7A0045"/>🏗️</kbd>](https://www.fontshare.com/) [<kbd> <br> icoconverter <br> </kbd>](https://www.icoconverter.com/) [<kbd> <br> uigradients <br> </kbd>](https://uigradients.com/#Memariani)
