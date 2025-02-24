@@ -818,25 +818,26 @@
 
     #scanlines {
       font-family: "Share Tech Mono", monospace;   
-      background-color: #000; 
-      color: #00FF00;     
+      background-color: #000;
+      color: #00FF00;
+      position: relative;
     }
     #scanlines .container {      
       text-align: center;      
-      animation: fadeIn 2s ease-in-out;    
+      animation: scanlines-fadeIn 2s ease-in-out;    
     }
     #scanlines h1 {     
       font-family: "Bungee", sans-serif;
       color: #00FF00;
       text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);   
-      animation: glitch 2s infinite;
+      animation: scanlines-glitch 2s infinite;
     }
     #scanlines p {   
       font-size: 1.1rem;     
       margin-top: 20px;   
       color: #00FF00;   
       text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);   
-      animation: typing 4s steps(40, end), blinkCaret 0.75s step-end infinite;
+      animation: scanlines-typing 4s steps(40, end), scanlines-blinkCaret 0.75s step-end infinite;
     }
     #scanlines .container button {
       margin-top: 30px;   
@@ -847,7 +848,7 @@
       color: #00FF00;
       cursor: pointer;
       transition: background 0.3s, color 0.3s;
-      animation: pulse 1.5s infinite;
+      animation: scanlines-pulse 1.5s infinite;
     }
     #scanlines .container button:hover {   
       background: #00FF00;     
@@ -861,7 +862,7 @@
       height: 100%;
       background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 3px);   
       pointer-events: none;  
-      animation: flicker 0.3s infinite; 
+      animation: scanlines-flicker 0.3s infinite; 
     }    
     #scanlines .flicker-box {      
       width: 50px;     
@@ -869,32 +870,32 @@
       position: absolute;    
       background: rgba(0, 255, 0, 0.3);    
       border-radius: 50%;     
-      animation: flicker-box 3s infinite; 
+      animation: scanlines-flicker-box 3s infinite; 
     }   
-    @keyframes glitch {    
+    @keyframes scanlines-glitch {    
       0% {transform: skew(0deg);}
       25% {transform: skew(2deg, 5deg);} 
       50% {transform: skew(0deg);}
       75% {transform: skew(-2deg, -5deg);}     
       100% {transform: skew(0deg);}
     }   
-    @keyframes typing {      
+    @keyframes scanlines-typing {      
       from { width: 0; }     
       to { width: 100%; }  
     }    
-    @keyframes blinkCaret { 
+    @keyframes scanlines-blinkCaret { 
       from, to { border-color: transparent; }    
       50% { border-color: #00FF00; } 
     }      
-    @keyframes flicker {   
+    @keyframes scanlines-flicker {   
       0%, 100% { opacity: 1; }    
       50% { opacity: 0.8; }  
     }   
-    @keyframes flicker-box {
+    @keyframes scanlines-flicker-box {
       0%, 100% { opacity: 0.6; }      
       50% { opacity: 1; } 
     }    
-    @keyframes pulse {       
+    @keyframes scanlines-pulse {       
       0% { transform: scale(1); }     
       50% { transform: scale(1.05); }     
       100% { transform: scale(1); } 
