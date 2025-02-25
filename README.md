@@ -17,13 +17,7 @@
 <a href="../">▶</a>
 ```
 
-
-
-
-<br><br>
-
-
-
+<br>
 
 <details>
 <summary>&nbsp;<code>🪄 responsive font-size</code></summary>
