@@ -471,3 +471,13 @@ let pointFillColor = 0;
 ```
 
 </details>
+
+<details>
+<summary>&nbsp;<code>🧱 terminal colorPalettes</code></summary>
+<br>
+<img src="https://raw.githubusercontent.com/dduyg/LiminalLoop/refs/heads/main/02/vscode-example.png" width="250">
+<img src="https://raw.githubusercontent.com/dduyg/LiminalLoop/refs/heads/main/02/vim-example.png" width="250">
+<img src="https://raw.githubusercontent.com/dduyg/LiminalLoop/refs/heads/main/02/specimen_2.png" width="250">
+<img src="https://raw.githubusercontent.com/dduyg/LiminalLoop/refs/heads/main/02/emacs-example.png" width="250">
+<img src="https://raw.githubusercontent.com/dduyg/LiminalLoop/refs/heads/main/02/helix-example.png" width="250">
+</details>
