@@ -322,7 +322,7 @@
         workGrid.innerHTML = '';  // Clear existing cards
         const filteredWorks = works.filter(work => {
             if (selectedTags.size === 0) return true;
-            return Array.from(selectedTags).some(tag => work.tags.includes(tag));  // Display if any of the selected tags match
+            return Array.from(selectedTags).every(tag => work.tags.includes(tag));  // Only show works that have ALL selected tags
         });
         filteredWorks.forEach(createWorkCard);  // Create and display each filtered work
     }
