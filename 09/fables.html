@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Russo+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Elsie&display=swap" rel="stylesheet">
@@ -77,6 +78,40 @@
       flex-direction: column;
       height: 100vh;
       overflow: hidden;
+    }
+
+    #cyberdata {
+      background: #0d0d1a;
+      color: #00fff7;
+      font-family: "Ubuntu Mono", monospace;
+      text-align: center;
+    }
+    #cyberdata h2 {
+      font-size: 1.6rem;
+      margin: 0.2em 0 1.5em;
+      color: #00fff7;
+      text-shadow: 2px 0 #ff0055, -2px 0 #00eaff;
+    }
+    #cyberdata a {
+      color: #ff3ca6;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 2px solid #ff3ca6;
+      padding: 0.75em 2em;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.1em;
+    }
+    #cyberdata a:hover {
+      background: #ff3ca6;
+      color: #0d0d1a;
+      box-shadow: 0 0 10px #ff3ca6, 0 0 40px #ff3ca6, 0 0 80px #ff3ca6;
+    }
+    #cyberdata p { 
+      max-width: 450px;
+      margin: 0 1em 2em;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
     }
 
     #scanlines {
@@ -902,7 +937,8 @@
 <body>
   <button id="navToggle">🐚</button>
   <nav>
-    <a href="#void404">◔</a>
+    <a href="#scanlines">◔</a>
+    <a href="#void404">◕</a>
     <a href="#glitching">◓</a>
     <a href="#takeMe">◍</a>    
     <a href="#lime">◗</a>
@@ -915,8 +951,18 @@
     <a href="#corridors">◒</a>
     <a href="#sys">◖</a>
     <a href="#chromaticCircle">○</a>
-    <a href="#">◕</a>
   </nav>
+
+  <section id="cyberdata">  
+    <h2>[ CYBERDATA NODE ]</h2>
+    <p>
+      Özgürlük ve bağımsızlık benim karakterimdir.
+      Milletimizin onurunu korumak, bağımsız yaşamakla mümkündür. 
+      Hiçbir zorluk, inançla çalışan bir milleti yolundan döndüremez.
+      Unutmayın, umut varsa mücadele vardır; mücadele varsa zafer kaçınılmazdır.
+    </p>
+    <a href="#🪢">NEURAL INTERFERENCE</a>
+  </section>
 
   <section id="scanlines">   
     <h1>Lost in the Code</h1>
