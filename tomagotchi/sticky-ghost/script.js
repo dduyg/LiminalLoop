@@ -1,8 +1,5 @@
-# A  Sticky Header Demo 👻
+// JavaScript is used to add a class when the user scrolls down, making the header sticky
 
-JavaScript is used to add a class when the user scrolls down, making the header sticky
-
-```
 const header = document.querySelector('.sticky-header');
 
 window.addEventListener('scroll', () => {
@@ -12,4 +9,3 @@ window.addEventListener('scroll', () => {
     header.classList.remove('sticky');
   }
 });
-```
