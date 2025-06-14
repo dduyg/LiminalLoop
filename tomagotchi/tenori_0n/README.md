@@ -1,7 +1,7 @@
-tenori-off
+tenori_0n
 =================
-## What is this?
 
+### What is this?
 A ✨[Tenori-on](https://en.wikipedia.org/wiki/Tenori-on)✨ is a dope electronic music
 instrument sequencer thingie that Yamaha made for a hot minute.  
 I love pixels and patterns and generating things out of pixels and patterns, which means
@@ -17,3 +17,8 @@ The **Improvise** button will auto generate drums to match your synth using
 ### Ok, go make fun things now!
 
 ![gif](https://user-images.githubusercontent.com/1369170/41994031-05b13eea-7a02-11e8-9948-077a0a56b038.gif)
+
+
+<br>
+
+> A machine learning powered drum machine. It's like a tenori-on but worse and in JavaScript. [for description box]
