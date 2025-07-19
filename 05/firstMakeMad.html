@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liminal🎐Loop</title>
+  <style>
+    @font-face {
+      font-family: 'ABC Camera';
+      src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/ABCCamera-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: white;
+    }
+
+    .layout-content {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .layout-gradients {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .stardust-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .gradient {
+      position: absolute;
+      width: 35vw;
+      height: 35vw;
+      border-radius: 50%;
+      filter: blur(15vw);
+      mix-blend-mode: screen;
+      animation: float 10s infinite ease-in-out alternate;
+      z-index: 0;
+    }
+    @keyframes float {
+      0%   { transform: translateY(0) translateX(0); }
+      100% { transform: translateY(-10vh) translateX(10vw); }
+    }
+
+    .gradient-1  { background: radial-gradient(circle, #948aa5 0%, transparent 50%); left: 5vw; top: 20vh; }
+    .gradient-2  { background: radial-gradient(circle, #948aa5 0%, transparent 50%); right: 5vw; top: 10vh; }
+    .gradient-3  { background: radial-gradient(circle, #91c9bf 0%, transparent 50%); left: 20vw; bottom: 30vh; }
+    .gradient-4  { background: radial-gradient(circle, #f06423 0%, transparent 50%); right: 10vw; bottom: 10vh; }
+    .gradient-5  { background: radial-gradient(circle, #948aa5 0%, transparent 50%); left: -10vw; bottom: 0vh; }
+    .gradient-6  { background: radial-gradient(circle, #fffe96 0%, transparent 50%); left: 5vw; top: -5vh; }
+    .gradient-7  { background: radial-gradient(circle, #f06423 0%, transparent 50%); left: 0vw; bottom: -10vh; }
+    .gradient-8  { background: radial-gradient(circle, #91c9bf 0%, transparent 50%); right: -10vw; bottom: -10vh; }
+    .gradient-9  { background: radial-gradient(circle, #948aa5 0%, transparent 50%); left: -10vw; top: -10vh; }
+    .gradient-10 { background: radial-gradient(circle, #f06423 0%, transparent 50%); left: -10vw; top: 10vh; }
+    .gradient-11 { background: radial-gradient(circle, #f06423 0%, transparent 50%); left: 20vw; top: -10vh; }
+    .gradient-12 { background: radial-gradient(circle, #91c9bf 0%, transparent 50%); right: -5vw; top: 0vh; }
+    .gradient-13 { background: radial-gradient(circle, #666 0%, transparent 50%); right: -10vw; bottom: -10vh; }
+    .gradient-14 { background: radial-gradient(circle, #fffe96 0%, transparent 50%); left: 15vw; bottom: 10vh; }
+    .gradient-15 { background: radial-gradient(circle, #fffe96 0%, transparent 50%); right: 5vw; top: 25vh; }
+
+     /*  Another color pallette idea:
+    .gradient-1 { background: radial-gradient(circle, #ff6ec4, transparent 70%); top: -10%; left: -10%; }
+    .gradient-2 { background: radial-gradient(circle, #7873f5, transparent 70%); top: 20%; left: 60%; }
+    .gradient-3 { background: radial-gradient(circle, #42e695, transparent 70%); top: 70%; left: 10%; }
+    .gradient-4 { background: radial-gradient(circle, #f093fb, transparent 70%); bottom: 0%; right: 20%; }
+    .gradient-5 { background: radial-gradient(circle, #5ee7df, transparent 70%); top: 40%; right: 5%; }
+    .gradient-6 { background: radial-gradient(circle, #c471f5, transparent 70%); bottom: 10%; left: 40%; }
+    .gradient-7 { background: radial-gradient(circle, #f9d423, transparent 70%); top: 10%; left: 30%; }
+    .gradient-8 { background: radial-gradient(circle, #ff3cac, transparent 70%); bottom: 20%; right: 10%; }
+    .gradient-9 { background: radial-gradient(circle, #6ee2f5, transparent 70%); top: 50%; left: 50%; }
+    .gradient-10 { background: radial-gradient(circle, #ee7752, transparent 70%); top: 60%; right: 40%; }
+    .gradient-11 { background: radial-gradient(circle, #e73c7e, transparent 70%); bottom: 40%; left: 20%; }
+    .gradient-12 { background: radial-gradient(circle, #91c9bf, transparent 70%); right: -20%; top: 0%; }
+    .gradient-13 { background: radial-gradient(circle, #666, transparent 70%); right: -20%; bottom: -25%; }
+    .gradient-14 { background: radial-gradient(circle, #fffe96, transparent 70%); left: 15%; bottom: 5%; }
+    .gradient-15 { background: radial-gradient(circle, #fffe96, transparent 70%); right: -10%; top: 30%; }
+      */
+    
+    #logo {
+      position: absolute;
+      z-index: 1;
+      width: 96vw;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #blob {
+      width: 30vw;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      animation: slide-blob 5s ease-out forwards;
+    }
+    @keyframes slide-blob {
+      0% { left: -60vh; /* Start off screen to the left */ }
+      100% { left: 80%; /* end on 80% of the wrapper/logo */ transform: translate(-50%, -50%); }
+    }
+
+    footer {
+      position: fixed;
+      z-index: 8;
+      bottom: 3%;
+      right: 5%;
+      padding: 10px;
+      text-align: right;
+      font-size: 1.35rem;
+      color: black;
+      font-family: 'ABC Camera', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout-content">
+      <img id="logo" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/06/helloWorld.gif" alt="👋🏻">
+      <img id="blob" src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/06/BLOBs/blob-05.png" alt="🔮">    
+    <div class="layout-gradients">
+      <div class="stardust-overlay"></div>
+
+      <div class="gradient gradient-1"></div>
+      <div class="gradient gradient-2"></div>
+      <div class="gradient gradient-3"></div>
+      <div class="gradient gradient-4"></div>
+      <div class="gradient gradient-5"></div>
+      <div class="gradient gradient-6"></div>
+      <div class="gradient gradient-7"></div>
+      <div class="gradient gradient-8"></div>
+      <div class="gradient gradient-9"></div>
+      <div class="gradient gradient-10"></div>
+      <div class="gradient gradient-11"></div>
+      <div class="gradient gradient-12"></div>
+      <div class="gradient gradient-13"></div>
+      <div class="gradient gradient-14"></div>
+      <div class="gradient gradient-15"></div>
+    </div>
+  </div>
+  <footer>Those whom the gods wish to destroy, they first make mad.</footer>
+</body>
+</html>
