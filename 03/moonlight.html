@@ -182,6 +182,14 @@
     .blinking { animation: blink 1s steps(1) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
     @-webkit-keyframes blink { 50% { opacity: 0; } }
+    
+    @media (max-width: 600px) {
+      body { font-size: 0.9rem; }
+      .list__item {
+        grid-template-columns: 40px repeat(4, minmax(80px, 1fr));
+        gap: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
