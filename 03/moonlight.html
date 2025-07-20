@@ -3,19 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Liminal⏳️Loop</title>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital@0;1&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:ital@0;1&display=swap");
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
       padding: 0;
-      max-width: 100%;
+      width: 100%;
+      max-width: 100vw;
       overflow-x: hidden;
-      font-family: "Inter", sans-serif;
-      background-color: rgb(255, 255, 200);
-      color: rgb(10, 10, 10);
-      font-size: min(1.1rem, 4vw);
+    }
+    :root {
+      --color--foreground--100: rgb(10, 10, 10);
+      --color--background--100: rgb(255, 255, 200);
+      --color--accent: rgb(255, 223, 0);
+      --font-primary: "Inter", sans-serif;
+      --font-secondary: "JetBrains Mono", monospace;
+      --blendmode-effect: difference;
+      --bg-blur: 0px;
+    }    
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--color--background--100);
+      color: var(--color--foreground--100);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-weight: 400;
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      position: relative;
+      overflow-x: hidden;
+      z-index: 10;
     }
     body::after {
       content: "";
@@ -31,52 +52,54 @@
 
     a {
       text-decoration: none;
-      color: inherit;
-      word-break: break-word;
+      color: var(--color--foreground--100);
     }
 
     .grid-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
       gap: 1rem;
+      width: 100%;
+      max-width: 100%;
+      padding: 1rem;
     }
 
     .list__item {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      justify-content: center;
-      width: 100%;
-      max-width: 100%;
+      align-items: center;
+      padding: 0.25rem 0;
       counter-increment: item;
-      position: relative;
     }
     .list__item::before {
       content: counter(item, decimal-leading-zero);
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.8em;
+      margin-right: 0.75rem;
+      font-weight: bold;
     }
-    .list__item-col {
-      font-family: "JetBrains Mono", monospace;
-      padding: 0.3rem 0.5rem;
+    .hover-effect {
+      font-family: var(--font-secondary);
       position: relative;
-      transition: background-color 0.3s ease;
+      color: var(--color--foreground--100);
+      white-space: nowrap;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      min-width: 0;
+      max-width: 100%;
     }
     .hover-effect--bg::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background: rgb(255, 223, 0);
-      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color--accent);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s ease;
-      mix-blend-mode: difference;
+      mix-blend-mode: var(--blendmode-effect);
+      z-index: -1;
     }
     .list__item:hover .hover-effect--bg::after {
       transform: scaleX(1);
@@ -84,23 +107,24 @@
 
     .fixed-grid {
       position: fixed;
-      inset: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      pointer-events: none;
+      width: 100%;
+      height: 100%;
       padding: 1rem;
+      pointer-events: none;
     }
     .fixed-item {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.8rem;
-      padding: 0.3rem;
+      font-family: var(--font-secondary);
+      font-size: 0.85rem;
+      color: var(--color--foreground--100);
       pointer-events: auto;
     }
     .square {
-      background-color: rgb(10, 10, 10);
       width: 8px;
       height: 8px;
+      background-color: var(--color--foreground--100);
     }
 
     .top-left { align-self: start; justify-self: start; }
@@ -108,64 +132,47 @@
     .bottom-left { align-self: end; justify-self: start; }
     .bottom-right { align-self: end; justify-self: end; }
 
-    .blinking { animation: blink 1s steps(1) infinite; }
+    .blinking {  animation: blink 1s steps(1) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
-
-    @media (max-width: 600px) {
-      .list__item::before {
-        position: relative;
-        left: auto;
-        top: auto;
-        display: block;
-        margin-bottom: 0.3rem;
-      }
-      .list__item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .list__item-col {
-        width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
   <ul class="grid-container">
     <li class="list__item">
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">The</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Creative</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Act</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Now</a>
+      <a href="#" class="hover-effect hover-effect--bg">The</a>
+      <a href="#" class="hover-effect hover-effect--bg">Creative</a>
+      <a href="#" class="hover-effect hover-effect--bg">Act</a>
+      <a href="#" class="hover-effect hover-effect--bg">Now</a>
     </li>
     <li class="list__item">
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Be</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Open</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">to</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Possibility</a>
+      <a href="#" class="hover-effect hover-effect--bg">Be</a>
+      <a href="#" class="hover-effect hover-effect--bg">Open</a>
+      <a href="#" class="hover-effect hover-effect--bg">to</a>
+      <a href="#" class="hover-effect hover-effect--bg">Possibility</a>
     </li>
     <li class="list__item">
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Everything</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">is</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">a</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Practice</a>
+      <a href="#" class="hover-effect hover-effect--bg">Everything</a>
+      <a href="#" class="hover-effect hover-effect--bg">is</a>
+      <a href="#" class="hover-effect hover-effect--bg">a</a>
+      <a href="#" class="hover-effect hover-effect--bg">Practice</a>
     </li>
     <li class="list__item">
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Pay</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Attention</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">to</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Details</a>
+      <a href="#" class="hover-effect hover-effect--bg">Pay</a>
+      <a href="#" class="hover-effect hover-effect--bg">Attention</a>
+      <a href="#" class="hover-effect hover-effect--bg">to</a>
+      <a href="#" class="hover-effect hover-effect--bg">Details</a>
     </li>
     <li class="list__item">
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Trust</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">the</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Process</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Today</a>
+      <a href="#" class="hover-effect hover-effect--bg">Trust</a>
+      <a href="#" class="hover-effect hover-effect--bg">the</a>
+      <a href="#" class="hover-effect hover-effect--bg">Process</a>
+      <a href="#" class="hover-effect hover-effect--bg">Today</a>
     </li>
     <li class="list__item">
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Creativity</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">is</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">a</a>
-      <a href="#" class="list__item-col hover-effect hover-effect--bg">Mindset</a>
+      <a href="#" class="hover-effect hover-effect--bg">Creativity</a>
+      <a href="#" class="hover-effect hover-effect--bg">is</a>
+      <a href="#" class="hover-effect hover-effect--bg">a</a>
+      <a href="#" class="hover-effect hover-effect--bg">Mindset</a>
     </li>
   </ul>
 
@@ -183,7 +190,7 @@
   <script>
     const CONFIG = {
       timeZone: "Europe/Zagreb",
-      timeUpdateInterval: 1000
+      timeUpdateInterval: 1000,
     };
 
     class TimeDisplay {
@@ -198,19 +205,20 @@
 
       updateDisplay() {
         const now = new Date();
-        const formatter = new Intl.DateTimeFormat("en-US", {
+        const options = {
           timeZone: CONFIG.timeZone,
+          hour12: true,
           hour: "2-digit",
           minute: "2-digit",
-          hour12: true
-        });
-        this.element.innerHTML = formatter.format(now).replace(":", `<span class="blinking">:</span>`);
+        };
+        const timeStr = new Intl.DateTimeFormat("en-US", options).format(now);
+        this.element.innerHTML = timeStr.replace(":", '<span class="blinking">:</span>');
       }
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const clock = new TimeDisplay("current-time");
-      clock.start();
+      const timeDisplay = new TimeDisplay("current-time");
+      timeDisplay.start();
     });
   </script>
 </body>
