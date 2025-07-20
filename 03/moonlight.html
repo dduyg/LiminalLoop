@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Liminal⏳️Loop</title>
   <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     html, body {
@@ -135,13 +136,13 @@
       background-color: rgb(10, 10, 10);   
       width: 7px;
       height: 7px;
-      margin-top: 8px;
+      margin-top: 7px;
     }
 
     .top-left { grid-column: 1 / 2; grid-row: 1 / 2; align-self: start; justify-self: start; }
-    .top-right { grid-column: 2 / 3; grid-row: 1 / 2; align-self: start; justify-self: end; }
-    .bottom-left { grid-column: 1 / 2; grid-row: 2 / 3; align-self: end; justify-self: start; }
-    .bottom-right { grid-column: 2 / 3; grid-row: 2 / 3; align-self: end; justify-self: end; }
+    .top-right { grid-column: 2 / 3; grid-row: 1 / 2; align-self: start; justify-self: end; font-family: "Stalinist One", sans-serif; }
+    .bottom-left { grid-column: 1 / 2; grid-row: 2 / 3; align-self: center; justify-self: start; }
+    .bottom-right { grid-column: 2 / 3; grid-row: 2 / 3; align-self: center; justify-self: end; }
 
     .blinking { animation: blink 1s steps(1) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
@@ -195,9 +196,7 @@
       <a href="#">(DUŶĞG)</a>
     </div>
     <div class="fixed-item bottom-left">43.9250° N, 19.5530° E</div>
-    <div class="fixed-item bottom-right">
-      <span id="current-time"></span>
-    </div>
+    <div class="fixed-item bottom-right"><span id="current-time"></span></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
