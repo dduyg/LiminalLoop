@@ -373,6 +373,17 @@
 ```
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/mercury-font.png" width="250">
 
+## Demon Cubic
+```css
+  @font-face {
+     font-family: 'Demon Cubic';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/DemonCubic.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/demon-cubic-font.png" width="250">
+
 
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
