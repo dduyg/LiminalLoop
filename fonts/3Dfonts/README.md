@@ -340,6 +340,16 @@
 ```
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/bpmolecules-font.png" width="250">
 
+## Blinded
+```css
+  @font-face {
+     font-family: 'Foodcan';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Blinded.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/blinded-font.png" width="250">
 
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
