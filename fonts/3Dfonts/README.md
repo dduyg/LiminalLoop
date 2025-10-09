@@ -431,6 +431,25 @@
 ```
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/throniser-font.png" width="250">
 
+## Galactose
+```css
+  @font-face {
+     font-family: 'Galactose';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Galactose.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+  @font-face {
+     font-family: 'GalactoseTWO';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/GalactoseTWO.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/galactose-font.png" width="250">
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/galactose-two-font.png" width="250">
+
+
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
 > - [x] [`fontconverter`](https://www.fontconverter.io/en/)
