@@ -329,6 +329,18 @@
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Foodcan-font.png" width="250">
 
 
+## BPmolecules
+```css
+  @font-face {
+     font-family: 'BPmolecules';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/BPmolecules.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/bpmolecules-font.png" width="250">
+
+
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
 > - [x] [`fontconverter`](https://www.fontconverter.io/en/)
