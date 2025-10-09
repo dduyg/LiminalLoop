@@ -384,6 +384,31 @@
 ```
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/demon-cubic-font.png" width="250">
 
+## F66
+```css
+  @font-face {
+     font-family: 'Vitreous';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Vitreous-Light.woff2') format('woff2');
+     font-weight: 300;
+     font-style: normal;
+  }
+  @font-face {
+     font-family: 'Vitreous';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Vitreous-Medium.woff2') format('woff2');
+     font-weight: 500;
+     font-style: normal;
+  }
+  @font-face {
+     font-family: 'Vitreous';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Vitreous-Heavy.woff2') format('woff2');
+     font-weight: 700;
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/vitreous-light-font.png" width="250">
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/vitreous-medium-font.png" width="250">
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/vitreous-heavy-font.png" width="250">
+
 
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
