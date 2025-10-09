@@ -384,7 +384,7 @@
 ```
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/demon-cubic-font.png" width="250">
 
-## F66
+## Vitreous
 ```css
   @font-face {
      font-family: 'Vitreous';
