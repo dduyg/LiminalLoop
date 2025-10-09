@@ -351,6 +351,17 @@
 ```
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/blinded-font.png" width="250">
 
+## Various Materials
+```css
+  @font-face {
+     font-family: 'Various Materials';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/VariousMaterials.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/various-materials-font.png" width="250">
+
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
 > - [x] [`fontconverter`](https://www.fontconverter.io/en/)
