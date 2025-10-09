@@ -362,6 +362,18 @@
 ```
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/various-materials-font.png" width="250">
 
+## Mercury
+```css
+  @font-face {
+     font-family: 'Mercury';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Mercury.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/mercury-font.png" width="250">
+
+
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
 > - [x] [`fontconverter`](https://www.fontconverter.io/en/)
