@@ -343,7 +343,7 @@
 ## Blinded
 ```css
   @font-face {
-     font-family: 'Foodcan';
+     font-family: 'Blinded';
      src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Blinded.woff2') format('woff2');
      font-weight: normal; 
      font-style: normal;
