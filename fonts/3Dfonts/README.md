@@ -449,6 +449,17 @@
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/galactose-font.png" width="250">
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/galactose-two-font.png" width="250">
 
+## Flashfruit
+```css
+  @font-face {
+     font-family: 'Flashfruit';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Flashfruit.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/flashfruit-font.png" width="250">
+
 
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
