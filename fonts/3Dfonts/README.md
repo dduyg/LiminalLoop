@@ -409,6 +409,17 @@
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/vitreous-medium-font.png" width="250">
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/vitreous-heavy-font.png" width="250">
 
+## Granular BRK
+```css
+  @font-face {
+     font-family: 'Granular BRK';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/GranularBRK.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/granular-brk-font.png" width="250">
+
 
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
