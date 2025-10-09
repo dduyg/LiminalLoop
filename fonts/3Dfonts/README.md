@@ -395,7 +395,7 @@
   @font-face {
      font-family: 'Vitreous';
      src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Vitreous-Medium.woff2') format('woff2');
-     font-weight: 500;
+     font-weight: 400;
      font-style: normal;
   }
   @font-face {
