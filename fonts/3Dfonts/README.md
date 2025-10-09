@@ -420,6 +420,16 @@
 ```
 <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/granular-brk-font.png" width="250">
 
+## Throniser
+```css
+  @font-face {
+     font-family: 'Throniser';
+     src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/Throniser.woff2') format('woff2');
+     font-weight: normal; 
+     font-style: normal;
+  }
+```
+<img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/3Dfonts/throniser-font.png" width="250">
 
 <br><br>
 > **Fonts from [Fontspace](https://www.fontspace.com/category/3d)**
