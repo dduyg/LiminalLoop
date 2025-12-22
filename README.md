@@ -13,7 +13,7 @@
 | <a href= "https://crop-circle.imageonline.co/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | <blockquote>cropCircle</blockquote> |
 | <a href= "https://uigradients.com/#Memariani" target="_blank"><img width="28" src="https://cdn.simpleicons.org/betterauth/C3BABA"/></a> | <blockquote>uigradients</blockquote> |
 | <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | <blockquote>auto re-indent online code beautifier [<kbd> <img width="15" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=D9D0D7"/> </kbd>](https://beautifier.io/)</blockquote> |
-| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | <details><summary>⛃⛂</summary>![themeIdea: moltack,rose](https://github-readme-stats.vercel.app/api/pin/?username=dduyg\&repo=glyph-data-library\&show_owner=true&theme=buefy)</details> |
+| <a href= "#" target="_blank"><img width="28" src="https://cdn.simpleicons.org/startdotgg/C3BABA"/></a> | <details><summary>&nbsp; ⛃⛂</summary>![themeIdea: moltack,rose](https://github-readme-stats.vercel.app/api/pin/?username=dduyg\&repo=glyph-data-library\&show_owner=true&theme=buefy)</details> |
 
 </div>
 
