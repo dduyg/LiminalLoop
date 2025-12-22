@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <!-- Include Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lekton&display=swap" rel="stylesheet">
+    <style>
+        html { -webkit-tap-highlight-color: transparent; }
+        body {
+            background-color: #000000;
+            color: #EEEEEE;
+            line-height: 1.4;
+            font-family: "Lekton", monospace;
+            margin: 0; padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        main {
+            max-width: 70vw;
+            width: 100%; /* Full width to ensure responsiveness */
+            padding: 30px 1rem 80px;
+            margin: 0 auto;
+            height: calc(100vh - 110px); /* Adjust height based on padding top + bottom */
+            font-size: clamp(0.7rem, calc((100vh - 110px) * 0.015), 1rem); /* Adjust font size dynamically */
+        }
+        nav {
+            position: fixed;
+            top: 1%; right: 2%;
+            margin: 0;  padding: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        nav a {
+            display: block;
+            margin: 0;
+            padding: 0.75em 1em;
+            color: #EEEEEE;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 100%;
+            border: 2px dashed #EEEEEE;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background: #EEEEEE;
+            color: #000000;      
+        }
+        
+        pre {
+            background-color: transparent !important;
+            padding: 0.625em !important;
+            margin: 0 !important;
+            overflow-x: auto !important;
+            max-height: 75% !important;
+            width: 100% !important;
+        }
+        pre, code {
+            color: #E641E6 !important;
+            font-family: "JetBrains Mono", monospace !important;
+        }
+        pre::-webkit-scrollbar {
+            width: 1.65em; /* Width for vertical scrollbar */
+            height: 1.65em; /* Height for horizontal scrollbar */
+        }
+        pre::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        pre::-webkit-scrollbar-thumb {
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-left: 0.4em solid transparent; /* Simulating margin-left for vertical scrollbar */
+        }
+        pre::-webkit-scrollbar:horizontal {
+            height: 1.65em; /* Total height of the horizontal scrollbar */
+        }
+        pre::-webkit-scrollbar-thumb:horizontal { /* Horizontal scrollbar thumb with margin-top effect */
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-top: 0.4em solid transparent;
+        }
+        @-moz-document url-prefix() { /* Firefox scrollbar */
+            pre {
+                scrollbar-color: #E641E6 transparent;
+                scrollbar-width: thin;
+            }
+            pre::-webkit-scrollbar-thumb {
+                background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                border-left: 0.4em solid transparent;
+            }
+            pre::-webkit-scrollbar-thumb:horizontal {
+                background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%23E641E6" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2 2h2v20H2V2zm9 18h2v-2h2v-2h2v-2h-2v2h-2V8h2v2h2V8h-2V6h-2V4h-2v2H9v2H7v2h2V8h2v8H9v-2H7v2h2v2h2v2zM22 2h-2v20h2V2z" fill="%23E641E6"></path></g></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                border-top: 0.4em solid transparent;
+            }
+        }
+ 
+        /* PrismJS overrides for custom colors */
+        .token.comment {
+            color: #ffffff;
+        }
+        .token.keyword {
+            color: #FAFA33;
+        }
+        .token.punctuation {
+            color: #09D3D1;
+        }
+        .token.string, .token.operator, .token.parameter, .token.class-name {
+            color: #F93002;
+        }
+        .token.function {
+            color: #E641E6;
+        }
+        .token.number, .token.constant, .token.boolean, .token.builtin {
+            color: #E78405;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0; left: 0;
+            margin: 20px;
+            padding: 0;
+            color: #EEEEEE;
+            z-index: 1;
+            width: 90%;
+            font-size: 0.8rem;
+        }
+        footer details {
+            margin: 0;
+            padding: 0.625em;
+            position: relative;
+            cursor: pointer;
+            text-align: left;
+        }
+        footer summary {
+            padding: 0;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+        footer summary::-webkit-details-marker {
+            display: none;
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+            display: inline-block;
+            margin-left: 0.5em;
+            width: 35px; height: 35px;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23E641E6" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>circle</title> <path d="M28.857 18c-0.8 5.65-5.227 10.125-10.857 10.997v1.003h-4v-1.003c-5.63-0.871-10.057-5.347-10.858-10.997h-1.142v-4h1.188c0.924-5.493 5.293-9.81 10.812-10.664v-1.336h4v1.336c5.52 0.854 9.887 5.171 10.812 10.664h1.188v4h-1.143zM15 29h2v-2h-2v2zM3 15v2h2v-2h-2zM17 3h-2v2h2v-2zM18 4.852v1.148h-4v-1.148c-4.69 0.824-8.401 4.483-9.292 9.148h1.292v4h-1.346c0.775 4.822 4.545 8.638 9.346 9.481v-1.481h4v1.481c4.801-0.844 8.571-4.659 9.346-9.481h-1.346v-4h1.292c-0.892-4.665-4.602-8.324-9.292-9.148zM29 15h-2v2h2v-2z"></path> </g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }     
+        footer details[open] {
+            border: 2px solid #E641E6;
+            background-color: #000000;
+        }
+        footer details[open] summary .title {
+            color: #E641E6;
+            font-weight: bold;
+        }
+        footer details[open] .arrow {
+            transform: rotate(180deg);
+        }
+        footer details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        footer details img {
+            max-width: 65%;
+            border: 1px solid #EEEEEE;
+        }
+    </style>
+</head>
+<body>
+<nav><a href="../0-3/">ཧᜰ</a></nav>
+<main>
+    <pre><code class="language-python">
+import random
+import string
+
+def generate_password(length=12):
+    # Define character sets
+    letters = string.ascii_letters  # a-z, A-Z
+    digits = string.digits  # 0-9
+    special_chars = string.punctuation  # Special characters like !, @, #, etc.
+
+    # Combine all character sets
+    all_chars = letters + digits + special_chars
+
+    # Ensure the password contains at least one character from each category
+    password = [
+        random.choice(letters),
+        random.choice(digits),
+        random.choice(special_chars)
+    ]
+
+    # Fill the rest of the password length with random choices from all characters
+    password += random.choices(all_chars, k=length - 3)
+
+    # Shuffle the resulting password list to avoid predictable patterns
+    random.shuffle(password)
+
+    # Convert the list into a string and return it
+    return ''.join(password)
+
+# Example usage
+length = int(input("Enter the desired password length: "))
+print("Generated password:", generate_password(length))
+    </code></pre>
+</main>
+<footer>
+    <details>
+        <summary>
+            <span class="title">TERMINAL<br>Last login: Thu Sep 7<br>08:39 on console</span>
+            <span class="arrow"></span>
+        </summary>  
+            <img src="console-height.png" alt="■">
+            <img src="console-zoom.png" alt="■">
+    </details>
+</footer>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+</body>
+</html>
