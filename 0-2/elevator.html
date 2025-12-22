@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Liminal🍥Loop</title>
+    <style>
+        @font-face {
+            font-family: 'Helvetica Neue Light';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/HelveticaNeue-Light.woff2') format('woff2');
+            font-weight: 300; 
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pentameter Light';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Pentameter-Wide-Light.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Helvetica Neue Light', sans-serif;   
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: linear-gradient(to left bottom, #b5a9b1, #bcadb3, #c3b2b5, #c9b7b7, #cebcb9, #d0bebd, #d2bfc0, #d4c1c4, #cec1cb, #c6c2cf, #bdc4cf, #b6c5cc);
+            max-width: 800px;
+            margin: 3em;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1 {font-family: 'Pentameter Light', sans-serif;}
+        button {
+            background-color: #8a2be2;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        button:hover {background-color: #5f9ea0;}
+        a {
+            color: inherit;
+            text-decoration: none;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;          
+        }
+        #credits {
+            position: absolute;
+            top: 0; right: 0;
+            margin: 0;
+            padding: 0.75em 1em;
+            text-align: center;
+            color: black;
+            text-decoration: overline;
+            font-size: 1.1em;
+            font-family: "Arial", sans-serif;
+        }
+        #credits a::before {
+            content: '';
+            display: inline-block;
+            position: relative;
+            transform-origin: center center;
+            top: -0.0325em;
+            height: 0.65em; width: 0.65em;
+            background-color: black;
+            color: black;
+            border-radius: 100%;
+            margin-right: 0.35em;
+            animation: 1.5s rotate ease-in-out infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+   <div id="credits"><a href="#🎚">See More</a></div>
+   <main>
+     <h1>Data-focused machine learning is the way</h1>
+     <p> ➝ Data-focused machine learning refers to an approach where emphasis is placed on the quality, quantity, and relevance of the data used to train and improve machine learning models. This approach recognizes that the performance of machine learning algorithms is heavily dependent on the characteristics of the data they are trained on. Therefore, efforts are directed towards collecting, preparing, and utilizing high-quality data to enhance the accuracy and generalization capabilities of the models.</p>
+     <button onclick="goToPage('./webscapes')">● ○</button>
+     <button onclick="goToPage('../0-3/')">➪</button>
+   </main>
+    
+    <script>
+        function goToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
