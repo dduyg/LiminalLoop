@@ -61,7 +61,7 @@
 <meta name="twitter:card" content="summary" />
 ```
 
-</details><hr>
+</details><div align="right"><img width="45" src="https://cdn.simpleicons.org/circle/D0D9E0"/></div><hr>
 
 <details>
 <summary>&nbsp;<code>🪄 responsive font-size</code></summary>
