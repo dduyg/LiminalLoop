@@ -8,7 +8,7 @@
 | <a href= "https://archive.org/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/homepage/C3BABA"/></a> | [<kbd><img width="25" src="https://img.icons8.com/?size=100&id=iKvs9s3u1mZS&format=png&color=7A0045"/><img width="30" src="https://img.icons8.com/?size=100&id=dGiodiqcwDyd&format=png&color=C05746"/>🏗️</kbd>](https://www.fontshare.com/) ✦✦ [<kbd> <br>convert2ico<br> </kbd>](https://www.icoconverter.com/) |
 |---|---|
 | <a href= "https://picsvg.com/" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | <blockquote>img2svg</blockquote> |
-| <a href= "https://www.svgviewer.dev/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/nodered/C3BABA"/></a> | <blockquote>svgViewer</blockquote> |
+| <a href= "https://www.svgviewer.dev/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/pomerium/C3BABA"/></a> | <blockquote>svgViewer</blockquote> |
 | <a href= "https://www.w3schools.com/howto/howto_css_shapes.asp" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | <blockquote>CSS Shapes</blockquote> |
 | <a href= "https://colorkit.co/html-color-names/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/sagemath/C3BABA"/></a> | <blockquote>HTML colornames</blockquote> |
 | <a href= "https://crop-circle.imageonline.co/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | <blockquote>cropCircle</blockquote> |
