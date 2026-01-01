@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Saira&display=swap" rel="stylesheet"> 
     <style>
-        * {margin: 0; padding: 0; box-sizing: border-box;}
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
         @font-face {
             font-family: 'Lab Mono';
             src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/labmono-regular.woff2') format('woff2');
@@ -51,16 +51,16 @@
         .menu-trigger {margin: 25px 0 15px; font-size: 20px; font-weight: 600; cursor: pointer; user-select: none; display: inline-block;}
         .menu {display: none; flex-direction: column; gap: 15px;}
         .menu.active {display: flex;}
-        .menu a {font-size: 18px; transition: all 0.2s ease;}
+        .menu a {color: #C14A09; font-size: 18px; transition: all 0.2s ease;}
         .menu a:hover {font-weight:bold; letter-spacing: 2px;}
 
         /* Dropdown Panel with Glitch */
-        .dropdown-panel {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; max-width: 85vw; background: beige; padding: 20px; font-weight: normal!important; max-height: 50vh; border-radius: 8px; z-index: 200; display: none;}
+        .dropdown-panel {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; max-width: 85vw; background: beige; padding: 20px; max-height: 65vh; border-radius: 8px; z-index: 200; display: none;}
         .dropdown-panel.visible {display: block; animation: panel-glitch 0.2s ease-out;}
          @keyframes panel-glitch { 0% {transform: translate(-52%, -48%) skew(3deg); filter: hue-rotate(90deg);} 50% {transform: translate(-49%, -51%) skew(-3deg); filter: invert(20%);} 100% {transform: translate(-50%, -50%) skew(0deg);} }
          section {margin-top: 25px; display: flex; flex-direction: row; align-items: stretch; padding: 1.25em 0; overflow-x: auto; -ms-scroll-snap-type: x mandatory; scroll-snap-type: x mandatory; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; gap: 1em;}
          section::-webkit-scrollbar {display: none;} 
-        .card {display: flex; flex-direction: column; flex: 0 0 180px; padding: 1em; border-radius: 12px; background: rgba(56, 2, 59, 0.05); scroll-snap-align: start; transition: all 0.4s; text-decoration: none; cursor: pointer; position: relative; overflow: hidden;}
+        .card {display: flex; flex-direction: column; flex: 0 0 180px; padding: 1em; border-radius: 12px; background: rgba(56, 2, 59, 0.05); font-weight: normal!important; scroll-snap-align: start; transition: all 0.4s; text-decoration: none; cursor: pointer; position: relative; overflow: hidden;}
         .card:hover {box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);}
         .card-title {font-size: 1.1rem; font-weight: bold;}
         
@@ -82,12 +82,9 @@
         /* link listing */
         a {color: #C14A09; font-weight: bold; text-decoration: none; color: inherit;}
         a.swipe {position: relative; cursor: pointer;}
-        a.swipe::before {content: " "; position: absolute; z-index: -1; top: 100%; left: -2px; padding: 0 2px; width: calc(100% + 2px); height: 1px; 
-            border-bottom: 3px solid #EADCD7; transition: 0.4s;
-        }
+        a.swipe::before {content: " "; position: absolute; z-index: -1; top: 100%; left: -2px; padding: 0 2px; width: calc(100% + 2px); height: 1px; border-bottom: 3px solid #C14A09; transition: 0.4s;}
         a.swipe::after {content: " "; position: absolute; z-index: -1; top: 0; left: -2px; padding: 0 2px; width: 1px; height: 1.5em; transition: 0.4s;}
-        a.swipe:hover::after {width: 100%;
-            background-color: #EADCD7;}
+        a.swipe:hover::after {width: 100%; background-color: #C14A09;}
         a.swipe:hover::before {border-color: transparent;}
     </style>
 </head>
