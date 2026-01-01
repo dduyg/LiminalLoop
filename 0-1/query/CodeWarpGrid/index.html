@@ -32,21 +32,6 @@
         header, summary {
             font-family: "Playfair Display", serif;
         }
-        header a {
-            color: inherit;
-            text-decoration: none;
-            position: relative;
-            cursor: pointer;
-        }
-        header a::after {
-            content: ' ';
-            position: absolute;
-            top: 100%; left: 25%;
-            width: 50%; height: 1px;
-            border-bottom: 3px solid;
-            transition: 0.4s;
-        }
-        header a:hover::after { width: 100%; left: 0; }
         h1 {
             font-size: 2.5em;
             margin: 0; padding: 0;
@@ -54,30 +39,6 @@
         p {
             margin: 1.25em 0;
             text-align: left;
-        }
-        .skewUp {
-            color: inherit;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-        .skewUp:hover { color: #2E2E2E; }
-        .skewUp::before {
-            content: "";
-            position: absolute;
-            display: block;
-            z-index: -1;
-            bottom: 0; left: 0;
-            height: 2px; width: 100%;
-            background-color: #F3FEDC;
-            transition: height 0.3s, width 0.3s, transform 0.3s;
-        }
-        .skewUp:hover::before {
-            height: 100%;
-            width: calc(100% + 0.5em);
-            transform: translateX(-0.25em) skew(-7deg);
         }
         
         .scrolling-wrapper {
@@ -218,8 +179,8 @@
 </head>
 <body>
 <main>
-    <header><h1>Vectori<a href="../09/">zati</a>on</h1></header>
-    <p>Vectorization is the process of converting data or operations into a vector format to optimize performance and efficiency. It typically refers to using vectorized operations, where computations are applied to entire <a href="oceanicData" class="skewUp">arrays</a> or matrices simultaneously, rather than element by element. This eliminates the need for explicit loops, leveraging modern processors that can handle multiple operations in parallel.</p>
+    <header><h1>Vectorization</h1></header>
+    <p>Vectorization is the process of converting data or operations into a vector format to optimize performance and efficiency. It typically refers to using vectorized operations, where computations are applied to entire arrays or matrices simultaneously, rather than element by element. This eliminates the need for explicit loops, leveraging modern processors that can handle multiple operations in parallel.</p>
 
     <div class="scrolling-wrapper">
         <a href="#" class="card">ṭžøżë</a> 
