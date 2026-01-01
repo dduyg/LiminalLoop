@@ -31,14 +31,15 @@
         .row2 {display: grid; grid-template-columns: 2fr 8fr; margin-top: 25px;}
         .row3 {display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 200px;}   
         .row4 {display: grid; grid-template-columns: 3fr 5fr 2fr; margin-bottom: 300px;}
-        .row5, .row6 {display: grid; gap: 15px; grid-template-columns: 6fr 4fr; align-items: stretch;}
+        .row5, .row6 {display: grid; gap: 15px; grid-template-columns: 6fr 4fr;}
         .row5 .box img, .row6 .box img {width: 100%; height: 100%; object-fit: cover; display: block;}
         .box img {width: 100%; height: auto; display: block; object-fit: cover;}
         .row3 .box svg {width: 100%; max-width: 120px; height: auto; transition: transform 0.3s ease; --c1: beige; --c2: #38023b; --c3: fuchsia;}
         .row3 .box:hover svg {transform: scale(1.08) rotate(2deg); --c1: #f5f5dc; --c2: fuchsia; --c3: #38023b;}
         .row4 .box h4 {display: inline-block; font-size: 0.8rem; animation: float 3s ease-in-out infinite; will-change: transform;}
-        .row5 .box:nth-of-type(2) {display: flex; gap: 5px; flex-direction: column; justify-content: center; background: #C9C9BF; color: #0B0B0B; border: 1px solid #ccc; padding: 10px; font-size: 0.8rem; height: 100%;}    
-         @keyframes float { 0% {transform: translateY(0);} 50% {transform: translateY(-15px);} 100% {transform: translateY(0);} }
+        .row5 .box:nth-of-type(2) {background: #C9C9BF; color: #0B0B0B; border: 1px solid #ccc; padding: 10px; align-self: end;}    
+        .row6 .box:nth-of-type(2) {padding: 10px; align-self: start;}
+        @keyframes float { 0% {transform: translateY(0);} 50% {transform: translateY(-15px);} 100% {transform: translateY(0);} }
     
         /* Full top header */
         .top-header {position: fixed; top: 0; left: 0; font-family: "Saira", sans-serif; width: 100%; display: flex; justify-content: space-between; z-index: 5;}
@@ -144,7 +145,7 @@
                 <div></div> 
             </div>
             <div class="row5"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/Ulu-%C3%96nder-Halaskargazi-B%C3%BCy%C3%BCk-Atat%C3%BCrk.png"></div><div class="box"><p>Oh Ataturk, father of the land,</p><p>Through battles and hardship, he never lost his stride,</p><p>A leader and a warrior, with honor as his guide.</p></div></div>
-            <div class="row6"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/Are-ya-winning-daughter.png"></div><div></div></div>
+            <div class="row6"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/Are-ya-winning-daughter.png"></div><div class="box">-after all this time?<br>+always</div></div>
         </div>
     </aside>
 
