@@ -14,7 +14,7 @@
             font-weight: normal;
             font-style: normal;
         }
-        body {display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; background-color: #f0f0f0; font-family: "Rubik", sans-serif; font-size: 0.7rem;}    
+        body {display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; background-color: #f0f0f0; font-family: "Rubik", sans-serif; line-height: 1.5; font-size: 0.7rem;}    
         main {width: 80%; max-width: 600px;}      
         .gradient-bar {height: 80px; width: 100%; border: 1px solid #333; background: linear-gradient(90deg, #8db9ff 0%, #b8b29a 50%, #d4b500 100%);}
         .labels {display: flex; justify-content: space-between; margin-top: 8px;}    
@@ -82,18 +82,10 @@
         /* link listing */
         a {color: #C14A09; font-weight: bold; text-decoration: none; color: inherit;}
         a.swipe {position: relative; cursor: pointer;}
-        a.swipe::before {content: " ";
-            position: absolute; z-index: -1;
-            top: 100%; left: -2px;
-            padding: 0 2px;
-            width: calc(100% + 2px);
-            height: 1px; border-bottom: 3px solid #EADCD7;
-            transition: 0.4s;
+        a.swipe::before {content: " "; position: absolute; z-index: -1; top: 100%; left: -2px; padding: 0 2px; width: calc(100% + 2px); height: 1px; 
+            border-bottom: 3px solid #EADCD7; transition: 0.4s;
         }
-        a.swipe::after {content: " "; position: absolute;
-            z-index: -1; top: 0; left: -2px; padding: 0 2px;
-            width: 1px; height: 1.5em; transition: 0.4s;
-        }
+        a.swipe::after {content: " "; position: absolute; z-index: -1; top: 0; left: -2px; padding: 0 2px; width: 1px; height: 1.5em; transition: 0.4s;}
         a.swipe:hover::after {width: 100%;
             background-color: #EADCD7;}
         a.swipe:hover::before {border-color: transparent;}
@@ -124,7 +116,7 @@
         <button id="dropdownToggle">⛣ LiminalLoop</button>
     </div>
     <div id="dropdownPanel" class="dropdown-panel">
-        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of automating the end-to-end tasks of developing machine learning models—such as data preprocessing, algorithm selection, and hyperparameter tuning without requiring extensive manual expertise —more accessible to non-experts and more efficient for data scientists. Popular AutoML frameworks include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
+        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="swipe" href="#">automating</a> the end-to-end tasks of developing machine learning models—such as data preprocessing, algorithm selection, and hyperparameter tuning without requiring extensive manual expertise —more accessible to non-experts and more efficient for data scientists. Popular AutoML frameworks include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
         <section><a href="#" class="card"><div class="card-title">Data Preprocessing</div><div class="card-content">Automatically cleaning, transforming, and structuring raw data into a suitable format for modeling.</div></a><a href="#" class="card"><div class="card-title">Model Selection</div><div class="card-content">AutoML systems automatically search for the most appropriate machine learning model for a given dataset and problem, often trying various algorithms and hyperparameters.</div></a><a href="#" class="card"><div class="card-title">Feature Engineering</div><div class="card-content">Automatically selecting and creating the best features from raw data, which are essential for improving model performance.</div></a><a href="#" class="card"><div class="card-title">Hyperparameter Tuning</div><div class="card-content">Optimizing the hyperparameters of machine learning models to improve their performance, usually through methods like grid search or Bayesian optimization.</div></a><a href="#" class="card"><div class="card-title">Model Training & Evaluation</div><div class="card-content">AutoML platforms manage the process of training models, evaluating their performance, and selecting the best-performing models.</div></a><a href="#" class="card"><div class="card-title">Deployment</div><div class="card-content">Some AutoML systems also help automate the deployment of models into production environments.</div></a></section> 
     </div>
 
