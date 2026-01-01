@@ -51,8 +51,7 @@
         .menu-trigger {margin: 25px 0 15px; font-size: 20px; font-weight: 600; cursor: pointer; user-select: none; display: inline-block;}
         .menu {display: none; flex-direction: column; gap: 15px;}
         .menu.active {display: flex;}
-         a {text-decoration: none; color: inherit;}
-        .menu a {color: #C14A09; font-size: 18px; transition: all 0.2s ease;}
+        .menu a {font-size: 18px; transition: all 0.2s ease;}
         .menu a:hover {font-weight:bold; letter-spacing: 2px;}
 
         /* Dropdown Panel with Glitch */
@@ -79,6 +78,25 @@
         .anim:nth-child(5) {animation-delay: 12s;}
         .anim:nth-child(6) {animation-delay: 15s;}
         @keyframes text-blur-cycle {0% {filter: blur(12px); opacity: 0;} 5% {filter: blur(0px); opacity: 1;} 11.11% {filter: blur(0px); opacity: 1;} 16.66% {filter: blur(12px); opacity: 0;} 100% {filter: blur(12px); opacity: 0;} }
+
+        /* link listing */
+        a {color: #C14A09; font-weight: bold; text-decoration: none; color: inherit;}
+        a.swipe {position: relative; cursor: pointer;}
+        a.swipe::before {content: " ";
+            position: absolute; z-index: -1;
+            top: 100%; left: -2px;
+            padding: 0 2px;
+            width: calc(100% + 2px);
+            height: 1px; border-bottom: 3px solid #EADCD7;
+            transition: 0.4s;
+        }
+        a.swipe::after {content: " "; position: absolute;
+            z-index: -1; top: 0; left: -2px; padding: 0 2px;
+            width: 1px; height: 1.5em; transition: 0.4s;
+        }
+        a.swipe:hover::after {width: 100%;
+            background-color: #EADCD7;}
+        a.swipe:hover::before {border-color: transparent;}
     </style>
 </head>
 <body>
