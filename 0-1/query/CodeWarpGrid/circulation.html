@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/favicons/clipWire.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        * { outline: none; -webkit-tap-highlight-color: transparent; }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #2E2E2E;
+            color: #F3FEDC;
+            font-size: 15px;
+            line-height: 1.4;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            body { font-size: 0.85rem; }
+        }
+        main {
+            max-width: 800px;
+            margin: 6em auto 0;
+            padding: 2em;
+        }
+        header, summary {
+            font-family: "Playfair Display", serif;
+        }
+        header a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            cursor: pointer;
+        }
+        header a::after {
+            content: ' ';
+            position: absolute;
+            top: 100%; left: 25%;
+            width: 50%; height: 1px;
+            border-bottom: 3px solid;
+            transition: 0.4s;
+        }
+        header a:hover::after { width: 100%; left: 0; }
+        h1 {
+            font-size: 2.5em;
+            margin: 0; padding: 0;
+        }
+        p {
+            margin: 1.25em 0;
+            text-align: left;
+        }
+        .skewUp {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .skewUp:hover { color: #2E2E2E; }
+        .skewUp::before {
+            content: "";
+            position: absolute;
+            display: block;
+            z-index: -1;
+            bottom: 0; left: 0;
+            height: 2px; width: 100%;
+            background-color: #F3FEDC;
+            transition: height 0.3s, width 0.3s, transform 0.3s;
+        }
+        .skewUp:hover::before {
+            height: 100%;
+            width: calc(100% + 0.5em);
+            transform: translateX(-0.25em) skew(-7deg);
+        }
+        
+        .scrolling-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            height: 40%;
+            margin: 2em auto;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .scrolling-wrapper .card {
+            flex: 0 0 auto;
+            margin-right: 0.4375em;
+        }
+        .card {
+            width: 150px; height: 95%;
+            min-height: 75px;
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 1.25em 2.5em;
+            border: 0.125em solid #00ff00;
+            border-radius: 10%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            box-sizing: border-box;
+        }
+        .card:hover {
+            background-color: #00ff00;
+            color: #2E2E2E;
+            font-style: italic;
+        }
+        /*******************************************
+        This was original version scrolling-wrapper:
+        ********************************************
+       .scrolling-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            height: 80px;
+            margin-bottom: 20px;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .scrolling-wrapper .card {
+            flex: 0 0 auto;
+            margin-right: 0.4375em;
+        }         
+        .card {
+            width: 150px;
+            height: 75px;
+            background: #1e1e1e;
+            color: aquamarine;
+            border: 2px solid aquamarine;
+            font-size: 1.5em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }        
+        ******************************************/
+        footer {
+            margin: 6em auto 1.25em;
+            font-size: 0.9em;
+        }
+        details {
+            margin-bottom: 0.625em;
+            border-top: 1px solid #F3FEDC;
+            padding: 0.625em;
+            position: relative;
+            cursor: pointer;
+            text-align: left;
+        }
+        summary {
+            padding: 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none; /* Remove the default arrow */
+            appearance: none; /* Ensure removing the default arrow cross browsers */
+            -webkit-appearance: none;
+        }     
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+            display: inline-block;
+            margin-left: 0.5em;
+            width: 18px;
+            height: 18px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23F3FEDC" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"/><path d="M12 12.586 8.707 9.293l-1.414 1.414L12 15.414l4.707-4.707-1.414-1.414L12 12.586z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        details[open] summary .title {
+            text-decoration: underline;
+            text-decoration-color: #00ff00;
+            text-decoration-thickness: 2px;
+        }
+        details[open] .arrow {
+            transform: rotate(180deg);
+        }
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        code {
+            color: #00ff00;
+            padding: 0.3125em;
+            border-radius: 0.3125em;
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #00ff00;
+            padding: 0 0.9375em;
+            border-left: 0.3125em solid #575757;
+            border-radius: 0.3125em;
+        }  
+    </style>
+</head>
+<body>
+<main>
+    <header><h1>Vectori<a href="../09/">zati</a>on</h1></header>
+    <p>Vectorization is the process of converting data or operations into a vector format to optimize performance and efficiency. It typically refers to using vectorized operations, where computations are applied to entire <a href="oceanicData" class="skewUp">arrays</a> or matrices simultaneously, rather than element by element. This eliminates the need for explicit loops, leveraging modern processors that can handle multiple operations in parallel.</p>
+
+    <div class="scrolling-wrapper">
+        <a href="#" class="card">ṭžøżë</a> 
+        <a href="#" class="card">æⁿ6ĵ</a>
+        <a href="#" class="card">1ēēŠ</a>
+        <a href="#" class="card">œĞĉ</a>
+        <a href="#" class="card">m6bģ</a>
+        <a href="#" class="card">●●●</a>
+    </div>
+
+    <p>Libraries like NumPy (in Python) exploit vectorization to accelerate numerical computations by using optimized hardware instructions and parallel processing. In machine learning, vectorization involves transforming data, such as text or images, into numerical vectors that algorithms can process. For instance, in natural language processing (NLP), word embeddings represent words as vectors in a continuous vector space, capturing semantic relationships through mathematical operations.</p>
+    <p>Overall, vectorization is a powerful technique that enhances performance, simplifies code, and enables more efficient data processing across various domains.</p>
+
+    <footer>
+        <p>▀▄ &nbsp;&nbsp; 🐉🐚 &nbsp; ⋆ &nbsp;&nbsp; 💣👊 &nbsp; //✋💛</p>
+        <details>
+            <summary>
+                <span class="title">Example</span>
+                <span class="arrow"></span>
+            </summary>  
+            <p>In Python, using NumPy, a simple example of vectorization is shown below:</p>
+            <h3>Without Vectorization (Using Loops):</h3>
+            <pre><code>
+import numpy as np
+
+# Create two arrays
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+result = np.zeros(3)
+
+# Using a loop
+for i in range(len(a)):
+    result[i] = a[i] + b[i]
+             </code></pre>
+             <h3>With Vectorization:</h3>
+             <pre><code>
+import numpy as np
+
+# Create two arrays
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+# Vectorized operation
+result = a + b
+             </code></pre>
+        </details>
+    </footer>
+</main>
+</body>
+  </html>
