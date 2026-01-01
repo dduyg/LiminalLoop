@@ -34,10 +34,7 @@
         .row5, .row6 {display: grid; gap: 15px; grid-template-columns: 6fr 4fr; align-items: stretch;}
         .row5 .box img, .row6 .box img {width: 100%; height: 100%; object-fit: cover; display: block;}
 
-        .box img {width: 100%; height: auto; display: block; object-fit: cover;}  
-        .box a {font-weight: 700; vertical-align: top; position: relative;}
-        .box a::before {content: ''; background-color: #CFB9CB; position: absolute; left: 0.5rem; bottom: 5px; width: 100%; height: 8px; z-index: -1; transition: all 0.3s ease-in-out;}
-        .box a:hover::before {left: -5px; bottom: 0; height: 100%; width: calc(100% + 10px);}
+        .box img {width: 100%; height: auto; display: block; object-fit: cover;}
         .row3 .box svg {width: 100%; max-width: 120px; height: auto; transition: transform 0.3s ease; --c1: beige; --c2: #38023b; --c3: fuchsia;}
         .row3 .box:hover svg {transform: scale(1.08) rotate(2deg); --c1: #f5f5dc; --c2: fuchsia; --c3: #38023b;}
         .row4 .box h4 {display: inline-block; font-size: 0.8rem; animation: float 3s ease-in-out infinite; will-change: transform;}
@@ -87,7 +84,7 @@
         a.swipe:hover::after {width: 100%; background-color: #C14A09;}
         a.swipe:hover::before {border-color: transparent;}
         a.skewUp {display: inline-block; position: relative; transition: color 0.3s; cursor: pointer;}
-        a.skewUp:hover {color: #C14A09;}
+        a.skewUp:hover {color: beige;}
         a.skewUp::before {content: ""; position: absolute; display: block; z-index: -1; bottom: 0; left: 0; height: 2px; width: 100%; background-color: #C14A09; transition: height 0.3s, width 0.3s, transform 0.3s;}
         a.skewUp:hover::before {height: 100%; width: calc(100% + 0.5em); transform: translateX(-0.25em) skew(-7deg);}
         a.rule {position: relative; cursor: pointer;}
@@ -102,14 +99,18 @@
         a.magic-btn {display: inline-block; transition: 0.3s; transition-delay: 0s; transform: scale(1);}
         a.magic-btn:hover {color: #C14A09; transform: scale(1.4); transition-delay: 0.11s;}
   
-        a.highlight {display: inline-block; padding: 10px; transition: color ease 0.3s;}
+        a.highlight {font-weight: 700; display: inline-block; padding: 10px; transition: color ease 0.3s;}
         a.highlight::after {content: ''; position: absolute; z-index: -1; width: 100%; height: 6%; left: 0; bottom: 0;
             background-color: #C14A09; transition: all ease 0.3s;
         }
         a.highlight:hover {
             color: fuchsia;
         }
-        a.highlight:hover::after {height: 100%;}  
+        a.highlight:hover::after {height: 100%;}
+
+        a.covering {vertical-align: top; position: relative;}
+        a.covering::before {content: ''; background-color: #CFB9CB; position: absolute; left: 0.5rem; bottom: 5px; width: 100%; height: 8px; z-index: -1; transition: all 0.3s ease-in-out;}
+        a.covering:hover::before {left: -5px; bottom: 0; height: 100%; width: calc(100% + 10px);}   
     </style>
 </head>
 <body>
@@ -137,7 +138,7 @@
         <button id="dropdownToggle">⛣ LiminalLoop</button>
     </div>
     <div id="dropdownPanel" class="dropdown-panel">
-        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="swipe" href="#">automating</a> the end-to-end tasks of developing machine learning <a href="#" class="skewUp">models—such</a> as data preprocessing, algorithm selection, <a class="swipe" href="#">and</a> hyperparameter tuning without requiring <a class="magic-btn" href="#">extensive</a> manual expertise —more accessible to non-experts and more <a class="highlight" href="#">efficient</a> for data scientists. Popular AutoML frameworks include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
+        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="rule" href="#">automating</a> the end-to-end tasks of developing machine learning <a href="#" class="skewUp">models—such</a> as data preprocessing, algorithm selection, <a class="swipe" href="#">and</a> hyperparameter tuning without requiring <a class="magic-btn" href="#">extensive</a> manual expertise —more accessible to non-experts and more <a class="covering" href="#">efficient</a> for data scientists. Popular AutoML frameworks include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
         <section><a href="#" class="card"><div class="card-title">Data Preprocessing</div><div class="card-content">Automatically cleaning, transforming, and structuring raw data into a suitable format for modeling.</div></a><a href="#" class="card"><div class="card-title">Model Selection</div><div class="card-content">AutoML systems automatically search for the most appropriate machine learning model for a given dataset and problem, often trying various algorithms and hyperparameters.</div></a><a href="#" class="card"><div class="card-title">Feature Engineering</div><div class="card-content">Automatically selecting and creating the best features from raw data, which are essential for improving model performance.</div></a><a href="#" class="card"><div class="card-title">Hyperparameter Tuning</div><div class="card-content">Optimizing the hyperparameters of machine learning models to improve their performance, usually through methods like grid search or Bayesian optimization.</div></a><a href="#" class="card"><div class="card-title">Model Training & Evaluation</div><div class="card-content">AutoML platforms manage the process of training models, evaluating their performance, and selecting the best-performing models.</div></a><a href="#" class="card"><div class="card-title">Deployment</div><div class="card-content">Some AutoML systems also help automate the deployment of models into production environments.</div></a></section> 
     </div>
 
@@ -149,7 +150,7 @@
             <div class="row3"><div></div><div class="box"><svg viewBox="0 0 200 200"><filter id="noise1" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"><animate attributeName="baseFrequency" dur="4s" values="0.6;0.9;0.6" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="80"/></filter><circle cx="100" cy="100" r="50" fill="var(--c1)"/><circle cx="100" cy="100" r="25" fill="var(--c2)" filter="url(#noise1)"/></svg></div><div class="box"><svg viewBox="0 0 200 200"><filter id="noise2" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2"><animate attributeName="seed" dur="0.6s" values="0;100" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="160"/></filter><polygon points="100,190 30,40 140,60" fill="var(--c2)"/><circle cx="100" cy="100" r="40" fill="var(--c1)" filter="url(#noise2)"/></svg></div><div class="box"><svg viewBox="0 0 200 200"><defs><linearGradient id="grad1"><stop offset="0%" stop-color="var(--c1)"/><stop offset="100%" stop-color="var(--c3)"/></linearGradient><filter id="noise3" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="8"><animate attributeName="baseFrequency" dur="6s" values="0.3;0.6;0.3" repeatCount="indefinite"/></feTurbulence><feDisplacementMap scale="260"/></filter><mask id="mask1"><rect width="200" height="200" fill="white" filter="url(#noise3)"/></mask></defs><circle cx="100" cy="100" r="50" fill="url(#grad1)" mask="url(#mask1)"/></svg></div></div> 
             <div class="row4">
                 <div class="box"><h4>༼ つ ◕_◕ ༽つ</h4></div>
-                <div class="box"><a href="#">➜</a> Bir kadın, ne kadar zeki olursa olsun, kalbiyle hareket eder.</div>
+                <div class="box"><a class="highlight" href="#">➜</a> Bir kadın, ne kadar zeki olursa olsun, kalbiyle hareket eder.</div>
                 <div></div> 
             </div>
             <div class="row5"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/Ulu-%C3%96nder-Halaskargazi-B%C3%BCy%C3%BCk-Atat%C3%BCrk.png"></div><div class="box"><p>Oh Ataturk, father of the land,</p><p>Through battles and hardship, he never lost his stride,</p><p>A leader and a warrior, with honor as his guide.</p></div></div>
