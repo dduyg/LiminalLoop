@@ -30,17 +30,20 @@
         .row1 {display: grid; grid-template-columns: 5fr 5fr;}
         .row2 {display: grid; grid-template-columns: 2fr 8fr; margin-top: 25px;}
         .row3 {display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 200px;}   
-        .row4 {display: grid; gap: 10px; grid-template-columns: 3fr 5fr 2fr; margin-bottom: 300px;}
-        .row5, .row6 {display: grid; gap: 10px; grid-template-columns: 6fr 4fr;}
+        .row4 {display: grid; grid-template-columns: 3fr 5fr 2fr; margin-bottom: 300px;}
+        .row5, .row6 {display: grid; gap: 15px; grid-template-columns: 6fr 4fr;}
         .row5 .box img, .row6 .box img {width: 100%; height: 100%; object-fit: cover; display: block;}
         .box img {width: 100%; height: auto; display: block; object-fit: cover;}
         .row3 .box svg {width: 100%; max-width: 120px; height: auto; transition: transform 0.3s ease; --c1: beige; --c2: #38023b; --c3: fuchsia;}
         .row3 .box:hover svg {transform: scale(1.08) rotate(2deg); --c1: #f5f5dc; --c2: fuchsia; --c3: #38023b;}
         .row4 .box:nth-of-type(1) {background: #C9C9BF; color: #0B0B0B; border: 1px solid #ccc; align-self: end;}
         .row4 .box h4 {display: inline-block; font-size: 0.8rem; animation: float 3s ease-in-out infinite; will-change: transform;}
-        .row5 .box:nth-of-type(2) {align-self: end;}    
-        .row6 .box:nth-of-type(2) {align-self: start; padding-top: 15px;}
+        .row1 .box:nth-of-type(2), .row5 .box:nth-of-type(2) {align-self: end;}    
+        .row6 .box:nth-of-type(2) {align-self: start;}
         @keyframes float { 0% {transform: translateY(0);} 50% {transform: translateY(-15px);} 100% {transform: translateY(0);} }
+        .row1 .box h1 {font-family: 'VT323', monospace; font-size: 1.2rem;}
+        .row1 .box u {text-decoration: none; position: relative;}
+        .row1 .box u::before {content: ''; position: absolute; top: -0.33em; left: 0; right: 0; height: 0.06875em; /* Intermediate thickness */ background-color: currentColor;}
     
         /* Full top header */
         .top-header {position: fixed; top: 0; left: 0; font-family: "Saira", sans-serif; width: 100%; display: flex; justify-content: space-between; z-index: 5;}
@@ -137,12 +140,12 @@
     <aside>     
         <div class="spacer"></div>
         <div class="content">
-            <div class="row1"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/converging.png"></div><div></div></div>
+            <div class="row1"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/converging.png"></div><div class="box"><h1>⎄Limin<u>alLo</u>op():</h1><p>Loops in programming allow you to repeat a set of instructions until a certain condition is met, making it easier to perform repetitive tasks and iterate through data. They come in different forms like "for" and "while" loops.</p></div></div>
             <div class="row2"><div></div><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/on-my-way.png"></div></div>
             <div class="row3"><div></div><div class="box"><svg viewBox="0 0 200 200"><filter id="noise1" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"><animate attributeName="baseFrequency" dur="4s" values="0.6;0.9;0.6" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="80"/></filter><circle cx="100" cy="100" r="50" fill="var(--c1)"/><circle cx="100" cy="100" r="25" fill="var(--c2)" filter="url(#noise1)"/></svg></div><div class="box"><svg viewBox="0 0 200 200"><filter id="noise2" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2"><animate attributeName="seed" dur="0.6s" values="0;100" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="160"/></filter><polygon points="100,190 30,40 140,60" fill="var(--c2)"/><circle cx="100" cy="100" r="40" fill="var(--c1)" filter="url(#noise2)"/></svg></div><div class="box"><svg viewBox="0 0 200 200"><defs><linearGradient id="grad1"><stop offset="0%" stop-color="var(--c1)"/><stop offset="100%" stop-color="var(--c3)"/></linearGradient><filter id="noise3" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="8"><animate attributeName="baseFrequency" dur="6s" values="0.3;0.6;0.3" repeatCount="indefinite"/></feTurbulence><feDisplacementMap scale="260"/></filter><mask id="mask1"><rect width="200" height="200" fill="white" filter="url(#noise3)"/></mask></defs><circle cx="100" cy="100" r="50" fill="url(#grad1)" mask="url(#mask1)"/></svg></div></div> 
             <div class="row4">
                 <div class="box"><h4>༼ つ ◕_◕ ༽つ</h4></div>
-                <div class="box"><a class="highlight" href="0-1/">➜</a> Bir kadın, ne kadar zeki olursa olsun, kalbiyle hareket eder.</div>
+                <div class="box"><a class="highlight" href="../0-1/">➜</a> Bir kadın, ne kadar zeki olursa olsun, kalbiyle hareket eder.</div>
                 <div></div> 
             </div>
             <div class="row5"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/Ulu-%C3%96nder-Halaskargazi-B%C3%BCy%C3%BCk-Atat%C3%BCrk.png"></div><div class="box"><p>Oh Ataturk, father of the land,</p><p>Through battles and hardship, he never lost his stride,</p><p>A leader and a warrior, with honor as his guide.</p></div></div>
