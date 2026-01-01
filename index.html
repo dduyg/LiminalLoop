@@ -86,15 +86,36 @@
         a.swipe::after {content: " "; position: absolute; z-index: -1; top: 0; left: -2px; padding: 0 2px; width: 1px; height: 1.5em; transition: 0.4s;}
         a.swipe:hover::after {width: 100%; background-color: #C14A09;}
         a.swipe:hover::before {border-color: transparent;}
-
         a.skewUp {display: inline-block; position: relative; transition: color 0.3s; cursor: pointer;}
         a.skewUp:hover {color: #2E2E2E;}
         a.skewUp::before {content: ""; position: absolute; display: block; z-index: -1; bottom: 0; left: 0; height: 2px; width: 100%; background-color: #F3FEDC; transition: height 0.3s, width 0.3s, transform 0.3s;}
         a.skewUp:hover::before {height: 100%; width: calc(100% + 0.5em); transform: translateX(-0.25em) skew(-7deg);}
-
         a.rule {position: relative; cursor: pointer;}
         a.rule::after {content: ' '; position: absolute; top: 100%; left: 25%; width: 50%; height: 1px; border-bottom: 3px solid; transition: 0.4s;}
         a.rule:hover::after {width: 100%; left: 0;}
+
+        a.magic-btn {position: relative; cursor: pointer;}
+        a.magic-btn::before {
+            content: " "; position: absolute; z-index: -1; bottom: 0; left: -2px; padding: 0 2px; width: calc(100% + 2px);
+            height: 1px; border-bottom: 3px solid #EADCD7; transition: 0.4s;
+        }
+        a.magic-btn::after {content: " "; position: absolute; z-index: -1; bottom: 0; left: calc(50% - 4px); padding: 0 2px; width: 0; height: 0; border: 1px solid transparent; transition: 0.4s;}
+        a.magic-btn:hover::before {border-color: transparent;}
+        a.magic-btn:hover::after {width: 100%; height: 1.25em; left: -1em; bottom: -0.35em;
+            padding: 0.4em 0.8em; border-color: blue; background-color: blue; border-radius: 2.5em;
+        }
+        a.magic-btn {display: inline-block; transition: 0.3s; transition-delay: 0s; transform: scale(1);}
+        a.magic-btn:hover {
+            color: violet; transform: scale(1.4); transition-delay: 0.11s;}
+  
+        a.highlight {display: inline-block; padding: 10px; transition: color ease 0.3s;}
+        a.highlight::after {content: ''; position: absolute; z-index: -1; width: 100%; height: 6%; left: 0; bottom: 0;
+            background-color: linen; transition: all ease 0.3s;
+        }
+        a.highlight:hover {
+            color: fuchsia;
+        }
+        a.highlight:hover::after {height: 100%;}  
     </style>
 </head>
 <body>
@@ -122,7 +143,7 @@
         <button id="dropdownToggle">⛣ LiminalLoop</button>
     </div>
     <div id="dropdownPanel" class="dropdown-panel">
-        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="swipe" href="#">automating</a> the end-to-end tasks of developing machine learning <a href="#" class="skewUp">models—such</a> as data preprocessing, algorithm selection, <a class="swipe" href="#">and</a> hyperparameter tuning without requiring extensive manual expertise —more accessible to non-experts and more efficient for data scientists. Popular AutoML frameworks include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
+        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="swipe" href="#">automating</a> the end-to-end tasks of developing machine learning <a href="#" class="skewUp">models—such</a> as data preprocessing, algorithm selection, <a class="swipe" href="#">and</a> hyperparameter tuning without requiring <a class="magic-btn" href="#">extensive</a> manual expertise —more accessible to non-experts and more <a class="highlight" href="#">efficient</a> for data scientists. Popular AutoML frameworks include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
         <section><a href="#" class="card"><div class="card-title">Data Preprocessing</div><div class="card-content">Automatically cleaning, transforming, and structuring raw data into a suitable format for modeling.</div></a><a href="#" class="card"><div class="card-title">Model Selection</div><div class="card-content">AutoML systems automatically search for the most appropriate machine learning model for a given dataset and problem, often trying various algorithms and hyperparameters.</div></a><a href="#" class="card"><div class="card-title">Feature Engineering</div><div class="card-content">Automatically selecting and creating the best features from raw data, which are essential for improving model performance.</div></a><a href="#" class="card"><div class="card-title">Hyperparameter Tuning</div><div class="card-content">Optimizing the hyperparameters of machine learning models to improve their performance, usually through methods like grid search or Bayesian optimization.</div></a><a href="#" class="card"><div class="card-title">Model Training & Evaluation</div><div class="card-content">AutoML platforms manage the process of training models, evaluating their performance, and selecting the best-performing models.</div></a><a href="#" class="card"><div class="card-title">Deployment</div><div class="card-content">Some AutoML systems also help automate the deployment of models into production environments.</div></a></section> 
     </div>
 
