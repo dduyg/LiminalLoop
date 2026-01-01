@@ -30,10 +30,10 @@
         aside::-webkit-scrollbar {display: none;}
         .spacer {/* To start 30vh from bottom */ height: 70vh;}
         .content {pointer-events: auto; width: 100%; max-width: 100%; margin: 0 auto; padding: 10px 20px; padding-bottom: 110vh; /* Extra space to scroll off screen */}
-        .row1 {display: grid; grid-template-columns: 5fr 5fr;}
+        .row1 {display: grid; gap: 15px; grid-template-columns: 5fr 5fr;}
         .row2 {display: grid; grid-template-columns: 2fr 8fr; margin-top: 25px;}
         .row3 {display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 200px;}   
-        .row4 {display: grid; grid-template-columns: 3fr 5fr 2fr; margin-bottom: 300px;}
+        .row4 {display: grid; gap: 15px; grid-template-columns: 3fr 5fr 2fr; margin-bottom: 300px;}
         .row5, .row6 {display: grid; gap: 15px; grid-template-columns: 6fr 4fr;}
         .row5 .box img, .row6 .box img {width: 100%; height: 100%; object-fit: cover; display: block;}
         .box img {width: 100%; height: auto; display: block; object-fit: cover;}
@@ -42,7 +42,7 @@
         .row4 .box:nth-of-type(1) {background: #C9C9BF; color: #0B0B0B; border: 1px solid #ccc; align-self: end;}
         .row4 .box h4 {display: inline-block; font-size: 0.8rem; animation: float 3s ease-in-out infinite; will-change: transform;}
         .row1 .box:nth-of-type(2), .row5 .box:nth-of-type(2) {align-self: end;}    
-        .row6 .box:nth-of-type(2) {align-self: start;}
+        .row6 .box:nth-of-type(2) {align-self: start; padding-top: 15px;}
         @keyframes float { 0% {transform: translateY(0);} 50% {transform: translateY(-15px);} 100% {transform: translateY(0);} }
         .row1 .box h1 {font-family: 'VT323', monospace; font-size: 1.2rem;}
         .row1 .box u {text-decoration: none; position: relative;}
