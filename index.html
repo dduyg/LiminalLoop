@@ -90,14 +90,13 @@
         a.rule {position: relative; cursor: pointer;}
         a.rule::after {content: ' '; position: absolute; top: 100%; left: 25%; width: 50%; height: 1px; border-bottom: 3px solid #C14A09; transition: 0.4s;}
         a.rule:hover::after {width: 100%; left: 0;}
-        a.magic-btn {position: relative; cursor: pointer;}
+        a.magic-btn {color: #C14A09; position: relative; cursor: pointer; display: inline-block; transition: 0.3s; transition-delay: 0s; transform: scale(1);}
+        a.magic-btn:hover {transform: scale(1.4); transition-delay: 0.11s;}
         a.magic-btn::before {content: " "; position: absolute; z-index: -1; bottom: 0; left: -2px; padding: 0 2px; width: calc(100% + 2px); height: 1px; transition: 0.4s;}
         a.magic-btn::after {content: " "; position: absolute; z-index: -1; bottom: 0; left: calc(50% - 4px); padding: 0 2px; width: 0; height: 0; border: 1px solid transparent; transition: 0.4s;}
         a.magic-btn:hover::before {border-color: transparent;}
-        a.magic-btn:hover::after {width: 100%; height: 1.25em; left: -1em; bottom: -0.35em; padding: 0.4em 0.8em; border-color: violet; background-color: violet; border-radius: 2.5em;}
-        a.magic-btn {display: inline-block; transition: 0.3s; transition-delay: 0s; transform: scale(1);}
-        a.magic-btn:hover {color: #C14A09; transform: scale(1.4); transition-delay: 0.11s;}
-        a.highlight {color: #C14A09; font-weight: 700; display: inline-block; padding: 2px 4px; transition: all ease 0.3s; position: relative;}
+        a.magic-btn:hover::after {width: 100%; height: 1.25em; left: -1em; bottom: -0.35em; padding: 0.4em 0.8em; border-color: violet; background-color: violet; border-radius: 2.5em;}    
+        a.highlight {font-weight: 700; display: inline-block; padding: 2px 4px; position: relative;}
         a.highlight::after {content: ''; position: absolute; z-index: -1; width: 100%; height: 6%; left: 0; bottom: 0; background-color: #C14A09; transition: all ease 0.3s;}
         a.highlight:hover::after {height: 100%;}
         a.covering {vertical-align: top; position: relative;}
