@@ -82,5 +82,12 @@
     "url": "https://fonts.googleapis.com/css2?family=Quantico&display=swap",
     "category": "sans-serif",
     "tags": ["futuristic","brutalist","techno"]
+  },
+  {
+    "name": "Lab Mono",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/labmono-regular.woff2",
+    "category": "monospace",
+    "tags": ["monospaced","geometric","contemporary","coding"]
   }
 ]
