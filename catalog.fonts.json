@@ -89,5 +89,19 @@
     "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/labmono-regular.woff2",
     "category": "monospace",
     "tags": ["monospaced","geometric","contemporary","coding"]
+  },
+  {
+    "name": "Saira",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Saira&display=swap",
+    "category": "sans-serif",
+    "tags": ["techno","contemporary","geometric"]
+  },
+  {
+    "name": "Public Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Public+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": ["clean","neutral","formal"]
   }
 ]
