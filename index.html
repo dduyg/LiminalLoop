@@ -44,7 +44,7 @@
         .row1 .box:nth-of-type(2), .row5 .box:nth-of-type(2) {align-self: end;}    
         .row6 .box:nth-of-type(2) {align-self: start; padding-top: 15px;}
         @keyframes float { 0% {transform: translateY(0);} 50% {transform: translateY(-15px);} 100% {transform: translateY(0);} }
-        .row1 .box h1 {font-family: 'VT323', monospace; font-size: 1.2rem;}
+        .row1 .box h1 {color: #666; font-family: 'VT323', monospace; font-size: 1.2rem;}
         .row1 .box u {text-decoration: none; position: relative;}
         .row1 .box u::before {content: ''; position: absolute; top: -0.33em; left: 0; right: 0; height: 0.06875em; /* Intermediate thickness */ background-color: currentColor;}
     
@@ -55,7 +55,7 @@
         .menu-trigger {margin: 25px 0 15px; color: #666; font-size: 20px; font-weight: 600; cursor: pointer; user-select: none; display: inline-block;}
         .menu {display: none; flex-direction: column; gap: 15px;}
         .menu.active {display: flex;}
-        .menu a {color: #C14A09; font-size: 18px; transition: all 0.2s ease;}
+        .menu a {color: #b88860; font-size: 18px; transition: all 0.2s ease;}
         .menu a:hover {font-weight:bold; letter-spacing: 2px;}
 
         /* Dropdown Panel with Glitch */
@@ -70,7 +70,7 @@
         
         /* Bottom-right controls */
         #controls {position: fixed; bottom: 0; right: 0; display: flex; flex-direction: column; align-items: flex-end; padding: 20px; z-index: 100; pointer-events: auto;}
-        #controls button {padding: 10px 15px; background: #CF9E77; color: white; border: none; border-radius: 4px; cursor: pointer; font-family: 'Lab Mono', monospace; font-size: 0.6rem;}   
+        #controls button {padding: 10px 20px; background: #CF9E77; color: white; border: none; border-radius: 4px; cursor: pointer; font-family: 'Lab Mono', monospace; font-size: 0.6rem;}   
         #controls button:hover {background: #ccc; color: #b88860;} 
         #status {position: relative; width: 250px; height: 20px; font-family: 'Lab Mono', monospace;}  
         .anim {position: absolute; top: 0; right: 0; width: 100%; text-align: right; color: #666; white-space: nowrap; opacity: 0; filter: blur(8px); pointer-events: none;}
@@ -104,7 +104,7 @@
         a.magic-btn:hover::before {border-color: transparent;}
         a.magic-btn:hover::after {width: 100%; height: 1.25em; left: -1em; bottom: -0.35em; padding: 0.4em 0.8em; border-color: violet; background-color: violet; border-radius: 2.5em;}    
         a.highlight {font-weight: 700; display: inline-block; padding: 2px 4px; position: relative;}
-        a.highlight::after {content: ''; position: absolute; z-index: -1; width: 100%; height: 6%; left: 0; bottom: 0; background-color: #C14A09; transition: all ease 0.3s;}
+        a.highlight::after {content: ''; position: absolute; z-index: -1; width: 100%; height: 6%; left: 0; bottom: 0; background-color: #C9C9BF; transition: all ease 0.3s;}
         a.highlight:hover::after {height: 100%;}
         a.covering {vertical-align: top; position: relative;}
         a.covering::before {content: ''; background-color: #C14A09; position: absolute; left: 0.5rem; bottom: 5px; width: 100%; height: 8px; z-index: -1; transition: all 0.3s ease-in-out;}
