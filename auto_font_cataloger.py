@@ -643,9 +643,7 @@ class CatalogProcessor:
     def initialize(self, repo: str, token: str):
         """Initialize repository connection"""
         self.catalog_manager = SourceCatalogManager(repo, token)
-        print("\n◌ Loading model...")
         self.tagger.load_model()
-        print("✓ Ready!\n")
     
     def process_font(self, name: str, url: str, category: str, step: int, total: int) -> Optional[FontEntry]:
         """Process a single font"""
