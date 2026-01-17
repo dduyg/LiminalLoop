@@ -699,7 +699,7 @@ class CatalogProcessor:
                 return None
             
             # Display results
-            print(f"   ✓ Detected: {len(metadata.weights)} weight(s), {'Variable' if metadata.is_variable else 'Static'}, Scripts: {', '.join(metadata.scripts)}")
+            print(f"   ✓ ＤＥＴＥＣＴＥＤ: {len(metadata.weights)} weight(s), {'Variable' if metadata.is_variable else 'Static'}, Scripts: {', '.join(metadata.scripts)}")
             
             suggested_tags = [k for k, v in scores.items() if v >= self.config.TAG_THRESHOLD][:6]
             
