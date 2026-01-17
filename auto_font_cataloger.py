@@ -843,11 +843,11 @@ class CatalogProcessor:
                 print(f"🎉 Successfully added {added_count} font(s) to catalog!")
             except Exception as e:
                 print(f"⊗ Commit failed: {e}")
-                print("\n◌ Saving locally...")
+                print("\n●●● Saving locally...")
                 SourceCatalogManager.save_local(catalog)
                 print("✓ Saved to catalog.fonts.json")
         elif added_count > 0:
-            print("\n◌ Saving to local file...")
+            print("\n●●● Saving to local file...")
             SourceCatalogManager.save_local(catalog)
             print("✓ Saved to catalog.fonts.json")
         else:
