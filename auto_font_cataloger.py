@@ -743,7 +743,7 @@ class CatalogProcessor:
             print("═" * 60)
             print(json.dumps(entry.to_dict(), indent=2, ensure_ascii=False))
             
-            confirm = input("\n🔘 Add? (y/n): ").strip().lower()
+            confirm = input("\n🔘  ＡＤＤ  ＴＯ  ＣＡＴＡＬＯＧ？ (y/n): ").strip().lower()
             return entry if confirm == "y" else None
             
         except Exception as e:
