@@ -697,7 +697,7 @@ class CatalogProcessor:
             
             suggested_tags = [k for k, v in scores.items() if v >= self.config.TAG_THRESHOLD][:6]
             
-            print("\n━━━ ＳＵＧＧＥＳＴＥＤ　ＴＡＧＳ ━━━")
+            print("\n━━━ ＳＵＧＧＥＳＴＥＤ　ＴＡＧＳ ━━━\n")
             for idx, tag in enumerate(suggested_tags, 1):
                 score = scores[tag]
                 bar = "█" * int(score * 20)
@@ -747,9 +747,8 @@ class CatalogProcessor:
         fonts = []
         
         while True:
-            print(f"\n{'='*60}")
+            print(f"\n─•────")
             print(f"░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ　＃{len(fonts) + 1}  █▓▒░")
-            print(f"{'='*60}")
             
             print("\n　━━━ ＦＯＮＴ ＮＡＭＥ ━━━")
             name = input("　　　＞ ").strip()
@@ -770,7 +769,7 @@ class CatalogProcessor:
             
             fonts.append({"name": name, "url": url, "category": category})
             
-            more = input("\n✙ Add another? (y/n): ").strip().lower()
+            more = input("\n⊕ Add another? (y/n): ").strip().lower()
             if more != "y":
                 break
         
