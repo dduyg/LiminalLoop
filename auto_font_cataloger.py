@@ -346,7 +346,7 @@ class GoogleFontsAnalyzer:
                     weights = sorted([int(w) for w in weight_str.split(';') if w.isdigit()])
             
             if not weights:
-                print("      🌀  Checking available weights...")
+                print("      □□■  Checking available weights...")
                 available_weights, available_variable, available_italic = GoogleFontsAnalyzer.check_availability(family_name)
                 weights = available_weights
                 is_variable = available_variable
@@ -649,7 +649,7 @@ class CatalogProcessor:
     def initialize(self, repo: str, token: str):
         """Initialize repository connection"""
         self.catalog_manager = SourceCatalogManager(repo, token)
-        print("\n📡 Loading model...")
+        print("\n◌ Loading model...")
         self.tagger.load_model()
         print("✓ Ready!\n")
     
@@ -739,7 +739,7 @@ class CatalogProcessor:
             print("█▓▒░" * 20)
             print(json.dumps(entry.to_dict(), indent=2, ensure_ascii=False))
             
-            confirm = input("\n🔘  ＡＤＤ  ＴＯ  ＣＡＴＡＬＯＧ？ (y/n): ").strip().lower()
+            confirm = input("\n➠  ＡＤＤ  ＴＯ  ＣＡＴＡＬＯＧ？ (y/n): ").strip().lower()
             return entry if confirm == "y" else None
             
         except Exception as e:
@@ -776,7 +776,7 @@ class CatalogProcessor:
             
             fonts.append({"name": name, "url": url, "category": category})
             
-            more = input("\n➕ Add another? (y/n): ").strip().lower()
+            more = input("\n✙ Add another? (y/n): ").strip().lower()
             if more != "y":
                 break
         
@@ -852,11 +852,11 @@ class CatalogProcessor:
                 print("🎉 Catalog updated successfully!")
             except Exception as e:
                 print(f"⊗ Commit failed: {e}")
-                print("\n🌀 Saving locally...")
+                print("\n◌ Saving locally...")
                 SourceCatalogManager.save_local(catalog)
                 print("✓ Saved to catalog.fonts.json")
         elif added_count > 0:
-            print("\n🌀 Saving to local file...")
+            print("\n◌ Saving to local file...")
             SourceCatalogManager.save_local(catalog)
             print("✓ Saved to catalog.fonts.json")
         else:
