@@ -146,17 +146,11 @@ class Config:
                           0x0104, 0x0105, 0x0141, 0x0142, 0x010C, 0x010D,
                           0x0158, 0x0159, 0x0152, 0x0153, 0x0100, 0x0101,
                           0x0112, 0x0113],
-            'vietnamese': [0x1EA0, 0x1EA1, 0x1EB0, 0x1EB1, 0x1EE4, 0x1EE5,
-                           0x01A0, 0x01A1, 0x01AF, 0x01B0],
             'cyrillic': [0x0410, 0x0411, 0x0412, 0x0430, 0x0431, 0x0432,
                          0x0401, 0x0451],
-            'greek': [0x0391, 0x0392, 0x0393, 0x03B1, 0x03B2, 0x03B3,
-                      0x03A9, 0x03C9],
-            'arabic': [0x0628, 0x062A, 0x062B, 0x0639, 0x063A, 0x0644, 0x0647],
-            'hebrew': [0x05D0, 0x05D1, 0x05D2, 0x05E9, 0x05EA],
-            'chinese': [0x4E00, 0x4E8C, 0x4E09, 0x6C49, 0x5B57],
-            'japanese': [0x3042, 0x3044, 0x3046, 0x30A2, 0x30A4, 0x30A6],
-            'korean': [0xAC00, 0xAC01, 0xAC04, 0xD55C, 0xAE00]
+            'CJK': [0x4E00, 0x4E8C, 0x4E09, 0x6C49, 0x5B57,
+                    0x3042, 0x3044, 0x3046, 0x30A2, 0x30A4, 0x30A6,
+                    0xAC00, 0xAC01, 0xAC04, 0xD55C, 0xAE00]
         }
 
 # ═══════════════════════════════════════════════════════════════════
@@ -849,7 +843,7 @@ class CatalogProcessor:
             print(f"🌀 Committing {added_count} font(s) to catalog...")
             try:
                 self.catalog_manager.update(catalog, sha)
-                print("🎉 Catalog updated successfully!")
+                print(f"🎉 Successfully added {added_count} font(s) to catalog!")
             except Exception as e:
                 print(f"⊗ Commit failed: {e}")
                 print("\n◌ Saving locally...")
