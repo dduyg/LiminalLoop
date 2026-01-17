@@ -29,8 +29,7 @@ import json
 import base64
 import getpass
 import tempfile
-import struct
-from typing import List, Dict, Tuple, Optional, Set
+from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -68,6 +67,9 @@ class DependencyManager:
     def install_all(cls):
         for module, pip_name in cls.DEPENDENCIES.items():
             cls.install(pip_name, module)
+        
+        os.environ['HF_HUB_DISABLE_PROGRESS_BARS'] = '1'
+        os.environ['TQDM_DISABLE'] = '1'
 
 # Install dependencies
 DependencyManager.install_all()
@@ -514,13 +516,24 @@ class FontTagger:
     def load_model(self):
         """Load CLIP model (cached)"""
         if self.model is None:
-            self.model, _, self.preprocess = open_clip.create_model_and_transforms(
-                self.config.CLIP_MODEL,
-                pretrained=self.config.CLIP_PRETRAIN,
-                device=self.config.DEVICE
-            )
-            self.tokenizer = open_clip.get_tokenizer(self.config.CLIP_MODEL)
-            self.model.eval()
+            import sys
+            from io import StringIO
+            old_stdout = sys.stdout
+            old_stderr = sys.stderr
+            sys.stdout = StringIO()
+            sys.stderr = StringIO()
+            
+            try:
+                self.model, _, self.preprocess = open_clip.create_model_and_transforms(
+                    self.config.CLIP_MODEL,
+                    pretrained=self.config.CLIP_PRETRAIN,
+                    device=self.config.DEVICE
+                )
+                self.tokenizer = open_clip.get_tokenizer(self.config.CLIP_MODEL)
+                self.model.eval()
+            finally:
+                sys.stdout = old_stdout
+                sys.stderr = old_stderr
     
     def tag(self, images: List[Image.Image], category: str, metadata: FontMetadata) -> Dict[str, float]:
         """Generate tags for font"""
@@ -593,6 +606,40 @@ class SourceCatalogManager:
         self.file_path = file_path
         self.headers = {"Authorization": f"token {token}"}
     
+    @staticmethod
+    def _compact_json_dumps(data: List[dict]) -> str:
+        """Format JSON with compact arrays on single lines"""
+        lines = []
+        lines.append("[")
+        
+        for i, entry in enumerate(data):
+            if i > 0:
+                lines.append(",")
+            lines.append("  {")
+            lines.append(f'    "name": {json.dumps(entry["name"])},')
+            lines.append(f'    "source": {json.dumps(entry["source"])},')
+            lines.append(f'    "url": {json.dumps(entry["url"])},')
+            lines.append(f'    "category": {json.dumps(entry["category"])},')
+            
+            # Compact tags array
+            tags_str = ", ".join(json.dumps(t) for t in entry["tags"])
+            lines.append(f'    "tags": [ {tags_str} ],')
+            
+            # Compact weights array
+            weights_str = ", ".join(str(w) for w in entry["weights"])
+            lines.append(f'    "weights": [ {weights_str} ],')
+            
+            lines.append(f'    "variable": {json.dumps(entry["variable"])},')
+            
+            # Compact scripts array
+            scripts_str = ", ".join(json.dumps(s) for s in entry["scripts"])
+            lines.append(f'    "scripts": [ {scripts_str} ]')
+            
+            lines.append("  }")
+        
+        lines.append("\n]")
+        return "\n".join(lines)
+    
     def fetch(self) -> Tuple[List[dict], str]:
         """Fetch current catalog"""
         url = f"https://api.github.com/repos/{self.repo}/contents/{self.file_path}"
@@ -608,8 +655,8 @@ class SourceCatalogManager:
     def update(self, catalog: List[dict], sha: str):
         """Update catalog in repository"""
         url = f"https://api.github.com/repos/{self.repo}/contents/{self.file_path}"
-        content_bytes = json.dumps(catalog, indent=2, ensure_ascii=False).encode("utf-8")
-        content_b64 = base64.b64encode(content_bytes).decode("utf-8")
+        content_str = self._compact_json_dumps(catalog)
+        content_b64 = base64.b64encode(content_str.encode("utf-8")).decode("utf-8")
         
         payload = {
             "message": f"Update font catalog ({datetime.now().strftime('%Y-%m-%d %H:%M')})",
@@ -624,7 +671,7 @@ class SourceCatalogManager:
     def save_local(catalog: List[dict], file_path: str = "catalog.fonts.json"):
         """Save catalog locally"""
         with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(catalog, f, indent=2, ensure_ascii=False)
+            f.write(SourceCatalogManager._compact_json_dumps(catalog))
 
 # ═══════════════════════════════════════════════════════════════════
 # CATALOG PROCESSOR
