@@ -715,7 +715,7 @@ class CatalogProcessor:
             print("　　　 • [1,3,5] = Select by number")
             print("　　　 • [tag1,tag2] = Custom tags")
             
-            user_input = input("\n🎛 Choice: ").strip()
+            user_input = input("\n🎛  ＣＨＯＩＣＥ ▶ ").strip()
             
             if user_input == "":
                 final_tags = suggested_tags
