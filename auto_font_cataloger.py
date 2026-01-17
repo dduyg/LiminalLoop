@@ -342,7 +342,7 @@ class GoogleFontsAnalyzer:
                     weights = sorted([int(w) for w in weight_str.split(';') if w.isdigit()])
             
             if not weights:
-                print("  □□■  Checking available weights...")
+                print("    □□■  Checking available weights...")
                 available_weights, available_variable, available_italic = GoogleFontsAnalyzer.check_availability(family_name)
                 weights = available_weights
                 is_variable = available_variable
@@ -608,7 +608,6 @@ class SourceCatalogManager:
     
     @staticmethod
     def _compact_json_dumps(data: List[dict]) -> str:
-        """Format JSON with compact arrays on single lines"""
         lines = []
         lines.append("[")
         
@@ -842,7 +841,7 @@ class CatalogProcessor:
         # Fetch existing catalog
         try:
             catalog, sha = self.catalog_manager.fetch()
-            print(f"📡 Fetching current catalog with {len(catalog)} fonts\n")
+            print(f"\n📡 Fetching current catalog with {len(catalog)} fonts\n")
         except Exception as e:
             print(f"⚠  Starting new catalog: {e}\n")
             catalog, sha = [], None
