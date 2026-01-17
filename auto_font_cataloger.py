@@ -710,11 +710,7 @@ class CatalogProcessor:
                 print(f"   {idx}. {tag:15s} {bar} {score:.3f}")
             
             # User selection
-            print("\n　　　ＯＰＴＩＯＮＳ：")
-            print("　　　 • [Enter] = Accept all")
-            print("　　　 • [1,3,5] = Select by number")
-            print("　　　 • [tag1,tag2] = Custom tags")
-            
+            print("\n　　[Enter] = Accept all  //  [1,3,5] = Select by number  //  [tag1,tag2] = Custom tags")    
             user_input = input("\n🎛  ＣＨＯＩＣＥ ▶ ").strip()
             
             if user_input == "":
