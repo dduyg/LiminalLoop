@@ -817,9 +817,7 @@ class CatalogProcessor:
             return
         
         # Process fonts
-        print(f"\n\n{'#'*60}")
-        print(f"📡 Processing {len(fonts_to_process)} font(s)...")
-        print(f"{'#'*60}")
+        print(f"\n░▒▓█  Processing {len(fonts_to_process)} font(s)...  █▓▒░")
         
         added_count = 0
         for i, font_data in enumerate(fonts_to_process, 1):
@@ -856,11 +854,11 @@ class CatalogProcessor:
                 print(f"⊗ Commit failed: {e}")
                 print("\n🌀 Saving locally...")
                 SourceCatalogManager.save_local(catalog)
-                print("☑️ Saved to catalog.fonts.json")
+                print("✓ Saved to catalog.fonts.json")
         elif added_count > 0:
             print("\n🌀 Saving to local file...")
             SourceCatalogManager.save_local(catalog)
-            print("☑️ Saved to catalog.fonts.json")
+            print("✓ Saved to catalog.fonts.json")
         else:
             print("\n⚠  No changes made")
         
