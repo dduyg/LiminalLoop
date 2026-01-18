@@ -172,7 +172,7 @@
     "tags": [ "sophisticated", "elegant", "distorted" ],
     "weights": [ 300, 400, 700 ],
     "variable": false,
-    "scripts": [ "latin", "latin-ext" ]
+    "scripts": [ "latin" ]
   }
 ,
   {
