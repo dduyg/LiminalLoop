@@ -4,10 +4,10 @@
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap",
     "category": "sans-serif",
-    "tags": [ "android", "clean", "neutral" ],
-    "weights": [ 400 ],
+    "tags": [ "clean", "android", "formal" ],
+    "weights": [ 400, 700 ],
     "variable": false,
-    "scripts": [ "latin" ]
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
   }
 ,
   {
@@ -26,10 +26,10 @@
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Public+Sans&display=swap",
     "category": "sans-serif",
-    "tags": [ "clean", "neutral", "formal" ],
-    "weights": [ 400 ],
-    "variable": false,
-    "scripts": [ "latin" ]
+    "tags": [ "sophisticated", "formal", "neutral" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
   }
 
 ]
