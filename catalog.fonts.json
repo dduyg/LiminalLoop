@@ -64,5 +64,49 @@
     "variable": true,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Saira",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Saira&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "contemporary", "aesthetic" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Lab Mono",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/labmono-regular.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "contemporary", "coding" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Quantico",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Quantico&display=swap",
+    "category": "sans-serif",
+    "tags": [ "futuristic", "techno", "brutalist" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Audiowide",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Audiowide&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "futuristic", "modular" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
