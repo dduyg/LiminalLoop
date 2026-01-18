@@ -656,24 +656,16 @@ class SourceCatalogManager:
             lines.append(f'    "source": {json.dumps(entry.get("source", "unknown"))},')
             lines.append(f'    "url": {json.dumps(entry.get("url", ""))},')
             lines.append(f'    "category": {json.dumps(entry.get("category", "sans-serif"))},')
-            
-            # Compact tags array
             tags = entry.get("tags", [])
             tags_str = ", ".join(json.dumps(t) for t in tags)
             lines.append(f'    "tags": [ {tags_str} ],')
-            
-            # Compact weights array
             weights = entry.get("weights", [400])
             weights_str = ", ".join(str(w) for w in weights)
             lines.append(f'    "weights": [ {weights_str} ],')
-            
             lines.append(f'    "variable": {json.dumps(entry.get("variable", False))},')
-            
-            # Compact scripts array
             scripts = entry.get("scripts", ["latin"])
             scripts_str = ", ".join(json.dumps(s) for s in scripts)
             lines.append(f'    "scripts": [ {scripts_str} ]')
-            
             lines.append("  }")
         
         lines.append("\n]")
@@ -733,7 +725,7 @@ class CatalogProcessor:
     
     def process_font(self, name: str, url: str, category: str, step: int, total: int) -> Optional[FontEntry]:
         """Process a single font"""
-        print(f"\n📡 [{step}/{total}]  ＡＮＡＬＹＺＩＮＧ :: {name}")
+        print(f"\n□□■  [{step}/{total}]  ＡＮＡＬＹＺＩＮＧ :: {name}")
         
         try:
             # Detect source and retrieve
@@ -820,18 +812,13 @@ class CatalogProcessor:
             preview_lines.append(f'  "source": {json.dumps(entry.source)},')
             preview_lines.append(f'  "url": {json.dumps(entry.url)},')
             preview_lines.append(f'  "category": {json.dumps(entry.category)},')
-            
             tags_str = ", ".join(json.dumps(t) for t in entry.tags)
             preview_lines.append(f'  "tags": [ {tags_str} ],')
-            
             weights_str = ", ".join(str(w) for w in entry.weights)
-            preview_lines.append(f'  "weights": [ {weights_str} ],')
-            
+            preview_lines.append(f'  "weights": [ {weights_str} ],') 
             preview_lines.append(f'  "variable": {json.dumps(entry.variable)},')
-            
             scripts_str = ", ".join(json.dumps(s) for s in entry.scripts)
             preview_lines.append(f'  "scripts": [ {scripts_str} ]')
-            
             preview_lines.append("}")
             print("\n".join(preview_lines))
             
@@ -850,7 +837,7 @@ class CatalogProcessor:
         
         while True:
             print(f"\n─•────")
-            print(f"░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ　＃{len(fonts) + 1}  █▓▒░")
+            print(f"░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ　＃{len(fonts) + 1}  █▓▒░\n")
             
             print("\n　━━━ ＦＯＮＴ ＮＡＭＥ ━━━")
             name = input("　　　＞ ").strip()
@@ -912,7 +899,7 @@ class CatalogProcessor:
             return
         
         # Process fonts
-        print(f"\n░▒▓█  Processing {len(fonts_to_process)} font(s)...  █▓▒░")
+        print(f"\n░▒▓█  Processing {len(fonts_to_process)} font(s)...  █▓▒░\n")
         
         added_count = 0
         for i, font_data in enumerate(fonts_to_process, 1):
@@ -941,7 +928,7 @@ class CatalogProcessor:
         # Commit changes
         if added_count > 0 and sha:
             print(f"\n{'='*60}")
-            print(f"🌀 Committing {added_count} font(s) to catalog...")
+            print(f"🌀 Committing to catalog...")
             try:
                 self.catalog_manager.update(catalog, sha, added_count)
                 print(f"🎉 Successfully added {added_count} font(s) to catalog!")
