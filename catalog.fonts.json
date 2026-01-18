@@ -95,7 +95,7 @@
     "tags": [ "futuristic", "techno", "brutalist" ],
     "weights": [ 400, 700 ],
     "variable": false,
-    "scripts": [ "latin", "latin-ext" ]
+    "scripts": [ "latin" ]
   }
 ,
   {
