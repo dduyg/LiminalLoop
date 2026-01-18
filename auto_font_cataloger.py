@@ -772,8 +772,8 @@ class CatalogProcessor:
             )
             
             # Preview
-            print("\n✦•┈๑⋅⋯  ＤＡＴＡ  ＰＲＥＶＩＥＷ  ⋯⋅๑┈•✦")
-            print("█▓▒░" * 20)
+            print("\n✦•┈๑⋅⋯  ＣＯＮＦＩＲＭ  ⋯⋅๑┈•✦")
+            print("█▓▒░" * 10)
             print(json.dumps(entry.to_dict(), indent=2, ensure_ascii=False))
             
             confirm = input("\n➠  ＡＤＤ  ＴＯ  ＣＡＴＡＬＯＧ？ (y/n): ").strip().lower()
