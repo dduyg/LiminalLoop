@@ -47,7 +47,9 @@ class DependencyManager:
         "PIL": "Pillow",
         "freetype": "freetype-py",
         "requests": "requests",
-        "numpy": "numpy"
+        "numpy": "numpy",
+        "fontTools": "fonttools",
+        "brotli": "brotli"
     }
     
     @staticmethod
@@ -87,6 +89,7 @@ import open_clip
 import freetype
 import numpy as np
 from PIL import Image
+from fontTools.ttLib import TTFont
 
 # ═══════════════════════════════════════════════════════════════════
 # CONFIGURATION
@@ -220,6 +223,26 @@ class FontRetriever:
     """Retrieves font files from various sources"""
     
     @staticmethod
+    def convert_web_font_to_ttf(font_path: str) -> str:
+        """Convert WOFF/WOFF2 to TTF format for FreeType compatibility"""
+        try:
+            # Load web font (WOFF/WOFF2)
+            font = TTFont(font_path)
+            
+            # Create TTF output path
+            base = os.path.splitext(font_path)[0]
+            ttf_path = base + '.ttf'
+            
+            # Save as TTF with flavor None (uncompressed)
+            font.flavor = None
+            font.save(ttf_path)
+            font.close()
+            
+            return ttf_path
+        except Exception as e:
+            raise RuntimeError(f"Web font conversion failed: {e}")
+    
+    @staticmethod
     def retrieve_file(url: str) -> str:
         """Retrieve font file and return temp path"""
         response = requests.get(url, timeout=30)
@@ -229,6 +252,21 @@ class FontRetriever:
         tmp = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
         tmp.write(response.content)
         tmp.close()
+        
+        # Convert web fonts (WOFF/WOFF2) to TTF if necessary
+        if suffix.lower() in ['.woff2', '.woff']:
+            try:
+                ttf_path = FontRetriever.convert_web_font_to_ttf(tmp.name)
+                os.unlink(tmp.name)  # Delete original web font
+                return ttf_path
+            except Exception as e:
+                print(f"   ⚠ Conversion failed: {e}")
+                # Clean up and raise
+                try:
+                    os.unlink(tmp.name)
+                except:
+                    pass
+                raise RuntimeError(f"Cannot process {suffix.upper()} font: {e}")
         
         return tmp.name
     
@@ -342,7 +380,6 @@ class GoogleFontsAnalyzer:
                     weights = sorted([int(w) for w in weight_str.split(';') if w.isdigit()])
             
             if not weights:
-                print("    □□■  Checking available weights...")
                 available_weights, available_variable, available_italic = GoogleFontsAnalyzer.check_availability(family_name)
                 weights = available_weights
                 is_variable = available_variable
@@ -615,23 +652,26 @@ class SourceCatalogManager:
             if i > 0:
                 lines.append(",")
             lines.append("  {")
-            lines.append(f'    "name": {json.dumps(entry["name"])},')
-            lines.append(f'    "source": {json.dumps(entry["source"])},')
-            lines.append(f'    "url": {json.dumps(entry["url"])},')
-            lines.append(f'    "category": {json.dumps(entry["category"])},')
+            lines.append(f'    "name": {json.dumps(entry.get("name", "Unknown"))},')
+            lines.append(f'    "source": {json.dumps(entry.get("source", "unknown"))},')
+            lines.append(f'    "url": {json.dumps(entry.get("url", ""))},')
+            lines.append(f'    "category": {json.dumps(entry.get("category", "sans-serif"))},')
             
             # Compact tags array
-            tags_str = ", ".join(json.dumps(t) for t in entry["tags"])
+            tags = entry.get("tags", [])
+            tags_str = ", ".join(json.dumps(t) for t in tags)
             lines.append(f'    "tags": [ {tags_str} ],')
             
             # Compact weights array
-            weights_str = ", ".join(str(w) for w in entry["weights"])
+            weights = entry.get("weights", [400])
+            weights_str = ", ".join(str(w) for w in weights)
             lines.append(f'    "weights": [ {weights_str} ],')
             
-            lines.append(f'    "variable": {json.dumps(entry["variable"])},')
+            lines.append(f'    "variable": {json.dumps(entry.get("variable", False))},')
             
             # Compact scripts array
-            scripts_str = ", ".join(json.dumps(s) for s in entry["scripts"])
+            scripts = entry.get("scripts", ["latin"])
+            scripts_str = ", ".join(json.dumps(s) for s in scripts)
             lines.append(f'    "scripts": [ {scripts_str} ]')
             
             lines.append("  }")
@@ -651,14 +691,14 @@ class SourceCatalogManager:
         
         return json.loads(data), sha
     
-    def update(self, catalog: List[dict], sha: str):
+    def update(self, catalog: List[dict], sha: str, count: int = 1):
         """Update catalog in repository"""
         url = f"https://api.github.com/repos/{self.repo}/contents/{self.file_path}"
         content_str = self._compact_json_dumps(catalog)
         content_b64 = base64.b64encode(content_str.encode("utf-8")).decode("utf-8")
         
         payload = {
-            "message": f"Update font catalog ({datetime.now().strftime('%Y-%m-%d %H:%M')})",
+            "message": f"Committed {count} font(s) to catalog",
             "content": content_b64,
             "sha": sha
         }
@@ -774,7 +814,26 @@ class CatalogProcessor:
             # Preview
             print("\n✦•┈๑⋅⋯  ＣＯＮＦＩＲＭ  ⋯⋅๑┈•✦")
             print("█▓▒░" * 10)
-            print(json.dumps(entry.to_dict(), indent=2, ensure_ascii=False))
+            preview_lines = []
+            preview_lines.append("{")
+            preview_lines.append(f'  "name": {json.dumps(entry.name)},')
+            preview_lines.append(f'  "source": {json.dumps(entry.source)},')
+            preview_lines.append(f'  "url": {json.dumps(entry.url)},')
+            preview_lines.append(f'  "category": {json.dumps(entry.category)},')
+            
+            tags_str = ", ".join(json.dumps(t) for t in entry.tags)
+            preview_lines.append(f'  "tags": [ {tags_str} ],')
+            
+            weights_str = ", ".join(str(w) for w in entry.weights)
+            preview_lines.append(f'  "weights": [ {weights_str} ],')
+            
+            preview_lines.append(f'  "variable": {json.dumps(entry.variable)},')
+            
+            scripts_str = ", ".join(json.dumps(s) for s in entry.scripts)
+            preview_lines.append(f'  "scripts": [ {scripts_str} ]')
+            
+            preview_lines.append("}")
+            print("\n".join(preview_lines))
             
             confirm = input("\n➠  ＡＤＤ  ＴＯ  ＣＡＴＡＬＯＧ？ (y/n): ").strip().lower()
             return entry if confirm == "y" else None
@@ -840,7 +899,7 @@ class CatalogProcessor:
         # Fetch existing catalog
         try:
             catalog, sha = self.catalog_manager.fetch()
-            print(f"\n📡 Fetching current catalog with {len(catalog)} fonts\n")
+            print(f"\n✓ Fetched current catalog with {len(catalog)} font(s)\n")
         except Exception as e:
             print(f"⚠  Starting new catalog: {e}\n")
             catalog, sha = [], None
@@ -884,7 +943,7 @@ class CatalogProcessor:
             print(f"\n{'='*60}")
             print(f"🌀 Committing {added_count} font(s) to catalog...")
             try:
-                self.catalog_manager.update(catalog, sha)
+                self.catalog_manager.update(catalog, sha, added_count)
                 print(f"🎉 Successfully added {added_count} font(s) to catalog!")
             except Exception as e:
                 print(f"⊗ Commit failed: {e}")
