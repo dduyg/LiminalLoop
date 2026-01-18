@@ -772,8 +772,7 @@ class CatalogProcessor:
             )
             
             # Preview
-            print("\n" + "█▓▒░" * 20)
-            print("░▒▓█  ＤＡＴＡ  ＰＲＥＶＩＥＷ  █▓▒░")
+            print("\n✦•┈๑⋅⋯  ＤＡＴＡ  ＰＲＥＶＩＥＷ  ⋯⋅๑┈•✦")
             print("█▓▒░" * 20)
             print(json.dumps(entry.to_dict(), indent=2, ensure_ascii=False))
             
