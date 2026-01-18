@@ -927,7 +927,7 @@ class CatalogProcessor:
         
         # Commit changes
         if added_count > 0 and sha:
-            print(f"\n{'='*60}")
+            print(f"\n{'═'*60}")
             print(f"●●● Committing to catalog...")
             try:
                 self.catalog_manager.update(catalog, sha, added_count)
