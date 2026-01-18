@@ -2,11 +2,11 @@
   {
     "name": "Roboto",
     "source": "google",
-    "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap",
+    "url": "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
     "category": "sans-serif",
     "tags": [ "clean", "android", "formal" ],
-    "weights": [ 400, 700 ],
-    "variable": false,
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
     "scripts": [ "cyrillic", "latin", "latin-ext" ]
   }
 ,
@@ -159,6 +159,50 @@
     "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/SFProText-Regular.woff2",
     "category": "sans-serif",
     "tags": [ "aesthetic", "sophisticated", "formal" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Averia Serif Libre",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap",
+    "category": "serif",
+    "tags": [ "sophisticated", "elegant", "distorted" ],
+    "weights": [ 300, 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Lego",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Lego.woff2",
+    "category": "sans-serif",
+    "tags": [ "childlike", "brutalist", "playful" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Prata",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Prata&display=swap",
+    "category": "serif",
+    "tags": [ "minimal", "sophisticated", "elegant", "organic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Viaoda Libre",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap",
+    "category": "serif",
+    "tags": [ "elegant", "sophisticated", "organic" ],
     "weights": [ 400 ],
     "variable": false,
     "scripts": [ "cyrillic", "latin", "latin-ext" ]
