@@ -4,104 +4,164 @@
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap",
     "category": "sans-serif",
-    "tags": ["android","clean","neutral"]
-  },
+    "tags": [ "android", "clean", "neutral" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Grotta",
     "source": "custom",
     "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Grotta-Regular.woff2",
     "category": "sans-serif",
-    "tags": ["geometric","brutalist","modular"]
-  },
+    "tags": [ "sophisticated", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
   {
     "name": "Host Grotesk",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Host+Grotesk&display=swap",
     "category": "sans-serif",
-    "tags": ["geometric","neutral","contemporary"]
-  },
+    "tags": [ "geometric", "neutral", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "SUSE",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=SUSE&display=swap",
     "category": "sans-serif",
-    "tags": ["approachable","rounded","humanist"]
-  },
+    "tags": [ "approachable", "rounded", "humanist" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Anonymous Pro",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap",
     "category": "monospace",
-    "tags": ["monospaced","coding","retro"]
-  },
+    "tags": [ "monospaced", "coding", "retro" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "SF Pro Text",
     "source": "custom",
     "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/SFProText-Regular.woff2",
     "category": "sans-serif",
-    "tags": ["modular","business","clean"]
-  },
+    "tags": [ "modular", "business", "clean" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Nova Mono",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap",
     "category": "monospace",
-    "tags": ["contemporary","monospaced","futuristic"]
-  },
+    "tags": [ "contemporary", "monospaced", "futuristic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Protest Guerrilla",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap",
     "category": "sans-serif",
-    "tags": ["brutalist","stenciled","modular","contemporary"]
-  },
+    "tags": [ "brutalist", "stenciled", "modular", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Space Grotesk",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap",
     "category": "sans-serif",
-    "tags": ["contemporary","aesthetic","geometric"]
-  },
+    "tags": [ "contemporary", "aesthetic", "geometric" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Syncopate",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Syncopate&display=swap",
     "category": "sans-serif",
-    "tags": ["futuristic","clean","modular"]
-  },
+    "tags": [ "futuristic", "clean", "modular" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Audiowide",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Audiowide&display=swap",
     "category": "sans-serif",
-    "tags": ["futuristic","techno","modular"]
-  },
+    "tags": [ "futuristic", "techno", "modular" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Quantico",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Quantico&display=swap",
     "category": "sans-serif",
-    "tags": ["futuristic","brutalist","techno"]
-  },
+    "tags": [ "futuristic", "brutalist", "techno" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Lab Mono",
     "source": "custom",
     "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/labmono-regular.woff2",
     "category": "monospace",
-    "tags": ["monospaced","geometric","contemporary","coding"]
-  },
+    "tags": [ "monospaced", "geometric", "contemporary", "coding" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Saira",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Saira&display=swap",
     "category": "sans-serif",
-    "tags": ["techno","contemporary","geometric"]
-  },
+    "tags": [ "techno", "contemporary", "geometric" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
   {
     "name": "Public Sans",
     "source": "google",
     "url": "https://fonts.googleapis.com/css2?family=Public+Sans&display=swap",
     "category": "sans-serif",
-    "tags": ["clean","neutral","formal"]
+    "tags": [ "clean", "neutral", "formal" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
   }
+
 ]
