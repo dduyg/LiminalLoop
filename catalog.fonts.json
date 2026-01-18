@@ -31,5 +31,38 @@
     "variable": true,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "SUSE",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=SUSE&display=swap",
+    "category": "sans-serif",
+    "tags": [ "aesthetic", "sophisticated", "contemporary" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Anonymous Pro",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "contemporary" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Host Grotesk",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Host+Grotesk&display=swap",
+    "category": "sans-serif",
+    "tags": [ "sophisticated", "organic", "approachable" ],
+    "weights": [ 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
