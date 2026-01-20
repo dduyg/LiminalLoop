@@ -207,5 +207,16 @@
     "variable": false,
     "scripts": [ "cyrillic", "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "BioRhyme",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=BioRhyme&display=swap",
+    "category": "serif",
+    "tags": [ "sophisticated", "aesthetic", "organic" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
