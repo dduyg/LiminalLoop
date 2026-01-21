@@ -725,7 +725,7 @@ class CatalogProcessor:
     
     def process_font(self, name: str, url: str, category: str, step: int, total: int) -> Optional[FontEntry]:
         """Process a single font"""
-        print(f"\n□□■  [{step}/{total}]  ＡＮＡＬＹＺＩＮＧ :: {name}")
+        print(f"\n📡 □□■  [{step}/{total}]  ＡＮＡＬＹＺＩＮＧ :: {name}...")
         
         try:
             # Detect source and retrieve
