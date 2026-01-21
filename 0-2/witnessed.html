@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: #fff;
+            font-family: "Space Mono", monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .glitch::before {
+            animation: glitch 2s infinite linear;
+            color: #f0f;
+            clip: rect(0, 900px, 0, 0);
+        }
+
+        .glitch::after {
+            animation: glitch 2s infinite linear;
+            color: #0ff;
+            clip: rect(0, 900px, 0, 0);
+        }
+
+        @keyframes glitch {
+            0% { clip: rect(42px, 9999px, 44px, 0); }
+            10% { clip: rect(12px, 9999px, 54px, 0); }
+            20% { clip: rect(32px, 9999px, 24px, 0); }
+            30% { clip: rect(22px, 9999px, 44px, 0); }
+            40% { clip: rect(12px, 9999px, 14px, 0); }
+            50% { clip: rect(32px, 9999px, 24px, 0); }
+            60% { clip: rect(22px, 9999px, 54px, 0); }
+            70% { clip: rect(12px, 9999px, 44px, 0); }
+            80% { clip: rect(42px, 9999px, 24px, 0); }
+            90% { clip: rect(22px, 9999px, 14px, 0); }
+            100% { clip: rect(12px, 9999px, 54px, 0); }
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project h2 {
+            margin: 0 0 10px;
+        }
+
+        .project p {
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch" data-text="Glitched Corridors">Glitched Corridors</h1>
+        <p>Welcome to my personal webpage where I showcase my coding works.</p>
+        <div class="projects">
+            <div class="project">
+                <h2>Work 1: Interactive Portfolio</h2>
+                <p>This project demonstrates a responsive and interactive portfolio webpage using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="project">
+                <h2>Work 2: Machine Learning Model</h2>
+                <p>A machine learning model developed to predict housing prices using Python and Scikit-learn.</p>
+            </div>
+            <div class="project">
+                <h2>Work 3: Mobile App</h2>
+                <p>A mobile application built with React Native for tracking personal fitness goals.</p>
+            </div>
+        </div>
+        <footer>
+            <p>&copy;2024 Glitched Corridors.</p>
+        </footer>
+    </div>
+</body>
+</html>
