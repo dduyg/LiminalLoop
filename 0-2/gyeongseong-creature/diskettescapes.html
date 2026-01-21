@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liminal Loop</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    *,
+    *:after,
+    *:before {
+      box-sizing: border-box;
+    }
+
+    :root {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+      font-size: 1.25rem;
+    }
+
+    *:focus {
+      outline: none;
+    }
+
+    body > div {
+      width: 90%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    details div {
+      border-left: 2px solid #000;
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+      padding: 1.5em;
+    }
+
+    details div > *+* {
+      margin-top: 1.5em;
+    }
+
+    details+details {
+      margin-top: 0.5rem;
+    }
+
+    summary {
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary {
+      border: 2px solid #000;
+      padding: 0.75em 1em;
+      cursor: pointer;
+      position: relative;
+      padding-left: calc(1.75rem + 0.75rem + 0.75rem);
+    }
+
+    summary:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0.75rem;
+      content: "↓";
+      width: 1.75rem;
+      height: 1.75rem;
+      background-color: #000;
+      color: #FFF;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    details[open] summary {
+      background-color: #eee;
+    }
+
+    details[open] summary:before {
+      content: "↑";
+    }
+
+    summary:hover {
+      background-color: #eee;
+    }
+
+    a {
+      color: inherit;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 1px 0 0;
+    }
+
+    a:hover {
+      box-shadow: 0 3px 0 0;
+    }
+
+    code {
+      font-family: monospace;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <details open>
+      <summary>How do you create an accordion?</summary>
+      <div>
+        Easy! As long as you don't have to support IE11 or older browsers you could use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> natively.
+      </div>
+    </details>
+    <details>
+      <summary>What if I have to support IE11 or older browsers?</summary>
+      <div>
+        No worries. The fallback for these elements is quite good. They will display as open. You won't get the open/close mechanism, but you won't lose any content either.
+      </div>
+    </details>
+    <details>
+      <summary>What type of content can I have inside one of these?</summary>
+      <div>
+        Almost anything you'd like. The <code>&lt;details&gt;</code> element allows all <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" target="_blank">flow content</a>, which is basically everything.
+      </div>
+    </details>
+    <details>
+      <summary>How does it work?</summary>
+      <div>
+        The <code>&lt;details&gt;</code> element encapsulates the <code>&lt;summary&gt;</code> element. The <code>&lt;summary&gt;</code> becomes the 'label' for the <code>&lt;details&gt;</code> and acts like a button. When clicked, the attribute <code>open</code> is added to the <code>&lt;details&gt;</code> element, making it display. You can therefore style the open and closed states separately if you'd like.
+      </div>
+    </details>
+  </div>
+</body>
+</html>
