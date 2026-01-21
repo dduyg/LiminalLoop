@@ -57,7 +57,7 @@
             margin-top: 0;
             padding-top: 0;
         }
-        nav a {
+        a {
             display: inline-block;
             margin: 0.4em;
             padding: 1em;
@@ -72,7 +72,7 @@
             cursor: pointer;
             user-select: none;
         }
-        nav a:hover, nav a:focus {
+        a:hover, .visited {
             background-color: #ffa500;
             color: rgba(0, 0, 0, 0.5);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);       
@@ -149,5 +149,27 @@
             <p>—A deserted work that does rogue things, xo, <i>Duygu</i></p>
         </footer>
     </main>
+
+<script>
+const links = document.querySelectorAll('a');
+
+const visitedLinks = JSON.parse(localStorage.getItem('visitedLinks')) || [];
+
+links.forEach(link => {
+  const href = link.href;
+
+  if (visitedLinks.includes(href)) {
+    link.classList.add('visited');
+  }
+
+  link.addEventListener('click', () => {
+    if (!visitedLinks.includes(href)) {
+      visitedLinks.push(href);
+      localStorage.setItem('visitedLinks', JSON.stringify(visitedLinks));
+    }
+    link.classList.add('visited');
+  });
+});
+</script>
 </body>
 </html>
