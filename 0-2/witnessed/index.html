@@ -6,6 +6,7 @@
     <title>doo˥ lɐuıɯı˥</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <style>
+        * {outline: none; -webkit-tap-highlight-color: transparent;}
         body {
             background: linear-gradient(135deg, #2b5876, #4e4376);
             color: #fff;
@@ -57,6 +58,18 @@
             90% { clip: rect(22px, 9999px, 14px, 0); }
             100% { clip: rect(12px, 9999px, 54px, 0); }
         }
+
+        .glitched {
+            margin-top: 0;
+            animation: glitched 1s infinite;
+        }
+        @keyframes glitched {
+            0% { transform: none; }
+            25% { transform: skewX(10deg) scaleY(1.1); }
+            50% { transform: skewX(-5deg) scaleY(0.9); }
+            75% { transform: skewX(5deg) scaleY(1.1); }
+            100% { transform: skewX(0deg) scaleY(1.0); }
+        }
    
         main {
             padding: 20px;
@@ -70,13 +83,13 @@
             margin-top: 30px;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 20px;
         }
         nav a {
             background: rgba(0, 0, 0, 0.7);
-            border: 1px solid #fff;
+            border-radius: 10px;
             color: inherit;
-            padding: 10px 20px;
+            padding: 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -85,7 +98,6 @@
             user-select: none;
         }
         nav a:hover {
-            background: #fff;
             transform: scale(1.05);
         }
     </style>
@@ -93,10 +105,13 @@
 <body>
     <main>
         <h1 class="glitch" data-text="Glitched Corridors">Glitched Corridors</h1>
+        <h4 class="glitched">Navigating through our cyber corridors again.</h4>
         <nav>
+            <a href="hypnagogia">🪭</a>
             <a href="#">🪀</a>
             <a href="SPLAAASH">🐬</a>
-            <a href="././0-3/">⏭</a>
+            <a href="#">💬</a>
+            <a href="./../0-3/">⏭</a>
         </nav>
     </main>
 </body>
