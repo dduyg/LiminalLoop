@@ -218,5 +218,71 @@
     "variable": true,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Bigelow Rules",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap",
+    "category": "serif",
+    "tags": [ "organic", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Snowburst One",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap",
+    "category": "fantasy",
+    "tags": [ "childlike", "organic", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Chokokutai",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Chokokutai&display=swap",
+    "category": "fantasy",
+    "tags": [ "distorted", "shaded", "organic", "childlike" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "CJK", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Space Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Space+Mono&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "geometric" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Chivo Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "rounded" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Plaster",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Plaster&display=swap",
+    "category": "sans-serif",
+    "tags": [ "brutalist", "playful", "fatface" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
