@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-title" content="Duygu Dağdelen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duygu Dağdelen - Data Scientist</title>
+  <meta name="description" content="Duygu Dağdelen / dduyg is a data scientist with a flair for creativity. Experimental code art in svg, webgl, threejs and js canvas.">
+  <meta name="keywords" content="creative coding, generative art, svg, webgl, threejs">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
+<body translate="no">
+
+  <div class="container-main">
+  
+  <div class="title">
+    
+    <h1><span class="name">Duygu Dağdelen</span><span class="name-handle"> /dduyg</span></h1>
+    <h2>Data Scientist & Creative Coder</h2>
+    <h3>Visual wonders and adventures in 3D · 2D.</h2>
+    
+  </div>
+    
+  <div class="links">
+    
+    <div><a href="#" target=”_blank”>Glitch</a></div>
+    <div><a href="#" target=”_blank”>Instagram</a></div>
+    <div><a href="#" target=”_blank”>GitHub</a></div>
+    
+  </div>
+  
+  <div class="image">
+    
+    <div class="image-container">
+      
+      <img src="badge.png" alt="Duygu's intro with scribbles - Coding gives me freedom.">
+
+      <div class="sticker circle"></div>
+      <div class="sticker circle"></div>
+      <div class="sticker circle"></div>
+      <div class="sticker circle"></div>
+      
+    </div>
+    
+    <div class="image-description">
+    </div>
+
+  </div>
+  
+  <div class="description">
+    
+    <p>I spend most of my time exploring random visuals and narratives. They live in my head for a while 
+      till I take this chaos of influences, translate it into code and make something I haven't seen before.
+    </p>
+    <p>Code is my favorite medium for creative self-expression — I'm in constant awe of its possibilities.<br/> 
+      <!-- It allows me to explore in depth color and form,
+      improvise freely between 2D and 3D and keeps me surprised in a way like nothing else. -->
+
+    </p>
+    <p>What delightful thing can I create today? That is my favorite question.</p>    
+    
+  </div>
+  
+  <div class="rules">
+    <p> ★ Rules for making art:  1. don't rush - 2. no fear - 3. make it yours. ★</p>
+  </div>
+
+  <div class="footer">
+    
+    <p>© 2021 - 2024 or till forever by <a href="#" target="_blank"><span id="name">dduyg.</span></a> </p>
+    <p>This website has been stripped back to the bare minimum. One day it might grow.</p>
+    
+  </div>
+  
+</div>
+  
+<script type="text/javascript" src="sticker.min.js"></script>
+
+<script> 
+  Sticker.init('.sticker');
+  const stickerBack = document.querySelectorAll("div.sticker-front");
+  stickerBack.forEach(sticker =>
+  sticker.style.background = "rgb(57, 255, 97)");
+
+  const stickerBack2 = document.querySelectorAll("div.sticker.circle");
+  stickerBack2.forEach(sticker =>
+                   sticker.style.background = "none");
+  
+  [...document.body.querySelectorAll('*')]
+        .map(n => n.firstChild)
+        .filter(n => (n != null && n.nodeType === Node.TEXT_NODE && !['SCRIPT', 'STYLE'].includes(n.parentNode.nodeName)))
+        .forEach(el => {
+            el.nodeValue = el.nodeValue.replace(/ ([a-zA-Z]) /g, ` $1\u00A0`)
+        });
+</script>
+</body>
+</html>
