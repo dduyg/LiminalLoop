@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>li๓iຖคl🔑Lσ๏ק</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/favicons/fellDown.ico">
+    <style>
+        * {outline: none; -webkit-tap-highlight-color: transparent;}
+        @font-face {
+            font-family: 'Consolas';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Consolas.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Consolas', monospace;
+            background-color: #0a0a0a;
+            color: #f0e68c;
+            line-height: 1.5;
+            font-size: 14px;
+            margin: 0; padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        main {
+            padding: 1.25em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
+            max-width: 800px;
+        }
+        header {
+            text-align: center;
+            color: #ffa500; /* Orange headings */
+        }
+        .source {
+            opacity: .6;
+            font-size: 0.65rem;
+        }
+        section {
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            margin-bottom: 1.25em;
+            padding: 1.25em;
+            border-radius: 0.625em;
+            border: 2px solid #ffa500;
+            max-height: 35vh;
+            box-sizing: border-box;
+        }
+        header h2, section h3, section p {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        nav a {
+            display: inline-block;
+            margin: 0.4em;
+            padding: 1em;
+            background-color: #f0e68c;
+            color: #0a0a0a;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 100%;   
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            user-select: none;
+        }
+        nav a:hover, nav a:focus {
+            background-color: #ffa500;
+            color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);       
+        }
+        footer {
+            margin-top: 1em;
+            padding: 0.625em;
+            text-align: center;
+            color: #ffa500;
+            font-size: 0.8em;
+        }
 
+        /* Custom scrollbar */
+        section::-webkit-scrollbar {width: 1.5em;}
+        section::-webkit-scrollbar-track {background: transparent;}
+        section::-webkit-scrollbar-thumb,
+        section::-webkit-scrollbar-thumb:hover {
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffa500" height="200px" width="200px" version="1.2" baseProfile="tiny" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-415 217 128 128" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M-352.7,219c19.8,0,35.9,16.1,35.9,35.9s-16.1,35.9-35.9,35.9c-19.8,0-35.9-16.1-35.9-35.9S-372.5,219-352.7,219z M-337.4,302.5h4.9v31h-4.9V302.5z M-375,302.5h4.9v31h-4.9V302.5z M-356.8,311.2h4.9v31h-4.9V311.2z"></path> </g></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        @-moz-document url-prefix() { /* Firefox scrollbar */
+            section {
+                scrollbar-color: #ffa500 transparent; 
+                scrollbar-width: thin;
+            }
+            section::-webkit-scrollbar-thumb {
+                background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffa500" height="200px" width="200px" version="1.2" baseProfile="tiny" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-415 217 128 128" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M-352.7,219c19.8,0,35.9,16.1,35.9,35.9s-16.1,35.9-35.9,35.9c-19.8,0-35.9-16.1-35.9-35.9S-372.5,219-352.7,219z M-337.4,302.5h4.9v31h-4.9V302.5z M-375,302.5h4.9v31h-4.9V302.5z M-356.8,311.2h4.9v31h-4.9V311.2z"></path> </g></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="source">Gyeongseong Creature, S2E4</div>
+            <h2>"The Other Side" 이면</h2>
+        </header>
+        <section>
+            <p>Is it consciousness or the subconscious that rules over a person? What changes fate? Is it a routine that is repeated day after day? Or is it unforeseen coincidence and hardship? What is it that defines the kind of person we are? Is it disposition? Or is it ability?</p>
+            <p>Most humans are neither here nor there. They are but imperfect beings placed on the borderline. It may appear as though humans are ceaselessly seeking life's answers, but in truth, they only strive to resolve the anxiety in themselves.</p>
+        </section>
+        <section>
+            <h3>/cherry blossoms</h3>
+            <nav>
+                <a href="transfer-learning">dq5</a>
+                <a href="glitched">4sW</a>
+                <a href="#♠️">fg1</a>
+                <a href="aesthematics">o67</a>
+                <a href="cyberpunk">n8r</a>
+                <a href="sets">cÐ6</a>
+                <a href="retrofitted">ye5</a>
+                <a href="across">z2s</a>
+                <a href="layık">5dL</a>
+                <a href="#🧱">yÖ1</a>
+                <a href="#🧱">ťōĶ</a>
+                <a href="tomagotchi">d6m</a>
+                <a href="responsibility">amN</a>
+                <a href="#🔱">mķA</a>
+                <a href="avid">avÍ</a>
+                <a href="#🔱">uCĥ</a>
+                <a href="episode">3mŇ</a>
+                <a href="parallel">nÅy</a>
+                <a href="#🔱">0ø1</a>
+                <a href="vignettes">atÃ</a>
+                <a href="../../0-3/">➽</a>
+            </nav>
+        </section>
+        <footer>
+            <p>—A deserted work that does rogue things, xo, <i>Duygu</i></p>
+        </footer>
+    </main>
+</body>
+</html>
