@@ -65,28 +65,38 @@
             background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
         }
-        .gallery {
+        
+        nav {
+            margin-top: 30px;
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            gap: 10px;
         }
-        .item {
+        nav a {
             background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            border: 1px solid #fff;
+            color: inherit;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            user-select: none;
         }
-        .item:hover {transform: scale(1.05);}
+        nav a:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <main>
         <h1 class="glitch" data-text="Glitched Corridors">Glitched Corridors</h1>
-        <div class="gallery">
-            <div class="item"><h2>Wio</h2></div>
-            <div class="item"><h2>del</h2></div>
-            <div class="item"><h2>App</h2></div>
-        </div>
+        <nav>
+            <a href="#">🪀</a>
+            <a href="SPLAAASH">🐬</a>
+            <a href="../0-3/">⏭</a>
+        </nav>
     </main>
 </body>
 </html>
