@@ -238,7 +238,7 @@
     "tags": [ "childlike", "organic", "distorted" ],
     "weights": [ 400 ],
     "variable": false,
-    "scripts": [ "latin", "latin-ext" ]
+    "scripts": [ "latin" ]
   }
 ,
   {
