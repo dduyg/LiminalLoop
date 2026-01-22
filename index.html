@@ -108,7 +108,26 @@
         a.highlight:hover::after {height: 100%;}
         a.covering {vertical-align: top; position: relative;}
         a.covering::before {content: ''; background-color: #C14A09; position: absolute; left: 0.5rem; bottom: 5px; width: 100%; height: 8px; z-index: -1; transition: all 0.3s ease-in-out;}
-        a.covering:hover::before {left: -5px; bottom: 0; height: 100%; width: calc(100% + 10px);}   
+        a.covering:hover::before {left: -5px; bottom: 0; height: 100%; width: calc(100% + 10px);}
+
+        a.gifbg {background-position-y: calc(1em + 16px); transition: background-position-y 0.6s ease-out, color 0.6s ease-out; background-repeat: repeat-x;
+            background-image: url("https://media2.giphy.com/media/SNEcwYETp3odT9LTFK/giphy.gif"), linear-gradient(rgba(0, 0, 0, 0.7), black); background-size: contain; padding: 4px;}
+        a.gifbg:hover {background-position-y: 0; color: beige;}
+
+        a.jump {
+            font-style: italic;
+            border-bottom: 2px dashed #C14A09;
+            display: inline-block; position: relative; padding: 0 .15em;
+            transition: all 0.4s cubic-bezier(0.165 0.84, 0.44, 1);
+            z-index: 1000;
+        }
+        a.jump:before {content: ""; z-index: -1; width: 100%; height: 0%; background: rgba(0, 0, 0, 1); bottom: 0; left: 0; position: absolute; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);}
+        a.jump:hover {
+            border-bottom: 2px dotted aqua;
+            transform: translateY(-4px);}
+        a.jump:active {transform: translateY(0px);}
+
+       
     </style>
 </head>
 <body>
@@ -140,7 +159,7 @@
     </div>
     <div id="dropdownPanel" class="dropdown-panel">
         <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="rule" href="#">automating</a> the end-to-end tasks of developing machine learning <a href="#" class="skewUp">models—such</a> as data preprocessing, algorithm selection, <a class="swipe" href="#">and</a> hyperparameter tuning without requiring <a class="magic-btn" href="#">extensive</a> manual expertise —more accessible to non-experts and more <a class="covering" href="#">efficient</a> for data scientists. Popular AutoML frameworks include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
-        <section><a href="#" class="card"><div class="card-title">Data Preprocessing</div><div class="card-content">Automatically cleaning, transforming, and structuring raw data into a suitable format for modeling.</div></a><a href="#" class="card"><div class="card-title">Model Selection</div><div class="card-content">AutoML systems automatically search for the most appropriate machine learning model for a given dataset and problem, often trying various algorithms and hyperparameters.</div></a><a href="#" class="card"><div class="card-title">Feature Engineering</div><div class="card-content">Automatically selecting and creating the best features from raw data, which are essential for improving model performance.</div></a><a href="#" class="card"><div class="card-title">Hyperparameter Tuning</div><div class="card-content">Optimizing the hyperparameters of machine learning models to improve their performance, usually through methods like grid search or Bayesian optimization.</div></a><a href="#" class="card"><div class="card-title">Model Training & Evaluation</div><div class="card-content">AutoML platforms manage the process of training models, evaluating their performance, and selecting the best-performing models.</div></a><a href="#" class="card"><div class="card-title">Deployment</div><div class="card-content">Some AutoML systems also help automate the deployment of models into production environments.</div></a></section> 
+        <section><a href="#" class="card"><div class="card-title">Data Preprocessing</div><div class="card-content">Automatically <a class="squiggle" href="#">cleaning</a>, transforming, and structuring raw <a href="#" class="gifbg">data</a> into a suitable format <a class="jump" href="#">for</a> modeling.</div></a><a href="#" class="card"><div class="card-title">Model Selection</div><div class="card-content">AutoML systems automatically search for the most appropriate machine learning model for a given dataset and problem, often trying various algorithms and hyperparameters.</div></a><a href="#" class="card"><div class="card-title">Feature Engineering</div><div class="card-content">Automatically selecting and creating the best features from raw data, which are essential for improving model performance.</div></a><a href="#" class="card"><div class="card-title">Hyperparameter Tuning</div><div class="card-content">Optimizing the hyperparameters of machine learning models to improve their performance, usually through methods like grid search or Bayesian optimization.</div></a><a href="#" class="card"><div class="card-title">Model Training & Evaluation</div><div class="card-content">AutoML platforms manage the process of training models, evaluating their performance, and selecting the best-performing models.</div></a><a href="#" class="card"><div class="card-title">Deployment</div><div class="card-content">Some AutoML systems also help automate the deployment of models into production environments.</div></a></section> 
     </div>
 
     <aside>     
