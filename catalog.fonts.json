@@ -284,5 +284,27 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Source Code Pro",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "contemporary" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Lucida Console",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Lucida-Console-Regular.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "sophisticated" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
 
 ]
