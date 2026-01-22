@@ -9,9 +9,9 @@
 |---|---|
 | <a href= "https://picsvg.com/" target="_blank"><img width="25" src="https://cdn.simpleicons.org/reactrouter/C3BABA"></a> | <blockquote>img2svg</blockquote> |
 | <a href= "https://www.svgviewer.dev/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/pomerium/C3BABA"/></a> | <blockquote>svgViewer</blockquote> |
-| <a href= "https://www.w3schools.com/howto/howto_css_shapes.asp" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | <blockquote>CSS Shapes</blockquote> |
+| <a href= "https://www.w3schools.com/howto/howto_css_shapes.asp" target="_blank"><img width="28" src="https://cdn.simpleicons.org/airplayvideo/b3abb1"/></a> | <blockquote>cssShapes [<kbd> <img width="15" src="https://img.icons8.com/?size=100&id=C3pi5HUeAsBO&format=png&color=59636D"/> </kbd>](https://css-shape.com/)</blockquote> |
 | <a href= "https://colorkit.co/html-color-names/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/sagemath/C3BABA"/></a> | <blockquote>HTML colornames</blockquote> |
-| <a href= "https://css-shape.com/" target="_blank"><img width="25" src="https://cdn.simpleicons.org/airtable/C3BABA"></a> | <blockquote>cssShapes</blockquote> |
+| <a href= "https://svgl.app/" target="_blank"><img width="25" src="https://cdn.simpleicons.org/airtable/C3BABA"></a> | <blockquote>svgLib</blockquote> |
 | <a href= "https://crop-circle.imageonline.co/" target="_blank"><img width="28" src="https://cdn.simpleicons.org/myspace/b3abb1"/></a> | <blockquote>cropCircle</blockquote> |
 | <a href= "https://uigradients.com/#Memariani" target="_blank"><img width="28" src="https://cdn.simpleicons.org/betterauth/C3BABA"/></a> | <blockquote>uigradients</blockquote> |
 | <a href= "https://codebeautify.org/css-beautify-minify" target="_blank"><img width="28" src="https://cdn.simpleicons.org/treyarch/C3BABA"/></a> | <blockquote>auto re-indent online code beautifier [<kbd> <img width="15" src="https://img.icons8.com/?size=100&id=HPV0Y4LCt0v7&format=png&color=59636D"/> </kbd>](https://beautifier.io/)</blockquote> |
