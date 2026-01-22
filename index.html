@@ -106,7 +106,7 @@
         a.covering:hover::before {left: -5px; bottom: 0; height: 100%; width: calc(100% + 10px);}
         a.gifbg {color: #C14A09; background-position-y: calc(1em + 16px); transition: background-position-y 0.6s ease-out, color 0.6s ease-out; background-repeat: repeat-x; background-image: url("https://media4.giphy.com/media/sBYsmegw30zfkBKxMh/giphy.gif"), linear-gradient(rgba(0, 0, 0, 0.7), black); background-size: contain; padding: 4px;}
         a.gifbg:hover {background-position-y: 0; color: beige;}
-        a.jump {border-bottom: 1px dashed #C14A09; display: inline-block; position: relative; padding: 0 .1em; transition: all 0.4s cubic-bezier(0.165 0.84, 0.44, 1); z-index: 1000;}
+        a.jump {border-bottom: 1px dashed #C14A09; display: inline-block; position: relative; padding: 0 2px; transition: all 0.4s cubic-bezier(0.165 0.84, 0.44, 1); z-index: 1000;}
         a.jump:before {content: ""; z-index: -1; width: 100%; height: 0%; background: rgba(0, 0, 0, 1); bottom: 0; left: 0; position: absolute; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);}
         a.jump:hover {border-bottom: 2px dotted #C14A09; transform: translateY(-4px);}
         a.jump:active {transform: translateY(0px);}
@@ -147,11 +147,10 @@
         <button id="dropdownToggle">⛣ LiminalLoop</button>
     </div>
     <div id="dropdownPanel" class="dropdown-panel">
-        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="rule" href="#">automating</a> the end-to-end tasks <a href="#" class="gifbg">of</a> developing machine learning <a href="#" class="skewUp">models—such</a> as data preprocessing, algorithm selection, <a class="swipe" href="#">and</a> hyperparameter <a class="squiggle" href="#">tuning</a> without requiring <a class="magic-btn" href="#">extensive</a> manual expertise <a class="jump" href="#">—more</a> accessible to non-experts and more <a class="covering" href="#">efficient</a> for data scientists. Popular AutoML frameworks include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
+        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="rule" href="#">automating</a> the end-to-end tasks <a href="#" class="gifbg">of</a> developing machine learning <a href="#" class="skewUp">models—such</a> as data preprocessing, algorithm selection, <a class="swipe" href="#">and</a> hyperparameter <a class="squiggle" href="#">tuning</a> without requiring <a class="magic-btn" href="#">extensive</a> manual expertise —more accessible to non-experts and more <a class="covering" href="#">efficient</a> for data scientists. Popular AutoML <a class="jump" href="#">frameworks</a> include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
         <section>
-            <div class="card">
-                <div class="card-title">Data Preprocessing</div>
-                <div class="card-content">Automatically cleaning, transforming, and structuring raw data into a suitable format for modeling.</div>
+            <div class="card"><div class="card-title">Data Preprocessing</div>
+                <div class="card-content">Automatically <a class="arrowClip" href="#">cleaning</a>, transforming, and structuring raw data into a suitable format for modeling.</div>
             </div>
             <div class="card">
                 <div class="card-title">Model Selection</div>
