@@ -259,10 +259,10 @@
             <a href="memoryworkcentre" class="item" data-tags="collapsible, structure">☱☱</a>
             <a href="computerGraphics" class="item" data-tags="font, structure">⎓⎓</a>
             <a href="auto-scaling" class="item" data-tags="auto-scaling font-size, color, font">๑ꔛ</a>
-            <a href="#" class="item" data-tags="visual, interactive">ഒଘ⋆</a>   
-            <a href="#" class="item" data-tags="AI, data">ꗃꗃ</a>
-            <a href="#" class="item" data-tags="AI, interactive">﹅𝓝⋆</a>
-            <a href="#" class="item" data-tags="data">⌕⌕</a>
+            <a href="altEsc" class="item" data-tags="background, link hover, image, animation, font">ഒଘ⋆</a>   
+            <a href="legendsNeverDie" class="item" data-tags="font, background effect, marquee">ꗃꗃ</a>
+            <a href="alchemyofSouls" class="item" data-tags="font, background, image, scroll">﹅𝓝⋆</a>
+            <a href="insertCoin" class="item" data-tags="font, animation, color, structure, image">⌕⌕</a>
             <a href="#" class="item" data-tags="visual">ᯅ⋈ꕤ</a>
         </nav>
     </main>
@@ -283,7 +283,6 @@
         const trigger = document.getElementById('dropdownTrigger');
         const badgesContainer = document.getElementById('badgesContainer');
 
-        // Initialize: Extract all unique tags from items
         function initializeTags() {
             const items = document.querySelectorAll('.item[data-tags]');
             
@@ -297,7 +296,6 @@
                 }
             });
 
-            // Populate dropdown with unique tags
             populateDropdown();
         }
 
