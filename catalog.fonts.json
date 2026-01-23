@@ -306,5 +306,60 @@
     "variable": false,
     "scripts": [ "cyrillic", "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Google Sans Code",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding" ],
+    "weights": [ 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Quimbie",
+    "source": "web",
+    "url": "https://fonts.cdnfonts.com/css/quimbie",
+    "category": "sans-serif",
+    "tags": [ "marker", "brutalist", "approachable" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Rosnoc",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Rosnoc.woff2",
+    "category": "sans-serif",
+    "tags": [ "futuristic", "retro", "android" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Aeronixsa",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Aeronixsa.woff2",
+    "category": "sans-serif",
+    "tags": [ "techno", "futuristic", "android", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "MicroSix",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Micro-Six.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "techno", "organic", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
