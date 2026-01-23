@@ -361,5 +361,16 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Warnes",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Warnes&display=swap",
+    "category": "serif",
+    "tags": [ "contemporary", "organic", "distorted", "formal" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
