@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Nova Mono", monospace;
+            background-color: #272822;
+            color: #F92772;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }    
+        header {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+        }
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            width: 85%;
+        }
+        section {
+            background-color: #3C282A;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        section:hover {
+            transform: translateY(-5px);   
+        }
+        section h2 {
+            margin: 10px;
+        }
+        section p {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>Human Computer</header>
+    <main>
+        <section>
+            <h2>■ One</h2>
+            <p>Use feature engineering to transform raw data into meaningful variables, enhancing model interpretability and accuracy.</p>
+        </section>
+        <section>
+            <h2>■ Two</h2>
+            <p>Regularly validate and retrain models to maintain performance, especially on dynamic or evolving data.</p>
+        </section>
+        <section>
+            <h2>■ Three</h2>
+            <p>Leverage model interpretability tools (like SHAP or LIME) to explain predictions, which aids in building stakeholder trust.</p>
+        </section>
+        <section>
+            <h2>□ Four</h2>
+            <p>Apply hyperparameter tuning techniques like Bayesian Optimization to efficiently explore parameter spaces and improve model performance.</p>
+        </section>
+    </main>
+</body>
+</html>
