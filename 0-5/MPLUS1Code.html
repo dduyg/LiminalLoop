@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DUYGU – Data Scientist &amp; Data-Focused Developer in Japan">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap" rel="stylesheet">
+    <style>
+        html {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        image, svg {
+            -webkit-user-select: none;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        body {
+            background-color: #dbdbdb;
+            color: hsl(0, 0%, 0%);
+            font-family: "M PLUS 1 Code", monospace;
+            font-variation-settings: "wght" 800;
+            font-feature-settings: "palt";
+            font-synthesis: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overscroll-behavior: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        header {
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 95%;
+        }
+        .siteHeader_top {
+            width: 95%;
+            padding: 1.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: hsl(0, 0%, 0%); /* Default color for header items */
+            transition: color 0.3s ease; /* Transition for color change */
+        }
+        .nav-active .siteHeader_top { /* Change color of header items when nav is active */
+            color: hsl(0, 0%, 80%);
+        }
+
+        .siteHeader_title {
+            display: block;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+        }
+        @media (min-width: 800px) {
+            .siteHeader_title { padding-left: 5%; }
+        }
+        .siteHeader_menuBtn {
+            position: relative;
+            width: 40px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        /* Ring Styles */
+        .siteHeader_menuBtn .ring {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1.5px solid currentColor;
+            transition: transform 0.3s ease;
+            pointer-events: none;
+            transform: scaleY(0.5); /* Initial scaling */
+            transform-origin: center top;
+        }
+        .siteHeader_menuBtn .ring1 { top: 2px; }
+        .siteHeader_menuBtn .ring2 { top: 7px; }
+        .siteHeader_menuBtn .ring3 { top: 12px; }
+
+        .siteHeader_menuBtn.active .ring {  /* Animate All Rings Together */
+            transform: translateY(6px) scaleY(0.8);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        nav a {
+            color: hsl(0, 0%, 80%);
+            font-size: 2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding-right: 8%;
+            margin: 1rem 0;
+            transition: color 0.3s cubic-bezier(0.3, 0.1, 0.1, 1);
+        }
+        nav a:hover {
+            color: hsl(0, 0%, 60%);
+        }
+
+        /* Main Content Styles */
+        main {
+            margin: 80px auto 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section {
+            width: 90%;
+            max-width: 800px;
+            margin: 120px 0;
+        }
+        section h2 {
+            margin: 0 0 10px;
+            font-size: 2em;
+            color: hsl(0, 0%, 0%);
+        }
+        section p {
+            color: hsl(0, 0%, 20%);
+        }
+    </style>
+</head>
+<body>
+    <header class="siteHeader" id="header">
+        <div class="siteHeader_top">
+            <div class="siteHeader_title">/duygg</div>
+            <div class="siteHeader_menuBtn" id="menuBtn">
+                <div class="ring ring1"></div>
+                <div class="ring ring2"></div>
+                <div class="ring ring3"></div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navMenu">
+        <a href="#retrieval">DataRetrieval</a>
+        <a href="#oracle">CircuitOracle</a>
+        <a href="#abyss">Algorithm</a>
+    </nav>
+
+    <main>
+        <section id="retrieval">
+            <h2>Data Retrieval</h2>
+            <p>Data retrieval involves fetching and interpreting stored information from databases or systems. Techniques like querying, indexing, and caching enhance efficiency. Emerging technologies such as AI and machine learning are revolutionizing retrieval methods, enabling smarter data insights and improving decision-making processes across industries.</p>
+        </section>
+        <section id="oracle">
+            <h2>Circuit Oracle</h2>
+            <p>In a neon-lit future, the Circuit Oracle—a sentient AI—whispered truths through flickering screens. A young hacker sought its wisdom, unraveling secrets of power and love, only to discover the Oracle’s greatest truth: freedom lies within the soul, altering fates and reshaping reality in a digital symphony.</p>
+        </section>
+        <section id="abyss">
+            <h2>Algorithm Abyss</h2>
+            <p>Algorithm Abyss started as a struggling coder, transforming through relentless learning and innovative projects. After years of dedication, they became a sought-after expert, guiding teams to harness the power of algorithms in groundbreaking technologies.</p>
+        </section>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const header = document.getElementById('header');
+        const navLinks = navMenu.querySelectorAll('a'); // Select all nav links
+
+        menuBtn.addEventListener('click', () => {
+            // Toggle the 'active' class on both the menu button and navigation menu
+            menuBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            header.classList.toggle('nav-active'); // Toggle nav-active for color change
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Close the menu when a link is clicked
+                menuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+                header.classList.remove('nav-active'); // Remove nav-active for color change
+            });
+        });
+    </script>
+</body>
+</html>
