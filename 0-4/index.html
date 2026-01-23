@@ -1,1 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ᏝᎥ๓iຖคL.ᏝᎧᎧᎮ</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/favicons/RGB-electricRedcoral.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Warnes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap" rel="stylesheet">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent;}
+        :root {
+            --dark: #0F1110;
+            --accent: #91412f;
+            --glass: #F5F0EA;
+        }
+        @font-face {
+            font-family: 'Rosnoc';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Rosnoc.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Aeronixsa';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Aeronixsa.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: "Google Sans Code", monospace;
+            background: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/why-am-I-here.png') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--dark);
+            text-align: center;
+            line-height: 1.4;
+        }
 
+        header {
+            font-family: "Warnes", serif;
+            padding: 20px 0;
+            color: rgba(0,0,0,0.7);
+        }
+        footer {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 20px 25px;
+            font-family: 'Rosnoc', sans-serif;
+            font-size: 15px;
+            color: rgba(0,0,0,0.7);
+        }
+        footer .txt {
+            margin-bottom: 50px;
+            text-align: left;
+            font-size: 14px;
+            font-family: 'Aeronixsa', sans-serif;
+        }     
+        
+        main {
+            position: fixed;
+            top: 50vh; left: 50vw;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .selected-badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            min-height: 32px;
+            justify-content: center;
+            max-width: 500px;
+        }
+
+        .controls {
+            display: flex;
+            align-items: stretch;
+            gap: 5px;
+            z-index: 1000;
+        }
+
+        .dropdown-container {
+            position: relative;
+            width: 250px;
+            text-align: left;
+        }
+        .dropdown-input-wrapper {
+            background: var(--glass);
+            border: 2px solid var(--dark);
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: text;
+            display: flex;
+            align-items: center;
+            min-height: 40px;
+        }
+
+        .dropdown-input-wrapper input {
+            border: none;
+            outline: none;
+            background: transparent;
+            flex: 1;
+            min-width: 50px;
+            font-family: inherit;
+        }
+
+        .selected-badge {
+            background: var(--accent);
+            color: var(--glass);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .selected-badge span {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .dropdown-list {
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0; right: 0;
+            background: var(--glass);
+            border: 2px solid var(--dark);
+            border-radius: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .dropdown-list.show { display: block; }
+        .dropdown-item { font-size: 14px; padding: 8px 12px; cursor: pointer; transition: background 0.2s;}
+        .dropdown-item:hover { background: #f0f0f0; }
+        .dropdown-item.hidden { display: none; }
+        
+        /* --- Toggle Button --- */
+        .toggleBtn {
+            display: flex;
+            align-items: center;
+            background: var(--dark);
+            padding: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 80px;
+            position: relative;
+            height: 40px;
+        }
+
+        .toggle-icon {
+            width: 50%; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: color 0.3s;
+        }
+        .toggle-icon svg {
+            width: 24px; height: 24px;
+            fill: var(--glass);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 4px; left: 4px;
+            width: 36px; height: 32px;
+            background: var(--accent);
+            border-radius: 25px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+        .toggleBtn.and-mode .toggle-slider {
+            transform: translateX(36px);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            width: 100%; 
+            gap: 15px;
+            padding: 25px 10%;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        nav::-webkit-scrollbar {display: none;}
+        
+        nav .item {
+            display: inline-flex;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 20px 30px;
+            flex: 0 0 auto;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.25);
+            height: 75px;
+            transition: all 0.3s ease;
+            border: 3px solid var(--dark);
+            box-shadow: 6px 6px 0px var(--dark);
+            font-weight: bold;
+        }
+        nav .item:hover, nav .item.visited {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px var(--accent);
+            border-color: var(--accent);
+            background: #eee;
+            color: #999;
+        }
+        nav img {       
+            height: 75px; 
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>kōdobukku</header>
+    <main>
+        <div class="selected-badges-container" id="badgesContainer"></div>
+
+        <div class="controls">
+            <div class="toggleBtn" id="toggleMode" onclick="toggleFilterMode()">
+                <div class="toggle-slider"></div>
+                <div class="toggle-icon">
+                    <svg viewBox="0 0 441 441"><path d="M122.5 83.7c-17.8 2.1-28 6.1-36.7 14.2-10.6 9.8-14.3 17.6-21.7 46.7-2.8 10.6-6.4 22.7-8.1 26.9-6.8 16.3-15.8 26.1-29.7 32.7l-8.3 3.9v9.3c0 10.3 0 10.3 7 13 6.2 2.4 15.9 9.5 20.2 14.8 8.1 10 12.4 20.7 20.2 50.8 5.7 21.7 10.3 31.7 18.6 40 10.1 10.1 26.2 16 43.5 16h7.5v-26.7l-8.3-.5c-18.8-1.2-24.4-8-32.7-39.8-8.2-31.5-13.5-43.5-24-54.1-4.3-4.3-9-7.7-13.4-9.9l-6.7-3.3 7.6-4c10.1-5.3 17.9-13.7 23.9-26 4.3-8.7 6.8-16.5 15-46 4.3-15.4 5.9-19 10.7-23.8 4.3-4.3 10.9-6.7 20.7-7.6l7.2-.6V83l-4.7.1c-2.7.1-6.1.4-7.8.6m111.7 37c-6.1 20.8-18.8 63.4-28.1 94.8C174 323.6 166 350.9 166 352c0 .6 4.9 1 13.5 1 13.1 0 13.6-.1 14.5-2.3.5-1.2 3.7-11.6 7.1-23.2 3.3-11.6 10.3-35.4 15.5-53 5.3-17.6 12.5-41.9 16-54 10.4-35 21.6-72.6 31.4-105.3 4.9-16.7 9-30.7 9-31.3 0-.5-5.8-.9-13.8-.9h-13.9zM301 96.4V110h3.8c6.7 0 15.6 2.1 20 4.7 7.7 4.4 11.1 11.8 18.7 40.8 4.6 17.3 10.4 32.5 15.4 40.2 4.8 7.4 13.2 15 20.4 18.6 3.1 1.5 5.7 3.1 5.7 3.6s-1.9 1.6-4.2 2.5c-6.5 2.4-15.9 10.6-21.1 18.3-6.4 9.3-10.7 20.4-17.2 44.9-6.3 23.4-7.8 27.4-12.4 32.6-4.6 5.3-10.6 7.8-20.3 8.6l-8.3.7-.3 13.4-.3 13.4 10.3-.6c18.3-1 30.5-5.8 40.6-15.8 8-7.8 12.8-17.7 17.7-35.9 10.1-37.3 13.3-45.6 21.5-55.2 4.6-5.4 15.3-12.7 22.3-15.3l4.7-1.8v-19.5l-8.7-4.3c-6.6-3.1-10.5-5.9-15.4-10.8-10.4-10.4-13.8-18.6-24.4-58.1-4.7-17.9-9.1-26.7-17.5-35.1-10.3-10.5-21.6-14.9-41.2-16.4l-9.8-.7z"/></svg>
+                </div>
+                <div class="toggle-icon">
+                    <svg viewBox="0 0 366 366"><path fill="currentColor" d="M149 18c-4.1 1.1-11.8 4.1-17 6.7-8 4-11 6.3-19.1 14.3-10 9.9-14.7 16.8-19.3 28.4-9.5 23.6-6.4 49.1 8.7 71.6 9.6 14.4 27.7 27.8 44.1 32.5 3.2.9 5.4 2 4.9 2.5-.4.4-4.8 1.9-9.8 3.5-22.5 6.8-38.6 18.8-50.7 37.5-14.1 21.8-17.7 49.7-9.6 75 7.1 22.4 24 41.7 45.3 52 15.3 7.4 20.8 8.5 42 8.5 21 0 29.4-1.7 42.9-8.8 25.8-13.4 43.4-38.1 48.1-67.2 2.5-15.2 5.5-21.6 13.8-29.2 5.8-5.3 9.8-7.3 22.7-11.3 12.7-3.8 18.1-6.9 21.5-11.8 3.1-4.6 3.4-11.3.5-15.9-5-8.3-19-5.2-19 4.2 0 .7 1.2 2.7 2.6 4.4 3.9 4.7 9.3 4 12.2-1.4 1.1-2 1.1-2 1.2.2 0 2.8-5.1 7-9.7 7.9-6.3 1.2-18.4-.3-28.4-3.5-5.3-1.7-18.6-7.6-29.5-13.1-29.3-14.8-45.6-19.4-60.5-17.1-11.8 1.9-20 6.1-27.2 14-16.7 18.5-12.6 47.5 8.3 58.3 3.1 1.6 6.7 2.4 11.8 2.6 6.3.4 8 .1 12.7-2.3 10.5-5.1 16.2-15.2 15.3-26.9-.3-3.4-1.5-8-2.6-10.3-4.4-8.6-15.2-14.7-25.7-14.6-9.8.1-20.4 7.1-24.1 15.9-2.4 5.7-3.7 4.2-3.2-3.5.9-11.6 7.7-20.3 20.7-26.4 5.5-2.6 8.1-3.2 16-3.5 11.4-.5 18.4.9 27.2 5.5 17.7 9.2 31.2 27.1 37 48.8 3 11.3 3.1 28.8.1 40.7-7.3 29.6-30.9 53.4-55.7 56.2-17.6 2.1-43-10.7-57.8-29.1-27.2-33.6-25.8-81 3.2-112.5 10.9-11.8 25.5-20.7 40.2-24.5 3.8-.9 6.9-2 6.9-2.3s-4-1.7-8.8-3.2c-36.6-11.4-60.4-49.3-55.2-87.8 2.8-21 13-40.6 26.4-50.9 18.5-14.3 37.2-14.6 57.9-.8 9.5 6.4 20.5 16.8 24.2 23 3.7 6.4 5.5 12 4.3 14-1.1 2.1-4.1 2.2-5.8.2-.6-.8-3.7-2.4-6.8-3.6-11-4.1-23.7-1.4-31.6 6.7-5.8 6-8.1 11.7-8.1 20.4.1 16 11 28.3 26.5 29.7 9.2.9 16-1.7 23-8.5 4.9-4.8 6.1-6.8 7.9-12.6C253 71 231 34.5 196.1 21.3c-14.9-5.6-33-6.9-47.1-3.3"/></svg>
+                </div>
+            </div>
+
+            <div class="dropdown-container">
+                <div class="dropdown-input-wrapper" id="dropdownTrigger">
+                    <input type="text" id="tagSearch" placeholder="Filter tags...">
+                </div>
+                <div class="dropdown-list" id="dropdownList">
+                    <!-- Tags will be populated automatically -->
+                </div>
+            </div>
+        </div>
+
+        <nav id="navItems">    
+            <img src="https://media3.giphy.com/media/XvggUDZ35Aqt2/giphy.gif" alt="🧸">
+            <a href="cyberpunk" class="item" data-tags="visual, interactive">⚼</a> 
+            <a href="#" class="item" data-tags="interactive">☱☱</a>
+            <a href="#" class="item" data-tags="visual">⎓⎓</a>
+            <a href="#" class="item" data-tags="data">๑ꔛ</a>
+            <a href="#" class="item" data-tags="visual, interactive">ഒଘ⋆</a>   
+            <a href="#" class="item" data-tags="AI, data">ꗃꗃ</a>
+            <a href="#" class="item" data-tags="AI, interactive">﹅𝓝⋆</a>
+            <a href="#" class="item" data-tags="data">⌕⌕</a>
+            <a href="#" class="item" data-tags="visual">ᯅ⋈ꕤ</a>
+        </nav>
+    </main>
+
+    <footer>
+        <div class="txt">&gt; static fills<br>the air</div>
+        <div>why am I here</div>
+    </footer>
+    
+    <script>
+        let filterMode = 'OR';
+        let selectedTags = [];
+        let visitedItems = [];
+        let allTags = new Set();
+        
+        const searchInput = document.getElementById('tagSearch');
+        const dropdownList = document.getElementById('dropdownList');
+        const trigger = document.getElementById('dropdownTrigger');
+        const badgesContainer = document.getElementById('badgesContainer');
+
+        // Initialize: Extract all unique tags from items
+        function initializeTags() {
+            const items = document.querySelectorAll('.item[data-tags]');
+            
+            items.forEach(item => {
+                const tagsAttr = item.getAttribute('data-tags');
+                if (tagsAttr) {
+                    const tags = tagsAttr.split(',').map(t => t.trim());
+                    tags.forEach(tag => {
+                        if (tag) allTags.add(tag);
+                    });
+                }
+            });
+
+            // Populate dropdown with unique tags
+            populateDropdown();
+        }
+
+        function populateDropdown() {
+            dropdownList.innerHTML = '';
+            const sortedTags = Array.from(allTags).sort();
+            
+            sortedTags.forEach(tag => {
+                const div = document.createElement('div');
+                div.className = 'dropdown-item';
+                div.setAttribute('data-value', tag);
+                div.textContent = tag;
+                
+                div.addEventListener('click', () => {
+                    if (!selectedTags.includes(tag)) {
+                        selectedTags.push(tag);
+                        addBadge(tag);
+                        applyFilters();
+                    }
+                    searchInput.value = '';
+                    dropdownList.classList.remove('show');
+                });
+                
+                dropdownList.appendChild(div);
+            });
+        }
+
+        function toggleFilterMode() {
+            const btn = document.getElementById('toggleMode');
+            filterMode = filterMode === 'OR' ? 'AND' : 'OR';
+            btn.classList.toggle('and-mode');
+            applyFilters();
+        }
+
+        trigger.addEventListener('click', () => {
+            dropdownList.classList.add('show');
+            searchInput.focus();
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.classList.toggle('hidden', !text.includes(val));
+            });
+        });
+
+        function addBadge(tag) {
+            const badge = document.createElement('div');
+            badge.className = 'selected-badge';
+            badge.innerHTML = `${tag} <span onclick="removeTag('${tag}', event)">×</span>`;
+            badgesContainer.appendChild(badge);
+        }
+
+        function removeTag(tag, e) {
+            e.stopPropagation();
+            selectedTags = selectedTags.filter(t => t !== tag);
+            const badges = badgesContainer.querySelectorAll('.selected-badge');
+            badges.forEach(b => {
+                if(b.textContent.includes(tag)) b.remove();
+            });
+            applyFilters();
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown-container')) {
+                dropdownList.classList.remove('show');
+            }
+        });
+
+        function applyFilters() {
+            const items = document.querySelectorAll('.item[data-tags]');
+            items.forEach(item => {
+                const itemTags = item.getAttribute('data-tags').split(',').map(t => t.trim());
+                let visible = true;
+
+                if (selectedTags.length > 0) {
+                    if (filterMode === 'OR') {
+                        visible = selectedTags.some(t => itemTags.includes(t));
+                    } else {
+                        visible = selectedTags.every(t => itemTags.includes(t));
+                    }
+                }
+                item.style.display = visible ? 'inline-flex' : 'none';
+            });
+        }
+
+        // Track visited items
+        const items = document.querySelectorAll('.item');
+        items.forEach(item => {
+            const itemText = item.textContent;
+            
+            if (visitedItems.includes(itemText)) {
+                item.classList.add('visited');
+            }
+
+            item.addEventListener('click', () => {
+                if (!visitedItems.includes(itemText)) {
+                    visitedItems.push(itemText);
+                }
+                item.classList.add('visited');
+            });
+        });
+
+        // Initialize tags on page load
+        initializeTags();
+    </script>
+</body>
+</html>
