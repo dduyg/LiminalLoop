@@ -36,7 +36,7 @@
       padding: 0.2em 0.5em;
       background: #000;
       color: #fafafa;
-      font-size: 0.9em;
+      font-size: clamp(0.65rem, 1.2vw, 0.9rem);
       border-radius: 999px;
       transition: background 0.3s ease;
     }
@@ -46,48 +46,34 @@
     nav .title {
       font-weight: 900;
       font-family: "Text Me One", sans-serif;
+      font-size: clamp(0.6rem, 1.5vw, 1rem);
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      font-size: 1.8em;
+      font-size: clamp(1rem, 2.5vw, 1.8rem);
       padding: 1em 0.1em 0.05em;
     }
     header .copyright {
       font-size: 0.7em;
     }
 
-    /* Table grid styles */
+    /* Table grid styles with fluid responsive sizing */
     .works-grid {
       display: grid;
       width: 100vw;
       border-top: 1px solid #000;
       border-left: 1px solid #000;
+      /* Fluid column sizing that scales with viewport */
       grid-template-columns:
-        minmax(80px, 8vw) /* featured wider */
-        minmax(110px, 2.2fr) /* project */
-        minmax(110px, 1.6fr) /* client */
-        repeat(7, minmax(30px, 1fr)); /* categories */
-      font-size: 1em;
+        minmax(50px, 8vw)     /* featured */
+        minmax(90px, 18vw)    /* project */
+        minmax(80px, 14vw)    /* client */
+        repeat(7, minmax(30px, 8.5vw)); /* categories */
+      /* Fluid font size that scales smoothly */
+      font-size: clamp(0.5rem, 1.1vw, 1rem);
       overflow-x: auto;
-    }
-
-    @media (max-width: 800px) {
-      .works-grid {
-        font-size: 0.9em;
-        grid-template-columns:
-          minmax(60px, 14vw)
-          minmax(90px, 2.3fr)
-          minmax(90px, 1.5fr)
-          repeat(7, minmax(28px, 1fr));
-      }
-      nav .fltr { font-size: 0.8em; }
-      nav .title { font-size: 0.75em; }
-      header { font-size: 1.1em; }
-    }
-    @media (max-width: 520px) {
-      .works-grid { font-size: 0.6em; }
     }
 
     .cell {
@@ -97,7 +83,7 @@
       display: flex;
       align-items: center;
       word-break: break-word;
-      min-height: 54px;
+      min-height: clamp(40px, 6vw, 54px);
       min-width: 0;
     }
     .cell.title {
@@ -120,7 +106,7 @@
       justify-content: center;
       align-items: center;
       padding: 0.18em;
-      min-height: 54px;
+      min-height: clamp(40px, 6vw, 54px);
     }
     .cell.imgcell img {
       width: 100%;
@@ -136,7 +122,7 @@
       text-orientation: mixed;
     }
     .dot {
-      font-size: 2.2em;
+      font-size: clamp(1.2em, 2vw, 2.2em);
       line-height: 1;
       color: #000;
       display: inline-block;
@@ -175,7 +161,7 @@
 
       <!-- Row 1 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1519662978799-2f05096d3636?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1519662978799-2f05096d3636?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">I.CEBERG 매거진 01</div>
       <div class="cell">빙산의 천국</div>
@@ -189,7 +175,7 @@
 
       <!-- Row 2 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1573767291321-c0af2eaf5266?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1573767291321-c0af2eaf5266?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">미쓰비시 UFJ 신탁 은행<br>行 ブランディング</div>
       <div class="cell">三菱UFJ信託銀行</div>
@@ -203,7 +189,7 @@
 
       <!-- Row 3 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">타바시미<br>板区立美品館</div>
       <div class="cell">코드플로우 스튜디오</div>
@@ -217,7 +203,7 @@
 
       <!-- Row 4 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">노바스크라이브</div>
       <div class="cell">시큐어머티리얼테크 Co.</div>
@@ -231,7 +217,7 @@
 
       <!-- Row 5 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">アイスバーグ®</div>
       <div class="cell">에코뉴로블룸</div>
@@ -245,7 +231,7 @@
 
       <!-- Row 6 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">도쿄 예술제 사무국</div>
       <div class="cell">뮤즈포지에테르</div>
@@ -259,7 +245,7 @@
 
       <!-- Row 7 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">劇場版<br>CHAINSAW MAN –レゼ篇–</div>
       <div class="cell">株式会社MAPPA</div>
@@ -273,7 +259,7 @@
 
       <!-- Row 8 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1705231513062-1451fbedb138?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1705231513062-1451fbedb138?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">도쿄예술제<br>202ツール</div>
       <div class="cell">도쿄예술제사무국</div>
@@ -287,7 +273,7 @@
 
       <!-- Row 9 -->
       <div class="cell imgcell">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="Project image">
       </div>
       <div class="cell">劉建華 中空を注ぐ図録</div>
       <div class="cell">옴니프레딕트노바</div>
