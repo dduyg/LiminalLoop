@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Array Wide';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Array-Wide.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Array Regular';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Array-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Array Semibold';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Array-Semibold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Array Semibold Wide';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Array-SemiboldWide.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+        }
+        body {
+            background: #FFF8B2;
+            color: #900C0A;
+            font-family: 'Noto Sans', sans-serif;
+            margin: 0; padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #rulerVertical {
+            position: fixed;
+            bottom: 0; left: 2px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 35px;
+            writing-mode: vertical-rl;
+            animation: driftVertical 20s linear infinite;
+        }
+        #rulerVertical::before {
+            content: 'abcdefghijklmnopqrstuvwxyz';
+        }
+        @keyframes driftVertical {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-100%); }
+        }
+        #rulerHorizontal {
+            position: fixed;
+            bottom: 3px; right: 0;
+            font-size: 65px;
+            font-weight: bold;
+            font-family: 'Array Wide', sans-serif;
+            letter-spacing: 35px;
+            white-space: nowrap;
+            animation: driftHorizontal 20s linear infinite;
+        }
+        #rulerHorizontal::before {
+            content: 'HolographyHolographyHolography';
+        }
+        @keyframes driftHorizontal {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+        main {
+            width: 88%; height: 60%;
+            max-width: 600px; max-height: 600px;
+            border: 1px solid;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 10px 0 12%;
+            padding: 0 9%;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        header {
+            padding: 11% 9% 0;
+        }
+        .title {
+            font-size: 19px;
+            margin: 0;
+            padding: 0;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid;
+            margin: 10px 0;
+        }
+        .label {
+            font-size: 0.8rem;
+            position: relative;
+            left: -20px;
+        }
+        /*
+         => Alternative way to move the left:
+        .label { margin-left: -20px;}
+        */
+
+        /* Custom scrollbar */
+        .content::-webkit-scrollbar {width: 1.3em;}
+        .content::-webkit-scrollbar-track {background: transparent;}
+        .content::-webkit-scrollbar-thumb, .content::-webkit-scrollbar-thumb:hover {
+            background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='%23900C0A'><path d='m13 2 9 13.6-9 6.4Zm-2 0L2 15.6l9 6.4Z'/></svg>");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        @-moz-document url-prefix() {   /* Firefox scrollbar */
+            .content {
+                scrollbar-color: transparent transparent;
+                scrollbar-width: thin;
+            }
+            .content::-webkit-scrollbar-thumb {
+                background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='%23900C0A'><path d='m13 2 9 13.6-9 6.4Zm-2 0L2 15.6l9 6.4Z'/></svg>");     
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="rulerVertical"></div><div id="rulerHorizontal"></div>
+    <main>
+        <header>
+            <div class="label">(dduyg)</div>
+            <div class="title">Hologram/ホログラム</div>
+            <hr>
+        </header>
+        <div class="content">
+            ネオンが照らすネオ東京の地下街で、<br>
+            雨は絶え間なく降り、現実とデジタルの境界をぼやけさせていた。<br>
+            エララはデータの運び屋で、電気青の髪と強化された目を持ち、<br>
+            秘密を抱えたチップを握りしめながら、路地の迷路を駆け抜けていた。<br>
+            メガコーポが街を支配し、反乱のささやきが<br>
+            輝くホログラムの看板を通じて響いていた。「<span>〇〇</span>が心の中にいる」という言葉を胸に、<br>
+            彼女は今までの幽霊のような存在から、<br>
+            未来の希望へと変わる時が来たと感じていた。<br>
+            チップには隠されたAIの鍵が宿っていた。<br>
+            それは企業の束縛を解き放つ力を秘めていた。<br><br>
+            彼女が抵抗運動に届ければ、<br>
+            彼らはついに戦うチャンスを得ることができるかもしれない。<br>
+            彼女は廃駅に身を隠し、冷たい空気で息を白くしていた。<br>
+            クローク装置を起動すると、周囲はきらめき、世界が一瞬ぼやけた。<br>
+            ドローンの低い唸り声が響き、彼女は異常を探る目線を感じた。<br>
+            突然、赤い光が暗闇を照らした。<br>
+            企業の執行者たちが影から現れ、黒い鎧をまとっていた。<br>
+           「止まれ！」一人が冷たい声で叫ぶ。<br><br>
+            エララの本能が働き、彼女は出口に向かって全力疾走した。<br>
+            心臓が耳の中でドラムのように鳴っていた。<br>
+            脚音が近づいてくるのを聞きながら、狭い側道に駆け込んだ。<br>
+            チップを腕のインプラントに押し当て、緊急信号を発動させた。<br>
+           「信号を送れ！」彼女は息を切らし、興奮に身を委ねた。<br>
+            空気中に静電気の波が広がり、信号が発信された。<br>
+            彼女が暗闇に消えると、イヤピースを通して声が割れた。<br>
+           「受信した。持ちこたえろ。」その瞬間、彼女はもう幽霊ではなかった。<br>
+            彼女は革命の火花となる存在だった。<br>
+            彼女の心には (Hologram) の響きが残り、<br>
+            そこにある「holos」は未来への希望を象徴していた。
+        </div>
+    </main>
+</body>
+</html>
