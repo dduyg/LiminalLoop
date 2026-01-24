@@ -65,7 +65,7 @@
       border-radius: 2px;
       cursor: pointer;
       user-select: none;
-      transition: background 0.15s ease;
+      transition: box-shadow 0.15s ease;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -94,7 +94,7 @@
     }
     .toggle-icon svg {
       width: 100%; height: 100%;
-      fill: rgba(240,240,240,0.4);
+      fill: #2f2f31;
       transition: fill 0.3s ease;
     }
     .toggle-icon.active svg {
@@ -106,7 +106,7 @@
       top: 4px; left: 4px;
       width: calc(50% - 4px);
       height: calc(100% - 8px);
-      background: var(--accent);
+      background: var(--main);
       transition: transform 0.3s ease;
       border-radius: 3px;
     }
@@ -189,20 +189,20 @@
       position: fixed;
       bottom: 3%; left: 5%;
       z-index: 100;
-      height: 43px;
-      padding: 20px;
+      width: 43px; height: 43px;
+      padding: 10px;
       cursor: pointer;
       background: transparent;
       border: 1px solid var(--border);
       border-radius: 100%;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: box-shadow 0.15s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       user-select: none;
     }
     .favToggle:hover {
-      background: rgba(255,255,255,0.08);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
     }
     .favToggle.active {
       background: var(--emphasize);
