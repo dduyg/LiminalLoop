@@ -199,9 +199,6 @@
       gap: 20px;
       max-width: 900px;
     }
-    @media (max-width: 400px) {
-      .grid {grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));}
-    }
     
     /* ===== Item ===== */
     .item {
@@ -289,6 +286,10 @@
       background: rgba(172,78,94,0.2);
       color: var(--accent);
       border: 1px solid rgba(172,78,94,0.3);
+    }
+
+    @media(max-width: 480px) {
+      .grid {grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));}
     }
   </style>
 </head>
