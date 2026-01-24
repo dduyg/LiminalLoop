@@ -63,11 +63,11 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8px;
+  padding: 0 11px;
 }
 
 .toggle-icon {
-  width: 18px; height: 18px;
+  width: 20px; height: 20px;
   z-index: 1;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -161,7 +161,7 @@ h1 {
 }
 
 .tag-count {
-  font-size: 12px;
+  font-size: 10px;
   color: rgba(184,185,190,0.6);
   font-weight: normal;
   margin-left: 8px;
@@ -170,12 +170,10 @@ h1 {
 /* Favorites Toggle */
 .favToggle {
   height: 42px;
-  padding: 0 16px;
-  font-size: 16px;
+  padding: 0 15px;
   cursor: pointer;
   background: #2f2f31;
   border: 1px solid var(--border);
-  color: var(--main);
   border-radius: 2px;
   transition: background 0.15s ease, color 0.15s ease;
   display: flex;
@@ -191,11 +189,9 @@ h1 {
   color: #fff;
   border-color: var(--emphasize);
 }
-
 .favToggle svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+  width: 30px; height: 30px;
+  fill: var(--main);
 }
 
 /* ===== Grid ===== */
@@ -254,7 +250,7 @@ h1 {
   color: var(--main);
   cursor: pointer;
   padding: 2px;
-  font-size: 14px;
+  font-size: 15px;
   transition: color 0.15s ease;
 }
 .actions button:hover {
@@ -310,7 +306,7 @@ h1 {
 </style>
 </head>
 <body>
-<h1>SVG Catalog</h1>
+<h1>SVG Library</h1>
 
 <div class="controls">
   <div class="toggleBtn" onclick="toggleMode()">
