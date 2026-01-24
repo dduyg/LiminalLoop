@@ -42,6 +42,13 @@
             padding: 20px 0;
             color: rgba(0,0,0,0.7);
         }
+        header a {font-style: italic; position: relative; display: inline-block; padding: 0 1px; transition: color ease 0.3s;}
+        header a::before, a.scanline::after {content: ''; position: absolute; background-color: var(--accent); z-index: -1; height: 5%;}
+        header a::before {width: 0%; left: 0; bottom: 0; transition: width ease 0.4s;}
+        header a::after {width: 100%; left: 0; bottom: 0; transition: all ease 0.6s;}
+        header a:hover::before {width: 100%;}
+        header a:hover::after {left: 100%; width: 0%; transition: all ease 0.2s;}      
+    </style
         footer {
             position: fixed;
             bottom: 0; left: 0; right: 0;
@@ -228,7 +235,7 @@
     </style>
 </head>
 <body>
-    <header>kōdobukku</header>
+    <header><a href="../0-5/">kōdo</a>bukku</header>
     <main>
         <div class="selected-badges-container" id="badgesContainer"></div>
 
