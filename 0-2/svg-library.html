@@ -23,21 +23,25 @@
       overflow-x: hidden;
     }
 
-    #badge {
+    header {
       position: fixed;
       top: 0; left: 0;
-      width: 140px;
+      display: flex;
       z-index: -1;
       user-select: none;
+    }
+    #badge {
+      display: block;
+      width: 140px;
+    }
+    h1 {
+      font-weight: 500;
+      padding-left: 15px;
+      align-self: flex-end; 
     }
     main {
       margin-top: 15vh;
       padding-left: 5%;
-    }
-    h1 {
-      margin-bottom: 20px;
-      font-weight: 500;
-      user-select: none;
     }
     
     /* ===== Controls ===== */
@@ -303,10 +307,9 @@
   </style>
 </head>
 <body>
-<img id="badge" src="https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/78717c_70456b_b9376753.png">
+<header><img id="badge" src="https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/78717c_70456b_b9376753.png"><h1>SVG Library</h1></header>
   
 <main> 
-  <h1>SVG Library</h1> 
   <div class="controls">
     <div class="toggleBtn" onclick="toggleMode()">
       <div class="toggle-switch">
