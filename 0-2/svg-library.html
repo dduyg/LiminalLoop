@@ -22,10 +22,18 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-    
+
+    #badge {
+      position: fixed;
+      top: 0; left: 0;
+      width: 140px;
+      z-index: -1;
+      user-select: none;
+    }
     h1 {
       margin-bottom: 20px;
       font-weight: 500;
+      user-select: none;
     }
     
     /* ===== Controls ===== */
@@ -42,7 +50,7 @@
       width: 70px; height: 42px;
       background: transparent;
       border: 1px solid var(--border);
-      border-radius: 2px;
+      border-radius: 100%;
       cursor: pointer;
       user-select: none;
       transition: background 0.15s ease;
@@ -178,6 +186,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      user-select: none;
     }
     .favToggle:hover {
       background: rgba(255,255,255,0.08);
@@ -290,8 +299,9 @@
   </style>
 </head>
 <body>
-  <h1>SVG Library</h1>
+<img id="badge" src="https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/78717c_70456b_b9376753.png">
   
+  <h1>SVG Library</h1> 
   <div class="controls">
     <div class="toggleBtn" onclick="toggleMode()">
       <div class="toggle-switch">
