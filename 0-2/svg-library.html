@@ -64,7 +64,7 @@
     }
     
     .toggle-icon {
-      width: 20px; height: 20px;
+      width: 25px; height: 25px;
       z-index: 1;
       transition: opacity 0.3s ease;
       pointer-events: none;
@@ -130,9 +130,8 @@
       z-index: 1000;
       border-radius: 0 0 2px 2px;
     }
-    .dropdown-list.show {
-      display: block;
-    }
+    .dropdown-list::-webkit-scrollbar {display: none;}
+    .dropdown-list.show {display: block;}
     
     .dropdown-item {
       padding: 10px 12px;
@@ -165,7 +164,7 @@
     /* Favorites Toggle */
     .favToggle {
       position: fixed;
-      bottom: 5%; left: 5%;
+      bottom: 3%; left: 5%;
       height: 42px;
       padding: 0 15px;
       cursor: pointer;
@@ -179,7 +178,6 @@
     }
     .favToggle:hover {
       background: rgba(255,255,255,0.08);
-      color: var(--accent);
     }
     .favToggle.active {
       background: var(--emphasize);
@@ -188,7 +186,7 @@
     }
     .favToggle svg {
       width: 30px; height: 30px;
-      fill: var(--main);
+      fill: var(--accent);
     }
     
     /* ===== Grid ===== */
@@ -235,8 +233,8 @@
     .actions {
       display: flex;
       justify-content: flex-end;
-      gap: 6px;
-      margin-top: 6px;
+      gap: 10px;
+      margin-top: 15px;
     }
     .actions button {
       background: transparent;
