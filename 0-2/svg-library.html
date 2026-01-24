@@ -32,7 +32,7 @@
     }
     #badge {
       display: block;
-      width: 140px;
+      width: 160px;
     }
     h1 {
       font-weight: 500;
@@ -40,8 +40,12 @@
       align-self: flex-end; 
     }
     main {
-      margin-top: 190px;
-      padding-left: 5%;
+      margin-top: 200px;
+      padding-left: 10%;
+    }
+    @media(max-width: 480px) {
+      #badge {width: 120px;}
+      main {margin-top: 160px; padding-left: 5%;}
     }
     
     /* ===== Controls ===== */
