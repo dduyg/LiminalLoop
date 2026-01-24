@@ -1,88 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LïmïñåL.˚ㄥㄖㄖ卩</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }         
-:root {
-  --bg: #3A3A3C;
-  --main: #B8B9BE;
-  --accent: #F0F0F0;
-  --border: rgba(184,185,190,0.25);
-  --emphasize: #AC4E5E;
-}
-
-body {
-  padding: 20px;
-  font-family: system-ui, sans-serif;
-  background-color: var(--bg);
-  color: var(--main);
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* ===== Header ===== */
-h1 {
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-/* ===== Controls ===== */
-.controls {
-  display: flex;
-  align-items: stretch;
-  gap: 8px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-  max-width: 900px;
-}
-
-/* Toggle Button */
-.toggleBtn {
-  position: relative;
-  width: 70px; height: 42px;
-  background: #2f2f31;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  cursor: pointer;
-  user-select: none;
-  transition: background 0.15s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.toggleBtn:hover {
-  background: rgba(255,255,255,0.08);
-}
-
-.toggle-switch {
-  position: relative;
-  width: 100%; height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 11px;
-}
-
-.toggle-icon {
-  width: 20px; height: 20px;
-  z-index: 1;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.toggle-icon svg {
-  width: 100%; height: 100%;
-  fill: rgba(240,240,240,0.4);
-  transition: fill 0.3s ease;
-}
-.toggle-icon.active svg {
-  fill: #fff;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LïmïñåL.˚ㄥㄖㄖ卩</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }         
+    :root {
+      --bg: #3A3A3C;
+      --main: #B8B9BE;
+      --accent: #F0F0F0;
+      --border: rgba(184,185,190,0.25);
+      --emphasize: #AC4E5E;
+    }
+    body {
+      padding: 20px;
+      font-family: "Bitter", serif;
+      background-color: var(--bg);
+      color: var(--main);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    h1 {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    
+    /* ===== Controls ===== */
+    .controls {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+      margin-bottom: 30px;
+      max-width: 900px;
+    }
+    
+    .toggleBtn {
+      position: relative;
+      width: 70px; height: 42px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .toggleBtn:hover {
+      background: rgba(255,255,255,0.08);
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 99%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 11px;
+    }
+    
+    .toggle-icon {
+      width: 20px; height: 20px;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .toggle-icon svg {
+      width: 100%; height: 100%;
+      fill: rgba(240,240,240,0.4);
+      transition: fill 0.3s ease;
+    }
+    .toggle-icon.active svg {
+      fill: #fff;
+    }
 
 .toggle-slider {
   position: absolute;
