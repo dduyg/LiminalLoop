@@ -211,9 +211,10 @@
     .favToggle svg {
       width: 30px; height: 30px;
       fill: var(--accent);
+      transition: fill 0.3s ease;
     }
     .favToggle.active svg {
-      fill: color: #F6D127;
+      fill: #F6D127;
     }
     
     /* ===== Grid ===== */
@@ -311,6 +312,28 @@
       color: var(--accent);
       border: 1px solid rgba(172,78,94,0.3);
     }
+    
+    /* ===== Empty State Message ===== */
+    .empty-state {
+      max-width: 900px;
+      padding: 60px 20px;
+      text-align: center;
+      color: rgba(184,185,190,0.7);
+    }
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+    .empty-state-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    .empty-state-message {
+      font-size: 14px;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -383,19 +406,16 @@ function matchesTags(svg) {
 function showTagPanel(event, tags) {
   event.stopPropagation();
   
-  // Close any open panels
   document.querySelectorAll('.tag-panel').forEach(panel => {
     panel.classList.remove('show');
   });
   
-  // Find the panel in this item
   const button = event.currentTarget;
   const item = button.closest('.item');
   const panel = item.querySelector('.tag-panel');
   
   panel.classList.add('show');
   
-  // Close panel when clicking outside
   setTimeout(() => {
     const closePanel = (e) => {
       if (!panel.contains(e.target) && e.target !== button) {
@@ -407,44 +427,77 @@ function showTagPanel(event, tags) {
   }, 0);
 }
 
+function showEmptyState(type) {
+  let icon, title, message;
+  
+  if (type === 'favorites') {
+    icon = '☆';
+    title = 'No Favorites Yet';
+    message = 'Star your favorite SVGs. Click the ☆ icon on any item to add it to your collection.';
+  } else if (type === 'filter') {
+    icon = '∅';
+    title = 'No Results Found';
+    message = selectedTags.length > 0 
+      ? `No SVGs match the selected ${tagMode === 'AND' ? 'combination of tags' : 'tags'}: ${selectedTags.join(', ')}`
+      : 'Try adjusting your search filters or browse all items.';
+  }
+  
+  gallery.innerHTML = `
+    <div class="empty-state">
+      <div class="empty-state-icon">${icon}</div>
+      <div class="empty-state-title">${title}</div>
+      <div class="empty-state-message">${message}</div>
+    </div>
+  `;
+}
+
 function renderSVGs() {
   const favs = getFavorites();
   gallery.innerHTML = '';
 
-  svgs
-    .filter(svg => {
-      if (favoritesOnly && !favs.has(svg.id)) return false;
-      if (!matchesTags(svg)) return false;
-      return true;
-    })
-    .forEach(svg => {
-      const div = document.createElement('div');
-      div.className = 'item';
-      
-      const tagsHTML = svg.tags.map(tag => 
-        `<span class="tag-panel-tag">${tag}</span>`
-      ).join('');
-      
-      div.innerHTML = `
-        <svg viewBox="${svg.viewBox}" xmlns="http://www.w3.org/2000/svg">
-          ${svg.svg}
-        </svg>
-        <div class="actions">
-          <button onclick="showTagPanel(event, ${JSON.stringify(svg.tags).replace(/"/g, '&quot;')})">꒰ ꒱</button>
-          <button onclick='copySVG(${JSON.stringify(svg)})'>⿻</button>
-          <button onclick="toggleFavorite('${svg.id}')">
-            ${favs.has(svg.id) ? '★' : '☆'}
-          </button>
+  const filteredSvgs = svgs.filter(svg => {
+    if (favoritesOnly && !favs.has(svg.id)) return false;
+    if (!matchesTags(svg)) return false;
+    return true;
+  });
+
+  if (filteredSvgs.length === 0) {
+    if (favoritesOnly && favs.size === 0) {
+      showEmptyState('favorites');
+    } else {
+      showEmptyState('filter');
+    }
+    return;
+  }
+
+  filteredSvgs.forEach(svg => {
+    const div = document.createElement('div');
+    div.className = 'item';
+    
+    const tagsHTML = svg.tags.map(tag => 
+      `<span class="tag-panel-tag">${tag}</span>`
+    ).join('');
+    
+    div.innerHTML = `
+      <svg viewBox="${svg.viewBox}" xmlns="http://www.w3.org/2000/svg">
+        ${svg.svg}
+      </svg>
+      <div class="actions">
+        <button onclick="showTagPanel(event, ${JSON.stringify(svg.tags).replace(/"/g, '&quot;')})">꒰ ꒱</button>
+        <button onclick='copySVG(${JSON.stringify(svg)})'><b>⿻</b></button>
+        <button onclick="toggleFavorite('${svg.id}')">
+          ${favs.has(svg.id) ? '★' : '☆'}
+        </button>
+      </div>
+      <div class="tag-panel">
+        <div class="tag-panel-title">Tags</div>
+        <div class="tag-panel-tags">
+          ${tagsHTML}
         </div>
-        <div class="tag-panel">
-          <div class="tag-panel-title">Tags</div>
-          <div class="tag-panel-tags">
-            ${tagsHTML}
-          </div>
-        </div>
-      `;
-      gallery.appendChild(div);
-    });
+      </div>
+    `;
+    gallery.appendChild(div);
+  });
   
   updateTagCounts();
 }
@@ -545,7 +598,6 @@ function toggleMode() {
   tagMode = tagMode === 'OR' ? 'AND' : 'OR';
   toggleSwitch.classList.toggle('and-mode');
   
-  // Toggle active state on icons
   orIcon.classList.toggle('active');
   andIcon.classList.toggle('active');
   
@@ -557,7 +609,6 @@ function copySVG(svg) {
   navigator.clipboard.writeText(code);
 }
 
-// Event listeners
 dropdownSearch.addEventListener('focus', showDropdown);
 dropdownSearch.addEventListener('input', filterDropdown);
 
