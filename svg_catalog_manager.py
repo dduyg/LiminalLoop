@@ -83,26 +83,26 @@ class SVGCatalogManager:
         print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
         
         while True:
-            print(f"\n--- Staging Item #{len(staged_entries) + 1} ---")
-            raw_input_svg = input("Enter <svg> code: ").strip()
+            print(f"\n┌─[ＳＴＡＧＥ]  item #{len(staged_entries) + 1}")
+            raw_input_svg = input("└──> <svg> payload: ").strip()
             
             if not raw_input_svg:
                 break
                 
             while True:
-                asset_id = input("Assign ID: ").strip().lower().replace(" ", "-")
+                asset_id = input("    ⬢ assign ID > ").strip().lower().replace(" ", "-")
                 if not asset_id:
-                    print("⊗ Error: Asset ID is mandatory.")
+                    print("⊗ error: Asset ID is mandatory.")
                     continue
                 
                 if asset_id in existing_registry_ids or any(e['id'] == asset_id for e in staged_entries):
-                    print(f"⚠ Collision detected :: ID '{asset_id}' already exists!")
-                    resolution = input("Override existing entry? [over] or assign new ID? [new]: ").lower()
+                    print(f"⊘ collision detected :: ID '{asset_id}' already exists!")
+                    resolution = input("    ⟡ resolve override [over] / assign new ID [new]: ").lower()
                     if resolution == 'over': break
                 else:
                     break
             
-            metadata_tags = input("⟡ Tags (comma separated): ")
+            metadata_tags = input("⬢ TAGS > comma separated: ")
             tag_list = [t.strip().lower() for t in metadata_tags.split(",") if t.strip()]
             
             viewbox, svg_path = self.parse_vector_data(raw_input_svg)
@@ -129,14 +129,14 @@ class SVGCatalogManager:
             "sha": last_commit_hash
         }
 
-        print(f"\n📡 Pushing {len(staged_entries)} svg(s) to catalog...")
+        print(f"\n  ░░░ pushing {len(staged_entries)} svg(s) to catalog...")
         sync_response = requests.put(self.base_api_url, headers=self.session_headers, json=commit_payload)
 
         if sync_response.status_code in [200, 201]:
-            print(f"\n    ☑［成功］ Catalog expanded successfully with {len(staged_entries)} item(s).")
-            print(f"⫘ Resource Path: {sync_response.json()['content']['html_url']}")
+            print(f"\n［成功］    ☑ catalog expanded successfully with {len(staged_entries)} item(s).")
+            print(f"⫘: {sync_response.json()['content']['html_url']}")
         else:
-            print(f"⊗ Commit failed: {sync_response.text}")
+            print(f"⊗ commit failed: {sync_response.text}")
 
 if __name__ == "__main__":
     manager = SVGCatalogManager()
