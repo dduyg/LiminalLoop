@@ -133,7 +133,7 @@ class SVGCatalogManager:
         sync_response = requests.put(self.base_api_url, headers=self.session_headers, json=commit_payload)
 
         if sync_response.status_code in [200, 201]:
-            print(f"\n☑️［成功］ Catalog expanded successfully with {len(staged_entries)} item(s).")
+            print(f"\n    ☑［成功］ Catalog expanded successfully with {len(staged_entries)} item(s).")
             print(f"⫘ Resource Path: {sync_response.json()['content']['html_url']}")
         else:
             print(f"⊗ Commit failed: {sync_response.text}")
