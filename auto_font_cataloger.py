@@ -18,7 +18,6 @@
 　Ｄａｔｅ：　 　January 2026
 ═══════════════════════════════════════════════════════════════════
 """
-
 import subprocess
 import sys
 import logging
@@ -124,6 +123,10 @@ class Config:
     
     # Script detection tests
     SCRIPT_TESTS: Dict[str, List[int]] = None
+    
+    # Source repo configuration
+    SOURCE_REPO: str = "dduyg/LiminalLoop"
+    CATALOG_FILE: str = "catalog.fonts.json"
     
     def __post_init__(self):
         self.CATEGORIES = ["sans-serif", "serif", "monospace", "cursive", "fantasy"]
@@ -619,7 +622,7 @@ class FontTagger:
         # Monospace fonts
         if category == "monospace" or metadata.is_monospace:
             results["monospaced"] = max(results.get("monospaced", 0), 0.30)
-            results["coding"] = max(results.get("coding", 0), 0.28)
+            results["coding"] = max(results.get("coding", 0), 0.30)
             results["techno"] = max(results.get("techno", 0), 0.26)
         
         # Weight-based boosts
@@ -720,7 +723,7 @@ class CatalogProcessor:
     
     def initialize(self, repo: str, token: str):
         """Initialize repository connection"""
-        self.catalog_manager = SourceCatalogManager(repo, token)
+        self.catalog_manager = SourceCatalogManager(repo, token, self.config.CATALOG_FILE)
         self.tagger.load_model()
     
     def process_font(self, name: str, url: str, category: str, step: int, total: int) -> Optional[FontEntry]:
@@ -872,10 +875,8 @@ class CatalogProcessor:
 █▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
         """)
         
-        # Get repository info
-        print("\n　━━━ ＳＯＵＲＣＥ ＲＥＰＯ ━━━")
-        print(f"  　     (username/repo)  ")
-        repo = input("　　　＞ ").strip()
+        # Config source repo
+        repo = self.config.SOURCE_REPO
         
         print("\n　━━━ ＴＯＫＥＮ ━━━")
         token = getpass.getpass("　　　＞ ").strip()
