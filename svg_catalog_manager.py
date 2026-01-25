@@ -66,26 +66,26 @@ class SVGCatalogManager:
         print("\n[READY] Awaiting input. Submit an empty line to finalize the batch.")
         
         while True:
-            print(f"\n--- Staging Asset #{len(staged_entries) + 1} ---")
+            print(f"\n--- Staging Item #{len(staged_entries) + 1} ---")
             raw_input_svg = input("Input SVG Source Code: ").strip()
             
             if not raw_input_svg:
                 break
                 
             while True:
-                asset_id = input("Assign Asset ID: ").strip().lower().replace(" ", "-")
+                asset_id = input("Assign ID: ").strip().lower().replace(" ", "-")
                 if not asset_id:
                     print("Error: Asset ID is mandatory.")
                     continue
                 
                 if asset_id in existing_registry_ids or any(e['id'] == asset_id for e in staged_entries):
-                    print(f"⚠️ Identifier '{asset_id}' is already registered in the data store.")
+                    print(f"⚠️ ID '{asset_id}' already exists!")
                     resolution = input("Override existing entry? (over) or assign new ID? (new): ").lower()
                     if resolution == 'over': break
                 else:
                     break
             
-            metadata_tags = input("Assign Classification Tags (comma separated): ")
+            metadata_tags = input("Tags (comma separated): ")
             tag_list = [t.strip().lower() for t in metadata_tags.split(",") if t.strip()]
             
             viewbox, svg_path = self.parse_vector_data(raw_input_svg)
@@ -98,10 +98,9 @@ class SVGCatalogManager:
             })
 
         if not staged_entries:
-            print("No new assets staged. Session terminated.")
+            print("No new data entered. Session terminated.")
             return
 
-        # 3. Synchronize with Remote Host
         staged_ids = {e['id'] for e in staged_entries}
         # Merge datasets, prioritizing staged entries for overlaps
         finalized_dataset = [item for item in current_dataset if item['id'] not in staged_ids] + staged_entries
@@ -109,19 +108,19 @@ class SVGCatalogManager:
         processed_json = self.serialize_with_compact_arrays(finalized_dataset)
         
         commit_payload = {
-            "message": f"data: update catalog with {len(staged_entries)} assets",
+            "message": f"[LIBRARY.EXPANDED]  with +{len(staged_entries)} item(s)",
             "content": base64.b64encode(processed_json.encode('utf-8')).decode('utf-8'),
             "sha": last_commit_hash
         }
 
-        print(f"\nSynchronizing {len(staged_entries)} items with remote data store...")
+        print(f"\n📡 Pushing {len(staged_entries)} svg(s) to catalog...")
         sync_response = requests.put(self.base_api_url, headers=self.session_headers, json=commit_payload)
 
         if sync_response.status_code in [200, 201]:
-            print(f"\n✅ Synchronization Successful. {len(staged_entries)} items merged.")
+            print(f"\n☑️ Successfully expanded catalog with {len(staged_entries)} item(s).")
             print(f"Resource Path: {sync_response.json()['content']['html_url']}")
         else:
-            print(f"❌ Synchronization failed: {sync_response.text}")
+            print(f"❌ Commit failed: {sync_response.text}")
 
 if __name__ == "__main__":
     manager = SVGCatalogManager()
