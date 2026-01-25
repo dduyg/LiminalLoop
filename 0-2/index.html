@@ -21,13 +21,38 @@
 
         header {position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; padding: 20px;}
         h2 {font-family: "Azeret Mono", monospace;}
-        .badge {font-size: 24px; font-weight: 600;}
+        .badge {font-size: 24px; font-weight: 500;}
         a {color: inherit; text-decoration: none;}
         a:hover {font-style: italic;}
         .visited {text-decoration: line-through; opacity: 0.6;}
         .robustness div:nth-child(1) {padding-right: 23px;}
         code {white-space: nowrap; background-color: #000; color: #FFD700; padding: 3px 5px; border-radius: 3px; font-family: "Azeret Mono", monospace;}
-        
+
+a.shutter-link {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #007bff;
+  text-decoration: none;;
+  overflow: hidden; /* Keeps the animation inside the link */
+  transition: color 0.4s ease;
+  z-index: 1;
+}
+
+a.shutter-link::before {
+  content: ''; position: absolute; top: 100%; left: 0;  width: 100%;  height: 100%;
+  background: #007bff; transition: top 0.4s cubic-bezier(0.65, 0, 0.35, 1); z-index: -1;
+}
+
+/* Hover Animation Trigger */
+a.shutter-link:hover {
+  color: white; /* Text turns white as background fills */
+}
+
+a.shutter-link:hover::before {
+  top: 0; /* Slide the background up to cover the link */
+}
+   
         main {
             margin: 25vh 20px 0;
             display: grid;
@@ -93,7 +118,7 @@
 <body>
     <header>
         <h2>Dy[person_<br>online]</h2>
-        <div class="badge">🀢🀣🀦🀤</div>
+        <div class="badge"><a href="../0-3/" class="shutter-link">🀢🀣🀦🀤</a></div>
     </header>
    
     <main>
