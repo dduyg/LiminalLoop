@@ -49,9 +49,12 @@ class SVGCatalogManager:
         return re.sub(r'"tags":\s*\[(.*?)\]', inline_list, pretty_json, flags=re.DOTALL)
 
     def execute_sync(self):
-        print("--- SVG Cataloger ---")
+      print("\n")
+      print("███████  Ｓ Ｖ Ｇ   Ｃ Ａ Ｔ Ａ Ｌ Ｏ Ｇ   Ｍ Ａ Ｎ Ａ Ｇ Ｅ Ｒ  ███████")
+      print("        ◢◤  視覚シンボル同期インターフェース  ◥◣")
+      print("        ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂\n")
         
-        access_credential = getpass("Access Token: ")
+        access_credential = getpass("┌─[ＡＵＴＨ]\n└──> Access Token: ")
         self.session_headers = {
             "Authorization": f"token {access_credential}",
             "Accept": "application/vnd.github.v3+json"
@@ -62,7 +65,7 @@ class SVGCatalogManager:
             response = requests.get(self.base_api_url, headers=self.session_headers)
             response.raise_for_status()
         except Exception as error:
-            print(f"Error: {error}")
+            print(f"⊗ Error: {error}")
             return
 
         remote_metadata = response.json()
@@ -74,7 +77,10 @@ class SVGCatalogManager:
         staged_entries = []
         
         # Ingestion Loop
-        print("\n[READY] Awaiting input. To finalize the batch, leave empty & press Enter.")
+        print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("［待機］ Awaiting input <svg> payloads to stage")
+        print("→ To finalize batch, press ENTER on empty input")
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
         
         while True:
             print(f"\n--- Staging Item #{len(staged_entries) + 1} ---")
