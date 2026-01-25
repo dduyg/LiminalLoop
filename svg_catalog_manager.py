@@ -92,17 +92,17 @@ class SVGCatalogManager:
             while True:
                 asset_id = input("Assign ID: ").strip().lower().replace(" ", "-")
                 if not asset_id:
-                    print("Error: Asset ID is mandatory.")
+                    print("⊗ Error: Asset ID is mandatory.")
                     continue
                 
                 if asset_id in existing_registry_ids or any(e['id'] == asset_id for e in staged_entries):
-                    print(f"⚠️ ID '{asset_id}' already exists!")
-                    resolution = input("Override existing entry? (over) or assign new ID? (new): ").lower()
+                    print(f"⚠ Collision detected :: ID '{asset_id}' already exists!")
+                    resolution = input("Override existing entry? [over] or assign new ID? [new]: ").lower()
                     if resolution == 'over': break
                 else:
                     break
             
-            metadata_tags = input("Tags (comma separated): ")
+            metadata_tags = input("⟡ Tags (comma separated): ")
             tag_list = [t.strip().lower() for t in metadata_tags.split(",") if t.strip()]
             
             viewbox, svg_path = self.parse_vector_data(raw_input_svg)
@@ -115,11 +115,10 @@ class SVGCatalogManager:
             })
 
         if not staged_entries:
-            print("No new data entered. Session terminated.")
+            print("⌁ No new data entered. Session terminated.")
             return
 
         staged_ids = {e['id'] for e in staged_entries}
-        # Merge datasets, prioritizing staged entries for overlaps
         finalized_dataset = [item for item in current_dataset if item['id'] not in staged_ids] + staged_entries
         
         processed_json = self.serialize_with_compact_arrays(finalized_dataset)
@@ -134,10 +133,10 @@ class SVGCatalogManager:
         sync_response = requests.put(self.base_api_url, headers=self.session_headers, json=commit_payload)
 
         if sync_response.status_code in [200, 201]:
-            print(f"\n☑️ Successfully expanded catalog with {len(staged_entries)} item(s).")
-            print(f"Resource Path: {sync_response.json()['content']['html_url']}")
+            print(f"\n☑️［成功］ Catalog expanded successfully with {len(staged_entries)} item(s).")
+            print(f"⫘ Resource Path: {sync_response.json()['content']['html_url']}")
         else:
-            print(f"❌ Commit failed: {sync_response.text}")
+            print(f"⊗ Commit failed: {sync_response.text}")
 
 if __name__ == "__main__":
     manager = SVGCatalogManager()
