@@ -27,27 +27,10 @@
         .visited {text-decoration: line-through; opacity: 0.6;}
         .robustness div:nth-child(1) {padding-right: 23px;}
         code {white-space: nowrap; background-color: #000; color: #FFD700; padding: 3px 5px; border-radius: 3px; font-family: "Azeret Mono", monospace;}
+        a.bounce-link {display: inline-block; transition: all 0.3s ease;}
+        a.bounce-link:hover {color: #87fffb; animation: bounce-elastic 0.6s ease; }
+        @keyframes bounce-elastic { 0% {transform: translateY(0);} 30% {transform: translateY(-8px);} 50% {transform: translateY(2px);} 70% {transform: translateY(-3px);} 100% {transform: translateY(0);} }
 
-a.bounce-link {
-  display: inline-block;
-  color: #ff4757;
-  transition: color 0.3s ease;
-}
-
-a.bounce-link:hover {
-  color: #ff6b81;
-  /* 'infinite' makes it keep bouncing, or remove it for a single bounce */
-  animation: bounce-elastic 0.6s ease; 
-}
-@keyframes bounce-elastic {
-  0% {transform: translateY(0);}
-  30% {transform: translateY(-8px);}
-  50% {transform: translateY(2px);}
-  70% {transform: translateY(-3px);}
-  100% {transform: translateY(0);}
-}
-
-   
         main {
             margin: 25vh 20px 0;
             display: grid;
