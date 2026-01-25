@@ -28,30 +28,25 @@
         .robustness div:nth-child(1) {padding-right: 23px;}
         code {white-space: nowrap; background-color: #000; color: #FFD700; padding: 3px 5px; border-radius: 3px; font-family: "Azeret Mono", monospace;}
 
-a.shutter-link {
-  position: relative;
+a.bounce-link {
   display: inline-block;
-  padding: 10px 20px;
-  color: #007bff;
-  text-decoration: none;;
-  overflow: hidden; /* Keeps the animation inside the link */
-  transition: color 0.4s ease;
-  z-index: 1;
+  color: #ff4757;
+  transition: color 0.3s ease;
 }
 
-a.shutter-link::before {
-  content: ''; position: absolute; top: 100%; left: 0;  width: 100%;  height: 100%;
-  background: #007bff; transition: top 0.4s cubic-bezier(0.65, 0, 0.35, 1); z-index: -1;
+a.bounce-link:hover {
+  color: #ff6b81;
+  /* 'infinite' makes it keep bouncing, or remove it for a single bounce */
+  animation: bounce-elastic 0.6s ease; 
+}
+@keyframes bounce-elastic {
+  0% {transform: translateY(0);}
+  30% {transform: translateY(-8px);}
+  50% {transform: translateY(2px);}
+  70% {transform: translateY(-3px);}
+  100% {transform: translateY(0);}
 }
 
-/* Hover Animation Trigger */
-a.shutter-link:hover {
-  color: white; /* Text turns white as background fills */
-}
-
-a.shutter-link:hover::before {
-  top: 0; /* Slide the background up to cover the link */
-}
    
         main {
             margin: 25vh 20px 0;
@@ -118,7 +113,7 @@ a.shutter-link:hover::before {
 <body>
     <header>
         <h2>Dy[person_<br>online]</h2>
-        <div class="badge"><a href="../0-3/" class="shutter-link">🀢🀣🀦🀤</a></div>
+        <div class="badge"><a href="../0-3/" class="bounce-link">🀢🀣🀦🀤</a></div>
     </header>
    
     <main>
