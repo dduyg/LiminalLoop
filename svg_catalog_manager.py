@@ -1,0 +1,128 @@
+import json
+import requests
+import base64
+import re
+from getpass import getpass
+
+class SVGCatalogManager:
+    """
+    Manages the ingestion and synchronization of SVG assets 
+    with a remote JSON-based data store.
+    """
+
+    def __init__(self):
+        # Configuration for the remote data store
+        self.provider_id = "dduyg"
+        self.collection_id = "LiminalLoop"
+        self.target_file = "catalog.svgs.json"
+        self.base_api_url = f"https://api.github.com/repos/{self.provider_id}/{self.collection_id}/contents/{self.target_file}"
+        self.session_headers = {}
+
+    def parse_vector_data(self, raw_svg):
+        """Extracts spatial dimensions and path definitions from raw SVG strings."""
+        viewbox_search = re.search(r'viewBox=["\']([^"\']+)["\']', raw_svg)
+        viewbox = viewbox_search.group(1) if viewbox_search else "0 0 100 100"
+        
+        content_search = re.search(r'<svg[^>]*>(.*)</svg>', raw_svg, re.DOTALL)
+        inner_paths = content_search.group(1).strip() if content_search else raw_svg
+        return viewbox, inner_paths
+
+    def serialize_with_compact_arrays(self, dataset):
+        """Serializes the dataset to JSON while keeping metadata tags on a single line."""
+        pretty_json = json.dumps(dataset, indent=2)
+        
+        def inline_list(match):
+            items = [item.strip() for item in match.group(1).split(',')]
+            return f'"tags": [{", ".join(items)}]'
+
+        return re.sub(r'"tags":\s*\[(.*?)\]', inline_list, pretty_json, flags=re.DOTALL)
+
+    def execute_sync(self):
+        print("--- SVG Catalog Systems Manager ---")
+        
+        access_credential = getpass("Enter Remote Access Token: ")
+        self.session_headers = {
+            "Authorization": f"token {access_credential}",
+            "Accept": "application/vnd.github.v3+json"
+        }
+
+        # 1. Retrieve Current State
+        try:
+            response = requests.get(self.base_api_url, headers=self.session_headers)
+            response.raise_for_status()
+        except Exception as error:
+            print(f"Connection error to remote host: {error}")
+            return
+
+        remote_metadata = response.json()
+        raw_encoded_content = remote_metadata['content']
+        current_dataset = json.loads(base64.b64decode(raw_encoded_content + "===").decode('utf-8'))
+        last_commit_hash = remote_metadata['sha']
+        
+        existing_registry_ids = {entry['id'] for entry in current_dataset}
+        staged_entries = []
+        
+        # 2. Ingestion Loop
+        print("\n[READY] Awaiting input. Submit an empty line to finalize the batch.")
+        
+        while True:
+            print(f"\n--- Staging Asset #{len(staged_entries) + 1} ---")
+            raw_input_svg = input("Input SVG Source Code: ").strip()
+            
+            if not raw_input_svg:
+                break
+                
+            while True:
+                asset_id = input("Assign Asset ID: ").strip().lower().replace(" ", "-")
+                if not asset_id:
+                    print("Error: Asset ID is mandatory.")
+                    continue
+                
+                if asset_id in existing_registry_ids or any(e['id'] == asset_id for e in staged_entries):
+                    print(f"⚠️ Identifier '{asset_id}' is already registered in the data store.")
+                    resolution = input("Override existing entry? (over) or assign new ID? (new): ").lower()
+                    if resolution == 'over': break
+                else:
+                    break
+            
+            metadata_tags = input("Assign Classification Tags (comma separated): ")
+            tag_list = [t.strip().lower() for t in metadata_tags.split(",") if t.strip()]
+            
+            viewbox, svg_path = self.parse_vector_data(raw_input_svg)
+            
+            staged_entries.append({
+                "id": asset_id,
+                "viewBox": viewbox,
+                "tags": tag_list,
+                "svg": svg_path
+            })
+
+        if not staged_entries:
+            print("No new assets staged. Session terminated.")
+            return
+
+        # 3. Synchronize with Remote Host
+        staged_ids = {e['id'] for e in staged_entries}
+        # Merge datasets, prioritizing staged entries for overlaps
+        finalized_dataset = [item for item in current_dataset if item['id'] not in staged_ids] + staged_entries
+        
+        processed_json = self.serialize_with_compact_arrays(finalized_dataset)
+        
+        commit_payload = {
+            "message": f"data: update catalog with {len(staged_entries)} assets",
+            "content": base64.b64encode(processed_json.encode('utf-8')).decode('utf-8'),
+            "sha": last_commit_hash
+        }
+
+        print(f"\nSynchronizing {len(staged_entries)} items with remote data store...")
+        sync_response = requests.put(self.base_api_url, headers=self.session_headers, json=commit_payload)
+
+        if sync_response.status_code in [200, 201]:
+            print(f"\n✅ Synchronization Successful. {len(staged_entries)} items merged.")
+            print(f"Resource Path: {sync_response.json()['content']['html_url']}")
+        else:
+            print(f"❌ Synchronization failed: {sync_response.text}")
+
+if __name__ == "__main__":
+    manager = SVGCatalogManager()
+    manager.execute_sync()
