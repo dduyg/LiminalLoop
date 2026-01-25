@@ -54,7 +54,7 @@ class SVGCatalogManager:
       print("        ◢◤  視覚シンボル同期インターフェース  ◥◣")
       print("        ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂\n")
         
-        access_credential = getpass("┌─[ＡＵＴＨ]\n└──> Access Token: ")
+        access_credential = getpass("┌─[ＡＵＴＨ]\n└──> access token: ")
         self.session_headers = {
             "Authorization": f"token {access_credential}",
             "Accept": "application/vnd.github.v3+json"
@@ -65,7 +65,7 @@ class SVGCatalogManager:
             response = requests.get(self.base_api_url, headers=self.session_headers)
             response.raise_for_status()
         except Exception as error:
-            print(f"⊗ Error: {error}")
+            print(f"⊗ error: {error}")
             return
 
         remote_metadata = response.json()
@@ -92,7 +92,7 @@ class SVGCatalogManager:
             while True:
                 asset_id = input("    ⬢ assign ID > ").strip().lower().replace(" ", "-")
                 if not asset_id:
-                    print("⊗ error: Asset ID is mandatory.")
+                    print("⊗ error: ID is mandatory")
                     continue
                 
                 if asset_id in existing_registry_ids or any(e['id'] == asset_id for e in staged_entries):
@@ -115,7 +115,7 @@ class SVGCatalogManager:
             })
 
         if not staged_entries:
-            print("⌁ No new data entered. Session terminated.")
+            print("⌁ no new data entered • ⟨session.terminated⟩")
             return
 
         staged_ids = {e['id'] for e in staged_entries}
@@ -124,7 +124,7 @@ class SVGCatalogManager:
         processed_json = self.serialize_with_compact_arrays(finalized_dataset)
         
         commit_payload = {
-            "message": f"[LIBRARY.EXPANDED]  with +{len(staged_entries)} item(s)",
+            "message": f"⟨CATALOG.EXPANDED⟩  ⟡ with +{len(staged_entries)} item(s)",
             "content": base64.b64encode(processed_json.encode('utf-8')).decode('utf-8'),
             "sha": last_commit_hash
         }
@@ -133,8 +133,8 @@ class SVGCatalogManager:
         sync_response = requests.put(self.base_api_url, headers=self.session_headers, json=commit_payload)
 
         if sync_response.status_code in [200, 201]:
-            print(f"\n［成功］    ☑ catalog expanded successfully with {len(staged_entries)} item(s).")
-            print(f"⫘: {sync_response.json()['content']['html_url']}")
+            print(f"\n［成功］    ☑ catalog expanded successfully with {len(staged_entries)} item(s)")
+            print(f"↗ {sync_response.json()['content']['html_url']}")
         else:
             print(f"⊗ commit failed: {sync_response.text}")
 
