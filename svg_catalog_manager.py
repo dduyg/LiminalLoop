@@ -1,19 +1,18 @@
 """
-█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
+█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
   
    ｓｖｇ－ｃａｔａｌｏｇ－ｍａｎａｇｅｒ ™        ベクター  アーカイブ  システム
    ［ Ｖ Ａ Ｐ Ｏ Ｒ   Ｌ Ｉ Ｂ Ｒ Ａ Ｒ Ｙ   Ｉ Ｎ Ｔ Ｅ Ｒ Ｆ Ａ Ｃ Ｅ ］
      
    視覚記号管理装置  //  ２０８６  ＥＤＩＴＩＯＮ  ／  ｓｉｇｎａｌ　ｃｕｒａｔｉｏｎ  
      
-█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
+█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
 
    Ｓｙｓｔｅｍ ｓｔａｔｕｓ： ｓｅｃｕｒｅ  //   batch registry system
    Ａｕｔｈｏｒ： Duygu Dağdelen   ［ ２０２５－１２－１９ ］
     
-█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
+█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
 """
-
 import json
 import requests
 import base64
@@ -77,10 +76,10 @@ class SVGCatalogManager:
         staged_entries = []
 
         # Input Loop
-        print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         print("［待機］ Awaiting input <svg> payloads to stage")
         print("        ▸▸ To finalize batch, press ENTER on empty input")
-        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
 
         while True:
             print(f"\n┌─[ＳＴＡＧＥ]  item #{len(staged_entries) + 1}")
@@ -90,20 +89,20 @@ class SVGCatalogManager:
                 break
 
             while True:
-                asset_id = input("       ⬢ assign ID > ").strip().lower().replace(" ", "-")
+                asset_id = input("     ⬢ assign ID:  ").strip().lower().replace(" ", "-")
                 if not asset_id:
                     print("⊗ error: ID is mandatory")
                     continue
 
                 if asset_id in existing_registry_ids or any(e['id'] == asset_id for e in staged_entries):
-                    print(f"⊘ collision detected :: ID '{asset_id}' already exists!")
+                    print(f"⊘ collision detected :: ID '{asset_id}' already exists")
                     resolution = input("       ◆ resolve override [over] / assign new ID [new]: ").lower()
                     if resolution == 'over':
                         break
                 else:
                     break
 
-            metadata_tags = input("       ⬢ TAGS > comma separated: ")
+            metadata_tags = input("     ⬢ TAGS > comma separated: ")
             tag_list = [t.strip().lower() for t in metadata_tags.split(",") if t.strip()]
 
             viewbox, svg_path = self.parse_vector_data(raw_input_svg)
@@ -130,14 +129,15 @@ class SVGCatalogManager:
             "sha": last_commit_hash
         }
 
+        print("\n")
         print(f"\n  ░░░ pushing {len(staged_entries)} svg(s) to catalog...")
         sync_response = requests.put(self.base_api_url, headers=self.session_headers, json=commit_payload)
 
         if sync_response.status_code in [200, 201]:
-            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+            print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
             print(f"［成功］    ☑ catalog expanded successfully with {len(staged_entries)} item(s)")
             print(f"          ↗ {sync_response.json()['content']['html_url']}")
-            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+            print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         else:
             print(f"⊗ commit failed: {sync_response.text}")
 
