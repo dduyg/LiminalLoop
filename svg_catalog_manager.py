@@ -82,6 +82,7 @@ class SVGCatalogManager:
         print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
 
         while True:
+            print("\n")
             print(f"\n┌─[ＳＴＡＧＥ]  item ♯{len(staged_entries) + 1}")
             raw_input_svg = input("└──> <svg> payload: ").strip()
 
@@ -102,7 +103,7 @@ class SVGCatalogManager:
                 else:
                     break
 
-            metadata_tags = input("      ⬢ TAGS > comma separated: ")
+            metadata_tags = input("      ⬢ TAGS > 𝒄𝒐𝒎𝒎𝒂 𝒔𝒆𝒑𝒂𝒓𝒂𝒕𝒆𝒅: ")
             tag_list = [t.strip().lower() for t in metadata_tags.split(",") if t.strip()]
 
             viewbox, svg_path = self.parse_vector_data(raw_input_svg)
