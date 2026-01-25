@@ -11,7 +11,7 @@ class SVGCatalogManager:
     """
 
     def __init__(self):
-        # Configuration for the remote data store
+        # Config for the remote data store
         self.provider_id = "dduyg"
         self.collection_id = "LiminalLoop"
         self.target_file = "catalog.svgs.json"
@@ -28,7 +28,6 @@ class SVGCatalogManager:
         return viewbox, inner_paths
 
     def serialize_with_compact_arrays(self, dataset):
-        """Serializes the dataset to JSON while keeping metadata tags on a single line."""
         pretty_json = json.dumps(dataset, indent=2)
         
         def inline_list(match):
@@ -38,20 +37,20 @@ class SVGCatalogManager:
         return re.sub(r'"tags":\s*\[(.*?)\]', inline_list, pretty_json, flags=re.DOTALL)
 
     def execute_sync(self):
-        print("--- SVG Catalog Systems Manager ---")
+        print("--- SVG Cataloger ---")
         
-        access_credential = getpass("Enter Remote Access Token: ")
+        access_credential = getpass("Access Token: ")
         self.session_headers = {
             "Authorization": f"token {access_credential}",
             "Accept": "application/vnd.github.v3+json"
         }
 
-        # 1. Retrieve Current State
+        # Fetch current data state
         try:
             response = requests.get(self.base_api_url, headers=self.session_headers)
             response.raise_for_status()
         except Exception as error:
-            print(f"Connection error to remote host: {error}")
+            print(f"Error: {error}")
             return
 
         remote_metadata = response.json()
@@ -62,12 +61,12 @@ class SVGCatalogManager:
         existing_registry_ids = {entry['id'] for entry in current_dataset}
         staged_entries = []
         
-        # 2. Ingestion Loop
-        print("\n[READY] Awaiting input. Submit an empty line to finalize the batch.")
+        # Ingestion Loop
+        print("\n[READY] Awaiting input. To finalize the batch, leave empty & press Enter.")
         
         while True:
             print(f"\n--- Staging Item #{len(staged_entries) + 1} ---")
-            raw_input_svg = input("Input SVG Source Code: ").strip()
+            raw_input_svg = input("Input <svg> code: ").strip()
             
             if not raw_input_svg:
                 break
