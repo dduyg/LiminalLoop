@@ -4,12 +4,12 @@
    ｓｖｇ－ｃａｔａｌｏｇ－ｍａｎａｇｅｒ ™        ベクター  アーカイブ  システム
    ［ Ｖ Ａ Ｐ Ｏ Ｒ   Ｌ Ｉ Ｂ Ｒ Ａ Ｒ Ｙ   Ｉ Ｎ Ｔ Ｅ Ｒ Ｆ Ａ Ｃ Ｅ ］
      
-   視覚記号管理装置  //  ２０８６  ＥＤＩＴＩＯＮ  ／  ｓｙｍｂｏｌ  ｓｔｏｒａｇｅ
+   視覚記号管理装置  //  ２０８６  ＥＤＩＴＩＯＮ  ／  ｓｉｇｎａｌ　ｃｕｒａｔｉｏｎ  
      
 █▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
 
-   Signal curation // Vector memory registry system
-   Ａｕｔｈｏｒ  ：：  Duygu  Dağdelen  ［ ２０２５－１２－１９ ］
+   Ｓｙｓｔｅｍ ｓｔａｔｕｓ： ｓｅｃｕｒｅ  //   batch registry system
+   Ａｕｔｈｏｒ： Duygu Dağdelen   ［ ２０２５－１２－１９ ］
     
 █▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█
 """
@@ -79,7 +79,7 @@ class SVGCatalogManager:
         # Input Loop
         print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         print("［待機］ Awaiting input <svg> payloads to stage")
-        print("→ To finalize batch, press ENTER on empty input")
+        print("▸▸ To finalize batch, press ENTER on empty input")
         print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
         
         while True:
