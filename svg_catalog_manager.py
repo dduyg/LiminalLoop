@@ -5,10 +5,6 @@ import re
 from getpass import getpass
 
 class SVGCatalogManager:
-    """
-    Manages the ingestion and synchronization of SVG assets 
-    with a remote JSON-based data store.
-    """
 
     def __init__(self):
         # Config for the remote data store
@@ -66,7 +62,7 @@ class SVGCatalogManager:
         
         while True:
             print(f"\n--- Staging Item #{len(staged_entries) + 1} ---")
-            raw_input_svg = input("Input <svg> code: ").strip()
+            raw_input_svg = input("Enter <svg> code: ").strip()
             
             if not raw_input_svg:
                 break
