@@ -136,8 +136,8 @@ class SVGCatalogManager:
 
         if sync_response.status_code in [200, 201]:
             print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-            print(f"［成功］    ☑ catalog expanded successfully with {len(staged_entries)} item(s)")
-            print(f"          ↗ {sync_response.json()['content']['html_url']}")
+            print(f"［成功］   ☑ catalog expanded successfully with {len(staged_entries)} item(s)")
+            print(f"         ↗ {sync_response.json()['content']['html_url']}")
             print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
         else:
             print(f"⊗ commit failed: {sync_response.text}")
