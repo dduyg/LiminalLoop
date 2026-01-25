@@ -82,14 +82,14 @@ class SVGCatalogManager:
         print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
 
         while True:
-            print(f"\n┌─[ＳＴＡＧＥ]  item #{len(staged_entries) + 1}")
+            print(f"\n┌─[ＳＴＡＧＥ]  item ♯{len(staged_entries) + 1}")
             raw_input_svg = input("└──> <svg> payload: ").strip()
 
             if not raw_input_svg:
                 break
 
             while True:
-                asset_id = input("     ⬢ assign ID:  ").strip().lower().replace(" ", "-")
+                asset_id = input("      ⬢ assign ID:  ").strip().lower().replace(" ", "-")
                 if not asset_id:
                     print("⊗ error: ID is mandatory")
                     continue
@@ -102,7 +102,7 @@ class SVGCatalogManager:
                 else:
                     break
 
-            metadata_tags = input("     ⬢ TAGS > comma separated: ")
+            metadata_tags = input("      ⬢ TAGS > comma separated: ")
             tag_list = [t.strip().lower() for t in metadata_tags.split(",") if t.strip()]
 
             viewbox, svg_path = self.parse_vector_data(raw_input_svg)
