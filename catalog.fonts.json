@@ -405,5 +405,16 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Combo",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Combo&display=swap",
+    "category": "serif",
+    "tags": [ "contemporary", "organic", "childlike" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
