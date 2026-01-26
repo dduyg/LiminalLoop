@@ -618,7 +618,6 @@ class FontTagger:
     
     @staticmethod
     def _apply_boosts(results: Dict[str, float], category: str, metadata: FontMetadata) -> Dict[str, float]:
-        """Apply rule-based boosts to CLIP scores"""
         # Monospace fonts
         if category == "monospace" or metadata.is_monospace:
             results["monospaced"] = max(results.get("monospaced", 0), 0.30)
@@ -840,7 +839,7 @@ class CatalogProcessor:
         
         while True:
             print(f"\n─•────")
-            print(f"░▒▓█  ＡＤＤＩＮＧ　ＦＯＮＴ　＃{len(fonts) + 1}  █▓▒░\n")
+            print(f"░▒▓█  ⊕ＦＯＮＴ　♯{len(fonts) + 1}  █▓▒░\n")
             
             print("\n　━━━ ＦＯＮＴ ＮＡＭＥ ━━━")
             name = input("　　　＞ ").strip()
