@@ -167,7 +167,6 @@ class Config:
 
 @dataclass
 class FontMetadata:
-    """Font metadata information"""
     weights: List[int]
     is_variable: bool
     has_italic: bool
@@ -176,7 +175,6 @@ class FontMetadata:
 
 @dataclass
 class FontEntry:
-    """Complete font catalog entry"""
     name: str
     source: str
     url: str
@@ -307,7 +305,6 @@ class FontRetriever:
     
     @staticmethod
     def retrieve(url: str, source: str) -> Tuple[str, Optional[List[int]]]:
-        """Main retrieval method"""
         if source in ["google", "adobe", "web"]:
             result = FontRetriever.retrieve_from_css(url)
             if isinstance(result, tuple):
@@ -692,7 +689,7 @@ class SourceCatalogManager:
         content_b64 = base64.b64encode(content_str.encode("utf-8")).decode("utf-8")
         
         payload = {
-            "message": f"Committed {count} font(s) to catalog",
+            "message": f"⟨CATALOG.EXPANDED⟩  ⌁ with {count} font(s)",
             "content": content_b64,
             "sha": sha
         }
