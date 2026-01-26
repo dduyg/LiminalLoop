@@ -914,8 +914,8 @@ class CatalogProcessor:
             print("⊗ No fonts to process.")
             return
         
-        # Process fonts
-        print(f"\n░▒▓█  Processing {len(fonts_to_process)} font(s)...  █▓▒░\n")
+        print("\n")
+        print(f"\n░▒▓█  Processing {len(fonts_to_process)} font(s)...  █▓▒░")
         
         added_count = 0
         for i, font_data in enumerate(fonts_to_process, 1):
