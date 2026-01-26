@@ -835,7 +835,7 @@ class CatalogProcessor:
             preview_lines.append("}")
             print("\n".join(preview_lines))
             
-            confirm = input("\n➠  ＡＤＤ  ＴＯ  ＣＡＴＡＬＯＧ？ (y/n): ").strip().lower()
+            confirm = input("\n╰┈➤ ＡＤＤ  ＴＯ  ＣＡＴＡＬＯＧ？ [y/n]: ").strip().lower()
             return entry if confirm == "y" else None
             
         except Exception as e:
@@ -850,7 +850,7 @@ class CatalogProcessor:
         # Input Loop
         print(f"\n{'═'*60}")
         print("𓍯𓂃⌨  Awaiting input to stage fonts")
-        print("        ╰┈➤ To finalize batch, press ENTER on empty input")
+        print("        ➠ To finalize batch, press ENTER on empty input")
         print(f"{'═'*60}")
 
         while True:
