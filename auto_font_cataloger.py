@@ -737,9 +737,9 @@ class CatalogProcessor:
         return "".join(indicator)
     
     def process_font(self, name: str, url: str, category: str, step: int, total: int) -> Optional[FontEntry]:
-        """Process a single font"""
         progress = self._build_progress_indicator(step, total)
-        print(f"\n📡 {progress}  [{step}/{total}]  ＡＮＡＬＹＺＩＮＧ :: {name}...")
+        print("\n")
+        print(f"\n{progress}📡  [{step}/{total}]  ＡＮＡＬＹＺＩＮＧ :: {name}...")
         
         try:
             # Detect source and retrieve
@@ -783,10 +783,11 @@ class CatalogProcessor:
                 return None
             
             # Display results
-            print(f"   ✓ ＤＥＴＥＣＴＥＤ: {len(metadata.weights)} weight(s), {'Variable' if metadata.is_variable else 'Static'}, Scripts: {', '.join(metadata.scripts)}")
+            print(f"      ✓ ＤＥＴＥＣＴＥＤ: {len(metadata.weights)} weight(s), {'Variable' if metadata.is_variable else 'Static'}, Scripts: {', '.join(metadata.scripts)}")
             
             suggested_tags = [k for k, v in scores.items() if v >= self.config.TAG_THRESHOLD][:6]
-            
+
+            print("\n")
             print("\n━━━ ＳＵＧＧＥＳＴＥＤ　ＴＡＧＳ ━━━\n")
             for idx, tag in enumerate(suggested_tags, 1):
                 score = scores[tag]
@@ -818,6 +819,7 @@ class CatalogProcessor:
             )
             
             # Preview
+            print("\n")
             print("\n✦•┈๑⋅⋯  ＣＯＮＦＩＲＭ  ⋯⋅๑┈•✦")
             print("█▓▒░" * 10)
             preview_lines = []
@@ -846,10 +848,16 @@ class CatalogProcessor:
             return None
     
     def collect_fonts(self) -> List[Dict[str, str]]:
-        """Collect font information from user"""
         fonts = []
-        
+
+        # Input Loop
+        print(f"\n{'═'*60}")
+        print("𓍯𓂃⌨  Awaiting input to stage fonts")
+        print("        ╰┈➤ To finalize batch, press ENTER on empty input")
+        print(f"{'═'*60}")
+
         while True:
+            print("\n")
             print(f"\n─•────")
             print(f"░▒▓█  ⊕ＦＯＮＴ　♯{len(fonts) + 1}  █▓▒░\n")
             
@@ -935,24 +943,24 @@ class CatalogProcessor:
         
         # Commit changes
         if added_count > 0 and sha:
+            print("\n")
             print(f"\n{'═'*60}")
-            print(f"●●● Committing to catalog...")
             try:
                 self.catalog_manager.update(catalog, sha, added_count)
-                print(f"🌀 Successfully added {added_count} font(s) to catalog!")
+                print(f"［成功］   ☑ catalog expanded successfully with {added_count} font(s)")
             except Exception as e:
                 print(f"⊗ Commit failed: {e}")
-                print("\n□□■ Saving locally...")
+                print("\n●●● Saving locally...")
                 SourceCatalogManager.save_local(catalog)
                 print("✓ Saved to catalog.fonts.json")
         elif added_count > 0:
-            print("\n□□■ Saving to local file...")
+            print("\n●●● Saving to local file...")
             SourceCatalogManager.save_local(catalog)
             print("✓ Saved to catalog.fonts.json")
         else:
             print("\n⚠  No changes made")
         
-        print("\n╰┈➤ 🎊 ＡＬＬ ＤＯＮＥ！")
+        print(f"{'═'*60}")
 
 # ═══════════════════════════════════════════════════════════════════
 # ENTRY POINT
