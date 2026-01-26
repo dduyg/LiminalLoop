@@ -725,9 +725,21 @@ class CatalogProcessor:
         self.catalog_manager = SourceCatalogManager(repo, token, self.config.CATALOG_FILE)
         self.tagger.load_model()
     
+    @staticmethod
+    def _build_progress_indicator(step: int, total: int) -> str:
+        """Build dynamic progress indicator based on current step"""
+        indicator = []
+        for i in range(1, total + 1):
+            if i == step:
+                indicator.append("■")
+            else:
+                indicator.append("□")
+        return "".join(indicator)
+    
     def process_font(self, name: str, url: str, category: str, step: int, total: int) -> Optional[FontEntry]:
         """Process a single font"""
-        print(f"\n📡 □□■  [{step}/{total}]  ＡＮＡＬＹＺＩＮＧ :: {name}...")
+        progress = self._build_progress_indicator(step, total)
+        print(f"\n📡 {progress}  [{step}/{total}]  ＡＮＡＬＹＺＩＮＧ :: {name}...")
         
         try:
             # Detect source and retrieve
@@ -859,10 +871,6 @@ class CatalogProcessor:
                 category = "sans-serif"
             
             fonts.append({"name": name, "url": url, "category": category})
-            
-            more = input("\n⊕ Add another? (y/n): ").strip().lower()
-            if more != "y":
-                break
         
         return fonts
     
