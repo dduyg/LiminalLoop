@@ -416,5 +416,16 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Inconsolata",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Inconsolata&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "contemporary" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
