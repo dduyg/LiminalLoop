@@ -460,5 +460,38 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Julia Mono",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/JuliaMono-Regular.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Baumans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Baumans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "retro", "aesthetic", "techno" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Share",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Share&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "playful", "aesthetic" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
