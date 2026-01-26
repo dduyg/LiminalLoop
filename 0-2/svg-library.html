@@ -31,8 +31,13 @@
 
     header {
       position: fixed;
-      top: 0; left: 0;
+      top: 0; left: 0; right: 0;
+      width: 100%;
+      background: var(--bg);
+      padding-bottom: 20px;
       display: flex;
+      gap: 7px;
+      z-index: 10;
       user-select: none;
     }
     #badge {
@@ -41,16 +46,14 @@
     }
     h1 {
       font-weight: 500;
-      padding-left: 7px;
       align-self: flex-end; 
     }
     main {
       margin-top: 200px;
-      padding-left: 153px;
     }
     @media(max-width: 480px) {
       #badge {width: 120px;}
-      main {margin-top: 160px; padding-left: 5%;}
+      main {margin-top: 160px;}
     }
     
     /* ===== Controls ===== */
