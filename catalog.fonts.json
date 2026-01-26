@@ -438,5 +438,27 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Vina Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "bold", "brutalist", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Arbutus",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Arbutus&display=swap",
+    "category": "serif",
+    "tags": [ "fatface", "wood", "wacky" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
