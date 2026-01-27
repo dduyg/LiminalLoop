@@ -29,30 +29,23 @@
       overflow-x: hidden;
     }
 
-    header {
+    nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       width: 100%;
-      background: var(--bg);
-      display: flex;
-      gap: 7px;
       z-index: 10;
+      padding-left: 160px;
       user-select: none;
     }
     #badge {
+      position: fixed;
+      top: 0; left: 0;
       display: block;
       width: 160px;
+      z-index: -1;
     }
     h1 {
       font-weight: 500;
-      align-self: flex-end; 
-    }
-    main {
-      margin-top: 200px;
-    }
-    @media(max-width: 480px) {
-      #badge {width: 120px;}
-      main {margin-top: 160px;}
     }
     
     /* ===== Controls ===== */
@@ -243,7 +236,7 @@
       grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
       gap: 25px;
       max-width: 900px;
-      margin: 0 auto;
+      margin: 200px auto 0;
     }
     
     /* ===== Item ===== */
@@ -358,12 +351,19 @@
       font-size: 14px;
       line-height: 1.6;
     }
+
+    @media(max-width: 480px) {
+      #badge {width: 120px;}
+      .grid {margin-top: 160px;}
+      nav {padding-left: 120px;}
+    }
   </style>
 </head>
 <body>
-<header><img id="badge" src="https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/78717c_70456b_b9376753.png"><h1>SVG Library</h1></header>
-  
-<main> 
+<img id="badge" src="https://cdn.jsdelivr.net/gh/dduyg/glyph-data-library@main/glyphs/78717c_70456b_b9376753.png">
+
+<nav>
+  <h1>SVG Library</h1>
   <div class="controls">
     <div class="toggleBtn" onclick="toggleMode()">
       <div class="toggle-switch">
@@ -381,11 +381,11 @@
       <input type="text" class="dropdown-search" placeholder="Search to filter by tags..." />
       <div id="tagList" class="dropdown-list"></div>
     </div>
-  </div>  
-  <button id="favToggle" class="favToggle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-linejoin="round"/><path d="m12.672 2.76 2.581 5.239h-.015l.002.003h6.008a.75.75 0 0 1 .743.648l.007.102a.75.75 0 0 1-.648.743l-.102.007h-6.48a.75.75 0 0 1-.623-.332l-.053-.093-.798-1.659L12 4.788 9.814 9.225a.75.75 0 0 1-.566.411l-4.895.707 3.545 3.45a.75.75 0 0 1 .216.665l-.84 4.873 4.339-2.286a2.25 2.25 0 0 0 .093 1.647l-5.08 2.676a.75.75 0 0 1-1.089-.79l1.031-5.986-4.352-4.236a.75.75 0 0 1 .416-1.28l6.01-.868 2.684-5.448a.75.75 0 0 1 1.346 0M21.25 17a.75.75 0 0 1 .102 1.493l-.102.007h-7.5a.75.75 0 0 1-.102-1.493L13.75 17zm-.002-4.49a.75.75 0 0 1 .102 1.492l-.102.007h-7.5a.75.75 0 0 1-.102-1.493l.102-.007z"/></svg></button>
+  </div>
+</nav>
   
-  <div class="grid" id="gallery"></div>
-</main>
+<button id="favToggle" class="favToggle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-linejoin="round"/><path d="m12.672 2.76 2.581 5.239h-.015l.002.003h6.008a.75.75 0 0 1 .743.648l.007.102a.75.75 0 0 1-.648.743l-.102.007h-6.48a.75.75 0 0 1-.623-.332l-.053-.093-.798-1.659L12 4.788 9.814 9.225a.75.75 0 0 1-.566.411l-4.895.707 3.545 3.45a.75.75 0 0 1 .216.665l-.84 4.873 4.339-2.286a2.25 2.25 0 0 0 .093 1.647l-5.08 2.676a.75.75 0 0 1-1.089-.79l1.031-5.986-4.352-4.236a.75.75 0 0 1 .416-1.28l6.01-.868 2.684-5.448a.75.75 0 0 1 1.346 0M21.25 17a.75.75 0 0 1 .102 1.493l-.102.007h-7.5a.75.75 0 0 1-.102-1.493L13.75 17zm-.002-4.49a.75.75 0 0 1 .102 1.492l-.102.007h-7.5a.75.75 0 0 1-.102-1.493l.102-.007z"/></svg></button>
+<div class="grid" id="gallery"></div>
 
 <script>
 let svgs = [];
