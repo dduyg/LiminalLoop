@@ -515,5 +515,16 @@
     "variable": false,
     "scripts": [ "latin" ]
   }
+,
+  {
+    "name": "Nobel",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Nobel.woff2",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "sophisticated", "techno" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
