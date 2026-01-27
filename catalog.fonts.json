@@ -493,5 +493,27 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "News Gothic",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop/fonts/NewsCycle.woff2",
+    "category": "sans-serif",
+    "tags": [ "minimal", "android", "bold" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "PhoenixEGA",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/PhoenixEGA.woff2",
+    "category": "sans-serif",
+    "tags": [ "techno", "android", "aesthetic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
 
 ]
