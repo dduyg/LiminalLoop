@@ -510,7 +510,7 @@
     "source": "custom",
     "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/PhoenixEGA.woff2",
     "category": "sans-serif",
-    "tags": [ "techno", "android", "aesthetic" ],
+    "tags": [ "techno", "pixel", "monospaced", "aesthetic" ],
     "weights": [ 400 ],
     "variable": false,
     "scripts": [ "latin" ]
