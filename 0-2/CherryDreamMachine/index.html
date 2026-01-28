@@ -58,7 +58,6 @@
             gap: 40px;
         }
 
-        /* Controls Section */
         .controls {
             display: flex;
             align-items: stretch;
@@ -68,13 +67,11 @@
             max-width: 90%;
         }
 
-        /* Custom Dropdown Styling */
         .dropdown-container {
             position: relative;
             width: 250px;
             text-align: left;
         }
-
         .dropdown-search {
             width: 100%;
             padding: 12px;
@@ -84,7 +81,6 @@
             outline: none;
             border-radius: 4px;
         }
-
         .dropdown-list {
             position: absolute;
             top: 100%;
@@ -101,18 +97,10 @@
         }    
         .dropdown-list::-webkit-scrollbar { display: none; }
         .dropdown-list.show { display: block; }
-
-        .dropdown-item {
-            padding: 10px;
-            cursor: pointer;
-        }
+        .dropdown-item { padding: 10px; cursor: pointer; }
         .dropdown-item:hover { background: var(--accent-color); }
-        .dropdown-item.selected {
-            background: var(--accent-color);
-            font-weight: bold;
-        }
+        .dropdown-item.selected { background: var(--accent-color); font-weight: bold; }
 
-        /* Toggle Button */
         .toggleBtn {
             display: inline-flex;
             align-items: center;
@@ -124,7 +112,6 @@
             cursor: pointer;
             user-select: none;
         }
-
         .toggle-switch {
             position: relative;
             width: 40px;
@@ -133,7 +120,6 @@
             border-radius: 10px;
             transition: 0.3s;
         }
-
         .toggle-switch::after {
             content: '';
             position: absolute;
@@ -146,7 +132,6 @@
         .toggle-switch.and-mode { background: var(--accent-color); }
         .toggle-switch.and-mode::after { left: 22px; }
 
-        /* Navigation & Items */
         nav {
             display: flex;
             overflow-x: auto;
@@ -175,7 +160,6 @@
             transform: translateY(-5px);
             box-shadow: 0 5px 0 #000;
         }
-
         nav img {       
             height: 60px; 
             width: auto;
@@ -375,15 +359,14 @@
         }
     </script>
     <script>
-    // Execute after the DOM is fully loaded
     document.addEventListener('DOMContentLoaded', () => {
         const items = document.querySelectorAll('.item');
         
-        // 1. Retrieve visited links from the current session
+        // Retrieve visited links from the current session
         // Using sessionStorage means this resets when the tab is closed
         const getVisited = () => JSON.parse(sessionStorage.getItem('visitedLinks')) || [];
         
-        // 2. Function to apply the class to items already visited
+        // Function to apply the class to items already visited
         const markVisitedItems = () => {
             const visitedLinks = getVisited();
             items.forEach(item => {
@@ -394,10 +377,8 @@
             });
         };
 
-        // 3. Initial check on page load (or when hitting the 'Back' button)
         markVisitedItems();
 
-        // 4. Add click event listener to every item
         items.forEach(item => {
             item.addEventListener('click', function() {
                 const visitedLinks = getVisited();
@@ -408,7 +389,6 @@
                     sessionStorage.setItem('visitedLinks', JSON.stringify(visitedLinks));
                 }
                 
-                // Add class immediately for instant feedback
                 this.classList.add('visited');
             });
         });
