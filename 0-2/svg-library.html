@@ -352,7 +352,7 @@
 
     @media(max-width: 480px) {
       #badge {width: 120px;}
-       nav {padding-top: 102px; padding-left: 20px; padding-right: 15px;}
+       nav {padding-top: 82px; padding-left: 25px; padding-right: 10px;}
       .toggleBtn {width: 70px;}
       .dropdown-container {width: 100%; max-width: 100%;}
       .grid {margin-top: 30vh;}
@@ -542,7 +542,7 @@ function updateTagCounts() {
     const tagName = item.querySelector('.tag-name').textContent;
     const countSpan = item.querySelector('.tag-count');
     const count = tagCounts[tagName] || 0;
-    countSpan.textContent = `(${count})`;
+    countSpan.textContent = `[${count}]`;
   });
 }
 
