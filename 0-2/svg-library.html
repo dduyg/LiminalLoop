@@ -34,7 +34,7 @@
       top: 0; left: 0; right: 0;
       width: 100%;
       z-index: 10;
-      padding-top: 110px;
+      padding-top: 120px;
       padding-left: 120px;
       user-select: none;
     }
@@ -189,7 +189,7 @@
       width: 50px; height: 50px;
       padding: 5px;
       cursor: pointer;
-      background: transparent;
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 100%;
       transition: all 0.15s ease;
@@ -234,7 +234,7 @@
       grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
       gap: 25px;
       max-width: 900px;
-      margin: 20vh auto 10vh;
+      margin: 20vh auto 15vh;
       justify-content: center;
     }
     
@@ -352,7 +352,7 @@
 
     @media(max-width: 480px) {
       #badge {width: 120px;}
-      nav {padding-top: 85px; padding-left: 20px; padding-right: 20px;}
+      nav {padding-top: 90px; padding-left: 20px; padding-right: 15px;}
       .toggleBtn {width: 70px;}
       .dropdown-container {width: 100%; max-width: 100%;}
       .grid {margin-top: 30vh;}
