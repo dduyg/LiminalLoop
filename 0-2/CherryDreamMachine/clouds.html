@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Ubuntu Mono", monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #1E1E2F;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        h1, h2 {
+            font-family: 'Courier New', monospace;
+            color: #FF6FCF;
+        }
+        .vaporwave-bg {
+            background: linear-gradient(135deg, #6E6EFF, #FF6FCF, #FFC1E3);
+            padding: 50px 0;
+        }
+        .section {
+            padding: 50px;
+        }
+        .vaporwave-text {
+            margin: 0 1rem;
+            color: #C8F4F9;
+            text-shadow: 2px 2px 5px #FF8EF2;
+        }
+        .neon-button {
+            background-color: #FF6FCF;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #1E1E2F;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px 0px #FF6FCF;
+            transition: 0.3s;
+        }
+        .neon-button:hover {
+            background-color: #FFC1E3;
+            box-shadow: 0px 0px 20px 0px #FFC1E3;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            object-fit: cover;
+            border: 3px solid #FF6FCF;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 80%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #333;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-bottom: 3px solid #FF6FCF;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-bottom: 3px solid #FFC1E3;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #2B2B40;
+        }
+        footer a {
+            color: #FF6FCF;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #FFC1E3;
+        }
+    </style>
+</head>
+<body>
+    <section class="vaporwave-bg">
+        <h1>Cloud Sync</h1>
+        <p class="vaporwave-text">Neon waves crash against the digital shore as turquoise clouds swirl above. Coral circuits pulse beneath glassy seas, code shimmering like bioluminescent jellyfish. Electric eels dance through data streams, weaving new realities in the depths. We dive deeper, past glowing reefs of forgotten code, crafting future oceans pixel by pixel, byte by byte.</p>
+        <button class="neon-button">■■□□■</button>
+    </section>
+    <section class="section">
+        <h2 class="vaporwave-text">Work Gallery</h2>
+        <div class="gallery">
+            <img src="https://media1.giphy.com/media/4knozU8q9AXvpod9qy/giphy.gif" alt="🔲1">
+            <img src="https://media4.giphy.com/media/l378cbyIM0Hcf1zlS/giphy.gif" alt="🔲2">
+            <img src="https://media0.giphy.com/media/4TrKGDZrcugHAt2VBc/giphy.gif" alt="🔲3">
+            <img src="https://media0.giphy.com/media/H0kxiS2RJF2HC/giphy.gif" alt="🔲4">
+        </div>
+    </section>
+    <section class="section vaporwave-bg">
+        <h2>Contact</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button class="neon-button" type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy;2024 | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+    </footer>
+</body>
+</html>
