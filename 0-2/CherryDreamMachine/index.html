@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/molerta" rel="stylesheet">
     <title>ᒪįᗰįហᗩᒪ.ᒪටටφ</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
@@ -14,19 +15,18 @@
         body {
             height: 100vh;
             overflow: hidden;
-            font-family: 'Lucida Console', monospace;
+            font-family: 'Molerta', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             display: flex;
             align-items: center;
             justify-content: center;
+            line-height: 1.4;
         }
 
         header {
             position: fixed;
-            top: 0; left: 0; right: 0;
-            width: 100%;
-            text-align: center;
+            top: 6%; left: 6%;
             font-size: 20px;
         }
         a {
@@ -95,7 +95,7 @@
         }    
         .dropdown-list::-webkit-scrollbar { display: none; }
         .dropdown-list.show { display: block; }
-        .dropdown-item { padding: 10px; cursor: pointer; }
+        .dropdown-item { padding: 10px; font-family: inherit; cursor: pointer; }
         .dropdown-item:hover { background: var(--accent-color); }
         .dropdown-item.selected { background: var(--accent-color); font-weight: bold; }
 
@@ -164,7 +164,7 @@
     </style>
 </head>
 <body>
-<header>Fragmented <a href="../" class="link">Data</a> Sphere</header>
+<header>fragmented<br><a href="../03" class="link" style="padding-left: 20px;">data</a><br>sphere</header>
 
     <main>
         <div class="controls">
