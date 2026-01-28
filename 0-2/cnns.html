@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/favicons/RGB-electricredBlush.ico">
+    <title>ᒪᓰᘻᓰᘉᗩᒪ ᒪᓍᓍᕵ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chokokutai&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {-webkit-tap-highlight-color: transparent; user-select: none; outline: none;}
+        html, body {margin: 0; padding: 0; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; font-family: "Metamorphous", serif; font-size: 14px; background-image: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/backscapes/register-4.jpg'); background-size: cover; background-position: center; color: #FFF7F0; text-align: center; overflow: hidden;}
+        .container {width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+        .content-wrapper {text-align: center; padding: 1em; max-width: 800px; width: 100%;}
+        header {padding: 0 2rem 90px; line-height: 1.7;}
+        header h1 {margin: 0; font-size: 1.6em; text-shadow: 2px 2px #000;}
+        header p {margin-top: 0; font-size: 0.8em; text-shadow: 1px 1px #000;}
+        .filter-bar {margin-top: 2em; display: flex; justify-content: center; flex-wrap: wrap; font-family: "IBM Plex Mono", monospace;}
+        .filter-dropdown {background: #1b1b1b; color: cornsilk; font-weight: bold; padding: 10px 15px; border-radius: 25px; cursor: pointer; position: relative; width: 260px; margin: 0 auto; transition: all 0.3s ease-in-out;}
+        .filter-dropdown:hover {color: #B413EC;}
+        .default-text {display: inline;}
+        .selected-tags {font-size: 0.7em; display: none;}
+        .filter-dropdown .tag-options {display: none; position: absolute; background: #1b1b1b; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; max-height: 150px; overflow-y: auto; top: 100%; left: 50%; transform: translateX(-50%); margin: 0; padding: 0; width: 80%; z-index: 10; scrollbar-width: none;}
+        .filter-dropdown .tag-options::-webkit-scrollbar {display: none;}
+        .filter-dropdown:hover .tag-options {display: block;}
+        .tag-option {padding: 0.5em 1em; cursor: pointer; color: cornsilk; text-align: left; font-size: 12px;}
+        .tag-option.selected {background: #FFF7F0; color: #B413EC;}
+        main {font-family: "Chokokutai", serif; padding: 25px 0; overflow-x: scroll; -ms-scroll-snap-type: x mandatory; scroll-snap-type: x mandatory; scrollbar-width: none;}
+        main::-webkit-scrollbar {display: none;}
+        .grid-container {display: grid; grid-auto-flow: column; grid-column-gap: 20px; scroll-snap-type: x mandatory;}
+        .card {display: flex; flex-direction: column; align-items: center; width: 125px; height: 50px; margin-bottom: 30px; scroll-snap-align: start; text-decoration: none; transition: transform 0.3s cubic-bezier(0.3, 0.1, 0.1, 1), color 0.3s cubic-bezier(0.3, 0.1, 0.1, 1); cursor: pointer; position: relative;}
+        .card:hover, .card:focus {transform: scale(1.05);}
+        .card::before {content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); clip-path: polygon(25px 0%, calc(100% - 25px) 0%, 100% 100%, 0% 100%); z-index: 0; transition: background 0.3s cubic-bezier(0.3, 0.1, 0.1, 1);}
+        .card:hover::before, .card:focus::before {background: #1b1b1b;}
+        .card.visited::before {background: #1b1b1b;}
+        .card-title {font-size: 2.3em; letter-spacing: .02em; color: cornsilk; z-index: 1; position: relative;}
+        .card:hover .card-title, .card:focus .card-title {color: #B413EC; transition: color 0.3s cubic-bezier(0.3, 0.1, 0.1, 1);}
+        .card:hover .card-title::before, .card:focus .card-title::before {color: #B413EC;}
+        .card.visited .card-title {color: #B413EC;} 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <header>
+                <h1>Convolutional Neural Net works</h1>
+                <p>CNNs are a type of deep learning technique commonly used for image recognition tasks. They work by learning patterns and features from images through layers of filters. CNNs excel at recognizing spatial patterns, making them effective for tasks like object detection and classification in images. They are widely used in computer vision applications.</p>
+                <div class="filter-bar">
+                    <div class="filter-dropdown">
+                        <span class="default-text">タグで絞り込み</span>
+                        <span class="selected-tags"></span>
+                        <div class="tag-options"></div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="grid-container" id="workGrid">
+                    <!-- Cards will be added here dynamically with JavaScript -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+<script>
+    // CARDS DATA:
+    const works = [
+        { title: "567", url: "#🪩", tags: ["vaporwave", "gallery"] },
+        { title: "zXq", url: "#🏀", tags: ["link hover", "background", "font"] },
+        { title: "sz5", url: "#🏐", tags: ["background effect", "animation", "font", "quote"] },
+        { title: "720", url: "#⚾️", tags: ["select/filter", "background", "font", "image"] },
+        { title: "pD9", url: "#🥎", tags: ["image", "menu", "structure", "font"] },  
+        { title: "3o9", url: "#⚽️", tags: ["background effect", "animation", "scroll", "structure", "font", "color"] },
+        { title: "a3a", url: "#🎱", tags: ["background effect", "image", "font", "color"] },       
+        { title: "500", url: "#🟣", tags: ["font", "animation", "menu", "link hover"] },
+        { title: "o04", url: "#🟠", tags: ["background effect", "image", "structure", "content"] },        
+        { title: "0c4", url: "#⚪️", tags: ["structure", "menu", "font"] },
+        { title: "52z", url: "#🟤", tags: ["grid", "gallery", "color"] },     
+        { title: "665", url: "#🔴", tags: ["structure", "color", "quote"] },
+        { title: "zq3", url: "#🔵", tags: ["color", "font", "animation", "slider"] },
+        { title: "432", url: "#🟢", tags: ["vaporwave", "gallery", "background"] }
+    ];
+
+    const selectedTags = new Set();
+    const tagOptionsContainer = document.querySelector('.tag-options');
+    const workGrid = document.getElementById('workGrid');
+    const defaultTextElement = document.querySelector('.filter-dropdown .default-text');
+    const selectedTagsElement = document.querySelector('.filter-dropdown .selected-tags');
+    let visitedCards = {};
+
+    function loadVisitedCards() {
+        const stored = sessionStorage.getItem('visitedCards');
+        if (stored) {
+            visitedCards = JSON.parse(stored);
+        }
+    }
+
+    function saveVisitedCards() {
+        sessionStorage.setItem('visitedCards', JSON.stringify(visitedCards));
+    }
+
+    function createWorkCard(work) {
+        const cardLink = document.createElement('a');
+        cardLink.href = work.url;
+        cardLink.classList.add('card');
+
+        if (visitedCards[work.url]) {
+            cardLink.classList.add('visited');
+        }
+
+        const cardTitle = document.createElement('span');
+        cardTitle.classList.add('card-title');
+        cardTitle.innerText = work.title;
+        cardLink.appendChild(cardTitle);
+
+        cardLink.addEventListener('click', () => {
+            visitedCards[work.url] = true;
+            saveVisitedCards();
+            cardLink.classList.add('visited');
+        });
+
+        workGrid.appendChild(cardLink);
+    }
+
+    function displayWorks() {
+        workGrid.innerHTML = '';
+        const filteredWorks = works.filter(work => {
+            if (selectedTags.size === 0) return true;
+            return Array.from(selectedTags).every(tag => work.tags.includes(tag));
+        });
+        filteredWorks.forEach(createWorkCard);
+    }
+
+    function updateTagOptions() {
+        const tags = new Set();
+        works.forEach(work => work.tags.forEach(tag => tags.add(tag)));
+
+        tagOptionsContainer.innerHTML = '';
+        tags.forEach(tag => {
+            const tagOption = document.createElement('div');
+            tagOption.classList.add('tag-option');
+            tagOption.innerText = tag;
+            tagOption.addEventListener('click', () => toggleTag(tag, tagOption));
+            if (selectedTags.has(tag)) tagOption.classList.add('selected');
+            tagOptionsContainer.appendChild(tagOption);
+        });
+    }
+
+    function toggleTag(tag, element) {
+        if (selectedTags.has(tag)) {
+            selectedTags.delete(tag);
+            element.classList.remove('selected');
+        } else {
+            selectedTags.add(tag);
+            element.classList.add('selected');
+        }
+        displayWorks();
+        updateSelectedTagsDisplay();
+    }
+
+    function updateSelectedTagsDisplay() {
+        const selectedTagsArray = Array.from(selectedTags);
+        if (selectedTagsArray.length > 0) {
+            selectedTagsElement.innerText = selectedTagsArray.join(', ');
+            selectedTagsElement.style.display = 'inline';
+            defaultTextElement.style.display = 'none';
+        } else {
+            selectedTagsElement.style.display = 'none';
+            defaultTextElement.style.display = 'inline';
+        }
+    }
+
+    loadVisitedCards();
+    updateTagOptions();
+    displayWorks();
+</script>
+</body>
+</html>
