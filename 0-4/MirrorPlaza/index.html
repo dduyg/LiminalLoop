@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal📟Loop</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @font-face {
+            font-family: 'Segoe UI';
+            src: url('‎https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/SegoeUI.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Segoe UI', Oxygen, Cantarell, sans-serif;
+            overflow-x: hidden;
+            color: #EEE9CC;    
+            height: 100vh;     
+            background: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/backscapes/inwave1761.png') no-repeat center center / cover fixed;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 95vw;
+            height: 95vh;
+            background: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/blobs/DolphinDatabase.png') center center / contain no-repeat;
+            opacity: 0.9;
+            z-index: -1;
+            pointer-events: none; /* so it doesn’t block clicks */
+        }       
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
+        section {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 5vw;
+            border-bottom: 1px solid;
+            overflow: hidden;
+        }
+        section:last-child { border-bottom: none; }
+
+        .content {
+            position: relative;
+            font-size: clamp(2.6rem, 12vw, 14vw);
+        }
+        .label { font-size: clamp(0.7rem, 2vw, 2.5vw); }
+
+        .two .content, .four .content { width: 100%; text-align: right; }
+        .one .label {
+            position: absolute;
+            right: -3vw;
+            top: -2vh;
+        }
+        .two .label {
+            position: absolute;
+            left: 11vw;
+            top: 2vh;
+        }
+        .three .label {
+            position: absolute;
+            right: 40vw;
+            top: 0;
+        }
+        .four .label {
+            position: absolute;
+            left: 5vw;
+            top: 2vh;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="one">
+            <div class="content">
+                 MirrorPlaza
+                <div class="label">Deluxe Interface</div>
+            </div>
+        </section>
+        <section class="two">
+            <div class="label">Object design</div>
+            <div class="content">Noeffect</div>
+        </section>
+        <section class="three">
+            <div class="content">
+                SwingGhost
+                <div class="label">Server Starlight</div>
+            </div>
+        </section>
+        <section class="four">
+            <div class="label">Dolphin Database</div>
+            <div class="content">
+                <div class="main">Lagoon</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
