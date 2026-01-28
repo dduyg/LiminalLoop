@@ -326,136 +326,148 @@
         <div>why am I here</div>
     </footer>
     
-    <script>
-        let filterMode = 'OR';
-        let selectedTags = [];
-        let visitedItems = [];
-        let allTags = new Set();
+<script>         
+    let filterMode = 'OR';
+    let selectedTags = [];
+    let allTags = new Set();
+    
+    const searchInput = document.getElementById('tagSearch');
+    const dropdownList = document.getElementById('dropdownList');
+    const trigger = document.getElementById('dropdownTrigger');
+    const badgesContainer = document.getElementById('badgesContainer');
+    const navItems = document.querySelectorAll('.item');
+    const SESSION_KEY = 'liminal_loop_visited';
+
+    function getVisited() {
+        const stored = sessionStorage.getItem(SESSION_KEY);
+        return stored ? JSON.parse(stored) : [];
+    }
+
+    function saveVisit(url) {
+        let visited = getVisited();
+        if (!visited.includes(url)) {
+            visited.push(url);
+            sessionStorage.setItem(SESSION_KEY, JSON.stringify(visited));
+        }
+    }
+
+    function applyVisitedState() {
+        const visited = getVisited();
+        navItems.forEach(item => {
+            if (visited.includes(item.href)) {
+                item.classList.add('visited');
+            }
+        });
+    }
+
+    function initializeTags() {
+        const itemsWithTags = document.querySelectorAll('.item[data-tags]');
         
-        const searchInput = document.getElementById('tagSearch');
-        const dropdownList = document.getElementById('dropdownList');
-        const trigger = document.getElementById('dropdownTrigger');
-        const badgesContainer = document.getElementById('badgesContainer');
-
-        function initializeTags() {
-            const items = document.querySelectorAll('.item[data-tags]');
-            
-            items.forEach(item => {
-                const tagsAttr = item.getAttribute('data-tags');
-                if (tagsAttr) {
-                    const tags = tagsAttr.split(',').map(t => t.trim());
-                    tags.forEach(tag => {
-                        if (tag) allTags.add(tag);
-                    });
-                }
-            });
-
-            populateDropdown();
-        }
-
-        function populateDropdown() {
-            dropdownList.innerHTML = '';
-            const sortedTags = Array.from(allTags).sort();
-            
-            sortedTags.forEach(tag => {
-                const div = document.createElement('div');
-                div.className = 'dropdown-item';
-                div.setAttribute('data-value', tag);
-                div.textContent = tag;
-                
-                div.addEventListener('click', () => {
-                    if (!selectedTags.includes(tag)) {
-                        selectedTags.push(tag);
-                        addBadge(tag);
-                        applyFilters();
-                    }
-                    searchInput.value = '';
-                    dropdownList.classList.remove('show');
+        itemsWithTags.forEach(item => {
+            const tagsAttr = item.getAttribute('data-tags');
+            if (tagsAttr) {
+                const tags = tagsAttr.split(',').map(t => t.trim());
+                tags.forEach(tag => {
+                    if (tag) allTags.add(tag);
                 });
-                
-                dropdownList.appendChild(div);
-            });
-        }
-
-        function toggleFilterMode() {
-            const btn = document.getElementById('toggleMode');
-            filterMode = filterMode === 'OR' ? 'AND' : 'OR';
-            btn.classList.toggle('and-mode');
-            applyFilters();
-        }
-
-        trigger.addEventListener('click', () => {
-            dropdownList.classList.add('show');
-            searchInput.focus();
-        });
-
-        searchInput.addEventListener('input', (e) => {
-            const val = e.target.value.toLowerCase();
-            document.querySelectorAll('.dropdown-item').forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.classList.toggle('hidden', !text.includes(val));
-            });
-        });
-
-        function addBadge(tag) {
-            const badge = document.createElement('div');
-            badge.className = 'selected-badge';
-            badge.innerHTML = `${tag} <span onclick="removeTag('${tag}', event)">×</span>`;
-            badgesContainer.appendChild(badge);
-        }
-
-        function removeTag(tag, e) {
-            e.stopPropagation();
-            selectedTags = selectedTags.filter(t => t !== tag);
-            const badges = badgesContainer.querySelectorAll('.selected-badge');
-            badges.forEach(b => {
-                if(b.textContent.includes(tag)) b.remove();
-            });
-            applyFilters();
-        }
-
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.dropdown-container')) {
-                dropdownList.classList.remove('show');
             }
         });
+        populateDropdown();
+    }
 
-        function applyFilters() {
-            const items = document.querySelectorAll('.item[data-tags]');
-            items.forEach(item => {
-                const itemTags = item.getAttribute('data-tags').split(',').map(t => t.trim());
-                let visible = true;
-
-                if (selectedTags.length > 0) {
-                    if (filterMode === 'OR') {
-                        visible = selectedTags.some(t => itemTags.includes(t));
-                    } else {
-                        visible = selectedTags.every(t => itemTags.includes(t));
-                    }
-                }
-                item.style.display = visible ? 'inline-flex' : 'none';
-            });
-        }
-
-        // Track visited items
-        const items = document.querySelectorAll('.item');
-        items.forEach(item => {
-            const itemText = item.textContent;
+    function populateDropdown() {
+        dropdownList.innerHTML = '';
+        const sortedTags = Array.from(allTags).sort();
+        
+        sortedTags.forEach(tag => {
+            const div = document.createElement('div');
+            div.className = 'dropdown-item';
+            div.textContent = tag;
             
-            if (visitedItems.includes(itemText)) {
-                item.classList.add('visited');
-            }
-
-            item.addEventListener('click', () => {
-                if (!visitedItems.includes(itemText)) {
-                    visitedItems.push(itemText);
+            div.addEventListener('click', () => {
+                if (!selectedTags.includes(tag)) {
+                    selectedTags.push(tag);
+                    addBadge(tag);
+                    applyFilters();
                 }
-                item.classList.add('visited');
+                searchInput.value = '';
+                dropdownList.classList.remove('show');
+            });
+            dropdownList.appendChild(div);
+        });
+    }
+
+    function toggleFilterMode() {
+        const btn = document.getElementById('toggleMode');
+        filterMode = filterMode === 'OR' ? 'AND' : 'OR';
+        btn.classList.toggle('and-mode');
+        applyFilters();
+    }
+
+    trigger.addEventListener('click', () => {
+        dropdownList.classList.add('show');
+        searchInput.focus();
+    });
+
+    searchInput.addEventListener('input', (e) => {
+        const val = e.target.value.toLowerCase();
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            const text = item.textContent.toLowerCase();
+            item.classList.toggle('hidden', !text.includes(val));
+        });
+    });
+
+    function addBadge(tag) {
+        const badge = document.createElement('div');
+        badge.className = 'selected-badge';
+        badge.innerHTML = `${tag} <span onclick="removeTag('${tag}', event)">×</span>`;
+        badgesContainer.appendChild(badge);
+    }
+
+    function removeTag(tag, e) {
+        e.stopPropagation();
+        selectedTags = selectedTags.filter(t => t !== tag);
+        const badges = badgesContainer.querySelectorAll('.selected-badge');
+        badges.forEach(b => {
+            if(b.textContent.includes(tag)) b.remove();
+        });
+        applyFilters();
+    }
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown-container')) {
+            dropdownList.classList.remove('show');
+        }
+    });
+
+    function applyFilters() {
+        const itemsWithTags = document.querySelectorAll('.item[data-tags]');
+        itemsWithTags.forEach(item => {
+            const itemTags = item.getAttribute('data-tags').split(',').map(t => t.trim());
+            let visible = true;
+
+            if (selectedTags.length > 0) {
+                if (filterMode === 'OR') {
+                    visible = selectedTags.some(t => itemTags.includes(t));
+                } else {
+                    visible = selectedTags.every(t => itemTags.includes(t));
+                }
+            }
+            item.style.display = visible ? 'inline-flex' : 'none';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initializeTags();
+        applyVisitedState();
+
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                saveVisit(this.href);
+                this.classList.add('visited');
             });
         });
-
-        // Initialize tags on page load
-        initializeTags();
-    </script>
+    });
+</script>
 </body>
 </html>
