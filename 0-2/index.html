@@ -24,7 +24,7 @@
         .badge {font-size: 24px; font-weight: 500;}
         a {color: inherit; text-decoration: none;}
         a:hover {font-style: italic;}
-        .visited {text-decoration: line-through; opacity: 0.6;}
+        a.visited {text-decoration: line-through; opacity: 0.6;}
         .robustness div:nth-child(1) {padding-right: 23px;}
         code {white-space: nowrap; background-color: #000; color: #FFD700; padding: 3px 5px; border-radius: 3px; font-family: "Azeret Mono", monospace;}
         a.bounce-link {display: inline-block; transition: all 0.3s ease;}
@@ -122,24 +122,33 @@
     </footer>
 
 <script>
-const links = document.querySelectorAll('a');
-const visitedLinks = JSON.parse(localStorage.getItem('visitedLinks')) || [];
+  (function() {
+    const links = document.querySelectorAll('a'); 
+    // Define a unique key for this session's visited links
+    const SESSION_KEY = 'session_visited_links';
+    // Load existing visited links from sessionStorage
+    let visitedLinks = JSON.parse(sessionStorage.getItem(SESSION_KEY)) || [];
 
-links.forEach(link => {
-  const href = link.href;
+    links.forEach(link => {
+      const href = link.href;
 
-  if (visitedLinks.includes(href)) {
-    link.classList.add('visited');
-  }
+      if (visitedLinks.includes(href)) {
+        link.classList.add('visited');
+      }
 
-  link.addEventListener('click', () => {
-    if (!visitedLinks.includes(href)) {
-      visitedLinks.push(href);
-      localStorage.setItem('visitedLinks', JSON.stringify(visitedLinks));
-    }
-    link.classList.add('visited');
-  });
-});
+      link.addEventListener('click', () => {
+        // Reload list to ensure it's up to date across multi-tab sessions if needed
+        visitedLinks = JSON.parse(sessionStorage.getItem(SESSION_KEY)) || [];
+        
+        if (!visitedLinks.includes(href)) {
+          visitedLinks.push(href);
+          sessionStorage.setItem(SESSION_KEY, JSON.stringify(visitedLinks));
+        }
+        
+        link.classList.add('visited');
+      });
+    });
+  })();
 </script>
 </body>
 </html>
