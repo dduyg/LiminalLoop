@@ -16,8 +16,7 @@
             font-style: normal;
         }
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             height: 100vh;
             background-image: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/backscapes/pixelMermaid.jpg');
             background-repeat: repeat; /* Repeats both horizontally and vertically */
@@ -109,7 +108,7 @@
 <main>
     <section id="info">
       <div class="container">
-         <h1>Seas <a href="../07/">of</a> Syntax</h1>
+         <h1>Seas <a href="../">of</a> Syntax</h1>
          <p><i>Masked Language Modeling</i> (MLM) is a technique used in natural language processing (NLP) for training models, particularly in the context of pre-trained models like BERT (Bidirectional Encoder Representations from Transformers). Unlike traditional language models, which predict the next word in a sequence from left to right (as done in models like GPT), MLM takes a different approach by randomly masking certain words in a sentence and then training the model to predict these hidden words. The idea is that by learning to predict the missing parts of the sentence based on the surrounding context, the model becomes highly adept at understanding the relationships between words in a bidirectional (both left-to-right and right-to-left) way.</p>
          <p>Imagine a simple sentence: <i>"The cat sat on the mat."</i> In MLM, certain words in this sentence are masked, so it might look like: "The <code>[MASK]</code> sat on the <code>[MASK]</code>." The task of the model is to correctly predict the hidden words based on the surrounding context. In this case, the model would use the visible words—"The," "sat on the"—to guess that the hidden words are "cat" and "mat." By constantly being exposed to sentences like this, where random parts are concealed, the model learns to predict missing words based on the context of the entire sentence, and in doing so, it becomes highly proficient in understanding the relationships between words.</p>
          <p>This approach stands in contrast to older models that only look at words in one direction, usually left to right. By training models to predict words based on both the words before and after them, MLM allows for a richer understanding of language. For example, in the sentence, "The quick brown fox jumps over the lazy dog," if you were to mask "brown" and "jumps," the model would need to figure out that "brown" fits well before "fox" and "jumps" fits after "fox" by considering the entire context of the sentence, including the words that come after the masked tokens.</p>
