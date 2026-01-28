@@ -283,105 +283,123 @@
     </main>
     <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/blocks.png" class="footer-img">
     
-    <script>
-        let filterMode = 'OR';
-        let selectedTags = [];
-        const visitedLinks = [];
+<script>
+    let filterMode = 'OR';
+    let selectedTags = [];
+    const STORAGE_KEY = 'liminal_distorted_visited';
+
+    function getVisitedLinks() {
+        const stored = sessionStorage.getItem(STORAGE_KEY);
+        return stored ? JSON.parse(stored) : [];
+    }
+
+    function saveVisit(url) {
+        let visited = getVisitedLinks();
+        if (!visited.includes(url)) {
+            visited.push(url);
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify(visited));
+        }
+    }
+
+    function applyVisitedUI() {
+        const visited = getVisitedLinks();
+        document.querySelectorAll('.item').forEach(link => {
+            if (visited.includes(link.href)) {
+                link.classList.add('visited');
+            }
+        });
+    }
+
+    function setMode(mode) {
+        const slider = document.getElementById('slider');
+        const options = document.querySelectorAll('.toggle-option');
         
-        function setMode(mode) {
-            const slider = document.getElementById('slider');
-            const options = document.querySelectorAll('.toggle-option');
-            
-            filterMode = mode;
-            
-            options.forEach(opt => {
-                if (opt.dataset.mode === mode) {
-                    opt.classList.add('active');
-                } else {
-                    opt.classList.remove('active');
-                }
-            });
-            
-            if (mode === 'AND') {
-                slider.classList.add('and-mode');
+        filterMode = mode;
+        
+        options.forEach(opt => {
+            if (opt.dataset.mode === mode) {
+                opt.classList.add('active');
             } else {
-                slider.classList.remove('and-mode');
+                opt.classList.remove('active');
             }
-            
-            if (selectedTags.length > 0) {
-                applyFilter();
-            }
+        });
+        
+        if (mode === 'AND') {
+            slider.classList.add('and-mode');
+        } else {
+            slider.classList.remove('and-mode');
         }
         
-        function filterItems(tag) {
-            const tags = document.querySelectorAll('.filter .tag');
+        if (selectedTags.length > 0) {
+            applyFilter();
+        }
+    }
+    
+    function filterItems(tag) {
+        const tags = document.querySelectorAll('.filter .tag');
+        const eventTarget = event.target;
+        
+        if (tag === 'All') {
+            selectedTags = [];
+            tags.forEach(t => t.classList.remove('active'));
+            eventTarget.classList.add('active');
             
-            if (tag === 'All') {
-                selectedTags = [];
-                tags.forEach(t => t.classList.remove('active'));
-                event.target.classList.add('active');
-                
+            const items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                item.style.display = 'inline-flex';
+            });
+        } else {
+            tags[0].classList.remove('active');
+            
+            if (selectedTags.includes(tag)) {
+                selectedTags = selectedTags.filter(t => t !== tag);
+                eventTarget.classList.remove('active');
+            } else {
+                selectedTags.push(tag);
+                eventTarget.classList.add('active');
+            }
+            
+            if (selectedTags.length === 0) {
+                tags[0].classList.add('active');
                 const items = document.querySelectorAll('.item');
                 items.forEach(item => {
                     item.style.display = 'inline-flex';
                 });
             } else {
-                tags[0].classList.remove('active');
-                
-                const clickedTag = event.target;
-                if (selectedTags.includes(tag)) {
-                    selectedTags = selectedTags.filter(t => t !== tag);
-                    clickedTag.classList.remove('active');
-                } else {
-                    selectedTags.push(tag);
-                    clickedTag.classList.add('active');
-                }
-                
-                if (selectedTags.length === 0) {
-                    tags[0].classList.add('active');
-                    const items = document.querySelectorAll('.item');
-                    items.forEach(item => {
-                        item.style.display = 'inline-flex';
-                    });
-                } else {
-                    applyFilter();
-                }
+                applyFilter();
             }
         }
+    }
+    
+    function applyFilter() {
+        const items = document.querySelectorAll('.item');
         
-        function applyFilter() {
-            const items = document.querySelectorAll('.item');
+        items.forEach(item => {
+            const itemTags = item.getAttribute('data-tags').split(',').map(t => t.trim());
+            let shouldShow = false;
             
-            items.forEach(item => {
-                const itemTags = item.getAttribute('data-tags').split(',').map(t => t.trim());
-                let shouldShow = false;
-                
-                if (filterMode === 'OR') {
-                    shouldShow = selectedTags.some(tag => itemTags.includes(tag));
-                } else {
-                    shouldShow = selectedTags.every(tag => itemTags.includes(tag));
-                }
-                
-                item.style.display = shouldShow ? 'inline-flex' : 'none';
-            });
-        }
-        
+            if (filterMode === 'OR') {
+                shouldShow = selectedTags.some(tag => itemTags.includes(tag));
+            } else {
+                shouldShow = selectedTags.every(tag => itemTags.includes(tag));
+            }
+            
+            item.style.display = shouldShow ? 'inline-flex' : 'none';
+        });
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
         const links = document.querySelectorAll('.item');
         
+        applyVisitedUI();
+        
         links.forEach(link => {
-            const href = link.href;
-            
-            if (visitedLinks.includes(href)) {
-                link.classList.add('visited');
-            }
-            
-            link.addEventListener('click', () => {
-                if (!visitedLinks.includes(href)) {
-                    visitedLinks.push(href);
-                }
-                link.classList.add('visited');
+            link.addEventListener('click', function() {
+                saveVisit(this.href);
+                this.classList.add('visited');
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
