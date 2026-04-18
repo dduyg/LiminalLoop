@@ -380,7 +380,7 @@
   {
     "id": "bake-dessert",
     "viewBox": "0 0 32 32",
-    "tags": ["circular", "square", "geometric"],
+    "tags": ["extension", "blocks", "status", "indicator", "duality"],
     "svg": "<path d=\"M8 24h16v4h-16v-4zM8 4v16h16v-16h-16z\"></path>"
   }
 ]
