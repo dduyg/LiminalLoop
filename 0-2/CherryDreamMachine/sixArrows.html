@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liminal🚂Loop</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/favicons/sixArrows.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+  <style>
+    * { outline: none; -webkit-tap-highlight-color: transparent; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Unbounded", sans-serif;
+      background: #360000;
+      color: #FD4F4E;
+      line-height: 1.5;
+    }
+    .content {
+      min-height: 100vh;
+      padding: 10vh 5% calc(100vw / 3.03); /* Reserve bottom space equal to video height */
+    }
+    em {
+     color: #D80100;
+     font-style: normal;
+    }
+    p { margin-bottom: 35px; }
+
+    .video-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: calc(100vw / 3.03); /* Maintain 1280:422 aspect ratio */
+      z-index: 999;
+      overflow: hidden;
+    }
+    .video-footer video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sound-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .sound-toggle svg {
+      width: 100%;
+      height: 100%;
+      fill: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <p>Statues speak in silent stone,<br>
+       Of how one man stood alone.<br>
+       But we are many, bold and free,<br>
+       The children of <em>his legacy</em>.
+    </p>
+    <p>
+       With <em>six arrows</em> lighting our way,<br>
+       Forevermore we shout and say:
+    </p>
+    <p>
+       Kalbimin orta yerinde bu nasıl bir <em>cumhuriyet</em> seninki<br>
+       Nasıl bir hakimiyet ben anlamadım<br>
+       Sustum sustum sonunda <em>dayanamadım</em>
+    </p>
+  </div>
+
+  <!-- Fixed Video Footer -->
+  <div class="video-footer">
+    <video id="footerVideo" autoplay loop playsinline muted>
+      <source src="https://raw.githubusercontent.com/dduyg/LiminalLoop/shelf/0-6/stream/kemalizm.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button class="sound-toggle" id="soundToggleBtn" onclick="toggleSound()">
+      <!-- Mute Icon by default -->
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <path d="M360.71,171.94l59.58,59.58-30.17,30.17-59.58-59.58-59.58,59.58-30.17-30.17,59.58-59.58-59.58-59.58,30.17-30.17,59.58,59.58,59.58-59.58,30.17,30.17ZM191.75,0,80.9,87.23H0V257.9H81.02l110.73,85.46V0Zm-149.08,129.9H95.69l53.4-42.02V256.52l-53.52-41.29H42.67V129.9Z"/>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    const video = document.getElementById('footerVideo');
+    const toggleBtn = document.getElementById('soundToggleBtn');
+
+    const soundOnIcon = `
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <path d="M361.3,341.61l-33.29-26.63c74.19-81.08,74.19-205.02,0-286.09l33.29-26.63c86.61,96.71,86.61,242.63,0,339.35ZM276.91,69.77l-33.32,26.66c39.8,42.57,39.79,108.45,0,151.01l33.32,26.66c52.2-58.22,52.2-146.11,0-204.33ZM191.75,0,80.9,87.23H0V257.9H81.02l110.73,85.46V0Zm-149.08,129.9H95.69l53.4-42.02V256.52l-53.52-41.29H42.67V129.9Z"/>
+      </svg>
+    `;
+
+    const soundOffIcon = `
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <path d="M360.71,171.94l59.58,59.58-30.17,30.17-59.58-59.58-59.58,59.58-30.17-30.17,59.58-59.58-59.58-59.58,30.17-30.17,59.58,59.58,59.58-59.58,30.17,30.17ZM191.75,0,80.9,87.23H0V257.9H81.02l110.73,85.46V0Zm-149.08,129.9H95.69l53.4-42.02V256.52l-53.52-41.29H42.67V129.9Z"/>
+      </svg>
+    `;
+
+    function toggleSound() {
+      video.muted = !video.muted;
+      video.play();
+      toggleBtn.innerHTML = video.muted ? soundOffIcon : soundOnIcon;
+    }
+  </script>
+</body>
+</html>

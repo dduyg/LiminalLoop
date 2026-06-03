@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>    
+        /* Slide + Fade-In Animation */
+        .slide-and-fade {
+            opacity: 0;
+            transform: translateY(30px); /* Start below the normal position */
+            animation: slideAndFade 1s ease-in-out forwards; /* Slide and fade in */
+        }
+        @keyframes slideAndFade { 
+            0% { 
+                transform: translateY(30px); /* Start below */
+                opacity: 0; /* Fully transparent */
+            }
+            50% { 
+                transform: translateY(15px); /* Midway position */
+                opacity: 0.5; /* Semi-transparent */
+            }
+            100% { 
+                transform: translateY(0); /* Final position */
+                opacity: 1; /* Fully visible */
+            }
+        }
+        /**
+        * This is a variable font
+        * You can control variable axes as shown below:
+        * font-variation-settings: wght 800.0;
+        *
+        * available axes:
+        'wght' (range from 200.0 to 800.0
+        *
+        * font-family: 'Panchang', sans-serif;
+        */
+        @font-face {
+            font-family: 'Panchang';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Panchang-Variable.woff2') format('woff2');
+            font-weight: 200 800;
+            font-style: normal;
+        }
+        body {
+            background-color: #A58C0E;
+            color: #FFC6FD;
+            font-family: 'Panchang', sans-serif;
+            font-variation-settings: 'wght' 400;
+            font-weight: 400; /* Fallback */
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0; padding: 0;
+        }
+        main {
+            width: 95%;
+            max-width: 800px;
+            margin: 15px auto 75px;
+        }
+        
+        header {
+            padding: 60px 0;
+            font-size: 3rem;
+            font-variation-settings: 'wght' 700;
+            font-weight: 700; /* Fallback */
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-top: 1px solid;
+        }
+        .item:last-child {
+            border-bottom: 1px solid;
+        }
+
+        .date, .title, .details {
+            flex: 1;
+        }
+        .date {
+            flex-basis: 15%;
+            font-weight: bold;
+        }
+        .title {
+            flex-basis: 50%;
+            text-align: left;
+            padding-left: 10px;
+        }
+        .details {
+            flex-basis: 35%;
+            text-align: right;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header>Four Hours</header>
+    <div class="item">
+        <div class="date">2024.08</div>
+        <div class="title">白涙 - Carat.</div>
+        <div class="details">作詞 / 作曲・ボーカルディレクション</div>
+    </div>
+    <div class="item">
+        <div class="date">2024.06</div>
+        <div class="title">WaMi - ANGeLiC GlOW</div>
+        <div class="details">作詞 / 編曲・ボーカルディレクション / プロデュース</div>
+    </div>
+    <div class="item">
+        <div class="date">2024.06</div>
+        <div class="title">Moss Realm—Gray Static</div>
+        <div class="details">BGM / プロデュース</div>
+    </div>
+    <div class="item">
+        <div class="date">2024.03</div>
+        <div class="title">Surreal FantasyーADV MORSOMNIA:0</div>
+        <div class="details">BGM / プロデュース</div>
+    </div>
+    <div class="item">
+        <div class="date">2024.03</div>
+        <div class="title">Pixel grayscale</div>
+        <div class="details">作詞 / 作曲・グレスケイルョン</div>
+    </div>
+    <div class="item">
+        <div class="date">2024.03</div>
+        <div class="title">Risa Cloud - kill the clown</div>
+        <div class="details">作詞 / 作曲 / 編曲</div>
+    </div>
+    <div class="item">
+        <div class="date">2024.02</div>
+        <div class="title">DREAMSYNC Void Smile</div>
+        <div class="details">カシオトハ - ハルモニプロ</div>
+    </div>
+    <div class="item">
+        <div class="date">2023.12</div>
+        <div class="title">宮下遊 - [REJOICE]-</div>
+        <div class="details">作詞 / 作曲</div>
+    </div>
+    <div class="item">
+        <div class="date">2023.12</div>
+        <div class="title">LUXSCAPE - 術中HACK</div>
+        <div class="details">作曲</div>
+    </div>
+    <div class="item">
+        <div class="date">2023.10</div>
+        <div class="title">ParadiseKeeper White Mist</div>
+        <div class="details">映画 歳のある街 (パイロット版)</div>
+    </div>
+
+    <!-- More data rows can be added here similarly -->
+</main>
+
+    <script>
+        // Create an array with the elements to animate (header, work-item, footer, etc.)
+        const elementsToAnimate = [
+            'header',
+            '.item'
+        ];
+
+        // Get all elements based on the selectors in the array
+        const elements = elementsToAnimate.flatMap(selector => {
+            return Array.from(document.querySelectorAll(selector));
+        });
+
+        // Apply the slide-and-fade animation with staggered delays
+        elements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.15}s`; // Adjust delay (0.15s per element)
+            el.classList.add('slide-and-fade');
+        });
+    </script>
+</body>
+</html>

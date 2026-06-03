@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/favicons/letterD.ico">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira&display=swap" rel="stylesheet">
+    <title>ᄂIMIПΛᄂ🧱ｌᎧᎧᎮ</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
+        @font-face {font-family: 'Lab Mono'; src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/labmono-regular.woff2') format('woff2'); font-weight: normal; font-style: normal;}
+        body {display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; background-color: #f0f0f0; font-family: "Rubik", sans-serif; line-height: 1.5; font-size: 0.7rem;}    
+        main {width: 80%; max-width: 600px;}      
+        .gradient-bar {height: 80px; width: 100%; border: 1px solid #333; background: linear-gradient(90deg, #8db9ff 0%, #b8b29a 50%, #d4b500 100%);}
+        .labels {display: flex; justify-content: space-between; margin-top: 8px;}    
+        .label-item {display: flex; flex-direction: column; align-items: center; width: 20px;}
+        .tick {width: 2px; height: 10px; background-color: #333; margin-bottom: 4px;}
+        .number {font-size: 18px; font-weight: 500; color: #333;}
+        
+        /* Independent Scrolling Layer */
+        aside {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; overflow-y: scroll; z-index: 10; scrollbar-width: none; pointer-events: none;}
+        aside::-webkit-scrollbar {display: none;}
+        .spacer {/* To start 30vh from bottom */ height: 70vh;}
+        .content {pointer-events: auto; width: 100%; max-width: 100%; margin: 0 auto; padding: 10px 20px; padding-bottom: 110vh; /* Extra space to scroll off screen */}
+        .row1 {display: grid; gap: 15px; grid-template-columns: 5fr 5fr;}
+        .row2 {display: grid; grid-template-columns: 2fr 8fr; margin-top: 25px;}
+        .row3 {display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 200px;}   
+        .row4 {display: grid; gap: 15px; grid-template-columns: 3fr 5fr 2fr; margin-bottom: 300px;}
+        .row5, .row6 {display: grid; gap: 15px; grid-template-columns: 6fr 4fr;}
+        .row5 .box img, .row6 .box img {width: 100%; height: 100%; object-fit: cover; display: block;}
+        .box img {width: 100%; height: auto; display: block; object-fit: cover;}
+        .row3 .box svg {width: 100%; max-width: 120px; height: auto; transition: transform 0.3s ease; --c1: beige; --c2: #38023b; --c3: fuchsia;}
+        .row3 .box:hover svg {transform: scale(1.08) rotate(2deg); --c1: #f5f5dc; --c2: fuchsia; --c3: #38023b;}
+        .row4 .box:nth-of-type(1) {background: linear-gradient(to right, #ff6b6b, #4ecdc4); color: #0B0B0B; border: 1px solid #ccc; align-self: end;}
+        .row4 .box h4 {display: inline-block; font-size: 0.8rem; animation: float 3s ease-in-out infinite; will-change: transform;}
+        .row1 .box:nth-of-type(2), .row5 .box:nth-of-type(2) {align-self: end;}    
+        .row6 .box:nth-of-type(2) {align-self: start; padding-top: 15px;}
+        @keyframes float { 0% {transform: translateY(0);} 50% {transform: translateY(-15px);} 100% {transform: translateY(0);} }
+        .row1 .box h1 {color: #666; font-family: 'VT323', monospace; font-size: 1.2rem;}
+        .row1 .box u {text-decoration: none; position: relative;}
+        .row1 .box u::before {content: ''; position: absolute; top: -0.33em; left: 0; right: 0; height: 0.06875em; /* Intermediate thickness */ background-color: currentColor;}
+    
+        /* Full top header */
+        .top-header {position: fixed; top: 0; left: 0; font-family: "Saira", sans-serif; width: 100%; display: flex; justify-content: space-between; z-index: 5;}
+        .top-blob {width: 100px; height: auto;}
+         nav {position: absolute; left: 50%; transform: translateX(-50%);}
+        .menu-trigger {margin: 25px 0 15px; color: #666; font-size: 20px; font-weight: 600; cursor: pointer; user-select: none; display: inline-block;}
+        .menu {display: none; flex-direction: column; gap: 15px;}
+        .menu.active {display: flex;}
+        .menu a {color: #b88860; font-size: 17px; transition: all 0.2s ease;}
+        .menu a:hover {font-weight:bold; letter-spacing: 2px;}
+
+        /* Dropdown Panel with Glitch */
+        .dropdown-panel {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; max-width: 85vw; line-height: 1.9; background: beige; padding: 20px; max-height: 75vh; border-radius: 8px; z-index: 200; display: none;}
+        .dropdown-panel.visible {display: block; animation: panel-glitch 0.2s ease-out;}
+         @keyframes panel-glitch { 0% {transform: translate(-52%, -48%) skew(3deg); filter: hue-rotate(90deg);} 50% {transform: translate(-49%, -51%) skew(-3deg); filter: invert(20%);} 100% {transform: translate(-50%, -50%) skew(0deg);} }
+         section {margin-top: 25px; display: flex; flex-direction: row; align-items: stretch; padding: 1.25em 0; overflow-x: auto; -ms-scroll-snap-type: x mandatory; scroll-snap-type: x mandatory; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; gap: 1em;}
+         section::-webkit-scrollbar {display: none;} 
+        .card {display: flex; flex-direction: column; flex: 0 0 180px; padding: 1em; border-radius: 12px; background: rgba(56, 2, 59, 0.05); font-weight: normal!important; scroll-snap-align: start; transition: all 0.4s; cursor: pointer; position: relative; overflow: hidden;}
+        .card:hover {box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);}
+        .card-title {font-size: 1.1rem; font-weight: bold;}
+        
+        /* Bottom-right controls */
+        #controls {position: fixed; bottom: 0; right: 0; display: flex; flex-direction: column; align-items: flex-end; padding: 20px; z-index: 100; pointer-events: auto;}
+        #controls button {padding: 10px 20px; background: #CF9E77; color: white; border: none; border-radius: 4px; cursor: pointer; font-family: 'Lab Mono', monospace; font-size: 0.6rem;}   
+        #controls button:hover {background: #C9C9BF; color: #b88860;} 
+        #status {position: relative; width: 250px; height: 20px; font-family: 'Lab Mono', monospace;}  
+        .anim {position: absolute; top: 0; right: 0; width: 100%; text-align: right; color: #666; white-space: nowrap; opacity: 0; filter: blur(8px); pointer-events: none;}
+        .anim.active {animation: text-blur-cycle 18s cubic-bezier(.455,.03,.515,.955) infinite;}
+        .anim:nth-child(1) {animation-delay: 0s;}
+        .anim:nth-child(2) {animation-delay: 3s;}
+        .anim:nth-child(3) {animation-delay: 6s;}
+        .anim:nth-child(4) {animation-delay: 9s;}
+        .anim:nth-child(5) {animation-delay: 12s;}
+        .anim:nth-child(6) {animation-delay: 15s;}
+        @keyframes text-blur-cycle {0% {filter: blur(12px); opacity: 0;} 5% {filter: blur(0px); opacity: 1;} 11.11% {filter: blur(0px); opacity: 1;} 16.66% {filter: blur(12px); opacity: 0;} 100% {filter: blur(12px); opacity: 0;} }
+
+        /* link listing */
+        a {color: #C14A09; font-weight: bold; text-decoration: none; color: inherit;}
+        a.swipe {position: relative; cursor: pointer;}
+        a.swipe::before {content: " "; position: absolute; z-index: -1; top: 100%; left: -2px; padding: 0 2px; width: calc(100% + 2px); height: 1px; border-bottom: 3px solid #C14A09; transition: 0.4s;}
+        a.swipe::after {content: " "; position: absolute; z-index: -1; top: 0; left: -2px; padding: 0 2px; width: 1px; height: 1.5em; transition: 0.4s;}
+        a.swipe:hover::after {width: 100%; background-color: #C14A09;}
+        a.swipe:hover::before {border-color: transparent;}
+        a.skewUp {display: inline-block; position: relative; transition: color 0.3s; cursor: pointer;}
+        a.skewUp:hover {color: beige;}
+        a.skewUp::before {content: ""; position: absolute; display: block; z-index: -1; bottom: 0; left: 0; height: 2px; width: 100%; background-color: #C14A09; transition: height 0.3s, width 0.3s, transform 0.3s;}
+        a.skewUp:hover::before {height: 100%; width: calc(100% + 0.5em); transform: translateX(-0.25em) skew(-7deg);}
+        a.rule {position: relative; cursor: pointer;}
+        a.rule::after {content: ' '; position: absolute; top: 100%; left: 25%; width: 50%; height: 1px; border-bottom: 3px solid #C14A09; transition: 0.4s;}
+        a.rule:hover::after {width: 100%; left: 0;}
+        a.magic-btn {color: #C14A09; position: relative; cursor: pointer; display: inline-block; transition: 0.3s; transition-delay: 0s; transform: scale(1);}
+        a.magic-btn:hover {transform: scale(1.4); transition-delay: 0.11s;}
+        a.magic-btn::before {content: " "; position: absolute; z-index: -1; bottom: 0; left: -2px; padding: 0 2px; width: calc(100% + 2px); height: 1px; transition: 0.4s;}
+        a.magic-btn::after {content: " "; position: absolute; z-index: -1; bottom: 0; left: calc(50% - 4px); padding: 0 2px; width: 0; height: 0; border: 1px solid transparent; transition: 0.4s;}
+        a.magic-btn:hover::before {border-color: transparent;}
+        a.magic-btn:hover::after {width: 100%; height: 1.25em; left: -1em; bottom: -0.35em; padding: 0.4em 0.8em; border-color: violet; background-color: violet; border-radius: 2.5em;}    
+        a.highlight {font-weight: 700; display: inline-block; padding: 2px 4px; position: relative;}
+        a.highlight::after {content: ''; position: absolute; z-index: -1; width: 100%; height: 14%; left: 0; bottom: 0; background: linear-gradient(to right, #ff6b6b, #4ecdc4); transition: all ease 0.3s;}   
+        a.highlight:hover::after {height: 100%;}
+        a.covering {vertical-align: top; position: relative;}
+        a.covering::before {content: ''; background-color: #C14A09; position: absolute; left: 0.5rem; bottom: 5px; width: 100%; height: 8px; z-index: -1; transition: all 0.3s ease-in-out;}
+        a.covering:hover::before {left: -5px; bottom: 0; height: 100%; width: calc(100% + 10px);}
+        a.gifbg {color: #C14A09; background-position-y: calc(1em + 16px); transition: background-position-y 0.6s ease-out, color 0.6s ease-out; background-repeat: repeat-x; background-image: url("https://media4.giphy.com/media/sBYsmegw30zfkBKxMh/giphy.gif"), linear-gradient(rgba(0, 0, 0, 0.7), black); background-size: contain; padding: 4px;}
+        a.gifbg:hover {background-position-y: 0; color: beige;}
+        a.jump {border-bottom: 1px dashed #C14A09; display: inline-block; position: relative; padding: 0 2px; transition: all 0.4s cubic-bezier(0.165 0.84, 0.44, 1); z-index: 1000;}
+        a.jump:before {content: ""; z-index: -1; width: 100%; height: 0%; background: rgba(0, 0, 0, 1); bottom: 0; left: 0; position: absolute; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);}
+        a.jump:hover {border-bottom: 2px dotted #C14A09; transform: translateY(-4px);}
+        a.jump:active {transform: translateY(0px);}
+        a.squiggle {font-style: italic; color: #C14A09; letter-spacing: 1px;}
+        a.squiggle:hover {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle%3E.squiggle{animation:shift 0.6s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%2300fffb' stroke-width='0.7' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E"); background-position: 0 100%; background-size: auto 100%; background-repeat: repeat-x;}
+        a.arrowClip {color: #C14A09; padding: 4px; display: inline-block; position: relative;}
+        a.arrowClip::before {content: ""; position: absolute; z-index: -1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.1); clip-path: polygon(0% 0%, 60% 0%, 60% 0%, 100% 0%, 100% 100%, 60% 100%, 60% 100%, 0% 100%); transition: clip-path 0.6s;}
+        a.arrowClip:hover::before {clip-path: polygon(10% 30%, 60% 30%, 60% 5%, 90% 50%, 90% 50%, 60% 95%, 60% 70%, 10% 70%);}
+        .splitLink {position: relative; display: inline-block; padding: 0; margin: 0; line-height: 1em;}
+        .splitLink--top {position: absolute; top: 0; display: inline-block; clip-path: polygon(0% 66%, 0% 0%, 100% 0%, 100% 40%); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s, color 0.5s ease 0.22s;}
+        .splitLink--top:after {content: ""; position: absolute; top: 36%; left: 0; width: 100%; height: 4%; background: #C14A09; transform: rotateZ(-2.2deg) scaleX(0%); transform-origin: right top; transition: transform 0.2s ease 0.22s;}
+        .splitLink--bottom {display: inline-block; clip-path: polygon(0% 65%, 100% 40%, 100% 110%, 0% 110%); text-decoration: underline; transition: color 0.5s ease 0.22s, background-position 0.2s ease 0.22s; text-decoration: none; background-size: 200% 8%; background-position: left bottom; background-repeat: no-repeat; background-image: linear-gradient(to right, #C14A09 50%, transparent 50%);}
+        .splitLink--bottom:after {content: ""; position: absolute; top: 40%; left: 0; width: 100%; height: 4%; background: #C14A09; transform: rotateZ(-2deg) scaleX(0%); transform-origin: right top; transition: transform 0.2s ease 0.22s;}
+        .splitLink:hover .splitLink--top {color: #C14A09; transform: translateY(-0.5em) rotateZ(-3deg); transition: transform 0.5s cubic-bezier(.12,.8,.57,1.00) 0.42s, color 0.5s ease 0.22s;}
+        .splitLink:hover .splitLink--bottom {color: #C14A09; background-position: 100% bottom; transition: color 0.5s ease 0.2s, background-position 0.2s ease;}
+        .splitLink:hover .splitLink--top:after {top: 62%; transform-origin: left top; transform: rotateZ(-2.2deg) scaleX(100%);}
+        .splitLink:hover .splitLink--bottom:after {top: 65%; transform-origin: left top; transform: rotateZ(-2.1deg) scaleX(100%);}
+    </style>
+</head>
+<body>
+    <main>
+        <div class="gradient-bar"></div>   
+        <div class="labels"><div class="label-item"><div class="tick"></div><span class="number">-50</span></div><div class="label-item"><div class="tick"></div><span class="number">0</span></div><div class="label-item"><div class="tick"></div><span class="number">50</span></div></div>
+    </main>
+
+    <div class="top-header">
+        <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/blobs/top_left_blob.png" alt="⏮️" class="top-blob">
+        <nav>
+            <div class="menu-trigger">Noise Query</div>   
+            <div class="menu">
+                <a href="0-1/query/fireflies">⌲fireflies</a>
+                <a href="0-1/query/CodeWarpGrid">⌲code warp grid</a>
+                <a href="0-1/query/encapsulation/">⌲encapsulation</a>    
+                <a href="0-1/query/subjective/">⌲subjective</a>
+                <a href="0-1/query/circulation">⌲circulation</a>
+                <a href="0-1/query/nebula-node">⌲nebula node</a> 
+                <a href="0-1/query/spades">⌲spades</a>
+            </div>
+        </nav>
+        <img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/blobs/top_right_blob.png" alt="⏭️" class="top-blob">
+    </div>
+
+    <div id="controls">
+        <div id="status"><div class="anim active">On these</div><div class="anim active">paper planes,</div><div class="anim active">yeah,</div><div class="anim active">we wearin</div><div class="anim active">the crown</div><div class="anim active">⌨ record (18sec)</div></div>    
+        <button id="dropdownToggle">⛣ LiminalLoop</button>
+    </div>
+    <div id="dropdownPanel" class="dropdown-panel">
+        <p>･ﾟ✧AutoML <em>(Automated Machine Learning)</em> is the process of <a class="rule" href="#">automating</a> the end-to-end tasks <a href="#" class="gifbg">of</a> developing machine learning <a href="#" class="skewUp">models—such</a> as data preprocessing, algorithm selection, <a class="swipe" href="#">and</a> hyperparameter <a class="squiggle" href="#">tuning</a> without requiring <a class="magic-btn" href="#">extensive</a> manual expertise —more accessible to non-experts and more <a class="covering" href="#">efficient</a> for data scientists. Popular AutoML <a class="jump" href="#">frameworks</a> include Google Cloud AutoML, H2O.ai, and Microsoft Azure AutoML.</p>
+        <section>
+            <div class="card"><div class="card-title">Data Preprocessing</div><div class="card-content">Automatically cleaning, transforming, <a class="arrowClip" href="#">and</a> structuring raw data into a suitable <a class="splitLink" href="#"><span class="splitLink--top">format</span><span class="splitLink--bottom">format</span></a> for modeling.</div></div>
+            <div class="card"><div class="card-title">Model Selection</div>
+                <div class="card-content">AutoML systems automatically search for the most appropriate machine learning model for a given dataset and problem, often trying various algorithms and hyperparameters.</div>
+            </div>
+            <div class="card"><div class="card-title">Feature Engineering</div>
+                <div class="card-content">Automatically selecting and creating the best features from raw data, which are essential for improving model performance.</div>
+            </div>
+            <div class="card"><div class="card-title">Hyperparameter Tuning</div>
+                <div class="card-content">Optimizing the hyperparameters of machine learning models to improve their performance, usually through methods like grid search or Bayesian optimization.</div>
+            </div>
+            <div class="card"><div class="card-title">Model Training & Evaluation</div>
+                <div class="card-content">AutoML platforms manage the process of training models, evaluating their performance, and selecting the best-performing models.</div>
+            </div>
+            <div class="card"><div class="card-title">Deployment</div>
+                <div class="card-content">Some AutoML systems also help automate the deployment of models into production environments.</div>
+            </div>
+        </section> 
+    </div>
+
+    <aside>     
+        <div class="spacer"></div>
+        <div class="content">
+            <div class="row1"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/converging.png"></div><div class="box"><h1>⎄Limin<u>alLo</u>op():</h1><p>Loops in programming allow you to repeat a set of instructions until a certain condition is met, making it easier to perform repetitive tasks and iterate through data. They come in different forms like "for" and "while" loops.</p></div></div>
+            <div class="row2"><div></div><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/on-my-way.png"></div></div>
+            <div class="row3"><div></div><div class="box"><svg viewBox="0 0 200 200"><filter id="noise1" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"><animate attributeName="baseFrequency" dur="4s" values="0.6;0.9;0.6" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="80"/></filter><circle cx="100" cy="100" r="50" fill="var(--c1)"/><circle cx="100" cy="100" r="25" fill="var(--c2)" filter="url(#noise1)"/></svg></div><div class="box"><svg viewBox="0 0 200 200"><filter id="noise2" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2"><animate attributeName="seed" dur="0.6s" values="0;100" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="160"/></filter><polygon points="100,190 30,40 140,60" fill="var(--c2)"/><circle cx="100" cy="100" r="40" fill="var(--c1)" filter="url(#noise2)"/></svg></div><div class="box"><svg viewBox="0 0 200 200"><defs><linearGradient id="grad1"><stop offset="0%" stop-color="var(--c1)"/><stop offset="100%" stop-color="var(--c3)"/></linearGradient><filter id="noise3" x="-100" y="-100" width="400" height="400"><feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="8"><animate attributeName="baseFrequency" dur="6s" values="0.3;0.6;0.3" repeatCount="indefinite"/></feTurbulence><feDisplacementMap scale="260"/></filter><mask id="mask1"><rect width="200" height="200" fill="white" filter="url(#noise3)"/></mask></defs><circle cx="100" cy="100" r="50" fill="url(#grad1)" mask="url(#mask1)"/></svg></div></div> 
+            <div class="row4">
+                <div class="box"><h4>༼ つ ◕_◕ ༽つ</h4></div>
+                <div class="box"><a class="highlight" href="0-1/">➜</a> Bir kadın, ne kadar zeki olursa olsun, kalbiyle hareket eder.</div>
+                <div></div> 
+            </div>
+            <div class="row5"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/Ulu-%C3%96nder-Halaskargazi-B%C3%BCy%C3%BCk-Atat%C3%BCrk.png"></div><div class="box"><p>Oh Ataturk, father of the land,</p><p>Through battles and hardship, he never lost his stride,</p><p>A leader and a warrior, with honor as his guide.</p></div></div>
+            <div class="row6"><div class="box"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/Are-ya-winning-daughter.png"></div><div class="box">-after all this time?<br>+always</div></div>
+        </div>
+    </aside>
+
+    <script>
+        // Menu Trigger Logic
+        const trigger = document.querySelector('.menu-trigger');
+        const menu = document.querySelector('.menu');
+        const links = document.querySelectorAll('.menu a');
+
+        trigger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+            });
+        });
+
+        // Sound Generator (Short Static Burst)
+        const playGlitchSound = () => {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(150, ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.1);
+            gain.gain.setValueAtTime(0.1, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 0.1);
+        };
+
+        const toggleButton = document.getElementById('dropdownToggle');
+        const dropdownPanel = document.getElementById('dropdownPanel');
+
+        toggleButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpening = !dropdownPanel.classList.contains('visible');
+            dropdownPanel.classList.toggle('visible');
+            if (isOpening) playGlitchSound();
+        });
+        
+        document.addEventListener('click', (event) => {
+            if (!dropdownPanel.contains(event.target) && event.target !== toggleButton) {
+                dropdownPanel.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

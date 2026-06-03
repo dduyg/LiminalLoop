@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Rubik+Lines&family=Rubik+Maze&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Boxing';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Boxing.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+            font-style: normal;
+        }
+        :root {
+            --base_fsize: clamp(1.125rem,4vw,1.4375rem);
+            --small_fsize: clamp(1rem,3.25vw,1.125rem);
+            --base_lheight: 1.4736842105;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Red Hat Display", sans-serif;
+            background: #8BA8A4;
+            color: #1F208B;
+            line-height: var(--base_lheight);
+        }
+        main {
+            margin: 40% auto 0;
+            padding: 1rem;
+            max-width: 48rem;
+        }
+        header {
+            margin-bottom: 100px;
+            font-family: 'Boxing', sans-serif;
+            font-size: var(--base_fsize);
+        }
+        
+        section {
+           display: flex;
+           font-size: var(--small_fsize);
+           line-height: 1.3888888889;
+           opacity: .6;
+       }
+       .flex-auto {
+           flex:1 1 auto;
+       }
+
+       footer {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100px;
+           border-top: 1px solid currentColor;
+           margin-top: 120px;
+           font-weight: bold;
+        }
+        footer div {
+            margin: 0 20px;
+            padding: 0;
+        }
+        footer .bir {
+            font-family: "Rubik Maze", system-ui;
+        }
+        footer .iki {
+            font-family: "Rubik Iso", system-ui;
+        }
+        footer .üç {
+            font-family: "Rubik Lines", system-ui;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        A deep dive into the world of Laika, a girl lost in space...</p>
+    </header>
+
+    <section>
+        <div class="flex-auto">
+            <span>Identities, </span><span>.txt</span>
+        </div>
+        <span>Sep 10, 2024</span>
+    </section>
+
+    <aside>
+        <p>ghost_distortion.exe</p>
+        <p>ghosttype.mp4</p>
+    </aside>
+
+    <footer>
+         <div class="bir">Corporate Serenade</div>
+         <div class="iki">Pastel Futures</div>
+         <div class="üç">Synthwave Skyline</div>
+    </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 5rem 2rem;
+            font-family: "Fjalla One", sans-serif;
+            background: linear-gradient(to bottom, #ffb6c1, #ff69b4, #6a0dad, #001f3f);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        h1 {
+            font-size: 4rem;
+        }
+        .glitch {
+            position: relative;
+            display: inline-block;
+            font-size: 4rem;
+            color: #fff;
+        }
+        .glitch:before,
+        .glitch:after {
+            content: "Interesting Internet";
+            position: absolute;
+            left: 0;
+            color: #ff69b4;
+            background: none;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+        .glitch:after {
+            left: 2px;
+            text-shadow: -2px 0 #00fffb;
+            animation-delay: 1s;
+        }
+        @keyframes glitch {
+            0% {
+                clip: rect(42px, 9999px, 44px, 0);
+            }
+            5% {
+                clip: rect(12px, 9999px, 60px, 0);
+            }
+            10% {
+                clip: rect(85px, 9999px, 90px, 0);
+            }
+            15% {
+                clip: rect(30px, 9999px, 100px, 0);
+            }
+            20% {
+                clip: rect(70px, 9999px, 50px, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="glitch">Interesting Internet</h1>
+    <p>CITYSCAPES and STORIES</p>
+    <p>that may have DIED one day,</p>
+    <p>the OBLIVION of the past,</p>
+    <p>are RECORDED here.</p>
+</body>
+</html>

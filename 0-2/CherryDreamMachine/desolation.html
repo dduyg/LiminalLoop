@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal➰️Loop</title>
+    <style>
+	@font-face {
+	   font-family: 'Test Domaine Text';
+	   src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/test-domaine-text-light.woff2') format('woff2');
+	   font-weight: 300;
+	   font-style: normal;
+	}
+	@font-face {
+            font-family: 'Chemre';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Chemre.woff2') format('woff2');
+            font-weight: normal;
+	    font-style: normal;
+	}
+        *, *::before, *::after {box-sizing: border-box;}
+        body {
+            font-family: 'Test Domaine Text', serif;
+            background-color: #FFF;
+            margin: 0;
+            padding: 0;
+        }
+	.container {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+	h1 {
+            font-size: 8vw;
+            font-family: 'Chemre', sans-serif;
+            background-color: #000;
+            color: #fff;
+            padding: 0.5em;
+        }
+        /* Overlay Effect for Dual-Tone Text */
+        h1:nth-child(2) {
+            position: absolute;
+            background-color: #fff;
+            color: #000;
+            clip-path: inset(-1% -1% 50% -1%); /* Prevents bleeding in Chrome */
+        }
+	
+        p {
+            font-size: 1.2rem;
+            margin-top: 1em;
+            line-height: 1.4;
+            text-align: center;
+	    max-width: 500px;
+        }
+    </style>  
+</head>
+<body>
+    <div class="container">
+        <div class="text-box">
+            <h1>desolation</h1>
+            <h1>desolation</h1>
+        </div>
+        <p>Step by step, day by day.<br>
+           There is no one giant step that does it.<br>
+           It's a lot of little steps.
+        </p>
+    </div>
+</body>
+</html>

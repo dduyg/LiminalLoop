@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geostar&family=Geostar+Fill&display=swap" rel="stylesheet">
+    <style>
+        html {-webkit-tap-highlight-color: transparent;}
+        body {
+            background-color: #dadf00;
+            color: #000;
+            font-family: "EB Garamond", serif;
+            height: 100vh;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 35% 2rem 0;
+        }
+        .ruler_track {
+            position: fixed;
+            top: 0;
+            left: 2px;
+            font-size: 12px;
+            color: black;
+            line-height: 2.4;
+            height: 100%;
+            overflow: hidden;
+            font-family: "Anonymous Pro", monospace;
+        }
+        header {
+            font-size: 80px;
+            text-align: center;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            line-height: 0.8;
+            letter-spacing: -4px;
+            color: #a5aeb4;
+            font-family: "Geostar", serif;
+        }
+        header .fill {
+            font-family: "Geostar Fill", serif;
+        }
+        header .description {
+            margin-right: -5px;
+            text-align: right;     
+            font-family: "Anonymous Pro", monospace;
+            color: #1c1c1c;
+            font-size: 11px;
+            letter-spacing: .04em;
+        }
+        /* 
+        ====> Alternative way to move to right:
+          .description {
+            position: relative;
+            right: -5px;
+            text-align: right;
+        }
+        */
+        section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+            cursor: pointer;
+        }
+        section .header {
+            display: flex; /* Keep flex for number and title */
+            align-items: center;
+        }
+        section .number {
+            background-color: black;
+            color: #d7de01;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 19px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        section .title {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .details {
+            display: none; /* Initially hidden */
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .arrow {
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            font-size: 30px;
+            color: rgba(0, 0, 0, 0.2);
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="ruler_track">6<br>4<br>3<br>1<br>0<br>9<br>3<br>5<br>6<br>5<br>8<br>2<br>0<br>7<br>3<br>4<br>9<br>4<br>6<br>7<br>4<br>6<br>4<br>3<br>1<br>0<br>9<br>3<br>5<br>6<br>5<br>8<br>2<br>0<br>7<br>3<br>4<br>9<br>4<br>6<br>7<br>4<br>6<br>4<br>3<br>1<br>0<br>9<br>3<br>5<br>6<br>5<br>8<br>2<br>0<br>7<br>3<br>4<br>9<br>4<br>6<br>7<br>4<br>6<br>4<br>3<br>1<br>0<br>9<br>3<br>5<br>6<br>5<br>8<br>2<br>0<br>7<br>3<br>4<br>9</div>
+    <header>
+        <div class="description"><p>(contrastive learning)</p></div>
+        <div>dD<span class="fill">Œ</span></div>
+    </header>
+
+    <section onclick="toggleDetails(this)">
+        <div class="header">
+            <div class="number">1</div>
+            <div class="title">Define Pairs</div>
+        </div>
+        <div class="details">Collect or generate pairs of similar and dissimilar examples within your dataset. These pairs serve as the foundation for teaching the model what should be close or far apart in its learned representation space.</div>
+    </section>
+    <section onclick="toggleDetails(this)">
+        <div class="header">
+            <div class="number">2</div>
+            <div class="title">Embed Data</div>
+        </div>
+        <div class="details">Pass each example pair through a neural network to create embeddings (representations) that capture essential features. The network learns to embed similar pairs close together and dissimilar pairs further apart.</div>
+    </section>
+    <section onclick="toggleDetails(this)">
+        <div class="header">
+            <div class="number">3</div>
+            <div class="title">Optimize Loss</div>
+        </div>
+        <div class="details">Use a contrastive loss function (e.g., triplet or contrastive loss) to guide the network, reinforcing that similar embeddings remain close and dissimilar embeddings stay distinct, improving clustering and classification in downstream tasks.</div>
+    </section>
+
+    <div class="arrow">➤</div>
+</main>
+
+<script>
+    function toggleDetails(section) {
+        // Close all open details
+        const allDetails = document.querySelectorAll('.details');
+        allDetails.forEach(detail => {
+            if (detail !== section.querySelector('.details')) {
+                detail.style.display = 'none'; // Hide other details
+            }
+        });
+
+        // Toggle the clicked section's details
+        const details = section.querySelector('.details');
+        if (details.style.display === 'block') {
+            details.style.display = 'none'; // Close if open
+        } else {
+            details.style.display = 'block'; // Open if closed
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ᏝᎥᎷᎥᏁᏗᏝ.ᒪOOᑭ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: APType-Mono;
+      src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/APType-Mono.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+    body {
+      font-family: "Bricolage Grotesque", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #F3F1F4;
+      color: black;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0 80px;
+    }
+    aside {
+      text-align: center;
+      padding: 0 0 80px;
+    }
+    aside h2, aside p, header {
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      font-size: 13px;
+      font-family: APType-Mono, monospace;
+    }
+    aside h2 {
+      text-transform: lowercase;
+      padding-bottom: 60px;
+      font-size: 24px !important;
+    }
+
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      letter-spacing: 4px;
+      animation: typewriter 1.5s steps(5) infinite;
+    }
+    @keyframes typewriter {
+      0%, 10% { width: 0; }
+      20%, 30% { width: 1ch; }
+      50%, 60% { width: 3ch; }
+      80%, 90% { width: 5ch; }
+      100% { width: 6ch; }
+    }
+
+    .imagegrid {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .imagegrid img {
+      width: 45%;
+      height: auto;
+    }
+    @media (max-width: 768px) {
+      .imagegrid {flex-direction: column;}
+      .imagegrid img {width: 100%;}
+    }
+
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5px 10px;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    h3 {
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+      grid-column: 1 / -1;
+    }
+    .content {
+      margin-bottom: 0 !important;
+      grid-column: 1 / -1;
+      font-size: 13px;
+    }   
+    @media (min-width: 768px) {
+      section {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 125px;
+        margin-bottom: 125px;
+      }
+      h3 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 1;
+        font-size: 24px;
+      }
+      .content {
+        grid-column: span 2 / span 2;
+        grid-row-start: 1;
+      }
+    }
+    @media (min-width: 1024px) {
+      section {
+        margin-top: 250px;
+        margin-bottom: 250px;
+      }
+      h3 {
+        grid-column: span 1 / span 1;
+        grid-column-start: 1;
+      }
+      .content {
+        grid-column: span 1 / span 1;
+        grid-column-start: 4;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Lost in Pixels</header>
+
+  <section>
+    <h3>The meaning of Opalescent</h3>
+    <div class="content">
+      <u>Showing many small points of shifting colour against a pale or dark ground.</u> `○○○○○●` The sun dipped below
+      the horizon, painting the sky with hues of gold and crimson, casting a warm glow over the quiet lakeside town.
+      Amid the tranquil scene, standing at the water's edge, her gaze fixed on the opalescent stone cradled in her palm.
+      Determined, she rowed across the lake, the opalescent light guiding her through the thickening fog. As she placed the
+      relic at the tree’s base, the ground beneath her trembled, and the whispers of the past and the secrets of the future
+      grew into a symphony.
+    </div>
+  </section>
+
+  <aside>
+    <h2 class="typewriter">duygg</h2>
+    <p>Artesian Tears</p>
+    <div class="imagegrid">
+      <img src="https://media0.giphy.com/media/2PumACSgPaPAs/giphy.gif">
+      <img src="https://media4.giphy.com/media/EaYeJ1kQhIKaI/giphy.gif">
+    </div>
+    <p>Tree199X</p>
+  </aside>
+
+  <section>
+    <h3>Ghostly Echoes</h3>
+    <div class="content">
+      In the silent void of space, a lone point drifted, casting no shadow, yet echoing infinitely. Its trajectory traced a
+      perfect circle, the curve a ghostly reminder of something lost. Each rotation reflected the past, bending through
+      time, like ripples in a still pond. As the point spiraled outward, its path split into fractal fragments, each
+      iteration smaller than the last. Yet, the echoes of its journey never vanished, reaching into the unknown.
+      <span style="font-family: APType-Mono, monospace;">The circle whispered its secrets—an eternal dance of symmetry 
+      and chaos, where every angle, every vertex, reverberated across dimensions, never truly fading, always repeating. 
+      Ghostly echoes of infinity.</span>
+    </div>
+  </section>
+</body>
+</html>
