@@ -1,0 +1,1201 @@
+[
+  {
+    "name": "Roboto",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+    "category": "sans-serif",
+    "tags": [ "clean", "android", "formal" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Grotta",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Grotta-Regular.woff2",
+    "category": "sans-serif",
+    "tags": [ "sophisticated", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Public Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Public+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "sophisticated", "formal", "neutral" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "SUSE",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=SUSE&display=swap",
+    "category": "sans-serif",
+    "tags": [ "formal", "sophisticated", "contemporary" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Anonymous Pro",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "contemporary" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Host Grotesk",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Host+Grotesk&display=swap",
+    "category": "sans-serif",
+    "tags": [ "sophisticated", "organic", "approachable" ],
+    "weights": [ 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Saira",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Saira&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "contemporary", "aesthetic" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Lab Mono",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/labmono-regular.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "contemporary", "coding" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Quantico",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Quantico&display=swap",
+    "category": "sans-serif",
+    "tags": [ "futuristic", "techno", "brutalist" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Audiowide",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Audiowide&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "futuristic", "modular" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Syncopate",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Syncopate&display=swap",
+    "category": "sans-serif",
+    "tags": [ "display", "modular", "futuristic" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Space Grotesk",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "geometric", "aesthetic" ],
+    "weights": [ 300, 400, 500, 600, 700 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Protest Guerrilla",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap",
+    "category": "sans-serif",
+    "tags": [ "fatface", "childlike" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Nova Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap",
+    "category": "monospace",
+    "tags": [ "organic", "aesthetic", "monospaced" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "SF Pro Text",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/SFProText-Regular.woff2",
+    "category": "sans-serif",
+    "tags": [ "aesthetic", "sophisticated", "formal" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Averia Serif Libre",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap",
+    "category": "serif",
+    "tags": [ "sophisticated", "elegant", "distorted" ],
+    "weights": [ 300, 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Lego",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Lego.woff2",
+    "category": "sans-serif",
+    "tags": [ "childlike", "brutalist", "playful" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Prata",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Prata&display=swap",
+    "category": "serif",
+    "tags": [ "minimal", "sophisticated", "elegant", "organic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Viaoda Libre",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap",
+    "category": "serif",
+    "tags": [ "elegant", "sophisticated", "organic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "BioRhyme",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=BioRhyme&display=swap",
+    "category": "serif",
+    "tags": [ "sophisticated", "aesthetic", "organic" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Bigelow Rules",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap",
+    "category": "serif",
+    "tags": [ "organic", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Snowburst One",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap",
+    "category": "fantasy",
+    "tags": [ "childlike", "organic", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Chokokutai",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Chokokutai&display=swap",
+    "category": "fantasy",
+    "tags": [ "distorted", "shaded", "organic", "childlike" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "CJK", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Space Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Space+Mono&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "geometric" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Chivo Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "rounded" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Plaster",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Plaster&display=swap",
+    "category": "fantasy",
+    "tags": [ "fatface", "playful", "brutalist", "retro", "geometric" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Source Code Pro",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "contemporary" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Lucida Console",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Lucida-Console-Regular.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "sophisticated" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Google Sans Code",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding" ],
+    "weights": [ 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Quimbie",
+    "source": "web",
+    "url": "https://fonts.cdnfonts.com/css/quimbie",
+    "category": "sans-serif",
+    "tags": [ "marker", "brutalist", "approachable" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Rosnoc",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Rosnoc.woff2",
+    "category": "sans-serif",
+    "tags": [ "futuristic", "retro", "android" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Aeronixsa",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Aeronixsa.woff2",
+    "category": "sans-serif",
+    "tags": [ "techno", "futuristic", "android", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "MicroSix",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Micro-Six.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "techno", "organic", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Warnes",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Warnes&display=swap",
+    "category": "serif",
+    "tags": [ "contemporary", "organic", "distorted", "formal" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "EK Roumald",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/EKRoumald.woff2",
+    "category": "serif",
+    "tags": [ "formal", "sophisticated", "organic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Jubilee Platinum",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Jubilee-Platinum.woff2",
+    "category": "serif",
+    "tags": [ "formal", "elegant", "sophisticated" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Marfa Mono",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/MarfaMono.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "aesthetic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Combo",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Combo&display=swap",
+    "category": "serif",
+    "tags": [ "contemporary", "organic", "childlike" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Inconsolata",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Inconsolata&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "contemporary" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Glass Antiqua",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap",
+    "category": "serif",
+    "tags": [ "childlike", "organic", "sophisticated" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Vina Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "bold", "brutalist", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Arbutus",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Arbutus&display=swap",
+    "category": "serif",
+    "tags": [ "fatface", "wood", "wacky" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Julia Mono",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/JuliaMono-Regular.woff2",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Baumans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Baumans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "retro", "aesthetic", "techno" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Share",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Share&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "playful", "aesthetic" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "News Gothic",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop/fonts/NewsCycle.woff2",
+    "category": "sans-serif",
+    "tags": [ "minimal", "android", "bold" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "PhoenixEGA",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/PhoenixEGA.woff2",
+    "category": "sans-serif",
+    "tags": [ "techno", "pixel", "monospaced", "aesthetic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Nobel",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Nobel.woff2",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "sophisticated", "techno" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Geostar",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Geostar&display=swap",
+    "category": "serif",
+    "tags": [ "futuristic", "techno", "aesthetic", "android" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Geostar Fill",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Geostar+Fill&display=swap",
+    "category": "serif",
+    "tags": [ "techno", "futuristic", "aesthetic", "geometric" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Inknut Antiqua",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap",
+    "category": "serif",
+    "tags": [ "sophisticated", "contemporary", "formal", "organic", "elegant" ],
+    "weights": [ 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Pixelify Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "pixel", "techno", "coding", "distorted" ],
+    "weights": [ 400, 500, 600, 700 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Sora",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Sora&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "formal", "sophisticated" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Barlow Condensed",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap",
+    "category": "sans-serif",
+    "tags": [ "minimal", "formal", "organic", "sophisticated" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Courgette",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Courgette&display=swap",
+    "category": "cursive",
+    "tags": [ "aesthetic", "organic", "sophisticated" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Cedarville Cursive",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap",
+    "category": "cursive",
+    "tags": [ "handwritten", "elegant", "organic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Dellmonte Sans",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/22647/Dellmonte Sans.woff",
+    "category": "sans-serif",
+    "tags": [ "minimal", "formal", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Righteous",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Righteous&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "approachable", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Google Sans Flex",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz@6..144&display=swap",
+    "category": "sans-serif",
+    "tags": [ "sophisticated", "formal", "contemporary" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Thai Pedicure",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/5816/ThaiPedicure.woff",
+    "category": "sans-serif",
+    "tags": [ "childlike", "organic", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Reactor Sans",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/24634/Reactor-Sans.woff",
+    "category": "sans-serif",
+    "tags": [ "techno", "android", "futuristic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Georama",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Georama&display=swap",
+    "category": "sans-serif",
+    "tags": [ "formal", "sophisticated", "android", "contemporary" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "TF Ponetone Expanded",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/103806/TfPonetoneExpanded-7BJZA.woff",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "elegant", "techno", "clean" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Helvelow",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/8589/Helvelow-Regular.woff",
+    "category": "sans-serif",
+    "tags": [ "clean", "android", "contemporary" ],
+    "weights": [ 100 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Stick No Bills",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap",
+    "category": "sans-serif",
+    "tags": [ "organic", "contemporary", "distorted", "sophisticated" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Encode Sans Condensed",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "minimal", "bold" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Thasadith",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Thasadith&display=swap",
+    "category": "sans-serif",
+    "tags": [ "minimal", "formal", "business" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Hanalei",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Hanalei&display=swap",
+    "category": "fantasy",
+    "tags": [ "distorted", "approachable", "decorative" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Rastaglion",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/98111/Rastaglion-8MneM.woff",
+    "category": "sans-serif",
+    "tags": [ "elegant", "sophisticated", "organic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Carlitos",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/100674/Carlitos-DO94d.woff",
+    "category": "sans-serif",
+    "tags": [ "organic", "contemporary", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Ravenous Caterpillar BRK",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/27484/ravcater.woff",
+    "category": "sans-serif",
+    "tags": [ "distorted", "display", "organic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Aveneur",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/98258/Aveneur-7BlrE.woff",
+    "category": "sans-serif",
+    "tags": [ "organic", "distorted", "aesthetic", "decorative" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Oxanium",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Oxanium&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "android", "contemporary" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Bitter",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Bitter&display=swap",
+    "category": "serif",
+    "tags": [ "contemporary", "sophisticated", "elegant" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Handjet",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Handjet:ELSH@2&display=swap",
+    "category": "sans-serif",
+    "tags": [ "pixel", "coding", "retro", "techno" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Raleway",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Raleway&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "formal", "sophisticated" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Chivo",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Chivo&display=swap",
+    "category": "sans-serif",
+    "tags": [ "aesthetic", "sophisticated", "contemporary", "formal" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Philosopher",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Philosopher&display=swap",
+    "category": "sans-serif",
+    "tags": [ "sophisticated", "formal", "organic" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Montserrat Alternates",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "organic", "display" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Offside",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Offside&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "futuristic", "geometric", "stiff" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Titillium Web",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap",
+    "category": "sans-serif",
+    "tags": [ "formal", "sophisticated", "organic" ],
+    "weights": [ 200, 300, 400, 600, 700, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Overlock",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Overlock&display=swap",
+    "category": "sans-serif",
+    "tags": [ "android", "sophisticated", "minimal" ],
+    "weights": [ 400, 700, 900 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Nunito",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Nunito&display=swap",
+    "category": "sans-serif",
+    "tags": [ "formal", "contemporary", "sophisticated", "neutral" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Capriola",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Capriola&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "sophisticated" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Signika",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Signika&display=swap",
+    "category": "sans-serif",
+    "tags": [ "minimal", "sophisticated", "organic" ],
+    "weights": [ 300, 400, 500, 600, 700 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Hubballi",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Hubballi&display=swap",
+    "category": "sans-serif",
+    "tags": [ "minimal", "formal", "android" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Michroma",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Michroma&display=swap",
+    "category": "sans-serif",
+    "tags": [ "aesthetic", "android", "techno" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Workbench",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Workbench&display=swap",
+    "category": "fantasy",
+    "tags": [ "aesthetic", "childlike", "distorted" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Stalinist One",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap",
+    "category": "sans-serif",
+    "tags": [ "geometric", "futuristic", "brutalist", "retro", "android" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Srisakdi",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Srisakdi&display=swap",
+    "category": "cursive",
+    "tags": [ "childlike", "formal", "distorted" ],
+    "weights": [ 400, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Karla",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Karla&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "minimal", "formal" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Rethink Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "aesthetic", "formal", "contemporary", "neutral" ],
+    "weights": [ 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Ropa Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "formal", "sophisticated", "android", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Kodchasan",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Kodchasan&display=swap",
+    "category": "sans-serif",
+    "tags": [ "rounded", "formal", "sophisticated", "retro" ],
+    "weights": [ 200, 300, 400, 500, 600, 700 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "MuseoModerno",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap",
+    "category": "sans-serif",
+    "tags": [ "organic", "techno", "sophisticated" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Parkinsans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Parkinsans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "bold", "aesthetic" ],
+    "weights": [ 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Reddit Sans Condensed",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed&display=swap",
+    "category": "sans-serif",
+    "tags": [ "formal", "contemporary", "aesthetic" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Albert Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Albert+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "sophisticated", "aesthetic", "neutral" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Onest",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Onest&display=swap",
+    "category": "sans-serif",
+    "tags": [ "sophisticated", "formal", "aesthetic", "minimal" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Inclusive Sans",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "formal", "aesthetic" ],
+    "weights": [ 300, 400, 500, 600, 700 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Urbanist",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Urbanist&display=swap",
+    "category": "sans-serif",
+    "tags": [ "minimal", "sophisticated", "clean" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Ribeye Marrow",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap",
+    "category": "serif",
+    "tags": [ "organic", "childlike", "aesthetic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Armata",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Armata&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "android", "approachable" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Major Mono Display",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "geometric", "fatface", "playful" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Syne",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Syne&display=swap",
+    "category": "sans-serif",
+    "tags": [ "aesthetic", "vintage", "playful", "distorted" ],
+    "weights": [ 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Avant Garde Gothic",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/ITCAvantGardeGothicLTDemi.woff2",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "sophisticated", "approachable" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "GlukFrames05",
+    "source": "custom",
+    "url": "https://fonts.cdnfonts.com/s/96692/Glukframes05-gxdzp.woff",
+    "category": "fantasy",
+    "tags": [ "decorative", "modular", "wacky" ],
+    "weights": [ 500 ],
+    "variable": false,
+    "scripts": [ "latin" ]
+  }
+,
+  {
+    "name": "Kalnia Glaze",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Kalnia+Glaze&display=swap",
+    "category": "serif",
+    "tags": [ "elegant", "display", "childlike" ],
+    "weights": [ 100, 200, 300, 400, 500, 600, 700 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "OCR-A",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/OCR-A.woff2",
+    "category": "monospace",
+    "tags": [ "techno", "monospaced", "coding", "organic" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+
+]
