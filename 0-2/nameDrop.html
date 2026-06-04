@@ -11,18 +11,18 @@
 <style>  
 * { margin: 0; padding: 0; box-sizing: border-box; }  
 :root {  
-  --bg:      #f6f1ff;  
-  --bg2:     rgba(255,255,255,0.65);  
-  --bg3:     #ffffff;  
+  --bg:      #e8e0f6;
+  --bg2:     rgba(245,240,255,0.70);
+  --bg3:     #f8f5ff;
   --amber:   #ff6ec7;  
   --amber2:  #8a5cff;  
   --rust:    #ff7aa2;  
   --sage:    #4dd6b6;  
   --slate:   #7aa0ff;  
   --text:    #2b2b3a;  
-  --muted:   #6b6f8a;  
-  --border:  rgba(138,92,255,0.18);  
-  --border2: rgba(57,213,255,0.10);  
+  --muted:   #6b6f8a;   
+  --border:  rgba(127,109,255,0.20);
+  --border2: rgba(126,156,255,0.12);  
 }
 [data-theme="darker"] {
   --bg:      #181617;
@@ -445,7 +445,7 @@ header {
 /* ── MODAL ── */  
 .modal-overlay {  
   position: fixed; inset: 0;  
-  background: rgba(38,20,60,0.4);  
+  background: rgba(0,0,0,0.6);  
   backdrop-filter: blur(8px);  
   z-index: 100;  
   display: flex; align-items: center; justify-content: center;  
@@ -455,7 +455,7 @@ header {
 }  
 .modal-overlay.open { opacity: 1; pointer-events: all; }  
 .modal {  
-  background: linear-gradient(145deg, rgba(246,241,255,0.97) 0%, rgba(253,242,255,0.97) 50%, rgba(234,247,255,0.97) 100%);  
+  background: var(--bg3);
   border: 1px solid rgba(138,92,255,0.28);  
   border-top: 3px solid var(--amber);  
   padding: 30px;  
@@ -495,9 +495,9 @@ header {
 }  
 .form-input {  
   width: 100%;  
-  background: rgba(255,255,255,0.72);  
-  border: 1px solid rgba(138,92,255,0.2);  
-  border-bottom: 2px solid rgba(138,92,255,0.25);  
+  background: var(--bg2);  
+  border: 1px solid var(--border);  
+  border-bottom: 2px solid var(--amber);  
   padding: 10px 13px;  
   font-family: 'Space Mono', monospace;  
   font-size: 12px; color: var(--text); outline: none;  
@@ -505,10 +505,8 @@ header {
   letter-spacing: 0.5px; border-radius: 1px;  
 }  
 .form-input:focus {  
-  border-color: rgba(138,92,255,0.45);  
-  border-bottom-color: var(--amber);  
-  background: rgba(255,255,255,0.92);  
-  box-shadow: 0 2px 16px rgba(255,110,199,0.08);  
+  border-color: var(--border2);  
+  border-bottom-color: var(--amber2);
 }  
 .form-input[readonly] { opacity: 0.45; cursor: default; background: rgba(246,241,255,0.5); }  
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }  
@@ -522,7 +520,7 @@ header {
 /* ── CONFIRM MODAL ── */  
 .confirm-overlay {  
   position: fixed; inset: 0;  
-  background: rgba(38,20,60,0.4);  
+  background: rgba(0,0,0,0.6);  
   backdrop-filter: blur(4px);  
   z-index: 150;  
   display: flex; align-items: center; justify-content: center;  
@@ -531,8 +529,8 @@ header {
 }  
 .confirm-overlay.open { opacity: 1; pointer-events: all; }  
 .confirm-box {  
-  background: linear-gradient(145deg, rgba(255,242,246,0.97), rgba(253,242,255,0.97));  
-  border: 1px solid rgba(255,122,162,0.3);  
+  background: var(--bg3);  
+  border: 1px solid var(--border);  
   border-top: 3px solid var(--rust);  
   padding: 28px; max-width: 360px; width: 100%;  
   text-align: center;  
@@ -548,7 +546,7 @@ header {
 /* ── PASSWORD MODAL ── */  
 .pw-overlay {  
   position: fixed; inset: 0;  
-  background: rgba(38,20,60,0.5);  
+  background: rgba(0,0,0,0.6);  
   backdrop-filter: blur(12px);  
   z-index: 250;  
   display: flex; align-items: center; justify-content: center;  
@@ -557,8 +555,8 @@ header {
 }  
 .pw-overlay.open { opacity: 1; pointer-events: all; }  
 .pw-box {  
-  background: linear-gradient(145deg, rgba(246,241,255,0.98) 0%, rgba(234,247,255,0.98) 100%);  
-  border: 1px solid rgba(138,92,255,0.3);  
+  background: var(--bg3);  
+  border: 1px solid var(--border);
   border-top: 3px solid var(--amber2);  
   padding: 32px;  
   width: 100%; max-width: 360px;  
@@ -587,8 +585,8 @@ header {
 }  
 .pw-input {  
   width: 100%;  
-  background: rgba(255,255,255,0.8);  
-  border: 1px solid rgba(138,92,255,0.2);  
+  background: var(--bg2);  
+  border: 1px solid var(--border);  
   border-bottom: 2px solid var(--amber2);  
   padding: 11px 14px;  
   font-family: 'Space Mono', monospace;  
@@ -600,7 +598,6 @@ header {
 }  
 .pw-input:focus {  
   border-bottom-color: var(--amber);  
-  box-shadow: 0 2px 16px rgba(255,110,199,0.1);  
 }  
 .pw-input.shake {  
   animation: shake 0.35s ease;  
@@ -651,7 +648,7 @@ header {
     <h1 class="header-title">ＮＡＭＥＤＲＯＰ</h1>  
     <div class="header-sub">名前のアーカイブ — Name Archive System&nbsp;&nbsp;
       <span id="admin-lock-btn" style="letter-spacing:normal;font-size:7px;color:var(--muted);cursor:pointer;user-select:none;"><sub>⚿ Admin access</sub></span>
-      <span id="theme-toggle-btn" style="font-size:9px;color:var(--muted);cursor:pointer;user-select:none;margin-left:3px;">◑</span>   
+      <span id="theme-toggle-btn" style="font-size:8px;color:var(--muted);cursor:pointer;user-select:none;margin-left:2px;">◑</span>   
     </div>  
     <div class="header-stats">  
       <div class="stat-pill">ENTRIES <span class="val" id="stat-total">—</span></div>  
