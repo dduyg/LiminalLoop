@@ -286,14 +286,8 @@
   </div>
 
   <svg>
-    <filter id="fluted" primitiveUnits="objectBoundingBox">
-      <feImage
-        x="0"
-        y="0"
-        in="blur_0"
-        result="image_0"
-        crossorigin="anonymous"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' color-interpolation-filters='sRGB'>
+  <filter id="fluted" primitiveUnits="objectBoundingBox">
+    <feImage x="0" y="0" in="blur_0" result="image_0" crossorigin="anonymous" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' color-interpolation-filters='sRGB'>
                 <g>
                   <rect width='1' height='1' fill='black' />
                   <rect width='1' height='1' fill='url(%23red)' style='mix-blend-mode:screen' />
@@ -314,20 +308,15 @@
                     <stop stop-color='red' offset='1' stop-opacity='0' />
                   </radialGradient>
                 </defs>
-              </svg>"
-        preserveAspectRatio="none meet"
-        width=".03"
-        height="1"
-      />
-      <feTile in="image_0" result="tile_0" />
-      <feGaussianBlur stdDeviation=".003" edgeMode="none" in="tile_0" result="bar_smoothness" x="0" y="0" />
-      <feDisplacementMap scale=".08" xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" in2="bar_smoothness" result="displacement_0" />
-    </filter>
-  </svg>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
-<script src="https://unpkg.com/split-type"></script>
+              </svg>" preserveAspectRatio="none meet" width=".03" height="1" />
+    <feTile in="image_0" result="tile_0" />
+    <feGaussianBlur stdDeviation=".003" edgeMode="none" in="tile_0" result="bar_smoothness" x="0" y="0" />
+    <feDisplacementMap scale=".08" xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" in2="bar_smoothness" result="displacement_0" />
+  </filter>
+</svg>
+<script src='https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js'></script>
+<script src='https://unpkg.com/split-type'></script>
 
 <script type="module">
 document.addEventListener("DOMContentLoaded", () => {
@@ -526,18 +515,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// !
-// !
-// THREE SPHERE AS THE PLACEHOLDER
-// !
-// !
-import * as THREE from "https://cdn.skypack.dev/three@0.136.0";
-import { OrbitControls } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/controls/OrbitControls.js";
-import { EffectComposer } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/EffectComposer.js";
-import { RenderPass } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/RenderPass.js";
-import { ShaderPass } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/ShaderPass.js";
-import { SMAAPass } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/SMAAPass.js";
-import { GUI } from "https://cdn.skypack.dev/dat.gui";
+import * as THREE from "https://esm.sh/three@0.136.0";
+import { OrbitControls } from "https://esm.sh/three@0.136.0/examples/jsm/controls/OrbitControls.js";
+import { EffectComposer } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/RenderPass.js";
+import { ShaderPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/ShaderPass.js";
+import { SMAAPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/SMAAPass.js";
+import { GUI } from "https://esm.sh/dat.gui";
 
 // Scene setup
 const scene = new THREE.Scene();
@@ -888,7 +872,6 @@ window.addEventListener("resize", () => {
   );
 });
 
-// Hide dat.gui
 gui.hide();
 </script>
 </body>
