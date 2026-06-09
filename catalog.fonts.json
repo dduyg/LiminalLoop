@@ -1197,5 +1197,27 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "DM Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=DM+Mono&display=swap",
+    "category": "monospace",
+    "tags": [ "monospaced", "coding", "aesthetic" ],
+    "weights": [ 300, 400, 500 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Orbitron",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Orbitron&display=swap",
+    "category": "sans-serif",
+    "tags": [ "techno", "android", "futuristic" ],
+    "weights": [ 400, 500, 600, 700, 800, 900 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
