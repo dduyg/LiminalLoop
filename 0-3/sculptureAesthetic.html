@@ -122,129 +122,6 @@
       text-transform: uppercase;
       text-align: right;
     }
-
-    /* --- Custom Controls Overlay --- */
-    .controls-wrapper {
-      position: fixed;
-      top: var(--margin);
-      right: var(--margin);
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }   
-    .menu-btn {
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s, transform 0.2s;
-      padding: 10px;
-      backdrop-filter: blur(8px);
-    }  
-    .menu-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }  
-    .menu-btn svg {
-      width: 100%;
-      height: 100%;
-      fill: var(--color-foreground);
-      transition: transform 0.3s ease;
-    }  
-    .controls-wrapper.open .menu-btn svg {
-      transform: rotate(45deg);
-    }  
-    .controls-dropdown {
-      margin-top: 12px;
-      background: rgba(15, 15, 15, 0.85);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      font-family: var(--font-secondary);
-      padding: 20px;
-      width: 280px;
-      max-h: 75vh;
-      overflow-y: auto;
-      display: none;
-      flex-direction: column;
-      gap: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }    
-    .controls-wrapper.open .controls-dropdown {
-      display: flex;
-    }   
-    .control-section {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }   
-    .control-section h4 {
-      margin: 0 0 4px 0;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-accent);
-      opacity: 0.8;
-    }    
-    .control-group {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }   
-    .control-group label {
-      font-size: 0.75rem;
-      opacity: 0.7;
-    }   
-    /* Custom Slider */
-    .control-group input[type="range"] {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%; height: 4px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 2px;
-      outline: none;
-    }  
-    .control-group input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--color-foreground);
-      cursor: pointer;
-      transition: transform 0.1s;
-    }  
-    .control-group input[type="range"]::-webkit-slider-thumb:hover {
-      transform: scale(1.2);
-    } 
-    .control-group input[type="color"] {
-      -webkit-appearance: none;
-      border: none;
-      width: 100%;
-      height: 24px;
-      border-radius: 4px;
-      cursor: pointer;
-      background: transparent;
-    }   
-    .control-group input[type="color"]::-webkit-color-swatch {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 4px;
-    }
-    #textInput {
-      position: fixed;
-      bottom: var(--margin);
-      z-index: 101;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: var(--color-foreground);
-      padding: 8px;
-      border-radius: 4px;
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -278,99 +155,6 @@
     </div>
   </div>   
 
-  <div class="controls-wrapper" id="controlsWrapper">
-    <button class="menu-btn" id="menuToggle" aria-label="Toggle Controls">
-      <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-        <path d="M156.4 13.5c-.2.55-.5 5.85-.65 11.8l-.25 10.75-59.5.25-59.5.2-.2 59.5-.2 59.5-11.55.3c-6.55.15-11.55.7-11.55 1.25-.05.5-.05 10.85-.05 22.95s0 22.45.05 23c0 .6 4.5 1 11.5 1 8.55 0 11.5.3 11.5 1.25 0 .7.05 16.75.1 35.75l.05 34.5-11.6.3c-6.55.15-11.55.7-11.55 1.25-.05 1.25-.05 44.65 0 45.9 0 .55 5 1.1 11.55 1.25l11.55.3v71l-11.5.3-11.55.25-.25 23.1c-.15 12.65-.05 23.45.25 23.9.3.5 5.6 1 11.8 1.15l11.25.3-.05 58.2c0 32 .25 58.85.55 59.75.55 1.4 6.95 1.55 60 1.55h59.35l.25 11.5c.15 6.35.65 11.5 1.05 11.5H204v-23h72v22.8l3.25.45c2.8.45 35.95.35 42.5-.1 2.2-.15 2.25-.45 2.25-11.65V564h72v22.8l3.75.5c2.05.25 8.25.35 13.75.25s14.6-.3 20.25-.4L444 587v-23h120V444h11.4c6.65 0 11.55-.4 11.75-1 .2-.55.2-11.35.05-24l-.25-23H564v-72h11.5c7 0 11.5-.4 11.5-1 .05-.55.05-10.9.05-23s0-22.45-.05-23c0-.6-4.5-1-11.5-1H564v-72h11.5c7 0 11.5-.4 11.5-1 .05-.55.05-10.9.05-23s0-22.45-.05-23c0-.6-4.5-1-11.5-1H564V37.25l-3.25-.65c-1.8-.35-28.65-.6-59.75-.55l-56.5.1-.3-11.6-.25-11.55-10.25-.15c-5.6-.1-14.7-.3-20.2-.4s-11.65 0-13.7.25l-3.75.45-.25 11.45-.3 11.5h-71l-.3-11.45-.25-11.45-3.25-.45c-2.75-.45-36-.35-42.4.1-2.15.15-2.25.6-2.5 11.7l-.3 11.5-35.5.05-35.5.05-.3-11.55-.25-11.55-23.6-.25c-15.1-.2-23.75.05-23.95.7M154.75 85c1 0 1.25 7.75 1.25 35.5V156h-35.5c-23 0-35.5-.35-35.5-1-.05-1.3-.05-67.6 0-69.25 0-1.15 17.4-1.3 69.75-.75m120 0c.95 0 1.25 3.15 1.25 12.4v12.4l-5.25.75C253.7 112.85 231.7 120 213.9 129l-9.9 5v-24.35c0-13.35.2-24.5.4-24.75.35-.3 38.05-.25 70.35.1m121 24.55.3 24.55-5.8-3.15c-15.65-8.6-40.45-17.05-58.5-20l-7.75-1.2v-12.3c0-10.7.2-12.35 1.7-12.65.9-.15 17-.2 35.75-.1l34.05.25zm120 10.9.3 35.55H444v-35.45c0-32.35.15-35.45 1.7-35.75.9-.15 17-.2 35.75-.1l34.05.25zM327.5 159.1c112.95 22.6 155.15 161.35 73.7 242.3-90.55 90.05-244.5 26.2-244.5-101.4 0-90.35 82.65-158.55 170.8-140.9m-196.35 50.15c-8.2 14.45-17.25 40.95-20.2 59l-1.2 7.75h-12.3c-7.25 0-12.4-.4-12.6-1-.2-.55-.25-16.75-.05-36l.25-35h49.1zM516 240v36h-25.65l-1.7-9.75c-3.35-18.95-10.85-40.75-19.3-56L465.9 204H516zm-405.5 88.75c2.35 17.35 9.5 39.55 18.5 57.35l5 9.9h-24.5c-15.65 0-24.5-.35-24.5-1 0-.55-.05-16.3-.05-35s.05-34.45.05-35c0-.6 4.8-1 12.45-1h12.45zM516 360v36h-24.5c-15.1 0-24.5-.35-24.5-.95 0-.55 1.55-3.8 3.45-7.25 7.55-13.8 15.6-38.05 18.65-56.15l1.3-7.65H516zM156 480v36h-35.5c-23 0-35.5-.35-35.5-1 0-.55-.05-16.3-.05-35s.05-34.45.05-35c0-.65 12.5-1 35.5-1H156zm360 0v36h-72v-72h72zm-290-3.3c11.55 4.95 30.25 10.4 42.25 12.35l7.75 1.2V516h-72v-50.1l5.75 3.15c3.15 1.75 10.45 5.15 16.25 7.65M396 491v25h-72v-25.8l5.25-.75c17.1-2.3 40.95-10.15 57.75-18.9 4.7-2.45 8.6-4.5 8.75-4.5.15-.05.25 11.2.25 24.95"/>
-      </svg>
-    </button>    
-    <div class="controls-dropdown" id="controlsDropdown">
-      <div class="control-section">
-        <h4>Material</h4>
-        <div class="control-group">
-          <label>Color</label>
-          <input type="color" id="mat-color" value="#ffffff">
-        </div>
-        <div class="control-group">
-          <label>Metalness</label>
-          <input type="range" id="mat-metalness" min="0" max="1" step="0.01" value="0.0">
-        </div>
-        <div class="control-group">
-          <label>Roughness</label>
-          <input type="range" id="mat-roughness" min="0" max="1" step="0.01" value="0.1">
-        </div>
-        <div class="control-group">
-          <label>Transmission</label>
-          <input type="range" id="mat-transmission" min="0" max="1" step="0.01" value="1.0">
-        </div>
-        <div class="control-group">
-          <label>Thickness</label>
-          <input type="range" id="mat-thickness" min="0" max="5" step="0.1" value="1.0">
-        </div>
-        <div class="control-group">
-          <label>IOR</label>
-          <input type="range" id="mat-ior" min="1" max="2.333" step="0.01" value="1.5">
-        </div>
-        <div class="control-group">
-          <label>Clearcoat</label>
-          <input type="range" id="mat-clearcoat" min="0" max="1" step="0.01" value="1.0">
-        </div>
-        <div class="control-group">
-          <label>Clearcoat Roughness</label>
-          <input type="range" id="mat-ccRoughness" min="0" max="1" step="0.01" value="0.1">
-        </div>
-        <div class="control-group">
-          <label>Rotation Speed</label>
-          <input type="range" id="mat-rotationSpeed" min="0" max="2" step="0.05" value="0.5">
-        </div>
-      </div>
-
-      <div class="control-section">
-        <h4>Distortion</h4>
-        <div class="control-group">
-          <label>Strength</label>
-          <input type="range" id="dist-strength" min="0" max="1" step="0.01" value="0.1">
-        </div>
-        <div class="control-group">
-          <label>Radius</label>
-          <input type="range" id="dist-radius" min="0.1" max="0.5" step="0.01" value="0.2">
-        </div>
-        <div class="control-group">
-          <label>Edge Width</label>
-          <input type="range" id="dist-edgeWidth" min="0" max="0.05" step="0.001" value="0.03">
-        </div>
-        <div class="control-group">
-          <label>Edge Opacity</label>
-          <input type="range" id="dist-edgeOpacity" min="0" max="1" step="0.01" value="0.1">
-        </div>
-        <div class="control-group">
-          <label>Chromatic Aberration</label>
-          <input type="range" id="dist-chromatic" min="0" max="0.1" step="0.001" value="0.02">
-        </div>
-        <div class="control-group">
-          <label>Reflection Intensity</label>
-          <input type="range" id="dist-reflection" min="0" max="1" step="0.01" value="0.2">
-        </div>
-        <div class="control-group">
-          <label>Wave Distortion</label>
-          <input type="range" id="dist-waveDist" min="0" max="0.1" step="0.001" value="0.05">
-        </div>
-        <div class="control-group">
-          <label>Wave Speed</label>
-          <input type="range" id="dist-waveSpeed" min="0" max="5" step="0.1" value="0.8">
-        </div>
-        <div class="control-group">
-          <label>Lens Blur</label>
-          <input type="range" id="dist-blur" min="0" max="0.1" step="0.001" value="0.1">
-        </div>
-        <div class="control-group">
-          <label>Clear Center Size</label>
-          <input type="range" id="dist-clearCenter" min="0" max="1" step="0.01" value="0.5">
-        </div>
-      </div>
-    </div>
-  </div>
-
   <input type="text" id="textInput" value="THREE" maxlength="10">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js'></script>
   <script type="module">
@@ -379,6 +163,7 @@
     import { EffectComposer } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/EffectComposer.js";
     import { RenderPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/RenderPass.js";
     import { ShaderPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/ShaderPass.js";
+    import { GUI } from "https://esm.sh/dat.gui";
 
     let scene, camera, renderer, controls;
     let composer, customPass;
@@ -422,7 +207,12 @@
 
       scene = new THREE.Scene();
 
-      camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera = new THREE.PerspectiveCamera(
+        50,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
       camera.position.set(0, 0, 10);
 
       controls = new OrbitControls(camera, canvas);
@@ -434,7 +224,7 @@
       createMaterials();
       createShapes();
       setupPostProcessing();
-      setupCustomUI();
+      setupGUI();
 
       window.addEventListener("resize", onWindowResize, false);
       document.addEventListener("mousemove", onMouseMove, false);
@@ -459,13 +249,15 @@
           resolve
         );
       });
+
       updateBackgroundSize();
     }
 
     function updateBackgroundSize() {
       if (backgroundTexture) {
         const aspect = window.innerWidth / window.innerHeight;
-        const imageAspect = backgroundTexture.image.width / backgroundTexture.image.height;
+        const imageAspect =
+          backgroundTexture.image.width / backgroundTexture.image.height;
 
         let scale;
         if (aspect > imageAspect) {
@@ -476,6 +268,7 @@
 
         backgroundTexture.offset.set((1 - scale.x) / 2, (1 - scale.y) / 2);
         backgroundTexture.repeat.set(scale.x, scale.y);
+
         scene.background = backgroundTexture;
       }
     }
@@ -519,6 +312,10 @@
       middleTorus = new THREE.Mesh(middleTorusGeometry, glassMaterial);
       innerTorus = new THREE.Mesh(innerTorusGeometry, glassMaterial);
       mouseSphere = new THREE.Mesh(sphereGeometry, glassMaterial);
+
+      outerTorus.position.x = 0;
+      middleTorus.position.x = 0;
+      innerTorus.position.x = 0;
 
       scene.add(outerTorus);
       scene.add(middleTorus);
@@ -632,104 +429,96 @@
       composer.addPass(customPass);
     }
 
-    // Connect Dom inputs to parameter tracking logic
-    function setupCustomUI() {
-      const wrapper = document.getElementById('controlsWrapper');
-      const toggle = document.getElementById('menuToggle');
+    function setupGUI() {
+      const gui = new GUI();
+      const matFolder = gui.addFolder("Material");
+      matFolder.addColor(PARAMS.material, "color").onChange((value) => {
+        outerTorus.material.color.set(value);
+        middleTorus.material.color.set(value);
+        innerTorus.material.color.set(value);
+        mouseSphere.material.color.set(value);
+      });
+      matFolder.add(PARAMS.material, "metalness", 0, 1).onChange((value) => {
+        outerTorus.material.metalness = value;
+        middleTorus.material.metalness = value;
+        innerTorus.material.metalness = value;
+        mouseSphere.material.metalness = value;
+      });
+      matFolder.add(PARAMS.material, "roughness", 0, 1).onChange((value) => {
+        outerTorus.material.roughness = value;
+        middleTorus.material.roughness = value;
+        innerTorus.material.roughness = value;
+        mouseSphere.material.roughness = value;
+      });
+      matFolder.add(PARAMS.material, "transmission", 0, 1).onChange((value) => {
+        outerTorus.material.transmission = value;
+        middleTorus.material.transmission = value;
+        innerTorus.material.transmission = value;
+        mouseSphere.material.transmission = value;
+      });
+      matFolder.add(PARAMS.material, "thickness", 0, 5).onChange((value) => {
+        outerTorus.material.thickness = value;
+        middleTorus.material.thickness = value;
+        innerTorus.material.thickness = value;
+        mouseSphere.material.thickness = value;
+      });
+      matFolder.add(PARAMS.material, "ior", 1, 2.333).onChange((value) => {
+        outerTorus.material.ior = value;
+        middleTorus.material.ior = value;
+        innerTorus.material.ior = value;
+        mouseSphere.material.ior = value;
+      });
+      matFolder.add(PARAMS.material, "clearcoat", 0, 1).onChange((value) => {
+        outerTorus.material.clearcoat = value;
+        middleTorus.material.clearcoat = value;
+        innerTorus.material.clearcoat = value;
+        mouseSphere.material.clearcoat = value;
+      });
+      matFolder
+        .add(PARAMS.material, "clearcoatRoughness", 0, 1)
+        .onChange((value) => {
+          outerTorus.material.clearcoatRoughness = value;
+          middleTorus.material.clearcoatRoughness = value;
+          innerTorus.material.clearcoatRoughness = value;
+          mouseSphere.material.clearcoatRoughness = value;
+        });
+      matFolder.add(PARAMS, "rotationSpeed", 0, 2);
 
-      // Dropdown toggle mechanism
-      toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        wrapper.classList.toggle('open');
-      });
-
-      // Close menu if clicking outside layout elements
-      document.addEventListener('click', (e) => {
-        if (!wrapper.contains(e.target)) {
-          wrapper.classList.remove('open');
-        }
-      });
-
-      // Material Event Hooks
-      document.getElementById('mat-color').addEventListener('input', (e) => {
-        PARAMS.material.color = e.target.value;
-        const nColor = new THREE.Color(e.target.value);
-        outerTorus.material.color.copy(nColor);
-        middleTorus.material.color.copy(nColor);
-        innerTorus.material.color.copy(nColor);
-        mouseSphere.material.color.copy(nColor);
-      });
-
-      document.getElementById('mat-metalness').addEventListener('input', (e) => {
-        const v = parseFloat(e.target.value);
-        outerTorus.material.metalness = middleTorus.material.metalness = innerTorus.material.metalness = mouseSphere.material.metalness = v;
-      });
-
-      document.getElementById('mat-roughness').addEventListener('input', (e) => {
-        const v = parseFloat(e.target.value);
-        outerTorus.material.roughness = middleTorus.material.roughness = innerTorus.material.roughness = mouseSphere.material.roughness = v;
-      });
-
-      document.getElementById('mat-transmission').addEventListener('input', (e) => {
-        const v = parseFloat(e.target.value);
-        outerTorus.material.transmission = middleTorus.material.transmission = innerTorus.material.transmission = mouseSphere.material.transmission = v;
-      });
-
-      document.getElementById('mat-thickness').addEventListener('input', (e) => {
-        const v = parseFloat(e.target.value);
-        outerTorus.material.thickness = middleTorus.material.thickness = innerTorus.material.thickness = mouseSphere.material.thickness = v;
-      });
-
-      document.getElementById('mat-ior').addEventListener('input', (e) => {
-        const v = parseFloat(e.target.value);
-        outerTorus.material.ior = middleTorus.material.ior = innerTorus.material.ior = mouseSphere.material.ior = v;
-      });
-
-      document.getElementById('mat-clearcoat').addEventListener('input', (e) => {
-        const v = parseFloat(e.target.value);
-        outerTorus.material.clearcoat = middleTorus.material.clearcoat = innerTorus.material.clearcoat = mouseSphere.material.clearcoat = v;
-      });
-
-      document.getElementById('mat-ccRoughness').addEventListener('input', (e) => {
-        const v = parseFloat(e.target.value);
-        outerTorus.material.clearcoatRoughness = middleTorus.material.clearcoatRoughness = innerTorus.material.clearcoatRoughness = mouseSphere.material.clearcoatRoughness = v;
-      });
-
-      document.getElementById('mat-rotationSpeed').addEventListener('input', (e) => {
-        PARAMS.rotationSpeed = parseFloat(e.target.value);
-      });
-
-      // Distortion Postprocessing Event Hooks
-      document.getElementById('dist-strength').addEventListener('input', (e) => {
-        customPass.uniforms.uStrength.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-radius').addEventListener('input', (e) => {
-        customPass.uniforms.uRadius.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-edgeWidth').addEventListener('input', (e) => {
-        customPass.uniforms.uEdgeWidth.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-edgeOpacity').addEventListener('input', (e) => {
-        customPass.uniforms.uEdgeOpacity.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-chromatic').addEventListener('input', (e) => {
-        customPass.uniforms.uChromaticAberration.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-reflection').addEventListener('input', (e) => {
-        customPass.uniforms.uReflectionIntensity.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-waveDist').addEventListener('input', (e) => {
-        customPass.uniforms.uWaveDistortion.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-waveSpeed').addEventListener('input', (e) => {
-        customPass.uniforms.uWaveSpeed.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-blur').addEventListener('input', (e) => {
-        customPass.uniforms.uLensBlur.value = parseFloat(e.target.value);
-      });
-      document.getElementById('dist-clearCenter').addEventListener('input', (e) => {
-        customPass.uniforms.uClearCenterSize.value = parseFloat(e.target.value);
-      });
+      const distFolder = gui.addFolder("Distortion");
+      distFolder
+        .add(PARAMS.distortion, "strength", 0, 1)
+        .onChange((value) => (customPass.uniforms.uStrength.value = value));
+      distFolder
+        .add(PARAMS.distortion, "radius", 0.1, 0.5)
+        .onChange((value) => (customPass.uniforms.uRadius.value = value));
+      distFolder
+        .add(PARAMS.distortion, "edgeWidth", 0, 0.05)
+        .onChange((value) => (customPass.uniforms.uEdgeWidth.value = value));
+      distFolder
+        .add(PARAMS.distortion, "edgeOpacity", 0, 1)
+        .onChange((value) => (customPass.uniforms.uEdgeOpacity.value = value));
+      distFolder
+        .add(PARAMS.distortion, "chromaticAberration", 0, 0.1)
+        .onChange(
+          (value) => (customPass.uniforms.uChromaticAberration.value = value)
+        );
+      distFolder
+        .add(PARAMS.distortion, "reflectionIntensity", 0, 1)
+        .onChange(
+          (value) => (customPass.uniforms.uReflectionIntensity.value = value)
+        );
+      distFolder
+        .add(PARAMS.distortion, "waveDistortion", 0, 0.1)
+        .onChange((value) => (customPass.uniforms.uWaveDistortion.value = value));
+      distFolder
+        .add(PARAMS.distortion, "waveSpeed", 0, 5)
+        .onChange((value) => (customPass.uniforms.uWaveSpeed.value = value));
+      distFolder
+        .add(PARAMS.distortion, "lensBlur", 0, 0.1)
+        .onChange((value) => (customPass.uniforms.uLensBlur.value = value));
+      distFolder
+        .add(PARAMS.distortion, "clearCenterSize", 0, 1)
+        .onChange((value) => (customPass.uniforms.uClearCenterSize.value = value));
     }
 
     function onWindowResize() {
@@ -754,7 +543,7 @@
     function animate(time) {
       requestAnimationFrame(animate);
 
-      // Rotate tori geometries
+      // Rotate tori
       outerTorus.rotation.x += PARAMS.rotationSpeed * 0.01;
       outerTorus.rotation.y += PARAMS.rotationSpeed * 0.01;
       middleTorus.rotation.y -= PARAMS.rotationSpeed * 0.015;
@@ -762,7 +551,7 @@
       innerTorus.rotation.x -= PARAMS.rotationSpeed * 0.02;
       innerTorus.rotation.z -= PARAMS.rotationSpeed * 0.02;
 
-      // Unproject space coordinates for dynamic target tracking
+      // Update mouse sphere position
       const vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
       vector.unproject(camera);
       const dir = vector.sub(camera.position).normalize();
@@ -770,7 +559,7 @@
       const pos = camera.position.clone().add(dir.multiplyScalar(distance));
       mouseSphere.position.copy(pos);
 
-      // Refresh maps selectively across targeted execution layers
+      // Update cube camera for refraction
       outerTorus.visible = false;
       middleTorus.visible = false;
       innerTorus.visible = false;
@@ -789,4 +578,4 @@
     init();
   </script>
 </body>
-</html>
+</html>  
