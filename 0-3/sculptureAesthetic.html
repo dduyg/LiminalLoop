@@ -156,14 +156,14 @@
   </div>   
 
   <input type="text" id="textInput" value="THREE" maxlength="10">
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js"></script>
+  
   <script type="module">
     import * as THREE from "https://esm.sh/three@0.136.0";
     import { OrbitControls } from "https://esm.sh/three@0.136.0/examples/jsm/controls/OrbitControls.js";
     import { EffectComposer } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/EffectComposer.js";
     import { RenderPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/RenderPass.js";
     import { ShaderPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/ShaderPass.js";
-    import { GUI } from "https://esm.sh/dat.gui";
 
     let scene, camera, renderer, controls;
     let composer, customPass;
@@ -224,7 +224,6 @@
       createMaterials();
       createShapes();
       setupPostProcessing();
-      setupGUI();
 
       window.addEventListener("resize", onWindowResize, false);
       document.addEventListener("mousemove", onMouseMove, false);
@@ -429,98 +428,6 @@
       composer.addPass(customPass);
     }
 
-    function setupGUI() {
-      const gui = new GUI();
-      const matFolder = gui.addFolder("Material");
-      matFolder.addColor(PARAMS.material, "color").onChange((value) => {
-        outerTorus.material.color.set(value);
-        middleTorus.material.color.set(value);
-        innerTorus.material.color.set(value);
-        mouseSphere.material.color.set(value);
-      });
-      matFolder.add(PARAMS.material, "metalness", 0, 1).onChange((value) => {
-        outerTorus.material.metalness = value;
-        middleTorus.material.metalness = value;
-        innerTorus.material.metalness = value;
-        mouseSphere.material.metalness = value;
-      });
-      matFolder.add(PARAMS.material, "roughness", 0, 1).onChange((value) => {
-        outerTorus.material.roughness = value;
-        middleTorus.material.roughness = value;
-        innerTorus.material.roughness = value;
-        mouseSphere.material.roughness = value;
-      });
-      matFolder.add(PARAMS.material, "transmission", 0, 1).onChange((value) => {
-        outerTorus.material.transmission = value;
-        middleTorus.material.transmission = value;
-        innerTorus.material.transmission = value;
-        mouseSphere.material.transmission = value;
-      });
-      matFolder.add(PARAMS.material, "thickness", 0, 5).onChange((value) => {
-        outerTorus.material.thickness = value;
-        middleTorus.material.thickness = value;
-        innerTorus.material.thickness = value;
-        mouseSphere.material.thickness = value;
-      });
-      matFolder.add(PARAMS.material, "ior", 1, 2.333).onChange((value) => {
-        outerTorus.material.ior = value;
-        middleTorus.material.ior = value;
-        innerTorus.material.ior = value;
-        mouseSphere.material.ior = value;
-      });
-      matFolder.add(PARAMS.material, "clearcoat", 0, 1).onChange((value) => {
-        outerTorus.material.clearcoat = value;
-        middleTorus.material.clearcoat = value;
-        innerTorus.material.clearcoat = value;
-        mouseSphere.material.clearcoat = value;
-      });
-      matFolder
-        .add(PARAMS.material, "clearcoatRoughness", 0, 1)
-        .onChange((value) => {
-          outerTorus.material.clearcoatRoughness = value;
-          middleTorus.material.clearcoatRoughness = value;
-          innerTorus.material.clearcoatRoughness = value;
-          mouseSphere.material.clearcoatRoughness = value;
-        });
-      matFolder.add(PARAMS, "rotationSpeed", 0, 2);
-
-      const distFolder = gui.addFolder("Distortion");
-      distFolder
-        .add(PARAMS.distortion, "strength", 0, 1)
-        .onChange((value) => (customPass.uniforms.uStrength.value = value));
-      distFolder
-        .add(PARAMS.distortion, "radius", 0.1, 0.5)
-        .onChange((value) => (customPass.uniforms.uRadius.value = value));
-      distFolder
-        .add(PARAMS.distortion, "edgeWidth", 0, 0.05)
-        .onChange((value) => (customPass.uniforms.uEdgeWidth.value = value));
-      distFolder
-        .add(PARAMS.distortion, "edgeOpacity", 0, 1)
-        .onChange((value) => (customPass.uniforms.uEdgeOpacity.value = value));
-      distFolder
-        .add(PARAMS.distortion, "chromaticAberration", 0, 0.1)
-        .onChange(
-          (value) => (customPass.uniforms.uChromaticAberration.value = value)
-        );
-      distFolder
-        .add(PARAMS.distortion, "reflectionIntensity", 0, 1)
-        .onChange(
-          (value) => (customPass.uniforms.uReflectionIntensity.value = value)
-        );
-      distFolder
-        .add(PARAMS.distortion, "waveDistortion", 0, 0.1)
-        .onChange((value) => (customPass.uniforms.uWaveDistortion.value = value));
-      distFolder
-        .add(PARAMS.distortion, "waveSpeed", 0, 5)
-        .onChange((value) => (customPass.uniforms.uWaveSpeed.value = value));
-      distFolder
-        .add(PARAMS.distortion, "lensBlur", 0, 0.1)
-        .onChange((value) => (customPass.uniforms.uLensBlur.value = value));
-      distFolder
-        .add(PARAMS.distortion, "clearCenterSize", 0, 1)
-        .onChange((value) => (customPass.uniforms.uClearCenterSize.value = value));
-    }
-
     function onWindowResize() {
       const aspect = window.innerWidth / window.innerHeight;
       camera.aspect = aspect;
@@ -578,4 +485,4 @@
     init();
   </script>
 </body>
-</html>  
+</html>
