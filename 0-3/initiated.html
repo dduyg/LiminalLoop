@@ -7,7 +7,7 @@
   <title>Liminal🔬Loop</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap" rel="stylesheet">
   <style>
-    *, *::after, *::before { box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent;}
+    * { box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent;}
     @font-face { 
       font-family: 'Kalamayka'; 
       src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/KalamaykaVF.woff2') format('woff2'),
@@ -127,96 +127,151 @@
     </div>
   </div>
 
+  <script src='https://d3js.org/d3-delaunay.v6.min.js'></script>
+  <script src='https://unpkg.com/three@0.126.0/examples/js/loaders/OBJLoader.js'></script>
   <script type="module">
-    import * as THREE from "https://cdn.skypack.dev/three@0.136.0";
-    import { OrbitControls } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/controls/OrbitControls.js";
-    import RAPIER from "https://cdn.skypack.dev/@dimforge/rapier3d-compat@0.11.2";
-    import { EffectComposer } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/EffectComposer.js";
-    import { RenderPass } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/RenderPass.js";
-    import { ShaderPass } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/ShaderPass.js";
-    import { UnrealBloomPass } from "https://cdn.skypack.dev/three@0.136.0/examples/jsm/postprocessing/UnrealBloomPass.js";
+    import * as THREE from "https://esm.sh/three@0.136.0";
+    import { OrbitControls } from "https://esm.sh/three@0.136.0/examples/jsm/controls/OrbitControls.js";
+    import RAPIER from "https://esm.sh/@dimforge/rapier3d-compat@0.11.2";
+    import { EffectComposer } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/EffectComposer.js";
+    import { RenderPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/RenderPass.js";
+    import { ShaderPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/ShaderPass.js";
+    import { UnrealBloomPass } from "https://esm.sh/three@0.136.0/examples/jsm/postprocessing/UnrealBloomPass.js";
 
-    let scene, camera, renderer, composer, controls, world, bodies = [], mouseBall, mouseLight;
-    const mousePos = new THREE.Vector2();
+    let scene, camera, renderer, composer, controls;
+    let world, bodies, mouseBall, mouseLight;
     const sceneMiddle = new THREE.Vector3(0, 0, 0);
-    const textureLoader = new THREE.TextureLoader();
-    const matcap = textureLoader.load("initiated.png");
+    let mousePos = new THREE.Vector2();
 
+    const numBodies = 100;
+
+    // Ball settings
+    const ballSettings = {
+      color: "#ffd3b6",
+      glowColor: "#ffd3b6",
+      glowIntensity: 3
+    };
+
+    const textureLoader = new THREE.TextureLoader();
+    const matcap = textureLoader.load(
+      "https://pbs.twimg.com/media/EQVip4yU4AENYb3.png"
+    );
+
+    // Grain Shader
     const grainShader = {
-      uniforms: { tDiffuse: { value: null }, amount: { value: 0.1 } },
-      vertexShader: `varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
-      fragmentShader: `uniform sampler2D tDiffuse; uniform float amount; varying vec2 vUv; float random(vec2 co){return fract(sin(dot(co.xy,vec2(12.9898,78.233)))*43758.5453);} void main(){vec4 color=texture2D(tDiffuse,vUv); float grain=random(vUv+amount)*amount; gl_FragColor=color+vec4(grain,grain,grain,0.0);}`
+      uniforms: {
+        tDiffuse: { value: null },
+        amount: { value: 0.1 }
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D tDiffuse;
+        uniform float amount;
+        varying vec2 vUv;
+        float random(vec2 co) {
+          return fract(sin(dot(co.xy, vec2(12.9898,78.233))) * 43758.5453);
+        }
+        void main() {
+          vec4 color = texture2D(tDiffuse, vUv);
+          float grain = random(vUv + amount) * amount;
+          gl_FragColor = color + vec4(grain, grain, grain, 0.0);
+        }
+      `
+    };
+
+    // Grayscale Shader
+    const grayscaleShader = {
+      uniforms: {
+        tDiffuse: { value: null },
+        amount: { value: 0.0 }
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D tDiffuse;
+        uniform float amount;
+        varying vec2 vUv;
+        void main() {
+          vec4 color = texture2D(tDiffuse, vUv);
+          float gray = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+          gl_FragColor = vec4(mix(color.rgb, vec3(gray), amount), color.a);
+        }
+      `
     };
 
     async function init() {
       await RAPIER.init();
+
+      // Scene setup
       scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = window.innerWidth < 768 ? 6 : 4;
+      camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      camera.position.z = 4;
 
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       document.body.appendChild(renderer.domElement);
 
+      // Post-processing setup
       const renderScene = new RenderPass(scene, camera);
-      const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 2.5, 0.4, 0.2);
+      const bloomPass = new UnrealBloomPass(
+        new THREE.Vector2(window.innerWidth, window.innerHeight),
+        2.5,
+        0.4,
+        0.2
+      );
       const grainPass = new ShaderPass(grainShader);
+      const grayscalePass = new ShaderPass(grayscaleShader);
 
       composer = new EffectComposer(renderer);
       composer.addPass(renderScene);
       composer.addPass(bloomPass);
       composer.addPass(grainPass);
+      composer.addPass(grayscalePass);
 
-      scene.add(new THREE.HemisphereLight(0x00bbff, 0xaa00ff, 0.5));
+      // Lighting setup
+      const hemiLight = new THREE.HemisphereLight(0x00bbff, 0xaa00ff, 0.5);
+      scene.add(hemiLight);
+
+      // Controls
       controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableZoom = window.innerWidth > 768;
+      controls.enableZoom = true;
+      controls.zoomSpeed = 1.2;
 
-      world = new RAPIER.World({ x: 0, y: 0, z: 0 });
-      for (let i = 0; i < 100; i++) {
-        const size = 0.1 + Math.random() * 0.25;
-        const density = size;
-        const pos = [Math.random() * 5 - 2.5, Math.random() * 5 - 2.5 + 3, Math.random() * 5 - 2.5];
-        const rigid = world.createRigidBody(RAPIER.RigidBodyDesc.dynamic().setTranslation(...pos));
-        world.createCollider(RAPIER.ColliderDesc.ball(size).setDensity(density), rigid);
-        const mesh = new THREE.Mesh(new THREE.IcosahedronGeometry(size, 1), new THREE.MeshMatcapMaterial({ matcap }));
-        scene.add(mesh);
-        bodies.push({ mesh, rigid, update() {
-          rigid.resetForces(true);
-          const p = rigid.translation(), pos = new THREE.Vector3(p.x, p.y, p.z);
-          const dir = pos.clone().sub(sceneMiddle).normalize();
-          rigid.addForce(dir.multiplyScalar(-0.5), true);
-          mesh.position.copy(pos);
-        }});
+      // Physics world setup
+      const gravity = { x: 0.0, y: 0, z: 0.0 };
+      world = new RAPIER.World(gravity);
+
+      // Create bodies
+      bodies = [];
+      for (let i = 0; i < numBodies; i++) {
+        const body = createBody(RAPIER, world);
+        bodies.push(body);
+        scene.add(body.mesh);
       }
 
-      const mouseSize = 0.25;
-      const mesh = new THREE.Mesh(new THREE.IcosahedronGeometry(mouseSize, 8), new THREE.MeshStandardMaterial({
-        color: "#ffd3b6", emissive: "#ffd3b6"
-      }));
-      mouseLight = new THREE.PointLight("#ffd3b6", 3, 15, 1.5);
-      mesh.add(mouseLight);
-      scene.add(mesh);
-      const rigid = world.createRigidBody(RAPIER.RigidBodyDesc.kinematicPositionBased().setTranslation(0, 0, 0));
-      world.createCollider(RAPIER.ColliderDesc.ball(mouseSize * 3), rigid);
-      mouseBall = { mesh, update(mouse) {
-        const [x, y] = [mouse.x * 5, mouse.y * 5];
-        rigid.setTranslation({ x, y, z: 0.2 });
-        const pos = rigid.translation();
-        mesh.position.set(pos.x, pos.y, pos.z);
-      }};
+      // Create mouse ball with light
+      mouseBall = createMouseBall(RAPIER, world);
+      scene.add(mouseBall.mesh);
 
-      window.addEventListener("resize", () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        composer.setSize(window.innerWidth, window.innerHeight);
-      });
-
-      window.addEventListener("mousemove", e => {
-        mousePos.x = (e.clientX / window.innerWidth) * 2 - 1;
-        mousePos.y = -(e.clientY / window.innerHeight) * 2 + 1;
-      });
+      // Event listeners
+      window.addEventListener("resize", onWindowResize, false);
+      window.addEventListener("mousemove", onMouseMove, false);
 
       animate();
     }
@@ -224,9 +279,96 @@
     function animate() {
       requestAnimationFrame(animate);
       world.step();
-      bodies.forEach(b => b.update());
+
+      // Update bodies and mouse ball
+      bodies.forEach((b) => b.update());
       mouseBall.update(mousePos);
+
+      // Render scene with post-processing
       composer.render();
+
+      // Update controls
+      controls.update();
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      composer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function onMouseMove(event) {
+      mousePos.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mousePos.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    }
+
+    function createBody(RAPIER, world) {
+      const size = 0.1 + Math.random() * 0.25;
+      const range = 5;
+      const density = size * 1.0;
+      let x = Math.random() * range - range * 0.5;
+      let y = Math.random() * range - range * 0.5 + 3;
+      let z = Math.random() * range - range * 0.5;
+
+      let rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic().setTranslation(x, y, z);
+      let rigid = world.createRigidBody(rigidBodyDesc);
+      let colliderDesc = RAPIER.ColliderDesc.ball(size).setDensity(density);
+      world.createCollider(colliderDesc, rigid);
+
+      const geometry = new THREE.IcosahedronGeometry(size, 1);
+      const material = new THREE.MeshMatcapMaterial({
+        matcap: matcap
+      });
+      const mesh = new THREE.Mesh(geometry, material);
+
+      function update() {
+        rigid.resetForces(true);
+        let { x, y, z } = rigid.translation();
+        let pos = new THREE.Vector3(x, y, z);
+        let dir = pos.clone().sub(sceneMiddle).normalize();
+        rigid.addForce(dir.multiplyScalar(-0.5), true);
+        mesh.position.set(x, y, z);
+      }
+
+      return { mesh, rigid, update };
+    }
+
+    function createMouseBall(RAPIER, world) {
+      const mouseSize = 0.25;
+      const geometry = new THREE.IcosahedronGeometry(mouseSize, 8);
+      const material = new THREE.MeshStandardMaterial({
+        color: ballSettings.color,
+        emissive: ballSettings.color
+      });
+      const mouseMesh = new THREE.Mesh(geometry, material);
+
+      mouseLight = new THREE.PointLight(
+        ballSettings.glowColor,
+        ballSettings.glowIntensity,
+        15,
+        1.5
+      );
+      mouseMesh.add(mouseLight);
+
+      let bodyDesc = RAPIER.RigidBodyDesc.kinematicPositionBased().setTranslation(
+        0,
+        0,
+        0
+      );
+      let mouseRigid = world.createRigidBody(bodyDesc);
+      let colliderDesc = RAPIER.ColliderDesc.ball(mouseSize * 3.0);
+      world.createCollider(colliderDesc, mouseRigid);
+
+      function update(mousePos) {
+        const targetX = mousePos.x * 5;
+        const targetY = mousePos.y * 5;
+        mouseRigid.setTranslation({ x: targetX, y: targetY, z: 0.2 });
+        const { x, y, z } = mouseRigid.translation();
+        mouseMesh.position.set(x, y, z);
+      }
+
+      return { mesh: mouseMesh, update };
     }
 
     init();
