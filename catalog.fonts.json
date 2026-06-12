@@ -1219,5 +1219,38 @@
     "variable": true,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Kode Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Kode+Mono&display=swap",
+    "category": "monospace",
+    "tags": [ "techno", "monospaced", "coding", "organic" ],
+    "weights": [ 400, 500, 600, 700 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Bricolage Grotesque",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@12..96&display=swap",
+    "category": "sans-serif",
+    "tags": [ "aesthetic", "formal", "sophisticated" ],
+    "weights": [ 200, 300, 400, 500, 600, 700, 800 ],
+    "variable": true,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Xanh Mono",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap",
+    "category": "monospace",
+    "tags": [ "formal", "monospaced", "organic", "contemporary" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
