@@ -39,31 +39,31 @@ toc: false
   a { color: black; font-weight: bold; display: inline-block; }
 
   /* Code cells — recreate the pink-bordered, dark "CodeMirror" box.
-     Framework's syntax highlighter can render under a few different class
-     names depending on version, so we cover the common ones. */
-  :root {
-    --theme-background-alt: #14151f !important; /* darkens Framework's own block background */
-  }
-  pre, .observablehq pre, pre.observablehq, div[class*="echo"] pre {
-    background: #14151f !important;
+     Framework renders `echo` code through its own fork of highlight.js
+     (@observablehq/highlight.js), so we target real .hljs-* token classes
+     rather than guessing at inline Shiki-style colors. */
+  pre {
+    background: #282a36 !important; /* dracula-style dark background */
     border: 5px solid var(--mm-pink) !important;
     border-radius: 0 !important;
     padding: 14px !important;
     margin-top: -5px !important;
     overflow-x: auto;
   }
-  pre code, pre.shiki, code[class*="language-"] {
+  pre code, pre code.hljs {
     background: transparent !important;
-    color: #f8f8f2 !important; /* neon-on-black base, syntax colors layer on top */
+    color: #f8f8f2 !important;
     font-size: 15px;
   }
-  /* Best-effort neon accents across the class/inline-style patterns different
-     highlighters use for the same token kinds. */
-  pre code .token.keyword, pre code span[style*="c678dd"], .shiki span[style*="#C678DD"] { color: #ff6ac1 !important; }
-  pre code .token.string,  pre code span[style*="98c379"], .shiki span[style*="#98C379"] { color: #39ff14 !important; }
-  pre code .token.function,pre code span[style*="61afef"], .shiki span[style*="#61AFEF"] { color: #5ad8ff !important; }
-  pre code .token.comment, pre code span[style*="5c6370"], .shiki span[style*="#5C6370"] { color: #7a7a8c !important; font-style: italic; }
-  pre code .token.number,  pre code span[style*="d19a66"], .shiki span[style*="#D19A66"] { color: #ffd866 !important; }
+  /* highlight.js token classes -> dracula-ish neon palette */
+  .hljs-keyword, .hljs-operator, .hljs-punctuation { color: #bd93f9 !important; } /* purple */
+  .hljs-built_in, .hljs-title.function_, .hljs-title.function, .hljs-function .hljs-title { color: #50fa7b !important; } /* green */
+  .hljs-string, .hljs-doctag, .hljs-regexp { color: #f1fa8c !important; } /* yellow */
+  .hljs-comment, .hljs-quote { color: #6272a4 !important; font-style: italic; }
+  .hljs-number, .hljs-literal { color: #ffb86c !important; } /* orange */
+  .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-property { color: #8be9fd !important; } /* cyan */
+  .hljs-tag, .hljs-name, .hljs-selector-tag { color: #ff79c6 !important; } /* pink */
+  .hljs-title, .hljs-title.class_ { color: #f8f8f2 !important; font-weight: bold; }
   .mm-controls {
     display: flex;
     flex-direction: row;
@@ -99,8 +99,8 @@ toc: false
     font-size: 14px;
   }
   .mm-canvas-container, .mm-frame {
-    border: 5px solid var(--mm-pink) !important;
-    background: #14151f;
+    border: 5px solid var(--mm-pink-pale) !important;
+    background: #282a36;
     overflow-x: auto;
     margin-top: -5px;
     padding: 14px;
@@ -109,7 +109,7 @@ toc: false
     list-style-type: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    border-left: 8px solid var(--mm-pink) !important;
+    border-left: 8px solid var(--mm-pink-pale) !important;
     padding-left: 14px !important;
     margin-top: 24px !important;
   }
@@ -304,7 +304,7 @@ const waveformCanvas = (() => {
 {
   const ctx = waveformCanvas.getContext("2d");
   ctx.clearRect(0, 0, waveformCanvas.width, waveformCanvas.height);
-  ctx.fillStyle = "#F5DDEE";
+  ctx.fillStyle = "#282a36";
   ctx.fillRect(0, 0, waveformCanvas.width, waveformCanvas.height);
 
   if (audioResult) {
