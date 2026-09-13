@@ -7,7 +7,6 @@
 <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/favicons/RGB-magentaLavender.ico">  
 <link href="https://fonts.cdnfonts.com/css/dellmonte-sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Noto+Serif+JP&family=Orbitron&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>  
 <style>  
 * { margin: 0; padding: 0; box-sizing: border-box; }  
 :root {  
@@ -219,6 +218,7 @@ header {
 .btn-amber:hover { background: var(--amber); color: var(--bg); }  
 .btn-rust  { border-color: var(--rust);  color: var(--rust);  }  
 .btn-rust:hover  { background: var(--rust);  color: var(--bg); }  
+.btn:disabled { opacity: 0.4; cursor: default; }
 /* hidden admin controls */  
 .admin-hidden { display: none; }  
   
@@ -308,7 +308,6 @@ header {
 }  
 .names-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 48px; }  
   
-/* ── GRID CARD ── */  
 .name-card {  
   background: var(--bg2);  
   border: 1px solid var(--border2);  
@@ -510,6 +509,7 @@ header {
 }  
 .form-input[readonly] { opacity: 0.45; cursor: default; background: rgba(246,241,255,0.5); }  
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-hint { font-size: 9px; color: var(--muted); letter-spacing: 0.5px; margin-top: 6px; line-height: 1.6; }
 .modal-footer {  
   display: flex; gap: 10px; justify-content: flex-end;  
   margin-top: 22px; padding-top: 18px;  
@@ -543,7 +543,7 @@ header {
 .confirm-name { color: var(--text); font-weight: 700; }  
 .confirm-actions { display: flex; gap: 10px; justify-content: center; }  
   
-/* ── PASSWORD MODAL ── */  
+/* ── TOKEN MODAL ── */  
 .pw-overlay {  
   position: fixed; inset: 0;  
   background: rgba(0,0,0,0.6);  
@@ -581,7 +581,7 @@ header {
 }  
 .pw-sub {  
   font-size: 9px; letter-spacing: 2px;  
-  color: var(--muted); margin-bottom: 22px;  
+  color: var(--muted); margin-bottom: 22px;
 }  
 .pw-input {  
   width: 100%;  
@@ -590,7 +590,7 @@ header {
   border-bottom: 2px solid var(--amber2);  
   padding: 11px 14px;  
   font-family: "DM Mono", monospace;
-  font-size: 14px; letter-spacing: 4px;  
+  font-size: 14px; letter-spacing: 4px;
   color: var(--text); outline: none;  
   text-align: center; border-radius: 1px;  
   transition: border-color 0.15s, box-shadow 0.15s;  
@@ -610,6 +610,7 @@ header {
   60%      { transform: translateX(-4px); }  
   80%      { transform: translateX(4px); }  
 }  
+.pw-remember { display: flex; align-items: center; justify-content: center; gap: 7px; margin-bottom: 14px; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
 .pw-error {  
   font-size: 9px; letter-spacing: 2px;  
   color: var(--rust); margin-bottom: 14px;  
@@ -625,6 +626,7 @@ header {
   padding: 10px 22px;  
   font-size: 14px; color: var(--bg3);  
   z-index: 300; opacity: 0; transition: all 0.22s; white-space: nowrap;  
+  max-width: 90vw; overflow: hidden; text-overflow: ellipsis;
 }  
 .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }  
   
@@ -767,7 +769,8 @@ header {
     <div class="pw-icon">⚿</div>  
     <div class="pw-title">ADMIN ACCESS</div>  
     <div class="pw-sub">管理者認証 · Enter passphrase</div>  
-    <input type="password" class="pw-input" id="pw-input" placeholder="◦◦◦◦◦◦◦◦◦◦◦" autocomplete="current-password">  
+    <input type="password" class="pw-input" id="pw-input" placeholder="◦◦◦◦◦◦◦◦◦◦◦" autocomplete="off">
+    <label class="pw-remember"><input type="checkbox" id="pw-remember" checked style="accent-color:var(--amber2);"> remember on this device</label>
     <div class="pw-error" id="pw-error"></div>  
     <div class="pw-actions">  
       <button class="btn btn-rust" id="pw-cancel">CANCEL</button>  
@@ -779,6 +782,17 @@ header {
 <div class="toast" id="toast"></div>  
   
 <script>  
+/* ═══════════════════════════════════════  
+   CONFIG
+═══════════════════════════════════════ */  
+const GITHUB_OWNER  = "dduyg";
+const GITHUB_REPO   = "fluffy-octo-spork";           // the repo index.html lives in
+const GITHUB_BRANCH = "main";
+const DATA_PATH      = "data/namedrop_entries.json"; // path to JSON dataset
+
+const API_BASE = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`;
+const TOKEN_STORAGE_KEY = 'namedrop_gh_token';
+
 /* ═══════════════════════════════════════  
    THEME MANAGER  
 ═══════════════════════════════════════ */  
@@ -811,85 +825,101 @@ themeBtn.onclick = () => {
 };
 
 initTheme();
+
 /* ═══════════════════════════════════════  
-   SUPABASE  
+   BASE64 <-> UNICODE HELPERS
+   (plain atob/btoa mangle non-ASCII titles like 夜, ａｂｃ, etc.)
 ═══════════════════════════════════════ */  
-const SUPABASE_URL = "https://zsiilkcothfqtdmazbds.supabase.co";  
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpzaWlsa2NvdGhmcXRkbWF6YmRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkzNTk1ODEsImV4cCI6MjA5NDkzNTU4MX0.WeoxJ_bWEa_UVqttCQynruUkefS3RXa8ZSzB3gZWJ6c";  
-const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);  
-const ADMIN_HASH = '23ea2a1ec8cfb8ff6db14a915a7d78553c3236c42951a216666f3bc8b9935c05';  
-  
-let isAdmin = false;  
-  
-async function hashPassword(pw) {  
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));  
-  return [...new Uint8Array(buf)].map(x => x.toString(16).padStart(2,'0')).join('');  
-}  
-  
-async function tryUnlock(pw) {  
-  const h = await hashPassword(pw);  
-  return h === ADMIN_HASH;  
-}  
-  
-function setAdminState(val) {  
-  isAdmin = val;  
-  const btn = document.getElementById('admin-lock-btn');  
-  if (isAdmin) {  
-    btn.innerHTML = '<sub>⚿ Lock admin session</sub>';  
-    document.querySelectorAll('.admin-hidden').forEach(el => {  
-      el.style.display = 'block';  
-    });  
-  } else {  
-    btn.innerHTML = '<sub>⚿ Admin access</sub>';  
-    document.querySelectorAll('.admin-hidden').forEach(el => {  
-      el.style.display = 'none';  
-    });  
-  }  
-}  
-  
-/* Password modal */  
-function openPwModal() {  
-  document.getElementById('pw-input').value = '';  
-  document.getElementById('pw-error').textContent = '';  
-  document.getElementById('pw-overlay').classList.add('open');  
-  setTimeout(() => document.getElementById('pw-input').focus(), 240);  
-}  
-function closePwModal() {  
-  document.getElementById('pw-overlay').classList.remove('open');  
-}  
-  
-document.getElementById('pw-cancel').onclick = closePwModal;  
-document.getElementById('pw-confirm').onclick = async () => {  
-  const pw  = document.getElementById('pw-input').value;  
-  const ok  = await tryUnlock(pw);  
-  if (ok) {  
-    closePwModal();  
-    setAdminState(true);  
-    showToast('ADMIN UNLOCKED');  
-  } else {  
-    const inp = document.getElementById('pw-input');  
-    inp.classList.add('shake');  
-    document.getElementById('pw-error').textContent = 'INCORRECT PASSPHRASE';  
-    setTimeout(() => inp.classList.remove('shake'), 400);  
-  }  
-};  
-document.getElementById('pw-input').addEventListener('keydown', e => {  
-  if (e.key === 'Enter') document.getElementById('pw-confirm').click();  
-});  
-  
-document.getElementById('admin-lock-btn').onclick = () => {  
-  if (isAdmin) {  
-    setAdminState(false);  
-    showToast('SESSION LOCKED');  
-  } else {  
-    openPwModal();  
-  }  
-};  
-  
+function b64EncodeUnicode(str) {
+  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+    (_, p1) => String.fromCharCode('0x' + p1)));
+}
+function b64DecodeUnicode(str) {
+  return decodeURIComponent(atob(str).split('').map(c =>
+    '%' + c.charCodeAt(0).toString(16).padStart(2, '0')
+  ).join(''));
+}
+
+/* ═══════════════════════════════════════  
+   ADMIN / TOKEN  
+═══════════════════════════════════════ */  
+let isAdmin = false;
+let ghToken = null;
+
+function setAdminState(val) {
+  isAdmin = val;
+  const btn = document.getElementById('admin-lock-btn');
+  if (isAdmin) {
+    btn.innerHTML = '<sub>⚿ Lock admin session</sub>';
+    document.querySelectorAll('.admin-hidden').forEach(el => { el.style.display = 'block'; });
+  } else {
+    btn.innerHTML = '<sub>⚿ Admin access</sub>';
+    document.querySelectorAll('.admin-hidden').forEach(el => { el.style.display = 'none'; });
+  }
+}
+
+function openPwModal() {
+  document.getElementById('pw-input').value = '';
+  document.getElementById('pw-error').textContent = '';
+  document.getElementById('pw-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('pw-input').focus(), 240);
+}
+function closePwModal() {
+  document.getElementById('pw-overlay').classList.remove('open');
+}
+
+document.getElementById('pw-cancel').onclick = closePwModal;
+
+document.getElementById('pw-confirm').onclick = async () => {
+  const token = document.getElementById('pw-input').value.trim();
+  const remember = document.getElementById('pw-remember').checked;
+  if (!token) return;
+
+  const btn = document.getElementById('pw-confirm');
+  btn.disabled = true; btn.textContent = 'CHECKING...';
+
+  // verify the token actually has read access to this file/repo
+  try {
+    const res = await fetch(API_BASE + `?ref=${GITHUB_BRANCH}`, {
+      headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' }
+    });
+    if (!res.ok) throw new Error('bad token');
+    ghToken = token;
+    if (remember) localStorage.setItem(TOKEN_STORAGE_KEY, token);
+    closePwModal();
+    setAdminState(true);
+    showToast('ADMIN UNLOCKED');
+  } catch (e) {
+    const inp = document.getElementById('pw-input');
+    inp.classList.add('shake');
+    document.getElementById('pw-error').textContent = 'TOKEN REJECTED OR NO ACCESS';
+    setTimeout(() => inp.classList.remove('shake'), 400);
+  } finally {
+    btn.disabled = false; btn.textContent = 'UNLOCK';
+  }
+};
+
+document.getElementById('pw-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('pw-confirm').click();
+});
+
+document.getElementById('admin-lock-btn').onclick = () => {
+  if (isAdmin) {
+    isAdmin = false;
+    ghToken = null;
+    localStorage.removeItem(TOKEN_STORAGE_KEY);
+    setAdminState(false);
+    showToast('SESSION LOCKED');
+  } else {
+    openPwModal();
+  }
+};
+
 /* ═══════════════════════════════════════  
    STATE  
 ═══════════════════════════════════════ */  
 let entries      = [];  
+let currentSha   = null;   // required by GitHub to overwrite the file
 let currentView  = 'grid';  
 let currentSort  = 'default';  
 let editingId    = null;  
@@ -926,7 +956,7 @@ function showToast(msg) {
   t.textContent = msg;  
   t.classList.add('show');  
   clearTimeout(t._t);  
-  t._t = setTimeout(() => t.classList.remove('show'), 2200);  
+  t._t = setTimeout(() => t.classList.remove('show'), 2600);  
 }  
 function flashCard(id) {  
   const el = document.querySelector(`[data-id="${id}"]`);  
@@ -940,24 +970,68 @@ function closeCtx() {
 }  
   
 /* ═══════════════════════════════════════  
-   SUPABASE OPS  
+   GITHUB OPS
+   Reads: unauthenticated (public repo) — fine for a personal archive.
+   Writes: authenticated PUT of the whole JSON file, using the sha
+   from the most recent read so GitHub can detect conflicts.
 ═══════════════════════════════════════ */  
 async function loadEntries() {  
-  const { data, error } = await db  
-    .from('namedrop_entries')  
-    .select('*')  
-    .order('id', { ascending: true });  
-  
-  if (error) {  
-    console.error(error);  
-    showToast('DATABASE ERROR');  
+  try {  
+    const res = await fetch(API_BASE + `?ref=${GITHUB_BRANCH}&t=${Date.now()}`, {
+      headers: { 'Accept': 'application/vnd.github+json' }
+    });
+    if (!res.ok) throw new Error(`GitHub returned ${res.status}`);
+    const json = await res.json();
+    currentSha = json.sha;
+    entries = JSON.parse(b64DecodeUnicode(json.content));
+    buildChips();  
+    render();  
+  } catch (err) {  
+    console.error(err);  
+    showToast('DATABASE ERROR — CHECK CONFIG');  
     document.getElementById('names-container').innerHTML =  
       `<div class="empty-state"><div class="e-icon">⚠</div><p>Could not load archive</p></div>`;  
-    return;  
+  }
+}  
+
+async function commitEntries(newEntries, message) {  
+  if (!isAdmin || !ghToken) { showToast('ADMIN ACCESS REQUIRED'); return false; }  
+  try {  
+    const body = {  
+      message,  
+      content: b64EncodeUnicode(JSON.stringify(newEntries, null, 2)),  
+      sha: currentSha,  
+      branch: GITHUB_BRANCH  
+    };  
+    const res = await fetch(API_BASE, {  
+      method: 'PUT',  
+      headers: {  
+        'Authorization': `Bearer ${ghToken}`,  
+        'Accept': 'application/vnd.github+json',  
+        'Content-Type': 'application/json'  
+      },  
+      body: JSON.stringify(body)  
+    });  
+    if (res.status === 409) {  
+      showToast('FILE CHANGED ELSEWHERE — RELOADING');  
+      await loadEntries();  
+      return false;  
+    }  
+    if (!res.ok) {  
+      const errBody = await res.json().catch(() => ({}));  
+      console.error(errBody);  
+      showToast('COMMIT FAILED (' + res.status + ')');  
+      return false;  
+    }  
+    const json = await res.json();  
+    currentSha = json.content.sha;  
+    entries = newEntries;  
+    return true;  
+  } catch (err) {  
+    console.error(err);  
+    showToast('NETWORK ERROR');  
+    return false;  
   }  
-  entries = data || [];  
-  buildChips();  
-  render();  
 }  
   
 async function saveEntry() {  
@@ -965,7 +1039,7 @@ async function saveEntry() {
   const title    = document.getElementById('f-title').value.trim();  
   const category = document.getElementById('f-category').value.trim();  
   const mood     = document.getElementById('f-mood').value.trim();  
-  const style    = document.getElementById('f-style').value.trim();  
+  const style    = document.getElementById('f-style').value.trim() || null;  
   const tags     = document.getElementById('f-tags').value  
     .split(',').map(t => t.trim().toLowerCase()).filter(Boolean);  
   
@@ -973,33 +1047,36 @@ async function saveEntry() {
   if (!category) { showToast('CATEGORY REQUIRED'); return; }  
   if (!mood)     { showToast('MOOD REQUIRED');     return; }  
   
+  let next;  
+  let msg;  
   if (editingId !== null) {  
-    const { error } = await db  
-      .from('namedrop_entries')  
-      .update({ title, category, mood, style, tags })  
-      .eq('id', Number(editingId));  
-    if (error) { console.error(error); showToast('UPDATE FAILED'); return; }  
-    showToast('UPDATED: ' + title);  
+    next = entries.map(e => e.id === editingId  
+      ? { ...e, title, category, mood, style, tags: tags.length ? tags : null }  
+      : e);  
+    msg = `Update entry: ${title}`;  
   } else {  
-    const { error } = await db  
-      .from('namedrop_entries')  
-      .insert([{ title, category, mood, style, tags, added: Date.now() }]);  
-    if (error) { console.error(error); showToast('SAVE FAILED'); return; }  
-    showToast('ADDED: ' + title);  
+    const nextId = entries.length ? Math.max(...entries.map(e => e.id)) + 1 : 1;  
+    next = [...entries, { id: nextId, title, category, mood, style, tags: tags.length ? tags : null, added: Date.now() }];  
+    msg = `Add entry: ${title}`;  
   }  
+  
+  const ok = await commitEntries(next, msg);  
+  if (!ok) return;  
+  showToast((editingId !== null ? 'UPDATED: ' : 'ADDED: ') + title);  
   closeModal();  
-  await loadEntries();  
+  buildChips();  
+  render();  
 }  
   
 async function deleteEntry(id) {  
   if (!isAdmin) { showToast('ADMIN ACCESS REQUIRED'); return; }  
-  const { error } = await db  
-    .from('namedrop_entries')  
-    .delete()  
-    .eq('id', Number(id));  
-  if (error) { console.error(error); showToast('DELETE FAILED'); return; }  
+  const target = entries.find(e => e.id === Number(id));  
+  const next = entries.filter(e => e.id !== Number(id));  
+  const ok = await commitEntries(next, `Delete entry: ${target ? target.title : id}`);  
+  if (!ok) return;  
   showToast('ENTRY DELETED');  
-  await loadEntries();  
+  buildChips();  
+  render();  
 }  
   
 /* ═══════════════════════════════════════  
@@ -1068,7 +1145,7 @@ function getFiltered() {
   if (currentSort === 'alpha-desc') items.sort((a,b) => b.title.localeCompare(a.title));  
   if (currentSort === 'len-asc')    items.sort((a,b) => a.title.length - b.title.length);  
   if (currentSort === 'len-desc')   items.sort((a,b) => b.title.length - a.title.length);  
-  if (currentSort === 'newest')     items.sort((a,b) => b.added - a.added);  
+  if (currentSort === 'newest')     items.sort((a,b) => (b.added||0) - (a.added||0));  
   return items;  
 }  
 function render() {  
@@ -1271,7 +1348,22 @@ document.addEventListener('keydown', e => {
    INIT  
 ═══════════════════════════════════════ */  
 setAdminState(false);  
+
+// if a token was remembered on this device, re-verify it silently
+(async () => {
+  const saved = localStorage.getItem(TOKEN_STORAGE_KEY);
+  if (saved) {
+    try {
+      const res = await fetch(API_BASE + `?ref=${GITHUB_BRANCH}`, {
+        headers: { 'Authorization': `Bearer ${saved}`, 'Accept': 'application/vnd.github+json' }
+      });
+      if (res.ok) { ghToken = saved; setAdminState(true); }
+      else localStorage.removeItem(TOKEN_STORAGE_KEY);
+    } catch (e) { /* ignore, stay logged out */ }
+  }
+})();
+
 loadEntries();  
 </script>  
 </body>                                                     
-</html>
+      </html>
