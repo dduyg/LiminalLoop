@@ -38,58 +38,34 @@ toc: false
   p code, li code { color: var(--mm-blue); font-size: 18px; }
   a { color: black; font-weight: bold; display: inline-block; }
 
-  /* Code cells — the actual CodeMirror "dracula" theme selectors, since
-     that's the real class structure Observable's editor renders (not
-     highlight.js/Shiki, which was a wrong guess last round). */
-  .cm-s-dracula.CodeMirror, .cm-s-dracula .CodeMirror-gutters {
-    background-color: #282a36 !important;
-    color: #f8f8f2 !important;
-    border: 5px solid var(--mm-pink) !important;
-  }
-  .cm-s-dracula .CodeMirror-gutters { color: #282a36; }
-  .cm-s-dracula .CodeMirror-cursor { border-left: solid thin #f8f8f0; }
-  .cm-s-dracula .CodeMirror-linenumber { color: #6D8A88; }
-  .cm-s-dracula .CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
-  .cm-s-dracula .CodeMirror-line::selection,
-  .cm-s-dracula .CodeMirror-line > span::selection,
-  .cm-s-dracula .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
-  .cm-s-dracula .CodeMirror-line::-moz-selection,
-  .cm-s-dracula .CodeMirror-line > span::-moz-selection,
-  .cm-s-dracula .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
-  .cm-s-dracula span.cm-comment { color: #6272a4; }
-  .cm-s-dracula span.cm-string, .cm-s-dracula span.cm-string-2 { color: #f1fa8c; }
-  .cm-s-dracula span.cm-number { color: #bd93f9; }
-  .cm-s-dracula span.cm-variable { color: #50fa7b; }
-  .cm-s-dracula span.cm-variable-2 { color: white; }
-  .cm-s-dracula span.cm-def { color: #50fa7b; }
-  .cm-s-dracula span.cm-operator { color: #ff79c6; }
-  .cm-s-dracula span.cm-keyword { color: #ff79c6; }
-  .cm-s-dracula span.cm-atom { color: #bd93f9; }
-  .cm-s-dracula span.cm-meta { color: #f8f8f2; }
-  .cm-s-dracula span.cm-tag { color: #ff79c6; }
-  .cm-s-dracula span.cm-attribute { color: #50fa7b; }
-  .cm-s-dracula span.cm-qualifier { color: #50fa7b; }
-  .cm-s-dracula span.cm-property { color: #66d9ef; }
-  .cm-s-dracula span.cm-builtin { color: #50fa7b; }
-  .cm-s-dracula span.cm-variable-3, .cm-s-dracula span.cm-type { color: #ffb86c; }
-  .cm-s-dracula .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
-  .cm-s-dracula .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
-
-  /* Fallback in case Framework renders source as plain <pre><code> instead
-     of a live CodeMirror instance — same dark background and pink border. */
-  pre:not(.CodeMirror) {
+  /* Code cells — Observable Framework renders `echo`'d source as plain
+     <pre><code> in the page output, so we style those tags directly rather
+     than assuming any particular editor widget or highlighter internals. */
+  pre {
     background: #282a36 !important;
-    border: 5px solid var(--mm-pink) !important;
+    border: 5px solid var(--mm-pink-pale) !important;
     border-radius: 0 !important;
     padding: 14px !important;
     margin-top: -5px !important;
     overflow-x: auto;
   }
-  pre:not(.CodeMirror) code {
+  pre code {
     background: transparent !important;
     color: #f8f8f2 !important;
     font-size: 15px;
+    font-family: 'IBM Plex Mono', monospace;
   }
+  /* Best-effort neon token colors, mapped onto the class names most static
+     site highlighters (Framework included) tend to reuse from highlight.js.
+     Harmless no-ops if the build uses different class names — the dark
+     background and pale-pink border above hold regardless. */
+  pre .hljs-comment, pre .hljs-quote { color: #6272a4 !important; font-style: italic; }
+  pre .hljs-string, pre .hljs-doctag, pre .hljs-regexp { color: #f1fa8c !important; }
+  pre .hljs-number, pre .hljs-literal { color: #bd93f9 !important; }
+  pre .hljs-keyword, pre .hljs-operator, pre .hljs-punctuation { color: #ff79c6 !important; }
+  pre .hljs-variable, pre .hljs-built_in, pre .hljs-title, pre .hljs-attr { color: #50fa7b !important; }
+  pre .hljs-property, pre .hljs-attribute { color: #8be9fd !important; }
+  pre .hljs-type, pre .hljs-class { color: #ffb86c !important; }
   .mm-controls {
     display: flex;
     flex-direction: row;
