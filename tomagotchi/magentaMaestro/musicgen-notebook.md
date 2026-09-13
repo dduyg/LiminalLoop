@@ -37,6 +37,33 @@ toc: false
   }
   p code, li code { color: var(--mm-blue); font-size: 18px; }
   a { color: black; font-weight: bold; display: inline-block; }
+
+  /* Code cells — recreate the pink-bordered, dark "CodeMirror" box.
+     Framework's syntax highlighter can render under a few different class
+     names depending on version, so we cover the common ones. */
+  :root {
+    --theme-background-alt: #14151f !important; /* darkens Framework's own block background */
+  }
+  pre, .observablehq pre, pre.observablehq, div[class*="echo"] pre {
+    background: #14151f !important;
+    border: 5px solid var(--mm-pink) !important;
+    border-radius: 0 !important;
+    padding: 14px !important;
+    margin-top: -5px !important;
+    overflow-x: auto;
+  }
+  pre code, pre.shiki, code[class*="language-"] {
+    background: transparent !important;
+    color: #f8f8f2 !important; /* neon-on-black base, syntax colors layer on top */
+    font-size: 15px;
+  }
+  /* Best-effort neon accents across the class/inline-style patterns different
+     highlighters use for the same token kinds. */
+  pre code .token.keyword, pre code span[style*="c678dd"], .shiki span[style*="#C678DD"] { color: #ff6ac1 !important; }
+  pre code .token.string,  pre code span[style*="98c379"], .shiki span[style*="#98C379"] { color: #39ff14 !important; }
+  pre code .token.function,pre code span[style*="61afef"], .shiki span[style*="#61AFEF"] { color: #5ad8ff !important; }
+  pre code .token.comment, pre code span[style*="5c6370"], .shiki span[style*="#5C6370"] { color: #7a7a8c !important; font-style: italic; }
+  pre code .token.number,  pre code span[style*="d19a66"], .shiki span[style*="#D19A66"] { color: #ffd866 !important; }
   .mm-controls {
     display: flex;
     flex-direction: row;
@@ -72,13 +99,22 @@ toc: false
     font-size: 14px;
   }
   .mm-canvas-container, .mm-frame {
-    border: 5px solid var(--mm-pink-pale) !important;
+    border: 5px solid var(--mm-pink) !important;
+    background: #14151f;
     overflow-x: auto;
     margin-top: -5px;
     padding: 14px;
   }
-  .mm-toc { list-style-type: none; margin: 0; padding: 0; border-left: 8px solid var(--mm-pink-pale); padding-left: 14px; margin-top: 24px; }
-  .mm-toc li a { font-weight: normal; text-decoration: none; margin-bottom: 4px; }
+  .mm-toc {
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-left: 8px solid var(--mm-pink) !important;
+    padding-left: 14px !important;
+    margin-top: 24px !important;
+  }
+  .mm-toc li { margin: 0 0 6px 0 !important; }
+  .mm-toc li a { font-weight: normal; text-decoration: none; }
   textarea.mm-prompt {
     width: 100%;
     box-sizing: border-box;
@@ -117,7 +153,7 @@ with audio tokens instead of words. That's the whole trick underneath everything
 fussing with <code>&lt;script&gt;</code> tags in a head element; it downloads, resolves, and everything downstream
 just picks it up.</p>
 
-```js
+```js echo
 import { pipeline } from "npm:@huggingface/transformers";
 ```
 
@@ -131,7 +167,7 @@ what task you want and which checkpoint to use, and it hands you back a function
 using the <code>text-to-audio</code> task with <code>musicgen-small</code>, the lightest of the MusicGen
 checkpoints (there's also a medium and large, if you've got the bandwidth and patience for them).</p>
 
-```js
+```js echo
 const generatorPromise = pipeline(
   "text-to-audio",
   "Xenova/musicgen-small",
@@ -139,7 +175,7 @@ const generatorPromise = pipeline(
 );
 ```
 
-```js
+```js echo
 const generator = view(
   Inputs.button("Load model", {
     reduce: async () => {
@@ -155,7 +191,7 @@ const generator = view(
 words — crank it up and it sticks close to what you typed, dial it down and it starts wandering off and doing its
 own thing.</p>
 
-```js
+```js echo
 const prompt = view(
   Inputs.textarea({
     value: "lo-fi chillhop beat with vinyl crackle and a mellow piano loop",
@@ -166,7 +202,7 @@ const prompt = view(
 );
 ```
 
-```js
+```js echo
 const guidanceScale = view(
   Inputs.range([1, 5], { step: 0.5, value: 3, label: "Guidance scale" })
 );
@@ -177,13 +213,13 @@ const guidanceScale = view(
   <div class="mm-tag">~10–30s on CPU</div>
 </div>
 
-```js
+```js echo
 const generateClicks = view(
   Inputs.button("Generate", { label: "Generate" })
 );
 ```
 
-```js
+```js echo
 const audioResult = (async () => {
   generateClicks; // re-run this cell whenever the button is clicked
   if (!generator) return null;
@@ -195,13 +231,13 @@ const audioResult = (async () => {
 })();
 ```
 
-```js
+```js echo
 audioResult
   ? html`<div class="mm-frame">${await audioBufferToPlayer(audioResult)}</div>`
   : html`<p><em>Load the model above, then hit Generate.</em></p>`
 ```
 
-```js
+```js echo
 // Turns { audio, sampling_rate } into a playable <audio> element.
 async function audioBufferToPlayer({ audio, sampling_rate }) {
   const ctx = new OfflineAudioContext(1, audio.length, sampling_rate);
@@ -255,7 +291,7 @@ function encodeWav(buffer) {
 way to see where a clip gets loud, quiet, or busy, and it makes the "this is real audio, not MIDI" point pretty
 visually obvious.</p>
 
-```js
+```js echo
 const waveformCanvas = (() => {
   const canvas = document.createElement("canvas");
   canvas.width = 760;
@@ -264,7 +300,7 @@ const waveformCanvas = (() => {
 })();
 ```
 
-```js
+```js echo
 {
   const ctx = waveformCanvas.getContext("2d");
   ctx.clearRect(0, 0, waveformCanvas.width, waveformCanvas.height);
