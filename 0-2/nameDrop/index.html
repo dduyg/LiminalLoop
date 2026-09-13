@@ -610,7 +610,27 @@ header {
   60%      { transform: translateX(-4px); }  
   80%      { transform: translateX(4px); }  
 }  
-.pw-remember { display: flex; align-items: center; justify-content: center; gap: 7px; margin-bottom: 14px; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+.pw-remember { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 14px; font-size: 7px; color: var(--muted); }
+.pw-remember input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 12px; height: 12px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+.pw-remember input[type="checkbox"]:checked {
+  background: var(--amber2);
+  border-color: var(--amber2);
+}
+.pw-remember input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute; top: -3px; left: 1px;
+  font-size: 9px; color: var(--bg3);
+} 
 .pw-error {  
   font-size: 9px; letter-spacing: 2px;  
   color: var(--rust); margin-bottom: 14px;  
@@ -770,7 +790,7 @@ header {
     <div class="pw-title">ADMIN ACCESS</div>  
     <div class="pw-sub">管理者認証 · Enter passphrase</div>  
     <input type="password" class="pw-input" id="pw-input" placeholder="◦◦◦◦◦◦◦◦◦◦◦" autocomplete="off">
-    <label class="pw-remember"><input type="checkbox" id="pw-remember" checked style="accent-color:var(--amber2);"> remember on this device</label>
+    <label class="pw-remember"><input type="checkbox" id="pw-remember" checked> remember on this device</label>
     <div class="pw-error" id="pw-error"></div>  
     <div class="pw-actions">  
       <button class="btn btn-rust" id="pw-cancel">CANCEL</button>  
