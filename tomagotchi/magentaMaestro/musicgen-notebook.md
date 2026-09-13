@@ -38,27 +38,40 @@ toc: false
   p code, li code { color: var(--mm-blue); font-size: 18px; }
   a { color: black; font-weight: bold; display: inline-block; }
 
-  /* Code cells — Observable Framework renders `echo`'d source as plain
-     <pre><code> in the page output, so we style those tags directly rather
-     than assuming any particular editor widget or highlighter internals. */
-  pre {
+  /* Code cells. Observable's editor and its static code display both run on
+     CodeMirror 6, which — unlike the CodeMirror 5 + dracula.css combo the
+     original tutorial used — wraps everything in stable structural classes
+     (.cm-editor / .cm-content / .cm-line) and tags tokens with .tok-* names
+     from @codemirror/language's classHighlighter. Those are the real,
+     non-hashed hooks to target, so the dark background + border live on the
+     structural classes, and the dracula palette lives on the .tok-* tokens. */
+  pre, .cm-editor, .cm-scroller {
     background: #282a36 !important;
     border: 5px solid var(--mm-pink-pale) !important;
     border-radius: 0 !important;
-    padding: 14px !important;
-    margin-top: -5px !important;
-    overflow-x: auto;
   }
-  pre code {
-    background: transparent !important;
+  .cm-editor { padding: 14px !important; margin-top: -5px !important; overflow-x: auto; }
+  .cm-content, .cm-line, pre code {
     color: #f8f8f2 !important;
-    font-size: 15px;
-    font-family: 'IBM Plex Mono', monospace;
+    background: transparent !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-size: 15px !important;
   }
-  /* Best-effort neon token colors, mapped onto the class names most static
-     site highlighters (Framework included) tend to reuse from highlight.js.
-     Harmless no-ops if the build uses different class names — the dark
-     background and pale-pink border above hold regardless. */
+  .cm-gutters { background: #282a36 !important; border: none !important; color: #6272a4 !important; }
+
+  /* Dracula palette mapped onto CodeMirror 6's semantic tag classes. */
+  .tok-keyword, .tok-operator, .tok-controlOperator, .tok-updateOperator,
+  .tok-derefOperator, .tok-compareOperator, .tok-definitionOperator { color: #ff79c6 !important; }
+  .tok-variableName, .tok-namespace { color: #50fa7b !important; }
+  .tok-propertyName, .tok-attributeName, .tok-function { color: #8be9fd !important; }
+  .tok-string, .tok-regexp, .tok-attributeValue { color: #f1fa8c !important; }
+  .tok-atom, .tok-bool, .tok-number { color: #bd93f9 !important; }
+  .tok-comment { color: #6272a4 !important; font-style: italic; }
+  .tok-typeName, .tok-className, .tok-tagName { color: #ffb86c !important; }
+  .tok-punctuation, .tok-bracket, .tok-angleBracket, .tok-meta { color: #f8f8f2 !important; }
+
+  /* Same dracula palette again as a highlight.js fallback, in case any given
+     block renders through that path instead of CM6 — harmless either way. */
   pre .hljs-comment, pre .hljs-quote { color: #6272a4 !important; font-style: italic; }
   pre .hljs-string, pre .hljs-doctag, pre .hljs-regexp { color: #f1fa8c !important; }
   pre .hljs-number, pre .hljs-literal { color: #bd93f9 !important; }
