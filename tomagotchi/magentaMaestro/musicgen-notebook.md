@@ -1,5 +1,5 @@
 ---
-title: Machine Learning Maestro — Compose with Transformers.js
+title: Making Music with MusicGen, Right in Your Browser
 theme: [dashboard]
 toc: false
 ---
@@ -91,21 +91,17 @@ toc: false
 </style>
 ```
 
-<h1>Making your browser make music (with Transformers.js)</h1>
+<h1>Making music with MusicGen, right in your browser</h1>
 
-<p>A while back the go-to for "AI music, but in a browser tab" was Magenta.js. It's basically retired now, so this
-is the update: same tutorial, same vibe, but built around
-<a href="https://huggingface.co/docs/transformers.js/index">Transformers.js</a> and
-<a href="https://huggingface.co/facebook/musicgen-small">MusicGen</a> instead. Type a prompt, wait a bit, get a
-little audio clip — all running on your machine, no API key, no server.</p>
+<p><a href="https://huggingface.co/facebook/musicgen-small">MusicGen</a> is Meta's text-to-music model — you type
+a description, it hands you back an audio clip that (hopefully) sounds like what you asked for. The fun part is
+that thanks to <a href="https://huggingface.co/docs/transformers.js/index">Transformers.js</a>, you can run the
+whole thing directly in a browser tab. No API key, no backend, nothing leaves your machine.</p>
 
-<p>One thing to get used to if you're coming from Magenta: it's a different kind of "note."</p>
-<ul>
-  <li>Magenta dealt in <strong>symbolic</strong> music — a <code>NoteSequence</code> is just pitch-and-timing data,
-    basically MIDI. Lightweight, and easy to draw as a piano roll.</li>
-  <li>MusicGen deals in <strong>actual audio</strong> — you type a description, it spits out a waveform. No notes
-    to inspect, so instead of a piano roll we're just drawing the waveform.</li>
-</ul>
+<p>Here's the shape of it: MusicGen doesn't work with notes or a score the way you might picture "AI music"
+working. There's no MIDI, no piano roll under the hood. You give it a text prompt, it generates raw audio —
+literally a waveform — token by token, the same basic way a language model generates text token by token, just
+with audio tokens instead of words. That's the whole trick underneath everything below.</p>
 
 <h2>Table of contents</h2>
 <ul class="mm-toc">
@@ -131,8 +127,9 @@ one-time tax per visitor.</p>
 
 <h2 id="step1">Step 1: Set up the pipeline</h2>
 <p>Almost everything in <code>@huggingface/transformers</code> boils down to a <code>pipeline</code> — tell it
-what task you want and which checkpoint to use, and it hands you back a function you can just call. If you've used
-Magenta before, this'll feel familiar: load a checkpoint, then ask it to do the thing.</p>
+what task you want and which checkpoint to use, and it hands you back a function you can just call. Here we're
+using the <code>text-to-audio</code> task with <code>musicgen-small</code>, the lightest of the MusicGen
+checkpoints (there's also a medium and large, if you've got the bandwidth and patience for them).</p>
 
 ```js
 const generatorPromise = pipeline(
@@ -154,9 +151,9 @@ const generator = view(
 ```
 
 <h2 id="step2">Step 2: Actually make some noise</h2>
-<p>Mess with the prompt below, it's fun. <code>guidance_scale</code> is basically MusicGen's version of
-Magenta's temperature knob — crank it up and the model sticks close to what you typed, dial it down and it starts
-wandering off and doing its own thing.</p>
+<p>Mess with the prompt below, it's fun. <code>guidance_scale</code> controls how literally the model takes your
+words — crank it up and it sticks close to what you typed, dial it down and it starts wandering off and doing its
+own thing.</p>
 
 ```js
 const prompt = view(
@@ -205,8 +202,7 @@ audioResult
 ```
 
 ```js
-// Turns { audio, sampling_rate } into a playable <audio> element,
-// the MusicGen equivalent of Magenta's mm.Player.
+// Turns { audio, sampling_rate } into a playable <audio> element.
 async function audioBufferToPlayer({ audio, sampling_rate }) {
   const ctx = new OfflineAudioContext(1, audio.length, sampling_rate);
   const buffer = ctx.createBuffer(1, audio.length, sampling_rate);
@@ -255,9 +251,9 @@ function encodeWav(buffer) {
 ```
 
 <h2 id="step3">Step 3: Give it something to look at</h2>
-<p>Magenta had that piano roll that lit up note by note — nice touch, but it needs symbolic data we don't have
-here. So instead we just draw the raw waveform. Same pink frame, same idea though: something to watch while you
-listen.</p>
+<p>Since there's no note data to visualize, the natural thing to draw is the waveform itself — it's a nice, quick
+way to see where a clip gets loud, quiet, or busy, and it makes the "this is real audio, not MIDI" point pretty
+visually obvious.</p>
 
 ```js
 const waveformCanvas = (() => {
@@ -302,14 +298,17 @@ const waveformCanvas = (() => {
 <div class="mm-canvas-container">${waveformCanvas}</div>
 
 <h2 id="step4">Step 4: Knobs worth knowing</h2>
-<p>Quick cheat sheet, Magenta-to-MusicGen translation:</p>
+<p>A quick cheat sheet for the settings that actually matter:</p>
 <ul>
-  <li><code>guidance_scale</code> — think of it as temperature, flipped. Higher = sticks to your prompt.
-    Lower = goes off and improvises.</li>
+  <li><code>guidance_scale</code> — higher means the model sticks closer to your prompt; lower means it takes
+    more creative liberties. Somewhere around 3 is a decent default; push it toward 4–5 if the output feels too
+    loosely related to what you typed.</li>
   <li><code>max_new_tokens</code> — how long the clip is. MusicGen chews through roughly 50 tokens per second
-    of audio, so 256 tokens ≈ 5 seconds. Want it longer? Bump this up — just know it'll take longer to generate too.</li>
+    of audio, so 256 tokens ≈ 5 seconds. Want longer clips? Bump this up — just know generation time scales
+    with it too.</li>
   <li><code>dtype</code> — how compressed the model weights are (<code>q8</code>, <code>q4</code>, <code>fp16</code>).
-    Same trade-off as picking a smaller Magenta checkpoint: lighter download, faster inference, a bit less fidelity.</li>
+    Lighter dtypes mean a smaller download and faster inference, at some cost to audio fidelity. <code>q8</code>
+    is a solid middle ground for a browser demo.</li>
 </ul>
 
 <hr>
