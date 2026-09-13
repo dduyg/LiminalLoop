@@ -1252,5 +1252,16 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Benton Sans",
+    "source": "custom",
+    "url": "https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop/fonts/BentonSans.woff2",
+    "category": "sans-serif",
+    "tags": [ "minimal", "sophisticated", "formal" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
 
 ]
