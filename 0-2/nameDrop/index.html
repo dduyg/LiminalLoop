@@ -930,8 +930,9 @@ document.getElementById('admin-lock-btn').onclick = () => {
 /* ═══════════════════════════════════════  
    STATE  
 ═══════════════════════════════════════ */  
-let entries      = [];  
+let entries      = [];
 let currentSha   = null;   // required by GitHub to overwrite the file
+let displayNumberById = new Map(); // gapless display numbers, independent of stable "id"
 let currentView  = 'grid';  
 let currentSort  = 'default';  
 let editingId    = null;  
@@ -980,6 +981,14 @@ function closeCtx() {
   document.getElementById('ctx-menu').classList.remove('open');  
   ctxTargetId = null;  
 }  
+function assignDisplayNumbers() {  
+  // "id" stays fixed forever (used to target edits/deletes).  
+  // The number shown on cards is just this entry's rank by id — always 1..N with no gaps.  
+  displayNumberById = new Map();  
+  [...entries].sort((a, b) => a.id - b.id).forEach((e, i) => {  
+    displayNumberById.set(e.id, i + 1);  
+  });  
+}  
   
 /* ═══════════════════════════════════════  
    GITHUB OPS
@@ -996,6 +1005,7 @@ async function loadEntries() {
     const json = await res.json();
     currentSha = json.sha;
     entries = JSON.parse(b64DecodeUnicode(json.content));
+    assignDisplayNumbers();
     buildChips();  
     render();  
   } catch (err) {  
@@ -1076,6 +1086,7 @@ async function saveEntry() {
   if (!ok) return;  
   showToast((editingId !== null ? 'UPDATED: ' : 'ADDED: ') + title);  
   closeModal();  
+  assignDisplayNumbers();  
   buildChips();  
   render();  
 }  
@@ -1087,6 +1098,7 @@ async function deleteEntry(id) {
   const ok = await commitEntries(next, `Delete entry: ${target ? target.title : id}`);  
   if (!ok) return;  
   showToast('ENTRY DELETED');  
+  assignDisplayNumbers();  
   buildChips();  
   render();  
 }  
@@ -1168,16 +1180,16 @@ function render() {
   const c = document.getElementById('names-container');  
   if (currentView === 'grid') {  
     c.className = 'names-grid';  
-    c.innerHTML = items.length ? items.map(gridCard).join('') : emptyHTML();  
+    c.innerHTML = items.length ? items.map((e, i) => gridCard(e, i)).join('') : emptyHTML();  
   } else {  
     c.className = 'names-list';  
-    c.innerHTML = items.length ? items.map(listRow).join('') : emptyHTML();  
+    c.innerHTML = items.length ? items.map((e, i) => listRow(e, i)).join('') : emptyHTML();  
   }  
 }  
 function emptyHTML() {  
   return `<div class="empty-state"><div class="e-icon">◈</div><p>No entries match</p></div>`;  
 }  
-function gridCard(e) {  
+function gridCard(e, i) {  
   const tags = (e.tags || []).map(t => `#${t}`).join(', ');  
   return `  
     <div class="name-card" data-id="${e.id}"  
@@ -1191,18 +1203,18 @@ function gridCard(e) {
       </div>  
       ${tags ? `<div class="card-tags-inline">${safe(tags)}</div>` : ''}  
       <div class="card-footer">  
-        <span>ID·${String(e.id).padStart(4,'0')}</span>  
+        <span>No.${String(displayNumberById.get(e.id) ?? '?').padStart(4,'0')}</span>  
         <span class="badge badge-length">${wordLen(e.title)}</span>  
       </div>  
     </div>`;  
 }  
-function listRow(e) {  
+function listRow(e, i) {  
   return `  
     <div class="list-row" data-id="${e.id}"  
       onclick="copyEntry(${e.id})"  
       oncontextmenu="openCtx(event, ${e.id})">  
       <span class="list-title">${safe(e.title)}</span>  
-      <span class="list-id">ID·${String(e.id).padStart(4,'0')}</span>  
+      <span class="list-id">No.${String(displayNumberById.get(e.id) ?? '?').padStart(4,'0')}</span>  
     </div>`;  
 }  
   
@@ -1378,4 +1390,4 @@ setAdminState(false);
 loadEntries();  
 </script>  
 </body>                                                     
-      </html>
+</html>
