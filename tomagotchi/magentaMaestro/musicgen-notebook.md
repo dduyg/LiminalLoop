@@ -38,32 +38,58 @@ toc: false
   p code, li code { color: var(--mm-blue); font-size: 18px; }
   a { color: black; font-weight: bold; display: inline-block; }
 
-  /* Code cells — recreate the pink-bordered, dark "CodeMirror" box.
-     Framework renders `echo` code through its own fork of highlight.js
-     (@observablehq/highlight.js), so we target real .hljs-* token classes
-     rather than guessing at inline Shiki-style colors. */
-  pre {
-    background: #282a36 !important; /* dracula-style dark background */
+  /* Code cells — the actual CodeMirror "dracula" theme selectors, since
+     that's the real class structure Observable's editor renders (not
+     highlight.js/Shiki, which was a wrong guess last round). */
+  .cm-s-dracula.CodeMirror, .cm-s-dracula .CodeMirror-gutters {
+    background-color: #282a36 !important;
+    color: #f8f8f2 !important;
+    border: 5px solid var(--mm-pink) !important;
+  }
+  .cm-s-dracula .CodeMirror-gutters { color: #282a36; }
+  .cm-s-dracula .CodeMirror-cursor { border-left: solid thin #f8f8f0; }
+  .cm-s-dracula .CodeMirror-linenumber { color: #6D8A88; }
+  .cm-s-dracula .CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
+  .cm-s-dracula .CodeMirror-line::selection,
+  .cm-s-dracula .CodeMirror-line > span::selection,
+  .cm-s-dracula .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+  .cm-s-dracula .CodeMirror-line::-moz-selection,
+  .cm-s-dracula .CodeMirror-line > span::-moz-selection,
+  .cm-s-dracula .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+  .cm-s-dracula span.cm-comment { color: #6272a4; }
+  .cm-s-dracula span.cm-string, .cm-s-dracula span.cm-string-2 { color: #f1fa8c; }
+  .cm-s-dracula span.cm-number { color: #bd93f9; }
+  .cm-s-dracula span.cm-variable { color: #50fa7b; }
+  .cm-s-dracula span.cm-variable-2 { color: white; }
+  .cm-s-dracula span.cm-def { color: #50fa7b; }
+  .cm-s-dracula span.cm-operator { color: #ff79c6; }
+  .cm-s-dracula span.cm-keyword { color: #ff79c6; }
+  .cm-s-dracula span.cm-atom { color: #bd93f9; }
+  .cm-s-dracula span.cm-meta { color: #f8f8f2; }
+  .cm-s-dracula span.cm-tag { color: #ff79c6; }
+  .cm-s-dracula span.cm-attribute { color: #50fa7b; }
+  .cm-s-dracula span.cm-qualifier { color: #50fa7b; }
+  .cm-s-dracula span.cm-property { color: #66d9ef; }
+  .cm-s-dracula span.cm-builtin { color: #50fa7b; }
+  .cm-s-dracula span.cm-variable-3, .cm-s-dracula span.cm-type { color: #ffb86c; }
+  .cm-s-dracula .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
+  .cm-s-dracula .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
+
+  /* Fallback in case Framework renders source as plain <pre><code> instead
+     of a live CodeMirror instance — same dark background and pink border. */
+  pre:not(.CodeMirror) {
+    background: #282a36 !important;
     border: 5px solid var(--mm-pink) !important;
     border-radius: 0 !important;
     padding: 14px !important;
     margin-top: -5px !important;
     overflow-x: auto;
   }
-  pre code, pre code.hljs {
+  pre:not(.CodeMirror) code {
     background: transparent !important;
     color: #f8f8f2 !important;
     font-size: 15px;
   }
-  /* highlight.js token classes -> dracula-ish neon palette */
-  .hljs-keyword, .hljs-operator, .hljs-punctuation { color: #bd93f9 !important; } /* purple */
-  .hljs-built_in, .hljs-title.function_, .hljs-title.function, .hljs-function .hljs-title { color: #50fa7b !important; } /* green */
-  .hljs-string, .hljs-doctag, .hljs-regexp { color: #f1fa8c !important; } /* yellow */
-  .hljs-comment, .hljs-quote { color: #6272a4 !important; font-style: italic; }
-  .hljs-number, .hljs-literal { color: #ffb86c !important; } /* orange */
-  .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-property { color: #8be9fd !important; } /* cyan */
-  .hljs-tag, .hljs-name, .hljs-selector-tag { color: #ff79c6 !important; } /* pink */
-  .hljs-title, .hljs-title.class_ { color: #f8f8f2 !important; font-weight: bold; }
   .mm-controls {
     display: flex;
     flex-direction: row;
