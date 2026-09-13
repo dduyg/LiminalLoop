@@ -782,13 +782,25 @@ header {
 <div class="toast" id="toast"></div>  
   
 <script>  
+/* ═══════════════════════════════════════
+   HOW TO CREATE A FINE-GRAINED PERSONAL ACCESS TOKEN
+   ───────────────────────────────────────
+   GitHub → Settings → Developer settings → Personal access tokens
+   → Fine-grained tokens → Generate new token:
+
+     Repository access: Only select repositories → pick [repo-name]
+     Permissions → Contents: Read and write
+     Everything else: no access
+
+   Copy the token once — It won't show it again. ══════ */
+
 /* ═══════════════════════════════════════  
    CONFIG
 ═══════════════════════════════════════ */  
 const GITHUB_OWNER  = "dduyg";
-const GITHUB_REPO   = "fluffy-octo-spork";           // the repo index.html lives in
+const GITHUB_REPO   = "nameDrop";
 const GITHUB_BRANCH = "main";
-const DATA_PATH      = "data/namedrop_entries.json"; // path to JSON dataset
+const DATA_PATH      = "data/namedrop_entries.json"; // path to JSON dataset inside repo
 
 const API_BASE = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${DATA_PATH}`;
 const TOKEN_STORAGE_KEY = 'namedrop_gh_token';
