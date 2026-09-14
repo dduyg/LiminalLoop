@@ -2,15 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no">
     <title>✨🖌️ Magic Sketchpad</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-    
     <style>
       [hidden] {
         display: none !important;
@@ -125,7 +122,6 @@
       select {
         -webkit-appearance: none;
         -moz-appearance: none;
-        appearance: none;
         text-transform: lowercase;
         font-family: "Press Start 2P", monospace;
         font-size: 11px;
@@ -133,7 +129,6 @@
         border: none;
         color: var(--purple);
         width: 100%;
-        cursor: pointer;
       }
 
       #colorsContainer {
@@ -197,7 +192,7 @@
         top: 50%;
         left: 50%;
         width: calc(100% - 32px);
-        max-width: 480px;
+        max-width: 520px;
         transform: translate(-50%, -50%);
         border: 3px solid var(--purple);
         border-radius: 8px;
@@ -211,12 +206,6 @@
         font-size: 16px;
         color: var(--pink);
         margin-top: 0;
-      }
-
-      .dialog b {
-        background: var(--yellow);
-        padding: 2px 4px;
-        border-radius: 3px;
       }
 
       footer {
@@ -278,24 +267,24 @@
     </div>
 
     <div id="colorsContainer">
-      <button data-index="0" style="background-color: rgb(0, 0, 0)" class="active" onclick="changeColor(event)"></button>
-      <button data-index="1" style="background-color: rgb(244, 67, 54)" onclick="changeColor(event)"></button>
-      <button data-index="2" style="background-color: rgb(233, 30, 99)" onclick="changeColor(event)"></button>
-      <button data-index="3" style="background-color: rgb(156, 39, 176)" onclick="changeColor(event)"></button>
-      <button data-index="4" style="background-color: rgb(103, 58, 183)" onclick="changeColor(event)"></button>
-      <button data-index="5" style="background-color: rgb(63, 81, 181)" onclick="changeColor(event)"></button>
-      <button data-index="6" style="background-color: rgb(33, 150, 243)" onclick="changeColor(event)"></button>
-      <button data-index="7" style="background-color: rgb(0, 188, 212)" onclick="changeColor(event)"></button>
-      <button data-index="8" style="background-color: rgb(0, 150, 136)" onclick="changeColor(event)"></button>
-      <button data-index="9" style="background-color: rgb(76, 175, 80)" onclick="changeColor(event)"></button>
-      <button data-index="10" style="background-color: rgb(139, 195, 74)" onclick="changeColor(event)"></button>
-      <button data-index="11" style="background-color: rgb(205, 220, 57)" onclick="changeColor(event)"></button>
-      <button data-index="12" style="background-color: rgb(255, 235, 59)" onclick="changeColor(event)"></button>
-      <button data-index="13" style="background-color: rgb(255, 193, 7)" onclick="changeColor(event)"></button>
-      <button data-index="14" style="background-color: rgb(255, 152, 0)" onclick="changeColor(event)"></button>
-      <button data-index="15" style="background-color: rgb(255, 87, 34)" onclick="changeColor(event)"></button>
-      <button data-index="16" style="background-color: rgb(121, 85, 72)" onclick="changeColor(event)"></button>
-      <button data-index="17" style="background-color: rgb(158, 158, 158)" onclick="changeColor(event)"></button>
+      <button data-index="0" style="background-color: rgb(0, 0, 0)" class="active"></button>
+      <button data-index="1" style="background-color: rgb(244, 67, 54)"></button>
+      <button data-index="2" style="background-color: rgb(233, 30, 99)"></button>
+      <button data-index="3" style="background-color: rgb(156, 39, 176)"></button>
+      <button data-index="4" style="background-color: rgb(103, 58, 183)"></button>
+      <button data-index="5" style="background-color: rgb(63, 81, 181)"></button>
+      <button data-index="6" style="background-color: rgb(33, 150, 243)"></button>
+      <button data-index="7" style="background-color: rgb(0, 188, 212)"></button>
+      <button data-index="8" style="background-color: rgb(0, 150, 136)"></button>
+      <button data-index="9" style="background-color: rgb(76, 175, 80)"></button>
+      <button data-index="10" style="background-color: rgb(139, 195, 74)"></button>
+      <button data-index="11" style="background-color: rgb(205, 220, 57)"></button>
+      <button data-index="12" style="background-color: rgb(255, 235, 59)"></button>
+      <button data-index="13" style="background-color: rgb(255, 193, 7)"></button>
+      <button data-index="14" style="background-color: rgb(255, 152, 0)"></button>
+      <button data-index="15" style="background-color: rgb(255, 87, 34)"></button>
+      <button data-index="16" style="background-color: rgb(121, 85, 72)"></button>
+      <button data-index="17" style="background-color: rgb(158, 158, 158)"></button>
     </div>
 
     <div id="sketch-wrapper">
@@ -305,12 +294,10 @@
     <div class="dialog" id="help" hidden>
       <h2>What is this?</h2>
       <p>
-        Draw things with machines! Every time you <b>lift your pen up</b>, a machine learning algorithm
-        tries to finish that stroke and match the category you've selected. Try drawing multiple categories on the same page!
+        Magic Sketchpad is an interactive, machine-learning-powered drawing experience that explores human-AI creative collaboration. Built using Magenta.js and the SketchRNN model, the application invites users to sketch simple doodles and watches as an artificial intelligence attempts to complete the drawing based on a selected category.
       </p>
       <p>
-        Built by <a href="#">@dduyg</a> with <a target="_blank" rel="noopener" href="https://magenta.tensorflow.org">magenta.js</a>.
-        Learn more about <a target="_blank" rel="noopener" href="https://magenta.tensorflow.org/sketch-rnn-demo">Sketch RNN</a>.
+        Trained on millions of doodles from Google's extensive Quick, Draw! dataset, the system recognizes patterns in real time to predict and extend your artwork. Users can select different object categories and layer multiple drawings onto a single canvas, creating a dynamic dialogue between human intuition and machine intelligence.
       </p>
       <button class="box" id="btnCloseHelp">Got it!</button>
     </div>
@@ -319,96 +306,93 @@
       I have no idea what I'm doing, a <a href="#">Duygu</a> production.
     </footer>
 
-    <!-- Libraries: Modern p5.js (v1.9.4), TF.js, and Magenta Sketch -->
+    <!-- Modern Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@magenta/sketch@0.1.3/dist/magentasketch.min.js"></script>
-
     <script>
       const sketch = function(p) {
         const BASE_URL = 'https://storage.googleapis.com/quickdraw-models/sketchRNN/models/';
         const availableModels = ['bird', 'ant','ambulance','angel','alarm_clock','antyoga','backpack','barn','basket','bear','bee','beeflower','bicycle','book','brain','bridge','bulldozer','bus','butterfly','cactus','calendar','castle','cat','catbus','catpig','chair','couch','crab','crabchair','crabrabbitfacepig','cruise_ship','diving_board','dog','dogbunny','dolphin','duck','elephant','elephantpig','everything','eye','face','fan','fire_hydrant','firetruck','flamingo','flower','floweryoga','frog','frogsofa','garden','hand','hedgeberry','hedgehog','helicopter','kangaroo','key','lantern','lighthouse','lion','lionsheep','lobster','map','mermaid','monapassport','monkey','mosquito','octopus','owl','paintbrush','palm_tree','parrot','passport','peas','penguin','pig','pigsheep','pineapple','pool','postcard','power_outlet','rabbit','rabbitturtle','radio','radioface','rain','rhinoceros','rifle','roller_coaster','sandwich','scorpion','sea_turtle','sheep','skull','snail','snowflake','speedboat','spider','squirrel','steak','stove','strawberry','swan','swing_set','the_mona_lisa','tiger','toothbrush','toothpaste','tractor','trombone','truck','whale','windmill','yoga','yogabicycle'];
         let model;
 
-        // Model
+        // Model state
         let modelState;
-        const temperature = 0.1; // Very low so that we draw very well.
+        const temperature = 0.1;
         let modelLoaded = false;
         let modelIsActive = false;
 
-        // Model pen state.
+        // Model pen state
         let dx, dy;
         let x, y;
-        let startX, startY;  // Keep track of the first point of the last raw line.
-        let pen = [0,0,0]; // Model pen state, [pen_down, pen_up, pen_end].
-        let previousPen = [1, 0, 0]; // Previous model pen state.
+        let startX, startY;
+        let pen = [0,0,0];
+        let previousPen = [1, 0, 0];
         const PEN = {DOWN: 0, UP: 1, END: 2};
-        const epsilon = 2.0; // ignore data from user's pen staying in one spot.
+        const epsilon = 2.0;
 
-        // Human drawing.
+        // Human drawing state
         let currentRawLine = [];
-        let userPen = 0; // above = 0 or below = 1 the paper.
+        let userPen = 0;
         let previousUserPen = 0;
         let currentColor = 'black';
 
-        // History tracking.
-        let lastHumanStroke;  
-        let lastHumanDrawing = []; 
-        let lastModelDrawing = []; 
+        // Undo states
+        let lastHumanStroke;
+        let lastHumanDrawing = [];
+        let lastModelDrawing = [];
 
-        const selectModels = document.getElementById('selectModels');
-        const btnClear = document.getElementById('btnClear');
-        const btnRetry = document.getElementById('btnRetry');
-        const btnHelp = document.getElementById('btnHelp');
-        const btnCloseHelp = document.getElementById('btnCloseHelp');
-        const btnSave = document.getElementById('btnSave');
-        const helpModal = document.getElementById('help');
-
-        function toggleHelp() {
-          helpModal.hidden = !helpModal.hidden;
-        }
-
-        /*
-         * Main p5 code
-         */
         p.setup = function() {
-          const containerSize = document.getElementById('sketch').getBoundingClientRect();
-          const screenWidth = Math.floor(containerSize.width);
-          const screenHeight = Math.floor(containerSize.height);
-          p.createCanvas(screenWidth, screenHeight);
+          const container = document.getElementById('sketch');
+          const containerSize = container.getBoundingClientRect();
+          p.createCanvas(Math.floor(containerSize.width), Math.floor(containerSize.height));
           p.frameRate(60);
 
           restart();
-          initModel(22);  // Cat!
+          initModel(22); // Cat default
 
+          const selectModels = document.getElementById('selectModels');
           selectModels.innerHTML = availableModels.map(m => `<option>${m}</option>`).join('');
           selectModels.selectedIndex = 22;
-
           selectModels.addEventListener('change', () => initModel(selectModels.selectedIndex));
-          btnClear.addEventListener('click', restart);
-          btnRetry.addEventListener('click', retryMagic);
-          btnHelp.addEventListener('click', toggleHelp);
-          btnCloseHelp.addEventListener('click', toggleHelp);
-          btnSave.addEventListener('click', () => {
+
+          document.getElementById('btnClear').addEventListener('click', restart);
+          document.getElementById('btnRetry').addEventListener('click', retryMagic);
+          
+          const helpDialog = document.getElementById('help');
+          document.getElementById('btnHelp').addEventListener('click', () => {
+            helpDialog.hidden = !helpDialog.hidden;
+          });
+          document.getElementById('btnCloseHelp').addEventListener('click', () => {
+            helpDialog.hidden = true;
+          });
+
+          document.getElementById('btnSave').addEventListener('click', () => {
             p.saveCanvas('magic-sketchpad', 'jpg');
+          });
+
+          // Color selection handler
+          const colorButtons = document.querySelectorAll('#colorsContainer button');
+          colorButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              const activeBtn = document.querySelector('#colorsContainer button.active');
+              if (activeBtn) activeBtn.classList.remove('active');
+              e.target.classList.add('active');
+              p.updateCurrentColor(e.target.dataset.index);
+            });
           });
         };
 
         p.windowResized = function () {
-          const containerSize = document.getElementById('sketch').getBoundingClientRect();
-          const screenWidth = Math.floor(containerSize.width);
-          const screenHeight = Math.floor(containerSize.height);
-          p.resizeCanvas(screenWidth, screenHeight);
+          const container = document.getElementById('sketch');
+          const containerSize = container.getBoundingClientRect();
+          p.resizeCanvas(Math.floor(containerSize.width), Math.floor(containerSize.height));
         };
 
-        /*
-        * Human drawing inputs.
-        */
         p.mousePressed = function () {
           if (p.isInBounds()) {
             x = startX = p.mouseX;
             y = startY = p.mouseY;
-            userPen = 1; // down!
+            userPen = 1;
 
             modelIsActive = false;
             currentRawLine = [];
@@ -419,8 +403,8 @@
         };
 
         p.mouseReleased = function () {
-          if (p.isInBounds() && userPen === 1) {
-            userPen = 0;  // Up!
+          if (p.isInBounds() && currentRawLine.length > 0) {
+            userPen = 0;
             const currentRawLineSimplified = model.simplifyLine(currentRawLine);
 
             if (currentRawLineSimplified.length > 1) {
@@ -436,12 +420,12 @@
           if (!modelIsActive && p.isInBounds()) {
             const dx0 = p.mouseX - x;
             const dy0 = p.mouseY - y;
-            if (dx0*dx0+dy0*dy0 > epsilon*epsilon) { 
+            if (dx0*dx0 + dy0*dy0 > epsilon*epsilon) {
               dx = dx0;
               dy = dy0;
               userPen = 1;
               if (previousUserPen === 1) {
-                p.line(x, y, x+dx, y+dy); 
+                p.line(x, y, x+dx, y+dy);
                 lastHumanDrawing.push([x, y, x+dx, y+dy]);
               }
               x += dx;
@@ -453,13 +437,8 @@
           return false;
         };
 
-       /*
-        * Model drawing generation.
-        */
         p.draw = function() {
-          if (!modelLoaded || !modelIsActive) {
-            return;
-          }
+          if (!modelLoaded || !modelIsActive) return;
 
           pen = previousPen;
           modelState = model.update([dx, dy, ...pen], modelState);
@@ -483,18 +462,14 @@
           return p.mouseX >= 0 && p.mouseY >= 0 && p.mouseX < p.width && p.mouseY < p.height;
         };
 
-        /*
-        * Helpers
-        */
         function retryMagic() {
-          if (!lastHumanStroke) return;
-
           p.stroke('white');
           p.strokeWeight(6);
 
           for (let i = 0; i < lastModelDrawing.length; i++) {
             p.line(...lastModelDrawing[i]);
           }
+
           for (let i = 0; i < lastHumanDrawing.length; i++) {
             p.line(...lastHumanDrawing[i]);
           }
@@ -506,11 +481,13 @@
             p.line(...lastHumanDrawing[i]);
           }
 
-          encodeStrokes(lastHumanStroke);
+          if (lastHumanStroke) {
+            encodeStrokes(lastHumanStroke);
+          }
         }
 
         function restart() {
-          p.background(255, 255, 255);
+          p.background(255);
           p.strokeWeight(3.0);
 
           startX = x = p.width / 2.0;
@@ -519,7 +496,7 @@
           userPen = 1;
           previousUserPen = 0;
           currentRawLine = [];
-          
+
           modelIsActive = false;
           previousPen = [0, 1, 0];
         }
@@ -536,29 +513,26 @@
           model.initialize().then(() => {
             modelLoaded = true;
             document.getElementById('sketch').classList.remove('loading');
-            console.log(`🤖 ${availableModels[index]} loaded.`);
-            model.setPixelFactor(5.0); 
+            model.setPixelFactor(5.0);
           });
         }
 
         function encodeStrokes(sequence) {
-          if (!sequence || sequence.length <= 5) {
-            return;
-          }
+          if (!sequence || sequence.length <= 5) return;
 
           let newState = model.zeroState();
           newState = model.update(model.zeroInput(), newState);
-          newState = model.updateStrokes(sequence, newState, sequence.length-1);
+          newState = model.updateStrokes(sequence, newState, sequence.length - 1);
 
           modelState = model.copyState(newState);
 
           if (lastHumanDrawing.length > 0) {
-            const lastHumanLine = lastHumanDrawing[lastHumanDrawing.length-1];
+            const lastHumanLine = lastHumanDrawing[lastHumanDrawing.length - 1];
             x = lastHumanLine[0];
             y = lastHumanLine[1];
           }
 
-          const s = sequence[sequence.length-1];
+          const s = sequence[sequence.length - 1];
           dx = s[0];
           dy = s[1];
           previousPen = [s[2], s[3], s[4]];
@@ -567,9 +541,6 @@
           modelIsActive = true;
         }
 
-        /*
-        * Colors
-        */
         const COLORS = [
           { name: 'black', hex: '#000000'},
           { name: 'red', hex: '#f44336'},
@@ -596,17 +567,7 @@
         };
       };
 
-      const p5Sketch = new p5(sketch, 'sketch');
-
-      function changeColor(event){
-        const btn = event.target;
-        p5Sketch.updateCurrentColor(btn.dataset.index);
-        const currentActive = document.querySelector('#colorsContainer .active');
-        if (currentActive) {
-          currentActive.classList.remove('active');
-        }
-        btn.classList.add('active');
-      }
+      new p5(sketch, 'sketch');
     </script>
   </body>
 </html>
