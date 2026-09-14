@@ -1,311 +1,329 @@
-  <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>✨🖌️ Magic Sketchpad</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    
     <style>
-[hidden] { display: none !important; }
+      [hidden] {
+        display: none !important;
+      }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  overscroll-behavior-y: contain;
-}
+      * { box-sizing: border-box; }
 
-body {
-  font-family: monospace;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: #FAFAF7;
-  color: var(--purple);
-  --pink: #E61E8C;
-  --blue: #4DEEEA;
-  --purple: #2A298B;
-  --yellow: #FFED5E;
-  --green: #74EE16;
-}
+      html, body {
+        margin: 0;
+        padding: 0;
+        overscroll-behavior-y: contain;
+      }
 
-* { box-sizing: border-box; }
+      body {
+        font-family: monospace;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fbfbf8;
+        color: var(--purple);
+        text-align: center;
+        padding: 24px 16px 0;
+        --pink: #E61E8C;
+        --blue: #4DEEEA;
+        --purple: #2A298B;
+        --yellow: #FFED5E;
+        --green: #74EE16;
+      }
 
-h1 {
-  font-family: 'Monoton', monospace;
-  font-weight: normal;
-  color: var(--pink);
-  font-size: 44px;
-  text-shadow: -3px 3px 0 var(--blue);
-  margin: 18px 0 10px;
-}
+      h1 {
+        font-family: 'Monoton', monospace;
+        font-weight: normal;
+        color: var(--pink);
+        font-size: 48px;
+        text-shadow: -3px 3px 0 var(--blue);
+        margin: 0 0 20px;
+      }
 
-a:link, a:visited {
-  text-decoration: none;
-  color: var(--pink);
-  font-weight: bold;
-  border-bottom: 3px solid var(--blue);
-}
-a:hover {
-  background: var(--yellow);
-  color: var(--purple);
-}
+      p {
+        font-size: 14px;
+        line-height: 1.7;
+        text-align: left;
+        margin: 0 0 16px;
+      }
 
-.toolbar {
-  width: 100%;
-  max-width: 900px;
-  padding: 0 16px 12px;
-}
+      a:link, a:visited {
+        text-decoration: none;
+        color: var(--pink);
+        font-weight: bold;
+        border-bottom: 3px solid var(--blue);
+      }
+      a:hover {
+        background: var(--yellow);
+        color: var(--purple);
+      }
 
-.controls-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-}
+      .controls-bar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
 
-#colorsContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
+      .box {
+        font-family: "Press Start 2P", monospace;
+        font-size: 12px;
+        font-weight: normal;
+        border: solid var(--purple) 2px;
+        color: var(--purple);
+        fill: var(--purple);
+        background: white;
+        box-shadow: 4px 4px 0 var(--purple);
+        height: 40px;
+        border-radius: 5px;
+        transition: top 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        position: relative;
+        top: 0;
+        cursor: pointer;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-#colorsContainer button {
-  min-width: 24px;
-  min-height: 24px;
-  border: 4px solid white;
-  border-radius: 5px;
-  margin: 3px;
-  padding: 0;
-  will-change: transform;
-  transition: transform 0.2s ease;
-  cursor: pointer;
-  box-shadow: 0 0 0 2px #e2e2dc;
-}
-#colorsContainer button.active {
-  border: 4px solid var(--yellow);
-  transform: scale(1.2);
-}
-#colorsContainer button:hover { 
-  transform: scale(1.3);
-}
+      .box:hover {
+        background: var(--yellow);
+        box-shadow: 2px 2px 0 var(--purple);
+      }
 
-.box {
-  font-family: "Press Start 2P", monospace;
-  font-size: 12px;
-  font-weight: normal;
-  text-align: left;
-  border: solid var(--purple) 2px;
-  color: var(--purple);
-  fill: var(--purple);
-  background: white;
-  box-shadow: 4px 4px 0 var(--purple);
-  height: 40px;
-  border-radius: 5px;
-  transition: top 0.15s ease, box-shadow 0.15s ease;
-  position: relative;
-  top: 0;
-  vertical-align: middle;
-  cursor: pointer;
-  text-transform: uppercase;
-  margin: 4px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
+      .box:active {
+        top: 4px;
+        box-shadow: none;
+      }
 
-.box:hover {
-  background: var(--yellow);
-  box-shadow: 2px 2px 0 var(--purple);
-}
+      .select-wrapper {
+        display: inline-flex;
+        width: 220px;
+        overflow: hidden;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10px;
+      }
 
-.box:active {
-  top: 4px;
-  box-shadow: none;
-}
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        text-transform: lowercase;
+        font-family: "Press Start 2P", monospace;
+        font-size: 11px;
+        background: transparent;
+        border: none;
+        color: var(--purple);
+        width: 100%;
+        cursor: pointer;
+      }
 
-.select-wrapper {
-  display: inline-flex;
-  width: 230px;
-  overflow: hidden;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 4px;
-}
+      #colorsContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        max-width: 700px;
+        margin-bottom: 20px;
+      }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-transform: lowercase;
-  font-family: "Press Start 2P", monospace;
-  font-size: 11px;
-  background: transparent;
-  border: none;
-  color: var(--purple);
-  width: 100%;
-}
+      #colorsContainer button {
+        min-width: 24px;
+        min-height: 24px;
+        border: 3px solid white;
+        border-radius: 5px;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        will-change: transform;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      #colorsContainer button.active {
+        box-shadow: 0 0 0 3px var(--purple);
+        transform: scale(1.15);
+      }
+      #colorsContainer button:hover {
+        transform: scale(1.25);
+      }
 
-#sketch {
-  flex-grow: 1;
-  width: 100%;
-  max-width: 900px;
-  overflow: hidden;
-  background: white;
-  border: solid var(--purple) 2px;
-  border-radius: 8px;
-  margin: 0 auto;
-}
-#sketch.loading {
-  pointer-events: none;
-  opacity: 0.3;
-  filter: blur(3px);
-}
+      #sketch-wrapper {
+        width: 100%;
+        max-width: 700px;
+        height: clamp(260px, 42vh, 460px);
+        border: 3px solid var(--purple);
+        box-shadow: 6px 6px 0 var(--purple);
+        border-radius: 8px;
+        background: white;
+        overflow: hidden;
+        margin-bottom: 24px;
+      }
 
-.dialog {
-  font-family: monospace;
-  background: white;
-  padding: 24px;
-  z-index: 10;
-  position: fixed;
-  top: 90px;
-  left: 50%;
-  width: 90%;
-  max-width: 500px;
-  transform: translateX(-50%);
-  border: solid var(--purple) 2px;
-  border-radius: 8px;
-  box-shadow: 6px 6px 0 var(--purple);
-  max-height: 75vh;
-  overflow: auto;
-}
+      #sketch {
+        width: 100%;
+        height: 100%;
+      }
+      #sketch.loading {
+        pointer-events: none;
+        opacity: 0.3;
+        filter: blur(3px);
+      }
 
-.dialog h2 {
-  font-family: "Press Start 2P", monospace;
-  font-weight: normal;
-  font-size: 15px;
-  color: var(--pink);
-}
+      .dialog {
+        font-family: monospace;
+        background: white;
+        padding: 24px;
+        z-index: 10;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: calc(100% - 32px);
+        max-width: 480px;
+        transform: translate(-50%, -50%);
+        border: 3px solid var(--purple);
+        border-radius: 8px;
+        box-shadow: 6px 6px 0 var(--purple);
+        text-align: center;
+      }
 
-.dialog p {
-  font-size: 14px;
-  line-height: 1.6;
-  text-align: left;
-}
+      .dialog h2 {
+        font-family: "Press Start 2P", monospace;
+        font-weight: normal;
+        font-size: 16px;
+        color: var(--pink);
+        margin-top: 0;
+      }
 
-.dialog p b {
-  background: var(--yellow);
-  padding: 2px 4px;
-  border-radius: 3px;
-}
+      .dialog b {
+        background: var(--yellow);
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
 
-footer {
-  text-align: center;
-  padding: 10px 16px;
-  margin: 6px auto 0;
-  border-top: 3px solid var(--blue);
-  max-width: 600px;
-  font-size: 12px;
-  line-height: 1.6;
-}
+      footer {
+        text-align: center;
+        padding: 14px;
+        margin: 24px auto;
+        border-top: 4px solid var(--blue);
+        max-width: 500px;
+        font-size: 13px;
+      }
 
-@media screen and (max-width: 700px) {
-  h1 {
-    font-size: 28px;
-  }
-  .box {
-    height: 38px;
-    font-size: 10px;
-    margin: 3px;
-  }
-  .select-wrapper {
-    width: 180px;
-  }
-  footer {
-    font-size: 11px;
-  }
-}
+      @media screen and (max-width: 700px) {
+        h1 {
+          font-size: 32px;
+        }
+        p {
+          font-size: 13px;
+        }
+        .box {
+          height: 36px;
+          font-size: 10px;
+          padding: 0 8px;
+        }
+        .select-wrapper {
+          width: 170px;
+        }
+        #sketch-wrapper {
+          height: clamp(220px, 38vh, 360px);
+        }
+        footer {
+          margin: 16px auto 0;
+          padding: 10px;
+        }
+      }
     </style>
   </head>
   <body>
     <h1>magic sketchpad</h1>
 
-    <div class="toolbar">
-      <div class="controls-row">
-        <button class="box" id="btnClear" alt="clear drawing">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
-        </button>
-        <button class="box" id="btnRetry" alt="retry magic drawing">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
-        </button>
+    <div class="controls-bar">
+      <button class="box" id="btnClear" aria-label="clear drawing">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+      </button>
+      <button class="box" id="btnRetry" aria-label="retry magic drawing">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+      </button>
 
-        <div class="box select-wrapper">
-          <select id="selectModels"></select>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-        </div>
-
-        <button class="box" id="btnSave" alt="save sketch">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/></svg>
-        </button>
-        <button class="box" id="btnHelp" alt="show help">
-          ?
-        </button>
+      <div class="box select-wrapper">
+        <select id="selectModels"></select>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
       </div>
 
-      <div id="colorsContainer">
-        <button data-index="0" style="background-color: rgb(0, 0, 0)" class="active" onclick="changeColor(event)"></button>
-        <button data-index="1" style="background-color: rgb(244, 67, 54)" onclick="changeColor(event)"></button>
-        <button data-index="2" style="background-color: rgb(233, 30, 99)" onclick="changeColor(event)"></button>
-        <button data-index="3" style="background-color: rgb(156, 39, 176)" onclick="changeColor(event)"></button>
-        <button data-index="4" style="background-color: rgb(103, 58, 183)" onclick="changeColor(event)"></button>
-        <button data-index="5" style="background-color: rgb(63, 81, 181)" onclick="changeColor(event)"></button>
-        <button data-index="6" style="background-color: rgb(33, 150, 243)" onclick="changeColor(event)"></button>
-        <button data-index="7" style="background-color: rgb(0, 188, 212)" onclick="changeColor(event)"></button>
-        <button data-index="8" style="background-color: rgb(0, 150, 136)" onclick="changeColor(event)"></button>
-        <button data-index="9" style="background-color: rgb(76, 175, 80)" onclick="changeColor(event)"></button>
-        <button data-index="10" style="background-color: rgb(139, 195, 74)" onclick="changeColor(event)"></button>
-        <button data-index="11" style="background-color: rgb(205, 220, 57)" onclick="changeColor(event)"></button>
-        <button data-index="12" style="background-color: rgb(255, 235, 59)" onclick="changeColor(event)"></button>
-        <button data-index="13" style="background-color: rgb(255, 193, 7)" onclick="changeColor(event)"></button>
-        <button data-index="14" style="background-color: rgb(255, 152, 0)" onclick="changeColor(event)"></button>
-        <button data-index="15" style="background-color: rgb(255, 87, 34)" onclick="changeColor(event)"></button>
-        <button data-index="16" style="background-color: rgb(121, 85, 72)" onclick="changeColor(event)"></button>
-        <button data-index="17" style="background-color: rgb(158, 158, 158)" onclick="changeColor(event)"></button>
-      </div>
+      <button class="box" id="btnSave" aria-label="save sketch">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/></svg>
+      </button>
+      <button class="box" id="btnHelp" aria-label="show help">
+        ?
+      </button>
     </div>
 
-    <div id="sketch" class="loading"></div>
+    <div id="colorsContainer">
+      <button data-index="0" style="background-color: rgb(0, 0, 0)" class="active" onclick="changeColor(event)"></button>
+      <button data-index="1" style="background-color: rgb(244, 67, 54)" onclick="changeColor(event)"></button>
+      <button data-index="2" style="background-color: rgb(233, 30, 99)" onclick="changeColor(event)"></button>
+      <button data-index="3" style="background-color: rgb(156, 39, 176)" onclick="changeColor(event)"></button>
+      <button data-index="4" style="background-color: rgb(103, 58, 183)" onclick="changeColor(event)"></button>
+      <button data-index="5" style="background-color: rgb(63, 81, 181)" onclick="changeColor(event)"></button>
+      <button data-index="6" style="background-color: rgb(33, 150, 243)" onclick="changeColor(event)"></button>
+      <button data-index="7" style="background-color: rgb(0, 188, 212)" onclick="changeColor(event)"></button>
+      <button data-index="8" style="background-color: rgb(0, 150, 136)" onclick="changeColor(event)"></button>
+      <button data-index="9" style="background-color: rgb(76, 175, 80)" onclick="changeColor(event)"></button>
+      <button data-index="10" style="background-color: rgb(139, 195, 74)" onclick="changeColor(event)"></button>
+      <button data-index="11" style="background-color: rgb(205, 220, 57)" onclick="changeColor(event)"></button>
+      <button data-index="12" style="background-color: rgb(255, 235, 59)" onclick="changeColor(event)"></button>
+      <button data-index="13" style="background-color: rgb(255, 193, 7)" onclick="changeColor(event)"></button>
+      <button data-index="14" style="background-color: rgb(255, 152, 0)" onclick="changeColor(event)"></button>
+      <button data-index="15" style="background-color: rgb(255, 87, 34)" onclick="changeColor(event)"></button>
+      <button data-index="16" style="background-color: rgb(121, 85, 72)" onclick="changeColor(event)"></button>
+      <button data-index="17" style="background-color: rgb(158, 158, 158)" onclick="changeColor(event)"></button>
+    </div>
+
+    <div id="sketch-wrapper">
+      <div id="sketch" class="loading"></div>
+    </div>
 
     <div class="dialog" id="help" hidden>
-      <h2>what is this?</h2>
+      <h2>What is this?</h2>
       <p>
         Draw things with machines! Every time you <b>lift your pen up</b>, a machine learning algorithm
         tries to finish that stroke and match the category you've selected. Try drawing multiple categories on the same page!
       </p>
-      <button class="box" onclick="document.getElementById('help').hidden = true">Ok, got it!</button>
+      <p>
+        Built by <a href="#">@dduyg</a> with <a target="_blank" rel="noopener" href="https://magenta.tensorflow.org">magenta.js</a>.
+        Learn more about <a target="_blank" rel="noopener" href="https://magenta.tensorflow.org/sketch-rnn-demo">Sketch RNN</a>.
+      </p>
+      <button class="box" id="btnCloseHelp">Got it!</button>
     </div>
 
     <footer>
-      Built by <a href="#">@dduyg</a> with <a target="_blank" href="https://magenta.tensorflow.org">magenta.js</a>.
-      Learn more about <a target="_blank" href="https://magenta.tensorflow.org/sketch-rnn-demo">Sketch RNN</a>,
-      or see the code on <a href="#">Glitch</a>.
+      I have no idea what I'm doing, a <a href="#">Duygu</a> production.
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
+    <!-- Libraries: Modern p5.js (v1.9.4), TF.js, and Magenta Sketch -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@magenta/sketch@0.1.3/dist/magentasketch.min.js"></script>
+
     <script>
       const sketch = function(p) {
         const BASE_URL = 'https://storage.googleapis.com/quickdraw-models/sketchRNN/models/';
@@ -325,7 +343,7 @@ footer {
         let pen = [0,0,0]; // Model pen state, [pen_down, pen_up, pen_end].
         let previousPen = [1, 0, 0]; // Previous model pen state.
         const PEN = {DOWN: 0, UP: 1, END: 2};
-        const epsilon = 2.0; // to ignore data from user's pen staying in one spot.
+        const epsilon = 2.0; // ignore data from user's pen staying in one spot.
 
         // Human drawing.
         let currentRawLine = [];
@@ -333,16 +351,27 @@ footer {
         let previousUserPen = 0;
         let currentColor = 'black';
 
-        // Keep track of everyone's last attempts to that we can reverse them.
-        let lastHumanStroke;  // encode the human's drawing as a sequence of [dx, dy, penState] strokes
-        let lastHumanDrawing; // the actual sequence of lines that the human drew, so we can replay them.
-        let lastModelDrawing = []; // the actual sequence of lines that the model drew, so that we can erase them.
+        // History tracking.
+        let lastHumanStroke;  
+        let lastHumanDrawing = []; 
+        let lastModelDrawing = []; 
+
+        const selectModels = document.getElementById('selectModels');
+        const btnClear = document.getElementById('btnClear');
+        const btnRetry = document.getElementById('btnRetry');
+        const btnHelp = document.getElementById('btnHelp');
+        const btnCloseHelp = document.getElementById('btnCloseHelp');
+        const btnSave = document.getElementById('btnSave');
+        const helpModal = document.getElementById('help');
+
+        function toggleHelp() {
+          helpModal.hidden = !helpModal.hidden;
+        }
 
         /*
          * Main p5 code
          */
         p.setup = function() {
-          // Initialize the canvas.
           const containerSize = document.getElementById('sketch').getBoundingClientRect();
           const screenWidth = Math.floor(containerSize.width);
           const screenHeight = Math.floor(containerSize.height);
@@ -354,12 +383,12 @@ footer {
 
           selectModels.innerHTML = availableModels.map(m => `<option>${m}</option>`).join('');
           selectModels.selectedIndex = 22;
+
           selectModels.addEventListener('change', () => initModel(selectModels.selectedIndex));
           btnClear.addEventListener('click', restart);
           btnRetry.addEventListener('click', retryMagic);
-          btnHelp.addEventListener('click', () => {
-            document.getElementById('help').hidden = false;
-          });
+          btnHelp.addEventListener('click', toggleHelp);
+          btnCloseHelp.addEventListener('click', toggleHelp);
           btnSave.addEventListener('click', () => {
             p.saveCanvas('magic-sketchpad', 'jpg');
           });
@@ -373,7 +402,7 @@ footer {
         };
 
         /*
-        * Human is drawing.
+        * Human drawing inputs.
         */
         p.mousePressed = function () {
           if (p.isInBounds()) {
@@ -387,34 +416,32 @@ footer {
             previousUserPen = userPen;
             p.stroke(currentColor);
           }
-        }
+        };
 
         p.mouseReleased = function () {
-          if (p.isInBounds()) {
+          if (p.isInBounds() && userPen === 1) {
             userPen = 0;  // Up!
             const currentRawLineSimplified = model.simplifyLine(currentRawLine);
 
-            // If it's an accident...ignore it.
             if (currentRawLineSimplified.length > 1) {
-              // Encode this line as a stroke, and feed it to the model.
               lastHumanStroke = model.lineToStroke(currentRawLineSimplified, [startX, startY]);
               encodeStrokes(lastHumanStroke);
             }
             currentRawLine = [];
             previousUserPen = userPen;
           }
-        }
+        };
 
         p.mouseDragged = function () {
           if (!modelIsActive && p.isInBounds()) {
             const dx0 = p.mouseX - x;
             const dy0 = p.mouseY - y;
-            if (dx0*dx0+dy0*dy0 > epsilon*epsilon) { // Only if pen is not in same area.
+            if (dx0*dx0+dy0*dy0 > epsilon*epsilon) { 
               dx = dx0;
               dy = dy0;
               userPen = 1;
-              if (previousUserPen == 1) {
-                p.line(x, y, x+dx, y+dy); // draw line connecting prev point to current point.
+              if (previousUserPen === 1) {
+                p.line(x, y, x+dx, y+dy); 
                 lastHumanDrawing.push([x, y, x+dx, y+dy]);
               }
               x += dx;
@@ -424,32 +451,28 @@ footer {
             previousUserPen = userPen;
           }
           return false;
-        }
+        };
 
        /*
-        * Model is drawing.
+        * Model drawing generation.
         */
         p.draw = function() {
           if (!modelLoaded || !modelIsActive) {
             return;
           }
 
-          // New state.
           pen = previousPen;
           modelState = model.update([dx, dy, ...pen], modelState);
           const pdf = model.getPDF(modelState, temperature);
           [dx, dy, ...pen] = model.sample(pdf);
 
-          // If we finished the previous drawing, start a new one.
           if (pen[PEN.END] === 1) {
             modelIsActive = false;
           } else {
-            // Only draw on the paper if the pen is still touching the paper.
             if (previousPen[PEN.DOWN] === 1) {
               p.line(x, y, x+dx, y+dy);
               lastModelDrawing.push([x, y, x+dx, y+dy]);
             }
-            // Update.
             x += dx;
             y += dy;
             previousPen = pen;
@@ -458,21 +481,20 @@ footer {
 
         p.isInBounds = function () {
           return p.mouseX >= 0 && p.mouseY >= 0 && p.mouseX < p.width && p.mouseY < p.height;
-        }
+        };
 
         /*
-        * Helpers.
+        * Helpers
         */
         function retryMagic() {
+          if (!lastHumanStroke) return;
+
           p.stroke('white');
           p.strokeWeight(6);
 
-          // Undo the previous line the model drew.
           for (let i = 0; i < lastModelDrawing.length; i++) {
             p.line(...lastModelDrawing[i]);
           }
-
-          // Undo the previous human drawn.
           for (let i = 0; i < lastHumanDrawing.length; i++) {
             p.line(...lastHumanDrawing[i]);
           }
@@ -480,33 +502,27 @@ footer {
           p.strokeWeight(3.0);
           p.stroke(currentColor);
 
-          // Redraw the human drawing.
           for (let i = 0; i < lastHumanDrawing.length; i++) {
             p.line(...lastHumanDrawing[i]);
           }
 
-          // Start again.
           encodeStrokes(lastHumanStroke);
         }
 
         function restart() {
-          p.background(255, 255, 255, 255);
+          p.background(255, 255, 255);
           p.strokeWeight(3.0);
 
-          // Start drawing in the middle-ish of the screen
           startX = x = p.width / 2.0;
           startY = y = p.height / 3.0;
 
-          // Reset the user drawing state.
           userPen = 1;
           previousUserPen = 0;
           currentRawLine = [];
-          strokes = [];
-
-          // Reset the model drawing state.
+          
           modelIsActive = false;
           previousPen = [0, 1, 0];
-        };
+        }
 
         function initModel(index) {
           modelLoaded = false;
@@ -520,29 +536,28 @@ footer {
           model.initialize().then(() => {
             modelLoaded = true;
             document.getElementById('sketch').classList.remove('loading');
-            console.log(`🤖${availableModels[index]} loaded.`);
-            model.setPixelFactor(5.0);  // Bigger -> large outputs
+            console.log(`🤖 ${availableModels[index]} loaded.`);
+            model.setPixelFactor(5.0); 
           });
-        };
+        }
 
         function encodeStrokes(sequence) {
-          if (sequence.length <= 5) {
+          if (!sequence || sequence.length <= 5) {
             return;
           }
 
-          // Encode the strokes in the model.
           let newState = model.zeroState();
           newState = model.update(model.zeroInput(), newState);
           newState = model.updateStrokes(sequence, newState, sequence.length-1);
 
-          // Reset the actual model we're using to this one that has the encoded strokes.
           modelState = model.copyState(newState);
 
-          const lastHumanLine = lastHumanDrawing[lastHumanDrawing.length-1];
-          x = lastHumanLine[0];
-          y = lastHumanLine[1];
+          if (lastHumanDrawing.length > 0) {
+            const lastHumanLine = lastHumanDrawing[lastHumanDrawing.length-1];
+            x = lastHumanLine[0];
+            y = lastHumanLine[1];
+          }
 
-          // Update the pen state.
           const s = sequence[sequence.length-1];
           dx = s[0];
           dy = s[1];
@@ -553,7 +568,7 @@ footer {
         }
 
         /*
-        * Colours.
+        * Colors
         */
         const COLORS = [
           { name: 'black', hex: '#000000'},
@@ -576,23 +591,20 @@ footer {
           { name: 'grey', hex: '#9E9E9E'}
         ];
 
-        function randomColor() {
-          return COLORS[Math.floor(Math.random() * COLORS.length)].hex
-        }
-        function randomColorIndex() {
-          return Math.floor(Math.random() * COLORS.length);
-        }
         p.updateCurrentColor = function(index) {
           currentColor = COLORS[index].hex;
-        }
-
+        };
       };
 
       const p5Sketch = new p5(sketch, 'sketch');
+
       function changeColor(event){
         const btn = event.target;
         p5Sketch.updateCurrentColor(btn.dataset.index);
-        document.querySelector('.active').classList.remove('active');
+        const currentActive = document.querySelector('#colorsContainer .active');
+        if (currentActive) {
+          currentActive.classList.remove('active');
+        }
         btn.classList.add('active');
       }
     </script>
