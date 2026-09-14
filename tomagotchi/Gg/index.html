@@ -300,13 +300,23 @@ footer {
     <div class="dialog" id="help" hidden>
       <h2>What is this?</h2>
       <p>
-        Draw things with machines! Every time you <b>lift your pen up</b>, a machine learning algorithm
-        tries to finish that stroke and match the category you've selected. Try drawing multiple categories on the same page!
+        Magic Sketchpad is a little experiment in doodling <b>with</b> a machine instead of just by yourself.
+        Start drawing something — a cat, a bicycle, whatever's on your mind — and the second you lift your pen,
+        a machine learning model jumps in and tries to finish the stroke to match whatever category you've picked.
+        Sometimes it nails it, sometimes it goes somewhere delightfully weird. Either way, it's fun to see what it comes up with.
       </p>
       <p>
-        Built by <a href="#">@dduyg</a> with <a target="_blank" href="https://magenta.tensorflow.org">magenta.js</a>.
-        Learn more about <a target="_blank" href="https://magenta.tensorflow.org/sketch-rnn-demo">Sketch RNN</a>,
-        or see the code on <a href="#">Glitch</a>.
+        You can keep going back and forth with it, switch categories mid-drawing, mix a few together, or just
+        mash the retry button until the model draws something you like better.
+      </p>
+      <p>
+        Under the hood, it's built with <a target="_blank" href="https://magenta.tensorflow.org">magenta.js</a>
+        and a model called <a target="_blank" href="https://magenta.tensorflow.org/sketch-rnn-demo">Sketch-RNN</a>,
+        trained on millions of doodles from Google's <a target="_blank" href="https://quickdraw.withgoogle.com/data">Quick, Draw!</a>
+        dataset — basically, it's seen a <b>lot</b> of terrible cat drawings, so yours will fit right in.
+      </p>
+      <p>
+        Built by <a href="#">@dduyg</a>.
       </p>
       <button class="box" onclick="showHelp()">Got it!</button>
     </div>
