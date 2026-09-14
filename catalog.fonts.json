@@ -1263,5 +1263,27 @@
     "variable": false,
     "scripts": [ "latin", "latin-ext" ]
   }
+,
+  {
+    "name": "Monoton",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Monoton&display=swap",
+    "category": "sans-serif",
+    "tags": [ "contemporary", "organic", "geometric" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "latin", "latin-ext" ]
+  }
+,
+  {
+    "name": "Press Start 2P",
+    "source": "google",
+    "url": "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap",
+    "category": "fantasy",
+    "tags": [ "pixel", "android", "coding" ],
+    "weights": [ 400 ],
+    "variable": false,
+    "scripts": [ "cyrillic", "latin", "latin-ext" ]
+  }
 
 ]
