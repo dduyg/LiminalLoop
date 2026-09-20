@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@440&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Neoneon';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Neoneon.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            background-color: #b07373;
+            color: #3C555A;
+            font-family: "Work Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 1rem;     
+        }
+        h1 {
+            color: #852C3D;
+            font-weight: normal;
+            margin: 0;
+            text-transform: uppercase;
+            text-shadow: 0 0px 20px, 0 0 0px, 0 0 1em #731A2B, 0 0 0.5em #2C0000, 0 0 0.1em #731A2B;
+            font-family: 'Neoneon', sans-serif;
+            animation: glitch 3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch {
+            0% { transform: translate(-2px, -2px); }
+            25% { transform: translate(2px, -2px); }
+            50% { transform: translate(2px, 2px); }
+            75% { transform: translate(-2px, 2px); }
+            100% { transform: translate(-2px, -2px); }
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        a {
+            cursor:pointer;
+            text-decoration: none;
+            border-bottom:3px solid #8C4553;
+            color: inherit;
+        }
+        a:hover {
+            font-weight: bold;
+            border-bottom:3px solid #8C4553;
+        }
+        a:active {
+            transform: translateY(5px);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>retrofitted reality,</h1>
+        <p>
+            "Dreamcast screen saver, glistening.",<br>
+            "Glitching through the neon skyline.",<br>
+            "A E S T H E T I C vibes in the binary glow.",<br>
+            "Lost in the static of a virtual beach.",<br>
+            "Digital echoes of forgotten melodies.",<br>
+            "<a href="/">Circuit</a> boards whispering in the moonlight.",<br>
+            "Neon pixels dancing in the <a href="/">night sky</a>."<br>
+        ];
+        </p>
+    </main>
+</body>
+</html>

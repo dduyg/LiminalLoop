@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        @font-face {
+            font-family: 'SF Pro Text Regular';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/sf-pro-text-regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'SF Pro Text Regular', sans-serif;
+            background-color: #f0e5e5;
+            color: #6a6a6a;
+            margin: 0;
+            padding: 5em 2em;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #56368c;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1.25em;
+        }
+        pre {
+            background-color: #e0e0e0;
+            padding: 0.625em;
+            border-left: 4px solid #ff5e79;
+            overflow-x: auto;
+        }
+        code {
+            color: #ff5e79;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #ffcccb;
+            margin: 0.3125em 0;
+            padding: 0.625em;
+            border-radius: 0.3125em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Understanding Recursion</h1>
+    <p>Let's delve into the concept of <strong>recursion</strong> in programming.</p>
+    
+    <h3>What is Recursion?</h3>
+    <p>Recursion is a method of solving problems where a function calls itself as a subroutine. This allows the function to be repeated several times, as it can call itself during its execution.</p>
+    
+    <h3>Key Components of Recursion</h3>
+    <ul>
+        <li><strong>Base Case</strong>: This is the condition under which the recursion ends. Without a base case, the function would call itself indefinitely, leading to a stack overflow.</li>
+        <li><strong>Recursive Case</strong>: This is the part of the function where the recursion happens. The function calls itself with a different set of parameters, moving closer to the base case with each call.</li>
+    </ul>
+    
+    <h3>How Recursion Works</h3>
+    <p>Imagine you want to solve a problem that can be broken down into smaller, similar problems. Recursion simplifies the solution by having the function handle the small problems itself.</p>
+    
+    <h3>Example: Factorial Function</h3>
+    <p>The factorial of a number <em>n</em> (denoted as <em>n!</em>) is the product of all positive integers less than or equal to <em>n</em>. For example, <em>5! = 5 × 4 × 3 × 2 × 1</em>.</p>
+    <p>A recursive function to calculate the factorial of a number could look like this:</p>
+    <pre><code>def factorial(n):
+    # Base case
+    if n == 0 or n == 1:
+        return 1
+    # Recursive case
+    else:
+        return n * factorial(n - 1)</code></pre>
+    
+    <h3>How It Works</h3>
+    <ul>
+        <li><strong>Initial Call</strong>: <code>factorial(5)</code>
+            <ul>
+                <li>Since <code>5</code> is neither <code>0</code> nor <code>1</code>, it goes to the recursive case: <code>5 * factorial(4)</code></li>
+            </ul>
+        </li>
+        <li><strong>Next Call</strong>: <code>factorial(4)</code>
+            <ul>
+                <li>Again, <code>4</code> is neither <code>0</code> nor <code>1</code>, so it recurses: <code>4 * factorial(3)</code></li>
+            </ul>
+        </li>
+        <li><strong>Continued Calls</strong>: This process continues until <code>factorial(1)</code> is reached.</li>
+        <li><strong>Base Case Reached</strong>: <code>factorial(1)</code>
+            <ul>
+                <li>This returns <code>1</code>, as it matches the base case condition.</li>
+            </ul>
+        </li>
+        <li><strong>Unwinding the Stack</strong>:
+            <ul>
+                <li>The return value <code>1</code> from <code>factorial(1)</code> is multiplied by <code>2</code> in the previous call (<code>factorial(2)</code>), resulting in <code>2</code>.</li>
+                <li>This <code>2</code> is multiplied by <code>3</code> in the call before that (<code>factorial(3)</code>), and so on.</li>
+                <li>Eventually, the original call <code>factorial(5)</code> resolves to <code>5 * 24 = 120</code>.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>Advantages and Disadvantages of Recursion</h3>
+    <p><strong>Advantages</strong>:</p>
+    <ul>
+        <li>Simplifies code for problems that can naturally be divided into similar subproblems (e.g., tree traversals, sorting algorithms like quicksort and mergesort).</li>
+    </ul>
+    <p><strong>Disadvantages</strong>:</p>
+    <ul>
+        <li>Can lead to high memory usage due to deep recursion (stack overflow).</li>
+        <li>Might be less efficient in terms of time and space compared to iterative solutions for some problems.</li>
+    </ul>
+    
+    <p>Recursion is a powerful concept but must be used judiciously, keeping in mind the problem's nature and the potential overhead in terms of performance.</p>
+</body>
+</html>

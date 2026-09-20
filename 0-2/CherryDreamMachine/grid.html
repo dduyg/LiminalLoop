@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <style>
+        body {
+            background-color: #0f0e17;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0; padding: 0;
+            text-align: center;
+            line-height: 1.4;
+        }
+        h1 {
+            color: #ff73fa;
+            font-size: 3em;
+            margin: 20px;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px #00eaff, 0px 0px 20px #ff73fa;
+        }
+        a {
+            color: #00eaff;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+        a:hover {
+            color: #fff;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem 0;
+        }
+        section {
+            margin: 50px 0;
+        }
+        .gallery img {
+            width: 30%;
+            margin: 10px;
+            border: 2px solid #00eaff;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            border-color: #ff73fa;
+        }
+        .neon-border {
+            border: 4px solid;
+            border-image-slice: 1;
+            border-width: 4px;
+            border-image-source: linear-gradient(90deg, #00eaff, #ff73fa);
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1 class="neon-border">In The Ether</h1>
+
+    <section id="about">
+       <p>Neon lights flicker in a hazy dream, <span style="color:#ff73fa;">fading</span> synths echo in endless <span style="color:#ff73fa;">loops</span>. Time drifts like pastel clouds, glitching through forgotten memories. Aesthetic sunsets stretch across the sky, pixelated and infinite. Lost in the <a href="./clouds">grid</a>, we float, searching for meaning in the soft hum of nostalgia. Everything <strong>fades</strong>, but nothing ever <strong>ends</strong>.</p>
+    </section>
+
+    <section id="gallery">
+        <div class="gallery">
+            <img src="https://media2.giphy.com/media/3o7TKTb4Z8DgkpHXk4/giphy.gif" alt="Project 1">
+            <img src="https://media3.giphy.com/media/3o6ozHg4fwCZ37KSGs/giphy.gif" alt="Project 2">
+            <img src="https://media2.giphy.com/media/2t9xSKwkV5i4jFZQkO/giphy.gif" alt="Project 3">
+        </div>
+    </section>
+</main>
+</body>
+</html>

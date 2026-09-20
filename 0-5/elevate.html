@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liminal Loop</title>
+    <style>
+        @font-face {
+            font-family: 'Lunchtype22';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/lunchtype22-regular.woff') format('woff');
+            font-weight: 400; 
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Lunchtype22';
+            src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/lunchtype22-medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Lunchtype22', sans-serif;
+            background: #FAF9F4;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        main {
+            padding: 6rem 1.25rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        .info-box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+        .info-box div {
+            width: 48%;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            border-top: 1px solid #000;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .work-feed table {
+            width: 100%;
+            min-width: 95%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        #work-feed th, #work-feed td {
+            padding: 10px;
+            border: 1px solid #000;
+            font-size: 0.9em;
+            text-align: left;
+            margin: 0;
+        }
+        #work-feed th {
+            background-color: #4C96F7;
+            text-transform: uppercase;
+        }
+
+        h1, h2, #work-feed th {
+            font-weight: normal;
+        }
+        
+        @media (max-width: 768px) {
+            .info-box {
+                flex-direction: column;
+            }
+
+            .info-box div {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            /* Adjust table for smaller screens */
+            #work-feed table {
+                font-size: 0.75em;
+            }
+            #work-feed th, #work-feed td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>I help unlock the potential of your data by building scalable, data-driven products and solutions that optimize performance and enhance productivity.</h1>
+
+        <div class="info-box">
+            <section id="services">
+                <h2>Services</h2>
+                <p>Data architecture design, API development, Predictive analytics solutions, Machine learning model integration, Real-time data processing, Data strategy for business intelligence.</p>
+            </section>
+
+            <section id="clients">
+                <h2>Clients</h2>
+                <ul>
+                    <li>Protocol Labs*, Internet Archive</li>
+                    <li>DataScape Technologies, DWeb Camp*</li>
+                    <li>InSync Systems, ultimate.ai*, Mosaia</li>
+                    <li>Parallel Pathways, Fusion Dataworks, MetricMatrix</li>
+                    <li><small>* Also a past employer</small></li>
+                </ul>
+            </section>
+        </div>
+
+        <section id="work-feed">
+            <h2>Work Feed | Most Recent</h2>
+            <table>
+                <tr>
+                    <th>Project</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Nebula Analytics Platform</td>
+                    <td>Data Architect</td>
+                    <td>Completed</td>
+                </tr>
+                <tr>
+                    <td>QuantumCore Predictive Insights</td>
+                    <td>Data Analytics, Machine Learning</td>
+                    <td>Completed</td>
+                </tr>
+                <tr>
+                    <td>MetricMatrix Dashboard</td>
+                    <td>Data Visualization</td>
+                    <td>In Progress</td>
+                </tr>
+                <tr>
+                    <td>InSync API Integration</td>
+                    <td>API Development, Data Engineering</td>
+                    <td>Completed</td>
+                </tr>
+                <tr>
+                    <td>TechLens Data Pipeline</td>
+                    <td>Data Engineering</td>
+                    <td>In Progress</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

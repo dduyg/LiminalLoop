@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header-img {
+            width: 100%;
+            height: auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 7%;
+            padding: 60px 8% 0 2%;
+        }
+        .item {
+            border-bottom: 1px solid #000;
+            padding: 20px 0 25px;
+        }
+        .name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .detail {
+            font-size: 14px;
+            color: #666;
+        }
+        footer {
+            font-family: "Major Mono Display", monospace;
+            font-weight: bold;
+            font-size: 19px;
+            line-height: 1.6;
+            color: #838383;
+            margin-top: 12%;
+            grid-column: span 2; /* Span 2 columns */
+        }
+        .footnote {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.8em;
+        }
+        .hr {
+            padding: 15px 0;
+            grid-column: span 2;
+        }
+        @media (max-width: 768px) {
+            .grid { /* 2 columns for small screens */
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+<img src="https://media1.giphy.com/media/D4MaclQwL6xSE/giphy.gif" class="header-img">
+
+    <div class="grid">
+        <div class="item">
+            <div class="name">희망 빛이</div>
+            <div class="detail">혼란 속에서</div>
+        </div>
+        <div class="item">
+            <div class="name">상실 희망</div>
+            <div class="detail">날아오를 때까지</div>
+        </div>
+        <div class="item">
+            <div class="name">우리의 목소리</div>
+            <div class="detail">점점 사라져</div>
+        </div>
+        <div class="item">
+            <div class="name">그림자 속</div>
+            <div class="detail">희생 코드</div>
+        </div>
+        <div class="item">
+            <div class="name">모든 것이</div>
+            <div class="detail">뒤틀려 가고</div>
+        </div>
+        <div class="item">
+            <div class="name">무언가가</div>
+            <div class="detail">열정 속</div>
+        </div>
+        <div class="item">
+            <div class="name">디지털 세상</div>
+            <div class="detail">사랑 그대와</div>
+        </div>
+        <div class="item">
+            <div class="name">분노 강한</div>
+            <div class="detail">파도 속에서</div>
+        </div>
+        <div class="item">
+            <div class="name">나아가 혼란</div>
+            <div class="detail">헤매고 있어</div>
+        </div>
+        <div class="item">
+            <div class="name">하늘이 찢어져</div>
+            <div class="detail">슬픔 속에서</div>
+        </div>
+        <div class="item">
+            <div class="name">세상에선 더 이상</div>
+            <div class="detail">기다릴 수 없다</div>
+        </div>
+        <div class="item">
+            <div class="name">잃어버린 것들</div>
+            <div class="detail">불꽃이 타오른다</div>
+        </div>
+
+        <footer class="item">
+            <div>Wires and Heartbeats</div>
+            <div class="footnote">█ underwater fire</div>
+        </footer>
+        <div class="hr"></div>
+    </div>
+</main>
+</body>
+</html>

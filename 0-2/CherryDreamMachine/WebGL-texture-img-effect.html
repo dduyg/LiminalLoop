@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liminal🦌Loop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #000; color: #fff; font-family: "Share", sans-serif; }
+    .name-handle { position: relative; z-index: 10; padding: 20px; }
+    .rules { position: relative; z-index: 10; padding: 20px; text-align: center; }
+    
+    .image-container { 
+      width: 300px; height: 300px; 
+      margin: 50px auto;
+      position: relative;
+    }
+    .image-container img {
+      width: 100%; height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    /* Ensure the effect canvas is visible */
+    canvas.aladino {
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="name-handle"> / geyik</div>
+  <div class="image-container"><img src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/pixels/geyik.png" alt="🧸" crossorigin="anonymous">   </div>
+    
+  <div class="rules">
+    <p> ★ hunter ★ gatherer ★ technologist ★ </p>
+  </div>
+
+<script>
+function multiply(t,e,i){let r=e[0],s=e[1],a=e[2],n=e[3],o=e[4],h=e[5],l=e[6],c=e[7],u=e[8],m=e[9],E=e[10],f=e[11],T=e[12],_=e[13],g=e[14],p=e[15],d=i[0],$=i[1],R=i[2],A=i[3];return t[0]=d*r+$*o+R*u+A*T,t[1]=d*s+$*h+R*m+A*_,t[2]=d*a+$*l+R*E+A*g,t[3]=d*n+$*c+R*f+A*p,d=i[4],$=i[5],R=i[6],A=i[7],t[4]=d*r+$*o+R*u+A*T,t[5]=d*s+$*h+R*m+A*_,t[6]=d*a+$*l+R*E+A*g,t[7]=d*n+$*c+R*f+A*p,d=i[8],$=i[9],R=i[10],A=i[11],t[8]=d*r+$*o+R*u+A*T,t[9]=d*s+$*h+R*m+A*_,t[10]=d*a+$*l+R*E+A*g,t[11]=d*n+$*c+R*f+A*p,d=i[12],$=i[13],R=i[14],A=i[15],t[12]=d*r+$*o+R*u+A*T,t[13]=d*s+$*h+R*m+A*_,t[14]=d*a+$*l+R*E+A*g,t[15]=d*n+$*c+R*f+A*p,t}function translate(t,e,i){let r=i[0],s=i[1],a=i[2],n,o,h,l,c,u,m,E,f,T,_,g;return e===t?(t[12]=e[0]*r+e[4]*s+e[8]*a+e[12],t[13]=e[1]*r+e[5]*s+e[9]*a+e[13],t[14]=e[2]*r+e[6]*s+e[10]*a+e[14],t[15]=e[3]*r+e[7]*s+e[11]*a+e[15]):(n=e[0],o=e[1],h=e[2],l=e[3],c=e[4],u=e[5],m=e[6],E=e[7],f=e[8],T=e[9],_=e[10],g=e[11],t[0]=n,t[1]=o,t[2]=h,t[3]=l,t[4]=c,t[5]=u,t[6]=m,t[7]=E,t[8]=f,t[9]=T,t[10]=_,t[11]=g,t[12]=n*r+c*s+f*a+e[12],t[13]=o*r+u*s+T*a+e[13],t[14]=h*r+m*s+_*a+e[14],t[15]=l*r+E*s+g*a+e[15]),t}function scale(t,e,i){let r=i[0],s=i[1],a=i[2];return t[0]=e[0]*r,t[1]=e[1]*r,t[2]=e[2]*r,t[3]=e[3]*r,t[4]=e[4]*s,t[5]=e[5]*s,t[6]=e[6]*s,t[7]=e[7]*s,t[8]=e[8]*a,t[9]=e[9]*a,t[10]=e[10]*a,t[11]=e[11]*a,t[12]=e[12],t[13]=e[13],t[14]=e[14],t[15]=e[15],t}function perspective(t,e,i,r,s){let a=1/Math.tan(e/2),n=1/(r-s);return t[0]=a/i,t[1]=0,t[2]=0,t[3]=0,t[4]=0,t[5]=a,t[6]=0,t[7]=0,t[8]=0,t[9]=0,t[10]=(s+r)*n,t[11]=-1,t[12]=0,t[13]=0,t[14]=2*s*r*n,t[15]=0,t}class Mat4 extends Array{constructor(t=1,e=0,i=0,r=0,s=0,a=1,n=0,o=0,h=0,l=0,c=1,u=0,m=0,E=0,f=0,T=1){return super(t,e,i,r,s,a,n,o,h,l,c,u,m,E,f,T),this}translate(t,e=this){return translate(this,e,t),this}scale(t,e=this){return scale(this,e,"number"==typeof t?[t,t,t]:t),this}multiply(t,e){return e?multiply(this,t,e):multiply(this,this,t),this}fromPerspective({fov:t,aspect:e,near:i,far:r}={}){return perspective(this,t,e,i,r),this}}class Carpet{constructor(t,e,{material:i,wireframe:r=!1,uniforms:s={},position:a=[0,0],scale:n=[1,1],order:o=10}={}){if(!i)return console.error("Missing material");this.instance=t,this.plane=this.instance.plane,this.dom=e,this.material=i,this.wireframe=r,this.uniforms=s,this.position=a,this.scale=n,this.order=o,this.active=!0,this.vao=this.instance.vao.createVertexArrayOES(),this.setupVao(),this.resize(),this.dom.classList.add("aladino"),this.dom.style.opacity="0","undefined"!=typeof ResizeObserver&&(this.observer=new ResizeObserver(()=>this.resize()),this.observer.observe(this.dom))}destroy(){this.active=!1}resize(){if(!this.active)return;if(!this.dom){this.destroy();return}let t=this.dom.getBoundingClientRect();this.bounds={top:t.top+this.instance.y,left:t.left+this.instance.x,width:t.width,height:t.height},this.uniforms.size=[this.bounds.width,this.bounds.height],this.updateProjection()}updateProjection(){this.projection=new Mat4;let t=this.instance.aspect,e=45*(Math.PI/180),i=this.order,r=2*Math.tan(e/2)*i,s=r*t,a=this.bounds.width/this.instance.width*s,n=this.bounds.height/this.instance.height*r;this.projection.fromPerspective({fov:e,aspect:t,near:.01,far:100}),this.projection.translate([0,0,-i,0]),this.projection.translate([-(s/2)+a/2,r/2-n/2,0,0,]);let o=this.instance.x-this.position[0],h=this.instance.y-this.position[1];this.projection.translate([(this.bounds.left-o)/this.instance.width*s,-((this.bounds.top-h)/this.instance.height)*r,0,0,]),this.projection.scale([a*this.scale[0],n*this.scale[1],1,1,])}setupVao(){let t=this.instance.gl;this.instance.vao.bindVertexArrayOES(this.vao);let e=this.material.attributeLoc.get("position");void 0!==e&&(t.enableVertexAttribArray(e),t.bindBuffer(t.ARRAY_BUFFER,this.plane.position),t.vertexAttribPointer(e,2,t.FLOAT,!1,0,0));let i=this.material.attributeLoc.get("uv");void 0!==i&&(t.enableVertexAttribArray(i),t.bindBuffer(t.ARRAY_BUFFER,this.plane.uv),t.vertexAttribPointer(i,2,t.FLOAT,!1,0,0)),t.bindBuffer(t.ELEMENT_ARRAY_BUFFER,this.plane.index),this.instance.vao.bindVertexArrayOES(null)}draw(){let t=this.instance.gl;this.updateProjection(),t.uniformMatrix4fv(this.material.uniformsLoc.get("projection"),!1,this.projection),t.drawElements(this.wireframe?t.LINES:t.TRIANGLES,this.plane.n,t.UNSIGNED_SHORT,0)}}const deferred=()=>{let t,e,i=new Promise((i,r)=>{t=i,e=r});return i.resolve=t,i.reject=e,i},cache=new Map;class Texture{constructor(t,e,{anisotropy:i=!1}={}){if(cache.get(e))return cache.get(e);cache.set(e,this),this.instance=t,this.gl=this.instance.gl,this.url=e,this.anisotropy=i,this.loading=deferred();let r=this.gl;this.texture=r.createTexture(),r.activeTexture(r.TEXTURE0),r.bindTexture(r.TEXTURE_2D,this.texture),r.texImage2D(r.TEXTURE_2D,0,r.RGBA,1,1,0,r.RGBA,r.UNSIGNED_BYTE,new Uint8Array(4)),this.load()}load(){this.image=new Image,this.image.crossOrigin="anonymous",this.image.onload=this.onLoad.bind(this),this.image.src=this.url}onLoad(){let t=this.gl;if(t.activeTexture(t.TEXTURE0),t.bindTexture(t.TEXTURE_2D,this.texture),t.pixelStorei(t.UNPACK_FLIP_Y_WEBGL,!0),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_S,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_T,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MIN_FILTER,t.LINEAR),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MAG_FILTER,t.LINEAR),this.anisotropy&&this.instance.anisotropy){let e=this.instance.anisotropy,i=t.getParameter(e.MAX_TEXTURE_MAX_ANISOTROPY_EXT);t.texParameterf(t.TEXTURE_2D,e.TEXTURE_MAX_ANISOTROPY_EXT,i)}t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.RGBA,t.UNSIGNED_BYTE,this.image),this.loading.resolve(this)}}class Material{constructor(t,{vertex:e,fragment:i,uniforms:r={}}={}){this.uniforms=r,this.instance=t,this.gl=this.instance.gl,this.program=this.createProgram(this.gl,e,i),this.parse()}setUniforms(t){for(let e in this.texUnit=-1,t)this.setUniform(e,t[e])}parse(t=this.gl){this.uniformsList=new Map,this.attributesList=new Map,this.uniformsLoc=new Map,this.attributeLoc=new Map;for(let e=0;e<t.getProgramParameter(this.program,t.ACTIVE_UNIFORMS);e++){let i=t.getActiveUniform(this.program,e);this.uniformsList.set(i.name,i),this.uniformsLoc.set(i.name,t.getUniformLocation(this.program,i.name))}for(let r=0;r<t.getProgramParameter(this.program,t.ACTIVE_ATTRIBUTES);r++){let s=t.getActiveAttrib(this.program,r);this.attributesList.set(s.name,s),this.attributeLoc.set(s.name,t.getAttribLocation(this.program,s.name))}}setUniform(t,e){let i=this.uniformsList.get(t);if(!i)return;let r=this.gl,s=i.type,a=this.uniformsLoc.get(t);if(35678!==s)switch(s){case 5126:return e.length?r.uniform1fv(a,e):r.uniform1f(a,e);case 35664:return r.uniform2fv(a,e);case 35665:return r.uniform3fv(a,e);case 35666:return r.uniform4fv(a,e);case 35670:case 5124:case 35678:case 35680:return e.length?r.uniform1iv(a,e):r.uniform1i(a,e);case 35671:case 35667:return r.uniform2iv(a,e);case 35672:case 35668:return r.uniform3iv(a,e);case 35673:case 35669:return r.uniform4iv(a,e);case 35674:return r.uniformMatrix2fv(a,!1,e);case 35675:return r.uniformMatrix3fv(a,!1,e);case 35676:return r.uniformMatrix4fv(a,!1,e)}}createShader(t,e,i){let r=t.createShader(e);if(t.shaderSource(r,i),t.compileShader(r),t.getShaderParameter(r,t.COMPILE_STATUS))return r;console.error(t.getShaderInfoLog(r)),t.deleteShader(r)}createProgram(t,e,i){let r=this.createShader(t,t.VERTEX_SHADER,e),s=this.createShader(t,t.FRAGMENT_SHADER,i),a=t.createProgram();if(t.attachShader(a,r),t.attachShader(a,s),t.linkProgram(a),t.deleteShader(r),t.deleteShader(s),t.getProgramParameter(a,t.LINK_STATUS))return a;console.error(t.getProgramInfoLog(a)),t.deleteProgram(a)}}class Plane{constructor(t){let e=t.gl,{position:i,index:r,uv:s}=this.build(t.density);this.index=e.createBuffer(),this.position=e.createBuffer(),this.uv=e.createBuffer(),this.n=r.length,e.bindBuffer(e.ELEMENT_ARRAY_BUFFER,this.index),e.bufferData(e.ELEMENT_ARRAY_BUFFER,r,e.STATIC_DRAW),e.bindBuffer(e.ARRAY_BUFFER,this.position),e.bufferData(e.ARRAY_BUFFER,i,e.STATIC_DRAW),e.bindBuffer(e.ARRAY_BUFFER,this.uv),e.bufferData(e.ARRAY_BUFFER,s,e.STATIC_DRAW)}build(t){let e=0,i=0,r=t,s=t,a=(r+1)*(s+1),n=r*s*6,o=new Float32Array(2*a),h=new Float32Array(2*a),l=a>65536?new Uint32Array(n):new Uint16Array(n),c=0,u=1/r,m=1/s;for(let E=0;E<=s;E++){let f=E*m-.5;for(let T=0;T<=r;T++,e++){let _=T*u-.5;if(o[2*e+0]=1*_,o[2*e+1]=-1*f,h[2*e]=T/r,h[2*e+1]=1-E/s,E===s||T===r)continue;let g=c+T+E*(r+1),p=c+T+(E+1)*(r+1),d=c+T+(E+1)*(r+1)+1,$=c+T+E*(r+1)+1;l[6*i]=g,l[6*i+1]=p,l[6*i+2]=$,l[6*i+3]=p,l[6*i+4]=d,l[6*i+5]=$,i++}}return{position:o,uv:h,index:l}}}class Aladino{constructor({canvas:t=document.createElement("canvas"),dpr:e=Math.min(devicePixelRatio,2),density:i=1,autoScroll:r=!0,post:s=!1,attribs:a={antialias:!0},autoTick:n=!0}={}){this.dpr=e,this.canvas=t,this.density=i,this.autoScroll=r,this.carpets=new Map,this.lastProgramUsed=null,this.post=s,this.autoTick=n,this.x=0,this.y=0,this.post&&(a.antialias=!1);try{this.gl=t.getContext("webgl",a)||t.getContext("experimental-webgl",a),this.vao=this.gl.getExtension("OES_vertex_array_object")}catch(o){console.error("WebGL or VAO not available");return}this.anisotropy=this.gl.getExtension("EXT_texture_filter_anisotropic")||this.gl.getExtension("MOZ_EXT_texture_filter_anisotropic")||this.gl.getExtension("WEBKIT_EXT_texture_filter_anisotropic"),this.gl.enable(this.gl.DEPTH_TEST),this.gl.clearColor(0,0,0,0),this.plane=new Plane(this),this.init()}init(){this.resize=this.resize.bind(this),this.draw=this.draw.bind(this),window.addEventListener("resize",this.resize),this.autoScroll&&(this.scroll=this.scroll.bind(this),window.addEventListener("scroll",this.scroll),this.scroll()),this.resize(),this.post&&this.setupPost(),this.autoTick&&this.draw()}destroy(){window.removeEventListener("resize",this.resize),this.requestID&&cancelAnimationFrame(this.requestID)}scroll(){let t=document.documentElement;this.x=(window.pageXOffset||t.scrollLeft)-(t.clientLeft||0),this.y=window.pageYOffset||document.documentElement.scrollTop}resize(){this.width=window.innerWidth,this.height=window.innerHeight,this.aspect=this.width/this.height;let t=this.gl;t.canvas.width=this.width*this.dpr,t.canvas.height=this.height*this.dpr,Object.assign(this.gl.canvas.style,{position:"fixed",top:0,right:0,bottom:0,left:0,width:`${this.width}px`,height:`${this.height}px`,pointerEvents:"none"}),this.carpets.forEach(t=>t.resize()),t.viewport(0,0,t.canvas.width,t.canvas.height),this.post&&this.postTexture&&(t.bindTexture(t.TEXTURE_2D,this.postTexture),t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.canvas.width,t.canvas.height,0,t.RGBA,t.UNSIGNED_BYTE,null)),this.reset=!0}material(t){return new Material(this,t)}carpet(t,e){let i=new Carpet(this,t,e);return this.carpets.set(t,i),this.reset=!0,i}texture(t,e){return new Texture(this,t,e)}setupPost(){let t=this.gl;this.postTexture=t.createTexture(),this.postFb=t.createFramebuffer(),t.bindTexture(t.TEXTURE_2D,this.postTexture),t.texImage2D(t.TEXTURE_2D,0,t.RGBA,t.canvas.width,t.canvas.height,0,t.RGBA,t.UNSIGNED_BYTE,null),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_MIN_FILTER,t.LINEAR),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_S,t.CLAMP_TO_EDGE),t.texParameteri(t.TEXTURE_2D,t.TEXTURE_WRAP_T,t.CLAMP_TO_EDGE),t.bindFramebuffer(t.FRAMEBUFFER,this.postFb),t.framebufferTexture2D(t.FRAMEBUFFER,t.COLOR_ATTACHMENT0,t.TEXTURE_2D,this.postTexture,0),t.bindFramebuffer(t.FRAMEBUFFER,null),this.postMaterial=this.material({vertex:`attribute vec2 position; void main() { gl_Position = vec4(position, 0.0, 1.0); }`,fragment:this.post.fragment||`precision highp float; uniform vec2 viewport; uniform sampler2D image; void main() { vec2 uv = gl_FragCoord.xy / viewport; vec4 color = texture2D(image, uv); gl_FragColor = color; }`,uniforms:this.post.uniforms||{}}),this.postTriangle=t.createBuffer(),t.bindBuffer(t.ARRAY_BUFFER,this.postTriangle),t.bufferData(t.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),t.STATIC_DRAW),this.postVao=this.vao.createVertexArrayOES(),this.vao.bindVertexArrayOES(this.postVao);let e=this.postMaterial.attributeLoc.get("position");t.enableVertexAttribArray(e),t.bindBuffer(t.ARRAY_BUFFER,this.postTriangle),t.vertexAttribPointer(e,2,t.FLOAT,!1,0,0),this.vao.bindVertexArrayOES(null)}setTextures(t,e){let i=this.gl,r=0;t.uniformsList.forEach(s=>{if(35678===s.type){let a=e[s.name];if(!a)return;i.activeTexture(i.TEXTURE0+r),i.bindTexture(i.TEXTURE_2D,a.texture),i.uniform1i(t.uniformsLoc.get(s.name),r);let n=s.name,o="size"+n.charAt(0).toUpperCase()+n.substring(1);t.setUniform(o,[a.image.width,a.image.height]),r++}})}draw(t=performance.now()){this.autoTick&&(this.requestID=requestAnimationFrame(this.draw));let e=this.gl,i,r=e.canvas.width,s=e.canvas.height;if(this.post&&e.bindFramebuffer(e.FRAMEBUFFER,this.postFb),e.clear(e.COLOR_BUFFER_BIT|e.DEPTH_BUFFER_BIT),this.carpets.forEach(a=>{a.active&&((a.material.program!==this.lastProgramUsed||this.reset)&&(e.useProgram(a.material.program),this.vao.bindVertexArrayOES(a.vao),this.setTextures(a.material,a.material.uniforms),this.reset=!1),a.material.program!==i&&(a.material.uniforms.time=t,a.material.uniforms.viewport=[r,s],a.material.setUniforms(a.material.uniforms)),this.setTextures(a.material,a.uniforms),a.material.setUniforms(a.uniforms),a.draw(),i=a.material.program,this.lastProgramUsed=a.material.program)}),this.post){let a=this.postMaterial;e.bindFramebuffer(e.FRAMEBUFFER,null),e.clear(e.COLOR_BUFFER_BIT|e.DEPTH_BUFFER_BIT),e.useProgram(a.program),a.uniforms.time=t,a.uniforms.viewport=[r,s],a.setUniforms(a.uniforms),e.activeTexture(e.TEXTURE0),e.bindTexture(e.TEXTURE_2D,this.postTexture),e.uniform1i(a.uniformsLoc.get("image"),0),this.vao.bindVertexArrayOES(this.postVao),e.drawArrays(e.TRIANGLES,0,3),this.reset=!0}}}
+</script>
+<script>
+// Wrap in window.onload to ensure image is fetched and CORS is respected
+window.onload = () => {
+  let mouseX = 0.0;
+
+  const onMouseMove = (e) => {
+    mouseX = Math.abs((e.clientX / window.innerWidth) * 2 - 1);
+    unf.mouse = 0.075 * mouseX;
+  };
+
+  const onTouchMove = (e) => {
+    let x = e.changedTouches[0].clientX;
+    mouseX = (x / window.innerWidth) * 2 - 1;
+    unf.mouse = 0.075 * mouseX;
+  };
+
+  document.addEventListener('mousemove', onMouseMove, false);
+  document.addEventListener('touchmove', onTouchMove, false);
+
+  const aladino = new Aladino({ density: 20 });
+  document.body.appendChild(aladino.canvas);
+
+  const material = aladino.material({
+    vertex: `
+      attribute vec2 position;
+      attribute vec2 uv;
+      uniform mat4 projection;
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projection * vec4(position, 0.0, 1.0);
+      }
+    `,
+    fragment: `
+      precision highp float;
+      uniform vec2 size;
+      uniform vec2 sizeImage;
+      uniform sampler2D image;
+      uniform float mouse;
+      varying vec2 vUv;
+
+      vec4 coverTexture(sampler2D tex, vec2 imgSize, vec2 ouv) {
+        vec2 s = size;
+        vec2 i = imgSize;
+        float rs = s.x / s.y;
+        float ri = i.x / i.y;
+        vec2 new = rs < ri ? vec2(i.x * s.y / i.y, s.y) : vec2(s.x, i.y * s.x / i.x);
+        vec2 offset = (rs < ri ? vec2((new.x - s.x) / 2.0, 0.0) : vec2(0.0, (new.y - s.y) / 2.0)) / new;
+        vec2 uv = ouv * s / new + offset;
+        return texture2D(tex, uv);
+      }
+
+      void main() {
+        vec2 s = vUv;
+        float speed = 5.25;
+        vec4 tx = coverTexture(image, sizeImage, s);
+        vec3 col = tx.rgb;
+        s.x = fract((sin(col.r * speed * (0.5 + mouse * 2.0)) + 1.0) * 0.5);
+        s.y = fract((cos(col.g * speed * (0.5 + mouse * 2.0)) + 1.0) * 0.5);
+        vec3 col2 = coverTexture(image, sizeImage, s).rgb;
+        float m = fract(length(col) * 0.333);
+        col = mix(col, col2, 1.0 - m);
+        gl_FragColor = vec4(col, 1.0);
+      }
+    `,
+  });
+
+  const container = document.querySelector(".image-container");
+  const img = container.querySelector("img");
+
+  let unf = {
+    image: aladino.texture(img.src),
+    mouse: 0.0
+  };
+
+  aladino.carpet(container, {
+    material,
+    uniforms: unf
+  });
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: "Hanken Grotesk", sans-serif;   
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 5em;
+            text-transform: uppercase;
+            color: #f39c12;
+            letter-spacing: 5px;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 10px;
+            color: #ecf0f1;
+            font-family: "Chewy", sans-serif;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #bdc3c7;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 2px solid #fff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        a:hover {
+            background-color: #fff;
+            color: #2c3e50;
+        }
+        .glitch {
+            position: relative;
+            font-size: 5em;
+            color: #f39c12;
+        }
+        .glitch::before, .glitch::after {
+            content: "●●○";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: none;
+            color: #f39c12;
+            overflow: hidden;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 magenta;
+            animation: glitch 2s infinite ease-in-out;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 cyan;
+            animation: glitch 2s infinite ease-in-out alternate-reverse;
+        }
+        @keyframes glitch {
+            0%, 100% { clip: rect(0, 9999px, 100px, 0); }
+            10% { clip: rect(50px, 9999px, 150px, 0); }
+            20% { clip: rect(120px, 9999px, 180px, 0); }
+            30% { clip: rect(70px, 9999px, 130px, 0); }
+            40% { clip: rect(150px, 9999px, 250px, 0); }
+            50% { clip: rect(90px, 9999px, 170px, 0); }
+            60% { clip: rect(100px, 9999px, 190px, 0); }
+            70% { clip: rect(30px, 9999px, 90px, 0); }
+            80% { clip: rect(60px, 9999px, 160px, 0); }
+            90% { clip: rect(40px, 9999px, 140px, 0); }
+        }
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 3.5em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 3em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1 class="glitch">●●○</h1>
+    <h2>Break it down, every word we see,</h2>
+    <p>Turning letters into bits, just like machinery. Chop it up, slice the line, no hesitation. This is how we roll with tokenization. From the sentence to the token, it's all in flow. Give me data, watch how far we can go.</p>
+    <a href="./">ÐÆŘŸŁ</a>   
+</main>
+</body>
+</html>

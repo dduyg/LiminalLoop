@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/favicons/fellDown.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1d1e33;
+            color: #e0c7ff;
+            font-family: "Sora", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 150px 1.25em;
+            padding: 1.25em;
+            border: 2px solid #ff77ff;
+            border-radius: 0.625em;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            font-family: "Syncopate", sans-serif;
+            color: #ff77ff;
+            text-shadow: 2px 2px #00f;
+        }
+
+        details {
+            margin-bottom: 0.625em;
+            border: 1px solid #ff77ff;
+            border-radius: 0.625em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.625em 0;
+            position: relative;
+            outline: none; /* Remove default outline */
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        summary {
+            cursor: pointer;
+            padding: 0.625em;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none; /* Remove the default arrow */
+            appearance: none; /* Ensure removing the default arrow cross browsers */
+            -webkit-appearance: none;
+        }  
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+            display: inline-block;
+            margin-left: 0.5em;
+            width: 24px;
+            height: 24px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23ff77ff" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8z"/><path d="M12 12.586 8.707 9.293l-1.414 1.414L12 15.414l4.707-4.707-1.414-1.414L12 12.586z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        details[open] .arrow {
+            transform: rotate(180deg);
+        }
+        details[open] summary ~ * {
+            animation: slideDown 0.3s ease-in-out;
+        }
+        @keyframes slideDown {
+            from {opacity: 0; transform: translateY(-10px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        ul {
+            margin: 0; padding: 0;
+            text-align: left;
+            list-style: none;
+        }
+        ul li { 
+            padding: 0.625em;
+            border-top: 1px solid #ff77ff;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>The Future is in the Past</h1>
+        <details>
+            <summary>
+                未来は過去にある
+                <span class="arrow"></span>
+            </summary>
+            <ul>
+                <li>失われた時間の中で夢を見る (Dreaming in Lost Time)</li>
+                <li>無限の回廊をさまよう (Wandering in Infinite Corridors)</li>
+                <li>現実は幻想 (Reality is an Illusion)</li>
+                <li>サイバースペースの孤独 (Loneliness in Cyberspace)</li>
+                <li>デジタルの海に溺れる (Drowning in the Digital Sea)</li>
+                <li>夢の中の都市 (City in a Dream)</li>
+                <li>未来は今 (The future is now)</li>
+                <li>人生は夢のように過ぎ去る (Life passes by like a dream)</li>
+            </ul>
+        </details>
+        <details>
+            <summary>
+                永遠の黄昏
+                <span class="arrow"></span>
+            </summary>
+            <ul>
+                <li>Feel the waves of nostalgia</li>
+                <li>Escape into the digital void</li>
+                <li>感覚の未来 (Future of sensations)</li>
+                <li>Pastel skies and neon lights</li>
+                <li>夢の中で失われた (Lost in a dream)</li>
+                <li>Synthesize your reality</li>
+                <li>In the end, everything is just a simulation.</li>
+            </ul>
+        </details>
+        <details>
+            <summary>
+                夢を見る人</a>々
+                <span class="arrow"></span>
+            </summary>
+            <ul>
+                <li>The future is a journey to the past.</li>
+                <li>We are all just stardust.</li>
+                <li>Aesthetic dreams in digital streams.</li>
+                <li>Eternal summer in the city of lights.</li>
+                <li>Synthesize your dreams.</li>
+                <li>The digital rain never ends.</li>
+                <li>Glitching through the echoes of a forgotten future.</li>
+            </ul>
+        </details>
+        <details>
+            <summary>
+                未来は今
+                <span class="arrow"></span>
+            </summary>
+            <ul>
+                <li>Circuitry whispers tales of synthetic paradise.</li>
+                <li>In the pixelated abyss, we find eternity.</li>
+                <li>Binary beats pulsating through the silicon veins.</li>
+                <li>Lost in the code of a digital sunrise.</li>
+                <li>Synthesized memories in a quantum symphony.</li>
+                <li>Astral projections of a bygone cyber age.</li>
+                <li>Holographic echoes of a neon skyline.</li>
+            </ul>
+        </details>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const detailsElements = document.querySelectorAll("details");
+            detailsElements.forEach(details => {
+                details.addEventListener("toggle", function() {
+                    if (details.open) {
+                        detailsElements.forEach(otherDetails => {
+                            if (otherDetails !== details) {
+                                otherDetails.removeAttribute("open");
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

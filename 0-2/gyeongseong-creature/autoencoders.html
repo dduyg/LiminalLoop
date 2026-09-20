@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liminal Loop</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/06/favicons/string0bject.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet">
+    <style>
+        .slide-in {
+            opacity: 0;
+            transform: translateY(-96px);
+            animation: slideIn 1s ease-out forwards;
+        }
+        @keyframes slideIn {
+            0% {opacity: 0; transform: translateY(-96px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+        body {
+            margin: 0;
+            padding: 0 1.25em;
+            font-family: "Schibsted Grotesk", sans-serif;
+            background: #949EA7;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #C4C8CB;
+            text-align: center;
+            line-height: 1.6;
+        }   
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+        }
+        .glitch {
+            position: relative;
+            display: inline-block;
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .glitch:before, .glitch:after {
+            content: "■■□";
+            position: absolute;
+            left: 0;
+            color: #C0736B;
+            background: none;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+        .glitch:after {
+            left: 2px;
+            text-shadow: -2px 0 #00fffb;
+            animation-delay: 1s;
+        }
+        @keyframes glitch {
+            0% {clip: rect(42px, 9999px, 44px, 0);}
+            5% {clip: rect(12px, 9999px, 60px, 0);}
+            10% {clip: rect(85px, 9999px, 90px, 0);}
+            15% {clip: rect(30px, 9999px, 100px, 0);}
+            20% {clip: rect(70px, 9999px, 50px, 0);}
+        }
+    </style>
+</head>
+<body>
+    <main class="slide-in">
+        <header class="glitch">■■□</header>
+        <p>Autoencoders are neural networks used for unsupervised learning, mainly for dimensionality reduction and feature extraction. They consist of an encoder that compresses data into a lower-dimensional form and a decoder that reconstructs it. Autoencoders are useful for tasks like noise reduction, anomaly detection, and data compression</p>
+    </main>
+</body>
+</html>

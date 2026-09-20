@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Liminal👗Loop</title>
+<link href="https://fonts.googleapis.com/css2?family=Handjet&display=swap" rel="stylesheet">
+<style>
+  @font-face {  
+    font-family: 'JT Mekito'; 
+    src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/JTMekito.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  body, html {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'JT Mekito', monospace;
+    color: #a0a89e;
+    line-height: 1.4;
+  }
+  #bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  main {
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+    z-index: 1; /* ensure it’s above the video */
+  }
+  #left {
+    width: 55%; height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 10vh 3% 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  #left p {
+    font-size: 0.825rem;
+    padding-top: 25px;
+  }
+  #right {
+    width: 45%;
+    position: fixed;
+    right: 10px;
+    top: 0; bottom: 0;
+    box-sizing: border-box;
+    padding: 20px 20px 10vh;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    overflow-y: auto;
+  }
+  #right h3, #right p {
+    margin: 0;
+    padding: 0;
+  }
+  #right p {
+    font-size: 0.8rem;
+    font-family: "Handjet", monospace;
+  }   
+
+/* Custom scrollbar */
+#left::-webkit-scrollbar {
+    width: 1.3em;
+}
+#left::-webkit-scrollbar-track {
+    background: transparent;
+}
+#left::-webkit-scrollbar-thumb,
+#left::-webkit-scrollbar-thumb:hover {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="%23a0a89e" stroke="%23a0a89e" stroke-width="5"%3E%3Cg id="SVGRepo_bgCarrier" stroke-width="0"%3E%3C/g%3E%3Cg id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"%3E%3C/g%3E%3Cg id="SVGRepo_iconCarrier"%3E%3Cdefs%3E%3Cstyle%3E.a{fill:none;stroke:%23a0a89e;stroke-linecap:round;stroke-linejoin:round;}%3C/style%3E%3C/defs%3E%3Ccircle class="a" cx="24" cy="24" r="21.5"/%3E%3Cpath class="a" d="M2.7292,25.253s4.694,1.1769,6.5217,0c5.5212-3.5551.73-17.554,8.1521-17.935C30.024,6.7851,15.83,41.535,29.89,41.557c7.0423-.3815,3.54-13.11,8.7089-16.304,1.8492-1.1429,6.5217,0,6.5217,0"/%3E%3C/g%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+@-moz-document url-prefix() { /* Firefox scrollbar */
+    #left {
+        scrollbar-color: transparent transparent;
+        scrollbar-width: thin;
+    }
+    #left::-webkit-scrollbar-thumb {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="%23a0a89e" stroke="%23a0a89e" stroke-width="5"%3E%3Cg id="SVGRepo_bgCarrier" stroke-width="0"%3E%3C/g%3E%3Cg id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"%3E%3C/g%3E%3Cg id="SVGRepo_iconCarrier"%3E%3Cdefs%3E%3Cstyle%3E.a{fill:none;stroke:%23a0a89e;stroke-linecap:round;stroke-linejoin:round;}%3C/style%3E%3C/defs%3E%3Ccircle class="a" cx="24" cy="24" r="21.5"/%3E%3Cpath class="a" d="M2.7292,25.253s4.694,1.1769,6.5217,0c5.5212-3.5551.73-17.554,8.1521-17.935C30.024,6.7851,15.83,41.535,29.89,41.557c7.0423-.3815,3.54-13.11,8.7089-16.304,1.8492-1.1429,6.5217,0,6.5217,0"/%3E%3C/g%3E%3C/svg%3E');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+</style>
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@shelf/0-6/stream/CyberCupcake.mp4" type="video/mp4" />
+    <!-- You can add additional formats for better browser support -->
+    Your browser does not support the video tag.
+  </video>
+
+  <main>
+    <div id="left">
+      <p>Korkuyorlar, korkacaklar, korksunlar<br />
+      Geliyoruz, geleceğiz yakındır<br />
+      Kim nerede, ne işliyor hepsini<br />
+      Biliyoruz, bileceğiz yakındır</p>
+
+      <p>Bölüşmüşler memleketin mallarını<br />
+      Bekliyoruz hele gelsin yarını<br />
+      <u>Elimizin nasırdan balyozlarını<br />
+      Başlarına vuracağız yakındır</u></p>
+
+      <p>Bir ıslıkta sen çal<br />
+      Bir ıslıkta sen<br />
+      Bir ıslıkta sen çal<br />
+      Bir ıslıkta sen</p>
+
+      <p>Bir ıslıkta sen çal<br />
+      Bir ıslıkta sen<br />
+      Bir ıslıkta sen çal<br />
+      Bir ıslıkta sen</p>
+
+      <p>Din alıp satmaya vermişler hızı<br />
+      Hele şu ağalık başlıca sızı<br />
+      Zorlanıp alınan haklarımızı<br />
+      Fitil fitil alacağız yakındır</p>
+
+      <p>Aç ölürüz, tok yaşıyorlar bu neden<br />
+      Yıkılsın bu hale hükümet eden<br />
+      Şura doğu, şurası batı demeden<br />
+      Güvercinler salacağız yakındır</p>
+
+      <p>Bir ıslıkta sen çal<br />
+      Bir ıslıkta sen<br />
+      Bir ıslıkta sen çal<br />
+      Bir ıslıkta sen</p>
+
+      <p>Bir ıslıkta sen çal<br />
+      Bir ıslıkta sen<br />
+      Bir ıslıkta sen çal<br />
+      Bir ıslıkta sen</p>
+      <p><br><br><br><br><br><br><br></p>
+    </div>
+    <div id="right">
+      <h3>→PASTEL OVERDRIVE</h3>
+      <footer class="coordinates">
+        <p>34°05'24.0"N 118°24'39.6"W</p>
+        <p>the space between thoughts</p>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

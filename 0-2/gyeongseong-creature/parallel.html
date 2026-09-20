@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: rgb(214,182,182);
+            background: linear-gradient(180deg, rgba(214,182,182,1) 0%, rgba(79,106,95,1) 50%, rgba(36,14,21,1) 100%);
+            font-family: "Lora", serif;
+            height: 100%;
+            width: 100vw;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 1em;
+            max-width: 600px;  
+        }
+        h1 {
+            font-family: "Bebas Neue", sans-serif;
+            animation: bounce 2s infinite;
+        }
+        p {
+            margin: 20px 0;
+            opacity: 0.8;
+        }
+        .floating {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+            z-index: 1;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="floating" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="floating" style="left: 80%; animation-delay: 1s;"></div>
+    <div class="floating" style="left: 50%; animation-delay: 2s;"></div>
+    
+    <h1>Parallel</h1>
+    <p>From rooftop meetings 'neath the starry sky, To tearful goodbyes, they can't deny. Through every twist and turn, they hold on tight, For love, they know, will conquer the night.</p>
+</main>
+</body>
+</html>

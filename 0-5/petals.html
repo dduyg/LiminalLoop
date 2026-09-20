@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liminal Loop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+    <style>
+        * {   /* Reset and basic styling */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #515755;
+            color: #F5F5DC;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            height: 100vh; /* Full viewport height */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+        }
+        #sidebar h1 {
+            font-size: 1.4em;
+            font-family: "Tiny5", sans-serif;
+            margin: 0;
+        }
+
+        #content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            overflow-y: auto;
+            max-height: 100vh; /* Restrict to viewport height */
+            padding-right: 20px; /* Prevent scroll bar overlap */
+        }
+        .release {
+            padding-bottom: 55px;
+        }
+        .title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Metadata row */
+        .metadata {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 0.75em;
+        }
+        .date, .artist {
+            opacity: .6;
+        }
+        .type {
+            color: gainsboro;
+            font-style: italic;
+        }
+
+        /* Details row with cover & tracklist */
+        .details {
+            display: flex;
+            gap: 20px;
+        }
+        .cover {
+            width: 100%;
+            max-width: 200px;
+            background-color: beige;
+        }
+        .tracklist {
+            list-style: decimal inside;
+            flex: 1;  /* Allow tracklist to take up remaining space */
+            font-size: 0.8em;
+        }
+        .details-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: gainsboro;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 0 20px 10px;
+            }
+            #sidebar {  /* Adjust sidebar width for smaller screens */
+                max-width: 150px;
+                margin-right: 10px;
+            }
+            .cover {  /* Reduce image size to fit better on smaller screens */
+                max-width: 100px;
+            }
+        }
+
+        /* Custom scrollbar for #content */
+        #content::-webkit-scrollbar {
+            width: 1.4em;
+        }
+        #content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #content::-webkit-scrollbar-thumb,
+        #content::-webkit-scrollbar-thumb:hover {
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23F5F5DC" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M22 10v4h4v4h-4v4h-4v4h-4v-4h-4v-4h-4v-4h4v-4h4v-4h4v4h4zM26 26v-4h-4v4h4zM26 6h-4v4h4v-4zM6 6v4h4v-4h-4zM6 26h4v-4h-4v4z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        @-moz-document url-prefix() { /* Firefox scrollbar */
+            #content {
+                scrollbar-color: transparent transparent;
+                scrollbar-width: thin;
+            }
+            #content::-webkit-scrollbar-thumb {
+                background-image: url('data:image/svg+xml;utf8,<svg fill="%23F5F5DC" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M22 10v4h4v4h-4v4h-4v4h-4v-4h-4v-4h-4v-4h4v-4h4v-4h4v4h4zM26 26v-4h-4v4h4zM26 6h-4v4h4v-4zM6 6v4h4v-4h-4zM6 26h4v-4h-4v4z"/></svg>');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Tags -->
+        <aside id="sidebar">
+            <h1>Lazer Files 5</h1>
+        </aside>
+
+        <!-- Content Section -->
+        <main id="content">
+            <!-- First Item -->
+            <section class="release">
+                <h2 class="title">butcher knife</h2>
+                
+                <!-- Metadata Row -->
+                <div class="metadata">
+                    <span class="date">2024.09</span>
+                    <span class="artist">nayuta</span>
+                    <span class="type">EP</span>
+                </div>
+
+                <!-- Image and Tracklist Row -->
+                <div class="details">
+                    <div class="cover"></div>
+                    <ol class="tracklist">
+                        <li>「WALTZ of lilies」の楽曲告白</li>
+                        <li>亡き乙女のためのII (Remixed by SINGularity)</li>
+                        <li>Zero in Zero</li>
+                    </ol>
+                </div>
+                
+                <a href="#" class="details-link">View Detail →</a>
+            </section>
+
+            <!-- Second Item -->
+            <section class="release">
+                <h2 class="title">ΔCID.rar きめら</h2>
+                
+                <!-- Metadata Row -->
+                <div class="metadata">
+                    <span class="date">2024.08</span>
+                    <span class="artist">1e1</span>
+                    <span class="type">Single</span>
+                </div>
+
+                <!-- Image and Tracklist Row -->
+                <div class="details">
+                    <div class="cover"></div>
+                    <ol class="tracklist">
+                        <li>きめら・Life's Anomalies</li>
+                        <li>metaphor (過形成のprotoCOL remix)</li>
+                    </ol>
+                </div>
+
+                <a href="#" class="details-link">View Detail →</a>
+            </section>
+
+            <!-- Third Item -->
+            <section class="release">
+                <h2 class="title">クロニック・クリ</h2>
+                
+                <!-- Metadata Row -->
+                <div class="metadata">
+                    <span class="date">2024.06</span>
+                    <span class="artist">Questions</span>
+                    <span class="type">Featuring</span>
+                </div>
+
+                <!-- Image and Tracklist Row -->
+                <div class="details">
+                    <div class="cover"></div>
+                    <ol class="tracklist">
+                        <li>Petals full of holes</li>
+                        <li>unPrologue Birthday Resistance</li>
+                        <li>きんいろのひ</li>
+                        <li>FEARLESS VIRUS</li>
+                    </ol>
+                </div>
+
+                <a href="#" class="details-link">View Detail →</a>
+            </section>
+
+            <!-- Fourth Item -->
+            <section class="release">
+                <h2 class="title">City of Romantica</h2>
+                
+                <!-- Metadata Row -->
+                <div class="metadata">
+                    <span class="date">2024.04</span>
+                    <span class="artist">Plantoid</span>
+                    <span class="type">Single</span>
+                </div>
+
+                <!-- Image and Tracklist Row -->
+                <div class="details">
+                    <div class="cover"></div>
+                    <ol class="tracklist">
+                        <li>RENDERING THE TWO SOULS</li>
+                        <li>Trash Angels</li>
+                    </ol>
+                </div>
+
+                <a href="#" class="details-link">View Detail →</a>
+            </section>
+
+            <!-- Fifth Item -->
+            <section class="release">
+                <h2 class="title">かわいいね</h2>
+                
+                <!-- Metadata Row -->
+                <div class="metadata">
+                    <span class="date">2024.03</span>
+                    <span class="artist">Room:樹海</span>
+                    <span class="type">Featuring</span>
+                </div>
+
+                <!-- Image and Tracklist Row -->
+                <div class="details">
+                    <div class="cover"></div>
+                    <ol class="tracklist">
+                        <li>The Gaze of Orpheus</li>
+                        <li>Torture in heaven</li>
+                        <li>FEARLESS VIRUS</li>
+                        <li>ビオトープ探して</li>
+                    </ol>
+                </div>
+
+                <a href="#" class="details-link">View Detail →</a>
+            </section>
+
+            <!-- Sixth Item -->
+            <section class="release">
+                <h2 class="title">ef_prelude</h2>
+                
+                <!-- Metadata Row -->
+                <div class="metadata">
+                    <span class="date">2024.02</span>
+                    <span class="artist">Flick'n'diE</span>
+                    <span class="type">EP</span>
+                </div>
+
+                <!-- Image and Tracklist Row -->
+                <div class="details">
+                    <div class="cover"></div>
+                    <ol class="tracklist">
+                        <li>MOONMIST</li>
+                        <li>M1. 国歌斉唱</li>
+                        <li>ツキナミ</li>
+                        <li>甘き心中はプールサイドで - world's end girlfriend Remix</li>
+                    </ol>
+                </div>
+
+                <a href="#" class="details-link">View Detail →</a>
+            </section>    
+        </main>
+    </div>
+</body>
+</html>

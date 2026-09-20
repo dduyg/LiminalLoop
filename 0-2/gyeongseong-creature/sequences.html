@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liminal Loop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Kalnia&display=swap');
+    /* 
+     font-family: 'Hanken Grotesk', sans-serif;
+     font-family: 'Kalnia', serif;
+    */   
+    body {
+      font-family: 'Kalnia', serif;
+      background-color: #535629;
+      color: #8CC3FB;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 50px 0;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    section h2 {
+      font-size: 2rem;
+      padding-bottom: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: transparent;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid #8CC3FB;
+      border-bottom-width: 4px;
+      border-radius: 10px;
+      color: #8CC3FB;
+      font-size: 1.7em;
+      cursor: pointer;
+      transition: border-bottom-width 0.3s ease;
+    }
+    .btn:hover {
+      border-bottom-width: 6px;
+      font-weight: bold;
+    }
+  </style> 
+</head>
+<body>
+  <header>
+    <h1>Change Data Capture (CDC)</h1>
+    <p>Change Data Capture (CDC) is a technique used in databases to track and capture changes made to data. It enables the identification and extraction of changes (inserts, updates, and deletes) that occur in the database, allowing applications to react to those changes in real-time or near-real-time.</p>
+    <a href="../" class="btn">▶</a>
+  </header>
+  <div class="content">
+    <section id="how">
+      <h2>How It Works</h2>
+      <p>CDC works by monitoring the database's transaction logs or redo logs, which record all changes made to the database. When a change occurs, CDC captures the details of the change, such as the affected rows, columns, and the type of operation (insert, update, delete).</p>
+    </section>
+    <section id="applications">
+      <h2>Applications & Benefits</h2>
+      <p>CDC is commonly used in various scenarios, including data replication, data warehousing, data integration, and real-time analytics. By capturing changes as they happen, CDC enables businesses to keep different systems synchronized and to make informed decisions based on the most up-to-date data.</p>
+    </section>
+  </div>
+</body>
+</html>

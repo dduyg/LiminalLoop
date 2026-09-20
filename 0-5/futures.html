@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liminal Loop</title>
+  <style>
+    ::-moz-selection { /* Code for Firefox */
+      color: black;
+      background: red;
+    }
+    ::selection {
+      color: black;
+      background: red;
+    }
+    /* Hide scrollbar cross-browser, but still allows scrolling */
+    body::-webkit-scrollbar { display: none; }
+    body { scrollbar-width: none; }
+    body { -ms-overflow-style: none; }
+    /**
+    * This is a variable font
+    * You can control variable axes as shown below:
+    * font-variation-settings: wght 700.0;
+    *
+    * available axes:
+    'wght' (range from 200.0 to 700.0
+    *
+    * font-family: 'Chillax', sans-serif;
+    */
+    @font-face {
+      font-family: 'Chillax';
+      src: url('https://cdn.jsdelivr.net/gh/dduyg/LiminalLoop@main/fonts/Chillax-Variable.woff2') format('woff2');
+      font-weight: 200 700;
+      font-style: normal;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      background: #898989;
+      color: #000;
+      font-family: 'Chillax', sans-serif;
+      font-weight: 500;
+      font-variation-settings: 'wght' 500;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    main {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+    }
+    #title {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      padding-left: 2%;
+      padding-right: 5%;
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-variation-settings: 'wght' 600;
+      text-decoration: overline wavy;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    #content {
+      width: 80%;
+      margin-left: 20%; /* Offset content to accommodate #title column */
+      padding: 120px 2% 20px 6%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    #content div {
+      margin-bottom: 100px;
+    }
+    #content h3 {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      font-weight: 600;
+      font-variation-settings: 'wght' 600;
+    }
+    pre {
+      padding: 0 15px;        
+      font-size: 0.8rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier;
+      color: rgba(0, 0, 0, 0.6);
+      border-left: 3px dotted rgba(0, 0, 0, 0.7);
+      scrollbar-color: transparent transparent;
+      scrollbar-width: thin;
+    }
+    pre::-webkit-scrollbar-thumb { background-color: transparent; }
+    pre::-webkit-scrollbar-track { background-color: transparent; }
+
+    /* Custom scrollbar for #content */
+    #content::-webkit-scrollbar {
+      width: 1.5em;
+    }
+    #content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #content::-webkit-scrollbar-thumb,
+    #content::-webkit-scrollbar-thumb:hover {
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="currentColor" d="M14,12a2,2,0,1,1-2-2A2,2,0,0,1,14,12Zm5.965-4.173A.915.915,0,0,1,20,8v8a.915.915,0,0,1-.035.173,2.992,2.992,0,1,1-3.792,3.792A.915.915,0,0,1,16,20H8a.915.915,0,0,1-.173-.035,2.992,2.992,0,1,1-3.792-3.792A.915.915,0,0,1,4,16V8a.915.915,0,0,1,.035-.173A2.992,2.992,0,1,1,7.827,4.035.915.915,0,0,1,8,4h8a.915.915,0,0,1,.173.035,2.992,2.992,0,1,1,3.792,3.792ZM18,16V8a.915.915,0,0,1,.035-.173,2.986,2.986,0,0,1-1.862-1.862A.915.915,0,0,1,16,6H8a.915.915,0,0,1-.173-.035A2.986,2.986,0,0,1,5.965,7.827.915.915,0,0,1,6,8v8a.915.915,0,0,1-.035.173,2.986,2.986,0,0,1,1.862,1.862A.915.915,0,0,1,8,18h8a.915.915,0,0,1,.173.035,2.986,2.986,0,0,1,1.862-1.862A.915.915,0,0,1,18,16Z"></path></g></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    /* Firefox scrollbar */
+    @-moz-document url-prefix() { 
+      #content {
+        scrollbar-color: transparent transparent;
+        scrollbar-width: thin;
+      }
+      #content::-webkit-scrollbar-thumb {
+        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="currentColor" d="M14,12a2,2,0,1,1-2-2A2,2,0,0,1,14,12Zm5.965-4.173A.915.915,0,0,1,20,8v8a.915.915,0,0,1-.035.173,2.992,2.992,0,1,1-3.792,3.792A.915.915,0,0,1,16,20H8a.915.915,0,0,1-.173-.035,2.992,2.992,0,1,1-3.792-3.792A.915.915,0,0,1,4,16V8a.915.915,0,0,1,.035-.173A2.992,2.992,0,1,1,7.827,4.035.915.915,0,0,1,8,4h8a.915.915,0,0,1,.173.035,2.992,2.992,0,1,1,3.792,3.792ZM18,16V8a.915.915,0,0,1,.035-.173,2.986,2.986,0,0,1-1.862-1.862A.915.915,0,0,1,16,6H8a.915.915,0,0,1-.173-.035A2.986,2.986,0,0,1,5.965,7.827.915.915,0,0,1,6,8v8a.915.915,0,0,1-.035.173,2.986,2.986,0,0,1,1.862,1.862A.915.915,0,0,1,8,18h8a.915.915,0,0,1,.173.035,2.986,2.986,0,0,1,1.862-1.862A.915.915,0,0,1,18,16Z"></path></g></svg>');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+    <header id="title">Variable Fonts in CSS</header>
+    <section id="content">
+      <div>
+      <p>Unlike traditional fonts with fixed weights (like regular or bold), variable fonts allow for a continuous range of weights and other stylistic options. Variable fonts contain a range of "axes" that let you adjust font properties smoothly within a defined range. For example, in "Chillax," there is a <code>wght</code> axis, which lets you adjust the font weight between 200 and 700. This allows you to use any weight (like 330, 512, etc.) for a custom appearance, rather than being limited to predefined weights. With this current setup, you’re already loading the "Chillax" font correctly:</p>
+      <pre><code>@font-face {
+  font-family: 'Chillax';
+  src: url('fonts/Chillax-Variable.woff2') format('woff2'),
+       url('fonts/Chillax-Variable.woff') format('woff'),
+       url('fonts/Chillax-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+</code></pre>
+      </div>
+      <div>
+      <h3>█&nbsp;&nbsp; Basic Font Declaration</h3>
+      <pre><code>body {
+    font-family: 'Chillax', sans-serif;
+}
+</code></pre>
+      </div>
+      <div>
+      <h3>█&nbsp;&nbsp; Adjusting Font Weight with font-variation-settings</h3>
+      <p>Since "Chillax" supports variable weight, you can set custom values like so:</p>
+      <pre><code>.text-medium {
+    font-family: 'Chillax', sans-serif;
+    font-variation-settings: 'wght' 400;
+}
+
+.text-bold {
+    font-family: 'Chillax', sans-serif;
+    font-variation-settings: 'wght' 600;
+}
+</code></pre>
+      <p>This will apply different weights to <code>.text-medium</code> and <code>.text-bold</code> without needing separate font files.</p>
+      </div>
+      <div>
+      <h3>█&nbsp;&nbsp; Using font-weight with Variable Fonts</h3>
+      <p>Since the <code>wght</code> axis controls the weight, you can also set it with <code>font-weight</code>, which is often simpler and more compatible:</p>
+      <pre><code>.text-light {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 300;
+}
+
+.text-extra-bold {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 700;
+}
+</code></pre>
+      <p>This approach works well, and CSS will interpret it as a variable font weight if the font supports it (as "Chillax" does).</p>
+      </div>
+      <div>
+      <h3>█&nbsp;&nbsp; Compatibility</h3>
+      <p>Variable fonts are well-supported on most modern browsers, including:</p>
+      <ul>
+          <li>Chrome (since version 62)</li>
+          <li>Firefox (since version 57)</li>
+          <li>Safari (since version 11)</li>
+          <li>Edge (since version 17)</li>
+      </ul>
+      <p>However older browsers, Internet Explorer and some older versions of mobile browsers don't support variable fonts. In these cases, a fallback font or fixed weights may be required.</li>
+      </div>
+      <div>
+      <h3>█&nbsp;&nbsp; Fallbacks</h3>
+      <p>If you need to ensure compatibility for older browsers, you can provide alternative font weights (like <code>300</code>, <code>400</code>, <code>700</code>) and define them using standard <code>font-weight</code> properties alongside <code>font-variation-settings</code> for browsers that support it:</p>
+      <pre><code>.text-custom {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 500; /* fallback for browsers without variable font support */
+    font-variation-settings: 'wght' 500; /* preferred method for supported browsers */
+}
+</code></pre>
+      </div>
+    </section>
+</main>
+</body>
+</html>
