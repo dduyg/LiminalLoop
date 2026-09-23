@@ -1,0 +1,104 @@
+name: Stage <𝕤𝕧𝕘> inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      entry_1:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯1: id ::: tags ::: <svg>...</svg>"
+        required: true
+      entry_2:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯2: "
+        required: false
+        default: ""
+      entry_3:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯3: "
+        required: false
+        default: ""
+      entry_4:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯4: "
+        required: false
+        default: ""
+      entry_5:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯5: "
+        required: false
+        default: ""
+      entry_6:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯6: "
+        required: false
+        default: ""
+      entry_7:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯7: "
+        required: false
+        default: ""
+      entry_8:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯8: "
+        required: false
+        default: ""
+      entry_9:
+        description: "┌─[ＳＴＡＧＥ]  entry ♯9: "
+        required: false
+        default: ""
+      overwrite:
+        description: "Overwrite any ids in this batch that already exist"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  add-svgs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Assemble entries from the numbered fields
+        env:
+          E1: ${{ github.event.inputs.entry_1 }}
+          E2: ${{ github.event.inputs.entry_2 }}
+          E3: ${{ github.event.inputs.entry_3 }}
+          E4: ${{ github.event.inputs.entry_4 }}
+          E5: ${{ github.event.inputs.entry_5 }}
+          E6: ${{ github.event.inputs.entry_6 }}
+          E7: ${{ github.event.inputs.entry_7 }}
+          E8: ${{ github.event.inputs.entry_8 }}
+          E9: ${{ github.event.inputs.entry_9 }}
+        run: |
+          : > entries.txt
+          for var in E1 E2 E3 E4 E5 E6 E7 E8 E9; do
+            val="${!var}"
+            if [ -n "$val" ]; then
+              printf '%s\n' "$val" >> entries.txt
+            fi
+          done
+          COUNT=$(wc -l < entries.txt | tr -d ' ')
+          echo "STAGED_COUNT=$COUNT" >> "$GITHUB_ENV"
+          echo "Assembled $COUNT entr(y/ies):"
+          cat entries.txt
+
+      - name: Add or update catalog entries
+        run: |
+          OVERWRITE_FLAG=""
+          if [ "${{ github.event.inputs.overwrite }}" = "true" ]; then
+            OVERWRITE_FLAG="--overwrite"
+          fi
+          python3 svg_catalog_manager.py \
+            --entries-file entries.txt \
+            --catalog catalog.svgs.json \
+            $OVERWRITE_FLAG
+
+      - name: Clean up temp file
+        run: rm -f entries.txt
+
+      - name: Commit updated catalog
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add catalog.svgs.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "⟨CATALOG.EXPANDED⟩  ⟡ with +${STAGED_COUNT} item(s)"
+          git push
